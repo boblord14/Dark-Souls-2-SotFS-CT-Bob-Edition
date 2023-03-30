@@ -12,7 +12,7 @@ Many things that ban in other games don't ban here and vice versa.
 As a result, no actual claims of safety can be made for much of the table. 
 
 But **DO NOT**:
-- Directly edit your stats/sl
+- Directly edit your stats/soul level
 - Directly edit your soul memory
 - Spawn items with qualities they can not normally have(ex. poison binoculars +15)
 - Spawn items marked as unsafe in itemgib
