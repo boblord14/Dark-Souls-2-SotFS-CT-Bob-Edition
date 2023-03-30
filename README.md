@@ -19,9 +19,9 @@ But **DO NOT**:
 - This is not a complete list of everything that bans. Use this table at your own risk.
 
 ## Latest Release
-Table: [v3.5.2](https://github.com/inunorii/Dark-Souls-III-CT-TGA/releases/latest) | [Changelog](/CHANGELOG.md)  
+Table: [v3.5.2](https://github.com/inunorii/Dark-Souls-III-CT-TGA/releases/latest)
 Cheat Engine: [7.4 or newer](https://github.com/cheat-engine/cheat-engine/releases)  
-Game: App ver. 1.15.1 | Regulation ver. 1.35
+Game: App ver. 1.03 | Calibrations 2.02
 
 ## How to use
 ### Cheat Table (Windows)
