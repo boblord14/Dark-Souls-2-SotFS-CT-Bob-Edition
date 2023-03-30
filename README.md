@@ -1,5 +1,5 @@
 # Dark Souls II SotFS Cheat Table
-Dark Souls II Cheat Engine table created by Radai and Aatvark, forked by Boblord.
+Dark Souls II Cheat Engine table created by Radai and Aatvark, and forked by Boblord.
 
 ## Info
 ### Discord
