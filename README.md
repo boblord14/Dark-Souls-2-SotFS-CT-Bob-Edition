@@ -3,8 +3,10 @@ Dark Souls II Cheat Engine table created by Radai and Aatvark, forked and modifi
 
 ## Info
 ### Discord
-Community for the main DS2 SotFS table by Radai:
+Community for the original DS2 SotFS table by Radai:
 [The Grand Cathedral](https://discord.gg/mBf9mT2)
+Community for the TGA table for DS3/ER/ACVI:
+[The Grand Archives](https://discord.io/the-grand-archives)
 
 ### Softbans
 DS2 makes it very difficult to tell what softbans. There is no message on login like other games letting you know you have been banned.
@@ -19,7 +21,7 @@ But **DO NOT**:
 - This is not a complete list of everything that bans. Use this table at your own risk.
 
 ## Latest Release
-Table: [v3.5.2](https://github.com/inunorii/Dark-Souls-III-CT-TGA/releases/latest)
+Table: [v4.7.0](https://github.com/inunorii/Dark-Souls-III-CT-TGA/releases/latest)
 Cheat Engine: [7.4 or newer](https://github.com/cheat-engine/cheat-engine/releases)  
 Game: App ver. 1.03 | Calibrations 2.02
 
@@ -51,5 +53,5 @@ User | Reason
 [Aatvark](https://gist.github.com/Atvaark) | Completely wrote the original DS2 SotFS table
 [Lord Radai](https://github.com/LordRadai) | Took up maintaining after Aatvark, completely rewrote large segments, maintains the main table this was forked from
 [Boblord](https://github.com/boblord14) | Fork author and maintainer of this github, new features/functions, refactoring from previous ds2 tables, reformatting using parts from TGA tables
-[The Grand Cathedral] | Contributes to Radai's DS2 Table, credit to EvanDeadlySins and Relinquished001
+[The Grand Cathedral](https://discord.gg/mBf9mT2) | Contributes to Radai's DS2 Table, credit to EvanDeadlySins and Relinquished001
 [The Grand Archives](https://github.com/The-Grand-Archives) | Current maintainers of the DS3 and ER tables, many of the table utility functions used here came from their tables, credit and huge thanks to all those who worked on those tables
