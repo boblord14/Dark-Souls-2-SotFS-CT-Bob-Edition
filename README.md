@@ -9,6 +9,8 @@ Community for the original DS2 SotFS table by Radai:
 Community for the TGA table for DS3/ER/ACVI:
 [The Grand Archives](https://discord.io/the-grand-archives)
 
+If you need to contact me directly find me on discord at `@boblord.` or in [Bob's Shack](https://discord.gg/YAUChSMeRB)
+
 ### Softbans
 DS2 makes it very difficult to tell what softbans. There is no message on login like other games letting you know you have been banned.
 Many things that ban in other games don't ban here and vice versa. 
