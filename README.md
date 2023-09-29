@@ -5,6 +5,7 @@ Dark Souls II Cheat Engine table created by Radai and Aatvark, forked and modifi
 ### Discord
 Community for the original DS2 SotFS table by Radai:
 [The Grand Cathedral](https://discord.gg/mBf9mT2)
+
 Community for the TGA table for DS3/ER/ACVI:
 [The Grand Archives](https://discord.io/the-grand-archives)
 
