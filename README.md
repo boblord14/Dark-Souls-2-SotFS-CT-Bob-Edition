@@ -50,5 +50,5 @@ User | Reason
 ------------------ | ---------------------
 [Aatvark](https://gist.github.com/Atvaark) | Completely wrote the original DS2 SotFS table
 [Lord Radai](https://github.com/LordRadai) | Took up maintaining after Aatvark, completely rewrote large segments, maintains the main table this was forked from
-[Boblord](https://github.com/boblord14) | Maintainer of this github and the table fork on it, new features/functions, table reformatting using parts from TGA tables
+[Boblord](https://github.com/boblord14) | Fork author and maintainer of this github, new features/functions, refactoring from previous ds2 tables, reformatting using parts from TGA tables
 [The Grand Archives](https://github.com/The-Grand-Archives) | Current maintainers of the DS3 and ER tables, many of the table utility functions used here came from their tables, credit and huge thanks to all those who worked on those tables
