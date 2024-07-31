@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337079298</ID>
+  <Description>"DisableInput_B"</Description>
+  <Color>FF0000</Color>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>55C</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

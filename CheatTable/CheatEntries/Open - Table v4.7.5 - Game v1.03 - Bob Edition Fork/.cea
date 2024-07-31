@@ -1,0 +1,3069 @@
+//Made by Aatvark & Radai
+//Refactoring done by Boblord using attributes from the grand archives ds3/er table
+//(Credit to the people who made that table too)
+[ENABLE]
+{$lua}
+--Attach to game
+OpenProcess("DarkSoulsII.exe")
+
+local table_ver = 4.075
+local game_ver = "1.00.3"
+local ce_ver = 7.4
+
+local version_url = "https://raw.githubusercontent.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/main/VERSION"
+
+lfs = require "lfs"
+
+function isdir(path)
+  return path and lfs.attributes(path, "mode") == "directory" and true
+end
+
+function mkpath(base, ...)
+	local path = base
+	local rel = {...}
+	if type(path) ~= "string" or not isdir(path) then return end
+	for i,v in ipairs(rel) do
+  	if type(v) ~= "string" then return end
+  	path = string.format("%s/%s", path, v)
+  	if not isdir(path) and not lfs.mkdir(path) then
+    	error(string.format("mkpath: unable to create directory %s", path))
+    end
+	end
+  return path
+end
+
+function sanitizeUsername(username)
+  local username_t = utf8ToAnsi(username)
+  if type(username) ~= "string" then return
+  elseif username_t == username then return username end
+	local m =	true
+  local t = {}
+  for match in username_t:gmatch(".") do
+		local b = string.byte(match)
+    if b < 0x20 or b > 0x7F or b == 0x3F then m = false break end
+  end
+  if m then return username_t end
+  local h = 0x811C9DC5
+  local p = 0x01000193
+	for match in username:gmatch(".") do
+		local b = string.byte(match)
+    h = h~b
+    h = h*p
+  end
+  return string.format("user-%x", h)
+end
+
+function getGameVersion()
+  local function getVerChunk(verString, cStart, cEnd)
+    return tonumber(string.sub(verString, cStart, cEnd), 16)
+  end
+  local ver = getAddressSafe(process) and enumModules() and getFileVersion(enumModules()[1].PathToFile)
+  if not ver then return end
+  ver = string.format("%X", ver)
+  local l = #ver
+  local v2 = getVerChunk(ver, l - 11, l - 8)
+  local v3 = getVerChunk(ver, l - 7, l - 4)
+  ver = string.format("%s.%s", getVerChunk(ver, 1, l - 12), v2 < 10 and "0"..v2 or v2)
+  return v3 ~= 0 and string.format("%s.%s", ver, v3) or ver
+end
+
+tga = {}
+
+function tga:new(path, ver)
+  setmetatable({}, self)
+  self.__index = self
+  self.path = path
+  self.tver = table_ver
+  self.ver = ver
+	local num = 0
+  for i in pairs(tga.defaultconfig) do num = num + 1 end
+  self.cfgnum = num
+  return self
+end
+
+--[[START TGA default config]]--
+--These are the default values the config file is created with
+--DO NOT TOUCH THEM
+--instead, use the "Configure Table" script under the "Table Tools" header
+
+tga.defaultconfig, tga.configdesc = {}, {}
+local config = tga.defaultconfig
+local cdesc = tga.configdesc
+
+config.cacheSymbols = true
+config.checkGameLaunched = true
+config.checkGameVersion = true
+config.checkCEVersion = true
+config.checkTableVersion = true
+config.printProgress = false
+cdesc.cacheSymbols = "Save symbols (speeds up lookup)"
+cdesc.checkGameLaunched = "Prevent opening table if game is not running"
+cdesc.checkGameVersion = "Check game version"
+cdesc.checkCEVersion = "Check Cheat Engine version"
+cdesc.checkTableVersion = "Check table version (Github)"
+cdesc.printProgress = "Output progress of scripts to Lua Engine"
+
+--[[END TGA default config]]--
+
+function tga:loadConfig()
+	tga.config = {}
+  local config = tga.config
+  local defaultconfig = tga.defaultconfig
+  for i,v in pairs(defaultconfig) do config[i] = v end
+  local path = self.path.."/config.ini"
+  local f = io.open(path, "a+")
+	if not f then
+    print("tga:loadConfig: warning: unable to open or create config file.\nUsing default config values.")
+    return
+  end
+  local t = f:read("*all")
+  if t == "" then f:write(string.format(";Table Version: %s | Config Options: %d | File Modified: %s", self.tver, self.cfgnum, os.date("%c"))) end
+  t:gsub("\n(%g+)%s*=%s*(%g+)", function(i, v)
+  	config[i] = tonumber(v) or v ~= "true" and v ~= "false" and v or v == "true"
+		defaultconfig[i] = nil
+  end)
+  for i,v in pairs(defaultconfig) do
+  	f:write(string.format("\n%s = %s", i, v))
+  end
+  f:close()
+end
+
+function tga:saveConfig()
+  local config = tga.config
+  local path = self.path.."/config.ini"
+  local f = io.open(path, "w")
+	if not f then
+    print("tga:saveConfig: warning: unable to open or create config file.\nNew config values will not be saved.")
+    return
+  end
+  f:write(string.format(";Table Version: %s | Config Options: %s | File Modified: %s", self.tver, self.cfgnum, os.date("%c")))
+  for i,v in pairs(config) do
+  	f:write(string.format("\n%s = %s", i, v))
+  end
+  f:close()
+end
+
+function tga:loadSymbolCache()
+	if not getAddressSafe(process) then return end
+  tga.symbolCache = {}
+	tga.symbolCaching = true -- internal variable, do not mix up with tga.config.cacheSymbols
+  local cache = tga.symbolCache
+  local path = string.format("%s/%s.cache", self.path, self.ver)
+  local f = io.open(path, "a+")
+	if not f then
+    print("tga:loadSymbolCache: warning: unable to open or create symbol cache file.\nDisabling symbol caching for this session.")
+    tga.symbolCaching = false
+    return
+  end
+  local t = f:read("*all")
+  if t == "" then f:write(string.format("Table Version: %s | Game Version: %s | File Modified: %s", self.tver, self.ver, os.date("%c"))) end
+  t:gsub("\n(%g+)%s*=%s*(%g+)", function(i, v)
+  	cache[i] = tonumber(v) or tonumber(v, 16) or nil
+  end)
+  f:close()
+end
+
+function tga:saveSymbolCache()
+  local cache = tga.symbolCache
+  local path = string.format("%s/%s.cache", self.path, self.ver)
+  local f = io.open(path, "w+")
+	if not f then
+    print("tga:saveSymbolCache: warning: unable to open or create symbol cache file.\nDisabling symbol caching for this session.")
+    tga.symbolCaching = false
+    return false
+  end
+  f:write(string.format("Table Version: %s | Game Version: %s | File Modified: %s", self.tver, self.ver, os.date("%c")))
+  for i,v in pairs(cache) do
+  	f:write(string.format("\n%s = %s", i, v))
+  end
+  f:close()
+  return true
+end
+
+function tga:clearSymbolCache()
+  local cache = tga.symbolCache
+  local path = string.format("%s/%s.cache", self.path, self.ver)
+  local f = io.open(path, "w+")
+	if not f then
+    print("tga:saveSymbolCache: warning: unable to clear symbol cache file.")
+    return false
+  end
+  f:write(string.format("Table Version: %s | Game Version: %s | File Modified: %s", self.tver, self.ver, os.date("%c")))
+  f:close()
+  return true
+end
+
+function tga:clearRunOnce()
+  local path = self.path.."/run-once.txt"
+  local f = io.open(path, "w+")
+  if not f then
+  	print("tga:runOnce: warning: unable to clear run-once.txt")
+    return false
+  end
+  f:close()
+  return true
+end
+
+--local username = sanitizeUsername(os.getenv("USERNAME"))
+local path = mkpath(os.getenv("PROGRAMDATA"), "the-grand-archives", "dark-souls-2-sotfs")
+local current_game_ver = getGameVersion()
+tga = tga:new(path, current_game_ver)
+tga:loadConfig()
+tga:loadSymbolCache()
+
+--[[END TGA file management]]--
+
+--[[START TGA checks]]--
+
+if tga.config.checkGameLaunched and not GetAddressSafe(process) then
+  local e = "Failed to read game process.\nMake sure you've launched the game."
+  ShowMessage(e)
+  error(e)
+end
+
+if tga.config.checkGameVersion and current_game_ver and current_game_ver ~= game_ver and current_game_ver ~= game_ver:match("(%d*%.%d*)%.0+$") then
+	showMessage(string.format("Your version of Dark Souls II SotFS (%s) might not be supported.\nSupported version: %s\nMake sure you are using DS2 Scholar of the First Sin and not DS2 Vanilla as well.", current_game_ver, game_ver))
+end
+
+if tga.config.checkCEVersion and getCEVersion() < ce_ver then
+	showMessage(string.format([[Your version of Cheat Engine is outdated.
+Some features may not work.
+
+You should update to at least %s or newer.]],ce_ver))
+end
+
+if tga.config.checkTableVersion and table_ver ~= nil then
+  local internet = getInternet()
+  local response = internet.getURL(version_url)
+  if response ~= nil then
+    if table_ver < tonumber(response) then
+      showMessage([[Your Cheat Table is outdated.
+Check the Github for the latest version.]])
+    end
+  else
+    showMessage("Version check failed.")
+  end
+  internet.destroy()
+elseif tga.config.checkTableVersion then
+  showMessage([[This is a pre-release version of the Cheat Table.
+Find regular versions in the Releases section on the Github page.]])
+end
+
+--[[END TGA checks]]--
+
+--[[START TGA memory management]]--
+
+-- Checks whether an address or a symbol is within the process module
+-- can be used to determine if an input represents a valid address
+-- returns the address, or false if it is outside, or nil on lookup failure
+-- Examples:
+-- local address = getAddressProcessSafe("someSymbol")
+-- local address = getAddressProcessSafe("DarkSoulsIII.exe+123456")
+-- if getAddressProcessSafe(someVar) then print("valid address") end
+-- assert(getAddressProcessSafe(0x1000) == false)
+-- @param key | number | string | other
+local function getAddressProcessSafe(key)
+	if not getAddressSafe(process) then return end
+  local address = getAddressSafe(key)
+  if address == nil then return nil end
+  return address >= getAddress(process) and address <= getAddress(process) + getModuleSize(process) and address
+end
+
+-- Searches for a key in the target process with an optional offset
+-- a key can be an AOB or an address string or integer
+-- extracts an address from the operands of the instruction at the key
+-- registers a symbol at the address
+-- returns the found address, or false on lookup failure
+-- Examples:
+-- registerBaseByKey("someBase", "48 8B 05 ?? ?? ?? ?? 48 85 C0 ?? ?? 48 8B 40 ?? C3")
+-- registerBaseByKey("someBase", "48 8D 05 ?? ?? ?? ?? 48 89 44 24 ?? F3 0F 11 4C 24 ?? 48 83 3D ?? ?? ?? ?? 00 75", 18)
+-- registerBaseByKey("someBase", "DarkSoulsIII.exe+123456")
+-- registerBaseByKey("someBase", 0x7FF664DB7DC6)
+-- @param symbolName | string
+-- @param key | AOB = string | address = string or number
+-- @param offset | optional number
+function registerBaseByKey(symbolName, key, offset)
+	if not getAddressSafe(process) then return end
+  assert(type(symbolName) == "string" and (offset == nil or type(offset) == "number"), "registerBaseByKey: bad argument type")
+  local address = getAddressProcessSafe(key) or AOBScanModuleUnique(process, key)
+  address = offset and address and address + offset or address
+  if address then
+    local d = createDisassembler()
+    if d.disassemble(address) then
+      local dt = d.getLastDisassembleData()
+      local address = dt.parameters:match("%[(.-)%]")
+      if address then
+        address = tonumber(address, 16)
+        if address then
+          registerSymbol(symbolName, address, true)
+          return address
+        end
+      end
+    end
+  end
+  print(string.format("registerBaseByKey: warning: symbol %s not found", symbolName))
+  return false
+end
+
+-- Saves a symbol-address pair to the symbol cache
+-- address is input or optional if the symbol is registered
+-- returns true on success
+-- Examples:
+-- cacheSymbol("someSymbol") --this symbol has been registered previously
+-- cacheSymbol("someSymbol", address)
+-- cacheSymbol("someSymbol", "DarkSoulsIII.exe+123456")
+-- @param symbolName | string
+-- @param address | optional if the symbol is registered | number | string
+function cacheSymbol(symbolName, address)
+	if not getAddressSafe(process) then return end
+	local address = getAddressProcessSafe(address) or getAddressSafe(symbolName)
+	if not (tga.symbolCaching and tga.config.cacheSymbols and address and type(symbolName) == "string") then return false end
+  address = address - getAddress(process)
+  tga.symbolCache[symbolName] = address
+  return tga:saveSymbolCache()
+end
+
+-- Scans process module memory for AOB
+-- If cacheSymbols is set to true saves the symbol-address pair to the cache
+-- or gets its address from the cache
+-- returns address on success, nil on lookup failure
+-- Examples:
+-- AOBScanProcessCached("someSymbol", "48 8B 05 ?? ?? ?? ?? 48 85 C0 ?? ?? 48 8B 40 ?? C3")
+-- @param symbolName | string
+-- @param AOBString | string
+function AOBScanProcessCached(symbolName, AOBString)
+	if not getAddressSafe(process) then return end
+	assert(type(symbolName) == "string" and type(AOBString) == "string", "AOBScanProcessCached: bad argument type")
+  if not (tga.symbolCaching and tga.config.cacheSymbols and tga.symbolCache[symbolName]) then
+		local address = AOBScanModuleUnique(process, AOBString)
+  	if not (address and tga.config.cacheSymbols) then return address end
+    if not cacheSymbol(symbolName, address) then print(string.format("AOBScanProcessCached: warning: symbol %s could not be cached", symbolName)) end
+    return address
+  else
+  	return getAddress(process) + tga.symbolCache[symbolName]
+  end
+end
+
+-- Searches for a key in the target process with an optional offset
+-- a key can be an AOB or an address string or integer
+-- extracts an address from the operands of the instruction at the key
+-- registers a symbol at the address
+-- if cacheSymbols is set to true saves the symbol-address pair to the cache
+-- or gets it from the cache
+-- returns the found address, or false on lookup failure
+-- Examples:
+-- registerBaseByKey("someBase", "48 8B 05 ?? ?? ?? ?? 48 85 C0 ?? ?? 48 8B 40 ?? C3")
+-- registerBaseByKey("someBase", "48 8D 05 ?? ?? ?? ?? 48 89 44 24 ?? F3 0F 11 4C 24 ?? 48 83 3D ?? ?? ?? ?? 00 75", 18)
+-- registerBaseByKey("someBase", "DarkSoulsIII.exe+123456")
+-- registerBaseByKey("someBase", 0x7FF664DB7DC6)
+-- @param symbolName | string
+-- @param key | AOB = string | address = string or number
+-- @param offset | optional number
+function registerBaseByKeyCached(symbolName, key, offset)
+	if not getAddressSafe(process) then return end
+	if not (tga.symbolCaching and tga.config.cacheSymbols and tga.symbolCache[symbolName]) then
+		local address = registerBaseByKey(symbolName, key, offset)
+  	if not (address and tga.config.cacheSymbols) then return address end
+    if not cacheSymbol(symbolName, address) then print(string.format("registerBaseByKeyCached: warning: symbol %s could not be cached", symbolName)) end
+    return address
+  else
+  	local address = getAddress(process) + tga.symbolCache[symbolName]
+    registerSymbol(symbolName, address, true)
+  	return address
+  end
+end
+
+
+-- format:
+-- symbolName = name of the symbol to be registered
+-- AOB = array of bytes to search for in the process module
+-- offset = optional, number of bytes to offset the AOB matching address by
+
+tga.baseData = {
+  {symbolName = "GameManagerImp", AOB = "48 8B 05 ?? ?? ?? ?? 48 8B 58 38 48 85 DB  74  ?? F6"}, -- BaseA
+  {symbolName = "NetSessionManager", AOB = "48 8B 0D ?? ?? ?? ?? 48 85 C9 74 ?? 48 8B 49 18 E8"}, --BaseB
+  {symbolName = "KatanaMainApp", AOB = "48 8B 15 ?? ?? ?? ?? 45 32 C0 85 C9"}, --BaseP1
+}
+
+for i,base in ipairs(tga.baseData) do registerBaseByKeyCached(base.symbolName, base.AOB, base.offset) end
+
+--[[START TGA helpers]]--
+
+-- Disables memrec after specified amount of milliseconds
+-- or byte at given address becomes 1
+-- or given function returns true.
+-- Accepts id, description or MemoryRecord instance.
+-- ametalon, 2020-07-15
+-- Examples:
+--   disableMemrec(memrec)
+--     disable current memrec
+--   disableMemrec(13, 1000)
+--     disable memrec with ID = 13 in one second
+--   disableMemrec("Curse Dagger", 500)
+--     disable "Curse Dagger" in half a second
+--   disableMemrec("Slow script", "slow_script_finished")
+--     disable "Slow script" when it sets byte at address "slow_script_finished" to 1
+--   disableMemrec("Funny meme", function() return readInteger('an_address') == 42 end)
+--     disable "Funny meme" when an address in memory takes a specific value
+-- @param memrec, MemoryRecord | number | string
+-- @param delay, number | string | function, default 100,
+--   milliseconds to wait before disabling
+--   or memory address to check when that byte becomes 1
+--   or function that returns true when memrec should be disabled.
+function disableMemrec(memrec, delay)
+  local memrecType = type(memrec)
+  if memrecType == "userdata" then
+    -- noop, we assume it is already MemoryRecord
+  elseif memrecType == "string" then
+    memrec = getAddressList().getMemoryRecordByDescription(memrec)
+  elseif memrecType == "number" then
+    memrec = getAddressList().getMemoryRecordByID(memrec)
+  end
+  if not memrec then return end
+  local t = createTimer(nil)
+  delay = delay or 100
+  local delayType = type(delay)
+  if delayType == "string" then
+    t.interval = 100
+    t.onTimer = function(t)
+      if readBytes(delay, 1) == 1 then
+        t.destroy()
+        memrec.active = false
+      end
+    end
+  elseif delayType == "number" then
+    -- minimum delay is 0.1 seconds
+    t.interval = math.max(delay, 100)
+    t.onTimer = function(t)
+      t.destroy()
+      memrec.active = false
+    end
+  elseif delayType == "function" then
+    t.interval = 100
+    t.onTimer = function(t)
+      if delay() then
+        t.destroy()
+        memrec.active = false
+      end
+    end
+  end
+end
+
+-- Runs given function
+-- if the function returns truthy value, remembers it
+-- and doesn't run the function on subsequent invocations
+-- Returns the function's result
+-- For persistence function stores the identifier .
+-- Examples:
+-- tga:runOnce("agree_to_eula", showEULA)
+-- tga:runOnce("open_readme", function() getMemoryRecordByDescription("Readme").active = true; return true; end)
+-- @param id, arbitrary unique identifier
+-- @param func, function, a function to call
+function tga:runOnce(id, func)
+  id = tostring(id):gsub("[%s-\n]+", "")
+	assert(id and id ~= "" and type(func) == "function", "tga:runOnce: bad argument type")
+  local path = self.path.."/run-once.txt"
+  local f = io.open(path, "a+")
+  if not f then print("tga:runOnce: warning: unable to open or create run-once.txt, aborting function execution") return end
+	local t = f:read("*all")
+  if t:find(id) then return true end
+  local r = func()
+  if not r then return r end
+  f:write(#t == 0 and id or "\n"..id)
+  f:close()
+  return r
+end
+
+-- opens up "Memory View" window at given address
+-- if address is a string it must be registered symbol
+-- @param addr, Number | String
+function showMemoryViewAtAddress(addr)
+  local mvForm = getMemoryViewForm()
+  mvForm.Disassemblerview.TopAddress = getAddress(addr)
+  mvForm.show()
+end
+
+-- "Vortexian mov" by ametalon
+-- Allows to use multilevel pointers in AA scripts.
+-- Arguments:
+--   register to build a pointer in
+--   multilevel pointer in format [[[base]+offset]+offset]+offset
+--   (optional) a place to jump to in case of failed zero check
+-- If you need more thorough error handling, consider wrapping code it try..except block instead.
+-- Examples:
+--   vortmov(rax, [[[WorldChrMan]+80]+1F90]+18)
+--   assembles into
+--   mov rax, [WorldChrMan]
+--   mov rax, [rax+80]
+--   mov rax, [rax+1F90]
+--   mov rax, [rax+18]
+--
+--   vortmov(rax, [WorldChrMan]+80, no_player)
+--   assembles into
+--   mov rax, [WorldChrMan]
+--   test rax, rax
+--   jz no_player
+--   mov rax, [rax+80]
+--   test rax, rax
+--   jz no_player
+local function vortmov(parameters, syntaxcheckonly)
+  if syntaxcheckonly then return end
+  local reg, path, on_error = string.match(parameters, '(%w+)%s*,%s*%[+([%w%.%]%+]+)%s*,%s*(.+)')
+  if not reg then
+    reg, path = string.match(parameters, '(%w+)%s*,%s*%[+(.+)')
+  end
+  local offsets = {}
+  string.gsub(path, "[^%]]+", function(c) offsets[#offsets+1] = c end)
+  local asm = ''
+  for i,offset in ipairs(offsets) do
+    asm = asm..string.format("mov %s, [%s%s]\r\n", reg, i==1 and '' or reg, offset)
+    if on_error then
+      asm = asm..string.format("test %s, %s\r\njz short %s\r\n", reg, reg, on_error)
+    end
+  end
+  return asm
+end
+registerAutoAssemblerCommand("vortmov", vortmov)
+
+--[[
+Adds a menu item to the main menu
+that allows switching between standard, gaming and compact view modes.
+
+Gaming view mode hides:
+* Scanning panel
+* Address and Type columns in Address list
+Compact view mode hides:
+* Scanning panel
+
+Place in "C:\Program Files\Cheat Engine 7.1\autorun" folder to use with any table.
+
+Tested only on CE 7.1
+Author: ametalon, based on "compact mode" by mgr.inz.Player
+Date: 2020-07-07
+]]
+
+package.preload["ce.view_mode"] = function(...)
+  local _m = {}
+
+  local STANDARD_MODE = 0
+  local GAMING_MODE = 1
+  local COMPACT_MODE = 2
+
+  -- caption shows name of the next mode
+  local captions = {
+    [STANDARD_MODE] = 'Gaming &View Mode',
+    [GAMING_MODE] = 'Compact &View Mode',
+    [COMPACT_MODE] = 'Standard &View Mode'}
+
+  function _m:_update()
+    self.menu_item.Caption = captions[self.mode]
+    -- splitter between Scanning panel and Address list
+    MainForm.Splitter1.Visible = self.mode == STANDARD_MODE
+    -- Status bar
+    MainForm.Panel4.Visible = self.mode == STANDARD_MODE
+    -- Scanning panel
+    MainForm.Panel5.Visible = self.mode == STANDARD_MODE
+    -- Address column in Address list
+    AddressList.Header.Sections[2].Visible = self.mode == STANDARD_MODE or self.mode == COMPACT_MODE
+    -- Type column in Address list
+    AddressList.Header.Sections[3].Visible = self.mode == STANDARD_MODE or self.mode == COMPACT_MODE
+  end
+
+  function _m:cycle()
+    if self.mode == STANDARD_MODE then
+      self.mode = GAMING_MODE
+    elseif self.mode == GAMING_MODE then
+      self.mode = COMPACT_MODE
+    elseif self.mode == COMPACT_MODE then
+      self.mode = STANDARD_MODE
+    end
+    self:_update()
+  end
+
+  function _m:standard()
+    self.mode = STANDARD_MODE
+    self:_update()
+  end
+
+  function _m:gaming()
+    self.mode = GAMING_MODE
+    self:_update()
+  end
+
+  function _m:compact()
+    self.mode = COMPACT_MODE
+    self:_update()
+  end
+
+
+  local parent = getMainForm().Menu.Items
+  local menu_item = createMenuItem(parent)
+  menu_item.OnClick = function() _m:cycle() end
+  parent.add(menu_item)
+
+  _m.menu_item = menu_item
+  _m:standard()
+
+  return _m
+end
+
+require("ce.view_mode")
+
+--prevent clicking on sort buttons
+getAddressList().Control[1].OnSectionClick = nil
+
+--[[
+Finds memrec by ID or description and tries to make it visible.
+Adds "Edit -> Scroll to" menu item.
+Available via <Ctrl+F> and <Alt+E,S> shortcuts.
+
+Install by placing this file in CE autorun folder
+by default "C:\Program Files (x86)\Cheat Engine 6.8.3\autorun"
+
+Type part of a description and select one of remaining items in the list below the searchbox.
+Or press <Enter> to select first item right away.
+To search by ID, type a number into the searchbox and press <Enter>
+
+Tested only on CE 6.8.3
+Author: ametalon
+Date: 2020-03-23
+]]
+
+package.preload["ce.scroll_to"] = function(...)
+  local _m = {}
+
+  -- Recursively activates given memrec and its parents
+  local function recursive_activate(memrec)
+    if(not memrec) then return end
+    recursive_activate(memrec.Parent)
+    memrec.Active = true
+  end
+
+  -- Returns data that will be used for a search
+  local function refresh_search_list()
+    local addr_list = getAddressList()
+    local list = createStringlist()
+    list.beginUpdate()
+    for i = 0, addr_list.Count - 1 do
+      list.add(addr_list[i].Description)
+    end
+    list.endUpdate()
+    return list
+  end
+
+  -- Makes given memrec visible on screen
+  -- @param memrec MemoryRecord
+  function _m:scroll_to_memrec(memrec)
+    if(not memrec) then return end
+    recursive_activate(memrec.Parent)
+    -- focus AddressList's TTreeviewWithScroll to set keyboard focus for the selected memrec
+    getAddressList().Control[0].setFocus()
+    getAddressList().setSelectedRecord(memrec)
+  end
+
+  -- Shows search dialog and tries to find memrec for typed text
+  -- @return MemoryRecord | nil
+  function _m:find_memrec()
+    local addr_list = getAddressList()
+
+    if not self.description_list or self.description_list.Count ~= addr_list.Count then
+      self.description_list = refresh_search_list()
+    end
+
+    local i, text = showSelectionList(
+      "Scroll to memory record",
+      "Enter ID or description\n<Enter> selects the first element in the list",
+      self.description_list,
+      true
+    )
+    -- one of the list elements was selected
+    if i >= 0 then return addr_list[i] end
+    -- no text was typed
+    if text == '' then return end
+    local memrec
+    -- check if numeric ID was typed
+    local id = tonumber(text)
+    if(id) then
+      memrec = addr_list.getMemoryRecordByID(id)
+      if memrec then return memrec end
+    end
+    -- check if typed text is an exact description of a memrec
+    memrec = addr_list.getMemoryRecordByDescription(text)
+    if memrec then return memrec end
+    -- fallback to full list search by a partial match
+    i = self:_dumb_search(text)
+    if i then return addr_list[i] end
+  end
+
+  -- horrible, horrible search
+  -- returns index of the first memrec with description containing given text
+  -- @return Integer | nil
+  function _m:_dumb_search(text)
+    text = string.lower(text)
+    for i = 0, self.description_list.Count - 1 do
+      -- plain "find substring" operation
+      if string.find(string.lower(self.description_list[i]), text, 1, true) then
+        return i
+      end
+    end
+  end
+
+
+  -- add new menu item
+  -- if can't find Edit menu item add to the main menu itself
+  local parent = getMainForm().Edit3 or getMainForm().Menu.Items
+  local new_item = createMenuItem(parent)
+  new_item.Caption = '&Scroll to'
+  new_item.Shortcut = "Ctrl+F"
+  new_item.OnClick = function() _m:scroll_to_memrec(_m:find_memrec()) end
+  parent.add(new_item)
+
+  return _m
+end
+
+require("ce.scroll_to")
+
+-- Show text in a separate window.
+-- Examples:
+--   showText("Title", "Some text")
+--   showText([[Multiline text]])
+-- @param caption, String, optional title for the window
+-- @param text, String, text to show
+-- ametalon, 2020-07-17
+function showText(caption, text)
+  if not text then
+    text = caption
+    caption = ""
+  end
+  local f = createForm(false)
+  f.Name = 'ShowTextForm'
+  f.DoNotSaveInTable = true
+  f.AutoSize = true
+  f.BorderStyle = bsSizeable
+  local m = createMemo(f)
+  m.Name = 'TextMemo'
+  m.BorderStyle = bsNone
+  m.ReadOnly = true
+  m.ScrollBars = ssAutoBoth
+  m.Constraints.MinWidth = 400
+  m.Constraints.MinHeight = 400
+  m.Align = alClient
+  m.AnchorSideRight.Side = asrBottom
+  m.AnchorSideBottom.Side = asrBottom
+
+  f.Caption = caption
+  f.TextMemo.Lines.setText(text)
+  f.centerScreen()
+  f.show()
+  f.bringToFront()
+  return f
+end
+
+--[[END TGA helpers]]--
+
+--[[START Igromanru's widgets class]]--
+-- Class for my UDF's
+IgroWidgets = {}
+
+function IgroWidgets:new()
+  setmetatable({}, self)
+  self.__index = self
+  self.addressList = getAddressList()
+  return self
+end
+
+function IgroWidgets:stringTrim(s)
+  return s:gsub("^%s*(.-)%s*$", "%1")
+end
+
+function IgroWidgets:isNotEmpty(s)
+  return s ~= nil and self:stringTrim(s) ~= ''
+end
+
+function IgroWidgets:isEmpty(s)
+  return s == nil or self:stringTrim(s) == ''
+end
+
+function IgroWidgets:toHex(number)
+  return string.format("%X",number)
+end
+
+function IgroWidgets:toHexLegth(number, length)
+  if length == nil then length = 1 end
+  length = length * 2
+  return string.format("%0"..length.."X",number)
+end
+
+function IgroWidgets:floatToHex(number, length)
+  local result = ""
+  local byteTable = floatToByteTable(number)
+
+  if length == nil then length = 1 end
+  if(length > #byteTable) then
+    for i = 1, length-#byteTable do
+      result = "00"..result
+    end
+  end
+  for i, v in ipairs(byteTable) do
+    result = string.format('%02X', v) .. result
+  end
+  return result
+end
+
+function IgroWidgets:floatToDecimal(number, length)
+  return tonumber(self:floatToHex(number,length),16)
+end
+
+function IgroWidgets:floatToByteArray(number)
+  local result = ""
+  local byteTable = floatToByteTable(number)
+
+  for i, v in ipairs(byteTable) do
+    if(self:isNotEmpty(result)) then
+      result = result .. " "
+    end
+    result = result .. string.format('%02X', v)
+  end
+
+  return result
+end
+
+function IgroWidgets:floatToByteArray(number)
+  local result = ""
+  local byteTable = floatToByteTable(number)
+
+  for i, v in ipairs(byteTable) do
+    if(self:isNotEmpty(result)) then
+      result = result .. " "
+    end
+    result = result .. string.format('%02X', v)
+  end
+
+  return result
+end
+
+function IgroWidgets:decToHex(number, length)
+  return self:toHexLegth(number,length)
+end
+
+function IgroWidgets:decToByteArray(number, length)
+  return self:hexToByteArray(self:toHexLegth(number,length))
+end
+
+function IgroWidgets:hexToDecimal(hexString)
+  return tonumber(hexString,16)
+end
+
+function IgroWidgets:hexToFloat(hexString)
+  local byteTable = {}
+  for hexChar in string.gmatch(hexString,"(%x%x)") do
+    table.insert(byteTable,1,tonumber(hexChar,16))
+  end
+  return tonumber(string.format("%.2f", byteTableToFloat(byteTable)))
+end
+
+function IgroWidgets:hexToByteArray(hex)
+  local result = ""
+  local index = string.len(hex)-1
+  local tmp = ""
+  while index ~= nil and index >= 0 do
+    tmp = string.sub(hex, index, index+1)
+    if igro:isNotEmpty(tmp) then
+      if igro:isNotEmpty(result) then
+        result = result .. " "
+      end
+      result = result .. tmp
+    else
+      break
+    end
+    index = index - 2
+    sleep(1)
+  end
+  result = string.gsub(result, "%s$", "")
+  return result
+end
+
+function IgroWidgets:byteArrayToHex(byteArray)
+  local result = ""
+  local index = 1
+  local tmp = ""
+  byteArray = string.gsub(byteArray, "%s", "")
+  index = string.len(byteArray)-1
+  while index ~= nil and index >= 0 do
+    tmp = string.sub(byteArray, index, index+1)
+    if igro:isNotEmpty(tmp) then
+      result = result .. tmp
+    else
+      break
+    end
+    index = index - 2
+    sleep(1)
+  end
+  result = string.gsub(result, "%s$", "")
+  return result
+end
+
+function IgroWidgets:byteArrayToDecimal(byteArray)
+  return tonumber(self:byteArrayToHex(byteArray),16)
+end
+
+function IgroWidgets:byteArrayToFloat(byteArray)
+  return self:hexToFloat(self:byteArrayToHex(byteArray))
+end
+
+function IgroWidgets:getRecordById(id)
+  return self.addressList.getMemoryRecordByID(id)
+end
+
+function IgroWidgets:getRecordByDescription(description)
+  return self.addressList.getMemoryRecordByDescription(description)
+end
+
+function IgroWidgets:getRecord(index)
+  return self.addressList.getMemoryRecord(index)
+end
+
+function IgroWidgets:enableRecordById(id)
+  local function enableRecord(thread, id)
+    local record = self:getRecordById(id)
+	if(record ~= nil) then
+	  sleep(500)
+	  record.Active = true
+	else
+	  print("Record with ID "..id.." doesn't exists")
+	end
+  end
+  createNativeThread(enableRecord, id)
+end
+
+function IgroWidgets:enableByDescription(description)
+  local function enableRecord(thread, description)
+    local record = self:getRecordByDescription(description)
+	if(record ~= nil) then
+	  sleep(500)
+	  record.Active = true
+	else
+	  print("Record with Description "..description.." doesn't exists")
+	end
+  end
+  createNativeThread(enableRecord, description)
+end
+
+function IgroWidgets:disableRecordById(id)
+  local function disableRecord(thread, id)
+    local record = self:getRecordById(id)
+	if(record ~= nil) then
+	  sleep(500)
+	  record.Active = false
+	else
+	  print("Record with ID "..id.." doesn't exists")
+	end
+  end
+  createNativeThread(disableRecord, id)
+end
+
+function IgroWidgets:disableByDescription(description)
+  local function disableRecord(thread, description)
+    local record = self:getRecordByDescription(description)
+	if(record ~= nil) then
+      sleep(500)
+	  record.Active = false
+	else
+	  print("Record with Description "..description.." doesn't exists")
+	end
+  end
+  createNativeThread(disableRecord, description)
+end
+
+-- Creating an instance of IgroWidgets
+igro = IgroWidgets:new()
+--[[END Igromanru's widgets class]]--
+---------------------------------------------------
+
+--TODO: find ds2's variant of msgRepository
+
+CheatTable = getAddressList()
+
+MagicIDCheatTable = {25278,25279,25280,25281,25282,25283,25284,25285,25286,25287,86762,86763,86764,86765,86766,86767,86768,86769,86770,86771,86855,86856,86857,86858,86859,86860,86861,86862,86853,86854,86948,86949,86950,86951,86952,86953,86944,86945,86946,86947}
+EquipWepIDCheatTable = {25260,25261,25262,25263,25264,25265,86746,86747,86748,86749,86744,86745,86839,86840,86835,86836,86837,86838,86926,86927,86928,86929,86930,86931,86653,86654,86655,86656,86657,86658}
+EquipArmorIDCheatTable = {25256,25257,25258,25255,86742,86739,86740,86741,86831,86832,86833,86830,86924,86921,86922,86923,86649,86650,86651,86648}
+EquipRingIDCheatTable = {25252,25253,25250,25251,86734,86735,86736,86737,86827,86828,86825,86826,86916,86917,86918,86919,86645,86646,86643,86644}
+EquipGoodsIDCheatTable = {25276,25267,25268,25269,25270,25271,25272,25273,25274,25275,86751,86752,86753,86754,86755,86756,86757,86758,86759,86760,86842,86843,86844,86845,86846,86847,86848,86849,86850,86851,86933,86934,86935,86936,86937,86938,86939,86940,86941,86942,86661,86662,86663,86664,86665,86666,86667,86668,86669,86660}
+
+
+function MagicDropdownRemover(CheatIDs)
+  for k,v in pairs(CheatIDs) do
+    local Cheat = CheatTable.getMemoryRecordByID(v)
+    if Cheat ~= nil then
+      Cheat.DropDownList.Text = nil
+      Cheat.DisplayAsDropDownListItem = false
+      Cheat.DropDownDescriptionOnly = false
+    end
+  end
+end
+
+function MagicDropdownAdder(MagicIds,CheatIDs)
+  for k,v in pairs(CheatIDs) do
+    local Cheat = CheatTable.getMemoryRecordByID(v)
+    if Cheat ~= nil then
+      Cheat.DropDownList.Text = MagicIds
+      Cheat.DisplayAsDropDownListItem = true
+      Cheat.DropDownDescriptionOnly = true
+    end
+  end
+end
+
+MagicDropdownAdder(MagicDropDownList,MagicIDCheatTable)
+--MagicDropdownRemover(MagicIDCheatTable)
+
+
+MagicDropDownList = [[0:Magic1
+01D92CD0:Soul Arrow
+01D953E0:Great Soul Arrow
+01D97AF0:Heavy Soul Arrow
+01D9A200:Great Heavy Soul Arrow
+01D9C910:Homing Soul Arrow
+01D9F020:Heavy Homing Soul Arrow
+01DA1730:Homing Soulmass
+01DA3E40:Homing Crystal Soulmass
+01DA6550:Soul Spear
+01DA8C60:Crystal Soul Spear
+01DAB370:Shockwave
+01DADA80:Soul Spear Barrage
+01DB0190:Soul Shower
+01DB28A0:Soul Greatsword
+01DB4FB0:Soul Vortex
+01DB76C0:Soul Bolt
+01DB9DD0:Soul Geyser
+01DBC4E0:Magic Weapon
+01DBEBF0:Great Magic Weapon
+01DC1300:Crystal Magic Weapon
+01DC3A10:Strong Magic Shield
+01DC6120:Yearn
+01DC8830:Hush
+01DCAF40:Fall Control
+01DCD650:Hidden Weapon
+01DCFD60:Repair
+01DD2470:Cast Light
+01DD4B80:Chameleon
+01DD7290:Unleash Magic
+01DD99A0:Soul Flash
+01DDC0B0:Focus Souls
+01E86F10:Heal
+01E89620:Med Heal
+01E8BD30:Great Heal Excerpt
+01E8E440:Great Heal
+01E90B50:Soothing Sunlight
+01E93260:Replenishment
+01E95970:Resplendent Life
+01E98080:Bountiful Sunlight
+01E9A790:Caressing Prayer
+01E9CEA0:Force
+01E9F5B0:Wrath of the Gods
+01EA1CC0:Emit Force
+01EA43D0:Heavenly Thunder
+01EA6AE0:Lightning Spear
+01EA91F0:Great Lightning Spear
+01EAB900:Sunlight Spear
+01EAE010:Soul Appease
+01EB0720:Blinding Bolt
+01EB2E30:Magic Barrier
+01EB5540:Great Magic Barrier
+01EB7C50:Homeward
+01EBA360:Guidance
+01EBCA70:Sacred Oath
+01EBF180:Unveil
+01EC1890:Perseverance
+01EC3FA0:Sunlight Blade
+01ECDBE0:Denial
+01ED02F0:Splintering Lightning Spear
+01F7B150:Fireball
+01F7D860:Fire Orb
+01F7FF70:Great Fireball
+01F82680:Great Chaos Fireball
+01F84D90:Firestorm
+01F874A0:Fire Tempest
+01F89BB0:Chaos Storm
+01F8C2C0:Combustion
+01F8E9D0:Great Combustion
+01F910E0:Fire Whip
+01F937F0:Poison Mist
+01F95F00:Toxic Mist
+01F98610:Acid Surge
+01F9AD20:Lingering Flame
+01F9D430:Flame Swathe
+01F9FB40:Forbidden Sun
+01FA2250:Flame Weapon
+01FA4960:Flash Sweat
+01FA7070:Iron Flesh
+01FA9780:Warmth
+01FABE90:Immolation
+01FC1E20:Fire Snake
+01FC4530:Dance of Fire
+01FC6C40:Outcry
+0206F390:Dark Orb
+02071AA0:Dark Hail
+020741B0:Dark Fog
+020768C0:Affinity
+02078FD0:Dead Again
+0207B6E0:Dark Weapon
+0207DDF0:Whisper of Despair
+02080500:Repel
+02082C10:Twisted Barricade
+02085320:Numbness
+020B6060:Dark Greatsword
+020B8770:Recollection
+021635D0:Scraps of Life
+02165CE0:Darkstorm
+021683F0:Resonant Soul
+0216AB00:Great Resonant Soul
+0216D210:Climax
+0216F920:Resonant Flesh
+02172030:Resonant Weapon
+02174740:Lifedrain Patch
+02176E50:Profound Still
+021AA2A0:Promised Walk of Peace
+021AC9B0:Dark Dance
+]]
+MagicDropdownAdder(MagicDropDownList,MagicIDCheatTable)
+
+function EquipWepDropdownAdder(EquipWepIds,CheatIDs)
+  for k,v in pairs(CheatIDs) do
+    local Cheat = CheatTable.getMemoryRecordByID(v)
+    if Cheat ~= nil then
+      Cheat.DropDownList.Text = EquipWepIds
+      Cheat.DisplayAsDropDownListItem = true
+      Cheat.DropDownDescriptionOnly = true
+    end
+  end
+end
+
+EquipWepDropdownAdder(EquipWepDropDownList,EquipWepIDCheatTable)
+--EquipWepDropdownRemover(EquipWepIDCheatTable)
+
+
+EquipWepDropDownList = [[0:EquipWep1
+10:No Item
+1000000:Dagger
+1010000:Bandit's Knife
+1040000:Mytha's Bent Blade
+1050000:Shadow Dagger
+1060000:Thief Dagger
+1070000:Broken Thief Sword
+1100000:Parrying Dagger
+1110000:Manikin Knife
+1130000:Royal Dirk
+1140000:Blue Dagger
+1150000:Umbral Dagger
+1160000:Retainer's Short Sword
+1200000:Broken Straight Sword
+1210000:Shortsword
+1220000:Longsword
+1230000:Broadsword
+1240000:Foot Soldier Sword
+1250000:Puzzling Stone Sword
+1260000:Possessed Armor Sword
+1270000:Varangian Sword
+1280000:Blue Flame
+1290000:Fume Sword
+1320000:Heide Knight Sword
+1330000:Red Rust Sword
+1340000:no text
+1350000:Black Dragon Sword
+1360000:Sun Sword
+1370000:Drakekeeper's Sword
+1380000:Ashen Warrior Sword
+1390000:Ivory Straight Sword
+1400000:Estoc
+1410000:Mail Breaker
+1420000:Chaos Rapier
+1430000:Spider's Silk
+1440000:Espada Ropera
+1500000:Rapier
+1520000:Black Scorpion Stinger
+1530000:Ricard's Rapier
+1580000:Ice Rapier
+1600000:Falchion
+1610000:Shotel
+1620000:Warped Sword
+1630000:Eleum Loyce
+1640000:Manikin Sabre
+1650000:Scimitar
+1660000:Red Rust Scimitar
+1670000:Spider Fang
+1680000:Melu Scimitar
+1690000:Monastery Scimitar
+1700000:Uchigatana
+1710000:Washing Pole
+1720000:Chaos Blade
+1730000:Blacksteel Katana
+1740000:Manslayer
+1760000:Darkdrift
+1770000:Berserker Blade
+1790000:Bewitched Alonne Sword
+1800000:Bastard Sword
+1810000:Flamberge
+1820000:Claymore
+1830000:Majestic Greatsword
+1831000:Majestic Greatsword
+1850000:Drangleic Sword
+1860000:Thorned Greatsword
+1870000:Bluemoon Greatsword
+1871000:Moonlight Greatsword
+1880000:Mastodon Greatsword
+1890000:Dark Sword (cut)
+1900000:Ruler's Sword
+1910000:Mirrah Greatsword
+1911000:Old Mirrah Greatsword
+1920000:Black Dragon Greatsword
+1930000:Black Knight Greatsword
+1940000:Royal Greatsword
+1950000:Old Knight Greatsword
+1960000:Defender Greatsword
+1970000:Watcher Greatsword
+1980000:Key to the Embedded
+1990000:Drakeblood Greatsword
+1995000:Loyce Greatsword
+1996000:Charred Loyce Greatsword
+2000000:Hand Axe
+2010000:Battle Axe
+2020000:Bandit Axe
+2030000:Infantry Axe
+2070000:Gyrm Axe
+2080000:Dragonslayer's Crescent Axe
+2090000:Butcher's Knife
+2100000:Silverblack Sickle
+2200000:Crescent Axe
+2210000:Greataxe
+2220000:Bandit Greataxe
+2240000:Lion Greataxe
+2250000:Giant Stone Axe
+2260000:Gyrm Greataxe
+2290000:Black Dragon Greataxe
+2300000:Black Knight Greataxe
+2310000:Drakekeeper's Greataxe
+2400000:Club
+2410000:Mace
+2420000:Morning Star
+2430000:Reinforced Club
+2440000:Craftsman's Hammer
+2450000:Floral Club (cut)
+2470000:Mace of the Insolent
+2500000:Handmaid's Ladle
+2510000:Blackmith's Tongs (cut)
+2520000:Blacksmith's Hammer
+2530000:Black Dragon Warpick
+2540000:Aldia Hammer
+2560000:Barbed Club
+2600000:Large Club
+2610000:Pickaxe
+2620000:Great Club
+2630000:Gyrm Great Hammer
+2660000:Iron King Hammer
+2670000:Malformed Skull
+2680000:Dragon Tooth
+2690000:Giant Warrior Club
+2700000:Malformed Shell
+2710000:Demon's Great Hammer
+2720000:Archdrake Mace
+2730000:Old Knight Hammer
+2740000:Drakekeeper's Great Hammer
+2750000:Sacred Chime Hammer
+2760000:Sanctum Mace
+2800000:Spear
+2810000:Winged Spear
+2820000:Pike
+2830000:Partizan
+2840000:Stone Soldier Spear
+2850000:Spitfire Spear
+2855000:Yorgh's Spear
+2860000:Silverblack Spear
+2870000:Heide Spear
+2880000:Pate's Spear
+2890000:Channeler's Trident
+2895000:Gargoyle Bident
+2896000:Dragonslayer Spear
+2900000:Heide Lance
+2920000:Heide Greatlance
+2930000:Grand Lance
+2940000:Chariot Lance
+2950000:Rampart Golem Lance
+2960000:Smelter Hammer
+3000000:Great Scythe
+3010000:Great Machete
+3020000:Full Moon Sickle
+3040000:Crescent Sickle
+3050000:Scythe of Nahr Alma
+3060000:Bone Scythe
+3070000:Scythe of Want
+3200000:Lucerne
+3210000:Scythe
+3220000:Halberd
+3240000:Helix Halberd
+3250000:Santier's Spear
+3251000:Santier's Spear
+3270000:Mastodon Halberd
+3280000:Blue Knight's Halberd
+3290000:Dragonrider's Halberd
+3300000:Black Knight Halberd
+3310000:Syan's Halberd
+3320000:Roaring Halberd
+3330000:Old Knight Halberd
+3340000:Old Knight Pike
+3350000:Drakekeeper's Warpick
+3370000:Wrathful Axe
+3400000:Bare Fists
+3410000:Claws
+3420000:Malformed Claws
+3430000:Manikin Claws
+3440000:Work Hook
+3500000:Caestus
+3510000:Shadow Claws
+3530000:Bone Fist
+3600000:Whip
+3610000:Notched Whip
+3620000:Bloodied Whip
+3630000:Spotted Whip
+3660000:Old Whip
+3800000:Sorcerer's Staff
+3810000:Staff of Amana
+3820000:Witchtree Branch
+3830000:Lizard Staff
+3850000:Olenford's Staff
+3860000:Archdrake Staff
+3870000:Bat Staff
+3880000:Bone Staff
+3890000:Staff of Wisdom
+3900000:Sunset Staff
+3910000:Pilgrim's Spontoon
+3930000:Azal's Staff
+3940000:Retainer Staff
+4010000:Cleric's Sacred Chime
+4020000:Witchtree Bellvine
+4030000:Priest's Chime
+4040000:Dragon Chime
+4050000:Chime of Want
+4060000:Archdrake Chime
+4080000:Idol's Chime
+4090000:Caitha's Chime
+4100000:Protective Chime
+4110000:Disc Chime
+4120000:Chime of Screams
+4150000:Black Witch's Staff
+4200000:Short Bow
+4210000:Long Bow
+4220000:Composite Bow
+4230000:Sea Bow
+4240000:Dragonrider Bow
+4270000:Bell Keeper Bow
+4280000:Bow of Want
+4290000:Hunter's Blackbow
+4400000:Alonne Greatbow
+4420000:Dragonslayer Greatbow
+4430000:Possessed Armor Greatbow
+4440000:Twin-headed Greatbow
+4600000:Light Crossbow
+4610000:Heavy Crossbow
+4630000:Shield Crossbow
+4660000:Avelyn
+4670000:Sanctum Crossbow
+4680000:Sanctum Repeating Crossbow
+5000000:Murakumo
+5010000:Arced Sword
+5040000:Curved Dragon Greatsword
+5050000:Curved Nil Greatsword
+5200000:Zweihander
+5210000:Greatsword
+5220000:Smelter Sword
+5225000:Aged Smelter Sword
+5230000:Drakewing Ultra Greatsword
+5240000:King's Ultra Greatsword
+5250000:Fume Ultra Greatsword
+5255000:Ivory King Ultra Greatsword
+5270000:Pursuer's Ultra Greatsword
+5275000:Drakekeeper's Ultra Greatsword
+5280000:Crypt Blacksword
+5285000:Old Knight Ultra Greatsword
+5290000:Black Knight Ultra Greatsword
+5295000:Lost Sinner's Sword
+5310000:Stone Twinblade
+5330000:Dragonrider Twinblade
+5340000:Twinblade
+5350000:Red Iron Twinblade
+5360000:Curved Twinblade
+5370000:Sorcerer's Twinblade
+5400000:Pyromancy Flame
+5410000:Dark Pyromancy Flame
+5500000:Black Flamestone Dagger
+5510000:Yellow Quartz Longsword
+5520000:Bound Hand Axe
+5530000:Homunculus Mace
+5540000:Transgressor's Staff
+5600000:Longsword recolor
+5610000:Murakumo recolor
+5620000:Blacksteel Katana recolor
+5630000:Rapier recolor
+5640000:Greataxe recolor
+5650000:Great Club recolor
+5660000:Caestus recolor
+6100000:Binoculars
+11000000:Buckler
+11005000:Benhart's Parma
+11010000:Small Leather Shield
+11020000:Iron Parma
+11030000:Foot Soldier Shield
+11040000:Target Shield
+11050000:Golden Falcon Shield
+11070000:Manikin Shield
+11080000:Llewellyn Shield
+11091000:Crimson Parma
+11110000:Cleric's Parma
+11120000:Cleric's Small Shield
+11130000:Magic Shield
+11140000:Cursed Bone Shield
+11150000:Sanctum Shield
+11160000:Varangian Shield
+11185000:Watcher's Shield
+11200000:Large Leather Shield
+11210000:Blue Wooden Shield
+11220000:Silver Eagle Kite Shield
+11230000:Drangleic Shield
+11240000:Lion Clan Shield
+11250000:Archdrake Shield
+11260000:King's Shield
+11270000:Mirrah Shield
+11280000:Old Knight's Shield
+11290000:Loyce Shield
+11295000:Charred Loyce Shield
+11300000:Spirit Tree Shield
+11310000:Golden Wing Shield
+11320000:Vessel Shield
+11330000:Shield of the Insolent
+11350000:Silverblack Shield
+11360000:Stone Parma
+11370000:Grand Spirit Tree Shield
+11380000:Moon Butterfly Shield
+11390000:Slumbering Dragon Shield
+11395000:Chaos Shield
+11400000:Wooden Shield
+11420000:Hollow Soldier Shield
+11430000:Royal Kite Shield
+11450000:Red Rust Shield
+11455000:Rampart Golem Shield
+11470000:Bell Keeper Shield
+11475000:Defender's Shield
+11480000:Black Dragon Shield
+11485000:Drakekeeper's Shield
+11490000:Porcine Shield
+11495000:Bone Shield
+11500000:Twin Dragon Greatshield
+11510000:Tower Shield
+11530000:Orma's Greatshield
+11540000:Reeve's Greatshield
+11550000:King's Mirror
+11560000:Dragonrider Greatshield
+11570000:Mastodon Greatshield
+11590000:Havel's Greatshield
+11600000:Gyrm Greatshield
+11610000:Pursuer's Greatshield
+11620000:Pate's Shield
+11630000:Old Knight Greatshield
+11640000:Drakekeeper's Greatshield
+11650000:Greatshield of Glory
+11700000:Phoenix Parma
+11710000:Sunlight Parma
+11720000:Watchdragon Parma
+11730000:Blossom Kite Shield
+11740000:Rebel's Greatshield
+11750000:Wicked Eye Greatshield
+11800000:Black Flamestone Parma
+11810000:Yellow Quartz Shield
+11820000:Bound Wooden Shield
+11830000:Homunculus Wooden Shield
+11840000:Transgressor's Leather Shield
+]]
+EquipWepDropdownAdder(EquipWepDropDownList,EquipWepIDCheatTable)
+
+
+function EquipArmorDropdownAdder(EquipArmorIds,CheatIDs)
+  for k,v in pairs(CheatIDs) do
+    local Cheat = CheatTable.getMemoryRecordByID(v)
+    if Cheat ~= nil then
+      Cheat.DropDownList.Text = EquipArmorIds
+      Cheat.DisplayAsDropDownListItem = true
+      Cheat.DropDownDescriptionOnly = true
+    end
+  end
+end
+
+EquipArmorDropdownAdder(EquipArmorDropDownList,EquipArmorIDCheatTable)
+--EquipArmorDropdownRemover(EquipArmorIDCheatTable)
+
+
+EquipArmorDropDownList = [[0:EquipArmor1
+01D92CD0:Soul Arrow
+01D953E0:Great Soul Arrow
+01D97AF0:Heavy Soul Arrow
+]]
+EquipArmorDropdownAdder(EquipArmorDropDownList,EquipArmorIDCheatTable)
+
+function EquipRingDropdownAdder(EquipRingIds,CheatIDs)
+  for k,v in pairs(CheatIDs) do
+    local Cheat = CheatTable.getMemoryRecordByID(v)
+    if Cheat ~= nil then
+      Cheat.DropDownList.Text = EquipRingIds
+      Cheat.DisplayAsDropDownListItem = true
+      Cheat.DropDownDescriptionOnly = true
+    end
+  end
+end
+
+EquipRingDropdownAdder(EquipRingDropDownList,EquipRingIDCheatTable)
+--EquipRingDropdownRemover(EquipRingIDCheatTable)
+
+
+EquipRingDropDownList = [[0:EquipRing1
+02628110:Life Ring
+02628111:Life Ring+1
+02628112:Life Ring+2
+02628113:Life Ring+3
+0262A820:Chloranthy Ring
+0262A821:Chloranthy Ring+1
+0262A822:Chloranthy Ring+2
+0262CF30:Royal Soldier's Ring
+0262CF31:Royal Soldier's Ring+1
+0262CF32:Royal Soldier's Ring+2
+0262F640:First Dragon Ring
+0262F641:Second Dragon Ring
+0262F642:Third Dragon Ring
+02631D50:Ring of Steel Protection
+02631D51:Ring of Steel Protection+1
+02631D52:Ring of Steel Protection+2
+02631D53:no text
+02634460:Spell Quartz Ring
+02634461:Spell Quartz Ring+1
+02634462:Spell Quartz Ring+2
+02634463:Spell Quartz Ring+3
+02636B70:Flame Quartz Ring
+02636B71:Flame Quartz Ring+1
+02636B72:Flame Quartz Ring+2
+02636B73:Flame Quartz Ring+3
+02639280:Thunder Quartz Ring
+02639281:Thunder Quartz Ring+1
+02639282:Thunder Quartz Ring+2
+02639283:Thunder Quartz Ring+3
+0263B990:Dark Quartz Ring
+0263B991:Dark Quartz Ring+1
+0263B992:Dark Quartz Ring+2
+0263B993:Dark Quartz Ring+3
+0263E0A0:Poisonbite Ring
+0263E0A1:Poisonbite Ring+1
+026407B0:Bloodbite Ring
+026407B1:Bloodbite Ring+1
+02642EC0:Bracing Knuckle Ring
+02642EC1:Bracing Knuckle Ring+1
+02642EC2:Bracing Knuckle Ring+2
+026455D0:Cursebite Ring
+02646958:Ash Knuckle Ring
+02647CE0:Dispelling Ring
+02647CE1:Dispelling Ring+1
+0264A3F0:Ring of Resistance
+0264A3F1:Ring of Resistance+1
+0264CB00:Ring of Blades
+0264CB01:Ring of Blades+1
+0264CB02:Ring of Blades+2
+02658E50:Ring of Knowledge
+0265B560:Ring of Prayer
+0265DC70:Stone Ring
+026651A0:Red Tearstone Ring
+02669FC0:Blue Tearstone Ring
+0266C6D0:Ring of Giants
+0266C6D1:Ring of Giants+1
+0266C6D2:Ring of Giants+2
+0266DA58:Old Leo Ring
+0266EDE0:Ring of Soul Protection
+026714F0:Ring of Life Protection
+02673C00:Lingering Dragoncrest Ring
+02673C01:Lingering Dragoncrest Ring+1
+02673C02:Lingering Dragoncrest Ring+2
+02676310:Clear Bluestone Ring
+02676311:Clear Bluestone Ring+1
+02676312:Clear Bluestone Ring+2
+02678A20:Northern Ritual Band
+02678A21:Northern Ritual Band+1
+02678A22:Northern Ritual Band+2
+0267B130:Southern Ritual Band
+0267B131:Southern Ritual Band+1
+0267B132:Southern Ritual Band+2
+0267D840:Covetous Gold Serpent Ring
+0267D841:Covetous Gold Serpent Ring+1
+0267D842:Covetous Gold Serpent Ring+2
+0267FF50:Covetous Silver Serpent Ring
+0267FF51:Covetous Silver Serpent Ring+1
+0267FF52:Covetous Silver Serpent Ring+2
+02684D70:Ring of the Evil Eye
+02684D71:Ring of the Evil Eye+1
+02684D72:Ring of the Evil Eye+2
+02687480:Ring of Restoration
+02689B90:Ring of Binding
+0268C2A0:Silvercat Ring
+0268E9B0:Redeye Ring
+026910C0:Gower's Ring of Protection
+026937D0:Name-engraved Ring
+02695EE0:Slumbering Dragoncrest Ring
+026985F0:Hawk Ring
+0269AD00:Old Sun Ring
+0269FB20:Illusory Ring of a Conqueror
+026A2230:King's Ring
+026A4940:Ring of the Dead
+026A7050:Ring of Thorns
+026A7051:Ring of Thorns+1
+026A7052:Ring of Thorns+2
+026A9760:Delicate String
+026ABE70:White Ring
+026AE580:Illusory Ring of the Vengeful
+026B0C90:Illusory Ring of the Guilty
+026BA8D0:Ring of Whispers
+026BCFE0:Illusory Ring of the Exalted
+026D0860:Crest of the Rat
+026D2F70:Bell Keeper's Seal
+026D5680:Guardian's Seal
+026D7D90:Crest of Blood
+026DA4A0:Blue Seal
+026DCBB0:Abyss Seal
+026DF2C0:Vanquisher's Seal
+026E19D0:Sun Seal
+026E40E0:Ancient Dragon Seal
+02719C40:Simpleton's Ring
+0271C350:Strength Ring
+0271EA60:Dexterity Ring
+02721170:Ivory Warrior Ring
+02723880:Sorcery Clutch Ring
+02725F90:Lightning Clutch Ring
+027286A0:Fire Clutch Ring
+0272ADB0:Dark Clutch Ring
+0272FBD0:Baneful Bird Ring
+027322E0:Flynn's Ring
+]]
+EquipRingDropdownAdder(EquipRingDropDownList,EquipRingIDCheatTable)
+
+
+function EquipGoodsDropdownAdder(EquipGoodsIds,CheatIDs)
+  for k,v in pairs(CheatIDs) do
+    local Cheat = CheatTable.getMemoryRecordByID(v)
+    if Cheat ~= nil then
+      Cheat.DropDownList.Text = EquipGoodsIds
+      Cheat.DisplayAsDropDownListItem = true
+      Cheat.DropDownDescriptionOnly = true
+    end
+  end
+end
+
+EquipGoodsDropdownAdder(EquipGoodsDropDownList,EquipGoodsIDCheatTable)
+--EquipGoodsDropdownRemover(EquipGoodsIDCheatTable)
+
+
+EquipGoodsDropDownList = [[0:EquipGoods1
+10:No Item
+20:No Spell
+1000000:Dagger
+1010000:Bandit's Knife
+1040000:Mytha's Bent Blade
+1050000:Shadow Dagger
+1060000:Thief Dagger
+1070000:Broken Thief Sword
+1100000:Parrying Dagger
+1110000:Manikin Knife
+1130000:Royal Dirk
+1140000:Blue Dagger
+1150000:Umbral Dagger
+1160000:Retainer's Short Sword
+1200000:Broken Straight Sword
+1210000:Shortsword
+1220000:Longsword
+1230000:Broadsword
+1240000:Foot Soldier Sword
+1250000:Puzzling Stone Sword
+1260000:Possessed Armor Sword
+1270000:Varangian Sword
+1280000:Blue Flame
+1290000:Fume Sword
+1320000:Heide Knight Sword
+1330000:Red Rust Sword
+1340000:no text
+1350000:Black Dragon Sword
+1360000:Sun Sword
+1370000:Drakekeeper's Sword
+1380000:Ashen Warrior Sword
+1390000:Ivory Straight Sword
+1400000:Estoc
+1410000:Mail Breaker
+1420000:Chaos Rapier
+1430000:Spider's Silk
+1440000:Espada Ropera
+1500000:Rapier
+1520000:Black Scorpion Stinger
+1530000:Ricard's Rapier
+1580000:Ice Rapier
+1600000:Falchion
+1610000:Shotel
+1620000:Warped Sword
+1630000:Eleum Loyce
+1640000:Manikin Sabre
+1650000:Scimitar
+1660000:Red Rust Scimitar
+1670000:Spider Fang
+1680000:Melu Scimitar
+1690000:Monastery Scimitar
+1700000:Uchigatana
+1710000:Washing Pole
+1720000:Chaos Blade
+1730000:Blacksteel Katana
+1740000:Manslayer
+1760000:Darkdrift
+1770000:Berserker Blade
+1790000:Bewitched Alonne Sword
+1800000:Bastard Sword
+1810000:Flamberge
+1820000:Claymore
+1830000:Majestic Greatsword
+1831000:Majestic Greatsword
+1850000:Drangleic Sword
+1860000:Thorned Greatsword
+1870000:Bluemoon Greatsword
+1871000:Moonlight Greatsword
+1880000:Mastodon Greatsword
+1900000:Ruler's Sword
+1910000:Mirrah Greatsword
+1911000:Old Mirrah Greatsword
+1920000:Black Dragon Greatsword
+1930000:Black Knight Greatsword
+1940000:Royal Greatsword
+1950000:Old Knight Greatsword
+1960000:Defender Greatsword
+1970000:Watcher Greatsword
+1980000:Key to the Embedded
+1990000:Drakeblood Greatsword
+1995000:Loyce Greatsword
+1996000:Charred Loyce Greatsword
+2000000:Hand Axe
+2010000:Battle Axe
+2020000:Bandit Axe
+2030000:Infantry Axe
+2070000:Gyrm Axe
+2080000:Dragonslayer's Crescent Axe
+2090000:Butcher's Knife
+2100000:Silverblack Sickle
+2200000:Crescent Axe
+2210000:Greataxe
+2220000:Bandit Greataxe
+2240000:Lion Greataxe
+2250000:Giant Stone Axe
+2260000:Gyrm Greataxe
+2290000:Black Dragon Greataxe
+2300000:Black Knight Greataxe
+2310000:Drakekeeper's Greataxe
+2400000:Club
+2410000:Mace
+2420000:Morning Star
+2430000:Reinforced Club
+2440000:Craftsman's Hammer
+2470000:Mace of the Insolent
+2500000:Handmaid's Ladle
+2520000:Blacksmith's Hammer
+2530000:Black Dragon Warpick
+2540000:Aldia Hammer
+2560000:Barbed Club
+2600000:Large Club
+2610000:Pickaxe
+2620000:Great Club
+2630000:Gyrm Great Hammer
+2660000:Iron King Hammer
+2670000:Malformed Skull
+2680000:Dragon Tooth
+2690000:Giant Warrior Club
+2700000:Malformed Shell
+2710000:Demon's Great Hammer
+2720000:Archdrake Mace
+2730000:Old Knight Hammer
+2740000:Drakekeeper's Great Hammer
+2750000:Sacred Chime Hammer
+2760000:Sanctum Mace
+2800000:Spear
+2810000:Winged Spear
+2820000:Pike
+2830000:Partizan
+2840000:Stone Soldier Spear
+2850000:Spitfire Spear
+2855000:Yorgh's Spear
+2860000:Silverblack Spear
+2870000:Heide Spear
+2880000:Pate's Spear
+2890000:Channeler's Trident
+2895000:Gargoyle Bident
+2896000:Dragonslayer Spear
+2900000:Heide Lance
+2920000:Heide Greatlance
+2930000:Grand Lance
+2940000:Chariot Lance
+2950000:Rampart Golem Lance
+2960000:Smelter Hammer
+3000000:Great Scythe
+3010000:Great Machete
+3020000:Full Moon Sickle
+3040000:Crescent Sickle
+3050000:Scythe of Nahr Alma
+3060000:Bone Scythe
+3070000:Scythe of Want
+3200000:Lucerne
+3210000:Scythe
+3220000:Halberd
+3240000:Helix Halberd
+3250000:Santier's Spear
+3251000:Santier's Spear
+3270000:Mastodon Halberd
+3280000:Blue Knight's Halberd
+3290000:Dragonrider's Halberd
+3300000:Black Knight Halberd
+3310000:Syan's Halberd
+3320000:Roaring Halberd
+3330000:Old Knight Halberd
+3340000:Old Knight Pike
+3350000:Drakekeeper's Warpick
+3370000:Wrathful Axe
+3410000:Claws
+3420000:Malformed Claws
+3430000:Manikin Claws
+3440000:Work Hook
+3500000:Caestus
+3510000:Shadow Claws
+3530000:Bone Fist
+3600000:Whip
+3610000:Notched Whip
+3620000:Bloodied Whip
+3630000:Spotted Whip
+3660000:Old Whip
+3800000:Sorcerer's Staff
+3810000:Staff of Amana
+3820000:Witchtree Branch
+3830000:Lizard Staff
+3850000:Olenford's Staff
+3860000:Archdrake Staff
+3870000:Bat Staff
+3880000:Bone Staff
+3890000:Staff of Wisdom
+3900000:Sunset Staff
+3910000:Pilgrim's Spontoon
+3930000:Azal's Staff
+3940000:Retainer Staff
+4010000:Cleric's Sacred Chime
+4020000:Witchtree Bellvine
+4030000:Priest's Chime
+4040000:Dragon Chime
+4050000:Chime of Want
+4060000:Archdrake Chime
+4080000:Idol's Chime
+4090000:Caitha's Chime
+4100000:Protective Chime
+4110000:Disc Chime
+4120000:Chime of Screams
+4150000:Black Witch's Staff
+4200000:Short Bow
+4210000:Long Bow
+4220000:Composite Bow
+4230000:Sea Bow
+4240000:Dragonrider Bow
+4270000:Bell Keeper Bow
+4280000:Bow of Want
+4290000:Hunter's Blackbow
+4400000:Alonne Greatbow
+4420000:Dragonslayer Greatbow
+4430000:Possessed Armor Greatbow
+4440000:Twin-headed Greatbow
+4600000:Light Crossbow
+4610000:Heavy Crossbow
+4630000:Shield Crossbow
+4660000:Avelyn
+4670000:Sanctum Crossbow
+4680000:Sanctum Repeating Crossbow
+5000000:Murakumo
+5010000:Arced Sword
+5040000:Curved Dragon Greatsword
+5050000:Curved Nil Greatsword
+5200000:Zweihander
+5210000:Greatsword
+5220000:Smelter Sword
+5225000:Aged Smelter Sword
+5230000:Drakewing Ultra Greatsword
+5240000:King's Ultra Greatsword
+5250000:Fume Ultra Greatsword
+5255000:Ivory King Ultra Greatsword
+5270000:Pursuer's Ultra Greatsword
+5275000:Drakekeeper's Ultra Greatsword
+5280000:Crypt Blacksword
+5285000:Old Knight Ultra Greatsword
+5290000:Black Knight Ultra Greatsword
+5295000:Lost Sinner's Sword
+5310000:Stone Twinblade
+5330000:Dragonrider Twinblade
+5340000:Twinblade
+5350000:Red Iron Twinblade
+5360000:Curved Twinblade
+5370000:Sorcerer's Twinblade
+5400000:Pyromancy Flame
+5410000:Dark Pyromancy Flame
+5500000:Black Flamestone Dagger
+5510000:Yellow Quartz Longsword
+5520000:Bound Hand Axe
+5530000:Homunculus Mace
+5540000:Transgressor's Staff
+5600000:Longsword
+5610000:Murakumo
+5620000:Blacksteel Katana
+5630000:Rapier
+5640000:Greataxe
+5650000:Great Club
+5660000:Caestus
+6100000:Binoculars
+11000000:Buckler
+11005000:Benhart's Parma
+11010000:Small Leather Shield
+11020000:Iron Parma
+11030000:Foot Soldier Shield
+11040000:Target Shield
+11050000:Golden Falcon Shield
+11070000:Manikin Shield
+11080000:Llewellyn Shield
+11091000:Crimson Parma
+11110000:Cleric's Parma
+11120000:Cleric's Small Shield
+11130000:Magic Shield
+11140000:Cursed Bone Shield
+11150000:Sanctum Shield
+11160000:Varangian Shield
+11185000:Watcher's Shield
+11200000:Large Leather Shield
+11210000:Blue Wooden Shield
+11220000:Silver Eagle Kite Shield
+11230000:Drangleic Shield
+11240000:Lion Clan Shield
+11250000:Archdrake Shield
+11260000:King's Shield
+11270000:Mirrah Shield
+11280000:Old Knight's Shield
+11290000:Loyce Shield
+11295000:Charred Loyce Shield
+11300000:Spirit Tree Shield
+11310000:Golden Wing Shield
+11320000:Vessel Shield
+11330000:Shield of the Insolent
+11350000:Silverblack Shield
+11360000:Stone Parma
+11370000:Grand Spirit Tree Shield
+11380000:Moon Butterfly Shield
+11390000:Slumbering Dragon Shield
+11395000:Chaos Shield
+11400000:Wooden Shield
+11420000:Hollow Soldier Shield
+11430000:Royal Kite Shield
+11450000:Red Rust Shield
+11455000:Rampart Golem Shield
+11470000:Bell Keeper Shield
+11475000:Defender's Shield
+11480000:Black Dragon Shield
+11485000:Drakekeeper's Shield
+11490000:Porcine Shield
+11495000:Bone Shield
+11500000:Twin Dragon Greatshield
+11510000:Tower Shield
+11530000:Orma's Greatshield
+11540000:Reeve's Greatshield
+11550000:King's Mirror
+11560000:Dragonrider Greatshield
+11570000:Mastodon Greatshield
+11590000:Havel's Greatshield
+11600000:Gyrm Greatshield
+11610000:Pursuer's Greatshield
+11620000:Pate's Shield
+11630000:Old Knight Greatshield
+11640000:Drakekeeper's Greatshield
+11650000:Greatshield of Glory
+11700000:Phoenix Parma
+11710000:Sunlight Parma
+11720000:Watchdragon Parma
+11730000:Blossom Kite Shield
+11740000:Rebel's Greatshield
+11750000:Wicked Eye Greatshield
+11800000:Black Flamestone Parma
+11810000:Yellow Quartz Shield
+11820000:Bound Wooden Shield
+11830000:Homunculus Wooden Shield
+11840000:Transgressor's Leather Shield
+21010100:Pate's Helm
+21010101:Pate's Armor
+21010102:Pate's Gloves
+21010103:Pate's Trousers
+21020100:Thief Mask
+21020101:Black Leather Armor
+21020102:Black Leather Gloves
+21020103:Black Leather Boots
+21030100:Wanderer Hood
+21030101:Wanderer Coat
+21030102:Wanderer Manchettes
+21030103:Wanderer Boots
+21040100:Hunter's Hat
+21040101:Leather Armor
+21040102:Leather Gloves
+21040103:Leather Boots
+21041100:Hunter's Hat
+21050100:Knight Helm
+21050101:Knight Armor
+21050102:Knight Gauntlets
+21050103:Knight Leggings
+21060100:Elite Knight Helm
+21060101:Elite Knight Armor
+21060102:Elite Knight Gloves
+21060103:Elite Knight Leggings
+21070100:Tattered Cloth Hood
+21070101:Tattered Cloth Robe
+21070102:Tattered Cloth Manchettes
+21070103:Heavy Boots
+21080100:Brigand Hood
+21080101:Brigand Armor
+21080102:Brigand Gauntlets
+21080103:Brigand Trousers
+21100100:Imported Hood
+21100101:Imported Tunic
+21100102:Imported Manchettes
+21100103:Imported Trousers
+21140100:Traveling Merchant Hat
+21140101:Traveling Merchant Coat
+21140102:Traveling Merchant Gloves
+21140103:Traveling Merchant Boots
+21160100:Havel's Helm
+21160101:Havel's Armor
+21160102:Havel's Gauntlets
+21160103:Havel's Leggings
+21210100:Jester's Cap
+21210101:Jester's Robes
+21210102:Jester's Gloves
+21210103:Jester's Tights
+21230100:Moon Hat
+21230101:Astrologist's Robe
+21230102:Astrologist's Gauntlets
+21230103:Astrologist's Bottoms
+21320100:Faraam Helm
+21320101:Faraam Armor
+21320102:Faraam Gauntlets
+21320103:Faraam Boots
+21330100:Black Dragon Helm
+21330101:Black Dragon Armor
+21330102:Black Dragon Gauntlets
+21330103:Black Dragon Leggings
+21340100:Xanthous Crown
+21340101:Xanthous Overcoat
+21340102:Xanthous Gloves
+21340103:Xanthous Waistcloth
+21350100:Mask of Judgment
+21350101:Robe of Judgment
+21350102:Manchettes of Judgment
+21350103:Tights of Judgment
+21360100:Helm of Aurous
+21360101:Armor of Aurous
+21360102:Gauntlets of Aurous
+21360103:Leggings of Aurous
+21361100:Helm of Aurous
+21361101:Armor of Aurous
+21361102:Gauntlets of Aurous
+21361103:Leggings of Aurous
+21370100:Monastery Headcloth
+21370101:Monastery Longshirt
+21370102:Monastery Long Gloves
+21370103:Monastery Skirt
+21390100:Dingy Hood
+21390101:Dingy Robe
+21390102:Dingy Cuffs
+21390103:Blood-Stained Skirt
+21430100:Durgo's Hat
+21440102:Engraved Gauntlets
+21450101:Barrel
+21460103:Flying Feline Boots
+21470100:Moon Butterfly Hat
+21470101:Moon Butterfly Wings
+21470102:Moon Butterfly Cuffs
+21470103:Moon Butterfly Skirt
+21480100:Catarina Helm
+21480101:Catarina Armor
+21480102:Catarina Gauntlets
+21480103:Catarina Leggings
+21490100:Alva Helm
+21490101:Alva Armor
+21490102:Alva Gauntlets
+21490103:Alva Leggings
+21500100:Black Witch Veil
+21500101:Black Witch Robe
+21500102:Black Witch Gloves
+21500103:Black Witch Trousers
+21501100:Black Witch Hat
+21502100:Black Witch Domino Mask
+21600100:Drakeblood Helm
+21600101:Drakeblood Armor
+21600102:Drakeblood Gauntlets
+21600103:Drakeblood Leggings
+21610100:Northwarder Hood
+21610101:Northwarder Robe
+21610102:Northwarder Manchettes
+21610103:Northwarder Trousers
+21630100:Crown of the Old Iron King
+21640100:Crown of the Ivory King
+21650100:Crown of the Sunken King
+21660100:Old Bell Helm
+21670100:Hollow Skin
+21680100:Pharros Mask
+21690103:Flower Skirt
+21700100:Minotaur Helm
+21710100:Symbol of Avarice
+22020100:Hollow Soldier Helm
+22020101:Hollow Soldier Armor
+22020102:Hollow Soldier Gauntlets
+22020103:Hollow Soldier Leggings
+22021100:Royal Soldier Helm
+22021101:Royal Soldier Armor
+22021102:Royal Soldier Gauntlets
+22021103:Royal Soldier Leggings
+22030100:Hollow Infantry Helm
+22030101:Hollow Infantry Armor
+22030102:Hollow Infantry Gloves
+22030103:Hollow Infantry Boots
+22031100:Infantry Helm
+22031101:Infantry Armor
+22031102:Infantry Gloves
+22031103:Infantry Boots
+22060100:White Priest Headpiece
+22060101:White Priest Robe
+22060102:White Priest Gloves
+22060103:White Priest Skirt
+22062100:Priestess Headpiece
+22062101:Priestess Robe
+22062102:Priestess Gloves
+22062103:Priestess Skirt
+22080100:Rogue Hood
+22080101:Rogue Armor
+22080102:Rogue Gauntlets
+22080103:Rogue Leggings
+22110100:Spiked Bandit Helm
+22110101:Bandit Armor
+22110102:Bandit Gauntlets
+22110103:Bandit Boots
+22130100:Varangian Helm
+22130101:Varangian Armor
+22130102:Varangian Cuffs
+22130103:Varangian Leggings
+22180100:Black Hollow Mage Hood
+22180101:Black Hollow Mage Robe
+22182100:White Hollow Mage Hood
+22182101:White Hollow Mage Robe
+22190101:Lion Mage Robe
+22190102:Lion Mage Cuffs
+22190103:Lion Mage Skirt
+22220100:Steel Helm
+22220101:Steel Armor
+22220102:Steel Gauntlets
+22220103:Steel Leggings
+22230100:Shadow Mask
+22230101:Shadow Top
+22230102:Shadow Gauntlets
+22230103:Shadow Leggings
+22240100:Manikin Mask
+22240101:Manikin Top
+22240102:Manikin Gloves
+22240103:Manikin Boots
+22270100:Prisoner's Hood
+22270101:Prisoner's Tatters
+22270102:Prisoner's Gloves
+22270103:Prisoner's Waistcloth
+22271100:Prisoner's Hood
+22271101:Prisoner's Tatters
+22310100:Archdrake Helm
+22310101:Archdrake Robes
+22310102:Archdrake Gloves
+22310103:Archdrake Boots
+22340100:Gyrm Helm
+22340101:Gyrm Armor
+22340102:Gyrm Gloves
+22340103:Gyrm Boots
+22350100:Gyrm Warrior Helm
+22350101:Gyrm Warrior Armor
+22350102:Gyrm Warrior Gloves
+22350103:Gyrm Warrior Boots
+22351100:Gyrm Warrior Greathelm
+22360100:Dark Mask
+22360101:Dark Armor
+22360102:Dark Gauntlets
+22360103:Dark Leggings
+22370100:Warlock Mask
+22460100:Tseldora Cap
+22460101:Tseldora Robe
+22460102:Tseldora Manchettes
+22460103:Tseldora Trousers
+22480100:Peasant Hat
+22480101:Peasant Attire
+22480102:Peasant Long Gloves
+22480103:Peasant Trousers
+22510100:Ironclad Helm
+22510101:Ironclad Armor
+22510102:Ironclad Gauntlets
+22510103:Ironclad Leggings
+22512100:Old Ironclad Helm
+22512101:Old Ironclad Armor
+22512102:Old Ironclad Gauntlets
+22512103:Old Ironclad Leggings
+22520100:Royal Swordsman Helm
+22520101:Royal Swordsman Armor
+22520102:Royal Swordsman Gloves
+22520103:Royal Swordsman Leggings
+22530100:Syan's Helm
+22530101:Syan's Armor
+22530102:Syan's Gauntlets
+22530103:Syan's Leggings
+22540100:Bone Crown
+22540101:Bone King Robe
+22540102:Bone King Cuffs
+22540103:Bone King Skirt
+23010100:Heide Knight Greathelm
+23010101:Heide Knight Chainmail
+23010102:Heide Knight Gauntlets
+23010103:Heide Knight Leggings
+23011100:Heide Knight Iron Mask
+23040101:Singer's Dress
+23041101:Singer's Dress
+23042101:Singer's Dress
+23050100:Smelter Demon Helm
+23050101:Smelter Demon Armor
+23050102:Smelter Demon Gauntlets
+23050103:Smelter Demon Leggings
+23060100:Alonne Captain Helm
+23060101:Alonne Captain Armor
+23061100:Alonne Knight Helm
+23061101:Alonne Knight Armor
+23061102:Alonne Knight Gauntlets
+23061103:Alonne Knight Leggings
+23070100:Vengarl's Helm
+23070101:Vengarl's Armor
+23070102:Vengarl's Gloves
+23070103:Vengarl's Boots
+23080101:Lion Warrior Cape
+23080102:Lion Warrior Cuffs
+23080103:Lion Warrior Skirt
+23081100:Lion Warrior Helm
+23081101:Red Lion Warrior Cape
+23120100:Grave Warden Mask
+23120101:Grave Warden Top
+23120102:Grave Warden Cuffs
+23120103:Grave Warden Bottoms
+23130100:Falconer Helm
+23130101:Falconer Armor
+23130102:Falconer Gloves
+23130103:Falconer Boots
+23140100:Rusted Mastodon Helm
+23140101:Rusted Mastodon Armor
+23140102:Rusted Mastodon Gauntlets
+23140103:Rusted Mastodon Leggings
+23150100:Mastodon Helm
+23150101:Mastodon Armor
+23150102:Mastodon Gauntlets
+23150103:Mastodon Leggings
+23160100:Desert Sorceress Hood
+23160101:Desert Sorceress Top
+23160102:Desert Sorceress Gloves
+23160103:Desert Sorceress Skirt
+23170100:Dragon Acolyte Mask
+23170101:Dragon Acolyte Robe
+23170102:Dragon Acolyte Gloves
+23170103:Dragon Acolyte Boots
+23171100:Dragon Sage Hood
+23250100:Ruin Helm
+23250101:Ruin Armor
+23250102:Ruin Gauntlets
+23250103:Ruin Leggings
+23300100:Old Knight Helm
+23300101:Old Knight Armor
+23300102:Old Knight Gauntlets
+23300103:Old Knight Leggings
+23310100:Drakekeeper Helm
+23310101:Drakekeeper Armor
+23310102:Drakekeeper Gauntlets
+23310103:Drakekeeper Boots
+23320100:Throne Defender Helm
+23320101:Throne Defender Armor
+23320102:Throne Defender Gauntlets
+23320103:Throne Defender Leggings
+23330100:Velstadt's Helm
+23330101:Velstadt's Armor
+23330102:Velstadt's Gauntlets
+23330103:Velstadt's Leggings
+23340100:Throne Watcher Helm
+23340101:Throne Watcher Armor
+23340102:Throne Watcher Gauntlets
+23340103:Throne Watcher Leggings
+25040100:Looking Glass Mask
+25040101:Looking Glass Armor
+25040102:Looking Glass Gauntlets
+25040103:Looking Glass Leggings
+25060101:Agdayne's Black Robe
+25060102:Agdayne's Cuffs
+25060103:Agdayne's Kilt
+25090100:Leydia Black Hood
+25090101:Leydia Black Robe
+25100100:Insolent Helm
+25100101:Insolent Armor
+25100102:Insolent Gloves
+25100103:Insolent Boots
+25110100:Imperious Helm
+25110101:Imperious Armor
+25110102:Imperious Gloves
+25110103:Imperious Leggings
+25120100:Leydia White Hood
+25120101:Leydia White Robe
+25120102:Leydia Gauntlets
+25130100:King's Crown
+25130101:King's Armor
+25130102:King's Gauntlets
+25130103:King's Leggings
+26100100:Dragonrider Helm
+26100101:Dragonrider Armor
+26100102:Dragonrider Gauntlets
+26100103:Dragonrider Leggings
+26180100:Executioner Helm
+26180101:Executioner Armor
+26180102:Executioner Gauntlets
+26180103:Executioner Leggings
+26260100:Penal Mask
+26260101:Penal Straightjacket
+26260102:Penal Handcuffs
+26260103:Penal Skirt
+26510100:Fume Sorcerer Mask
+26510101:Fume Sorcerer Robes
+26510102:Fume Sorcerer Gloves
+26510103:Fume Sorcerer Boots
+26590100:Rampart Golem Helm
+26590101:Rampart Golem Armor
+26590102:Rampart Golem Gauntlets
+26590103:Rampart Golem Leggings
+26650100:Sanctum Knight Helm
+26650101:Sanctum Knight Armor
+26650102:Sanctum Knight Gauntlets
+26650103:Sanctum Knight Leggings
+26660102:Sanctum Soldier Gauntlet
+26700100:Sanctum Priestess Tiara
+26750100:Raime's Helm
+26750101:Raime's Armor
+26750102:Raime's Gauntlets
+26750103:Raime's Leggings
+26770101:Retainer Robe
+26800100:Alonne's Helm
+26800101:Alonne's Armor
+26800102:Alonne's Gauntlets
+26800103:Alonne's Leggings
+26880100:Loyce Helm
+26880101:Loyce Armor
+26880102:Loyce Gauntlets
+26880103:Loyce Leggings
+26890100:Charred Loyce Helm
+26890101:Charred Loyce Armor
+26890102:Charred Loyce Gauntlets
+26890103:Charred Loyce Leggings
+26900100:Ivory King Helm
+26900101:Ivory King Armor
+26900102:Ivory King Gauntlets
+26900103:Ivory King Leggings
+27210101:Llewellyn Armor
+27210102:Llewellyn Gloves
+27210103:Llewellyn Shoes
+27240100:Drangleic Helm
+27240101:Drangleic Mail
+27240102:Drangleic Gauntlets
+27240103:Drangleic Leggings
+27420100:Creighton's Steel Mask
+27420101:Creighton's Chainmail
+27420102:Creighton's Chain Gloves
+27420103:Creighton's Chain Leggings
+27430100:Benhart's Knight Helm
+27430101:Benhart's Armor
+27430102:Benhart's Gauntlets
+27430103:Benhart's Boots
+27440100:Standard Helm
+27440101:Hard Leather Armor
+27440102:Hard Leather Gauntlets
+27440103:Hard Leather Boots
+27510100:Cale's Helm
+27510101:Cale's Leather Armor
+27510103:Cale's Shoes
+27520100:Lucatiel's Mask
+27520101:Lucatiel's Vest
+27520102:Lucatiel's Gloves
+27520103:Lucatiel's Trousers
+27521100:Mirrah Hat
+27530100:Bell Keeper Helmet
+27530101:Bell Keeper Bellyband
+27530102:Bell Keeper Cuffs
+27530103:Bell Keeper Trousers
+27550100:Mad Warrior Mask
+27550101:Mad Warrior Armor
+27550102:Mad Warrior Gauntlets
+27550103:Mad Warrior Leggings
+27630101:Rosabeth's Dress
+27680100:Black Hood
+27680101:Black Robes
+27680102:Black Gloves
+27680103:Black Boots
+27690100:Saint's Hood
+27690101:Saint's Dress
+27690102:Saint's Long Gloves
+27690103:Saint's Trousers
+27700100:Hexer's Hood
+27700101:Hexer's Robes
+27700102:Hexer's Gloves
+27700103:Hexer's Boots
+27710100:Chaos Hood
+27710101:Chaos Robe
+27710102:Chaos Gloves
+27710103:Chaos Boots
+27830100:Nahr Alma Hood
+27830101:Nahr Alma Robes
+27950100:Targray's Helm
+27950101:Targray's Armor
+27950102:Targray's Manifers
+27950103:Targray's Leggings
+31010000:Soul Arrow
+31020000:Great Soul Arrow
+31030000:Heavy Soul Arrow
+31040000:Great Heavy Soul Arrow
+31050000:Homing Soul Arrow
+31060000:Heavy Homing Soul Arrow
+31070000:Homing Soulmass
+31080000:Homing Crystal Soulmass
+31090000:Soul Spear
+31100000:Crystal Soul Spear
+31110000:Shockwave
+31120000:Soul Spear Barrage
+31130000:Soul Shower
+31140000:Soul Greatsword
+31150000:Soul Vortex
+31160000:Soul Bolt
+31170000:Soul Geyser
+31180000:Magic Weapon
+31190000:Great Magic Weapon
+31200000:Crystal Magic Weapon
+31210000:Strong Magic Shield
+31220000:Yearn
+31230000:Hush
+31240000:Fall Control
+31250000:Hidden Weapon
+31260000:Repair
+31270000:Cast Light
+31280000:Chameleon
+31290000:Unleash Magic
+31300000:Soul Flash
+31310000:Focus Souls
+32010000:Heal
+32020000:Med Heal
+32030000:Great Heal Excerpt
+32040000:Great Heal
+32050000:Soothing Sunlight
+32060000:Replenishment
+32070000:Resplendent Life
+32080000:Bountiful Sunlight
+32090000:Caressing Prayer
+32100000:Force
+32110000:Wrath of the Gods
+32120000:Emit Force
+32130000:Heavenly Thunder
+32140000:Lightning Spear
+32150000:Great Lightning Spear
+32160000:Sunlight Spear
+32170000:Soul Appease
+32180000:Blinding Bolt
+32190000:Magic Barrier
+32200000:Great Magic Barrier
+32210000:Homeward
+32220000:Guidance
+32230000:Sacred Oath
+32240000:Unveil
+32250000:Perseverance
+32260000:Sunlight Blade
+32300000:Denial
+32310000:Splintering Lightning Spear
+33010000:Fireball
+33020000:Fire Orb
+33030000:Great Fireball
+33040000:Great Chaos Fireball
+33050000:Firestorm
+33060000:Fire Tempest
+33070000:Chaos Storm
+33080000:Combustion
+33090000:Great Combustion
+33100000:Fire Whip
+33110000:Poison Mist
+33120000:Toxic Mist
+33130000:Acid Surge
+33140000:Lingering Flame
+33150000:Flame Swathe
+33160000:Forbidden Sun
+33170000:Flame Weapon
+33180000:Flash Sweat
+33190000:Iron Flesh
+33200000:Warmth
+33210000:Immolation
+33300000:Fire Snake
+33310000:Dance of Fire
+33320000:Outcry
+34010000:Dark Orb
+34020000:Dark Hail
+34030000:Dark Fog
+34040000:Affinity
+34050000:Dead Again
+34060000:Dark Weapon
+34070000:Whisper of Despair
+34080000:Repel
+34090000:Twisted Barricade
+34100000:Numbness
+34300000:Dark Greatsword
+34310000:Recollection
+35010000:Scraps of Life
+35020000:Darkstorm
+35030000:Resonant Soul
+35040000:Great Resonant Soul
+35050000:Climax
+35060000:Resonant Flesh
+35070000:Resonant Weapon
+35080000:Lifedrain Patch
+35090000:Profound Still
+35300000:Promised Walk of Peace
+35310000:Dark Dance
+40010000:Life Ring
+40010001:Life Ring+1
+40010002:Life Ring+2
+40010003:Life Ring+3
+40020000:Chloranthy Ring
+40020001:Chloranthy Ring+1
+40020002:Chloranthy Ring+2
+40030000:Royal Soldier's Ring
+40030001:Royal Soldier's Ring+1
+40030002:Royal Soldier's Ring+2
+40040000:First Dragon Ring
+40040001:Second Dragon Ring
+40040002:Third Dragon Ring
+40050000:Ring of Steel Protection
+40050001:Ring of Steel Protection+1
+40050002:Ring of Steel Protection+2
+40050003:no text
+40060000:Spell Quartz Ring
+40060001:Spell Quartz Ring+1
+40060002:Spell Quartz Ring+2
+40060003:Spell Quartz Ring+3
+40070000:Flame Quartz Ring
+40070001:Flame Quartz Ring+1
+40070002:Flame Quartz Ring+2
+40070003:Flame Quartz Ring+3
+40080000:Thunder Quartz Ring
+40080001:Thunder Quartz Ring+1
+40080002:Thunder Quartz Ring+2
+40080003:Thunder Quartz Ring+3
+40090000:Dark Quartz Ring
+40090001:Dark Quartz Ring+1
+40090002:Dark Quartz Ring+2
+40090003:Dark Quartz Ring+3
+40100000:Poisonbite Ring
+40100001:Poisonbite Ring+1
+40110000:Bloodbite Ring
+40110001:Bloodbite Ring+1
+40120000:Bracing Knuckle Ring
+40120001:Bracing Knuckle Ring+1
+40120002:Bracing Knuckle Ring+2
+40130000:Cursebite Ring
+40135000:Ash Knuckle Ring
+40140000:Dispelling Ring
+40140001:Dispelling Ring+1
+40150000:Ring of Resistance
+40150001:Ring of Resistance+1
+40160000:Ring of Blades
+40160001:Ring of Blades+1
+40160002:Ring of Blades+2
+40210000:Ring of Knowledge
+40220000:Ring of Prayer
+40230000:Stone Ring
+40260000:Red Tearstone Ring
+40280000:Blue Tearstone Ring
+40290000:Ring of Giants
+40290001:Ring of Giants+1
+40290002:Ring of Giants+2
+40295000:Old Leo Ring
+40300000:Ring of Soul Protection
+40310000:Ring of Life Protection
+40320000:Lingering Dragoncrest Ring
+40320001:Lingering Dragoncrest Ring+1
+40320002:Lingering Dragoncrest Ring+2
+40330000:Clear Bluestone Ring
+40330001:Clear Bluestone Ring+1
+40330002:Clear Bluestone Ring+2
+40340000:Northern Ritual Band
+40340001:Northern Ritual Band+1
+40340002:Northern Ritual Band+2
+40350000:Southern Ritual Band
+40350001:Southern Ritual Band+1
+40350002:Southern Ritual Band+2
+40360000:Covetous Gold Serpent Ring
+40360001:Covetous Gold Serpent Ring+1
+40360002:Covetous Gold Serpent Ring+2
+40370000:Covetous Silver Serpent Ring
+40370001:Covetous Silver Serpent Ring+1
+40370002:Covetous Silver Serpent Ring+2
+40390000:Ring of the Evil Eye
+40390001:Ring of the Evil Eye+1
+40390002:Ring of the Evil Eye+2
+40400000:Ring of Restoration
+40410000:Ring of Binding
+40420000:Silvercat Ring
+40430000:Redeye Ring
+40440000:Gower's Ring of Protection
+40450000:Name-engraved Ring
+40460000:Slumbering Dragoncrest Ring
+40470000:Hawk Ring
+40480000:Old Sun Ring
+40500000:Illusory Ring of a Conqueror
+40510000:King's Ring
+40520000:Ring of the Dead
+40530000:Ring of Thorns
+40530001:Ring of Thorns+1
+40530002:Ring of Thorns+2
+40540000:Delicate String
+40550000:White Ring
+40560000:Illusory Ring of the Vengeful
+40570000:Illusory Ring of the Guilty
+40610000:Ring of Whispers
+40620000:Illusory Ring of the Exalted
+40700000:Crest of the Rat
+40710000:Bell Keeper's Seal
+40720000:Guardian's Seal
+40730000:Crest of Blood
+40740000:Blue Seal
+40750000:Abyss Seal
+40760000:Vanquisher's Seal
+40770000:Sun Seal
+40780000:Ancient Dragon Seal
+41000000:Simpleton's Ring
+41010000:Strength Ring
+41020000:Dexterity Ring
+41030000:Ivory Warrior Ring
+41040000:Sorcery Clutch Ring
+41050000:Lightning Clutch Ring
+41060000:Fire Clutch Ring
+41070000:Dark Clutch Ring
+41090000:Baneful Bird Ring
+41100000:Flynn's Ring
+41110000:Ring of the Embedded
+41120000:Ring of the Living
+41130000:Yorgh's Ring
+42000000:Agape Ring
+50600000:Soldier Key
+50610000:Key to King's Passage
+50640000:Weapon Smithbox
+50650000:Armor Smithbox
+50800000:Bastille Key
+50810000:Iron Key
+50820000:Forgotten Key
+50830000:Brightstone Key
+50840000:Antiquated Key
+50850000:Fang Key
+50860000:House Key
+50870000:Lenigrast's Key
+50880000:Smooth & Silky Stone
+50885000:Small Smooth & Silky Stone
+50890000:Rotunda Lockstone
+50900000:Giant's Kinship
+50910000:Ashen Mist Heart
+50920000:Soul of a Giant
+50930000:Tseldora Den Key
+50940000:Champion's Tablet
+50950000:Ladder Miniature
+50960000:Soul Vessel
+50970000:Undead Lockaway Key
+50990000:Dull Ember
+51000000:Crushed Eye Orb
+51010000:Simpleton's Spice
+51020000:Skeptic's Spice
+51030000:Aldia Key
+52000000:Dragon Talon
+52100000:Heavy Iron Key
+52200000:Frozen Flower
+52300000:Eternal Sanctum Key
+52400000:Tower Key
+52500000:Garrison Ward Key
+52600000:no text
+52650000:Dragon Stone
+52700000:no text
+52800000:no text
+52900000:no text
+53000000:no text
+53100000:Scorching Iron Scepter
+53200000:Smelter Wedge
+53300000:Soul of Nadalia, Bride of Ash
+53400000:no text
+53500000:no text
+53600000:Eye of the Priestess
+60010000:Lifegem
+60020000:Radiant Lifegem
+60030000:Old Radiant Lifegem
+60035000:Elizabeth Mushroom
+60036000:Dried Root
+60040000:Amber Herb
+60050000:Twilight Herb
+60060000:Wilted Dusk Herb
+60070000:Poison Moss
+60090000:Monastery Charm
+60100000:Dragon Charm
+60105000:Divine Blessing
+60110000:Rouge Water
+60120000:Crimson Water
+60151000:Human Effigy
+60155000:Estus Flask
+60156000:Estus Flask
+60160000:Small Blue Burr
+60170000:Small Yellow Burr
+60180000:Small Orange Burr
+60190000:Dark Troches
+60200000:Common Fruit
+60210000:Red Leech Troches
+60220000:Yellow Sea Troches
+60230000:Triclops Snake Troches
+60235000:Old Growth Balm
+60236000:Vine Balm
+60237000:Blackweed Balm
+60238000:Goldenfruit Balm
+60239000:Brightbug
+60240000:Aromatic Ooze
+60245000:Pungent Ooze
+60250000:Gold Pine Resin
+60260000:Charcoal Pine Resin
+60270000:Dark Pine Resin
+60280000:Rotten Pine Resin
+60290000:Bleeding Serum
+60310000:Green Blossom
+60320000:Rusted Coin
+60330000:Rhoy's Stone
+60340000:Rhoy's Stone of Knowledge
+60350000:Homeward Bone
+60355000:Aged Feather
+60360000:Darksign
+60370000:Silver Talisman
+60380000:Gold Talisman
+60390000:Fake Dead Talisman
+60400000:Illusory Talisman
+60405000:Dragon Head Stone
+60405010:Dragon Head Stone
+60406000:Dragon Torso Stone
+60406010:Dragon Torso Stone
+60410000:Repair Powder
+60420000:Torch
+60430000:Flame Butterfly
+60450000:Prism Stone
+60470000:Hello Carving
+60480000:Thank You Carving
+60490000:I'm Sorry Carving
+60500000:Very Good! Carving
+60510000:Rubbish
+60511000:Petrified Something
+60525000:Estus Flask Shard
+60526000:Sublime Bone Dust
+60527000:Bonfire Ascetic
+60530000:Alluring Skull
+60531000:Lloyd's Talisman
+60536000:Pharros' Lockstone
+60537000:Fragrant Branch of Yore
+60538000:Fire Seed
+60540000:Throwing Knife
+60550000:Witching Urn
+60560000:Lightning Urn
+60570000:Firebomb
+60575000:Black Firebomb
+60580000:Hexing Urn
+60590000:Poison Throwing Knife
+60595000:Dung Pie
+60600000:Lacerating Knife
+60610000:Corrosive Urn
+60620000:Holy Water Urn
+60625000:Fading Soul
+60630000:Soul of a Lost Undead
+60640000:Large Soul of a Lost Undead
+60650000:Soul of a Nameless Soldier
+60660000:Large Soul of a Nameless Soldier
+60670000:Soul of a Proud Knight
+60680000:Large Soul of a Proud Knight
+60690000:Soul of a Brave Warrior
+60700000:Large Soul of a Brave Warrior
+60710000:Soul of a Hero
+60720000:Soul of a Great Hero
+60760000:Wood Arrow
+60770000:Iron Arrow
+60780000:Magic Arrow
+60790000:Lightning Arrow
+60800000:Fire Arrow
+60810000:Dark Arrow
+60820000:Poison Arrow
+60830000:Lacerating Arrow
+60840000:Wooden Greatarrow
+60850000:Iron Greatarrow
+60860000:Magic Greatarrow
+60870000:Lightning Greatarrow
+60880000:Fire Greatarrow
+60890000:Dark Greatarrow
+60900000:Destructive Greatarrow
+60910000:Wood Bolt
+60920000:Heavy Bolt
+60930000:Magic Bolt
+60940000:Lightning Bolt
+60950000:Fire Bolt
+60960000:Dark Bolt
+60970000:Titanite Shard
+60975000:Large Titanite Shard
+60980000:Titanite Chunk
+60990000:Titanite Slab
+61000000:Twinkling Titanite
+61030000:Petrified Dragon Bone
+61060000:Faintstone
+61070000:Boltstone
+61080000:Firedrake Stone
+61090000:Darknight Stone
+61100000:Poison Stone
+61110000:Bleed Stone
+61130000:Raw Stone
+61140000:Magic Stone
+61150000:Old Mundane Stone
+61160000:Palestone
+62000000:Dried Fingers
+62020000:Bone of Order
+62030000:White Sign Soapstone
+62040000:Small White Sign Soapstone
+62045000:Red Sign Soapstone
+62050000:Cracked Blue Eye Orb
+62060000:Cracked Red Eye Orb
+62070000:Dragon Eye
+62100000:Token of Fidelity
+62110000:Token of Spite
+62120000:Sunlight Medal
+62130000:Dragon Scale
+62140000:Rat Tail
+62150000:Awestone
+62160000:Black Separation Crystal
+62170000:Seed of a Tree of Giants
+62190000:Petrified Egg
+63000000:"Point" Gesture
+63001000:"I won't bite" Gesture
+63002000:"Proper bow" Gesture
+63003000:"Bow" Gesture
+63004000:"Welcome" Gesture
+63005000:"Duel bow" Gesture
+63006000:"Wave" Gesture
+63007000:"Pumped up" Gesture
+63008000:"Joy" Gesture
+63009000:"Warcry" Gesture
+63010000:"Warmup" Gesture
+63011000:"Hurrah!" Gesture
+63012000:"Righty-ho!" Gesture
+63013000:"No way" Gesture
+63014000:"This one's me" Gesture
+63015000:"Have mercy!" Gesture
+63016000:"Prostration" Gesture
+63017000:"Decapitate" Gesture
+63018000:"Fist pump" Gesture
+63019000:"Mock" Gesture
+63021000:"Praise the Sun" Gesture
+64000000:Soul of the Pursuer
+64010000:Soul of the Last Giant
+64020000:Dragonrider Soul
+64030000:Old Dragonslayer Soul
+64040000:Flexile Sentry Soul
+64050000:Ruin Sentinel Soul
+64060000:Soul of the Lost Sinner
+64070000:Executioner's Chariot Soul
+64080000:Skeleton Lord's Soul
+64090000:Covetous Demon Soul
+64100000:Mytha, the Baneful Queen Soul
+64110000:Smelter Demon Soul
+64120000:Old Iron King Soul
+64130000:Royal Rat Vanguard Soul
+64140000:Soul of the Rotten
+64150000:Scorpioness Najka Soul
+64160000:Royal Rat Authority Soul
+64170000:Soul of the Duke's Dear Freja
+64180000:Looking Glass Knight Soul
+64190000:Demon of Song Soul
+64200000:Soul of Velstadt
+64210000:Soul of the King
+64220000:Guardian Dragon Soul
+64230000:Ancient Dragon Soul
+64240000:Giant Lord Soul
+64250000:Soul of Nashandra
+64260000:Throne Defender Soul
+64270000:Throne Watcher Soul
+64280000:Darklurker Soul
+64290000:Belfry Gargoyle Soul
+64300000:Old Witch Soul
+64310000:Old King Soul
+64320000:Old Dead One Soul
+64330000:Old Paledrake Soul
+64500000:Soul of Sinh, the Slumbering Dragon
+64510000:Soul of the Fume Knight
+64520000:Soul of Aava, the King's Pet
+64530000:Soul of Elana, Squalid Queen
+64540000:Soul of Nadalia, Bride of Ash
+64550000:Soul of Alsanna, Silent Oracle
+64560000:Soul of Sir Alonne
+64580000:Soul of the Ivory King
+64590000:Soul of Zallen, the King's Pet
+64600000:Loyce Soul
+64610000:Soul of Lud, the King's Pet
+892001000:Faraam Helm
+892001001:Faraam Armor
+892001002:Faraam Gauntlets
+892001003:Faraam Boots
+892001100:Chaos Hood
+892001101:Chaos Robes
+892001102:Chaos Gloves
+892001103:Chaos Boots
+892001200:Dragonknight Helm
+892001201:Dragonknight Robes
+892001202:Dragonknight Gloves
+892001203:Dragonknight Boots
+892001300:Black Hood
+892001301:Black Robes
+892001302:Black Gloves
+892001303:Black Boots
+892001400:Hunter's Hat
+892001401:Leather Armor
+892001402:Leather Gloves
+892001403:Leather Boots
+892001500:Knight Helm
+892001501:Knight Armor
+892001502:Knight Gauntlets
+892001503:Knight Leggings
+892001600:Rogue Hood
+892001601:Rogue Armor
+892001602:Rogue Gauntlets
+892001603:Rogue Leggings
+892001700:Prisoner's Hood
+892001701:Prisoner's Tatters
+892001702:Prisoner's Gloves
+892001703:Prisoner's Waistcloth
+892001800:Prisoner's Hood
+892001801:Prisoner's Tatters
+892001802:Prisoner's Gloves
+892001803:Prisoner's Waistcloth
+892001900:Hollow Mage Hood
+892001901:Hollow Mage Robes
+892002000:Defender Helm
+892002001:Defender Mail
+892002002:Defender's Gauntlet
+892002003:Defender's Leggings
+892002101:Llewellyn Armor
+892002102:Llewellyn Gloves
+892002103:Llewellyn Shoes
+892002200:Despatcher's Hood
+892002201:Despatcher's Robes
+900008400:Dagger
+900008401:Royal Dirk
+900008402:Longsword
+900008403:Shortsword
+900008404:Dragonslayer's Crescent Axe
+900008405:Greataxe
+900008406:Dragonrider's Halberd
+900008407:Witchtree Branch
+900008408:Lizard Staff
+900008409:Dragonknight's Bell
+900008410:Bell of the Idol
+900008411:Short Bow
+900008412:Light Crossbow
+900008413:Target Shield
+900008414:Small Leather Shield
+900008415:Golden Wing Shield
+900008416:Dragonknight's Shield
+900008417:Silver Eagle Kite Shield
+900008418:Imperial Shield
+900008419:Disc Bell
+900008420:Pursuer's Greatsword
+900008421:Zweihander
+900008422:Winged Spear
+900008423:Estoc
+900008424:Bastard Sword
+900008425:Knight's Greatsword
+900008426:Inquisitor's Blade
+]]
+EquipGoodsDropdownAdder(EquipGoodsDropDownList,EquipGoodsIDCheatTable)
+
+function enableRecord(id)
+  local record = getAddressList().getMemoryRecordByID(id)
+  if(record ~= nil) then
+    sleep(100)
+    record.Active = true
+  else
+    print("Record with ID "..id.." doesn't exist.")
+  end
+end
+
+function disableRecord(id)
+  local record = getAddressList().getMemoryRecordByID(id)
+  if(record ~= nil) then
+    sleep(100)
+    record.Active = false
+  else
+    print("Record with ID "..id.." doesn't exist.")
+  end
+end
+
+helperUpdateTimer = createTimer(getMainForm())
+helperUpdateTimer.Interval = 1000
+helperUpdateTimer.OnTimer = function(timer)
+    --checkSynchronize() -- if using synchronize()
+    if paramUtils ~= nil then
+       --[[
+       local paramTable = paramUtils['masterParamTable']
+       for param in pairs(paramTable) do
+           local paramHelperId = readInteger(param .. "Helper")
+           if paramHelperId ~= nil then
+              local paramHelperAddress = paramUtils:getIdAddressInParam(param, paramHelperId)
+              writePointer(param .. "Helper+8", paramHelperAddress)
+           end
+        end
+        ]]
+    else
+        enableRecord(251) -- ensure an instance of ParamUtils is enabled
+    end
+end
+
+--[[END TGA helpers]]--
+enableRecord(251)
+
+--TODO: add back in first run help popup
+if table_ver ~= nil then
+   tga:runOnce("open_faq", function() getAddressList().getMemoryRecordByDescription("Table Info (FAQ)").active = true; return true; end)
+end
+
+{$asm}
+
+[DISABLE]
+{$lua}
+disableRecord(251)
+helperUpdateTimer.destroy()
+for i,base in ipairs(tga.baseData) do unregisterSymbol(base.symbolName) end
+
+MagicDropdownRemover(MagicIDCheatTable)
+MagicDropdownRemover(EquipWepIDCheatTable)
+MagicDropdownRemover(EquipArmorIDCheatTable)
+MagicDropdownRemover(EquipRingIDCheatTable)
+MagicDropdownRemover(EquipGoodsIDCheatTable)
+
+{$asm}
+unregisterSymbol(GameManagerImp)
+unregisterSymbol(NetSessionManager)
+unregisterSymbol(KatanaMainApp)

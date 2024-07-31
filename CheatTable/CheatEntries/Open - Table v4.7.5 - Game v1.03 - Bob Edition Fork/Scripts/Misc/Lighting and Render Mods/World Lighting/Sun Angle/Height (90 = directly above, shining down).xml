@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26383</ID>
+  <Description>"Height? (90 = directly above, shining down)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>314</Offset>
+  </Offsets>
+</CheatEntry>

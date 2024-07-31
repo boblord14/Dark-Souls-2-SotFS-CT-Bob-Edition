@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetEnemyBulletParamAddr, $100, DarkSoulsII.exe)
+alloc(EnemyBulletParamId, 4)
+label(return)
+registersymbol(GetEnemyBulletParamAddr)
+registersymbol(EnemyBulletParamId)
+
+EnemyBulletParamId:
+dd #10
+
+GetEnemyBulletParamAddr:
+sub rsp, 20
+mov edx, [EnemyBulletParamId]
+vortmov(rcx, [[[GameManagerImp]+60]+30])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [EnemyBulletAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetEnemyBulletParamAddr)
+dealloc(EnemyBulletParamId)
+unregistersymbol(GetEnemyBulletParamAddr)
+unregistersymbol(EnemyBulletParamId)

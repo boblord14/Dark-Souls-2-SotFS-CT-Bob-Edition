@@ -1,0 +1,85 @@
+<CheatEntry>
+  <ID>1337084421</ID>
+  <Description>"Left 1h Position Type"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1:Perpendicular to Right Hand
+2:Perpendicular to Left Hand
+3:Disappear
+5:Right Feet
+6:Left Feet
+7:Disappears
+8:Body
+10:Top of Head
+20:Right Hand
+21:Left Hand
+22:Left Backhand
+26:Right Backhand
+30:Left Hip
+31:Right Hip
+32:Right Back
+33:Left Back
+34:Upside Down Right Back
+35:Upside Down Left Back
+38:Reversed Left Hip
+39:Reversed Right Hip
+40:Right Center Back
+41:Left Center Back
+42:Perpendicular Right Back
+43:Perpendicular Left Back
+44:Trasversal Up Angle Right Back
+45:Trasversal Down Angle Right Back
+46:Trasversal Down Angle Left Back
+47:Trasversal Up Angle Left Back
+49:Hip Back Center
+50:Far Back, Left
+51:Far Back, Right
+52:Reversed Hip, Upward
+53:Hip Back Center, Inside
+54:Right Back, Upper
+55:Left Back, Upper
+56:Trasversal Up Angle Right Back, Lower
+57:Trasversal Down Angle Right Back, Lower
+58:Right Hip, Rotated
+59:Left Hip, Rotated
+1:Perpendicular to Right Hand
+2:Perpendicular to Left Hand
+3:Disappear
+5:Right Feet
+6:Left Feet
+7:Disappears
+8:Body
+10:Top of Head
+20:Right Hand
+21:Left Hand
+22:Left Backhand
+26:Right Backhand
+30:Left Hip
+31:Right Hip
+32:Right Back
+33:Left Back
+34:Upside Down Right Back
+35:Upside Down Left Back
+38:Reversed Left Hip
+39:Reversed Right Hip
+40:Right Center Back
+41:Left Center Back
+42:Perpendicular Right Back
+43:Perpendicular Left Back
+44:Trasversal Up Angle Right Back
+45:Trasversal Down Angle Right Back
+46:Trasversal Down Angle Left Back
+47:Trasversal Up Angle Left Back
+49:Hip Back Center
+50:Far Back, Left
+51:Far Back, Right
+52:Reversed Hip, Upward
+53:Hip Back Center, Inside
+54:Right Back, Upper
+55:Left Back, Upper
+56:Trasversal Up Angle Right Back, Lower
+57:Trasversal Down Angle Right Back, Lower
+58:Right Hip, Rotated
+59:Left Hip, Rotated
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>+27</Address>
+</CheatEntry>

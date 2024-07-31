@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>1337043302</ID>
+  <Description>"Loggers"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337043249"/>
+    <id id="1337043304"/>
+    <id id="1337090838"/>
+    <id id="1337090960"/>
+    <id id="1337043301"/>
+    <id id="1337043303"/>
+    <id id="1337097500"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

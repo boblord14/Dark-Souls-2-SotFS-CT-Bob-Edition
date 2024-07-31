@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(stonegs,2)
+                        stonegs:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+58]+4,2)
+                        registersymbol(stonegs)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        dw #9900
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(stonegs)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        readmem(stonegs, 2)
+                        unregistersymbol(stonegs)
+                    

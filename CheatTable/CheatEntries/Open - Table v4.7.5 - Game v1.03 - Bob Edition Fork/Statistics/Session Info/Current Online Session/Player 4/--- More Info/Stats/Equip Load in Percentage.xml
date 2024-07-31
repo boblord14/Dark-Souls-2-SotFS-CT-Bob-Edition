@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>86969</ID>
+  <Description>"Equip Load in Percentage"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>30</Offset>
+    <Offset>B0</Offset>
+    <Offset>458</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

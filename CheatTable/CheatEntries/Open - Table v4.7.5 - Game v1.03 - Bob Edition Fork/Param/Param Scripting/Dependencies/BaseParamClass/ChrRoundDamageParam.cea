@@ -1,0 +1,222 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ChrRoundDamageParam class]]--
+ChrRoundDamageParam = BaseParamClass:new()
+
+function ChrRoundDamageParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ChrRoundDamageParam", uuid, id, address)
+	return o
+end
+
+function ChrRoundDamageParam:unk00(value)
+	self:patch2Byte(0x0, value)
+end
+
+
+function ChrRoundDamageParam:unk02(value)
+	self:patch2Byte(0x2, value)
+end
+
+
+function ChrRoundDamageParam:unk04(value)
+	self:patch2Byte(0x4, value)
+end
+
+
+function ChrRoundDamageParam:unk06(value)
+	self:patch2Byte(0x6, value)
+end
+
+
+function ChrRoundDamageParam:unk08(value)
+	self:patch2Byte(0x8, value)
+end
+
+
+function ChrRoundDamageParam:unk0A(value)
+	self:patch2Byte(0xA, value)
+end
+
+
+function ChrRoundDamageParam:unk0C(value)
+	self:patch2Byte(0xC, value)
+end
+
+
+function ChrRoundDamageParam:unk0E(value)
+	self:patch2Byte(0xE, value)
+end
+
+
+function ChrRoundDamageParam:unk10(value)
+	self:patch2Byte(0x10, value)
+end
+
+
+function ChrRoundDamageParam:unk12(value)
+	self:patch2Byte(0x12, value)
+end
+
+
+function ChrRoundDamageParam:unk14(value)
+	self:patch2Byte(0x14, value)
+end
+
+
+function ChrRoundDamageParam:unk16(value)
+	self:patch2Byte(0x16, value)
+end
+
+
+function ChrRoundDamageParam:unk18(value)
+	self:patch2Byte(0x18, value)
+end
+
+
+function ChrRoundDamageParam:unk1A(value)
+	self:patch2Byte(0x1A, value)
+end
+
+
+function ChrRoundDamageParam:unk1C(value)
+	self:patch2Byte(0x1C, value)
+end
+
+
+function ChrRoundDamageParam:unk1E(value)
+	self:patch2Byte(0x1E, value)
+end
+
+
+function ChrRoundDamageParam:unk20(value)
+	self:patch2Byte(0x20, value)
+end
+
+
+function ChrRoundDamageParam:unk22(value)
+	self:patch2Byte(0x22, value)
+end
+
+
+function ChrRoundDamageParam:unk24(value)
+	self:patch2Byte(0x24, value)
+end
+
+
+function ChrRoundDamageParam:unk26(value)
+	self:patch2Byte(0x26, value)
+end
+
+
+function ChrRoundDamageParam:unk28(value)
+	self:patch2Byte(0x28, value)
+end
+
+
+function ChrRoundDamageParam:unk2A(value)
+	self:patch2Byte(0x2A, value)
+end
+
+
+function ChrRoundDamageParam:unk2C(value)
+	self:patch2Byte(0x2C, value)
+end
+
+
+function ChrRoundDamageParam:unk2E(value)
+	self:patch2Byte(0x2E, value)
+end
+
+
+function ChrRoundDamageParam:unk30(value)
+	self:patch2Byte(0x30, value)
+end
+
+
+function ChrRoundDamageParam:unk32(value)
+	self:patch2Byte(0x32, value)
+end
+
+
+function ChrRoundDamageParam:unk34(value)
+	self:patch2Byte(0x34, value)
+end
+
+
+function ChrRoundDamageParam:unk36(value)
+	self:patch2Byte(0x36, value)
+end
+
+
+function ChrRoundDamageParam:unk38(value)
+	self:patch2Byte(0x38, value)
+end
+
+
+function ChrRoundDamageParam:unk3A(value)
+	self:patch2Byte(0x3A, value)
+end
+
+
+function ChrRoundDamageParam:unk3C(value)
+	self:patch2Byte(0x3C, value)
+end
+
+
+function ChrRoundDamageParam:unk3E(value)
+	self:patch2Byte(0x3E, value)
+end
+
+
+function ChrRoundDamageParam:unk40(value)
+	self:patch2Byte(0x40, value)
+end
+
+
+function ChrRoundDamageParam:unk42(value)
+	self:patch2Byte(0x42, value)
+end
+
+
+function ChrRoundDamageParam:unk44(value)
+	self:patch2Byte(0x44, value)
+end
+
+
+function ChrRoundDamageParam:unk46(value)
+	self:patch2Byte(0x46, value)
+end
+
+
+function ChrRoundDamageParam:unk48(value)
+	self:patch2Byte(0x48, value)
+end
+
+
+function ChrRoundDamageParam:unk4A(value)
+	self:patch2Byte(0x4A, value)
+end
+
+
+function ChrRoundDamageParam:unk4C(value)
+	self:patch2Byte(0x4C, value)
+end
+
+
+function ChrRoundDamageParam:unk4E(value)
+	self:patch2Byte(0x4E, value)
+end
+
+
+--[[End ChrRoundDamageParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>1337077392</ID>
+  <Description>"ChrFootEffectCtrl"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>008000</Color>
+  <VariableType>8 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>238</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

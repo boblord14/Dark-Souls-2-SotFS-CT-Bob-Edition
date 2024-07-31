@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>1337077760</ID>
+  <Description>"Last ItemParam Address"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>008000</Color>
+  <VariableType>8 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>28</Offset>
+    <Offset>170</Offset>
+    <Offset>E0</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

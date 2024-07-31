@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>86790</ID>
+  <Description>"Total Deaths"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>294</Offset>
+    <Offset>390</Offset>
+    <Offset>2B8</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem2,32)
+label(BulletAddressToUse)
+registersymbol(BulletAddressToUse)
+newmem2:
+BulletAddressToUse:
+[DISABLE]
+dealloc(newmem2)
+unregistersymbol(BulletAddressToUse)

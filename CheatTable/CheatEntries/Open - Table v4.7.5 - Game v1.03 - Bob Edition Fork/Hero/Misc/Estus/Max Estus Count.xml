@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>29343</ID>
+  <Description>"Max Estus Count"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>25</Offset>
+    <Offset>40</Offset>
+    <Offset>259C0</Offset>
+    <Offset>B0</Offset>
+    <Offset>8</Offset>
+    <Offset>D8</Offset>
+    <Offset>10</Offset>
+    <Offset>A8</Offset>
+  </Offsets>
+</CheatEntry>

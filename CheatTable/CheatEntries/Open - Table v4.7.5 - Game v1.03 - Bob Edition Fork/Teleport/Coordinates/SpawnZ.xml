@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337043259</ID>
+  <Description>"SpawnZ"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1D4</Offset>
+    <Offset>250</Offset>
+    <Offset>F0</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>26589</ID>
+  <Description>"Brume Tower"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26590"/>
+    <id id="26591"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

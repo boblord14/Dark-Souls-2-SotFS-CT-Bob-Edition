@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337256215</ID>
+  <Description>"Spell 6"</Description>
+  <DropDownListLink>ItemParam</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>534</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

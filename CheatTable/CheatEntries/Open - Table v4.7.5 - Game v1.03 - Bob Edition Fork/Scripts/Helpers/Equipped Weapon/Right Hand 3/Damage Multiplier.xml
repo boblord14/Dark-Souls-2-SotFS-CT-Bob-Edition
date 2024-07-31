@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337083715</ID>
+  <Description>"Damage Multiplier"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>1E8</Offset>
+    <Offset>28</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

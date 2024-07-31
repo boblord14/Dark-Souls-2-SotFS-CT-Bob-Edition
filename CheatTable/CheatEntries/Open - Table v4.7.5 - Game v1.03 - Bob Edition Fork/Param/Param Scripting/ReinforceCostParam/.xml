@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337256551</ID>
+  <Description>"ReinforceCostParam"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337256552"/>
+    <id id="1337256561"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

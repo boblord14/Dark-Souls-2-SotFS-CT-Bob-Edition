@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(izalithc,2)
+                        izalithc:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(izalithc)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #9902
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(izalithc)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(izalithc, 2)
+                        unregistersymbol(izalithc)
+                    

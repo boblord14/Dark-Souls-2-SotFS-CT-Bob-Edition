@@ -1,0 +1,157 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START DamageOverWriteParam class]]--
+DamageOverWriteParam = BaseParamClass:new()
+
+function DamageOverWriteParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("DamageOverWriteParam", uuid, id, address)
+	return o
+end
+
+function DamageOverWriteParam:unk00(value)
+	self:patchByte(0x0, value)
+end
+
+
+function DamageOverWriteParam:unk002(value)
+	self:patchByte(0x1, value)
+end
+
+
+function DamageOverWriteParam:unk003(value)
+	self:patchByte(0x2, value)
+end
+
+
+function DamageOverWriteParam:unk004(value)
+	self:patchByte(0x3, value)
+end
+
+
+function DamageOverWriteParam:unk04(value)
+	self:patchByte(0x4, value)
+end
+
+
+function DamageOverWriteParam:unk042(value)
+	self:patchByte(0x5, value)
+end
+
+
+function DamageOverWriteParam:unk043(value)
+	self:patchByte(0x6, value)
+end
+
+
+function DamageOverWriteParam:unk044(value)
+	self:patchByte(0x7, value)
+end
+
+
+function DamageOverWriteParam:unk08(value)
+	self:patchByte(0x8, value)
+end
+
+
+function DamageOverWriteParam:unk082(value)
+	self:patchByte(0x9, value)
+end
+
+
+function DamageOverWriteParam:unk083(value)
+	self:patchByte(0xA, value)
+end
+
+
+function DamageOverWriteParam:unk084(value)
+	self:patchByte(0xB, value)
+end
+
+
+function DamageOverWriteParam:unk0C(value)
+	self:patchByte(0xC, value)
+end
+
+
+function DamageOverWriteParam:unk0C2(value)
+	self:patchByte(0xD, value)
+end
+
+
+function DamageOverWriteParam:unk0C3(value)
+	self:patchByte(0xE, value)
+end
+
+
+function DamageOverWriteParam:unk0C4(value)
+	self:patchByte(0xF, value)
+end
+
+
+function DamageOverWriteParam:unk10(value)
+	self:patchByte(0x10, value)
+end
+
+
+function DamageOverWriteParam:unk102(value)
+	self:patchByte(0x11, value)
+end
+
+
+function DamageOverWriteParam:unk103(value)
+	self:patchByte(0x12, value)
+end
+
+
+function DamageOverWriteParam:unk104(value)
+	self:patchByte(0x13, value)
+end
+
+
+function DamageOverWriteParam:unk14(value)
+	self:patchByte(0x14, value)
+end
+
+
+function DamageOverWriteParam:unk142(value)
+	self:patchByte(0x15, value)
+end
+
+
+function DamageOverWriteParam:unk143(value)
+	self:patchByte(0x16, value)
+end
+
+
+function DamageOverWriteParam:unk144(value)
+	self:patchByte(0x17, value)
+end
+
+
+function DamageOverWriteParam:unk18(value)
+	self:patchByte(0x18, value)
+end
+
+
+function DamageOverWriteParam:unk19(value)
+	self:patchByte(0x19, value)
+end
+
+
+function DamageOverWriteParam:unk1A(value)
+	self:patchByte(0x1A, value)
+end
+
+
+--[[End DamageOverWriteParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

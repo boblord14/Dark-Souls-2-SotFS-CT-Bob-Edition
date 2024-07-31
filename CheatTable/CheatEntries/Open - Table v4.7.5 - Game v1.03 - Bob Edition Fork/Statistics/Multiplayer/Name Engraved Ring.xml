@@ -1,0 +1,23 @@
+<CheatEntry>
+  <ID>18</ID>
+  <Description>"Name Engraved Ring"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Not Equipped
+1:Nehma - Goddess of Love
+2:Calib - God of Disease
+3:Caitha - Goddess of Tears
+4:Kremmel- God of Struggle
+5:Evlana - Goddess of the Hunt
+6:Hanleth - Goddess of Bliss
+7:Nahr Alma - God of Blood
+8:Zinder - God of Desire
+9:Quella - God of Dream
+10:Caffrey - Goddess of Fortune
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>244</Offset>
+    <Offset>68</Offset>
+    <Offset>30</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,172 @@
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,"DarkSoulsII.exe"+DA3CAC)
+label(returnhere)
+label(originalcode)
+label(exit)
+label(St)
+label(St1)
+
+label(offset)
+registersymbol(offset)
+label(div)
+registersymbol(div)
+label(Start)
+registersymbol(Start)
+label(oldX)
+registersymbol(oldX)
+label(oldY)
+registersymbol(oldY)
+label(OnOff)
+registersymbol(OnOff)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+push rbx
+push rax
+
+mov rbx, [GameManagerImp]
+cmp [rbx], 00
+je originalcode
+mov rbx, [rbx+D0]
+cmp [rbx], 00
+je originalcode
+mov rbx, [rbx+100]
+cmp [rbx], 00
+je originalcode
+mov rbx, [rbx+320]
+mov rbx, [rbx+20]
+add rbx, 170
+cmp rbx,rdx
+jne originalcode
+
+mov rax, [GameManagerImp]
+mov rax, [rax+D0]
+mov rax, [rax+100]
+mov rax, [rax+10]
+add rax, 104
+mov byte ptr [rax], 1
+
+cmp [OnOff], 00
+jz originalcode
+
+mov rax, [GameManagerImp]
+mov rax, [rax+D0]
+mov rax, [rax+B8]
+add rax, 558
+cmp [rax],1
+jz originalcode
+add rax, 4
+cmp [rax],1
+jz originalcode
+xor rax, rax
+
+cmp [Start], 0
+jne St
+mov [Start], 1
+add rbx, 30
+mov eax, dword ptr [rbx]
+mov dword ptr [oldY],eax
+add rbx, 8
+mov eax, dword ptr [rbx]
+mov dword ptr [oldX],eax
+jmp originalcode
+
+
+St:
+add rbx, 30
+mov eax, [rbx]
+cmp dword ptr [oldY], eax
+jne St1
+add rbx, 8
+mov eax, [rbx]
+cmp dword ptr [oldX], eax
+je originalcode
+sub rbx, 8
+
+
+St1:
+sub rbx, 30
+add rbx, 34
+
+mov rax, [GameManagerImp]
+mov rax, [rax+58]
+mov rax, [rax+5B0]
+mov rax, [rax+18]
+mov rax, [rax+6CC]
+mov dword ptr [offset], eax
+
+movss xmm0, [rbx]
+movss xmm1, [offset]
+divss xmm1, [div]
+subss xmm0, xmm1
+movss [rbx], xmm0
+
+add rbx, 20
+movss xmm0, [rbx]
+movss xmm1, [offset]
+divss xmm1, [div]
+subss xmm0, xmm1
+movss [rbx], xmm0
+
+sub rbx, 4
+mov eax, dword ptr [rbx]
+mov dword ptr [oldY],eax
+add rbx, 8
+mov eax, dword ptr [rbx]
+mov dword ptr [oldX],eax
+
+originalcode:
+pop rax
+pop rbx
+movaps xmm7,[rdx+30]
+mov edx,00000001
+
+exit:
+jmp returnhere
+
+offset:
+dd 0
+
+div:
+dd (float)15
+
+Start:
+db 0
+oldX:
+dd 0
+oldY:
+dd 0
+
+OnOff:
+db 01
+
+
+"DarkSoulsII.exe"+DA3CAC:
+jmp newmem
+nop
+nop
+nop
+nop
+returnhere:
+
+
+
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+unregistersymbol(offset)
+unregistersymbol(div)
+unregistersymbol(oldX)
+unregistersymbol(oldY)
+unregistersymbol(Start)
+unregistersymbol(OnOff)
+
+
+"DarkSoulsII.exe"+DA3CAC:
+movaps xmm7,[rdx+30]
+mov edx,00000001
+[[[GameManagerImp]+D0]+100]+134:
+db 00
+//Alt: db 0F 28 7A 30 BA 01 00 00 00

@@ -1,0 +1,20 @@
+[ENABLE]
+{$lua}
+colorList = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20, 21, 25, 26, 27, 28, 29}
+if rainbow == nil then
+  rainbow = createTimer(nil, false)
+end
+rainbow.Interval = 1000
+rainbow.OnTimer = function(timer)
+    writeInteger("EffectStruct+4", colorList[math.random(#colorList)])
+    autoAssemble([[createthread(ApplyEffect)
+    EffectStruct:
+    dd #40550000
+    EffectStruct+8:
+    dd (float)1]]);
+end
+rainbow.Enabled = true
+
+[DISABLE]
+{$lua}
+rainbow.Enabled = false

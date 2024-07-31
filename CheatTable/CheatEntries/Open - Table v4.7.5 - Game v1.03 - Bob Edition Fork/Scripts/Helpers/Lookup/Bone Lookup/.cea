@@ -1,0 +1,35 @@
+[ENABLE]
+alloc(BoneLookup, $100, DarkSoulsII.exe)
+alloc(position, 8)
+alloc(Target, 8)
+alloc(bone_id, 4)
+registersymbol(BoneLookup)
+registersymbol(position)
+registersymbol(Target)
+registersymbol(bone_id)
+label(return)
+
+Target:
+readmem([BaseA]+D0, 8)
+
+BoneLookup:
+sub rsp, 28
+vortmov(rcx, [[Target]+F0], return)
+add rcx, 80
+mov rdx, [bone_id]
+call DarkSoulsII.exe+B0D3F0
+mov [position], rax
+
+return:
+add rsp, 28
+ret
+
+[DISABLE]
+dealloc(BoneLookup)
+dealloc(position)
+dealloc(Target)
+dealloc(bone_id)
+unregistersymbol(BoneLookup)
+unregistersymbol(position)
+unregistersymbol(Target)
+unregistersymbol(bone_id)

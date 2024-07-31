@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>26321</ID>
+  <Description>"Torch time"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>10</Offset>
+    <Offset>28</Offset>
+    <Offset>10</Offset>
+    <Offset>10</Offset>
+    <Offset>A8</Offset>
+  </Offsets>
+</CheatEntry>

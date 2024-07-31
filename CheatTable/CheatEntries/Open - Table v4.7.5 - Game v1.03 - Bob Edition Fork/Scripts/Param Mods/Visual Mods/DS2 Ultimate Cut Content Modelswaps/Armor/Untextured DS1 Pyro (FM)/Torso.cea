@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(pyrot,4)
+                        pyrot:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+2C8]+08,4)
+                        registersymbol(pyrot)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        dw #9020
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(pyrot)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        readmem(pyrot, 4)
+                        unregistersymbol(pyrot)
+                    
+					

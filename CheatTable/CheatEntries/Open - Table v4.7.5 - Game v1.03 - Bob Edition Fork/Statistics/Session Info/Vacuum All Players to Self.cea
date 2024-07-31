@@ -1,0 +1,40 @@
+[ENABLE]
+{$asm}
+aobscanmodule(MoveOpcode1,DarkSoulsII.exe,48 89 41 10 48 8B 42 08)
+aobscanmodule(MoveOpcode2,DarkSoulsII.exe,48 89 41 18 8B 42 10 89)
+MoveOpcode1:
+ nop
+ nop
+ nop
+ nop
+MoveOpcode2:
+ nop
+ nop
+ nop
+ nop
+registersymbol(MoveOpcode1)
+registersymbol(MoveOpcode2)
+{$lua}
+local player = readPointer("GameManagerImp")
+player = readPointer(player + 0xD0)
+player = readPointer(player + 0x788)
+player = readPointer(player + 0x30)
+player = readBytes(player + 0x20, 12, true)
+local coop = readPointer("NetSessionManager")
+coop = readPointer(coop + 0x10)
+coop = readPointer(coop + 0x1C0)
+writeBytes(readPointer(coop + 0x70) + 0x10, player)
+writeBytes(readPointer(coop + 0xC0) + 0x10, player)
+writeBytes(readPointer(coop + 0x110) + 0x10, player)
+writeBytes(readPointer(coop + 0x160) + 0x10, player)
+writeBytes(readPointer(coop + 0x1B0) + 0x10, player)
+
+[DISABLE]
+{$asm}
+MoveOpcode1:
+db 48 89 41 10
+MoveOpcode2:
+db 48 89 41 18
+unregistersymbol(MoveOpcode1)
+unregistersymbol(MoveOpcode2)
+{$lua}

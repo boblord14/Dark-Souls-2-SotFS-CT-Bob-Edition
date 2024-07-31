@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337275592</ID>
+  <Description>"Row Address"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>8 Bytes</VariableType>
+  <Address>RowAddr</Address>
+</CheatEntry>

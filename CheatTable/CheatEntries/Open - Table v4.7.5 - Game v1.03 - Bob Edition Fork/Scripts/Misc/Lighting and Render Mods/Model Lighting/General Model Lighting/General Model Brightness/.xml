@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26419</ID>
+  <Description>"General Model Brightness"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26409"/>
+    <id id="26416"/>
+    <id id="26417"/>
+    <id id="26418"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337088244</ID>
+  <Description>"ABYSS SPIRIT HAVEL"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>5070</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

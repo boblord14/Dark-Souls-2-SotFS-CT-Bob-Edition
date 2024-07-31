@@ -1,0 +1,19 @@
+<CheatEntry>
+  <ID>26566</ID>
+  <Description>"Fog Walls"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26567"/>
+    <id id="26571"/>
+    <id id="26573"/>
+    <id id="26575"/>
+    <id id="26577"/>
+    <id id="26580"/>
+    <id id="26583"/>
+    <id id="26585"/>
+    <id id="26587"/>
+    <id id="26589"/>
+    <id id="26592"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

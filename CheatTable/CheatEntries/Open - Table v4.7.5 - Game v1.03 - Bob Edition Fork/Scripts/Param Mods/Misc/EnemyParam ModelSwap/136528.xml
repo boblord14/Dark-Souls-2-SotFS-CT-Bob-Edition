@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087703</ID>
+  <Description>"136528"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1DB8</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

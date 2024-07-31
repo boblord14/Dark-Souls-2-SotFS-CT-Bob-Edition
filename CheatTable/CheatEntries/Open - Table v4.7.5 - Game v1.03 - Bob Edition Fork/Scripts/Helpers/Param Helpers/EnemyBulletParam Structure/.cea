@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem20,32)
+label(EnemyBulletAddressToUse)
+registersymbol(EnemyBulletAddressToUse)
+newmem20:
+EnemyBulletAddressToUse:
+[DISABLE]
+dealloc(newmem20)
+unregistersymbol(EnemyBulletAddressToUse)

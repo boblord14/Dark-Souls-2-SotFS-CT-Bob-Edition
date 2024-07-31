@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(blacka,4)
+                        blacka:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+2F8]+08,4)
+                        registersymbol(blacka)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2F8]+08:
+                        dw #9800
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(blacka)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2F8]+08:
+                        readmem(blacka, 4)
+                        unregistersymbol(blacka)
+                    
+					

@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>23003</ID>
+  <Description>"Total Get Soul"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>EC</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

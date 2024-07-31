@@ -1,0 +1,342 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START WeaponStaminaCostParam class]]--
+WeaponStaminaCostParam = BaseParamClass:new()
+
+function WeaponStaminaCostParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("WeaponStaminaCostParam", uuid, id, address)
+	return o
+end
+
+function WeaponStaminaCostParam:right1HLight1(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function WeaponStaminaCostParam:right1HLight2(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function WeaponStaminaCostParam:right1HHeavy1(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function WeaponStaminaCostParam:right1HHeavy2(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function WeaponStaminaCostParam:right1HLightRunning(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function WeaponStaminaCostParam:right1HLightRolling(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function WeaponStaminaCostParam:right1HLightBackstep(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function WeaponStaminaCostParam:right1HFalling(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function WeaponStaminaCostParam:right1HLanding(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function WeaponStaminaCostParam:right1HJumping(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function WeaponStaminaCostParam:right2HLight1(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function WeaponStaminaCostParam:right2HLight2(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function WeaponStaminaCostParam:right2HHeavy1(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function WeaponStaminaCostParam:right2HHeavy2(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function WeaponStaminaCostParam:right2HLightRunning(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function WeaponStaminaCostParam:right2HLightRolling(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function WeaponStaminaCostParam:right2HLightBackstep(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function WeaponStaminaCostParam:right2HFalling(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function WeaponStaminaCostParam:right2HLanding(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function WeaponStaminaCostParam:right2HJumping(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function WeaponStaminaCostParam:chain11(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function WeaponStaminaCostParam:chain12(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function WeaponStaminaCostParam:chain21(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function WeaponStaminaCostParam:chain22(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function WeaponStaminaCostParam:chainRunning(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function WeaponStaminaCostParam:chainRolling(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function WeaponStaminaCostParam:chainBackstep(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function WeaponStaminaCostParam:chainFalling(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function WeaponStaminaCostParam:chainLanding(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function WeaponStaminaCostParam:chainJumping(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function WeaponStaminaCostParam:rightPowerstanceLight1(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function WeaponStaminaCostParam:rightPowerstanceLight2(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function WeaponStaminaCostParam:rightPowerstanceHeavy1(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function WeaponStaminaCostParam:rightPowerstanceHeavy2(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function WeaponStaminaCostParam:rightPowerstanceLightRunning(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function WeaponStaminaCostParam:rightPowerstanceLightRolling(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function WeaponStaminaCostParam:rightPowerstanceLightBackstep(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function WeaponStaminaCostParam:rightPowerstanceFalling(value)
+	self:patchFloat(0x94, value)
+end
+
+
+function WeaponStaminaCostParam:rightPowerstanceLanding(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function WeaponStaminaCostParam:rightPowerstanceJumping(value)
+	self:patchFloat(0x9C, value)
+end
+
+
+function WeaponStaminaCostParam:left1HLight1(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function WeaponStaminaCostParam:left1HLight2(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function WeaponStaminaCostParam:left1HHeavy1(value)
+	self:patchFloat(0xA8, value)
+end
+
+
+function WeaponStaminaCostParam:left1HHeavy2(value)
+	self:patchFloat(0xAC, value)
+end
+
+
+function WeaponStaminaCostParam:left1HLightRunning(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function WeaponStaminaCostParam:left1HLightRolling(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function WeaponStaminaCostParam:left1HLightBackstep(value)
+	self:patchFloat(0xB8, value)
+end
+
+
+function WeaponStaminaCostParam:left1HFalling(value)
+	self:patchFloat(0xBC, value)
+end
+
+
+function WeaponStaminaCostParam:left1HLanding(value)
+	self:patchFloat(0xC0, value)
+end
+
+
+function WeaponStaminaCostParam:left1HJumping(value)
+	self:patchFloat(0xC4, value)
+end
+
+
+function WeaponStaminaCostParam:left2HLight(value)
+	self:patchFloat(0xC8, value)
+end
+
+
+function WeaponStaminaCostParam:left2HHeavy(value)
+	self:patchFloat(0xCC, value)
+end
+
+
+function WeaponStaminaCostParam:leftPowerstanceLight1(value)
+	self:patchFloat(0xD0, value)
+end
+
+
+function WeaponStaminaCostParam:leftPowerstanceLight2(value)
+	self:patchFloat(0xD4, value)
+end
+
+
+function WeaponStaminaCostParam:leftPowerstanceHeavy(value)
+	self:patchFloat(0xD8, value)
+end
+
+
+function WeaponStaminaCostParam:guardBreak1(value)
+	self:patchFloat(0xDC, value)
+end
+
+
+function WeaponStaminaCostParam:guardBreak2(value)
+	self:patchFloat(0xE0, value)
+end
+
+
+function WeaponStaminaCostParam:shieldPoke11(value)
+	self:patchFloat(0xE4, value)
+end
+
+
+function WeaponStaminaCostParam:shieldPoke12(value)
+	self:patchFloat(0xE8, value)
+end
+
+
+function WeaponStaminaCostParam:shieldPoke21(value)
+	self:patchFloat(0xEC, value)
+end
+
+
+function WeaponStaminaCostParam:shieldPoke22(value)
+	self:patchFloat(0xF0, value)
+end
+
+
+function WeaponStaminaCostParam:riposte(value)
+	self:patchFloat(0xF4, value)
+end
+
+
+function WeaponStaminaCostParam:guardBreakStab(value)
+	self:patchFloat(0xF8, value)
+end
+
+
+function WeaponStaminaCostParam:backstab(value)
+	self:patchFloat(0xFC, value)
+end
+
+
+--[[End WeaponStaminaCostParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

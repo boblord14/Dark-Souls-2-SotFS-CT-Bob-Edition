@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337089898</ID>
+  <Description>"Apply Target"</Description>
+  <DropDownList DisplayValueAsItem="1">240:Enemy and map
+50:Enemy only
+6:Player
+</DropDownList>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+040</Address>
+</CheatEntry>

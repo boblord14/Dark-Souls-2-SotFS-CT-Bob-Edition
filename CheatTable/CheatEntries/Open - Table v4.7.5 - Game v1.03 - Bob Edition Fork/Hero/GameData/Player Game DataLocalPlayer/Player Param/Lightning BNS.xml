@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337077491</ID>
+  <Description>"Lightning BNS"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>6C</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

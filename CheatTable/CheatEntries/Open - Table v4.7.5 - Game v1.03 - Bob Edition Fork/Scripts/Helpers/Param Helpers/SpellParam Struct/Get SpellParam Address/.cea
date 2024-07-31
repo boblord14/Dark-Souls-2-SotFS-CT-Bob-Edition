@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetSpellParamAddr, $100, DarkSoulsII.exe)
+alloc(SpellParamId, 4)
+label(return)
+registersymbol(GetSpellParamAddr)
+registersymbol(SpellParamId)
+
+SpellParamId:
+dd #31060000
+
+GetSpellParamAddr:
+sub rsp, 20
+mov edx, [SpellParamId]
+vortmov(rcx, [[[GameManagerImp]+18]+540])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [SpellParamAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetSpellParamAddr)
+dealloc(SpellParamId)
+unregistersymbol(GetSpellParamAddr)
+unregistersymbol(SpellParamId)

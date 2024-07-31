@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetWeaponAttackMotionParamAddr, $100, DarkSoulsII.exe)
+alloc(WeaponAttackMotionId, 4)
+label(return)
+registersymbol(GetWeaponAttackMotionParamAddr)
+registersymbol(WeaponAttackMotionId)
+
+WeaponAttackMotionId:
+dd #10000000
+
+GetWeaponAttackMotionParamAddr:
+sub rsp, 20
+mov edx, [WeaponAttackMotionId]
+vortmov(rcx, [[[GameManagerImp]+18]+440])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [WepAtkMotionAddr], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetWeaponAttackMotionParamAddr)
+dealloc(WeaponAttackMotionId)
+unregistersymbol(GetWeaponAttackMotionParamAddr)
+unregistersymbol(WeaponAttackMotionId)

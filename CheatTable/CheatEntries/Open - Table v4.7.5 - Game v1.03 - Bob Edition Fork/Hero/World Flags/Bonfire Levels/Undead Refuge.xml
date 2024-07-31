@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>49</ID>
+  <Description>"Undead Refuge"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>362</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

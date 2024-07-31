@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>1337162825</ID>
+  <Description>"Bolt Slot 1"</Description>
+  <DropDownListLink>ItemParam</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>BaseA</Address>
+  <Offsets>
+    <Offset>1B4</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

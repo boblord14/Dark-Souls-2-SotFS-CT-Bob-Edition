@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337109625</ID>
+  <Description>"Discovered"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>BaseA</Address>
+  <Offsets>
+    <Offset>1B2</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

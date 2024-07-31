@@ -1,0 +1,222 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START PlayerStatusItemParam class]]--
+PlayerStatusItemParam = BaseParamClass:new()
+
+function PlayerStatusItemParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("PlayerStatusItemParam", uuid, id, address)
+	return o
+end
+
+function PlayerStatusItemParam:itemId0(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function PlayerStatusItemParam:itemId1(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function PlayerStatusItemParam:itemId2(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function PlayerStatusItemParam:itemId3(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function PlayerStatusItemParam:itemId4(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function PlayerStatusItemParam:itemId5(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function PlayerStatusItemParam:itemId6(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function PlayerStatusItemParam:itemId7(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function PlayerStatusItemParam:itemId8(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function PlayerStatusItemParam:itemId9(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function PlayerStatusItemParam:itemId10(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function PlayerStatusItemParam:itemId11(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function PlayerStatusItemParam:itemId12(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function PlayerStatusItemParam:itemId13(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function PlayerStatusItemParam:itemId14(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function PlayerStatusItemParam:itemId15(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function PlayerStatusItemParam:itemId16(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function PlayerStatusItemParam:itemId17(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function PlayerStatusItemParam:itemId18(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function PlayerStatusItemParam:itemId19(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount0(value)
+	self:patch2Byte(0x50, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount1(value)
+	self:patch2Byte(0x52, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount2(value)
+	self:patch2Byte(0x54, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount3(value)
+	self:patch2Byte(0x56, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount4(value)
+	self:patch2Byte(0x58, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount5(value)
+	self:patch2Byte(0x5A, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount6(value)
+	self:patch2Byte(0x5C, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount7(value)
+	self:patch2Byte(0x5E, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount8(value)
+	self:patch2Byte(0x60, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount9(value)
+	self:patch2Byte(0x62, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount10(value)
+	self:patch2Byte(0x64, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount11(value)
+	self:patch2Byte(0x66, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount12(value)
+	self:patch2Byte(0x68, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount13(value)
+	self:patch2Byte(0x6A, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount14(value)
+	self:patch2Byte(0x6C, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount15(value)
+	self:patch2Byte(0x6E, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount16(value)
+	self:patch2Byte(0x70, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount17(value)
+	self:patch2Byte(0x72, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount18(value)
+	self:patch2Byte(0x74, value)
+end
+
+
+function PlayerStatusItemParam:itemAmount19(value)
+	self:patch2Byte(0x76, value)
+end
+
+
+--[[End PlayerStatusItemParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

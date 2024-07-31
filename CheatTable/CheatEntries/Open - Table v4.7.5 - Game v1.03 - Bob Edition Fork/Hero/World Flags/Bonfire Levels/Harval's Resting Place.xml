@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>73</ID>
+  <Description>"Harval's Resting Place"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>55A</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256266</ID>
+  <Description>"Max"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>220</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

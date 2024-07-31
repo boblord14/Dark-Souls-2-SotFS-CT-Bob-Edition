@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>26593</ID>
+  <Description>"Inner Wall"</Description>
+  <VariableType>Binary</VariableType>
+  <BitStart>7</BitStart>
+  <BitLength>1</BitLength>
+  <ShowAsBinary>0</ShowAsBinary>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>D64</Offset>
+    <Offset>18</Offset>
+    <Offset>20</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

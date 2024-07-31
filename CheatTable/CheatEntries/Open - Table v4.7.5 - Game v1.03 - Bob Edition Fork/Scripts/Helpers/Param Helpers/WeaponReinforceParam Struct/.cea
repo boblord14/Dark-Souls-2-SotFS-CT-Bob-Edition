@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem18,32)
+label(WepReinforceParamAddr)
+registersymbol(WepReinforceParamAddr)
+newmem18:
+WepReinforceParamAddr:
+[DISABLE]
+dealloc(newmem18)
+unregistersymbol(WepReinforceParamAddr)

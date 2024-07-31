@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>86714</ID>
+  <Description>"Health"</Description>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>168</Offset>
+    <Offset>2B8</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

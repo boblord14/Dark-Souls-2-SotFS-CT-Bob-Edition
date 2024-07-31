@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087554</ID>
+  <Description>"UNDEAD CRYPT HOLLOW (TORCH)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>FC0</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

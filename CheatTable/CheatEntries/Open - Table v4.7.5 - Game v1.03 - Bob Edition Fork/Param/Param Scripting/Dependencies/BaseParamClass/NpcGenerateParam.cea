@@ -1,0 +1,117 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START NpcGenerateParam class]]--
+NpcGenerateParam = BaseParamClass:new()
+
+function NpcGenerateParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("NpcGenerateParam", uuid, id, address)
+	return o
+end
+
+function NpcGenerateParam:npcId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function NpcGenerateParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function NpcGenerateParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function NpcGenerateParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function NpcGenerateParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function NpcGenerateParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function NpcGenerateParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function NpcGenerateParam:rightWeaponId(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function NpcGenerateParam:rightWeaponId2(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function NpcGenerateParam:rightWeaponId3(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function NpcGenerateParam:leftWeaponId(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function NpcGenerateParam:leftWeaponId2(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function NpcGenerateParam:leftWeaponId3(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function NpcGenerateParam:headArmorId(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function NpcGenerateParam:chestArmorId(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function NpcGenerateParam:handsArmorId(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function NpcGenerateParam:legsArmorId(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function NpcGenerateParam:unk44(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function NpcGenerateParam:unk48(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+--[[End NpcGenerateParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

@@ -1,0 +1,25 @@
+{
+  Author      ; FlightPlan
+  Game        ; DarkSoulsIII.exe
+  Version     ; 1.16
+  Description ; Defines Master Param Table
+}
+
+[ENABLE]
+define(MASTER_PARAM_TABLE, [[[[GameManagerImp]+38]+100]+D8]-2C44)
+registerSymbol(MASTER_PARAM_TABLE)
+
+define(PARAM_INDEX_START, [[[[GameManagerImp]+38]+100]+D8]-2C04)
+registerSymbol(PARAM_INDEX_START)
+
+define(PARAM_INDEX_END, [[[[GameManagerImp]+38]+100]+D8]-16A4)
+registerSymbol(PARAM_INDEX_END)
+
+define(PARAM_INDEX_WIDTH, 0x18)
+registerSymbol(PARAM_INDEX_WIDTH)
+
+[DISABLE]
+unregisterSymbol(MASTER_PARAM_TABLE)
+unregisterSymbol(PARAM_INDEX_START)
+unregisterSymbol(PARAM_INDEX_END)
+unregisterSymbol(PARAM_INDEX_WIDTH)

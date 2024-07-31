@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256172</ID>
+  <Description>"Head Scale"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>83C</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

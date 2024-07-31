@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26381</ID>
+  <Description>"Horizontal 1? (Most reliable)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>310</Offset>
+  </Offsets>
+</CheatEntry>

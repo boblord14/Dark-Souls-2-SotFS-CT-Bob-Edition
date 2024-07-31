@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337107326</ID>
+  <Description>"stunType"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+FC</Address>
+</CheatEntry>

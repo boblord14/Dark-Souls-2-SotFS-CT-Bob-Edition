@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337085058</ID>
+  <Description>"Right 2h Relative Position"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1:Normal
+2:Translated
+3:Rotated
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>+2A</Address>
+</CheatEntry>

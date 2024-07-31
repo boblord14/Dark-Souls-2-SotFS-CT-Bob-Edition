@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087913</ID>
+  <Description>"DRAGONRIDER (HALBERD)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3168</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

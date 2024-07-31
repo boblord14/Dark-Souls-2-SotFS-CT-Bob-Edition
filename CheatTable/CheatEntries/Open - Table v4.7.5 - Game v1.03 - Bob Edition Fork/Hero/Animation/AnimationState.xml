@@ -1,0 +1,19 @@
+<CheatEntry>
+  <ID>23012</ID>
+  <Description>"AnimationState"</Description>
+  <DropDownList DisplayValueAsItem="1">0:Idle
+2:Attack
+3:Walk
+4:Sprint
+5:Unknown
+6:Recovery
+</DropDownList>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>8</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

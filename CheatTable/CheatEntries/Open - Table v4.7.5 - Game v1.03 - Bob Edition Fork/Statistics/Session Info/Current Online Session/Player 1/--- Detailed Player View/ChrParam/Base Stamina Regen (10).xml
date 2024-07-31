@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337103387</ID>
+  <Description>"Base Stamina Regen (*10)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+030</Address>
+</CheatEntry>

@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337256310</ID>
+  <Description>"Grave Warden Agdayne"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="101"/>
+    <id id="102"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,15 @@
+define(GreatComb,[[[[GameManagerImp]+60]+20]+D8]+30098)
+[ENABLE]
+GreatComb:
+dd 0
+GreatComb+D4:
+dd 0216D210
+GreatComb+D8:
+dd 0216D210
+[DISABLE]
+GreatComb:
+dd 5100
+GreatComb+D4:
+dd 01F8E9DA
+GreatComb+D8:
+dd 01F8E9DA

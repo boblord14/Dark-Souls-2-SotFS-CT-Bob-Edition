@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>23826</ID>
+  <Description>"Backstab Flag"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>618</Offset>
+    <Offset>B8</Offset>
+    <Offset>388</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

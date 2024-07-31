@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337077561</ID>
+  <Description>"X"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>20</Offset>
+    <Offset>F0</Offset>
+    <Offset>F8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

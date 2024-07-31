@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337103549</ID>
+  <Description>"ChrNetworkPhantom ID"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+3C</Address>
+</CheatEntry>

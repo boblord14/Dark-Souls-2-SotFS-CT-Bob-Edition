@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem14,32)
+label(RingParam_Addr)
+registersymbol(RingParam_Addr)
+newmem14:
+RingParam_Addr:
+[DISABLE]
+dealloc(newmem14)
+unregistersymbol(RingParam_Addr)

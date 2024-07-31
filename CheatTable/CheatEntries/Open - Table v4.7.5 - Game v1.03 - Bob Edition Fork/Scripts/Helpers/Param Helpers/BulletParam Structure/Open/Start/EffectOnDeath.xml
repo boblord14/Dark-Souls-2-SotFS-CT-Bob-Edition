@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337097916</ID>
+  <Description>"EffectOnDeath"</Description>
+  <Color>FF0000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+0C0</Address>
+</CheatEntry>

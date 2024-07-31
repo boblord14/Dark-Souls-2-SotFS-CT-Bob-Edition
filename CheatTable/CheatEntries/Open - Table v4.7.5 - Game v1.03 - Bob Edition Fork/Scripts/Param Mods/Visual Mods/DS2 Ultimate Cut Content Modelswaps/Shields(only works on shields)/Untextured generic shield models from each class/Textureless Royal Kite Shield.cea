@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tkite,2)
+                        tkite:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+58]+4,2)
+                        registersymbol(tkite)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        dw #2010
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tkite)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        readmem(tkite, 2)
+                        unregistersymbol(tkite)
+                    

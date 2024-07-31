@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(wackinvis,2)
+                        wackinvis:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(wackinvis)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6430
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(wackinvis)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(wackinvis, 2)
+                        unregistersymbol(wackinvis)
+                    

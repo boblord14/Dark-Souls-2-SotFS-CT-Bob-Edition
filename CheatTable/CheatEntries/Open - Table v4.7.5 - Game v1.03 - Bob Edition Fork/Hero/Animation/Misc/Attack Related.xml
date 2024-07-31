@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337036535</ID>
+  <Description>"Attack Related"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>5DC</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

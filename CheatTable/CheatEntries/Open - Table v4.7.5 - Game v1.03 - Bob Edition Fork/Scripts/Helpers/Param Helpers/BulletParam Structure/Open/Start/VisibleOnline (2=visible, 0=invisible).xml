@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337097852</ID>
+  <Description>"VisibleOnline (2=visible, 0=invisible)"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>+06</Address>
+</CheatEntry>

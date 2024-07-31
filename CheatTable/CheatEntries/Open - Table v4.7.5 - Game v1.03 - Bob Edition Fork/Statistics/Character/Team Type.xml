@@ -1,0 +1,25 @@
+<CheatEntry>
+  <ID>30741</ID>
+  <Description>"Team Type"</Description>
+  <DropDownList DisplayValueAsItem="1">0:Host
+-1:Hollow
+2:While Phantom
+5:Arbiter Spirit
+7:Dark Spirit
+9:Gray Spirit
+12:Dragon Spirit
+16:Arena Spirit
+17:Friendly NPC
+18:Friendly NPC
+20:Summoned Friendly NPC
+23:Hostility NPC
+</DropDownList>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3D</Offset>
+    <Offset>B0</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

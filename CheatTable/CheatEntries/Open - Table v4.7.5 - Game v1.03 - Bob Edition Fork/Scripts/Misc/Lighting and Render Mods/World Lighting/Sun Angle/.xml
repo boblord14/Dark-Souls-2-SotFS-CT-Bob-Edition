@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26380</ID>
+  <Description>"Sun Angle"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26381"/>
+    <id id="26382"/>
+    <id id="26383"/>
+    <id id="26384"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,22 @@
+<CheatEntry>
+  <ID>24074</ID>
+  <Description>"Covenant"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:None
+1:Heirs of the Sun
+2:Blue Sentinels
+3:Brotherhood of Blood
+4:Way of Blue
+5:Rat King Covenant
+6:Bell Keepers
+7:Dragon Remnants
+8:Company of Champions 	
+9:Pilgrims of Dark
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1AD</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

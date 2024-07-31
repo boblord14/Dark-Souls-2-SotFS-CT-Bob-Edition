@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337160009</ID>
+  <Description>"Aava, The King's Pet"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337160010"/>
+    <id id="1337159999"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

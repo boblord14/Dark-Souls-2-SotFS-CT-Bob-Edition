@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>86876</ID>
+  <Description>"Poise Max"</Description>
+  <VariableType>Float</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>220</Offset>
+    <Offset>388</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

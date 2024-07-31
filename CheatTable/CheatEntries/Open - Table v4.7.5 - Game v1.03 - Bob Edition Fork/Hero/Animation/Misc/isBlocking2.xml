@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337036539</ID>
+  <Description>"isBlocking2"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>87C</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337106233</ID>
+  <Description>"0xF4"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Binary</VariableType>
+  <BitStart>0</BitStart>
+  <BitLength>1</BitLength>
+  <ShowAsBinary>0</ShowAsBinary>
+  <Address>+F4</Address>
+</CheatEntry>

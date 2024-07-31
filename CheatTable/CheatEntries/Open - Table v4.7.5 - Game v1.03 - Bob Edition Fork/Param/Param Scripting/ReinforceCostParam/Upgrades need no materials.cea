@@ -1,0 +1,23 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+
+
+
+local upgradeCostAdj = ReinforceCostParam:new("FreeUpgrades") --patchall header
+      upgradeCostAdj:patchAll2Byte(0x50,0) -- material quantities levels 1-10
+      upgradeCostAdj:patchAll2Byte(0x52,0)
+      upgradeCostAdj:patchAll2Byte(0x54,0)
+      upgradeCostAdj:patchAll2Byte(0x56,0)
+      upgradeCostAdj:patchAll2Byte(0x58,0)
+      upgradeCostAdj:patchAll2Byte(0x5A,0)
+      upgradeCostAdj:patchAll2Byte(0x5C,0)
+      upgradeCostAdj:patchAll2Byte(0x5E,0)
+      upgradeCostAdj:patchAll2Byte(0x60,0)
+      upgradeCostAdj:patchAll2Byte(0x62,0)
+
+[DISABLE]
+paramUtils:restore("FreeUpgrades")
+
+
+

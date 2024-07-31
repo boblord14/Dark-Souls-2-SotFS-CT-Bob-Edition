@@ -1,0 +1,105 @@
+{
+ Author: Boblord, Radai
+ Desc: Warp to selected bonfire.
+
+ Thanks to Radai for providing me with the warp functions and answering my inane questions
+}
+[ENABLE]
+{$lua}
+
+eventBasedIds = {0,3701000,3702000,3700000,900000,400010,400020,400030,400005,110,120,130,111,121,
+131,5300000,400000,5000000}
+
+eventBasedMaps = {0,20100000,20100000,20100000,20260000,40030000,40030000,40030000,40030000,10310000,
+10310000,10310000,10230000,10230000,10230000,50360000,50370000,50380000}
+
+keyValueEvents = {}
+
+for i=1, 18 do
+    keyValueEvents[eventBasedIds[i]] = eventBasedMaps[i] -- creates key value pair for event based warps and map ids
+end
+{$asm}
+
+alloc(GetMapIndex, $100, DarkSoulsII.exe)
+alloc(MapId, 4)
+alloc(Warp, $100, DarkSoulsII.exe)
+alloc(WarpData, 64)
+alloc(BonfireWarp, $100, DarkSoulsII.exe)
+registersymbol(GetMapIndex)
+registersymbol(MapId)
+registersymbol(Warp)
+registersymbol(WarpData)
+registersymbol(BonfireWarp)
+
+MapId:
+dd #00000000 //area id goes here. something in the form of 10_10_00_00(forest of fallen giants) goes to 10100000 here.
+
+WarpData:
+dd #4 //WarpType, 3 to warp to bonfireId, 4 to warp to eventId
+dd #0 //Map reload type(idk what this does)
+dd 0 //Obfuscated mapId, blank here as this is mov'd in during GetMapIndex
+dd #-1 //Affects Camera(some radai thing idk)
+dd 0
+dd 3
+dd #4650 //Event Object ID or Bonfire ID
+dd 0
+dd (float)255
+dd 0
+dd 0
+dd 0
+dd (float)-12.92884827
+dd 0
+dd 0
+dd 0
+db 0
+db 0 //isInvasion(idk what this does)
+db 0
+db 0
+//In regards to the event/bonfire ids above, Event ids can be seen in mapstudio,
+//bonfire ids in MapObjectBonfireParam or last bonfire rested at in ce(listed in ce in hex, for the script they need to be in decimal form)
+//ex. 10655 is the cardinal tower bonfire id, and
+//5300000 is the event id of the starting player spot for memory of the old iron king
+
+GetMapIndex:
+sub rsp, 20
+lea rcx, [rsp+30]
+mov edx, [MapId]
+call DarkSoulsII.exe+3BF8B0
+mov eax, [rax]
+mov [WarpData+8], eax //movs the obfuscated mapid into the right place in the WarpData struct
+add rsp, 20
+ret
+
+Warp: // general warp. works best with events.
+sub rsp, 118
+vortmov(rcx, [[GameManagerImp]+70]+70, return)
+lea rdx, [WarpData]
+call DarkSoulsII.exe+184830
+add rsp, 118
+ret
+
+BonfireWarp: //bonfire specific warp
+sub rsp, 118
+movzx edx, word ptr[WarpData+18] //just needs bonfireID
+lea rcx, [rsp+50]
+mov r8d, 5
+call DarkSoulsII.exe+1843B0 //Set destination
+vortmov(rcx, [[GameManagerImp]+70]+70, return)
+lea rdx, [rsp+50]
+call DarkSoulsII.exe+184830 //Warp
+
+return:
+add rsp, 118
+ret
+
+[DISABLE]
+dealloc(GetMapIndex)
+dealloc(MapId)
+dealloc(Warp)
+dealloc(WarpData)
+dealloc(BonfireWarp)
+unregistersymbol(GetMapIndex)
+unregistersymbol(MapId)
+unregistersymbol(Warp)
+unregistersymbol(WarpData)
+unregistersymbol(BonfireWarp)

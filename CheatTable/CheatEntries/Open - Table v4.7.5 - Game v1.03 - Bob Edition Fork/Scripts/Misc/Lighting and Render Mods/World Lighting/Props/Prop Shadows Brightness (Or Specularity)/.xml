@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26331</ID>
+  <Description>"Prop Shadows Brightness (Or Specularity)"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26332"/>
+    <id id="26333"/>
+    <id id="26334"/>
+    <id id="26335"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

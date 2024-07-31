@@ -1,0 +1,62 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START DamageMotionLadderWeightParam class]]--
+DamageMotionLadderWeightParam = BaseParamClass:new()
+
+function DamageMotionLadderWeightParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("DamageMotionLadderWeightParam", uuid, id, address)
+	return o
+end
+
+function DamageMotionLadderWeightParam:unk00(value)
+	self:patchByte(0x0, value)
+end
+
+
+function DamageMotionLadderWeightParam:unk01(value)
+	self:patchByte(0x1, value)
+end
+
+
+function DamageMotionLadderWeightParam:unk02(value)
+	self:patchByte(0x2, value)
+end
+
+
+function DamageMotionLadderWeightParam:unk03(value)
+	self:patchByte(0x3, value)
+end
+
+
+function DamageMotionLadderWeightParam:unk04(value)
+	self:patchByte(0x4, value)
+end
+
+
+function DamageMotionLadderWeightParam:unk05(value)
+	self:patchByte(0x5, value)
+end
+
+
+function DamageMotionLadderWeightParam:unk06(value)
+	self:patchByte(0x6, value)
+end
+
+
+function DamageMotionLadderWeightParam:unk07(value)
+	self:patchByte(0x7, value)
+end
+
+
+--[[End DamageMotionLadderWeightParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

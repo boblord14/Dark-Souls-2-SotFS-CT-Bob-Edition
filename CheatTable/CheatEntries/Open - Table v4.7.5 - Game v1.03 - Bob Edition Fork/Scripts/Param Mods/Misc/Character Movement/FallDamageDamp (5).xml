@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337089056</ID>
+  <Description>"FallDamageDamp (5)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>24C</Offset>
+    <Offset>D8</Offset>
+    <Offset>330</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

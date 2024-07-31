@@ -1,0 +1,10 @@
+[ENABLE]
+aobscanmodule(InfiniteItemsAOB,DarkSoulsII.exe,66 29 73 20 48 8B D3)
+registersymbol(InfiniteItemsAOB)
+InfiniteItemsAOB:
+  db 90 90 90 90
+[DISABLE]
+InfiniteItemsAOB:
+  db 66 29 73 20
+unregistersymbol(InfiniteItemsAOB)
+

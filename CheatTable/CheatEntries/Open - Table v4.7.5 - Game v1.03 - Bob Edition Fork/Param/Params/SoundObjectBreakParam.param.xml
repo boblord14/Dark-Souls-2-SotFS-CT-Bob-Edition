@@ -1,0 +1,17 @@
+<CheatEntry>
+  <ID>89406</ID>
+  <Description>"SoundObjectBreakParam.param"</Description>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>KatanaMainApp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>d8</Offset>
+    <Offset>30</Offset>
+    <Offset>1158</Offset>
+    <Offset>80</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetChrNetworkPhantomParam, $100, DarkSoulsII.exe)
+alloc(ChrNetworkPhantomParamId, 4)
+label(return)
+registersymbol(GetChrNetworkPhantomParam)
+registersymbol(ChrNetworkPhantomParamId)
+
+ChrNetworkPhantomParamId:
+dd 0
+
+GetChrNetworkPhantomParam:
+sub rsp, 20
+mov edx, [ChrNetworkPhantomParamId]
+vortmov(rcx, [[[GameManagerImp]+18]+7B0])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [ChrNetworkPhantomAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetChrNetworkPhantomParam)
+dealloc(ChrNetworkPhantomParamId)
+unregistersymbol(GetChrNetworkPhantomParam)
+unregistersymbol(ChrNetworkPhantomParamId)

@@ -1,0 +1,37 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START MapStateActParam class]]--
+MapStateActParam = BaseParamClass:new()
+
+function MapStateActParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("MapStateActParam", uuid, id, address)
+	return o
+end
+
+function MapStateActParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function MapStateActParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function MapStateActParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+--[[End MapStateActParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

@@ -1,0 +1,58 @@
+[ENABLE]
+aobscanmodule(DespawnAOB,DarkSoulsII.exe,42 0F B6 84 11 10 02 00 00 48)
+alloc(newmem,$1000,DespawnAOB)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov byte ptr [rcx+r10+00000210],14
+  movzx eax,byte ptr [rcx+r10+00000210]
+  jmp return
+
+DespawnAOB:
+  jmp code
+  nop
+  nop
+  nop
+  nop
+return:
+registersymbol(DespawnAOB)
+
+[DISABLE]
+
+DespawnAOB:
+  db 42 0F B6 84 11 10 02 00 00
+
+unregistersymbol(DespawnAOB)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "DarkSoulsII.exe"+1F2F95
+
+"DarkSoulsII.exe"+1F2F7C: EB 08                       -  jmp DarkSoulsII.exe+1F2F86
+"DarkSoulsII.exe"+1F2F7E: 85 C9                       -  test ecx,ecx
+"DarkSoulsII.exe"+1F2F80: 74 09                       -  je DarkSoulsII.exe+1F2F8B
+"DarkSoulsII.exe"+1F2F82: 44 8D 49 FF                 -  lea r9d,[rcx-01]
+"DarkSoulsII.exe"+1F2F86: 41 3B D1                    -  cmp edx,r9d
+"DarkSoulsII.exe"+1F2F89: 7E D5                       -  jle DarkSoulsII.exe+1F2F60
+"DarkSoulsII.exe"+1F2F8B: 83 C9 FF                    -  or ecx,-01
+"DarkSoulsII.exe"+1F2F8E: 41 3B CB                    -  cmp ecx,r11d
+"DarkSoulsII.exe"+1F2F91: 73 11                       -  jae DarkSoulsII.exe+1F2FA4
+"DarkSoulsII.exe"+1F2F93: 8B C1                       -  mov eax,ecx
+// ---------- INJECTING HERE ----------
+"DarkSoulsII.exe"+1F2F95: 42 0F B6 84 11 10 02 00 00  -  movzx eax,byte ptr [rcx+r10+00000210]
+// ---------- DONE INJECTING  ----------
+"DarkSoulsII.exe"+1F2F9E: 48 83 C4 20                 -  add rsp,20
+"DarkSoulsII.exe"+1F2FA2: 5B                          -  pop rbx
+"DarkSoulsII.exe"+1F2FA3: C3                          -  ret 
+"DarkSoulsII.exe"+1F2FA4: 32 C0                       -  xor al,al
+"DarkSoulsII.exe"+1F2FA6: 48 83 C4 20                 -  add rsp,20
+"DarkSoulsII.exe"+1F2FAA: 5B                          -  pop rbx
+"DarkSoulsII.exe"+1F2FAB: C3                          -  ret 
+"DarkSoulsII.exe"+1F2FAC: CC                          -  int 3 
+"DarkSoulsII.exe"+1F2FAD: CC                          -  int 3 
+"DarkSoulsII.exe"+1F2FAE: CC                          -  int 3 
+}

@@ -1,0 +1,567 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ChrParam class]]--
+ChrParam = BaseParamClass:new()
+
+function ChrParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ChrParam", uuid, id, address)
+	return o
+end
+
+function ChrParam:chrId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function ChrParam:behaviorParamId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function ChrParam:commonParamId(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function ChrParam:moveParamId(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function ChrParam:npcplayerstatusparamId(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function ChrParam:unk14(value)
+	self:patch2Byte(0x14, value)
+end
+
+
+function ChrParam:unk16(value)
+	self:patch2Byte(0x16, value)
+end
+
+
+function ChrParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function ChrParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function ChrParam:chrphantomparamId(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function ChrParam:unk24(value)
+	self:patchByte(0x24, value)
+end
+
+
+function ChrParam:unk25(value)
+	self:patchByte(0x25, value)
+end
+
+
+function ChrParam:unk26(value)
+	self:patchByte(0x26, value)
+end
+
+
+function ChrParam:unk27(value)
+	self:patchByte(0x27, value)
+end
+
+
+function ChrParam:baseHpNg(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function ChrParam:unk2C(value)
+	self:patchByte(0x2C, value)
+end
+
+
+function ChrParam:unk2C2(value)
+	self:patchByte(0x2D, value)
+end
+
+
+function ChrParam:unk2C3(value)
+	self:patchByte(0x2E, value)
+end
+
+
+function ChrParam:unk2C4(value)
+	self:patchByte(0x2F, value)
+end
+
+
+function ChrParam:baseStaminaRegeneration10(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function ChrParam:unk34(value)
+	self:patchByte(0x34, value)
+end
+
+
+function ChrParam:unk35(value)
+	self:patchByte(0x35, value)
+end
+
+
+function ChrParam:unk36(value)
+	self:patchByte(0x36, value)
+end
+
+
+function ChrParam:unk37(value)
+	self:patchByte(0x37, value)
+end
+
+
+function ChrParam:unk38(value)
+	self:patchByte(0x38, value)
+end
+
+
+function ChrParam:unk39(value)
+	self:patchByte(0x39, value)
+end
+
+
+function ChrParam:unk3A(value)
+	self:patchByte(0x3A, value)
+end
+
+
+function ChrParam:unk3B(value)
+	self:patchByte(0x3B, value)
+end
+
+
+function ChrParam:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function ChrParam:logicComId(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function ChrParam:deadTypeId(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function ChrParam:equippedWeaponIndex(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function ChrParam:equipWeaponId(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function ChrParam:equipWeaponId2(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function ChrParam:equipWeaponId3(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+function ChrParam:equipWeaponId4(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function ChrParam:equipWeaponId5(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function ChrParam:equipWeaponId6(value)
+	self:patch4Byte(0x60, value)
+end
+
+
+function ChrParam:unk64(value)
+	self:patch4Byte(0x64, value)
+end
+
+
+function ChrParam:unk68(value)
+	self:patchByte(0x68, value)
+end
+
+
+function ChrParam:chrrounddamageparamId(value)
+	self:patchByte(0x69, value)
+end
+
+
+function ChrParam:unk6A(value)
+	self:patchByte(0x6A, value)
+end
+
+
+function ChrParam:unk6B(value)
+	self:patchByte(0x6B, value)
+end
+
+
+function ChrParam:unk6C(value)
+	self:patch4Byte(0x6C, value)
+end
+
+
+function ChrParam:unk70(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+function ChrParam:unk74(value)
+	self:patch4Byte(0x74, value)
+end
+
+
+function ChrParam:unk78(value)
+	self:patch4Byte(0x78, value)
+end
+
+
+function ChrParam:unk7C(value)
+	self:patch4Byte(0x7C, value)
+end
+
+
+function ChrParam:unk80(value)
+	self:patch4Byte(0x80, value)
+end
+
+
+function ChrParam:unk84(value)
+	self:patch4Byte(0x84, value)
+end
+
+
+function ChrParam:unk88(value)
+	self:patch4Byte(0x88, value)
+end
+
+
+function ChrParam:unk8C(value)
+	self:patch4Byte(0x8C, value)
+end
+
+
+function ChrParam:unk90(value)
+	self:patch4Byte(0x90, value)
+end
+
+
+function ChrParam:unk94(value)
+	self:patch4Byte(0x94, value)
+end
+
+
+function ChrParam:unk98(value)
+	self:patch4Byte(0x98, value)
+end
+
+
+function ChrParam:physicalDefence(value)
+	self:patch4Byte(0x9C, value)
+end
+
+
+function ChrParam:magicAbsorption(value)
+	self:patch4Byte(0xA0, value)
+end
+
+
+function ChrParam:lightningAbsorption(value)
+	self:patch4Byte(0xA4, value)
+end
+
+
+function ChrParam:fireAbsorption(value)
+	self:patch4Byte(0xA8, value)
+end
+
+
+function ChrParam:darkAbsorption(value)
+	self:patch4Byte(0xAC, value)
+end
+
+
+function ChrParam:poisonResist(value)
+	self:patch4Byte(0xB0, value)
+end
+
+
+function ChrParam:bleedResist(value)
+	self:patch4Byte(0xB4, value)
+end
+
+
+function ChrParam:curseResist(value)
+	self:patch4Byte(0xB8, value)
+end
+
+
+function ChrParam:petrifyResist(value)
+	self:patch4Byte(0xBC, value)
+end
+
+
+function ChrParam:unkc0(value)
+	self:patch4Byte(0xC0, value)
+end
+
+
+function ChrParam:unkc4(value)
+	self:patch4Byte(0xC4, value)
+end
+
+
+function ChrParam:unkc8(value)
+	self:patch4Byte(0xC8, value)
+end
+
+
+function ChrParam:unkcc(value)
+	self:patch4Byte(0xCC, value)
+end
+
+
+function ChrParam:souls(value)
+	self:patch4Byte(0xD0, value)
+end
+
+
+function ChrParam:unkd4(value)
+	self:patch4Byte(0xD4, value)
+end
+
+
+function ChrParam:damageAuxMultiplier(value)
+	self:patchFloat(0xD8, value)
+end
+
+
+function ChrParam:unkdc(value)
+	self:patchFloat(0xDC, value)
+end
+
+
+function ChrParam:unke0(value)
+	self:patchFloat(0xE0, value)
+end
+
+
+function ChrParam:unke4(value)
+	self:patchFloat(0xE4, value)
+end
+
+
+function ChrParam:unke8(value)
+	self:patchFloat(0xE8, value)
+end
+
+
+function ChrParam:unkec(value)
+	self:patch4Byte(0xEC, value)
+end
+
+
+function ChrParam:unkf0(value)
+	self:patch4Byte(0xF0, value)
+end
+
+
+function ChrParam:unkf4(value)
+	self:patch4Byte(0xF4, value)
+end
+
+
+function ChrParam:unkf8(value)
+	self:patch4Byte(0xF8, value)
+end
+
+
+function ChrParam:posture(value)
+	self:patchFloat(0xFC, value)
+end
+
+
+function ChrParam:postureRecoveryS(value)
+	self:patchFloat(0x100, value)
+end
+
+
+function ChrParam:unk104(value)
+	self:patchFloat(0x104, value)
+end
+
+
+function ChrParam:unk108(value)
+	self:patchFloat(0x108, value)
+end
+
+
+function ChrParam:unk10C(value)
+	self:patchFloat(0x10C, value)
+end
+
+
+function ChrParam:chrfullbodysfxparamId(value)
+	self:patch4Byte(0x110, value)
+end
+
+
+function ChrParam:unk114(value)
+	self:patchFloat(0x114, value)
+end
+
+
+function ChrParam:poise(value)
+	self:patchFloat(0x118, value)
+end
+
+
+function ChrParam:poiseRegenPerSecond(value)
+	self:patchFloat(0x11C, value)
+end
+
+
+function ChrParam:unk120(value)
+	self:patch4Byte(0x120, value)
+end
+
+
+function ChrParam:unk124(value)
+	self:patch4Byte(0x124, value)
+end
+
+
+function ChrParam:unk128(value)
+	self:patchFloat(0x128, value)
+end
+
+
+function ChrParam:timerReductionOnKill(value)
+	self:patchFloat(0x12C, value)
+end
+
+
+function ChrParam:unk130(value)
+	self:patchByte(0x130, value)
+end
+
+
+function ChrParam:unk131(value)
+	self:patchByte(0x131, value)
+end
+
+
+function ChrParam:unk132(value)
+	self:patchByte(0x132, value)
+end
+
+
+function ChrParam:chrrounddropsoulparamId(value)
+	self:patchByte(0x133, value)
+end
+
+
+function ChrParam:itemlotId(value)
+	self:patch4Byte(0x134, value)
+end
+
+
+function ChrParam:itemlotIdOverkilled(value)
+	self:patch4Byte(0x138, value)
+end
+
+
+function ChrParam:unk13C(value)
+	self:patchFloat(0x13C, value)
+end
+
+
+function ChrParam:ng1Hp(value)
+	self:patch4Byte(0x140, value)
+end
+
+
+function ChrParam:ng2Hp(value)
+	self:patch4Byte(0x144, value)
+end
+
+
+function ChrParam:ng3Hp(value)
+	self:patch4Byte(0x148, value)
+end
+
+
+function ChrParam:ng4Hp(value)
+	self:patch4Byte(0x14C, value)
+end
+
+
+function ChrParam:ng5Hp(value)
+	self:patch4Byte(0x150, value)
+end
+
+
+function ChrParam:ng6Hp(value)
+	self:patch4Byte(0x154, value)
+end
+
+
+function ChrParam:ng7Hp(value)
+	self:patch4Byte(0x158, value)
+end
+
+
+function ChrParam:nameTextId(value)
+	self:patch4Byte(0x15C, value)
+end
+
+
+function ChrParam:dropawestone(value)
+	self:patch4Byte(0x160, value)
+end
+
+
+function ChrParam:unk164(value)
+	self:patch4Byte(0x164, value)
+end
+
+
+--[[End ChrParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

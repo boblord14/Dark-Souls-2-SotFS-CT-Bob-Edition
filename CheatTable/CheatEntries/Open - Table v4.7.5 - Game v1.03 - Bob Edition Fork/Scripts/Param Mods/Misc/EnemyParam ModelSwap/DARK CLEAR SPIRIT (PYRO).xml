@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087456</ID>
+  <Description>"DARK CLEAR SPIRIT (PYRO)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>690</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

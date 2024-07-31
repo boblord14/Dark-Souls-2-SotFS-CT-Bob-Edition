@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337079493</ID>
+  <Description>"Parry"</Description>
+  <Color>0000FF</Color>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>550</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

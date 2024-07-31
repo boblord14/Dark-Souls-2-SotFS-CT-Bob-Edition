@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>24083</ID>
+  <Description>"Rank"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1BD</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

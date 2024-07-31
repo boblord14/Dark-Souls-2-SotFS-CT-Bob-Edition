@@ -1,0 +1,39 @@
+<CheatEntry>
+  <ID>1337085070</ID>
+  <Description>"Weapon Category Name"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:None
+1:Claw
+2:Fists
+3:Dagger
+4:Thrusting Sword
+5:Whip
+6:Twinblade
+7:Spear
+8:Lance
+9:Curved Sword
+10:Katana
+11:Straight Sword
+12:Reaper
+13:Greatsword
+14:Ultra Greatsword
+15:Curved Greatsword
+16:Hammer
+17:Great Hammer
+18:Axe
+19:Greataxe
+20:Halberd
+21:Staff
+22:Sacred Chime
+23:Bow
+24:Greatbow
+25:Crossbow
+26:Small Shield
+27:Shield
+28:Greatshield
+29:Torch
+30:Binoculars
+31:Pyromancy Flame
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>+36</Address>
+</CheatEntry>

@@ -1,0 +1,15 @@
+[ENABLE]
+aobscanmodule(InfiniteMessageVote,DarkSoulsII.exe,44 89 30 48 83 47 30 04) // should be unique
+registersymbol(InfiniteMessageVote)
+InfiniteMessageVote:
+  nop
+  nop
+  nop
+
+[DISABLE]
+InfiniteMessageVote:
+  db 44 89 30 48 83 47 30 04
+unregistersymbol(InfiniteMessageVote)
+
+
+

@@ -1,0 +1,42 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START FeColorSetParam class]]--
+FeColorSetParam = BaseParamClass:new()
+
+function FeColorSetParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("FeColorSetParam", uuid, id, address)
+	return o
+end
+
+function FeColorSetParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function FeColorSetParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function FeColorSetParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function FeColorSetParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+--[[End FeColorSetParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

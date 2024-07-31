@@ -1,0 +1,7 @@
+[ENABLE]
+label(WepTypeParamStruct)
+registersymbol(WepTypeParamStruct)
+[WepTypeParamAddr]:
+WepTypeParamStruct:
+[DISABLE]
+unregistersymbol(WepTypeParamStruct)

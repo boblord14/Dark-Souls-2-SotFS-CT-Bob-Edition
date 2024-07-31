@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tuchi,2)
+                        tuchi:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(tuchi)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6330
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tuchi)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(tuchi, 2)
+                        unregistersymbol(tuchi)
+                    

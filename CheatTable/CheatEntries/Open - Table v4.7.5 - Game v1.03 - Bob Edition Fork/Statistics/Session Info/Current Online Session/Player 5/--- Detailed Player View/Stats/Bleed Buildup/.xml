@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337108839</ID>
+  <Description>"Bleed Buildup"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+68</Address>
+  <x-ce2fs-child-order>
+    <id id="1337108840"/>
+    <id id="1337108841"/>
+    <id id="1337108842"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

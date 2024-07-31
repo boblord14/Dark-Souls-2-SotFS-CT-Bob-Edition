@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(elitet,4)
+                        elitet:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+2C8]+08,4)
+                        registersymbol(elitet)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        dw #9918
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(elitet)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        readmem(elitet, 4)
+                        unregistersymbol(elitet)
+                    
+					

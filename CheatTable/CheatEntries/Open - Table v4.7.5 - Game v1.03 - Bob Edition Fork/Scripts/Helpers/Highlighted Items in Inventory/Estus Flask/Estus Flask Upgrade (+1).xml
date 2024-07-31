@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337089197</ID>
+  <Description>"Estus Flask Upgrade (+1)"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1:Base
+2:+1
+3:+2
+4:+3
+5:+4
+6:+5
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>pItem</Address>
+  <Offsets>
+    <Offset>26</Offset>
+  </Offsets>
+</CheatEntry>

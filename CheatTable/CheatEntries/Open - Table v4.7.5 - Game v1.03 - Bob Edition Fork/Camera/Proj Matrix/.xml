@@ -1,0 +1,30 @@
+<CheatEntry>
+  <ID>1337091873</ID>
+  <Description>"Proj Matrix"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>F0+80</Offset>
+    <Offset>16F0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337091874"/>
+    <id id="1337091875"/>
+    <id id="1337091876"/>
+    <id id="1337091877"/>
+    <id id="1337091878"/>
+    <id id="1337091879"/>
+    <id id="1337091880"/>
+    <id id="1337091881"/>
+    <id id="1337091882"/>
+    <id id="1337091883"/>
+    <id id="1337091884"/>
+    <id id="1337091885"/>
+    <id id="1337091886"/>
+    <id id="1337091887"/>
+    <id id="1337091888"/>
+    <id id="1337091889"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

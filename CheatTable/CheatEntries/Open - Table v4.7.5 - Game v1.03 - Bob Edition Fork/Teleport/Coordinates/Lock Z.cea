@@ -1,0 +1,11 @@
+[ENABLE]
+aobscanmodule(ZlockAOB,DarkSoulsII.exe,66 xx xx B8 xx 00 00 00 xx xx BC) // should be unique
+registersymbol(ZlockAOB)
+ZlockAOB:
+  db 90 90 90 90 90 90 90 90
+[DISABLE]
+ZlockAOB:
+  db 66 0F 7F B8 90 00 00 00
+
+unregistersymbol(ZlockAOB)
+

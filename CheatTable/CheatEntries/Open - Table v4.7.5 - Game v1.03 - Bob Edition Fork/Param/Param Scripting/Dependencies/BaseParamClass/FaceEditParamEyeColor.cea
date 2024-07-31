@@ -1,0 +1,37 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START FaceEditParamEyeColor class]]--
+FaceEditParamEyeColor = BaseParamClass:new()
+
+function FaceEditParamEyeColor:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("FaceEditParamEyeColor", uuid, id, address)
+	return o
+end
+
+function FaceEditParamEyeColor:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function FaceEditParamEyeColor:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function FaceEditParamEyeColor:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+--[[End FaceEditParamEyeColor class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

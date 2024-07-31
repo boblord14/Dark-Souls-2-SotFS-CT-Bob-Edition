@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337105857</ID>
+  <Description>"Rat King [9,19,34]"</Description>
+  <VariableType>2 Bytes</VariableType>
+  <Address>BaseA</Address>
+  <Offsets>
+    <Offset>1CC</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

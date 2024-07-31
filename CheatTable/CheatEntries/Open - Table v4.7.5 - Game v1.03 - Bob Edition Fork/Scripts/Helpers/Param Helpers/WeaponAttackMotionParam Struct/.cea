@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem6,32)
+label(WepAtkMotionAddr)
+registersymbol(WepAtkMotionAddr)
+newmem6:
+WepAtkMotionAddr:
+[DISABLE]
+dealloc(newmem6)
+unregistersymbol(WepAtkMotionAddr)

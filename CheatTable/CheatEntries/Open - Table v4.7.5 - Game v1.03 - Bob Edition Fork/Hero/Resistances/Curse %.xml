@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256152</ID>
+  <Description>"Curse %"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1E8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

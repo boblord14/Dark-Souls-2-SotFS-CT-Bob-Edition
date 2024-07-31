@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tlclub,2)
+                        tlclub:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(tlclub)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6370
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tlclub)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(tlclub, 2)
+                        unregistersymbol(tlclub)
+                    

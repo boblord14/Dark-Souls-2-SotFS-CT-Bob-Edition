@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>1337089196</ID>
+  <Description>"Max Estus Flask"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>pItem</Address>
+  <Offsets>
+    <Offset>25</Offset>
+  </Offsets>
+</CheatEntry>

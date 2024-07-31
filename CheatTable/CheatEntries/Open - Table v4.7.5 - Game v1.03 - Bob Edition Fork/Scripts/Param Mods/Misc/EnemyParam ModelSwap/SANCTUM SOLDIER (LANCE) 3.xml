@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087998</ID>
+  <Description>"SANCTUM SOLDIER (LANCE)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3960</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

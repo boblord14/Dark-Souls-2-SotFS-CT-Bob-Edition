@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337082970</ID>
+  <Description>"Poise Damage Reduction"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+b8</Address>
+</CheatEntry>

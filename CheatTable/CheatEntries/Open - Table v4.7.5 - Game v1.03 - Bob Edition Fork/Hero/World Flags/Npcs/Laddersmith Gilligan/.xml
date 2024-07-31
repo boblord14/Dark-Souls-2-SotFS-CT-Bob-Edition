@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256291</ID>
+  <Description>"Laddersmith Gilligan"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26530"/>
+    <id id="26550"/>
+    <id id="26638"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

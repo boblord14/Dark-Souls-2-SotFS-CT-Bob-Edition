@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26298</ID>
+  <Description>"Fog Distance"</Description>
+  <VariableType>Float</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>C</Offset>
+  </Offsets>
+</CheatEntry>

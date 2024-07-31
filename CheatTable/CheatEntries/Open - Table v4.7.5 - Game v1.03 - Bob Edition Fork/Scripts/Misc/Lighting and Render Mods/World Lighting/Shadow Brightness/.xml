@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26348</ID>
+  <Description>"Shadow Brightness"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26344"/>
+    <id id="26345"/>
+    <id id="26346"/>
+    <id id="26347"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

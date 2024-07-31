@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337256235</ID>
+  <Description>"isMenuIdle"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>4CB</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

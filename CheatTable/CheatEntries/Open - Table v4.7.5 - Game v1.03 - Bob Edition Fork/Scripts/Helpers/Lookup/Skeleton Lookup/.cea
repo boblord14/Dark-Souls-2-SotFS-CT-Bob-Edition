@@ -1,0 +1,25 @@
+[ENABLE]
+alloc(SkeletonLookup, $100, DarkSoulsII.exe)
+alloc(BoneString, 32)
+alloc(return, 4)
+registersymbol(Skeletonlookup)
+registersymbol(BoneString)
+registersymbol(return)
+
+SkeletonLookup:
+sub rsp, 80
+mov r8, BoneString
+vortmov(rdx, [[[BaseA]+D0]+F0]+88)
+vortmov(rcx, [[[BaseA]+D0]+E0]+1F8)
+call DarkSoulsII.exe+32EC30
+mov [return], eax
+add rsp, 80
+ret
+ 
+[DISABLE]
+dealloc(SkeletonLookup)
+dealloc(BoneString)
+dealloc(return)
+unregistersymbol(Skeletonlookup)
+unregistersymbol(BoneString)
+unregistersymbol(return)

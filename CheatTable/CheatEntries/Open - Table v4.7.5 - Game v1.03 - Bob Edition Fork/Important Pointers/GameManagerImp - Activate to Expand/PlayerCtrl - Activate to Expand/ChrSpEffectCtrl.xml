@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337043097</ID>
+  <Description>"ChrSpEffectCtrl"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <Color>008000</Color>
+  <VariableType>8 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>3E0</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337082924</ID>
+  <Description>"ActionCategory ID"</Description>
+  <DropDownListLink>WeaponActionCategoryParam</DropDownListLink>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+c</Address>
+</CheatEntry>

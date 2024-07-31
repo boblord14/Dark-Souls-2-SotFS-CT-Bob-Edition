@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337090199</ID>
+  <Description>"RIPOSTE"</Description>
+  <DropDownListLink>WeaponAttackMotion</DropDownListLink>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+f4</Address>
+</CheatEntry>

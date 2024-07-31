@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem22,32)
+label(EquipInterfereParamAddressToUse)
+registersymbol(EquipInterfereParamAddressToUse)
+newmem22:
+EquipInterfereParamAddressToUse:
+[DISABLE]
+dealloc(newmem22)
+unregistersymbol(EquipInterfereParamAddressToUse)

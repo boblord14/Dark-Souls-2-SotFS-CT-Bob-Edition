@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>54</ID>
+  <Description>"Undead Ditch"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3C2</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

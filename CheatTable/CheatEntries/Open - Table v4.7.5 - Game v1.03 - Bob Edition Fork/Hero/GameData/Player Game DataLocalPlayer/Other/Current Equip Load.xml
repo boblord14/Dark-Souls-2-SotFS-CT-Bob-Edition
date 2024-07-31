@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>23064</ID>
+  <Description>"Current Equip Load"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>44</Offset>
+    <Offset>28</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

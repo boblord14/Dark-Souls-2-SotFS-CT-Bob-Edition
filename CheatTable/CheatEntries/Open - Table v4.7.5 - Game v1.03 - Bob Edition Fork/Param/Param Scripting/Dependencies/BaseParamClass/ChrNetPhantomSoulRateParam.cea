@@ -1,0 +1,112 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ChrNetPhantomSoulRateParam class]]--
+ChrNetPhantomSoulRateParam = BaseParamClass:new()
+
+function ChrNetPhantomSoulRateParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ChrNetPhantomSoulRateParam", uuid, id, address)
+	return o
+end
+
+function ChrNetPhantomSoulRateParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk24(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function ChrNetPhantomSoulRateParam:unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+--[[End ChrNetPhantomSoulRateParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

@@ -1,0 +1,7 @@
+[ENABLE]
+label(ArmorParamStruct)
+registersymbol(ArmorParamStruct)
+[ArmorParamAddressToUse]:
+ArmorParamStruct:
+[DISABLE]
+unregistersymbol(ArmorParamStruct)

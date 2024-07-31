@@ -1,0 +1,7 @@
+[ENABLE]
+label(WepActionCategoryParamStruct)
+registersymbol(WepActionCategoryParamStruct)
+[WepActionCategoryParamAddr]:
+WepActionCategoryParamStruct:
+[DISABLE]
+unregistersymbol(WepActionCategoryParamStruct)

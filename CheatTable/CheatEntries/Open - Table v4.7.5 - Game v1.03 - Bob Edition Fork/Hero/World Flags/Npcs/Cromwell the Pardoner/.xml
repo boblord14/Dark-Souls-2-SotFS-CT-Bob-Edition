@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337256307</ID>
+  <Description>"Cromwell the Pardoner"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="95"/>
+    <id id="96"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

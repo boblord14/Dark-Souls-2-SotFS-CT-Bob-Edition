@@ -1,0 +1,82 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START DecalParam class]]--
+DecalParam = BaseParamClass:new()
+
+function DecalParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("DecalParam", uuid, id, address)
+	return o
+end
+
+function DecalParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function DecalParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function DecalParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function DecalParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function DecalParam:unk10(value)
+	self:patch2Byte(0x10, value)
+end
+
+
+function DecalParam:unk12(value)
+	self:patch2Byte(0x12, value)
+end
+
+
+function DecalParam:unk14(value)
+	self:patch2Byte(0x14, value)
+end
+
+
+function DecalParam:unk16(value)
+	self:patch2Byte(0x16, value)
+end
+
+
+function DecalParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function DecalParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function DecalParam:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function DecalParam:unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+--[[End DecalParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

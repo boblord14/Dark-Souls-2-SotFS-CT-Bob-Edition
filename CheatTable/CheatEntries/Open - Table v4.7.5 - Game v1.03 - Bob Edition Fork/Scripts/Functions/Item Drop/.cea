@@ -1,0 +1,86 @@
+[ENABLE]
+//Made by Mitte & Lord Radai
+alloc(ItemDrop, $100, DarkSoulsII.exe)
+alloc(ItemStruct, 132)
+registersymbol(ItemDrop)
+registersymbol(ItemStruct)
+label(return)
+
+ItemStruct:
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #1
+
+ItemDrop:
+sub rsp, 28
+lea rdx, [ItemStruct]
+cmp [rdx+80], 00
+jbe return
+cmp [rdx+80], 08
+ja return
+vortmov(rcx, [[[GameManagerImp]+A8]+10]+10, return)
+call DarkSoulsII.exe+1AA3E0
+
+return:
+add rsp, 28
+ret
+
+[DISABLE]
+dealloc(ItemDrop)
+dealloc(ItemStruct)
+unregistersymbol(ItemDrop)
+unregistersymbol(ItemStruct)

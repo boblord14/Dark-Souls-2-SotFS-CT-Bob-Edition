@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256657</ID>
+  <Description>"Character Creation Menus"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337256658"/>
+    <id id="1337100526"/>
+    <id id="1337100528"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

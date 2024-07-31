@@ -1,0 +1,34 @@
+[ENABLE]
+alloc(SpEffectLookup, $100, DarkSoulsII.exe)
+alloc(SpEffectId, 4)
+alloc(InstructionIndex, 4)
+alloc(Address, 8)
+registersymbol(SpEffectLookup)
+registersymbol(SpEffectId)
+registersymbol(InstructionIndex)
+registersymbol(Address)
+label(return)
+
+SpEffectLookup:
+sub rsp, 20
+vortmov(rcx, [[[[[[BaseA]+D0]+3E0]+10]+18]+C0], return)
+mov edx, [SpEffectId]
+call DarkSoulsII.exe+B1F390
+mov r8d, [InstructionIndex]
+mov rdx, rax
+vortmov(rcx, [[[[[[BaseA]+D0]+3E0]+10]+18]+C0], return)
+call DarkSoulsII.exe+B1F360
+mov [Address], rax
+return:
+add rsp, 20
+ret
+ 
+[DISABLE]
+dealloc(SpEffectLookup)
+dealloc(SpEffectId)
+dealloc(InstructionIndex)
+dealloc(Address)
+unregistersymbol(SpEffectLookup)
+unregistersymbol(SpEffectId)
+unregistersymbol(InstructionIndex)
+unregistersymbol(Address)

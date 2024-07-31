@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337084287</ID>
+  <Description>"Damage %: Petrify"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+BC</Address>
+</CheatEntry>

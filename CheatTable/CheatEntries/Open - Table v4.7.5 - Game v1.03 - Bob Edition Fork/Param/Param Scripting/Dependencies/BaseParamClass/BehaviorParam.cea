@@ -1,0 +1,1272 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START BehaviorParam class]]--
+BehaviorParam = BaseParamClass:new()
+
+function BehaviorParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("BehaviorParam", uuid, id, address)
+	return o
+end
+
+function BehaviorParam:group1EnemyDamageId0(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function BehaviorParam:group1EnemyDamageId1(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function BehaviorParam:group1EnemyDamageId2(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function BehaviorParam:group1EnemyDamageId3(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function BehaviorParam:group1EnemyDamageId4(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function BehaviorParam:group1EnemyDamageId5(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function BehaviorParam:group1Unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function BehaviorParam:group1Unk1C(value)
+	self:patchByte(0x1C, value)
+end
+
+
+function BehaviorParam:group1Unk1D(value)
+	self:patchByte(0x1D, value)
+end
+
+
+function BehaviorParam:group1Unk1E(value)
+	self:patchByte(0x1E, value)
+end
+
+
+function BehaviorParam:group1Unk1F(value)
+	self:patchByte(0x1F, value)
+end
+
+
+function BehaviorParam:group1EnemyDamageId(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function BehaviorParam:group1Unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function BehaviorParam:group1Unk28(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function BehaviorParam:group1Unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function BehaviorParam:group1Unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function BehaviorParam:group1Unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function BehaviorParam:group1Unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function BehaviorParam:group1Unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function BehaviorParam:group1Unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function BehaviorParam:group1Unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function BehaviorParam:group1Unk48(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function BehaviorParam:group1Unk4C(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function BehaviorParam:group1Unk50(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function BehaviorParam:group1Unk54(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function BehaviorParam:group2EnemyDamageId0(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function BehaviorParam:group2EnemyDamageId1(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function BehaviorParam:group2EnemyDamageId2(value)
+	self:patch4Byte(0x60, value)
+end
+
+
+function BehaviorParam:group2EnemyDamageId3(value)
+	self:patch4Byte(0x64, value)
+end
+
+
+function BehaviorParam:group2EnemyDamageId4(value)
+	self:patch4Byte(0x68, value)
+end
+
+
+function BehaviorParam:group2EnemyDamageId5(value)
+	self:patch4Byte(0x6C, value)
+end
+
+
+function BehaviorParam:group2Unk18(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+function BehaviorParam:group2Unk1C(value)
+	self:patchByte(0x74, value)
+end
+
+
+function BehaviorParam:group2Unk1D(value)
+	self:patchByte(0x75, value)
+end
+
+
+function BehaviorParam:group2Unk1E(value)
+	self:patchByte(0x76, value)
+end
+
+
+function BehaviorParam:group2Unk1F(value)
+	self:patchByte(0x77, value)
+end
+
+
+function BehaviorParam:group2EnemyDamageId(value)
+	self:patch4Byte(0x78, value)
+end
+
+
+function BehaviorParam:group2Unk24(value)
+	self:patch4Byte(0x7C, value)
+end
+
+
+function BehaviorParam:group2Unk28(value)
+	self:patch4Byte(0x80, value)
+end
+
+
+function BehaviorParam:group2Unk2C(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function BehaviorParam:group2Unk30(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function BehaviorParam:group2Unk34(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function BehaviorParam:group2Unk38(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function BehaviorParam:group2Unk3C(value)
+	self:patchFloat(0x94, value)
+end
+
+
+function BehaviorParam:group2Unk40(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function BehaviorParam:group2Unk44(value)
+	self:patchFloat(0x9C, value)
+end
+
+
+function BehaviorParam:group2Unk48(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function BehaviorParam:group2Unk4C(value)
+	self:patch4Byte(0xA4, value)
+end
+
+
+function BehaviorParam:group2Unk50(value)
+	self:patchFloat(0xA8, value)
+end
+
+
+function BehaviorParam:group2Unk54(value)
+	self:patchFloat(0xAC, value)
+end
+
+
+function BehaviorParam:group3EnemyDamageId0(value)
+	self:patch4Byte(0xB0, value)
+end
+
+
+function BehaviorParam:group3EnemyDamageId1(value)
+	self:patch4Byte(0xB4, value)
+end
+
+
+function BehaviorParam:group3EnemyDamageId2(value)
+	self:patch4Byte(0xB8, value)
+end
+
+
+function BehaviorParam:group3EnemyDamageId3(value)
+	self:patch4Byte(0xBC, value)
+end
+
+
+function BehaviorParam:group3EnemyDamageId4(value)
+	self:patch4Byte(0xC0, value)
+end
+
+
+function BehaviorParam:group3EnemyDamageId5(value)
+	self:patch4Byte(0xC4, value)
+end
+
+
+function BehaviorParam:group3Unk18(value)
+	self:patch4Byte(0xC8, value)
+end
+
+
+function BehaviorParam:group3Unk1C(value)
+	self:patchByte(0xCC, value)
+end
+
+
+function BehaviorParam:group3Unk1D(value)
+	self:patchByte(0xCD, value)
+end
+
+
+function BehaviorParam:group3Unk1E(value)
+	self:patchByte(0xCE, value)
+end
+
+
+function BehaviorParam:group3Unk1F(value)
+	self:patchByte(0xCF, value)
+end
+
+
+function BehaviorParam:group3EnemyDamageId(value)
+	self:patch4Byte(0xD0, value)
+end
+
+
+function BehaviorParam:group3Unk24(value)
+	self:patch4Byte(0xD4, value)
+end
+
+
+function BehaviorParam:group3Unk28(value)
+	self:patch4Byte(0xD8, value)
+end
+
+
+function BehaviorParam:group3Unk2C(value)
+	self:patchFloat(0xDC, value)
+end
+
+
+function BehaviorParam:group3Unk30(value)
+	self:patchFloat(0xE0, value)
+end
+
+
+function BehaviorParam:group3Unk34(value)
+	self:patchFloat(0xE4, value)
+end
+
+
+function BehaviorParam:group3Unk38(value)
+	self:patchFloat(0xE8, value)
+end
+
+
+function BehaviorParam:group3Unk3C(value)
+	self:patchFloat(0xEC, value)
+end
+
+
+function BehaviorParam:group3Unk40(value)
+	self:patchFloat(0xF0, value)
+end
+
+
+function BehaviorParam:group3Unk44(value)
+	self:patchFloat(0xF4, value)
+end
+
+
+function BehaviorParam:group3Unk48(value)
+	self:patchFloat(0xF8, value)
+end
+
+
+function BehaviorParam:group3Unk4C(value)
+	self:patch4Byte(0xFC, value)
+end
+
+
+function BehaviorParam:group3Unk50(value)
+	self:patchFloat(0x100, value)
+end
+
+
+function BehaviorParam:group3Unk54(value)
+	self:patchFloat(0x104, value)
+end
+
+
+function BehaviorParam:group4EnemyDamageId0(value)
+	self:patch4Byte(0x108, value)
+end
+
+
+function BehaviorParam:group4EnemyDamageId1(value)
+	self:patch4Byte(0x10C, value)
+end
+
+
+function BehaviorParam:group4EnemyDamageId2(value)
+	self:patch4Byte(0x110, value)
+end
+
+
+function BehaviorParam:group4EnemyDamageId3(value)
+	self:patch4Byte(0x114, value)
+end
+
+
+function BehaviorParam:group4EnemyDamageId4(value)
+	self:patch4Byte(0x118, value)
+end
+
+
+function BehaviorParam:group4EnemyDamageId5(value)
+	self:patch4Byte(0x11C, value)
+end
+
+
+function BehaviorParam:group4Unk18(value)
+	self:patch4Byte(0x120, value)
+end
+
+
+function BehaviorParam:group4Unk1C(value)
+	self:patchByte(0x124, value)
+end
+
+
+function BehaviorParam:group4Unk1D(value)
+	self:patchByte(0x125, value)
+end
+
+
+function BehaviorParam:group4Unk1E(value)
+	self:patchByte(0x126, value)
+end
+
+
+function BehaviorParam:group4Unk1F(value)
+	self:patchByte(0x127, value)
+end
+
+
+function BehaviorParam:group4EnemyDamageId(value)
+	self:patch4Byte(0x128, value)
+end
+
+
+function BehaviorParam:group4Unk24(value)
+	self:patch4Byte(0x12C, value)
+end
+
+
+function BehaviorParam:group4Unk28(value)
+	self:patch4Byte(0x130, value)
+end
+
+
+function BehaviorParam:group4Unk2C(value)
+	self:patchFloat(0x134, value)
+end
+
+
+function BehaviorParam:group4Unk30(value)
+	self:patchFloat(0x138, value)
+end
+
+
+function BehaviorParam:group4Unk34(value)
+	self:patchFloat(0x13C, value)
+end
+
+
+function BehaviorParam:group4Unk38(value)
+	self:patchFloat(0x140, value)
+end
+
+
+function BehaviorParam:group4Unk3C(value)
+	self:patchFloat(0x144, value)
+end
+
+
+function BehaviorParam:group4Unk40(value)
+	self:patchFloat(0x148, value)
+end
+
+
+function BehaviorParam:group4Unk44(value)
+	self:patchFloat(0x14C, value)
+end
+
+
+function BehaviorParam:group4Unk48(value)
+	self:patchFloat(0x150, value)
+end
+
+
+function BehaviorParam:group4Unk4C(value)
+	self:patch4Byte(0x154, value)
+end
+
+
+function BehaviorParam:group4Unk50(value)
+	self:patchFloat(0x158, value)
+end
+
+
+function BehaviorParam:group4Unk54(value)
+	self:patchFloat(0x15C, value)
+end
+
+
+function BehaviorParam:group5EnemyDamageId0(value)
+	self:patch4Byte(0x160, value)
+end
+
+
+function BehaviorParam:group5EnemyDamageId1(value)
+	self:patch4Byte(0x164, value)
+end
+
+
+function BehaviorParam:group5EnemyDamageId2(value)
+	self:patch4Byte(0x168, value)
+end
+
+
+function BehaviorParam:group5EnemyDamageId3(value)
+	self:patch4Byte(0x16C, value)
+end
+
+
+function BehaviorParam:group5EnemyDamageId4(value)
+	self:patch4Byte(0x170, value)
+end
+
+
+function BehaviorParam:group5EnemyDamageId5(value)
+	self:patch4Byte(0x174, value)
+end
+
+
+function BehaviorParam:group5Unk18(value)
+	self:patch4Byte(0x178, value)
+end
+
+
+function BehaviorParam:group5Unk1C(value)
+	self:patchByte(0x17C, value)
+end
+
+
+function BehaviorParam:group5Unk1D(value)
+	self:patchByte(0x17D, value)
+end
+
+
+function BehaviorParam:group5Unk1E(value)
+	self:patchByte(0x17E, value)
+end
+
+
+function BehaviorParam:group5Unk1F(value)
+	self:patchByte(0x17F, value)
+end
+
+
+function BehaviorParam:group5EnemyDamageId(value)
+	self:patch4Byte(0x180, value)
+end
+
+
+function BehaviorParam:group5Unk24(value)
+	self:patch4Byte(0x184, value)
+end
+
+
+function BehaviorParam:group5Unk28(value)
+	self:patch4Byte(0x188, value)
+end
+
+
+function BehaviorParam:group5Unk2C(value)
+	self:patchFloat(0x18C, value)
+end
+
+
+function BehaviorParam:group5Unk30(value)
+	self:patchFloat(0x190, value)
+end
+
+
+function BehaviorParam:group5Unk34(value)
+	self:patchFloat(0x194, value)
+end
+
+
+function BehaviorParam:group5Unk38(value)
+	self:patchFloat(0x198, value)
+end
+
+
+function BehaviorParam:group5Unk3C(value)
+	self:patchFloat(0x19C, value)
+end
+
+
+function BehaviorParam:group5Unk40(value)
+	self:patchFloat(0x1A0, value)
+end
+
+
+function BehaviorParam:group5Unk44(value)
+	self:patchFloat(0x1A4, value)
+end
+
+
+function BehaviorParam:group5Unk48(value)
+	self:patchFloat(0x1A8, value)
+end
+
+
+function BehaviorParam:group5Unk4C(value)
+	self:patch4Byte(0x1AC, value)
+end
+
+
+function BehaviorParam:group5Unk50(value)
+	self:patchFloat(0x1B0, value)
+end
+
+
+function BehaviorParam:group5Unk54(value)
+	self:patchFloat(0x1B4, value)
+end
+
+
+function BehaviorParam:group6EnemyDamageId0(value)
+	self:patch4Byte(0x1B8, value)
+end
+
+
+function BehaviorParam:group6EnemyDamageId1(value)
+	self:patch4Byte(0x1BC, value)
+end
+
+
+function BehaviorParam:group6EnemyDamageId2(value)
+	self:patch4Byte(0x1C0, value)
+end
+
+
+function BehaviorParam:group6EnemyDamageId3(value)
+	self:patch4Byte(0x1C4, value)
+end
+
+
+function BehaviorParam:group6EnemyDamageId4(value)
+	self:patch4Byte(0x1C8, value)
+end
+
+
+function BehaviorParam:group6EnemyDamageId5(value)
+	self:patch4Byte(0x1CC, value)
+end
+
+
+function BehaviorParam:group6Unk18(value)
+	self:patch4Byte(0x1D0, value)
+end
+
+
+function BehaviorParam:group6Unk1C(value)
+	self:patchByte(0x1D4, value)
+end
+
+
+function BehaviorParam:group6Unk1D(value)
+	self:patchByte(0x1D5, value)
+end
+
+
+function BehaviorParam:group6Unk1E(value)
+	self:patchByte(0x1D6, value)
+end
+
+
+function BehaviorParam:group6Unk1F(value)
+	self:patchByte(0x1D7, value)
+end
+
+
+function BehaviorParam:group6EnemyDamageId(value)
+	self:patch4Byte(0x1D8, value)
+end
+
+
+function BehaviorParam:group6Unk24(value)
+	self:patch4Byte(0x1DC, value)
+end
+
+
+function BehaviorParam:group6Unk28(value)
+	self:patch4Byte(0x1E0, value)
+end
+
+
+function BehaviorParam:group6Unk2C(value)
+	self:patchFloat(0x1E4, value)
+end
+
+
+function BehaviorParam:group6Unk30(value)
+	self:patchFloat(0x1E8, value)
+end
+
+
+function BehaviorParam:group6Unk34(value)
+	self:patchFloat(0x1EC, value)
+end
+
+
+function BehaviorParam:group6Unk38(value)
+	self:patchFloat(0x1F0, value)
+end
+
+
+function BehaviorParam:group6Unk3C(value)
+	self:patchFloat(0x1F4, value)
+end
+
+
+function BehaviorParam:group6Unk40(value)
+	self:patchFloat(0x1F8, value)
+end
+
+
+function BehaviorParam:group6Unk44(value)
+	self:patchFloat(0x1FC, value)
+end
+
+
+function BehaviorParam:group6Unk48(value)
+	self:patchFloat(0x200, value)
+end
+
+
+function BehaviorParam:group6Unk4C(value)
+	self:patch4Byte(0x204, value)
+end
+
+
+function BehaviorParam:group6Unk50(value)
+	self:patchFloat(0x208, value)
+end
+
+
+function BehaviorParam:group6Unk54(value)
+	self:patchFloat(0x20C, value)
+end
+
+
+function BehaviorParam:group7EnemyDamageId0(value)
+	self:patch4Byte(0x210, value)
+end
+
+
+function BehaviorParam:group7EnemyDamageId1(value)
+	self:patch4Byte(0x214, value)
+end
+
+
+function BehaviorParam:group7EnemyDamageId2(value)
+	self:patch4Byte(0x218, value)
+end
+
+
+function BehaviorParam:group7EnemyDamageId3(value)
+	self:patch4Byte(0x21C, value)
+end
+
+
+function BehaviorParam:group7EnemyDamageId4(value)
+	self:patch4Byte(0x220, value)
+end
+
+
+function BehaviorParam:group7EnemyDamageId5(value)
+	self:patch4Byte(0x224, value)
+end
+
+
+function BehaviorParam:group7Unk18(value)
+	self:patch4Byte(0x228, value)
+end
+
+
+function BehaviorParam:group7Unk1C(value)
+	self:patchByte(0x22C, value)
+end
+
+
+function BehaviorParam:group7Unk1D(value)
+	self:patchByte(0x22D, value)
+end
+
+
+function BehaviorParam:group7Unk1E(value)
+	self:patchByte(0x22E, value)
+end
+
+
+function BehaviorParam:group7Unk1F(value)
+	self:patchByte(0x22F, value)
+end
+
+
+function BehaviorParam:group7EnemyDamageId(value)
+	self:patch4Byte(0x230, value)
+end
+
+
+function BehaviorParam:group7Unk24(value)
+	self:patch4Byte(0x234, value)
+end
+
+
+function BehaviorParam:group7Unk28(value)
+	self:patch4Byte(0x238, value)
+end
+
+
+function BehaviorParam:group7Unk2C(value)
+	self:patchFloat(0x23C, value)
+end
+
+
+function BehaviorParam:group7Unk30(value)
+	self:patchFloat(0x240, value)
+end
+
+
+function BehaviorParam:group7Unk34(value)
+	self:patchFloat(0x244, value)
+end
+
+
+function BehaviorParam:group7Unk38(value)
+	self:patchFloat(0x248, value)
+end
+
+
+function BehaviorParam:group7Unk3C(value)
+	self:patchFloat(0x24C, value)
+end
+
+
+function BehaviorParam:group7Unk40(value)
+	self:patchFloat(0x250, value)
+end
+
+
+function BehaviorParam:group7Unk44(value)
+	self:patchFloat(0x254, value)
+end
+
+
+function BehaviorParam:group7Unk48(value)
+	self:patchFloat(0x258, value)
+end
+
+
+function BehaviorParam:group7Unk4C(value)
+	self:patch4Byte(0x25C, value)
+end
+
+
+function BehaviorParam:group7Unk50(value)
+	self:patchFloat(0x260, value)
+end
+
+
+function BehaviorParam:group7Unk54(value)
+	self:patchFloat(0x264, value)
+end
+
+
+function BehaviorParam:group8EnemyDamageId0(value)
+	self:patch4Byte(0x268, value)
+end
+
+
+function BehaviorParam:group8EnemyDamageId1(value)
+	self:patch4Byte(0x26C, value)
+end
+
+
+function BehaviorParam:group8EnemyDamageId2(value)
+	self:patch4Byte(0x270, value)
+end
+
+
+function BehaviorParam:group8EnemyDamageId3(value)
+	self:patch4Byte(0x274, value)
+end
+
+
+function BehaviorParam:group8EnemyDamageId4(value)
+	self:patch4Byte(0x278, value)
+end
+
+
+function BehaviorParam:group8EnemyDamageId5(value)
+	self:patch4Byte(0x27C, value)
+end
+
+
+function BehaviorParam:group8Unk18(value)
+	self:patch4Byte(0x280, value)
+end
+
+
+function BehaviorParam:group8Unk1C(value)
+	self:patchByte(0x284, value)
+end
+
+
+function BehaviorParam:group8Unk1D(value)
+	self:patchByte(0x285, value)
+end
+
+
+function BehaviorParam:group8Unk1E(value)
+	self:patchByte(0x286, value)
+end
+
+
+function BehaviorParam:group8Unk1F(value)
+	self:patchByte(0x287, value)
+end
+
+
+function BehaviorParam:group8EnemyDamageId(value)
+	self:patch4Byte(0x288, value)
+end
+
+
+function BehaviorParam:group8Unk24(value)
+	self:patch4Byte(0x28C, value)
+end
+
+
+function BehaviorParam:group8Unk28(value)
+	self:patch4Byte(0x290, value)
+end
+
+
+function BehaviorParam:group8Unk2C(value)
+	self:patchFloat(0x294, value)
+end
+
+
+function BehaviorParam:group8Unk30(value)
+	self:patchFloat(0x298, value)
+end
+
+
+function BehaviorParam:group8Unk34(value)
+	self:patchFloat(0x29C, value)
+end
+
+
+function BehaviorParam:group8Unk38(value)
+	self:patchFloat(0x2A0, value)
+end
+
+
+function BehaviorParam:group8Unk3C(value)
+	self:patchFloat(0x2A4, value)
+end
+
+
+function BehaviorParam:group8Unk40(value)
+	self:patchFloat(0x2A8, value)
+end
+
+
+function BehaviorParam:group8Unk44(value)
+	self:patchFloat(0x2AC, value)
+end
+
+
+function BehaviorParam:group8Unk48(value)
+	self:patchFloat(0x2B0, value)
+end
+
+
+function BehaviorParam:group8Unk4C(value)
+	self:patch4Byte(0x2B4, value)
+end
+
+
+function BehaviorParam:group8Unk50(value)
+	self:patchFloat(0x2B8, value)
+end
+
+
+function BehaviorParam:group8Unk54(value)
+	self:patchFloat(0x2BC, value)
+end
+
+
+function BehaviorParam:group9EnemyDamageId0(value)
+	self:patch4Byte(0x2C0, value)
+end
+
+
+function BehaviorParam:group9EnemyDamageId1(value)
+	self:patch4Byte(0x2C4, value)
+end
+
+
+function BehaviorParam:group9EnemyDamageId2(value)
+	self:patch4Byte(0x2C8, value)
+end
+
+
+function BehaviorParam:group9EnemyDamageId3(value)
+	self:patch4Byte(0x2CC, value)
+end
+
+
+function BehaviorParam:group9EnemyDamageId4(value)
+	self:patch4Byte(0x2D0, value)
+end
+
+
+function BehaviorParam:group9EnemyDamageId5(value)
+	self:patch4Byte(0x2D4, value)
+end
+
+
+function BehaviorParam:group9Unk18(value)
+	self:patch4Byte(0x2D8, value)
+end
+
+
+function BehaviorParam:group9Unk1C(value)
+	self:patchByte(0x2DC, value)
+end
+
+
+function BehaviorParam:group9Unk1D(value)
+	self:patchByte(0x2DD, value)
+end
+
+
+function BehaviorParam:group9Unk1E(value)
+	self:patchByte(0x2DE, value)
+end
+
+
+function BehaviorParam:group9Unk1F(value)
+	self:patchByte(0x2DF, value)
+end
+
+
+function BehaviorParam:group9EnemyDamageId(value)
+	self:patch4Byte(0x2E0, value)
+end
+
+
+function BehaviorParam:group9Unk24(value)
+	self:patch4Byte(0x2E4, value)
+end
+
+
+function BehaviorParam:group9Unk28(value)
+	self:patch4Byte(0x2E8, value)
+end
+
+
+function BehaviorParam:group9Unk2C(value)
+	self:patchFloat(0x2EC, value)
+end
+
+
+function BehaviorParam:group9Unk30(value)
+	self:patchFloat(0x2F0, value)
+end
+
+
+function BehaviorParam:group9Unk34(value)
+	self:patchFloat(0x2F4, value)
+end
+
+
+function BehaviorParam:group9Unk38(value)
+	self:patchFloat(0x2F8, value)
+end
+
+
+function BehaviorParam:group9Unk3C(value)
+	self:patchFloat(0x2FC, value)
+end
+
+
+function BehaviorParam:group9Unk40(value)
+	self:patchFloat(0x300, value)
+end
+
+
+function BehaviorParam:group9Unk44(value)
+	self:patchFloat(0x304, value)
+end
+
+
+function BehaviorParam:group9Unk48(value)
+	self:patchFloat(0x308, value)
+end
+
+
+function BehaviorParam:group9Unk4C(value)
+	self:patch4Byte(0x30C, value)
+end
+
+
+function BehaviorParam:group9Unk50(value)
+	self:patchFloat(0x310, value)
+end
+
+
+function BehaviorParam:group9Unk54(value)
+	self:patchFloat(0x314, value)
+end
+
+
+function BehaviorParam:group10EnemyDamageId0(value)
+	self:patch4Byte(0x318, value)
+end
+
+
+function BehaviorParam:group10EnemyDamageId1(value)
+	self:patch4Byte(0x31C, value)
+end
+
+
+function BehaviorParam:group10EnemyDamageId2(value)
+	self:patch4Byte(0x320, value)
+end
+
+
+function BehaviorParam:group10EnemyDamageId3(value)
+	self:patch4Byte(0x324, value)
+end
+
+
+function BehaviorParam:group10EnemyDamageId4(value)
+	self:patch4Byte(0x328, value)
+end
+
+
+function BehaviorParam:group10EnemyDamageId5(value)
+	self:patch4Byte(0x32C, value)
+end
+
+
+function BehaviorParam:group10Unk18(value)
+	self:patch4Byte(0x330, value)
+end
+
+
+function BehaviorParam:group10Unk1C(value)
+	self:patchByte(0x334, value)
+end
+
+
+function BehaviorParam:group10Unk1D(value)
+	self:patchByte(0x335, value)
+end
+
+
+function BehaviorParam:group10Unk1E(value)
+	self:patchByte(0x336, value)
+end
+
+
+function BehaviorParam:group10Unk1F(value)
+	self:patchByte(0x337, value)
+end
+
+
+function BehaviorParam:group10EnemyDamageId(value)
+	self:patch4Byte(0x338, value)
+end
+
+
+function BehaviorParam:group10Unk24(value)
+	self:patch4Byte(0x33C, value)
+end
+
+
+function BehaviorParam:group10Unk28(value)
+	self:patch4Byte(0x340, value)
+end
+
+
+function BehaviorParam:group10Unk2C(value)
+	self:patchFloat(0x344, value)
+end
+
+
+function BehaviorParam:group10Unk30(value)
+	self:patchFloat(0x348, value)
+end
+
+
+function BehaviorParam:group10Unk34(value)
+	self:patchFloat(0x34C, value)
+end
+
+
+function BehaviorParam:group10Unk38(value)
+	self:patchFloat(0x350, value)
+end
+
+
+function BehaviorParam:group10Unk3C(value)
+	self:patchFloat(0x354, value)
+end
+
+
+function BehaviorParam:group10Unk40(value)
+	self:patchFloat(0x358, value)
+end
+
+
+function BehaviorParam:group10Unk44(value)
+	self:patchFloat(0x35C, value)
+end
+
+
+function BehaviorParam:group10Unk48(value)
+	self:patchFloat(0x360, value)
+end
+
+
+function BehaviorParam:group10Unk4C(value)
+	self:patch4Byte(0x364, value)
+end
+
+
+function BehaviorParam:group10Unk50(value)
+	self:patchFloat(0x368, value)
+end
+
+
+function BehaviorParam:group10Unk54(value)
+	self:patchFloat(0x36C, value)
+end
+
+
+--[[End BehaviorParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

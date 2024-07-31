@@ -1,0 +1,23 @@
+[ENABLE]
+createthread(ApplyEffect)
+
+EffectStruct:
+dd #62060000
+dd #1
+dd (float)-1
+db #25
+db #2
+db 0
+db 0
+
+{$lua}
+if syntaxcheck then return end
+
+local t=createTimer()
+t.Interval=50
+t.OnTimer=function()
+  memrec.Active=false
+  t.destroy()
+end
+{$asm}
+[DISABLE]

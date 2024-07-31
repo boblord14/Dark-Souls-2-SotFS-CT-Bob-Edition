@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>69</ID>
+  <Description>"Ordeal's End"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>52A</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

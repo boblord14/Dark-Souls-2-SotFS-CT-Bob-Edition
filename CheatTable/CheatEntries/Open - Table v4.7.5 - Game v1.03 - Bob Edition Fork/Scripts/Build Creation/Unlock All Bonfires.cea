@@ -1,0 +1,48 @@
+[ENABLE]
+alloc(UnlockAllBonfires, $100, DarkSoulsII.exe)
+label(return)
+label(iter)
+label(step)
+createthread(UnlockAllBonfires)
+
+UnlockAllBonfires:
+sub rsp, 28
+vortmov(rdi, [[[GameManagerImp]+70]+58], return)
+mov rsi, [rdi+20]
+test rsi, rsi
+jz return
+mov r11, [rdi+28]
+xor rax, rax
+
+iter:
+cmp rax, r11
+jge return
+lea r10, [rax+rax*2]
+mov r10d, [rsi+r10*8+2]
+cmp r10d, 0
+jg step
+push r11
+push r10
+mov rcx, rdi
+lea r10, [rax+rax*2]
+mov edx, [rsi+r10*8]
+mov r8d, 1
+call DarkSoulsII.exe+17E320
+pop r10
+pop r11
+
+step:
+inc rax
+jmp iter
+
+return:
+add rsp, 28
+ret
+ 
+{$lua}
+if syntaxcheck then return end
+disableMemrec(memrec)
+{$asm}
+
+[DISABLE]
+dealloc(UnlockAllBonfires)

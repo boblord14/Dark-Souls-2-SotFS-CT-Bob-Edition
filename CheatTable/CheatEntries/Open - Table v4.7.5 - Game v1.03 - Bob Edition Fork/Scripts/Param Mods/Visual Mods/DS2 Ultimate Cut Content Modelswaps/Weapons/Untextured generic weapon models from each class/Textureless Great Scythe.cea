@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tgscythe,2)
+                        tgscythe:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(tgscythe)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6410
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tgscythe)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(tgscythe, 2)
+                        unregistersymbol(tgscythe)
+                    

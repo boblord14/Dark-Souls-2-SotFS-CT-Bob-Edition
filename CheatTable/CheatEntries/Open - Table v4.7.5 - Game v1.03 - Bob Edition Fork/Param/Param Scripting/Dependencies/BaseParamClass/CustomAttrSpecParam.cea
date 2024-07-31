@@ -1,0 +1,27 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START CustomAttrSpecParam class]]--
+CustomAttrSpecParam = BaseParamClass:new()
+
+function CustomAttrSpecParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("CustomAttrSpecParam", uuid, id, address)
+	return o
+end
+
+function CustomAttrSpecParam:allowedInfusions(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+--[[End CustomAttrSpecParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

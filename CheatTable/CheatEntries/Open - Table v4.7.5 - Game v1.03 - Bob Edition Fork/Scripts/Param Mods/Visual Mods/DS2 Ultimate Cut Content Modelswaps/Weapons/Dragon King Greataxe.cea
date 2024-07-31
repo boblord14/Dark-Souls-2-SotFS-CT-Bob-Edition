@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(dragonga,2)
+                        dragonga:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(dragonga)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #9900
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(dragonga)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(dragonga, 2)
+                        unregistersymbol(dragonga)
+                    

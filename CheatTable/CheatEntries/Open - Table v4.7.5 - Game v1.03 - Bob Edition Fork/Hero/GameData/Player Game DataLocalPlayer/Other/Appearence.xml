@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>1337097767</ID>
+  <Description>"Appearence"</Description>
+  <DropDownList DisplayValueAsItem="1">18:Noclip
+19:Noclip
+</DropDownList>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>48</Offset>
+    <Offset>B0</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

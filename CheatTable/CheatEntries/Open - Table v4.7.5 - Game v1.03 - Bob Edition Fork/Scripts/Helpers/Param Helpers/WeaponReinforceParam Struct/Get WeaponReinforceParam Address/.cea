@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetWeaponReinforceParamAddr, $100, DarkSoulsII.exe)
+alloc(WeaponReinforceParamId, 4)
+label(return)
+registersymbol(GetWeaponReinforceParamAddr)
+registersymbol(WeaponReinforceParamId)
+
+WeaponReinforceParamId:
+dd #3400
+
+GetWeaponReinforceParamAddr:
+sub rsp, 20
+mov edx, [WeaponReinforceParamId]
+vortmov(rcx, [[[GameManagerImp]+18]+470])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [WepReinforceParamAddr], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetWeaponReinforceParamAddr)
+dealloc(WeaponReinforceParamId)
+unregistersymbol(GetWeaponReinforceParamAddr)
+unregistersymbol(WeaponReinforceParamId)

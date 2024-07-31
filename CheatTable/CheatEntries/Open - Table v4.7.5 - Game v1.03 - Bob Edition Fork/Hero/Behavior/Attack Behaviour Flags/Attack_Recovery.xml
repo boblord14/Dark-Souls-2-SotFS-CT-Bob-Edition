@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337043337</ID>
+  <Description>"Attack_Recovery"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>FF0000</Color>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>5C0</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

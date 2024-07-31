@@ -1,0 +1,33 @@
+<CheatEntry>
+  <ID>1337089312</ID>
+  <Description>"Start"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>0</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>BossBattleParam</Address>
+  <x-ce2fs-child-order>
+    <id id="1337089313"/>
+    <id id="1337089314"/>
+    <id id="1337089315"/>
+    <id id="1337089316"/>
+    <id id="1337089317"/>
+    <id id="1337089318"/>
+    <id id="1337089319"/>
+    <id id="1337089320"/>
+    <id id="1337089321"/>
+    <id id="1337089322"/>
+    <id id="1337089323"/>
+    <id id="1337098058"/>
+    <id id="1337098059"/>
+    <id id="1337098060"/>
+    <id id="1337089324"/>
+    <id id="1337089325"/>
+    <id id="1337089326"/>
+    <id id="1337089327"/>
+    <id id="1337089328"/>
+    <id id="1337089329"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337089924</ID>
+  <Description>"Affects VFX Opacity"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>+065</Address>
+</CheatEntry>

@@ -1,0 +1,10 @@
+[ENABLE]
+alloc(teleportsave5,64)
+teleportsave5:
+readmem([[[[[GameManagerImp]+D0]+100]+320]+20]+1A0,64)
+registersymbol(teleportsave5)
+[DISABLE]
+dealloc(teleportsave5)
+[[[[[GameManagerImp]+D0]+100]+320]+20]+1A0:
+readmem(teleportsave5,64)
+unregistersymbol(teleportsave5)

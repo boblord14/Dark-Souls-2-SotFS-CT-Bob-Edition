@@ -1,0 +1,47 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START DamageWeaponTypeParam class]]--
+DamageWeaponTypeParam = BaseParamClass:new()
+
+function DamageWeaponTypeParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("DamageWeaponTypeParam", uuid, id, address)
+	return o
+end
+
+function DamageWeaponTypeParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function DamageWeaponTypeParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function DamageWeaponTypeParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function DamageWeaponTypeParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function DamageWeaponTypeParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+--[[End DamageWeaponTypeParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

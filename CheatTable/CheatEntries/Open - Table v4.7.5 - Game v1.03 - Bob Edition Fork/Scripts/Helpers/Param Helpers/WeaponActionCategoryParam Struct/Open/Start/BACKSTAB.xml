@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337090201</ID>
+  <Description>"BACKSTAB"</Description>
+  <DropDownListLink>WeaponAttackMotion</DropDownListLink>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+fc</Address>
+</CheatEntry>

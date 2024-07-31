@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(wacktexture,2)
+                        wacktexture:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(wacktexture)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #9905
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(wacktexture)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(wacktexture, 2)
+                        unregistersymbol(wacktexture)
+                    

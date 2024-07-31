@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337037034</ID>
+  <Description>"ChrPhantomParam.param"</Description>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1C8</Offset>
+    <Offset>D8</Offset>
+    <Offset>310</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

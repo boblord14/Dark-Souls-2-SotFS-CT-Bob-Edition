@@ -1,0 +1,47 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START PluralSelectMenuParam class]]--
+PluralSelectMenuParam = BaseParamClass:new()
+
+function PluralSelectMenuParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("PluralSelectMenuParam", uuid, id, address)
+	return o
+end
+
+function PluralSelectMenuParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function PluralSelectMenuParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function PluralSelectMenuParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function PluralSelectMenuParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function PluralSelectMenuParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+--[[End PluralSelectMenuParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

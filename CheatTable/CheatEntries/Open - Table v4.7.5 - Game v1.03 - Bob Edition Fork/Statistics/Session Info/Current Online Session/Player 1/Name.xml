@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>89251</ID>
+  <Description>"Name"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>String</VariableType>
+  <Length>32</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>234</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

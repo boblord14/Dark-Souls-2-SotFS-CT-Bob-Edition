@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(smought,4)
+                        smought:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+2C8]+08,4)
+                        registersymbol(smought)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        dw #9905
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(smought)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        readmem(smought, 4)
+                        unregistersymbol(smought)
+                    
+					

@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087775</ID>
+  <Description>"FLEXILE SENTRY"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>2478</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

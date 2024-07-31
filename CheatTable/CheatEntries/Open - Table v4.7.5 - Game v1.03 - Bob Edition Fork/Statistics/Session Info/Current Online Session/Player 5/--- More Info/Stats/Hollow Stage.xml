@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>86700</ID>
+  <Description>"Hollow Stage"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>29C</Offset>
+    <Offset>390</Offset>
+    <Offset>528</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

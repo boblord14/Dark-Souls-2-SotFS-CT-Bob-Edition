@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>86697</ID>
+  <Description>"Max Equip Load"</Description>
+  <VariableType>Float</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>12C</Offset>
+    <Offset>390</Offset>
+    <Offset>528</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

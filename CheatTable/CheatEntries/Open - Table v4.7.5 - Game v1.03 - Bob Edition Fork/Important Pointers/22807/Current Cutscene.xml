@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337096090</ID>
+  <Description>"Current Cutscene"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>008000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>58</Offset>
+    <Offset>1170</Offset>
+  </Offsets>
+</CheatEntry>

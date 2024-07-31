@@ -1,0 +1,32 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START IntrudePointParam class]]--
+IntrudePointParam = BaseParamClass:new()
+
+function IntrudePointParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("IntrudePointParam", uuid, id, address)
+	return o
+end
+
+function IntrudePointParam:playAreaParamId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function IntrudePointParam:intrusionPointId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+--[[End IntrudePointParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

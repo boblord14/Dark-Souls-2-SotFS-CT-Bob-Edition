@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>90734</ID>
+  <Description>"Name"</Description>
+  <VariableType>String</VariableType>
+  <Length>31</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>F0</Offset>
+    <Offset>18</Offset>
+    <Offset>48</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

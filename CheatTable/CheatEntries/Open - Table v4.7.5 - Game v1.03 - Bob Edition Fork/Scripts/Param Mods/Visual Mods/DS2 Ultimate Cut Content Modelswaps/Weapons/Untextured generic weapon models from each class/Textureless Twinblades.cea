@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(ttblades,2)
+                        ttblades:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(ttblades)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6550
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(ttblades)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(ttblades, 2)
+                        unregistersymbol(ttblades)
+                    

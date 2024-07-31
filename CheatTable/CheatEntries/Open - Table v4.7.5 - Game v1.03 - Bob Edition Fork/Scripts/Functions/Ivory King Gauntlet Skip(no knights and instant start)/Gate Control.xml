@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337159980</ID>
+  <Description>"Gate Control"</Description>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>2 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>E34</Offset>
+    <Offset>18</Offset>
+    <Offset>20</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

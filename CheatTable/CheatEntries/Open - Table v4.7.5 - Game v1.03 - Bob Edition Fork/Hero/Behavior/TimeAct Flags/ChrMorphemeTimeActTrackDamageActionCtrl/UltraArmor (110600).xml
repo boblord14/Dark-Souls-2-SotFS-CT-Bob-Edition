@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337079495</ID>
+  <Description>"UltraArmor (110600)"</Description>
+  <DropDownListLink>bool</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>5EC</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

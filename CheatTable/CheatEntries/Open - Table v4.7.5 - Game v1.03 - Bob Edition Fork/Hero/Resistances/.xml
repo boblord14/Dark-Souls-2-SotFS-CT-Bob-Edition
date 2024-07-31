@@ -1,0 +1,22 @@
+<CheatEntry>
+  <ID>1337256143</ID>
+  <Description>"Resistances"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337256145"/>
+    <id id="1337256147"/>
+    <id id="1337256159"/>
+    <id id="1337256156"/>
+    <id id="1337256157"/>
+    <id id="1337256154"/>
+    <id id="1337256155"/>
+    <id id="1337256158"/>
+    <id id="1337256152"/>
+    <id id="1337256153"/>
+    <id id="1337256150"/>
+    <id id="1337256151"/>
+    <id id="1337256148"/>
+    <id id="1337256149"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

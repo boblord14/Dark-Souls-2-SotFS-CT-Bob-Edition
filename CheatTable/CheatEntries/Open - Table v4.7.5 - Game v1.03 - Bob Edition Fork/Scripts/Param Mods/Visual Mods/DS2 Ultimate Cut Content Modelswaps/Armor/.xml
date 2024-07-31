@@ -1,0 +1,30 @@
+<CheatEntry>
+  <ID>1337159701</ID>
+  <Description>"Armor"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337159702"/>
+    <id id="1337159704"/>
+    <id id="1337159709"/>
+    <id id="1337159711"/>
+    <id id="1337159713"/>
+    <id id="1337159715"/>
+    <id id="1337159720"/>
+    <id id="1337159723"/>
+    <id id="1337159727"/>
+    <id id="1337159731"/>
+    <id id="1337159734"/>
+    <id id="1337159736"/>
+    <id id="1337159738"/>
+    <id id="1337159740"/>
+    <id id="1337159743"/>
+    <id id="1337159746"/>
+    <id id="1337159748"/>
+    <id id="1337159750"/>
+    <id id="1337159752"/>
+    <id id="1337159755"/>
+    <id id="1337159757"/>
+    <id id="1337159762"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

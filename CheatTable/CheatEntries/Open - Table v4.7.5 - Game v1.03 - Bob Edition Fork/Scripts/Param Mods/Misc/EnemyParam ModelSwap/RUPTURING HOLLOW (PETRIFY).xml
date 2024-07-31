@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087545</ID>
+  <Description>"RUPTURING HOLLOW (PETRIFY)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>EE8</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

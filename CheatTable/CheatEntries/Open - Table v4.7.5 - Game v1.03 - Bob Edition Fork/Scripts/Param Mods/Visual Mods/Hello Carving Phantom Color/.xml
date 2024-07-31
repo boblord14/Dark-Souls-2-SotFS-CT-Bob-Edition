@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337087384</ID>
+  <Description>"Hello Carving Phantom Color"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337087385"/>
+    <id id="1337087386"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(warriorl,4)
+                        warriorl:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+328]+08,4)
+                        registersymbol(warriorl)
+                        [[[[[GameManagerImp]+D0]+378]+28]+328]+08:
+                        dw #9010
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(warriorl)
+                        [[[[[GameManagerImp]+D0]+378]+28]+328]+08:
+                        readmem(warriorl, 4)
+                        unregistersymbol(warriorl)
+                    
+					

@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(brokensb,2)
+                        brokensb:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(brokensb)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #9904
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(brokensb)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(brokensb, 2)
+                        unregistersymbol(brokensb)
+                    

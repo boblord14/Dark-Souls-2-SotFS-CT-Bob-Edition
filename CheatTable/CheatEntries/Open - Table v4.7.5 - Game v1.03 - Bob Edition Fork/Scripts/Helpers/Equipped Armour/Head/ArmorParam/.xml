@@ -1,0 +1,41 @@
+<CheatEntry>
+  <ID>1337085317</ID>
+  <Description>"ArmorParam"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+8</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337085318"/>
+    <id id="1337085319"/>
+    <id id="1337085320"/>
+    <id id="1337085321"/>
+    <id id="1337085322"/>
+    <id id="1337085323"/>
+    <id id="1337085324"/>
+    <id id="1337085325"/>
+    <id id="1337085326"/>
+    <id id="1337085327"/>
+    <id id="1337085328"/>
+    <id id="1337085329"/>
+    <id id="1337085330"/>
+    <id id="1337085331"/>
+    <id id="1337085332"/>
+    <id id="1337085333"/>
+    <id id="1337085334"/>
+    <id id="1337085335"/>
+    <id id="1337085336"/>
+    <id id="1337085337"/>
+    <id id="1337085338"/>
+    <id id="1337085339"/>
+    <id id="1337085340"/>
+    <id id="1337085341"/>
+    <id id="1337085342"/>
+    <id id="1337085343"/>
+    <id id="1337085344"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

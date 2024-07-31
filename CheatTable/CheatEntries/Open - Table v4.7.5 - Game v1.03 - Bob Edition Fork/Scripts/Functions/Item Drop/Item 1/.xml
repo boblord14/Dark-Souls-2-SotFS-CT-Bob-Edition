@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>1337043357</ID>
+  <Description>"Item 1"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <Address>ItemStruct</Address>
+  <x-ce2fs-child-order>
+    <id id="1337043358"/>
+    <id id="1337043359"/>
+    <id id="1337043360"/>
+    <id id="1337043361"/>
+    <id id="1337043362"/>
+    <id id="1337043363"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,32 @@
+{$lua}
+if syntaxcheck then return end
+
+[ENABLE]
+disableMemrec(memrec)
+showText("ItemGib Help", [[
+Select item you want to spawn and press square pointed by "← Spawn Item".
+
+Item Name:
+Double-click or press Enter on "Human Effigy", scroll or type part of the item's name and press Down.
+
+Infusion:
+Double-click or press Enter on "Normal".
+
+Upgrade Level:
+Double-click or press Enter on "0".
+Make sure to pay attention to what weapons can be legit
+
+Quantity:
+Double-click or press Enter on "1".
+Be careful and dont spawn 999 of a weapon or you'll have a bad time removing them from your
+inventory
+
+Durability:
+Double-click or press Enter on "NaN".
+Make sure to give values to weapons, rings, or armor.
+
+Make sure you spawn what you want. Be specific in the fields and know your max upgrade levels and
+ability to be infused.
+]])
+
+[DISABLE]

@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>1337105106</ID>
+  <Description>"Arrow 1"</Description>
+  <DropDownListLink>ItemParam</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>BaseA</Address>
+  <Offsets>
+    <Offset>18C</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

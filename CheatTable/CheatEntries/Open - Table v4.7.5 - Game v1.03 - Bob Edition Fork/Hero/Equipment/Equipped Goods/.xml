@@ -1,0 +1,18 @@
+<CheatEntry>
+  <ID>1337256162</ID>
+  <Description>"Equipped Goods"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337082884"/>
+    <id id="1337082885"/>
+    <id id="1337082886"/>
+    <id id="1337082887"/>
+    <id id="1337082888"/>
+    <id id="1337082889"/>
+    <id id="1337082890"/>
+    <id id="1337082891"/>
+    <id id="1337082892"/>
+    <id id="1337082893"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

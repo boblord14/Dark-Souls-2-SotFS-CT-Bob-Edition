@@ -1,0 +1,12 @@
+[ENABLE]
+[[[[GameManagerImp]+18]+420]+D8]+7690:
+dd (float)Inf
+[[[[GameManagerImp]+18]+420]+D8]+7698:
+dd (float)Nan
+
+[DISABLE]
+[[[[GameManagerImp]+18]+420]+D8]+7690:
+dd (float)0.98
+[[[[GameManagerImp]+18]+420]+D8]+7698:
+dd (float)0
+

@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(twhip,2)
+                        twhip:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(twhip)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6470
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(twhip)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(twhip, 2)
+                        unregistersymbol(twhip)
+                    

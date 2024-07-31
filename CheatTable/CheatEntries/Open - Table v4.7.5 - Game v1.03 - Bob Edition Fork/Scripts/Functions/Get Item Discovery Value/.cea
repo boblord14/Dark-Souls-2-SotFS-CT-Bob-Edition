@@ -1,0 +1,31 @@
+{Author: LordRadai
+Hooks the item discovery function and returns a value between 0 and 1 for your discovery
+}
+
+[ENABLE]
+alloc(calcItemDiscovery, $100, DarkSoulsII.exe)
+alloc(ItemDiscovery, 4)
+registersymbol(ItemDiscovery)
+registersymbol(calcItemDiscovery)
+label(return)
+
+ItemDiscovery:
+dd (float)0
+
+calcItemDiscovery:
+sub rsp, 28
+vortmov(rcx, [[GameManagerImp]+D0])
+call DarkSoulsII.exe+412570 //GetBonfireIntensity
+mov rcx, rax
+call DarkSoulsII.exe+1E2E40 //CalcItemDiscovery
+movss [ItemDiscovery], xmm0
+
+return:
+add rsp, 28
+ret
+ 
+[DISABLE]
+dealloc(calcItemDiscovery)
+dealloc(ItemDiscovery)
+unregistersymbol(calcItemDiscovery)
+unregistersymbol(ItemDiscovery)

@@ -1,0 +1,7 @@
+[ENABLE]
+[[[[[KatanaMainApp]+80]+1158]+60]+d8]+5DF8:
+db AC 14 48 01 C5 10 48 01 C6 10 48 01 C7 10 48 01
+
+[DISABLE]
+[[[[[KatanaMainApp]+80]+1158]+60]+d8]+5DF8:
+db B4 78 45 01 B5 78 45 01 B6 78 45 01 B7 78 45 01

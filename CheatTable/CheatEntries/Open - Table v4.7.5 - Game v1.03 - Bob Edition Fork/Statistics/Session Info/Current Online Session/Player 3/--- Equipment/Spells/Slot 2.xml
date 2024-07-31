@@ -1,0 +1,120 @@
+<CheatEntry>
+  <ID>86854</ID>
+  <Description>"Slot 2"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Magic1
+01D92CD0:Soul Arrow
+01D953E0:Great Soul Arrow
+01D97AF0:Heavy Soul Arrow
+01D9A200:Great Heavy Soul Arrow
+01D9C910:Homing Soul Arrow
+01D9F020:Heavy Homing Soul Arrow
+01DA1730:Homing Soulmass
+01DA3E40:Homing Crystal Soulmass
+01DA6550:Soul Spear
+01DA8C60:Crystal Soul Spear
+01DAB370:Shockwave
+01DADA80:Soul Spear Barrage
+01DB0190:Soul Shower
+01DB28A0:Soul Greatsword
+01DB4FB0:Soul Vortex
+01DB76C0:Soul Bolt
+01DB9DD0:Soul Geyser
+01DBC4E0:Magic Weapon
+01DBEBF0:Great Magic Weapon
+01DC1300:Crystal Magic Weapon
+01DC3A10:Strong Magic Shield
+01DC6120:Yearn
+01DC8830:Hush
+01DCAF40:Fall Control
+01DCD650:Hidden Weapon
+01DCFD60:Repair
+01DD2470:Cast Light
+01DD4B80:Chameleon
+01DD7290:Unleash Magic
+01DD99A0:Soul Flash
+01DDC0B0:Focus Souls
+01E86F10:Heal
+01E89620:Med Heal
+01E8BD30:Great Heal Excerpt
+01E8E440:Great Heal
+01E90B50:Soothing Sunlight
+01E93260:Replenishment
+01E95970:Resplendent Life
+01E98080:Bountiful Sunlight
+01E9A790:Caressing Prayer
+01E9CEA0:Force
+01E9F5B0:Wrath of the Gods
+01EA1CC0:Emit Force
+01EA43D0:Heavenly Thunder
+01EA6AE0:Lightning Spear
+01EA91F0:Great Lightning Spear
+01EAB900:Sunlight Spear
+01EAE010:Soul Appease
+01EB0720:Blinding Bolt
+01EB2E30:Magic Barrier
+01EB5540:Great Magic Barrier
+01EB7C50:Homeward
+01EBA360:Guidance
+01EBCA70:Sacred Oath
+01EBF180:Unveil
+01EC1890:Perseverance
+01EC3FA0:Sunlight Blade
+01ECDBE0:Denial
+01ED02F0:Splintering Lightning Spear
+01F7B150:Fireball
+01F7D860:Fire Orb
+01F7FF70:Great Fireball
+01F82680:Great Chaos Fireball
+01F84D90:Firestorm
+01F874A0:Fire Tempest
+01F89BB0:Chaos Storm
+01F8C2C0:Combustion
+01F8E9D0:Great Combustion
+01F910E0:Fire Whip
+01F937F0:Poison Mist
+01F95F00:Toxic Mist
+01F98610:Acid Surge
+01F9AD20:Lingering Flame
+01F9D430:Flame Swathe
+01F9FB40:Forbidden Sun
+01FA2250:Flame Weapon
+01FA4960:Flash Sweat
+01FA7070:Iron Flesh
+01FA9780:Warmth
+01FABE90:Immolation
+01FC1E20:Fire Snake
+01FC4530:Dance of Fire
+01FC6C40:Outcry
+0206F390:Dark Orb
+02071AA0:Dark Hail
+020741B0:Dark Fog
+020768C0:Affinity
+02078FD0:Dead Again
+0207B6E0:Dark Weapon
+0207DDF0:Whisper of Despair
+02080500:Repel
+02082C10:Twisted Barricade
+02085320:Numbness
+020B6060:Dark Greatsword
+020B8770:Recollection
+021635D0:Scraps of Life
+02165CE0:Darkstorm
+021683F0:Resonant Soul
+0216AB00:Great Resonant Soul
+0216D210:Climax
+0216F920:Resonant Flesh
+02172030:Resonant Weapon
+02174740:Lifedrain Patch
+02176E50:Profound Still
+021AA2A0:Promised Walk of Peace
+021AC9B0:Dark Dance
+</DropDownList>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>4 Bytes</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>AD8</Offset>
+    <Offset>388</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337096306</ID>
+  <Description>"Arguments Begin"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <Address>+960</Address>
+  <x-ce2fs-child-order>
+    <id id="1337096307"/>
+    <id id="1337096308"/>
+    <id id="1337096309"/>
+    <id id="1337096310"/>
+    <id id="1337096311"/>
+    <id id="1337096312"/>
+    <id id="1337096313"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,34 @@
+[ENABLE]
+aobscanmodule(FCAOB,DarkSoulsII.exe,66 0F 7F 49 30 C3 CC CC CC CC CC CC CC CC CC CC CC CC CC 48)
+alloc(newmem,$1000,FCAOB)
+alloc(FCData,8)
+
+label(code)
+label(return)
+
+newmem:
+  cmp [rcx+58],#1167867904
+  jne code
+  cmp [rcx+120],#1065353216
+  jne code
+  mov [FCData],rcx
+  jmp return
+
+code:
+  movdqa [rcx+30],xmm1
+  jmp return
+
+FCAOB:
+  jmp newmem
+return:
+registersymbol(FCAOB)
+registersymbol(FCData)
+
+[DISABLE]
+FCAOB:
+  db 66 0F 7F 49 30
+unregistersymbol(FCAOB)
+unregistersymbol(FCData)
+dealloc(newmem)
+dealloc(FCData)
+

@@ -1,0 +1,7 @@
+[ENABLE]
+label(EnemyDamageParamStruct)
+registersymbol(EnemyDamageParamStruct)
+[EnemyDamageParamAddressToUse]:
+EnemyDamageParamStruct:
+[DISABLE]
+unregistersymbol(EnemyDamageParamStruct)

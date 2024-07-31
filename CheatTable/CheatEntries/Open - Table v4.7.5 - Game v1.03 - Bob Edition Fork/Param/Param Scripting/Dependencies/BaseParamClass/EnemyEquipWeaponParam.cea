@@ -1,0 +1,117 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START EnemyEquipWeaponParam class]]--
+EnemyEquipWeaponParam = BaseParamClass:new()
+
+function EnemyEquipWeaponParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("EnemyEquipWeaponParam", uuid, id, address)
+	return o
+end
+
+function EnemyEquipWeaponParam:chrId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function EnemyEquipWeaponParam:modelId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function EnemyEquipWeaponParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function EnemyEquipWeaponParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function EnemyEquipWeaponParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function EnemyEquipWeaponParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function EnemyEquipWeaponParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function EnemyEquipWeaponParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function EnemyEquipWeaponParam:unk20(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function EnemyEquipWeaponParam:unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function EnemyEquipWeaponParam:unk28(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function EnemyEquipWeaponParam:unk2C(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function EnemyEquipWeaponParam:unk30(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function EnemyEquipWeaponParam:unk34(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function EnemyEquipWeaponParam:unk38(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function EnemyEquipWeaponParam:unk3C(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function EnemyEquipWeaponParam:unk40(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function EnemyEquipWeaponParam:unk44(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function EnemyEquipWeaponParam:unk48(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+--[[End EnemyEquipWeaponParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

@@ -1,0 +1,47 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ItemUsageParam class]]--
+ItemUsageParam = BaseParamClass:new()
+
+function ItemUsageParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ItemUsageParam", uuid, id, address)
+	return o
+end
+
+function ItemUsageParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function ItemUsageParam:unk04(value)
+	self:patchByte(0x4, value)
+end
+
+
+function ItemUsageParam:unk05(value)
+	self:patchByte(0x5, value)
+end
+
+
+function ItemUsageParam:notrade(value)
+	self:patchByte(0x6, value)
+end
+
+
+function ItemUsageParam:candiscard(value)
+	self:patchByte(0x7, value)
+end
+
+
+--[[End ItemUsageParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

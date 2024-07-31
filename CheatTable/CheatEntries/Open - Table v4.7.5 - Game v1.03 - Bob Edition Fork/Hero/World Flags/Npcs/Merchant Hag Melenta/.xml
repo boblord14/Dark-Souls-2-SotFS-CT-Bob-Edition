@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337256281</ID>
+  <Description>"Merchant Hag Melenta"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26526"/>
+    <id id="111"/>
+    <id id="26633"/>
+    <id id="26634"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

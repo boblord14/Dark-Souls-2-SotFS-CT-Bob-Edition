@@ -1,0 +1,437 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START SpellParam class]]--
+SpellParam = BaseParamClass:new()
+
+function SpellParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("SpellParam", uuid, id, address)
+	return o
+end
+
+function SpellParam:spellClass(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function SpellParam:unk04(value)
+	self:patchByte(0x4, value)
+end
+
+
+function SpellParam:spellFunction(value)
+	self:patchByte(0x5, value)
+end
+
+
+function SpellParam:unk06(value)
+	self:patch2Byte(0x6, value)
+end
+
+
+function SpellParam:intRequirement(value)
+	self:patch2Byte(0x8, value)
+end
+
+
+function SpellParam:fthRequirement(value)
+	self:patch2Byte(0xA, value)
+end
+
+
+function SpellParam:bulletIdRightHand(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function SpellParam:damageIdRightHand(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function SpellParam:startupDuration(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function SpellParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function SpellParam:startupAnimationId1HLeft(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function SpellParam:castingAnimationId1HLeft(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function SpellParam:staminaCost(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function SpellParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function SpellParam:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function SpellParam:startupAnimationId1HRight(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function SpellParam:castingAnimationId1HRight(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function SpellParam:staminaCost2(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function SpellParam:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function SpellParam:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function SpellParam:startupAnimationId2HLeft(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function SpellParam:startupAnimationId2HLeft2(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function SpellParam:staminaCost3(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function SpellParam:unk50(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function SpellParam:unk54(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function SpellParam:startupAnimationId2HRight(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function SpellParam:startupAnimationId2HRight2(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function SpellParam:staminaCost4(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function SpellParam:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function SpellParam:unk68(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function SpellParam:unknownId(value)
+	self:patch4Byte(0x6C, value)
+end
+
+
+function SpellParam:unknownId2(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+function SpellParam:unk74(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function SpellParam:unk78(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function SpellParam:unk7C(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function SpellParam:unknownId3(value)
+	self:patch4Byte(0x80, value)
+end
+
+
+function SpellParam:unknownId4(value)
+	self:patch4Byte(0x84, value)
+end
+
+
+function SpellParam:unk88(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function SpellParam:unk8C(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function SpellParam:unk90(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function SpellParam:unknownId5(value)
+	self:patch4Byte(0x94, value)
+end
+
+
+function SpellParam:unknownId6(value)
+	self:patch4Byte(0x98, value)
+end
+
+
+function SpellParam:unk9C(value)
+	self:patchFloat(0x9C, value)
+end
+
+
+function SpellParam:unka0(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function SpellParam:unka4(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function SpellParam:unknownId7(value)
+	self:patch4Byte(0xA8, value)
+end
+
+
+function SpellParam:unknownId8(value)
+	self:patch4Byte(0xAC, value)
+end
+
+
+function SpellParam:unkb0(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function SpellParam:unkb4(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function SpellParam:unkb8(value)
+	self:patch4Byte(0xB8, value)
+end
+
+
+function SpellParam:unkbc(value)
+	self:patch4Byte(0xBC, value)
+end
+
+
+function SpellParam:staffSfx(value)
+	self:patch4Byte(0xC0, value)
+end
+
+
+function SpellParam:isspawnonbody(value)
+	self:patchByte(0xC4, value)
+end
+
+
+function SpellParam:staffSfxDummypolyId(value)
+	self:patchByte(0xC5, value)
+end
+
+
+function SpellParam:staffSfxDummypolyId2(value)
+	self:patchByte(0xC6, value)
+end
+
+
+function SpellParam:unkc7(value)
+	self:patchByte(0xC7, value)
+end
+
+
+function SpellParam:unkc8(value)
+	self:patchFloat(0xC8, value)
+end
+
+
+function SpellParam:bodySfx(value)
+	self:patch4Byte(0xCC, value)
+end
+
+
+function SpellParam:isspawnonweapon(value)
+	self:patchByte(0xD0, value)
+end
+
+
+function SpellParam:bodySfxDummypolyId(value)
+	self:patchByte(0xD1, value)
+end
+
+
+function SpellParam:bodySfxDummypolyId2(value)
+	self:patchByte(0xD2, value)
+end
+
+
+function SpellParam:unkd3(value)
+	self:patchByte(0xD3, value)
+end
+
+
+function SpellParam:unkd4(value)
+	self:patchFloat(0xD4, value)
+end
+
+
+function SpellParam:unkd8(value)
+	self:patchFloat(0xD8, value)
+end
+
+
+function SpellParam:unkdc(value)
+	self:patchFloat(0xDC, value)
+end
+
+
+function SpellParam:startupSpeed(value)
+	self:patchFloat(0xE0, value)
+end
+
+
+function SpellParam:castingSpeed(value)
+	self:patchFloat(0xE4, value)
+end
+
+
+function SpellParam:unke8(value)
+	self:patchFloat(0xE8, value)
+end
+
+
+function SpellParam:unkec(value)
+	self:patchFloat(0xEC, value)
+end
+
+
+function SpellParam:slotsUsed(value)
+	self:patchByte(0xF0, value)
+end
+
+
+function SpellParam:baseCasts(value)
+	self:patchByte(0xF1, value)
+end
+
+
+function SpellParam:casts15Atn(value)
+	self:patchByte(0xF2, value)
+end
+
+
+function SpellParam:casts26Atn(value)
+	self:patchByte(0xF3, value)
+end
+
+
+function SpellParam:casts32Atn(value)
+	self:patchByte(0xF4, value)
+end
+
+
+function SpellParam:casts38Atn(value)
+	self:patchByte(0xF5, value)
+end
+
+
+function SpellParam:casts43Atn(value)
+	self:patchByte(0xF6, value)
+end
+
+
+function SpellParam:casts49Atn(value)
+	self:patchByte(0xF7, value)
+end
+
+
+function SpellParam:casts58Atn(value)
+	self:patchByte(0xF8, value)
+end
+
+
+function SpellParam:casts79Atn(value)
+	self:patchByte(0xF9, value)
+end
+
+
+function SpellParam:casts94Atn(value)
+	self:patch2Byte(0xFA, value)
+end
+
+
+function SpellParam:spellSoulConsumeId(value)
+	self:patch4Byte(0xFC, value)
+end
+
+
+function SpellParam:bulletIdLeftHand(value)
+	self:patch4Byte(0x100, value)
+end
+
+
+function SpellParam:damageIdLeftHand(value)
+	self:patch4Byte(0x104, value)
+end
+
+
+--[[End SpellParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

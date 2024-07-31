@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337086162</ID>
+  <Description>"Ring 3"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337086163"/>
+    <id id="1337086164"/>
+    <id id="1337086165"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

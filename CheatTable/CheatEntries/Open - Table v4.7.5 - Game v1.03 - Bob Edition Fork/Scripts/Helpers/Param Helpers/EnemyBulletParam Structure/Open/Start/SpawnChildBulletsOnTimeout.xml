@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337089415</ID>
+  <Description>"SpawnChildBulletsOnTimeout"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>+0ED</Address>
+</CheatEntry>

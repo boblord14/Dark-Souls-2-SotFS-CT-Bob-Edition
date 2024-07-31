@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>28919</ID>
+  <Description>"Alpha (0-255, 0 = no fog)"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>B</Offset>
+  </Offsets>
+</CheatEntry>

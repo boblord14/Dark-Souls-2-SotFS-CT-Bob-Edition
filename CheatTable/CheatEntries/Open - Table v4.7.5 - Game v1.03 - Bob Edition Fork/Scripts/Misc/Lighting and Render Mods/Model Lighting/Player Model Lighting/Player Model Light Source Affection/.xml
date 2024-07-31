@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26517</ID>
+  <Description>"Player Model Light Source Affection"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26513"/>
+    <id id="26514"/>
+    <id id="26515"/>
+    <id id="26516"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

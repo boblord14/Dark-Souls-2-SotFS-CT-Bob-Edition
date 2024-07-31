@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337089200</ID>
+  <Description>"Previous Item in Lost"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>8 Bytes</VariableType>
+  <Address>pItem</Address>
+  <Offsets>
+    <Offset>8</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337097851</ID>
+  <Description>"SpawnDirection (0 = base, 5 = forward)"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>+05</Address>
+</CheatEntry>

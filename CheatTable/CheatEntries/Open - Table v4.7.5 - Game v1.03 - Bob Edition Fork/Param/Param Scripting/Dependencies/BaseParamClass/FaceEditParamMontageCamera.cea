@@ -1,0 +1,57 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START FaceEditParamMontageCamera class]]--
+FaceEditParamMontageCamera = BaseParamClass:new()
+
+function FaceEditParamMontageCamera:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("FaceEditParamMontageCamera", uuid, id, address)
+	return o
+end
+
+function FaceEditParamMontageCamera:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function FaceEditParamMontageCamera:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function FaceEditParamMontageCamera:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function FaceEditParamMontageCamera:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function FaceEditParamMontageCamera:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function FaceEditParamMontageCamera:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function FaceEditParamMontageCamera:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+--[[End FaceEditParamMontageCamera class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

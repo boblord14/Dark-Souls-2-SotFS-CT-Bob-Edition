@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>16801</ID>
+  <Description>"Pilgrims of Dark"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="16813"/>
+    <id id="24087"/>
+    <id id="12155"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

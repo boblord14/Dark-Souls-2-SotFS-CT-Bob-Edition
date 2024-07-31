@@ -1,0 +1,60 @@
+[ENABLE]
+
+aobscanmodule(customscript32,DarkSoulsII.exe,49 8B C8 66 F3 AB 48 8B 7C)
+alloc(newmem,$1000,customscript32)
+
+label(code)
+label(return)
+
+newmem:
+
+push rcx
+push rdx
+
+mov rcx,NetSessionManager
+mov rcx,[rcx]
+mov rcx,[rcx+20]
+lea rcx,[rcx+574] //Opponent's Name
+
+mov rdx,GameManagerImp
+mov rdx,[rdx]
+mov rdx,[rdx+A8]
+lea rdx,[rdx+114] //Character Name
+
+push qword ptr [rcx]
+pop qword ptr [rdx]
+push qword ptr [rcx+8]
+pop qword ptr [rdx+8]
+push qword ptr [rcx+10]
+pop qword ptr [rdx+10]
+push qword ptr [rcx+18]
+pop qword ptr [rdx+18]
+push qword ptr [rcx+20]
+pop qword ptr [rdx+20]
+push qword ptr [rcx+28]
+pop qword ptr [rdx+28]
+
+pop rdx
+pop rcx
+
+code:
+  mov rcx,r8
+  repe stosw
+  jmp return
+
+customscript32:
+  jmp newmem
+  nop
+return:
+registersymbol(customscript32)
+
+[DISABLE]
+
+customscript32:
+  db 49 8B C8 66 F3 AB
+
+unregistersymbol(customscript32)
+dealloc(newmem)
+
+
+

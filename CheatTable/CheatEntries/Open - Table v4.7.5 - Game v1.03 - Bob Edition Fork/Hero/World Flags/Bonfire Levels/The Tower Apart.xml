@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>30</ID>
+  <Description>"The Tower Apart"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>19A</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

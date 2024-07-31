@@ -1,0 +1,27 @@
+[ENABLE]
+//Made by LordRadai
+alloc(ApplyFullBodySfx, $100, DarkSoulsII.exe)
+alloc(FullBodySfxID, 4)
+registersymbol(ApplyFullBodySfx)
+registersymbol(FullBodySfxID)
+label(return)
+
+FullBodySfxID:
+dd #105030
+
+ApplyFullBodySfx:
+sub rsp, 118
+vortmov(rcx, [[GameManagerImp]+D0]+258, return)
+mov r8d, [FullBodySfxID]
+xor edx, edx
+call DarkSoulsII.exe+149710
+
+return:
+add rsp, 118
+ret
+ 
+[DISABLE]
+dealloc(ApplyFullBodySfx)
+dealloc(FullBodySfxID)
+unregistersymbol(ApplyFullBodySfx)
+unregistersymbol(FullBodySfxID)

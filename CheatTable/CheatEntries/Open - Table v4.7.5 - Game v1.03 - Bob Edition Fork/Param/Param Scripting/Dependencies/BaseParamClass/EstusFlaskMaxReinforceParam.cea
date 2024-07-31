@@ -1,0 +1,42 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START EstusFlaskMaxReinforceParam class]]--
+EstusFlaskMaxReinforceParam = BaseParamClass:new()
+
+function EstusFlaskMaxReinforceParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("EstusFlaskMaxReinforceParam", uuid, id, address)
+	return o
+end
+
+function EstusFlaskMaxReinforceParam:minimum(value)
+	self:patchByte(0x0, value)
+end
+
+
+function EstusFlaskMaxReinforceParam:maximum(value)
+	self:patchByte(0x1, value)
+end
+
+
+function EstusFlaskMaxReinforceParam:unk00(value)
+	self:patchByte(0x2, value)
+end
+
+
+function EstusFlaskMaxReinforceParam:unk002(value)
+	self:patchByte(0x3, value)
+end
+
+
+--[[End EstusFlaskMaxReinforceParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

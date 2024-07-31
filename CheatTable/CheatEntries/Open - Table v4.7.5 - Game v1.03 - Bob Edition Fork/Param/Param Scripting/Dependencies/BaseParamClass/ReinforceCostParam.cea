@@ -1,0 +1,172 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ReinforceCostParam class]]--
+ReinforceCostParam = BaseParamClass:new()
+
+function ReinforceCostParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ReinforceCostParam", uuid, id, address)
+	return o
+end
+
+function ReinforceCostParam:soulCost1(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function ReinforceCostParam:soulCost2(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function ReinforceCostParam:soulCost3(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function ReinforceCostParam:soulCost4(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function ReinforceCostParam:soulCost5(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function ReinforceCostParam:soulCost6(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function ReinforceCostParam:soulCost7(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function ReinforceCostParam:soulCost8(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function ReinforceCostParam:soulCost9(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function ReinforceCostParam:soulCost10(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function ReinforceCostParam:material1(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function ReinforceCostParam:mterial2(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function ReinforceCostParam:material3(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function ReinforceCostParam:material4(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function ReinforceCostParam:material5(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function ReinforceCostParam:material6(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function ReinforceCostParam:material7(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function ReinforceCostParam:material8(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function ReinforceCostParam:material9(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function ReinforceCostParam:material10(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function ReinforceCostParam:materialAmount1(value)
+	self:patch2Byte(0x50, value)
+end
+
+
+function ReinforceCostParam:materialAmount2(value)
+	self:patch2Byte(0x52, value)
+end
+
+
+function ReinforceCostParam:materialAmount3(value)
+	self:patch2Byte(0x54, value)
+end
+
+
+function ReinforceCostParam:materialAmount4(value)
+	self:patch2Byte(0x56, value)
+end
+
+
+function ReinforceCostParam:materialAmount5(value)
+	self:patch2Byte(0x58, value)
+end
+
+
+function ReinforceCostParam:materialAmount6(value)
+	self:patch2Byte(0x5A, value)
+end
+
+
+function ReinforceCostParam:materialAmount7(value)
+	self:patch2Byte(0x5C, value)
+end
+
+
+function ReinforceCostParam:materialAmount8(value)
+	self:patch2Byte(0x5E, value)
+end
+
+
+function ReinforceCostParam:materialAmount9(value)
+	self:patch2Byte(0x60, value)
+end
+
+
+function ReinforceCostParam:materialAmount10(value)
+	self:patch2Byte(0x62, value)
+end
+
+
+--[[End ReinforceCostParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

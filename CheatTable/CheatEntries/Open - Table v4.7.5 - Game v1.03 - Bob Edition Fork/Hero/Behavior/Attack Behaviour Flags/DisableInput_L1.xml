@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337043343</ID>
+  <Description>"DisableInput_L1"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>FF0000</Color>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>4D4</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

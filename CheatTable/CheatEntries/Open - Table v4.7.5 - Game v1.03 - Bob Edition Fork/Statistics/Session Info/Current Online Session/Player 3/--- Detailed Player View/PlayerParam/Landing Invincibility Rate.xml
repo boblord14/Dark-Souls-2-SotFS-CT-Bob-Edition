@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337107083</ID>
+  <Description>"Landing Invincibility Rate"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>+B8</Address>
+</CheatEntry>

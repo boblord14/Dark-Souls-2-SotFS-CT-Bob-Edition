@@ -1,0 +1,21 @@
+<CheatEntry>
+  <ID>1337037554</ID>
+  <Description>"PlayerCtrl"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>808080</Color>
+  <GroupHeader>1</GroupHeader>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337090840"/>
+    <id id="1337090841"/>
+    <id id="1337090842"/>
+    <id id="1337090843"/>
+    <id id="1337091952"/>
+    <id id="1337090947"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

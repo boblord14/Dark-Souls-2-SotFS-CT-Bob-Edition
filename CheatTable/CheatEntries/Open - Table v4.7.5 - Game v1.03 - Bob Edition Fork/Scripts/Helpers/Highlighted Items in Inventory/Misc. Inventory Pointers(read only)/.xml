@@ -1,0 +1,17 @@
+<CheatEntry>
+  <ID>1337089198</ID>
+  <Description>"Misc. Inventory Pointers(read only)"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337089199"/>
+    <id id="1337089200"/>
+    <id id="1337089201"/>
+    <id id="1337089202"/>
+    <id id="1337089203"/>
+    <id id="1337089204"/>
+    <id id="1337089205"/>
+    <id id="1337089206"/>
+    <id id="1337089207"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

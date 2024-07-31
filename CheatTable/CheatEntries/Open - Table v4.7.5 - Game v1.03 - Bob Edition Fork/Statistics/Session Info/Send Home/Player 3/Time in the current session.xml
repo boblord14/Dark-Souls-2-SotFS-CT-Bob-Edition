@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>90728</ID>
+  <Description>"Time in the current session"</Description>
+  <VariableType>Float</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>8</Offset>
+    <Offset>10</Offset>
+    <Offset>48</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

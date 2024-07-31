@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337089053</ID>
+  <Description>"FallDistMax (19.5)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>258</Offset>
+    <Offset>D8</Offset>
+    <Offset>330</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

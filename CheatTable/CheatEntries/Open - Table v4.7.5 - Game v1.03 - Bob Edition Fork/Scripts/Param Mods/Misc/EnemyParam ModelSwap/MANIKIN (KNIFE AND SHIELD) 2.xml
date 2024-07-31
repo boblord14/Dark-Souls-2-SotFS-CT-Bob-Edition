@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087536</ID>
+  <Description>"MANIKIN (KNIFE AND SHIELD)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>E10</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

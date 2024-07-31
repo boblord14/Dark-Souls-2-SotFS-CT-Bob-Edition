@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>26571</ID>
+  <Description>"Forest of Fallen Giants"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="8"/>
+    <id id="10"/>
+    <id id="26572"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

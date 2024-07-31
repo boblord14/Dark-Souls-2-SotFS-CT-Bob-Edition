@@ -1,0 +1,21 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+   local soulShower = {
+         {31130010,0x2F,"7F"},          --numShootSeq > 127
+         {31130010,0x24,"00 00 80 3F"}, --AngleRandom1 > 1
+         {31130010,0x28,"00 00 80 3F"}, --AngleRandom2 > 1
+         {31130010,0x38,"CD CC 4C 3D"}, --shootInt > 0.05
+         {31130010,0x3C,"C2 B8 32 3E"}, --SpreadVert. > some fuckoff number
+         {31130010,0x40,"DB 0F C9 3F"}, --SpreadHoriz. > 1.5707
+         {31130010,0xD4,"81 87 32 01"}, --childBullet1 > 20088705
+         {31130010,0xD8,"81 87 32 01"}, --childBullet2 > 20088705
+         {31130010,0xEC,"01"},          --spawnChildCollision
+   }
+
+ParamIterator("BulletParam.param",soulShower,"EditOff3")
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+ ParamDepatcher("EditOff3")

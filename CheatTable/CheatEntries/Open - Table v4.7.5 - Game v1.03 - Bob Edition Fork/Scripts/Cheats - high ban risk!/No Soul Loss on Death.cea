@@ -1,0 +1,65 @@
+[ENABLE]
+
+
+aobscanmodule(PreventSoulsLoss,DarkSoulsII.exe,4D 89 88 B8 04 00 00) // should be unique
+alloc(newmem,$1000,"DarkSoulsII.exe"+3162D6)
+
+label(code)
+label(return)
+
+newmem:
+  push rax
+  mov rax,[GameManagerImp]
+  mov rax,[rax+D0]
+  mov rax,[rax+B8]
+  cmp rax,r8
+  pop rax
+  jne code
+  mov dword ptr [r8+000004B8],08
+  jmp return
+code:
+  mov dword ptr [r8+000004B8],r9
+  jmp return
+PreventSoulsLoss:
+  jmp newmem
+  nop
+  nop
+return:
+
+registersymbol(PreventSoulsLoss)
+
+[DISABLE]
+
+PreventSoulsLoss:
+  db 4D 89 88 B8 04 00 00
+
+unregistersymbol(PreventSoulsLoss)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "DarkSoulsII.exe"+3162D6
+
+"DarkSoulsII.exe"+3162B3: 48 FF C9                          -  dec rcx
+"DarkSoulsII.exe"+3162B6: 75 D8                             -  jne DarkSoulsII.exe+316290
+"DarkSoulsII.exe"+3162B8: 48 89 10                          -  mov [rax],rdx
+"DarkSoulsII.exe"+3162BB: 48 89 50 08                       -  mov [rax+08],rdx
+"DarkSoulsII.exe"+3162BF: 48 89 50 10                       -  mov [rax+10],rdx
+"DarkSoulsII.exe"+3162C3: 48 89 50 18                       -  mov [rax+18],rdx
+"DarkSoulsII.exe"+3162C7: 48 89 50 20                       -  mov [rax+20],rdx
+"DarkSoulsII.exe"+3162CB: 48 89 50 28                       -  mov [rax+28],rdx
+"DarkSoulsII.exe"+3162CF: 48 89 50 30                       -  mov [rax+30],rdx
+"DarkSoulsII.exe"+3162D3: 89 50 38                          -  mov [rax+38],edx
+// ---------- INJECTING HERE ----------
+"DarkSoulsII.exe"+3162D6: 4D 89 88 B8 04 00 00              -  mov [r8+000004B8],r9
+// ---------- DONE INJECTING  ----------
+"DarkSoulsII.exe"+3162DD: 41 C7 80 34 01 00 00 00 00 80 3F  -  mov [r8+00000134],3F800000
+"DarkSoulsII.exe"+3162E8: 41 C7 80 4C 01 00 00 00 00 80 3F  -  mov [r8+0000014C],3F800000
+"DarkSoulsII.exe"+3162F3: C3                                -  ret 
+"DarkSoulsII.exe"+3162F4: CC                                -  int 3 
+"DarkSoulsII.exe"+3162F5: CC                                -  int 3 
+"DarkSoulsII.exe"+3162F6: CC                                -  int 3 
+"DarkSoulsII.exe"+3162F7: CC                                -  int 3 
+"DarkSoulsII.exe"+3162F8: CC                                -  int 3 
+"DarkSoulsII.exe"+3162F9: CC                                -  int 3 
+"DarkSoulsII.exe"+3162FA: CC                                -  int 3 
+}

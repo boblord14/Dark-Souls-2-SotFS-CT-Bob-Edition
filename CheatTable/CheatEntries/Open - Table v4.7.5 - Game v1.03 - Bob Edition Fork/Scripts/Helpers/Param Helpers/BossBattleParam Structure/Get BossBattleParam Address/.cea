@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetBossBattleParamAddr, $100, DarkSoulsII.exe)
+alloc(BossBattleParamId, 4)
+label(return)
+registersymbol(GetBossBattleParamAddr)
+registersymbol(BossBattleParamId)
+
+BossBattleParamId:
+dd #1010000
+
+GetBossBattleParamAddr:
+sub rsp, 20
+mov edx, [BossBattleParamId]
+vortmov(rcx, [[[GameManagerImp]+70]+140])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [BossBattleAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetBossBattleParamAddr)
+dealloc(BossBattleParamId)
+unregistersymbol(GetBossBattleParamAddr)
+unregistersymbol(BossBattleParamId)

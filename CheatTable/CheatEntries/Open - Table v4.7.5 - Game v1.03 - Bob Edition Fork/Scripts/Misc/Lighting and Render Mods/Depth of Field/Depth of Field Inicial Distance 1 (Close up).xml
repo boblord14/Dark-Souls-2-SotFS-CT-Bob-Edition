@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26397</ID>
+  <Description>"Depth of Field Inicial Distance 1 (Close up?)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>FFFFFEDC</Offset>
+  </Offsets>
+</CheatEntry>

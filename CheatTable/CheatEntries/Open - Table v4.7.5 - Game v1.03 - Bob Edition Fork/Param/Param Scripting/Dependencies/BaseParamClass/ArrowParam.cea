@@ -1,0 +1,197 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ArrowParam class]]--
+ArrowParam = BaseParamClass:new()
+
+function ArrowParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ArrowParam", uuid, id, address)
+	return o
+end
+
+function ArrowParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function ArrowParam:unknownId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function ArrowParam:unknownId2(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function ArrowParam:unknownId3(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function ArrowParam:unknownId4(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function ArrowParam:damageId(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function ArrowParam:unknownId5(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function ArrowParam:unknownId6(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function ArrowParam:unknownId7(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function ArrowParam:unknownId8(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function ArrowParam:unknownId9(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function ArrowParam:unknownId10(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function ArrowParam:unknownId111(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function ArrowParam:unknownId1112(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function ArrowParam:unknownId11113(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function ArrowParam:unknownId111114(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function ArrowParam:unknownId1111115(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function ArrowParam:damageDeadMotionId(value)
+	self:patch2Byte(0x44, value)
+end
+
+
+function ArrowParam:physicalDamage(value)
+	self:patch2Byte(0x46, value)
+end
+
+
+function ArrowParam:magicDamage(value)
+	self:patch2Byte(0x48, value)
+end
+
+
+function ArrowParam:lightningDamage(value)
+	self:patch2Byte(0x4A, value)
+end
+
+
+function ArrowParam:fireDamage(value)
+	self:patch2Byte(0x4C, value)
+end
+
+
+function ArrowParam:darkDamage(value)
+	self:patch2Byte(0x4E, value)
+end
+
+
+function ArrowParam:poisonInflict(value)
+	self:patchByte(0x50, value)
+end
+
+
+function ArrowParam:inflictsPoison(value)
+	self:patchByte(0x51, value)
+end
+
+
+function ArrowParam:bleedInflict(value)
+	self:patchByte(0x52, value)
+end
+
+
+function ArrowParam:inflictsBleed(value)
+	self:patchByte(0x53, value)
+end
+
+
+function ArrowParam:unk54(value)
+	self:patchByte(0x54, value)
+end
+
+
+function ArrowParam:unk55(value)
+	self:patchByte(0x55, value)
+end
+
+
+function ArrowParam:ammunitionType(value)
+	self:patchByte(0x56, value)
+end
+
+
+function ArrowParam:unk57(value)
+	self:patchByte(0x57, value)
+end
+
+
+function ArrowParam:unk58(value)
+	self:patchByte(0x58, value)
+end
+
+
+function ArrowParam:unk59(value)
+	self:patchByte(0x59, value)
+end
+
+
+function ArrowParam:unk5A(value)
+	self:patchByte(0x5A, value)
+end
+
+
+function ArrowParam:unk5B(value)
+	self:patchByte(0x5B, value)
+end
+
+
+--[[End ArrowParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

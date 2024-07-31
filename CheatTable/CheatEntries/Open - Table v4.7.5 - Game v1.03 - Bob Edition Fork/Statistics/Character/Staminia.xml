@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>22812</ID>
+  <Description>"Staminia"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1AC</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

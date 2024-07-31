@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem22,32)
+label(EnemyDamageParamAddressToUse)
+registersymbol(EnemyDamageParamAddressToUse)
+newmem22:
+EnemyDamageParamAddressToUse:
+[DISABLE]
+dealloc(newmem22)
+unregistersymbol(EnemyDamageParamAddressToUse)

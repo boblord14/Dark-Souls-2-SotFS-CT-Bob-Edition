@@ -1,0 +1,40 @@
+[ENABLE]
+aobscanmodule(attunement_inj, DarkSoulsII.exe, 0F B6 8E ED 59 02 00 0F BE 40 2E)
+
+alloc(attunement_mem, 100)
+
+label(code)
+label(pAttune1)
+label(pAttune2)
+
+registersymbol(attunement_inj)
+registersymbol(pAttune1)
+registersymbol(pAttune2)
+
+attunement_mem:
+pAttune1:
+  dq 0
+pAttune2:
+  dq 0
+code:
+  mov [pAttune1], rsi
+  mov [pAttune2], rax
+  movzx ecx, byte ptr [rsi+259ED]
+  movzx eax, byte ptr [rax+2E]
+  add ecx,eax
+  jmp attunement_inj+16
+
+attunement_inj:
+  jmp code
+  nop
+
+[DISABLE]
+
+attunement_inj:
+  db 0F B6 8E ED 59 02 00 0F BE 40 2E 03 C8 EB 07
+
+dealloc(attuenment_mem)
+
+unregistersymbol(attunement_inj)
+unregistersymbol(pAttune1)
+unregistersymbol(pAttune2)

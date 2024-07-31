@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337089945</ID>
+  <Description>"SpellParam Struct"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337089946"/>
+    <id id="1337089951"/>
+    <id id="1337089952"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

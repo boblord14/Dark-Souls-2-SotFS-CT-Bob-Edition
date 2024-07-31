@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>90758</ID>
+  <Description>"Name Stealer"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="90753"/>
+    <id id="90754"/>
+    <id id="90755"/>
+    <id id="90756"/>
+    <id id="90757"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

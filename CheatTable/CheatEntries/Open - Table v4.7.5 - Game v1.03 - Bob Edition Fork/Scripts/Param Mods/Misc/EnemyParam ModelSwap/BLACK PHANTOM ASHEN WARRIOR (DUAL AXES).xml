@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087942</ID>
+  <Description>"BLACK PHANTOM ASHEN WARRIOR (DUAL AXES)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3420</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

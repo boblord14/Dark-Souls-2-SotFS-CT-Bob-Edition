@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetRingParamAddr, $100, DarkSoulsII.exe)
+alloc(RingParamId, 4)
+label(return)
+registersymbol(GetRingParamAddr)
+registersymbol(RingParamId)
+
+RingParamId:
+dd #40010000
+
+GetRingParamAddr:
+sub rsp, 20
+mov edx, [RingParamId]
+vortmov(rcx, [[[GameManagerImp]+18]+530])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [RingParam_Addr], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetRingParamAddr)
+dealloc(RingParamId)
+unregistersymbol(GetRingParamAddr)
+unregistersymbol(RingParamId)

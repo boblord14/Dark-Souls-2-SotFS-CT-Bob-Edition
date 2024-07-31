@@ -1,0 +1,7 @@
+[ENABLE]
+label(RingParamStruct)
+registersymbol(RingParamStruct)
+[RingParam_Addr]:
+RingParamStruct:
+[DISABLE]
+unregistersymbol(RingParamStruct)

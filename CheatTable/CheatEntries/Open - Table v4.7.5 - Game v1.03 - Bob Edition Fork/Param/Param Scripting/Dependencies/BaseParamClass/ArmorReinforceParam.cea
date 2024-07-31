@@ -1,0 +1,167 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ArmorReinforceParam class]]--
+ArmorReinforceParam = BaseParamClass:new()
+
+function ArmorReinforceParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ArmorReinforceParam", uuid, id, address)
+	return o
+end
+
+function ArmorReinforceParam:slashDefence(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function ArmorReinforceParam:thrustDefence(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function ArmorReinforceParam:strikeDefence(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function ArmorReinforceParam:standardDefence(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function ArmorReinforceParam:magicAbsorption(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function ArmorReinforceParam:lightningAbsorption(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function ArmorReinforceParam:fireAbsorption(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function ArmorReinforceParam:darkAbsorption(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function ArmorReinforceParam:poisonResist(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function ArmorReinforceParam:bleedResist(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function ArmorReinforceParam:petrifyResist(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function ArmorReinforceParam:curseResist(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function ArmorReinforceParam:maxSlashDefence(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function ArmorReinforceParam:maxThrustDefence(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function ArmorReinforceParam:makeStrikeDefence(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function ArmorReinforceParam:maxStandardDefence(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function ArmorReinforceParam:maxMagicAbsorption(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function ArmorReinforceParam:maxLightningAbsorption(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function ArmorReinforceParam:maxFireAbsorption(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function ArmorReinforceParam:maxDarkAbsorption(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function ArmorReinforceParam:maxPoisonResist(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function ArmorReinforceParam:maxBleedResist(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function ArmorReinforceParam:maxPetrifyResist(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function ArmorReinforceParam:maxCurseResist(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function ArmorReinforceParam:maxReinforceLevel(value)
+	self:patch4Byte(0x60, value)
+end
+
+
+function ArmorReinforceParam:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function ArmorReinforceParam:upgradeMaterial(value)
+	self:patch4Byte(0x68, value)
+end
+
+
+function ArmorReinforceParam:unk6C(value)
+	self:patch4Byte(0x6C, value)
+end
+
+
+function ArmorReinforceParam:reinforceCostId(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+--[[End ArmorReinforceParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

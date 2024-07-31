@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256168</ID>
+  <Description>"Sinner Points"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1D7</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

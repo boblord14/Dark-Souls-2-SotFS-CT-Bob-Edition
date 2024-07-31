@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>22868</ID>
+  <Description>"State"</Description>
+  <VariableType>2 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>D0</Offset>
+    <Offset>28</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

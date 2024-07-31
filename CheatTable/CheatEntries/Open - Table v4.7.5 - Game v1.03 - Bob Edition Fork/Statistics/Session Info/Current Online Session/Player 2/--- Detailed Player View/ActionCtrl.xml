@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337105037</ID>
+  <Description>"ActionCtrl"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+E0</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+</CheatEntry>

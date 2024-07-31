@@ -1,0 +1,10 @@
+[ENABLE]
+aobscanmodule(InfiniteSpellsAOB,DarkSoulsII.exe,88 4D 20 49 8B CE) // should be unique
+registersymbol(InfiniteSpellsAOB)
+InfiniteSpellsAOB:
+  db 90 90 90
+[DISABLE]
+InfiniteSpellsAOB:
+  db 88 4D 20
+unregistersymbol(InfiniteSpellsAOB)
+

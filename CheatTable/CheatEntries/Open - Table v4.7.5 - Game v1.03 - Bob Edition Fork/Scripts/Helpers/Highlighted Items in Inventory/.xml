@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337089186</ID>
+  <Description>"Highlighted Items in Inventory"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337089187"/>
+    <id id="1337089192"/>
+    <id id="1337089194"/>
+    <id id="1337089198"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

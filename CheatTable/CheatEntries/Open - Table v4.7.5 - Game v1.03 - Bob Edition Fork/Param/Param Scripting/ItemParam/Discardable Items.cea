@@ -1,0 +1,13 @@
+{
+Author: Relinquished001 from the Grand Cathedral discord
+}
+
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+
+local ad = ItemParam:new("allDrop")
+ad:patchAll4Byte(0x44, 1000)
+
+[DISABLE]
+ParamUtils:restore("allDrop")

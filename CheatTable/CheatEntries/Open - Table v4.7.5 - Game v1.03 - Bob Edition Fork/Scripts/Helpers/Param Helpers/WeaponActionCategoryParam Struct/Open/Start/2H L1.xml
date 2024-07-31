@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337090188</ID>
+  <Description>"2H L1"</Description>
+  <DropDownListLink>WeaponAttackMotion</DropDownListLink>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+c8</Address>
+</CheatEntry>

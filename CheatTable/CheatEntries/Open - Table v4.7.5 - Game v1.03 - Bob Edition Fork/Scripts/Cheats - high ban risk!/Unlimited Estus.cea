@@ -1,0 +1,10 @@
+[ENABLE]
+aobscanmodule(ChugChug,DarkSoulsII.exe,24 8D 51 FF 48 8B CB)
+ChugChug+01:
+  db 8B D1 90
+registersymbol(ChugChug)
+[DISABLE]
+ChugChug+01:
+  db 8D 51 FF
+unregistersymbol(ChugChug)
+

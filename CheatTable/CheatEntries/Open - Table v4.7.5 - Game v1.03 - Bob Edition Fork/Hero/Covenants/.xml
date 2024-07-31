@@ -1,0 +1,18 @@
+<CheatEntry>
+  <ID>12148</ID>
+  <Description>"Covenants"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="12147"/>
+    <id id="16796"/>
+    <id id="16800"/>
+    <id id="16799"/>
+    <id id="16798"/>
+    <id id="16797"/>
+    <id id="16804"/>
+    <id id="16803"/>
+    <id id="16802"/>
+    <id id="16801"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

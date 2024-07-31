@@ -1,0 +1,27 @@
+<CheatEntry>
+  <ID>1337106280</ID>
+  <Description>"Input States"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+38</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337106281"/>
+    <id id="1337106282"/>
+    <id id="1337106283"/>
+    <id id="1337106284"/>
+    <id id="1337106285"/>
+    <id id="1337106286"/>
+    <id id="1337106287"/>
+    <id id="1337106288"/>
+    <id id="1337106289"/>
+    <id id="1337106290"/>
+    <id id="1337106291"/>
+    <id id="1337106292"/>
+    <id id="1337106293"/>
+    <id id="1337106294"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,167 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ItemParam class]]--
+ItemParam = BaseParamClass:new()
+
+function ItemParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ItemParam", uuid, id, address)
+	return o
+end
+
+function ItemParam:iconId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function ItemParam:effectId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function ItemParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function ItemParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function ItemParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function ItemParam:weaponparamId(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function ItemParam:armorparamId(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function ItemParam:arrowparamId(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function ItemParam:ringparamId(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function ItemParam:spellparamId(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function ItemParam:gestureId(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function ItemParam:sortId(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function ItemParam:baseBuyPrice(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function ItemParam:sellPrice(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function ItemParam:animationSpeed(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function ItemParam:unk3C(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function ItemParam:itemtypeparamId(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function ItemParam:itemusageparamId(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function ItemParam:unk48(value)
+	self:patchByte(0x48, value)
+end
+
+
+function ItemParam:unk49(value)
+	self:patchByte(0x49, value)
+end
+
+
+function ItemParam:maxHeld(value)
+	self:patch2Byte(0x4A, value)
+end
+
+
+function ItemParam:speffectType(value)
+	self:patchByte(0x4C, value)
+end
+
+
+function ItemParam:itemType(value)
+	self:patchByte(0x4D, value)
+end
+
+
+function ItemParam:unk4ESpeffectRelated(value)
+	self:patchByte(0x4E, value)
+end
+
+
+function ItemParam:itemType2(value)
+	self:patchByte(0x4F, value)
+end
+
+
+function ItemParam:buffFlags(value)
+	self:patchByte(0x50, value)
+end
+
+
+function ItemParam:spellSchool(value)
+	self:patchByte(0x51, value)
+end
+
+
+function ItemParam:itemState(value)
+	self:patchByte(0x52, value)
+end
+
+
+function ItemParam:unk53(value)
+	self:patchByte(0x53, value)
+end
+
+
+--[[End ItemParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

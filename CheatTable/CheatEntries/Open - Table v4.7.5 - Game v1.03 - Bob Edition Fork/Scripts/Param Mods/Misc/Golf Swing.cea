@@ -1,0 +1,8 @@
+[ENABLE]
+[[[[GameManagerImp]+10]+B80]+D8]+2AC04:
+dd (float)50
+ 
+[DISABLE]
+[[[[GameManagerImp]+10]+B80]+D8]+2AC04:
+dd (float)4
+

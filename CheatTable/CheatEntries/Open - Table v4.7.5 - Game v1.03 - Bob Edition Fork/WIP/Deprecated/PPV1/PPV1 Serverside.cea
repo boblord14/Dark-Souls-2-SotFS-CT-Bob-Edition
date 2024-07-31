@@ -1,0 +1,11 @@
+[ENABLE]
+{$lua}
+if syntaxchceck then return end
+ PatchAll("BulletParam.param","serversidePlayer",0x06,"02")
+ PatchAll("EnemyBulletParam.param","serversideEnemy",0x06,"02")
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+ ParamDepatcher("serversidePlayer")
+ ParamDepatcher("serversideEnemy")

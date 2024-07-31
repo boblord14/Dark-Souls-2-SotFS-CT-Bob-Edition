@@ -1,0 +1,24 @@
+[ENABLE]
+alloc(SaveRequest, $100, DarkSoulsII.exe)
+createthread(SaveRequest)
+
+SaveRequest:
+sub rsp, 28
+vortmov(rcx, [[GameManagerImp]+B8])
+mov edx, 2
+call DarkSoulsII.exe+2E7410
+add rsp, 28
+ret
+
+{$lua}
+if syntaxcheck then return end
+
+local t=createTimer()
+t.Interval=50
+t.OnTimer=function()
+  memrec.Active=false
+  t.destroy()
+end
+{$asm}
+[DISABLE]
+dealloc(SaveRequest)

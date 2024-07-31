@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26471</ID>
+  <Description>"Green"</Description>
+  <VariableType>Float</VariableType>
+  <Address>"DarkSoulsII.exe"+160B8D0</Address>
+  <Offsets>
+    <Offset>14</Offset>
+    <Offset>2B8</Offset>
+    <Offset>670</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

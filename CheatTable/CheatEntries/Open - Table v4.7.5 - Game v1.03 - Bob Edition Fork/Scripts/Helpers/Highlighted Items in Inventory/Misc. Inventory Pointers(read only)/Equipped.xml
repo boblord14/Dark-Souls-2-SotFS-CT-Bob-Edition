@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337089205</ID>
+  <Description>"Equipped"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:No
+1:Yes
+</DropDownList>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>Binary</VariableType>
+  <BitStart>1</BitStart>
+  <BitLength>1</BitLength>
+  <ShowAsBinary>0</ShowAsBinary>
+  <Address>pItem</Address>
+  <Offsets>
+    <Offset>1F</Offset>
+  </Offsets>
+</CheatEntry>

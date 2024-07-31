@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337162790</ID>
+  <Description>"Oil Buildup"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+74</Address>
+  <x-ce2fs-child-order>
+    <id id="1337162791"/>
+    <id id="1337162792"/>
+    <id id="1337162793"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26489</ID>
+  <Description>"Player Light Toggle"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>"DarkSoulsII.exe"+160B8D0</Address>
+  <Offsets>
+    <Offset>3C</Offset>
+    <Offset>2B8</Offset>
+    <Offset>670</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26366</ID>
+  <Description>"World Specularity"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26362"/>
+    <id id="26363"/>
+    <id id="26364"/>
+    <id id="26365"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

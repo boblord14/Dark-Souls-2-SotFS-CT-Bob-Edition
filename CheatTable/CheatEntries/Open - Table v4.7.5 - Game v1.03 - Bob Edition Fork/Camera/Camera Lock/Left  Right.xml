@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>30734</ID>
+  <Description>"Left / Right"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>D0C</Offset>
+    <Offset>28</Offset>
+    <Offset>18</Offset>
+    <Offset>E8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

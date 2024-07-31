@@ -1,0 +1,47 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START MenuCategoryIconParam class]]--
+MenuCategoryIconParam = BaseParamClass:new()
+
+function MenuCategoryIconParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("MenuCategoryIconParam", uuid, id, address)
+	return o
+end
+
+function MenuCategoryIconParam:unk00(value)
+	self:patchByte(0x0, value)
+end
+
+
+function MenuCategoryIconParam:unk002(value)
+	self:patchByte(0x1, value)
+end
+
+
+function MenuCategoryIconParam:unk003(value)
+	self:patchByte(0x2, value)
+end
+
+
+function MenuCategoryIconParam:unk004(value)
+	self:patchByte(0x3, value)
+end
+
+
+function MenuCategoryIconParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+--[[End MenuCategoryIconParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

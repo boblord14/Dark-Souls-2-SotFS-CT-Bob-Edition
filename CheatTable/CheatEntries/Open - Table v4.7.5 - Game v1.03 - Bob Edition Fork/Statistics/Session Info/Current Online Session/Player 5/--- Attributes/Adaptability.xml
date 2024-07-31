@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>86640</ID>
+  <Description>"Adaptability"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>18</Offset>
+    <Offset>490</Offset>
+    <Offset>528</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

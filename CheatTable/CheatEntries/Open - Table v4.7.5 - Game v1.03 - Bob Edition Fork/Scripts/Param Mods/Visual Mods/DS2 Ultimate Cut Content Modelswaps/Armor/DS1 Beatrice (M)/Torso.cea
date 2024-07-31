@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(beatricet,4)
+                        beatricet:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+2C8]+08,4)
+                        registersymbol(beatricet)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        dw #9910
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(beatricet)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        readmem(beatricet, 4)
+                        unregistersymbol(beatricet)
+                    
+					

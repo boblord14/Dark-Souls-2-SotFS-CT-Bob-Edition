@@ -1,0 +1,7 @@
+[ENABLE]
+[[[[[GameManagerImp]+20]+28]+B0]+18]+B8:
+readmem([[[[[[GameManagerImp]+20]+28]+B0]+18]+C0]+50, 4)
+
+[DISABLE]
+[[[[[GameManagerImp]+20]+28]+B0]+18]+B8:
+readmem([[GameManagerImp]+D0]+50, 4)

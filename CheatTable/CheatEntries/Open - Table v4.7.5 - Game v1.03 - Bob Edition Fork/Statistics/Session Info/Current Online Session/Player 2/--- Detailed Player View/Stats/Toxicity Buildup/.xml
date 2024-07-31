@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337105081</ID>
+  <Description>"Toxicity Buildup"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+98</Address>
+  <x-ce2fs-child-order>
+    <id id="1337105082"/>
+    <id id="1337105083"/>
+    <id id="1337105084"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

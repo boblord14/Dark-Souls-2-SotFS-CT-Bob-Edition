@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>23015</ID>
+  <Description>"Disable Death Animation"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>5D0</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

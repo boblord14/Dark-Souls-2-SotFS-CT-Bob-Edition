@@ -1,0 +1,42 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START EnemyDefaultLogicParam class]]--
+EnemyDefaultLogicParam = BaseParamClass:new()
+
+function EnemyDefaultLogicParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("EnemyDefaultLogicParam", uuid, id, address)
+	return o
+end
+
+function EnemyDefaultLogicParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function EnemyDefaultLogicParam:logiccomparamid(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function EnemyDefaultLogicParam:enemyparamid(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function EnemyDefaultLogicParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+--[[End EnemyDefaultLogicParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

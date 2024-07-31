@@ -1,0 +1,10 @@
+[ENABLE]
+aobscanmodule(InfiniteStaminaAOB,DarkSoulsII.exe,89 81 AC 01 00 00 E9)
+registersymbol(InfiniteStaminaAOB)
+InfiniteStaminaAOB:
+  db 90 90 90 90 90 90
+[DISABLE]
+InfiniteStaminaAOB:
+  db 89 81 AC 01 00 00
+unregistersymbol(InfiniteStaminaAOB)
+

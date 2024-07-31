@@ -1,0 +1,19 @@
+<CheatEntry>
+  <ID>89556</ID>
+  <Description>"AreaParam.param"</Description>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>D8</Offset>
+    <Offset>100</Offset>
+    <Offset>38</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="89997"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

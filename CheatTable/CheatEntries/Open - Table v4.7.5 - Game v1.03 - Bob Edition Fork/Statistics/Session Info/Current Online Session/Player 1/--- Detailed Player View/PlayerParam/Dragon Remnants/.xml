@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337104604</ID>
+  <Description>"Dragon Remnants"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337104605"/>
+    <id id="1337104606"/>
+    <id id="1337104607"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,107 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START HitGroupParam class]]--
+HitGroupParam = BaseParamClass:new()
+
+function HitGroupParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("HitGroupParam", uuid, id, address)
+	return o
+end
+
+function HitGroupParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function HitGroupParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function HitGroupParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function HitGroupParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function HitGroupParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function HitGroupParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function HitGroupParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function HitGroupParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function HitGroupParam:unk20(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function HitGroupParam:unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function HitGroupParam:unk28(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function HitGroupParam:unk2C(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function HitGroupParam:unk30(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function HitGroupParam:unk34(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function HitGroupParam:unk38(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function HitGroupParam:unk3C(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function HitGroupParam:unk40(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+--[[End HitGroupParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

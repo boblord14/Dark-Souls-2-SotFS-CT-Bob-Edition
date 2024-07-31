@@ -1,0 +1,70 @@
+{
+ Author: boblord
+ Desc: discards all items with upgrade levels above +10 without crashing
+}
+[ENABLE]
+{$asm}
+
+alloc(InventoryChecker, $100, DarkSoulsII.exe)
+alloc(DiscardItem, $100, DarkSoulsII.exe)
+
+registersymbol(InventoryChecker)
+registersymbol(DiscardItem)
+
+InventoryChecker:
+vortmov(rcx, [[[GameManagerImp]+A8]+10]+D0, return) //ItemInventory2BagList
+lea rcx, [rcx+3C]
+xor r9, r9
+mov r9, 0
+jmp cycle
+
+cycle:
+mov edx, [rcx]
+cmp rdx, F4240 //1000000 in hex, first equipment entry in ItemParam
+jl iteration
+cmp rdx, B4AA00 //11840000 in hex, last equipment entry in ItemParam
+jg iteration
+jmp validation
+
+iteration:
+inc r9
+cmp r9, EFF //max inventory limit is 3,839 items
+ja endIteration
+lea rcx, [rcx+28]
+jmp cycle
+
+validation:
+mov dl, [rcx+11]
+cmp dl, A //upgrade check
+jle iteration
+mov eax, [rcx+8]
+jmp DiscardItem
+
+DiscardItem:
+push rcx
+push r9
+sub rsp, 28
+vortmov(rcx, [[[GameManagerImp]+A8]+10]+D0, return) //ItemInventory2BagList
+mov rdx, rax
+mov r8d, 1
+call DarkSoulsII.exe+1b3830
+add rsp, 28
+pop r9
+pop rcx
+jmp iteration
+
+
+return:
+add rsp, 28
+ret
+
+endIteration:
+ret
+
+[DISABLE]
+
+dealloc(InventoryChecker)
+dealloc(DiscardItem)
+unregistersymbol(InventoryChecker)
+unregistersymbol(DiscardItem)
+

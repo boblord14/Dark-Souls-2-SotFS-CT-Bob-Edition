@@ -1,0 +1,23 @@
+<CheatEntry>
+  <ID>1337256273</ID>
+  <Description>"Animation Data"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>20</Offset>
+    <Offset>78</Offset>
+    <Offset>38</Offset>
+    <Offset>F8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337256274"/>
+    <id id="1337256275"/>
+    <id id="1337256276"/>
+    <id id="1337256277"/>
+    <id id="1337256278"/>
+    <id id="1337256279"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

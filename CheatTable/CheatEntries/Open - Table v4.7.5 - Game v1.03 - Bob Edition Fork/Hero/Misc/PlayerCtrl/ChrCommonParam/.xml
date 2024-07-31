@@ -1,0 +1,56 @@
+<CheatEntry>
+  <ID>1337090842</ID>
+  <Description>"ChrCommonParam"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+40</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337091579"/>
+    <id id="1337091580"/>
+    <id id="1337091581"/>
+    <id id="1337091582"/>
+    <id id="1337091583"/>
+    <id id="1337091584"/>
+    <id id="1337092725"/>
+    <id id="1337092827"/>
+    <id id="1337092828"/>
+    <id id="1337092829"/>
+    <id id="1337092830"/>
+    <id id="1337092826"/>
+    <id id="1337091585"/>
+    <id id="1337091586"/>
+    <id id="1337091587"/>
+    <id id="1337091588"/>
+    <id id="1337091589"/>
+    <id id="1337091590"/>
+    <id id="1337091591"/>
+    <id id="1337091592"/>
+    <id id="1337091593"/>
+    <id id="1337091594"/>
+    <id id="1337091595"/>
+    <id id="1337091596"/>
+    <id id="1337091597"/>
+    <id id="1337091598"/>
+    <id id="1337091599"/>
+    <id id="1337091600"/>
+    <id id="1337091601"/>
+    <id id="1337091602"/>
+    <id id="1337091603"/>
+    <id id="1337091604"/>
+    <id id="1337091605"/>
+    <id id="1337091606"/>
+    <id id="1337091607"/>
+    <id id="1337091608"/>
+    <id id="1337091609"/>
+    <id id="1337091610"/>
+    <id id="1337091611"/>
+    <id id="1337091612"/>
+    <id id="1337091613"/>
+    <id id="1337091614"/>
+    <id id="1337091615"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

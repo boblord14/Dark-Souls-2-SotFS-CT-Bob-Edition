@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26475</ID>
+  <Description>"Specular Highlight"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26481"/>
+    <id id="26482"/>
+    <id id="26483"/>
+    <id id="26484"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

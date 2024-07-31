@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(havelgs,2)
+                        havelgs:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+58]+4,2)
+                        registersymbol(havelgs)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        dw #9902
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(havelgs)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        readmem(havelgs, 2)
+                        unregistersymbol(havelgs)
+                    

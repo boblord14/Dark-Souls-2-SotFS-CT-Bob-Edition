@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337275608</ID>
+  <Description>"Inventory2BagList"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>8 Bytes</VariableType>
+  <Address>[[[GameManagerImp]+A8]+10]+D0</Address>
+</CheatEntry>

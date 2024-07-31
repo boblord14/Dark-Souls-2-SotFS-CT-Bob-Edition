@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>23895</ID>
+  <Description>"Disable Gravity"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>134</Offset>
+    <Offset>100</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

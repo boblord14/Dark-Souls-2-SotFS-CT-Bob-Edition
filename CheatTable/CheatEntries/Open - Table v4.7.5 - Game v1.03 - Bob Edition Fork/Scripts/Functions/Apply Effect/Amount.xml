@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337043101</ID>
+  <Description>"Amount"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>EffectStruct+4</Address>
+</CheatEntry>

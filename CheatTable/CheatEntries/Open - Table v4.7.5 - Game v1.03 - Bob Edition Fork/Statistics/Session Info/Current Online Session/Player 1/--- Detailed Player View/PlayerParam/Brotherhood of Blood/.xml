@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337104588</ID>
+  <Description>"Brotherhood of Blood"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337104589"/>
+    <id id="1337104590"/>
+    <id id="1337104591"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

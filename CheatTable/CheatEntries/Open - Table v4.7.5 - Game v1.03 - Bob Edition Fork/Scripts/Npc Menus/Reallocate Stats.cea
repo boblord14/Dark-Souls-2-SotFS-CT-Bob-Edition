@@ -1,0 +1,35 @@
+[ENABLE]
+alloc(AttribMenuWindow, $100, DarkSoulsII.exe)
+alloc(sWindowData, 32)
+label(return)
+createthread(AttribMenuWindow)
+
+
+
+AttribMenuWindow:
+sub rsp, 48
+vortmov(rcx, [[[GameManagerImp]+70]+50], return)
+xor edx, edx
+lea r8, [sWindowData]
+vortmov(r10, [[GameManagerImp]+D0], return)
+add r10, 90
+mov eax, [r10]
+mov [r8], eax
+mov eax, [r10+4]
+mov [r8+4], eax
+mov eax, [r10+8]
+mov [r8+8], eax
+mov eax, [r10+C]
+mov [r8+C], eax
+call DarkSoulsII.exe+1992C0
+
+return:
+add rsp, 48
+ret
+
+{$lua}
+if not syntaxcheck then disableMemrec(memrec) end
+{$asm}
+[DISABLE]
+dealloc(AttribMenuWindow)
+dealloc(sWindowData)

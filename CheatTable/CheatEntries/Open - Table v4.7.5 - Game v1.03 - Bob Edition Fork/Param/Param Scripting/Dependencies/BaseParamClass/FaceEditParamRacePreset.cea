@@ -1,0 +1,427 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START FaceEditParamRacePreset class]]--
+FaceEditParamRacePreset = BaseParamClass:new()
+
+function FaceEditParamRacePreset:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("FaceEditParamRacePreset", uuid, id, address)
+	return o
+end
+
+function FaceEditParamRacePreset:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function FaceEditParamRacePreset:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function FaceEditParamRacePreset:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function FaceEditParamRacePreset:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function FaceEditParamRacePreset:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function FaceEditParamRacePreset:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function FaceEditParamRacePreset:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function FaceEditParamRacePreset:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function FaceEditParamRacePreset:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function FaceEditParamRacePreset:unk24(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function FaceEditParamRacePreset:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function FaceEditParamRacePreset:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function FaceEditParamRacePreset:unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function FaceEditParamRacePreset:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function FaceEditParamRacePreset:unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function FaceEditParamRacePreset:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function FaceEditParamRacePreset:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function FaceEditParamRacePreset:unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function FaceEditParamRacePreset:unk48(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function FaceEditParamRacePreset:unk4C(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function FaceEditParamRacePreset:unk50(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function FaceEditParamRacePreset:unk54(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function FaceEditParamRacePreset:unk58(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function FaceEditParamRacePreset:unk5C(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function FaceEditParamRacePreset:unk60(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function FaceEditParamRacePreset:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function FaceEditParamRacePreset:unk68(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function FaceEditParamRacePreset:unk6C(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function FaceEditParamRacePreset:unk70(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function FaceEditParamRacePreset:unk74(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function FaceEditParamRacePreset:unk78(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function FaceEditParamRacePreset:unk7C(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function FaceEditParamRacePreset:unk80(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function FaceEditParamRacePreset:unk84(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function FaceEditParamRacePreset:unk88(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function FaceEditParamRacePreset:unk8C(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function FaceEditParamRacePreset:unk90(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function FaceEditParamRacePreset:unk94(value)
+	self:patchFloat(0x94, value)
+end
+
+
+function FaceEditParamRacePreset:unk98(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function FaceEditParamRacePreset:unk9C(value)
+	self:patchFloat(0x9C, value)
+end
+
+
+function FaceEditParamRacePreset:unka0(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function FaceEditParamRacePreset:unka4(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function FaceEditParamRacePreset:unka8(value)
+	self:patchFloat(0xA8, value)
+end
+
+
+function FaceEditParamRacePreset:unkac(value)
+	self:patchFloat(0xAC, value)
+end
+
+
+function FaceEditParamRacePreset:unkb0(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function FaceEditParamRacePreset:unkb4(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function FaceEditParamRacePreset:unkb8(value)
+	self:patchFloat(0xB8, value)
+end
+
+
+function FaceEditParamRacePreset:unkbc(value)
+	self:patchFloat(0xBC, value)
+end
+
+
+function FaceEditParamRacePreset:unkc0(value)
+	self:patchFloat(0xC0, value)
+end
+
+
+function FaceEditParamRacePreset:unkc4(value)
+	self:patchFloat(0xC4, value)
+end
+
+
+function FaceEditParamRacePreset:unkc8(value)
+	self:patchFloat(0xC8, value)
+end
+
+
+function FaceEditParamRacePreset:unkcc(value)
+	self:patchFloat(0xCC, value)
+end
+
+
+function FaceEditParamRacePreset:unkd0(value)
+	self:patchFloat(0xD0, value)
+end
+
+
+function FaceEditParamRacePreset:unkd4(value)
+	self:patchFloat(0xD4, value)
+end
+
+
+function FaceEditParamRacePreset:unkd8(value)
+	self:patchFloat(0xD8, value)
+end
+
+
+function FaceEditParamRacePreset:unkdc(value)
+	self:patchFloat(0xDC, value)
+end
+
+
+function FaceEditParamRacePreset:unke0(value)
+	self:patchFloat(0xE0, value)
+end
+
+
+function FaceEditParamRacePreset:unke4(value)
+	self:patchFloat(0xE4, value)
+end
+
+
+function FaceEditParamRacePreset:unke8(value)
+	self:patchFloat(0xE8, value)
+end
+
+
+function FaceEditParamRacePreset:unkec(value)
+	self:patchFloat(0xEC, value)
+end
+
+
+function FaceEditParamRacePreset:unkf0(value)
+	self:patchFloat(0xF0, value)
+end
+
+
+function FaceEditParamRacePreset:unkf4(value)
+	self:patchFloat(0xF4, value)
+end
+
+
+function FaceEditParamRacePreset:unkf8(value)
+	self:patchFloat(0xF8, value)
+end
+
+
+function FaceEditParamRacePreset:unkfc(value)
+	self:patchFloat(0xFC, value)
+end
+
+
+function FaceEditParamRacePreset:unk100(value)
+	self:patchFloat(0x100, value)
+end
+
+
+function FaceEditParamRacePreset:unk104(value)
+	self:patchFloat(0x104, value)
+end
+
+
+function FaceEditParamRacePreset:unk108(value)
+	self:patchFloat(0x108, value)
+end
+
+
+function FaceEditParamRacePreset:unk10C(value)
+	self:patchFloat(0x10C, value)
+end
+
+
+function FaceEditParamRacePreset:unk110(value)
+	self:patchFloat(0x110, value)
+end
+
+
+function FaceEditParamRacePreset:unk114(value)
+	self:patchFloat(0x114, value)
+end
+
+
+function FaceEditParamRacePreset:unk118(value)
+	self:patchFloat(0x118, value)
+end
+
+
+function FaceEditParamRacePreset:unk11C(value)
+	self:patchFloat(0x11C, value)
+end
+
+
+function FaceEditParamRacePreset:unk120(value)
+	self:patchFloat(0x120, value)
+end
+
+
+function FaceEditParamRacePreset:unk124(value)
+	self:patchFloat(0x124, value)
+end
+
+
+function FaceEditParamRacePreset:unk128(value)
+	self:patchFloat(0x128, value)
+end
+
+
+function FaceEditParamRacePreset:unk12C(value)
+	self:patchFloat(0x12C, value)
+end
+
+
+function FaceEditParamRacePreset:unk130(value)
+	self:patchFloat(0x130, value)
+end
+
+
+function FaceEditParamRacePreset:unk134(value)
+	self:patchFloat(0x134, value)
+end
+
+
+function FaceEditParamRacePreset:unk138(value)
+	self:patchFloat(0x138, value)
+end
+
+
+function FaceEditParamRacePreset:unk13C(value)
+	self:patchFloat(0x13C, value)
+end
+
+
+function FaceEditParamRacePreset:unk140(value)
+	self:patchFloat(0x140, value)
+end
+
+
+--[[End FaceEditParamRacePreset class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

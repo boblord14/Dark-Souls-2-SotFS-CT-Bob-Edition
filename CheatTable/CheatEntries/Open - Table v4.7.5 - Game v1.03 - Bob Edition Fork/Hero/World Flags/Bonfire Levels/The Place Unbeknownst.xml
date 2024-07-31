@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>16</ID>
+  <Description>"The Place Unbeknownst"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>7A</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

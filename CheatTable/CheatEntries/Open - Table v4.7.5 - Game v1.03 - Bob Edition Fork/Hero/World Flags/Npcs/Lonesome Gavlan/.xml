@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337256295</ID>
+  <Description>"Lonesome Gavlan"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26534"/>
+    <id id="26554"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

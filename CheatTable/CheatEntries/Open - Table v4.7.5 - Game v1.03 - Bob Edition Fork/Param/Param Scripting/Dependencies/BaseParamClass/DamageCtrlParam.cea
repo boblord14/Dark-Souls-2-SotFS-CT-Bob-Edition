@@ -1,0 +1,312 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START DamageCtrlParam class]]--
+DamageCtrlParam = BaseParamClass:new()
+
+function DamageCtrlParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("DamageCtrlParam", uuid, id, address)
+	return o
+end
+
+function DamageCtrlParam:damageType(value)
+	self:patchByte(0x0, value)
+end
+
+
+function DamageCtrlParam:unk01(value)
+	self:patchByte(0x1, value)
+end
+
+
+function DamageCtrlParam:staggerMode(value)
+	self:patchByte(0x2, value)
+end
+
+
+function DamageCtrlParam:disableParry(value)
+	self:patchByte(0x3, value)
+end
+
+
+function DamageCtrlParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function DamageCtrlParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function DamageCtrlParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function DamageCtrlParam:staggerType(value)
+	self:patchByte(0x10, value)
+end
+
+
+function DamageCtrlParam:unk11(value)
+	self:patchByte(0x11, value)
+end
+
+
+function DamageCtrlParam:unk12(value)
+	self:patch2Byte(0x12, value)
+end
+
+
+function DamageCtrlParam:unk14(value)
+	self:patch2Byte(0x14, value)
+end
+
+
+function DamageCtrlParam:unk16(value)
+	self:patch2Byte(0x16, value)
+end
+
+
+function DamageCtrlParam:knockdownDurationMultiplier(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function DamageCtrlParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function DamageCtrlParam:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function DamageCtrlParam:verticalThrowDistance(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function DamageCtrlParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function DamageCtrlParam:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function DamageCtrlParam:unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function DamageCtrlParam:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function DamageCtrlParam:unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function DamageCtrlParam:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function DamageCtrlParam:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function DamageCtrlParam:unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function DamageCtrlParam:unk48(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function DamageCtrlParam:unk4C(value)
+	self:patch2Byte(0x4C, value)
+end
+
+
+function DamageCtrlParam:unk4E(value)
+	self:patch2Byte(0x4E, value)
+end
+
+
+function DamageCtrlParam:unk50(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function DamageCtrlParam:cameraNoiseParamId(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+function DamageCtrlParam:padRumbleParamId(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function DamageCtrlParam:padRumbleDuration(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function DamageCtrlParam:unk60(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function DamageCtrlParam:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function DamageCtrlParam:unk68(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function DamageCtrlParam:unk6C(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function DamageCtrlParam:unk70(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function DamageCtrlParam:unk74(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function DamageCtrlParam:unk78(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function DamageCtrlParam:unk7C(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function DamageCtrlParam:unk80(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function DamageCtrlParam:damagewindcateparamId(value)
+	self:patch4Byte(0x84, value)
+end
+
+
+function DamageCtrlParam:unk88(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function DamageCtrlParam:unk8C(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function DamageCtrlParam:unk90(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function DamageCtrlParam:unk94(value)
+	self:patchByte(0x94, value)
+end
+
+
+function DamageCtrlParam:unk95(value)
+	self:patchByte(0x95, value)
+end
+
+
+function DamageCtrlParam:unk96(value)
+	self:patchByte(0x96, value)
+end
+
+
+function DamageCtrlParam:unk97(value)
+	self:patchByte(0x97, value)
+end
+
+
+function DamageCtrlParam:unk98(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function DamageCtrlParam:unk9C(value)
+	self:patchFloat(0x9C, value)
+end
+
+
+function DamageCtrlParam:poiseDamage(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function DamageCtrlParam:unka4(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function DamageCtrlParam:unka8(value)
+	self:patchFloat(0xA8, value)
+end
+
+
+function DamageCtrlParam:unkac(value)
+	self:patchFloat(0xAC, value)
+end
+
+
+function DamageCtrlParam:unkb0(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function DamageCtrlParam:unkb4(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function DamageCtrlParam:unkb8(value)
+	self:patchFloat(0xB8, value)
+end
+
+
+function DamageCtrlParam:unkbc(value)
+	self:patchFloat(0xBC, value)
+end
+
+
+--[[End DamageCtrlParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

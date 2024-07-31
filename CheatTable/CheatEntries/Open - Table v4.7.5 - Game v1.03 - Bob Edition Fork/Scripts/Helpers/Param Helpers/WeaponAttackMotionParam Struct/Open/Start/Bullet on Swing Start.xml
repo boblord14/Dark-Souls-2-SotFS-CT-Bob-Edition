@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337090065</ID>
+  <Description>"Bullet on Swing Start"</Description>
+  <Options moRecursiveSetValue="1"/>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+040</Address>
+</CheatEntry>

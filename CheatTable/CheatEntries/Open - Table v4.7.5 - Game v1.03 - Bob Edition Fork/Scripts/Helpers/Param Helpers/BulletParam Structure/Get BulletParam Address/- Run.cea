@@ -1,0 +1,14 @@
+[ENABLE]
+createthread(GetBulletParamAddr)
+
+{$lua}
+if syntaxcheck then return end
+
+local t=createTimer()
+t.Interval=50
+t.OnTimer=function()
+  memrec.Active=false
+  t.destroy()
+end
+{$asm}
+[DISABLE]

@@ -1,0 +1,82 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START SpellSoulConsumeParam class]]--
+SpellSoulConsumeParam = BaseParamClass:new()
+
+function SpellSoulConsumeParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("SpellSoulConsumeParam", uuid, id, address)
+	return o
+end
+
+function SpellSoulConsumeParam:drainAllSouls(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function SpellSoulConsumeParam:maxDamageScaleSouls(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function SpellSoulConsumeParam:bulletId(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function SpellSoulConsumeParam:bulletId2(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function SpellSoulConsumeParam:bulletId3(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function SpellSoulConsumeParam:bulletId4(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function SpellSoulConsumeParam:bulletId5(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function SpellSoulConsumeParam:bulletId6(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function SpellSoulConsumeParam:bulletId7(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function SpellSoulConsumeParam:bulletId8(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function SpellSoulConsumeParam:bulletId9(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function SpellSoulConsumeParam:bulletId10(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+--[[End SpellSoulConsumeParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

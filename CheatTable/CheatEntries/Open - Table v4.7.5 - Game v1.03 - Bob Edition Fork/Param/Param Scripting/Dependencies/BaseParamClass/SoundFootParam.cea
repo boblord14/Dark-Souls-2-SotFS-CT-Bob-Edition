@@ -1,0 +1,27 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START SoundFootParam class]]--
+SoundFootParam = BaseParamClass:new()
+
+function SoundFootParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("SoundFootParam", uuid, id, address)
+	return o
+end
+
+function SoundFootParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+--[[End SoundFootParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

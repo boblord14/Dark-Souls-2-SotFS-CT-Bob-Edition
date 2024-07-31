@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>48</ID>
+  <Description>"Central Castle Drangleic"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>31A</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

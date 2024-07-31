@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337036879</ID>
+  <Description>"PvP Dark Damage related"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+16C</Address>
+</CheatEntry>

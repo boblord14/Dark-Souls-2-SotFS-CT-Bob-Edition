@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem15,32)
+label(BossBattleAddressToUse)
+registersymbol(BossBattleAddressToUse)
+newmem15:
+BossBattleAddressToUse:
+[DISABLE]
+dealloc(newmem15)
+unregistersymbol(BossBattleAddressToUse)

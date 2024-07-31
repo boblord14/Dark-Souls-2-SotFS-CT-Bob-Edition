@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetEnemyDamageParamAddr, $100, DarkSoulsII.exe)
+alloc(EnemyDamageParamId, 4)
+label(return)
+registersymbol(GetEnemyDamageParamAddr)
+registersymbol(EnemyDamageParamId)
+
+EnemyDamageParamId:
+dd #0
+
+GetEnemyDamageParamAddr:
+sub rsp, 20
+mov edx, [EnemyDamageParamId]
+vortmov(rcx, [[[GameManagerImp]+10]+B60])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [EnemyDamageParamAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetEnemyDamageParamAddr)
+dealloc(EnemyDamageParamId)
+unregistersymbol(GetEnemyDamageParamAddr)
+unregistersymbol(EnemyDamageParamId)

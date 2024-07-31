@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>86902</ID>
+  <Description>"Phantom"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>464</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256148</ID>
+  <Description>"Oil %"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1DC</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

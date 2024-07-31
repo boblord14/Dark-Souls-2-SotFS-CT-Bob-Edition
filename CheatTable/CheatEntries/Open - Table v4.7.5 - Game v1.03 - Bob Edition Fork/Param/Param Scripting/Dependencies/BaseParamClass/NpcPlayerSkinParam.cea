@@ -1,0 +1,42 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START NpcPlayerSkinParam class]]--
+NpcPlayerSkinParam = BaseParamClass:new()
+
+function NpcPlayerSkinParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("NpcPlayerSkinParam", uuid, id, address)
+	return o
+end
+
+function NpcPlayerSkinParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function NpcPlayerSkinParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function NpcPlayerSkinParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function NpcPlayerSkinParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+--[[End NpcPlayerSkinParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

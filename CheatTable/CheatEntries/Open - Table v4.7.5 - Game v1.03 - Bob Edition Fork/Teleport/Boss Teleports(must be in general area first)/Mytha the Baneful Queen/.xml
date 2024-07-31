@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337159976</ID>
+  <Description>"Mytha the Baneful Queen"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337159948"/>
+    <id id="1337159949"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

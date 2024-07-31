@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337089191</ID>
+  <Description>"Broken?"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Yes
+255:No
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>pItem</Address>
+  <Offsets>
+    <Offset>24</Offset>
+  </Offsets>
+</CheatEntry>

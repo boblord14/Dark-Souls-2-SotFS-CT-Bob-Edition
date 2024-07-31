@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337083167</ID>
+  <Description>"Weapon Stats Affect ID"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+4C</Address>
+</CheatEntry>

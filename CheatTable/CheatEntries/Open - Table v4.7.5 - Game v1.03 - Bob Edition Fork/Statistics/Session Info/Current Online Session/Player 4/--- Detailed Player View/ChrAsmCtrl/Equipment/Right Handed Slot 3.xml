@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>1337107614</ID>
+  <Description>"Right Handed Slot 3"</Description>
+  <DropDownListLink>ItemParam</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>BaseA</Address>
+  <Offsets>
+    <Offset>100</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

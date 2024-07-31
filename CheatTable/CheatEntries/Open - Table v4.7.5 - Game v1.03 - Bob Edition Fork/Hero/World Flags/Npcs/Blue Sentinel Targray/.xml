@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337256294</ID>
+  <Description>"Blue Sentinel Targray"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26533"/>
+    <id id="26553"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

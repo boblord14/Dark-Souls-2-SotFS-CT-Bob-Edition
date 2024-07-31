@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337091960</ID>
+  <Description>"Last Attack Powerstance Left Attack Data"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+520</Address>
+  <x-ce2fs-child-order>
+    <id id="1337091961"/>
+    <id id="1337091962"/>
+    <id id="1337091963"/>
+    <id id="1337091964"/>
+    <id id="1337091965"/>
+    <id id="1337091966"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

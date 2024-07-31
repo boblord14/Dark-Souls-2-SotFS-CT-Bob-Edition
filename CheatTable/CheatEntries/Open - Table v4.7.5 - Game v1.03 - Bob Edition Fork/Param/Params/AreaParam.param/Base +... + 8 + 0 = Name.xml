@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>89997</ID>
+  <Description>"Base +... + 8 + 0 = Name"</Description>
+  <VariableType>String</VariableType>
+  <Length>32</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>8</Offset>
+    <Offset>100</Offset>
+    <Offset>38</Offset>
+  </Offsets>
+</CheatEntry>

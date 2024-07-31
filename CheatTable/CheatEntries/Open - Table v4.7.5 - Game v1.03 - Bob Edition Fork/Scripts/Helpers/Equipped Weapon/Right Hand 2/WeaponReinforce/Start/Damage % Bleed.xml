@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337083594</ID>
+  <Description>"Damage %: Bleed"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+B8</Address>
+</CheatEntry>

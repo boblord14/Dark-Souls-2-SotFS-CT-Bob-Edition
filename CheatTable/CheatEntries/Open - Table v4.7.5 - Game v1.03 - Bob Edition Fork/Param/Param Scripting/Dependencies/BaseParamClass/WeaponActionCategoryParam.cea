@@ -1,0 +1,342 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START WeaponActionCategoryParam class]]--
+WeaponActionCategoryParam = BaseParamClass:new()
+
+function WeaponActionCategoryParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("WeaponActionCategoryParam", uuid, id, address)
+	return o
+end
+
+function WeaponActionCategoryParam:right1HLight1(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function WeaponActionCategoryParam:right1HLight2(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function WeaponActionCategoryParam:right1HHeavy1(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function WeaponActionCategoryParam:right1HHeavy2(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function WeaponActionCategoryParam:right1HRunning(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function WeaponActionCategoryParam:right1HRolling(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function WeaponActionCategoryParam:right1HBackstep(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function WeaponActionCategoryParam:right1HFalling(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function WeaponActionCategoryParam:right1HLanding(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function WeaponActionCategoryParam:right1HJumping(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function WeaponActionCategoryParam:right2HLight1(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function WeaponActionCategoryParam:right2HLight2(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function WeaponActionCategoryParam:right2HHeavy1(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function WeaponActionCategoryParam:right2HHeavy2(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function WeaponActionCategoryParam:right2HRunning(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function WeaponActionCategoryParam:right2HRolling(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function WeaponActionCategoryParam:right2HBackstep(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function WeaponActionCategoryParam:right2HFalling(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function WeaponActionCategoryParam:right2HLanding(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function WeaponActionCategoryParam:right2HJumping(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function WeaponActionCategoryParam:chain11(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function WeaponActionCategoryParam:chain12(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+function WeaponActionCategoryParam:chain21(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function WeaponActionCategoryParam:chain22(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function WeaponActionCategoryParam:chainRunning(value)
+	self:patch4Byte(0x60, value)
+end
+
+
+function WeaponActionCategoryParam:chainRolling(value)
+	self:patch4Byte(0x64, value)
+end
+
+
+function WeaponActionCategoryParam:chainBackstep(value)
+	self:patch4Byte(0x68, value)
+end
+
+
+function WeaponActionCategoryParam:chainFalling(value)
+	self:patch4Byte(0x6C, value)
+end
+
+
+function WeaponActionCategoryParam:chainLanding(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+function WeaponActionCategoryParam:chainJumping(value)
+	self:patch4Byte(0x74, value)
+end
+
+
+function WeaponActionCategoryParam:rightPowerstanceLight1(value)
+	self:patch4Byte(0x78, value)
+end
+
+
+function WeaponActionCategoryParam:rightPowerstanceLight2(value)
+	self:patch4Byte(0x7C, value)
+end
+
+
+function WeaponActionCategoryParam:rightPowerstanceHeavy1(value)
+	self:patch4Byte(0x80, value)
+end
+
+
+function WeaponActionCategoryParam:rightPowerstanceHeavy2(value)
+	self:patch4Byte(0x84, value)
+end
+
+
+function WeaponActionCategoryParam:rightPowerstanceRunning(value)
+	self:patch4Byte(0x88, value)
+end
+
+
+function WeaponActionCategoryParam:rightPowerstanceRolling(value)
+	self:patch4Byte(0x8C, value)
+end
+
+
+function WeaponActionCategoryParam:rightPowerstanceBackstep(value)
+	self:patch4Byte(0x90, value)
+end
+
+
+function WeaponActionCategoryParam:rightPowerstanceFalling(value)
+	self:patch4Byte(0x94, value)
+end
+
+
+function WeaponActionCategoryParam:rightPowerstanceLanding(value)
+	self:patch4Byte(0x98, value)
+end
+
+
+function WeaponActionCategoryParam:rightPowerstanceJumping(value)
+	self:patch4Byte(0x9C, value)
+end
+
+
+function WeaponActionCategoryParam:left1HLight1(value)
+	self:patch4Byte(0xA0, value)
+end
+
+
+function WeaponActionCategoryParam:left1HLight2(value)
+	self:patch4Byte(0xA4, value)
+end
+
+
+function WeaponActionCategoryParam:left1HHeavy1(value)
+	self:patch4Byte(0xA8, value)
+end
+
+
+function WeaponActionCategoryParam:left1HHeavy2(value)
+	self:patch4Byte(0xAC, value)
+end
+
+
+function WeaponActionCategoryParam:left1HRunning(value)
+	self:patch4Byte(0xB0, value)
+end
+
+
+function WeaponActionCategoryParam:left1HRolling(value)
+	self:patch4Byte(0xB4, value)
+end
+
+
+function WeaponActionCategoryParam:left1HBackstep(value)
+	self:patch4Byte(0xB8, value)
+end
+
+
+function WeaponActionCategoryParam:left1HFalling(value)
+	self:patch4Byte(0xBC, value)
+end
+
+
+function WeaponActionCategoryParam:left1HLanding(value)
+	self:patch4Byte(0xC0, value)
+end
+
+
+function WeaponActionCategoryParam:left1HJumping(value)
+	self:patch4Byte(0xC4, value)
+end
+
+
+function WeaponActionCategoryParam:left2HLight(value)
+	self:patch4Byte(0xC8, value)
+end
+
+
+function WeaponActionCategoryParam:left2HHeavy(value)
+	self:patch4Byte(0xCC, value)
+end
+
+
+function WeaponActionCategoryParam:leftPowerstanceLight1(value)
+	self:patch4Byte(0xD0, value)
+end
+
+
+function WeaponActionCategoryParam:leftPowerstanceLight2(value)
+	self:patch4Byte(0xD4, value)
+end
+
+
+function WeaponActionCategoryParam:leftPowerstanceHeavy(value)
+	self:patch4Byte(0xD8, value)
+end
+
+
+function WeaponActionCategoryParam:guardBreak1H(value)
+	self:patch4Byte(0xDC, value)
+end
+
+
+function WeaponActionCategoryParam:guardBreak2H(value)
+	self:patch4Byte(0xE0, value)
+end
+
+
+function WeaponActionCategoryParam:shieldPoke11(value)
+	self:patch4Byte(0xE4, value)
+end
+
+
+function WeaponActionCategoryParam:shieldPoke12(value)
+	self:patch4Byte(0xE8, value)
+end
+
+
+function WeaponActionCategoryParam:shieldPoke21(value)
+	self:patch4Byte(0xEC, value)
+end
+
+
+function WeaponActionCategoryParam:shieldPoke22(value)
+	self:patch4Byte(0xF0, value)
+end
+
+
+function WeaponActionCategoryParam:riposte(value)
+	self:patch4Byte(0xF4, value)
+end
+
+
+function WeaponActionCategoryParam:guardBreakStab(value)
+	self:patch4Byte(0xF8, value)
+end
+
+
+function WeaponActionCategoryParam:backstab(value)
+	self:patch4Byte(0xFC, value)
+end
+
+
+--[[End WeaponActionCategoryParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

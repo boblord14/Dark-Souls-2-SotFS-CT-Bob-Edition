@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337089933</ID>
+  <Description>"Get RingParam Address"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337089934"/>
+    <id id="1337089935"/>
+    <id id="1337089937"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

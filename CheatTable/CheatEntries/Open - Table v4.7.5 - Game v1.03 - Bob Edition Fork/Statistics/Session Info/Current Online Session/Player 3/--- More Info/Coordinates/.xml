@@ -1,0 +1,22 @@
+<CheatEntry>
+  <ID>1337275559</ID>
+  <Description>"Coordinates"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>60</Offset>
+    <Offset>388</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337275560"/>
+    <id id="1337275561"/>
+    <id id="1337275562"/>
+    <id id="1337275563"/>
+    <id id="1337275564"/>
+    <id id="1337275565"/>
+    <id id="1337275566"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

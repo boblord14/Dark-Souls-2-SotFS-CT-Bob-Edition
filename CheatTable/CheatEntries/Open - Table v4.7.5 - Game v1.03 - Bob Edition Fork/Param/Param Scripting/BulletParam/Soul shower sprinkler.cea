@@ -1,0 +1,21 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+
+
+
+local sprinkler = BulletParam:new("soulsprinkler", 31130010) -- soul shower bullet
+      sprinkler:upwardSpawnDistance(2)
+      sprinkler:numberToShootSequentially(-1) -- honestly i forgot what negative does but we ball anyways
+      sprinkler:shootInterval(0.001) -- shoots very very fast
+      sprinkler:verticalSpread(0.01) --limiting the spread
+      sprinkler:horizontalSpread(1.6)
+
+
+
+
+[DISABLE]
+paramUtils:restore("soulsprinkler")
+
+
+

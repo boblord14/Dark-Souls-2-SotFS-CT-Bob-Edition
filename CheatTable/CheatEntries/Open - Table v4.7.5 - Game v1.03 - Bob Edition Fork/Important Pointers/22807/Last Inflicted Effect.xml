@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>22975</ID>
+  <Description>"Last Inflicted Effect"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>008000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>58</Offset>
+    <Offset>7B0</Offset>
+    <Offset>708</Offset>
+    <Offset>1D0</Offset>
+  </Offsets>
+</CheatEntry>

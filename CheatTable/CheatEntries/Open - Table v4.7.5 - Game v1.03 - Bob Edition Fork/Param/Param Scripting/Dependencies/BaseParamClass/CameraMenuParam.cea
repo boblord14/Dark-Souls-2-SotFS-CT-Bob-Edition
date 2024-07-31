@@ -1,0 +1,212 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START CameraMenuParam class]]--
+CameraMenuParam = BaseParamClass:new()
+
+function CameraMenuParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("CameraMenuParam", uuid, id, address)
+	return o
+end
+
+function CameraMenuParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function CameraMenuParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function CameraMenuParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function CameraMenuParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function CameraMenuParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function CameraMenuParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function CameraMenuParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function CameraMenuParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function CameraMenuParam:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function CameraMenuParam:unk24(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function CameraMenuParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function CameraMenuParam:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function CameraMenuParam:unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function CameraMenuParam:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function CameraMenuParam:unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function CameraMenuParam:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function CameraMenuParam:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function CameraMenuParam:unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function CameraMenuParam:unk48(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function CameraMenuParam:unk4C(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function CameraMenuParam:unk50(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function CameraMenuParam:unk54(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function CameraMenuParam:unk58(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function CameraMenuParam:unk5C(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function CameraMenuParam:unk60(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function CameraMenuParam:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function CameraMenuParam:unk68(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function CameraMenuParam:unk6C(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function CameraMenuParam:unk70(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function CameraMenuParam:unk74(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function CameraMenuParam:unk78(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function CameraMenuParam:unk7C(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function CameraMenuParam:unk80(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function CameraMenuParam:unk84(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function CameraMenuParam:unk88(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function CameraMenuParam:unk8C(value)
+	self:patch4Byte(0x8C, value)
+end
+
+
+function CameraMenuParam:unk90(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function CameraMenuParam:unk94(value)
+	self:patchFloat(0x94, value)
+end
+
+
+--[[End CameraMenuParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

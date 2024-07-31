@@ -1,0 +1,14 @@
+[ENABLE]
+define(ItemParam, [[[[GameManagerImp]+A8]+20]+D8])
+define(WarmupAnim, ItemParam+2054C)
+
+ WarmupAnim:
+ dd #290
+ 
+[DISABLE]
+define(ItemParam, [[[[GameManagerImp]+A8]+20]+D8])
+define(WarmupAnim, ItemParam+2054C)
+
+ WarmupAnim:
+ dd #270
+

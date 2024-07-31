@@ -1,0 +1,7 @@
+[ENABLE]
+label(BossBattleParam)
+registersymbol(BossBattleParam)
+[BossBattleAddressToUse]:
+BossBattleParam:
+[DISABLE]
+unregistersymbol(BossBattleParam)

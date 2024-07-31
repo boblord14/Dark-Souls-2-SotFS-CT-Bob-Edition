@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337082873</ID>
+  <Description>"Armor"</Description>
+  <DropDownListLink>ArmorParam</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>128</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

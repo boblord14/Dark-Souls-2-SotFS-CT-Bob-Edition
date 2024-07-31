@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337107116</ID>
+  <Description>"Bell Keeper"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337107117"/>
+    <id id="1337107118"/>
+    <id id="1337107119"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

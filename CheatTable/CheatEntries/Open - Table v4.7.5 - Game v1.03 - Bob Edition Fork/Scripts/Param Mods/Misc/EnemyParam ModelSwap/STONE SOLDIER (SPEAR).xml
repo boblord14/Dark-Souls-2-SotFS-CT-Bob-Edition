@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087512</ID>
+  <Description>"STONE SOLDIER (SPEAR)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>BD0</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

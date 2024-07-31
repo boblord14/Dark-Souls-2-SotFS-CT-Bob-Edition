@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>86716</ID>
+  <Description>"Health Cap"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>174</Offset>
+    <Offset>2B8</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

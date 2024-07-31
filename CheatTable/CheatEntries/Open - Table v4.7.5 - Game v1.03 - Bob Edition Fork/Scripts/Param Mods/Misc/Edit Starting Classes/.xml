@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337088289</ID>
+  <Description>"Edit Starting Classes"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337088290"/>
+    <id id="1337088385"/>
+    <id id="1337088480"/>
+    <id id="1337088575"/>
+    <id id="1337088670"/>
+    <id id="1337088765"/>
+    <id id="1337088860"/>
+    <id id="1337088955"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

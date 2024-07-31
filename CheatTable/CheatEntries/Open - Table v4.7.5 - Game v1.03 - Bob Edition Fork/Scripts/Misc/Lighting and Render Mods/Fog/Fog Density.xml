@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26301</ID>
+  <Description>"Fog Density"</Description>
+  <VariableType>Float</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

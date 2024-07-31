@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337088509</ID>
+  <Description>"Belt Item 9"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+a00+040</Address>
+</CheatEntry>

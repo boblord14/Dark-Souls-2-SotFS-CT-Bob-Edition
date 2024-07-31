@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337094010</ID>
+  <Description>"Start"</Description>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>0</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>DamageParamStruct</Address>
+  <x-ce2fs-child-order>
+    <id id="1337094012"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

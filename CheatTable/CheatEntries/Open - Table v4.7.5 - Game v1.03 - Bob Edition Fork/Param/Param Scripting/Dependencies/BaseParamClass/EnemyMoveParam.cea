@@ -1,0 +1,987 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START EnemyMoveParam class]]--
+EnemyMoveParam = BaseParamClass:new()
+
+function EnemyMoveParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("EnemyMoveParam", uuid, id, address)
+	return o
+end
+
+function EnemyMoveParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function EnemyMoveParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function EnemyMoveParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function EnemyMoveParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function EnemyMoveParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function EnemyMoveParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function EnemyMoveParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function EnemyMoveParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function EnemyMoveParam:walkSpeed(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function EnemyMoveParam:unk24(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function EnemyMoveParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function EnemyMoveParam:slowWalkTurnRate(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function EnemyMoveParam:walkingTurnRate(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function EnemyMoveParam:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function EnemyMoveParam:unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function EnemyMoveParam:runSpeed(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function EnemyMoveParam:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function EnemyMoveParam:unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function EnemyMoveParam:unk48(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function EnemyMoveParam:unk4C(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function EnemyMoveParam:unk50(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function EnemyMoveParam:runningTurningRelated1(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function EnemyMoveParam:runningTurningRelated2(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function EnemyMoveParam:unk5C(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function EnemyMoveParam:unk60(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function EnemyMoveParam:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function EnemyMoveParam:unk68(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function EnemyMoveParam:lockedOnWalkSpeed(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnk70(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnk74(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnk78(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnk7C(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnk80(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function EnemyMoveParam:lockedOnRunSpeed(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnk88(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnk8C(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnk90(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnk94(value)
+	self:patchFloat(0x94, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnk98(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnk9C(value)
+	self:patchFloat(0x9C, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnka0(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnka4(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnka8(value)
+	self:patchFloat(0xA8, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnkac(value)
+	self:patchFloat(0xAC, value)
+end
+
+
+function EnemyMoveParam:lockedOnUnkb0(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function EnemyMoveParam:unkb4(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function EnemyMoveParam:unkb8(value)
+	self:patchFloat(0xB8, value)
+end
+
+
+function EnemyMoveParam:unkbc(value)
+	self:patchFloat(0xBC, value)
+end
+
+
+function EnemyMoveParam:unkc0(value)
+	self:patchFloat(0xC0, value)
+end
+
+
+function EnemyMoveParam:unkc4(value)
+	self:patchFloat(0xC4, value)
+end
+
+
+function EnemyMoveParam:unkc8(value)
+	self:patchFloat(0xC8, value)
+end
+
+
+function EnemyMoveParam:unkcc(value)
+	self:patchFloat(0xCC, value)
+end
+
+
+function EnemyMoveParam:unkd0(value)
+	self:patchFloat(0xD0, value)
+end
+
+
+function EnemyMoveParam:unkd4(value)
+	self:patchFloat(0xD4, value)
+end
+
+
+function EnemyMoveParam:unkd8(value)
+	self:patchFloat(0xD8, value)
+end
+
+
+function EnemyMoveParam:unkdc(value)
+	self:patchFloat(0xDC, value)
+end
+
+
+function EnemyMoveParam:unke0(value)
+	self:patchFloat(0xE0, value)
+end
+
+
+function EnemyMoveParam:unke4(value)
+	self:patchFloat(0xE4, value)
+end
+
+
+function EnemyMoveParam:unke8(value)
+	self:patchFloat(0xE8, value)
+end
+
+
+function EnemyMoveParam:unkec(value)
+	self:patchFloat(0xEC, value)
+end
+
+
+function EnemyMoveParam:attackWindDownWalkingSpeed(value)
+	self:patchFloat(0xF0, value)
+end
+
+
+function EnemyMoveParam:unkf4(value)
+	self:patchFloat(0xF4, value)
+end
+
+
+function EnemyMoveParam:backstepSpeed(value)
+	self:patchFloat(0xF8, value)
+end
+
+
+function EnemyMoveParam:unkfc(value)
+	self:patch4Byte(0xFC, value)
+end
+
+
+function EnemyMoveParam:unk100(value)
+	self:patchFloat(0x100, value)
+end
+
+
+function EnemyMoveParam:backstepDistance(value)
+	self:patchFloat(0x104, value)
+end
+
+
+function EnemyMoveParam:unk108(value)
+	self:patchFloat(0x108, value)
+end
+
+
+function EnemyMoveParam:unk10C(value)
+	self:patchFloat(0x10C, value)
+end
+
+
+function EnemyMoveParam:rollSpeed(value)
+	self:patchFloat(0x110, value)
+end
+
+
+function EnemyMoveParam:unk114(value)
+	self:patchFloat(0x114, value)
+end
+
+
+function EnemyMoveParam:unk118(value)
+	self:patchFloat(0x118, value)
+end
+
+
+function EnemyMoveParam:unk11C(value)
+	self:patchFloat(0x11C, value)
+end
+
+
+function EnemyMoveParam:jumpHeight(value)
+	self:patchFloat(0x120, value)
+end
+
+
+function EnemyMoveParam:unk124(value)
+	self:patchFloat(0x124, value)
+end
+
+
+function EnemyMoveParam:unk128(value)
+	self:patchFloat(0x128, value)
+end
+
+
+function EnemyMoveParam:jumpLength(value)
+	self:patchFloat(0x12C, value)
+end
+
+
+function EnemyMoveParam:jumpLength2(value)
+	self:patchFloat(0x130, value)
+end
+
+
+function EnemyMoveParam:unk134(value)
+	self:patchFloat(0x134, value)
+end
+
+
+function EnemyMoveParam:unk138(value)
+	self:patchFloat(0x138, value)
+end
+
+
+function EnemyMoveParam:jumpGravity(value)
+	self:patchFloat(0x13C, value)
+end
+
+
+function EnemyMoveParam:jumpGravity2(value)
+	self:patchFloat(0x140, value)
+end
+
+
+function EnemyMoveParam:unk144(value)
+	self:patchFloat(0x144, value)
+end
+
+
+function EnemyMoveParam:unk148(value)
+	self:patchFloat(0x148, value)
+end
+
+
+function EnemyMoveParam:unk14C(value)
+	self:patchFloat(0x14C, value)
+end
+
+
+function EnemyMoveParam:fallDeathTimer(value)
+	self:patchFloat(0x150, value)
+end
+
+
+function EnemyMoveParam:unk154(value)
+	self:patchFloat(0x154, value)
+end
+
+
+function EnemyMoveParam:unk158(value)
+	self:patchFloat(0x158, value)
+end
+
+
+function EnemyMoveParam:unk15C(value)
+	self:patchFloat(0x15C, value)
+end
+
+
+function EnemyMoveParam:escapeMinHeight(value)
+	self:patchFloat(0x160, value)
+end
+
+
+function EnemyMoveParam:unk164(value)
+	self:patchFloat(0x164, value)
+end
+
+
+function EnemyMoveParam:unk168(value)
+	self:patchFloat(0x168, value)
+end
+
+
+function EnemyMoveParam:unk16C(value)
+	self:patchFloat(0x16C, value)
+end
+
+
+function EnemyMoveParam:unk170(value)
+	self:patchFloat(0x170, value)
+end
+
+
+function EnemyMoveParam:unk174(value)
+	self:patchFloat(0x174, value)
+end
+
+
+function EnemyMoveParam:unk178(value)
+	self:patchFloat(0x178, value)
+end
+
+
+function EnemyMoveParam:unk17C(value)
+	self:patchFloat(0x17C, value)
+end
+
+
+function EnemyMoveParam:unk180(value)
+	self:patchFloat(0x180, value)
+end
+
+
+function EnemyMoveParam:unk184(value)
+	self:patchFloat(0x184, value)
+end
+
+
+function EnemyMoveParam:unk188(value)
+	self:patchFloat(0x188, value)
+end
+
+
+function EnemyMoveParam:unk18C(value)
+	self:patchFloat(0x18C, value)
+end
+
+
+function EnemyMoveParam:unk190(value)
+	self:patchFloat(0x190, value)
+end
+
+
+function EnemyMoveParam:unk194(value)
+	self:patchFloat(0x194, value)
+end
+
+
+function EnemyMoveParam:unk198(value)
+	self:patchFloat(0x198, value)
+end
+
+
+function EnemyMoveParam:unk19C(value)
+	self:patchFloat(0x19C, value)
+end
+
+
+function EnemyMoveParam:unk1A0(value)
+	self:patchFloat(0x1A0, value)
+end
+
+
+function EnemyMoveParam:unk1A4(value)
+	self:patchFloat(0x1A4, value)
+end
+
+
+function EnemyMoveParam:unk1A8(value)
+	self:patchFloat(0x1A8, value)
+end
+
+
+function EnemyMoveParam:unk1Ac(value)
+	self:patchFloat(0x1AC, value)
+end
+
+
+function EnemyMoveParam:unk1B0(value)
+	self:patchFloat(0x1B0, value)
+end
+
+
+function EnemyMoveParam:unk1B4(value)
+	self:patchFloat(0x1B4, value)
+end
+
+
+function EnemyMoveParam:unk1B8(value)
+	self:patchFloat(0x1B8, value)
+end
+
+
+function EnemyMoveParam:unk1Bc(value)
+	self:patchFloat(0x1BC, value)
+end
+
+
+function EnemyMoveParam:unk1C0(value)
+	self:patchFloat(0x1C0, value)
+end
+
+
+function EnemyMoveParam:unk1C4(value)
+	self:patchFloat(0x1C4, value)
+end
+
+
+function EnemyMoveParam:unk1C8(value)
+	self:patchFloat(0x1C8, value)
+end
+
+
+function EnemyMoveParam:unk1Cc(value)
+	self:patchFloat(0x1CC, value)
+end
+
+
+function EnemyMoveParam:unk1D0(value)
+	self:patchFloat(0x1D0, value)
+end
+
+
+function EnemyMoveParam:unk1D4(value)
+	self:patchFloat(0x1D4, value)
+end
+
+
+function EnemyMoveParam:unk1D8(value)
+	self:patchFloat(0x1D8, value)
+end
+
+
+function EnemyMoveParam:unk1Dc(value)
+	self:patchFloat(0x1DC, value)
+end
+
+
+function EnemyMoveParam:unk1E0(value)
+	self:patchFloat(0x1E0, value)
+end
+
+
+function EnemyMoveParam:unk1E4(value)
+	self:patchFloat(0x1E4, value)
+end
+
+
+function EnemyMoveParam:unk1E8(value)
+	self:patchFloat(0x1E8, value)
+end
+
+
+function EnemyMoveParam:unk1Ec(value)
+	self:patchFloat(0x1EC, value)
+end
+
+
+function EnemyMoveParam:fallMinSpeedDifference(value)
+	self:patchFloat(0x1F0, value)
+end
+
+
+function EnemyMoveParam:fallDamageDamp(value)
+	self:patchFloat(0x1F4, value)
+end
+
+
+function EnemyMoveParam:fallDamageDamp2(value)
+	self:patchFloat(0x1F8, value)
+end
+
+
+function EnemyMoveParam:unk1Fc(value)
+	self:patchFloat(0x1FC, value)
+end
+
+
+function EnemyMoveParam:fallDistanceMax(value)
+	self:patchFloat(0x200, value)
+end
+
+
+function EnemyMoveParam:unk204(value)
+	self:patchFloat(0x204, value)
+end
+
+
+function EnemyMoveParam:unk208(value)
+	self:patchFloat(0x208, value)
+end
+
+
+function EnemyMoveParam:unk20C(value)
+	self:patchFloat(0x20C, value)
+end
+
+
+function EnemyMoveParam:unk210(value)
+	self:patchFloat(0x210, value)
+end
+
+
+function EnemyMoveParam:unk214(value)
+	self:patchFloat(0x214, value)
+end
+
+
+function EnemyMoveParam:unk218(value)
+	self:patchFloat(0x218, value)
+end
+
+
+function EnemyMoveParam:unk21C(value)
+	self:patchFloat(0x21C, value)
+end
+
+
+function EnemyMoveParam:unk220(value)
+	self:patchFloat(0x220, value)
+end
+
+
+function EnemyMoveParam:unk224(value)
+	self:patchFloat(0x224, value)
+end
+
+
+function EnemyMoveParam:unk228(value)
+	self:patchFloat(0x228, value)
+end
+
+
+function EnemyMoveParam:unk22C(value)
+	self:patch4Byte(0x22C, value)
+end
+
+
+function EnemyMoveParam:ladderClimbingSpeed(value)
+	self:patchFloat(0x230, value)
+end
+
+
+function EnemyMoveParam:ladderSprintSpeed(value)
+	self:patchFloat(0x234, value)
+end
+
+
+function EnemyMoveParam:ladderSlidingSpeed(value)
+	self:patchFloat(0x238, value)
+end
+
+
+function EnemyMoveParam:unk23C(value)
+	self:patchFloat(0x23C, value)
+end
+
+
+function EnemyMoveParam:unk240(value)
+	self:patchFloat(0x240, value)
+end
+
+
+function EnemyMoveParam:unk244(value)
+	self:patchFloat(0x244, value)
+end
+
+
+function EnemyMoveParam:unk248(value)
+	self:patchFloat(0x248, value)
+end
+
+
+function EnemyMoveParam:unk24C(value)
+	self:patchFloat(0x24C, value)
+end
+
+
+function EnemyMoveParam:unk250(value)
+	self:patchFloat(0x250, value)
+end
+
+
+function EnemyMoveParam:unk254(value)
+	self:patchFloat(0x254, value)
+end
+
+
+function EnemyMoveParam:unk258(value)
+	self:patchFloat(0x258, value)
+end
+
+
+function EnemyMoveParam:unk25C(value)
+	self:patchFloat(0x25C, value)
+end
+
+
+function EnemyMoveParam:unk260(value)
+	self:patchFloat(0x260, value)
+end
+
+
+function EnemyMoveParam:unk264(value)
+	self:patchFloat(0x264, value)
+end
+
+
+function EnemyMoveParam:unk268(value)
+	self:patchFloat(0x268, value)
+end
+
+
+function EnemyMoveParam:unk26C(value)
+	self:patchFloat(0x26C, value)
+end
+
+
+function EnemyMoveParam:unk270(value)
+	self:patchFloat(0x270, value)
+end
+
+
+function EnemyMoveParam:unk274(value)
+	self:patchFloat(0x274, value)
+end
+
+
+function EnemyMoveParam:unk278(value)
+	self:patchFloat(0x278, value)
+end
+
+
+function EnemyMoveParam:unk27C(value)
+	self:patchFloat(0x27C, value)
+end
+
+
+function EnemyMoveParam:unk280(value)
+	self:patchFloat(0x280, value)
+end
+
+
+function EnemyMoveParam:unk284(value)
+	self:patchFloat(0x284, value)
+end
+
+
+function EnemyMoveParam:unk288(value)
+	self:patchFloat(0x288, value)
+end
+
+
+function EnemyMoveParam:unk28C(value)
+	self:patchFloat(0x28C, value)
+end
+
+
+function EnemyMoveParam:unk290(value)
+	self:patchFloat(0x290, value)
+end
+
+
+function EnemyMoveParam:unk294(value)
+	self:patchFloat(0x294, value)
+end
+
+
+function EnemyMoveParam:unk298(value)
+	self:patchFloat(0x298, value)
+end
+
+
+function EnemyMoveParam:unk29C(value)
+	self:patchFloat(0x29C, value)
+end
+
+
+function EnemyMoveParam:unk2A0(value)
+	self:patchFloat(0x2A0, value)
+end
+
+
+function EnemyMoveParam:unk2A4(value)
+	self:patchFloat(0x2A4, value)
+end
+
+
+function EnemyMoveParam:unk2A8(value)
+	self:patchFloat(0x2A8, value)
+end
+
+
+function EnemyMoveParam:unk2Ac(value)
+	self:patchFloat(0x2AC, value)
+end
+
+
+function EnemyMoveParam:unk2B0(value)
+	self:patchFloat(0x2B0, value)
+end
+
+
+function EnemyMoveParam:unk2B4(value)
+	self:patchFloat(0x2B4, value)
+end
+
+
+function EnemyMoveParam:unk2B8(value)
+	self:patchFloat(0x2B8, value)
+end
+
+
+function EnemyMoveParam:unk2Bc(value)
+	self:patchFloat(0x2BC, value)
+end
+
+
+function EnemyMoveParam:unk2C0(value)
+	self:patchFloat(0x2C0, value)
+end
+
+
+function EnemyMoveParam:unk2C4(value)
+	self:patchFloat(0x2C4, value)
+end
+
+
+function EnemyMoveParam:unk2C8(value)
+	self:patchFloat(0x2C8, value)
+end
+
+
+function EnemyMoveParam:unk2Cc(value)
+	self:patchFloat(0x2CC, value)
+end
+
+
+function EnemyMoveParam:unk2D0(value)
+	self:patchFloat(0x2D0, value)
+end
+
+
+function EnemyMoveParam:unk2D4(value)
+	self:patchFloat(0x2D4, value)
+end
+
+
+function EnemyMoveParam:unk2D8(value)
+	self:patchFloat(0x2D8, value)
+end
+
+
+function EnemyMoveParam:unk2Dc(value)
+	self:patchFloat(0x2DC, value)
+end
+
+
+function EnemyMoveParam:unk2E0(value)
+	self:patchFloat(0x2E0, value)
+end
+
+
+function EnemyMoveParam:unk2E4(value)
+	self:patchFloat(0x2E4, value)
+end
+
+
+function EnemyMoveParam:unk2E8(value)
+	self:patchFloat(0x2E8, value)
+end
+
+
+function EnemyMoveParam:unk2Ec(value)
+	self:patchFloat(0x2EC, value)
+end
+
+
+function EnemyMoveParam:unk2F0(value)
+	self:patch4Byte(0x2F0, value)
+end
+
+
+function EnemyMoveParam:unk2F4(value)
+	self:patchFloat(0x2F4, value)
+end
+
+
+function EnemyMoveParam:unk2F8(value)
+	self:patchFloat(0x2F8, value)
+end
+
+
+function EnemyMoveParam:unk2Fc(value)
+	self:patchFloat(0x2FC, value)
+end
+
+
+function EnemyMoveParam:unk300(value)
+	self:patchFloat(0x300, value)
+end
+
+
+--[[End EnemyMoveParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

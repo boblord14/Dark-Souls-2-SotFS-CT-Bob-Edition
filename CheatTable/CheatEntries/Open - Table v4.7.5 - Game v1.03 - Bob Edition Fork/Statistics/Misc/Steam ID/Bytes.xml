@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337097840</ID>
+  <Description>"Bytes"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>Array of byte</VariableType>
+  <ByteLength>64</ByteLength>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>114</Offset>
+    <Offset>A8</Offset>
+  </Offsets>
+</CheatEntry>

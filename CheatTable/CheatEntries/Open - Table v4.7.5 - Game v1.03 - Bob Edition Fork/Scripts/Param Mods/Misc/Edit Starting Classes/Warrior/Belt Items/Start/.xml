@@ -1,0 +1,43 @@
+<CheatEntry>
+  <ID>1337088305</ID>
+  <Description>"Start"</Description>
+  <Color>000000</Color>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>C</Offset>
+    <Offset>D8</Offset>
+    <Offset>730</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337088306"/>
+    <id id="1337088307"/>
+    <id id="1337088308"/>
+    <id id="1337088309"/>
+    <id id="1337088310"/>
+    <id id="1337088311"/>
+    <id id="1337088312"/>
+    <id id="1337088313"/>
+    <id id="1337088314"/>
+    <id id="1337088315"/>
+    <id id="1337088316"/>
+    <id id="1337088317"/>
+    <id id="1337088318"/>
+    <id id="1337088319"/>
+    <id id="1337088320"/>
+    <id id="1337088321"/>
+    <id id="1337088322"/>
+    <id id="1337088323"/>
+    <id id="1337088324"/>
+    <id id="1337088325"/>
+    <id id="1337088326"/>
+    <id id="1337088327"/>
+    <id id="1337088328"/>
+    <id id="1337088329"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

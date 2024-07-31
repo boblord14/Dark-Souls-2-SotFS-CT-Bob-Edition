@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26316</ID>
+  <Description>"Last Spell Cast"</Description>
+  <Color>008000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>760</Offset>
+    <Offset>230</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

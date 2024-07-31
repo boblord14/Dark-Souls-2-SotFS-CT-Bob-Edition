@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337089062</ID>
+  <Description>"SuperDashLockOn Speed (5)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>DC</Offset>
+    <Offset>D8</Offset>
+    <Offset>330</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

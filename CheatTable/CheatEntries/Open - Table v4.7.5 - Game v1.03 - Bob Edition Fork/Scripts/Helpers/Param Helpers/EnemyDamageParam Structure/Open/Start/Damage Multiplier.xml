@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337089560</ID>
+  <Description>"Damage Multiplier"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+01C</Address>
+</CheatEntry>

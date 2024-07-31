@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087696</ID>
+  <Description>"POISON HORN BEETLE"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1D10</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

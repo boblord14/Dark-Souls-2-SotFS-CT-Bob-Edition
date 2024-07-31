@@ -1,0 +1,62 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START PadRumbleParam class]]--
+PadRumbleParam = BaseParamClass:new()
+
+function PadRumbleParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("PadRumbleParam", uuid, id, address)
+	return o
+end
+
+function PadRumbleParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function PadRumbleParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function PadRumbleParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function PadRumbleParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function PadRumbleParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function PadRumbleParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function PadRumbleParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function PadRumbleParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+--[[End PadRumbleParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

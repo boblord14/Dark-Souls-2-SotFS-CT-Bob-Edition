@@ -1,0 +1,7 @@
+[ENABLE]
+label(EquipInterfereParamStruct)
+registersymbol(EquipInterfereParamStruct)
+[EquipInterfereParamAddressToUse]:
+EquipInterfereParamStruct:
+[DISABLE]
+unregistersymbol(EquipInterfereParamStruct)

@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>66</ID>
+  <Description>"Shrine Entrance"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>46A</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

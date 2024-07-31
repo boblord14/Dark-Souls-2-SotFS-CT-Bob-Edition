@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>90748</ID>
+  <Description>"Player1 FaceData"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>Array of byte</VariableType>
+  <ByteLength>215</ByteLength>
+  <Address>"DarkSoulsII.exe"+0160DCD8</Address>
+  <Offsets>
+    <Offset>EF0</Offset>
+    <Offset>30</Offset>
+    <Offset>378</Offset>
+    <Offset>1E8</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

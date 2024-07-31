@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>24156</ID>
+  <Description>"Fire Keepers' Dwelling"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>2</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

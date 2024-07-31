@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087539</ID>
+  <Description>"BLACK PHANTOM RUPTURING HOLLOW (FIRE)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>E58</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

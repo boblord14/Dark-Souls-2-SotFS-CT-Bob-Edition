@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26491</ID>
+  <Description>"Dynamic Shadow Toggle"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>"DarkSoulsII.exe"+160B8D0</Address>
+  <Offsets>
+    <Offset>49</Offset>
+    <Offset>2B8</Offset>
+    <Offset>670</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

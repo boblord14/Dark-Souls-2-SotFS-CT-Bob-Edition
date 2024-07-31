@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tlongsword,2)
+                        tlongsword:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(tlongsword)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6340
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tlongsword)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(tlongsword, 2)
+                        unregistersymbol(tlongsword)
+                    

@@ -1,0 +1,102 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START MapObjectDamageMomentumScaleParam class]]--
+MapObjectDamageMomentumScaleParam = BaseParamClass:new()
+
+function MapObjectDamageMomentumScaleParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("MapObjectDamageMomentumScaleParam", uuid, id, address)
+	return o
+end
+
+function MapObjectDamageMomentumScaleParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk24(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function MapObjectDamageMomentumScaleParam:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+--[[End MapObjectDamageMomentumScaleParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

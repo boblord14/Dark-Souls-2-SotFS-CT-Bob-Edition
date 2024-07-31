@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26452</ID>
+  <Description>"General Model Specularity"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26448"/>
+    <id id="26449"/>
+    <id id="26450"/>
+    <id id="26451"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

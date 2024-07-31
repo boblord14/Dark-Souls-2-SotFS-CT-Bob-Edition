@@ -1,0 +1,17 @@
+<CheatEntry>
+  <ID>1337086867</ID>
+  <Description>"Spell 9"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>A38</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337086868"/>
+    <id id="1337086869"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

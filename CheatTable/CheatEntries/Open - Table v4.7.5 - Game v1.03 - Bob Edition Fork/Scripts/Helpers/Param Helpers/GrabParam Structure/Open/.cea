@@ -1,0 +1,7 @@
+[ENABLE]
+label(GrabParamStruct)
+registersymbol(GrabParamStruct)
+[GrabParamAddressToUse]:
+GrabParamStruct:
+[DISABLE]
+unregistersymbol(GrabParamStruct)

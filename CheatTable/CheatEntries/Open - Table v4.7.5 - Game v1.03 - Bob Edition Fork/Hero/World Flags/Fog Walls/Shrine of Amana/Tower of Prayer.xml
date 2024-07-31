@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>26584</ID>
+  <Description>"Tower of Prayer"</Description>
+  <VariableType>Binary</VariableType>
+  <BitStart>7</BitStart>
+  <BitLength>1</BitLength>
+  <ShowAsBinary>0</ShowAsBinary>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>B89</Offset>
+    <Offset>18</Offset>
+    <Offset>20</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

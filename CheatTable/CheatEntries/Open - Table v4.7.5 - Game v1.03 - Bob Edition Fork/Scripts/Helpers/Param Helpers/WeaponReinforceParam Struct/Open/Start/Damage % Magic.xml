@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337090252</ID>
+  <Description>"Damage %: Magic"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+A4</Address>
+</CheatEntry>

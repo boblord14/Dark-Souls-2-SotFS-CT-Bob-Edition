@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>26385</ID>
+  <Description>"World Lighting"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26361"/>
+    <id id="26366"/>
+    <id id="26348"/>
+    <id id="26371"/>
+    <id id="26372"/>
+    <id id="26380"/>
+    <id id="26391"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

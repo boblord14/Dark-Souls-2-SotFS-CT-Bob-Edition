@@ -1,0 +1,212 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START RelatePhysStatToLevelStam class]]--
+RelatePhysStatToLevelStam = BaseParamClass:new()
+
+function RelatePhysStatToLevelStam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("RelatePhysStatToLevelStam", uuid, id, address)
+	return o
+end
+
+function RelatePhysStatToLevelStam:unk00(value)
+	self:patchByte(0x0, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk002(value)
+	self:patchByte(0x1, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk003(value)
+	self:patchByte(0x2, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk004(value)
+	self:patchByte(0x3, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk04(value)
+	self:patchByte(0x4, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk042(value)
+	self:patchByte(0x5, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk043(value)
+	self:patchByte(0x6, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk044(value)
+	self:patchByte(0x7, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk08(value)
+	self:patchByte(0x8, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk082(value)
+	self:patchByte(0x9, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk083(value)
+	self:patchByte(0xA, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk084(value)
+	self:patchByte(0xB, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk0C(value)
+	self:patchByte(0xC, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk0C2(value)
+	self:patchByte(0xD, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk0C3(value)
+	self:patchByte(0xE, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk0C4(value)
+	self:patchByte(0xF, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk10(value)
+	self:patchByte(0x10, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk102(value)
+	self:patchByte(0x11, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk103(value)
+	self:patchByte(0x12, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk104(value)
+	self:patchByte(0x13, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk14(value)
+	self:patchByte(0x14, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk142(value)
+	self:patchByte(0x15, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk143(value)
+	self:patchByte(0x16, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk144(value)
+	self:patchByte(0x17, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk18(value)
+	self:patchByte(0x18, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk182(value)
+	self:patchByte(0x19, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk183(value)
+	self:patchByte(0x1A, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk184(value)
+	self:patchByte(0x1B, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk1C(value)
+	self:patchByte(0x1C, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk1C2(value)
+	self:patchByte(0x1D, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk1C3(value)
+	self:patchByte(0x1E, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk1C4(value)
+	self:patchByte(0x1F, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk20(value)
+	self:patchByte(0x20, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk202(value)
+	self:patchByte(0x21, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk203(value)
+	self:patchByte(0x22, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk204(value)
+	self:patchByte(0x23, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk24(value)
+	self:patchByte(0x24, value)
+end
+
+
+function RelatePhysStatToLevelStam:unk25(value)
+	self:patchByte(0x25, value)
+end
+
+
+--[[End RelatePhysStatToLevelStam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

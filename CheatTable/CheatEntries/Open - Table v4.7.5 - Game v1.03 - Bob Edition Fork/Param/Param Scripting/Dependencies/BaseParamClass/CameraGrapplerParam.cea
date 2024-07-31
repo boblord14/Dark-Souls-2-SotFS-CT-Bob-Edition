@@ -1,0 +1,28 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START CameraGrapplerParam class]]--
+CameraGrapplerParam = BaseParamClass:new()
+
+function CameraGrapplerParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("CameraGrapplerParam", uuid, id, address)
+	return o
+end
+
+--this is broken and i gave the patch a stupid name. param hasnt been struct dissected i dont think so idk what goes here for now
+function CameraGrapplerParam:data(value)
+	self:patchStupidByte(0x0, value)
+end
+
+
+--[[End CameraGrapplerParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

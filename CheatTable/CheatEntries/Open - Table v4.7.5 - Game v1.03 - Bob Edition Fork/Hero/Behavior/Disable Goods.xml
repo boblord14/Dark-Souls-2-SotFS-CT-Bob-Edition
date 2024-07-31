@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>23016</ID>
+  <Description>"Disable Goods"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>598</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

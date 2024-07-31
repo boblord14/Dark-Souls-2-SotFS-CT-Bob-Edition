@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087756</ID>
+  <Description>"BLACK PHANTOM UNDEAD DOG"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>22B0</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>62</ID>
+  <Description>"The Blue Cathedral"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>4CA</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

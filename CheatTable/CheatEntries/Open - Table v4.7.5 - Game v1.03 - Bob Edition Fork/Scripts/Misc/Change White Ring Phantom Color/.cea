@@ -1,0 +1,12 @@
+[ENABLE]
+define(SpEffectRing, [[[[[KatanaMainApp]+80]+1158]+60]+D8]+1146C)
+define(WhiteRing, SpEffectRing+434C)
+registersymbol(SpEffectRing)
+registersymbol(WhiteRing)
+
+ 
+[DISABLE]
+define(SpEffectRing, [[[[[KatanaMainApp]+80]+1158]+60]+D8]+1146C)
+define(WhiteRing, SpEffectRing+434C)
+unregistersymbol(SpEffectRing)
+unregistersymbol(WhiteRing)

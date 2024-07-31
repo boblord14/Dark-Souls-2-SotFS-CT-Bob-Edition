@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>23551</ID>
+  <Description>"Speed Modifier"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>2A8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

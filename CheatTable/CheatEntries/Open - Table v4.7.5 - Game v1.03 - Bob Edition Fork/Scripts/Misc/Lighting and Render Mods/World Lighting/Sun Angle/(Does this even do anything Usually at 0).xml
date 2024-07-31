@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26384</ID>
+  <Description>"(Does this even do anything? Usually at 0)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>31C</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,21 @@
+[ENABLE]
+alloc(BonfireRest, $100, DarkSoulsII.exe)
+label(return)
+createthread(BonfireRest)
+
+BonfireRest:
+sub rsp, 28
+vortmov(rcx, [[[GameManagerImp]+70]+58], return)
+mov edx, #4650
+call DarkSoulsII.exe+17DC40
+
+return:
+add rsp, 28
+ret
+
+{$lua}
+if not syntaxcheck then disableMemrec(memrec) end
+{$asm}
+[DISABLE]
+dealloc(BonfireRest)
+dealloc(BonfireId)

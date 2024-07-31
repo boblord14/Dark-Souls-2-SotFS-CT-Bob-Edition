@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337089199</ID>
+  <Description>"Next Item in List"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>8 Bytes</VariableType>
+  <Address>pItem</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+</CheatEntry>

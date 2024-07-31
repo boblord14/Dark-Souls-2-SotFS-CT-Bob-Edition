@@ -1,0 +1,21 @@
+<CheatEntry>
+  <ID>23860</ID>
+  <Description>"ClearCount"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1:Journey 1
+2:Journey 2
+3:Journey 3
+4:Journey 4
+5:Journey 5
+6:Journey 6
+7:Journey 7
+8:Journey 8
+9:Journey 9
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>68</Offset>
+    <Offset>C0</Offset>
+    <Offset>A8</Offset>
+  </Offsets>
+</CheatEntry>

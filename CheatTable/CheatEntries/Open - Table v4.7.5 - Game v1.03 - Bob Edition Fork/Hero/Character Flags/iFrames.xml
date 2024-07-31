@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256272</ID>
+  <Description>"iFrames"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>5FC</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337159697</ID>
+  <Description>"Untextured generic shield models from each class"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337159698"/>
+    <id id="1337159699"/>
+    <id id="1337159700"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

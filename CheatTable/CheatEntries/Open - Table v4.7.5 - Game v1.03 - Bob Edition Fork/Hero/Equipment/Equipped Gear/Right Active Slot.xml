@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337082910</ID>
+  <Description>"Right Active Slot"</Description>
+  <DropDownListLink>Left Active Slot</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>5A8</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

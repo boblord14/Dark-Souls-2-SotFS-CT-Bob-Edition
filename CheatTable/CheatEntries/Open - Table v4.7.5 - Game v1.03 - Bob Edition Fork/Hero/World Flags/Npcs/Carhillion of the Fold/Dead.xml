@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>26549</ID>
+  <Description>"Dead"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>221</Offset>
+    <Offset>18</Offset>
+    <Offset>20</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

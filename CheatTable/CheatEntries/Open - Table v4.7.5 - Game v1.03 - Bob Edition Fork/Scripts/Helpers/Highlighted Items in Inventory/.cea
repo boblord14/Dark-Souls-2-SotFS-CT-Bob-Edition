@@ -1,0 +1,62 @@
+[ENABLE]
+
+aobscanmodule(highlitem_inj,DarkSoulsII.exe,41 8B 48 14 0F B6 C0 66 0F 6E C8 0F 5B C9)
+alloc(highlitem_mem, 512)
+
+label(pItem)
+label(previous)
+label(code)
+label(return)
+
+registersymbol(highlitem_inj)
+registersymbol(pItem)
+
+highlitem_mem:
+code:
+  cmp [previous], r8
+  mov [previous], r8
+  jne @f
+
+  mov [pItem], r8
+
+@@: // original code
+  mov ecx,[r8+14]
+  movzx eax,al
+  movd xmm1,eax
+  cvtdq2ps xmm1,xmm1
+  jmp return
+
+pItem:
+  dq 0
+previous:
+  dq 0
+
+
+highlitem_inj:
+  jmp code
+return:
+
+[DISABLE]
+
+highlitem_inj:
+  db 41 8B 48 14 0F B6 C0 66 0F 6E C8 0F 5B C9
+
+unregistersymbol(highlitem_inj)
+unregistersymbol(pItem)
+
+dealloc(highlitem_mem)
+
+{ === original code ===
+  DarkSoulsII.exe+3818C - 74 07                 - je DarkSoulsII.exe+38195
+  DarkSoulsII.exe+3818E - 41 0FB6 40 24         - movzx eax,byte ptr [r8+24]
+  DarkSoulsII.exe+38193 - EB 02                 - jmp DarkSoulsII.exe+38197
+  DarkSoulsII.exe+38195 - 32 C0                 - xor al,al
+->DarkSoulsII.exe+38197 - 41 8B 48 14           - mov ecx,[r8+14]
+  DarkSoulsII.exe+3819B - 0FB6 C0               - movzx eax,al
+  DarkSoulsII.exe+3819E - 66 0F6E C8            - movd xmm1,eax
+  DarkSoulsII.exe+381A2 - 0F5B C9               - cvtdq2ps xmm1,xmm1
+  DarkSoulsII.exe+381A5 - E8 E6460000           - call DarkSoulsII.exe+3C890
+  DarkSoulsII.exe+381AA - EB 30                 - jmp DarkSoulsII.exe+381DC
+  DarkSoulsII.exe+381AC - 48 8B 11              - mov rdx,[rcx]
+  DarkSoulsII.exe+381AF - 48 85 D2              - test rdx,rdx
+}

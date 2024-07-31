@@ -1,0 +1,157 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ArmorParam class]]--
+ArmorParam = BaseParamClass:new()
+
+function ArmorParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ArmorParam", uuid, id, address)
+	return o
+end
+
+function ArmorParam:armorId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function ArmorParam:unknownCategory(value)
+	self:patchByte(0x4, value)
+end
+
+
+function ArmorParam:slotCategory(value)
+	self:patchByte(0x5, value)
+end
+
+
+function ArmorParam:unk06(value)
+	self:patchByte(0x6, value)
+end
+
+
+function ArmorParam:unk07(value)
+	self:patchByte(0x7, value)
+end
+
+
+function ArmorParam:modelId(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function ArmorParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function ArmorParam:equipInterfereId(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function ArmorParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function ArmorParam:armorReinforceId(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function ArmorParam:scalingPhysDef(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function ArmorParam:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function ArmorParam:unk24(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function ArmorParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function ArmorParam:strRequirement(value)
+	self:patch2Byte(0x2C, value)
+end
+
+
+function ArmorParam:dexRequirement(value)
+	self:patch2Byte(0x2E, value)
+end
+
+
+function ArmorParam:intRequirement(value)
+	self:patch2Byte(0x30, value)
+end
+
+
+function ArmorParam:faiRequirement(value)
+	self:patch2Byte(0x32, value)
+end
+
+
+function ArmorParam:weight(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function ArmorParam:durability(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function ArmorParam:repairCost(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function ArmorParam:poise(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function ArmorParam:controlparametersBlendweightHandsupS(value)
+	self:patch2Byte(0x44, value)
+end
+
+
+function ArmorParam:itemDiscovery(value)
+	self:patch2Byte(0x46, value)
+end
+
+
+function ArmorParam:unk48(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function ArmorParam:unk4C(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function ArmorParam:unk50(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+--[[End ArmorParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256150</ID>
+  <Description>"Petrification %"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>20C</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337083258</ID>
+  <Description>"+5 Physical Scaling: STR"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+BC</Address>
+</CheatEntry>

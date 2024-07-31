@@ -1,0 +1,9 @@
+[ENABLE]
+aobscanmodule(AnimationCancelAOB,DarkSoulsII.exe,41 xx 84 81 xx xx xx xx 41 80)
+registersymbol(AnimationCancelAOB)
+AnimationCancelAOB:
+  db 90 90 90 90 90 90 90 90
+[DISABLE]
+AnimationCancelAOB:
+  db 41 FF 84 81 D0 04 00 00
+unregistersymbol(AnimationCancelAOB)

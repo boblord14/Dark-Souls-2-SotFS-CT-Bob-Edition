@@ -1,0 +1,30 @@
+<CheatEntry>
+  <ID>1337100093</ID>
+  <Description>"Vendor NPCs"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337256656"/>
+    <id id="1337256631"/>
+    <id id="1337256634"/>
+    <id id="1337256633"/>
+    <id id="1337256636"/>
+    <id id="1337256637"/>
+    <id id="1337256638"/>
+    <id id="1337256639"/>
+    <id id="1337256640"/>
+    <id id="1337256641"/>
+    <id id="1337256642"/>
+    <id id="1337256643"/>
+    <id id="1337256644"/>
+    <id id="1337256645"/>
+    <id id="1337256647"/>
+    <id id="1337256648"/>
+    <id id="1337256649"/>
+    <id id="1337256650"/>
+    <id id="1337256651"/>
+    <id id="1337256652"/>
+    <id id="1337256653"/>
+    <id id="1337256654"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

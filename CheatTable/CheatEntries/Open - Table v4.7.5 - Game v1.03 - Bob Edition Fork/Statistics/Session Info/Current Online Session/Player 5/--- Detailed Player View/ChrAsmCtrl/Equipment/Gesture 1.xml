@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>1337108884</ID>
+  <Description>"Gesture 1"</Description>
+  <DropDownListLink>Gestures</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>BaseA</Address>
+  <Offsets>
+    <Offset>40C</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

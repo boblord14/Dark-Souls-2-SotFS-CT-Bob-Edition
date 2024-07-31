@@ -1,0 +1,527 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START WeaponStatsAffectParam class]]--
+WeaponStatsAffectParam = BaseParamClass:new()
+
+function WeaponStatsAffectParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("WeaponStatsAffectParam", uuid, id, address)
+	return o
+end
+
+function WeaponStatsAffectParam:baseDamageMultiplier(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function WeaponStatsAffectParam:unk(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingStr0(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingDex0(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function WeaponStatsAffectParam:magicScaling0(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function WeaponStatsAffectParam:lightningScaling0(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function WeaponStatsAffectParam:fireScaling0(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function WeaponStatsAffectParam:darkScaling0(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function WeaponStatsAffectParam:poisonScaling0(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function WeaponStatsAffectParam:bleedScaling0(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function WeaponStatsAffectParam:unk0(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingStr1(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingDex1(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function WeaponStatsAffectParam:magicScaling1(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function WeaponStatsAffectParam:lightningScaling1(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function WeaponStatsAffectParam:fireScaling1(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function WeaponStatsAffectParam:darkScaling1(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function WeaponStatsAffectParam:poisonScaling1(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function WeaponStatsAffectParam:bleedScaling1(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function WeaponStatsAffectParam:unk1(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingStr2(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingDex2(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function WeaponStatsAffectParam:magicScaling2(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function WeaponStatsAffectParam:lightningScaling2(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function WeaponStatsAffectParam:fireScaling2(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function WeaponStatsAffectParam:darkScaling2(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function WeaponStatsAffectParam:poisonScaling2(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function WeaponStatsAffectParam:bleedScaling2(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function WeaponStatsAffectParam:unk2(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingStr3(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingDex3(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function WeaponStatsAffectParam:magicScaling3(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function WeaponStatsAffectParam:lightningScaling3(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function WeaponStatsAffectParam:fireScaling3(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function WeaponStatsAffectParam:darkScaling3(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function WeaponStatsAffectParam:poisonScaling3(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function WeaponStatsAffectParam:bleedScaling3(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function WeaponStatsAffectParam:unk3(value)
+	self:patchFloat(0x94, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingStr4(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingDex4(value)
+	self:patchFloat(0x9C, value)
+end
+
+
+function WeaponStatsAffectParam:magicScaling4(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function WeaponStatsAffectParam:lightningScaling4(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function WeaponStatsAffectParam:fireScaling4(value)
+	self:patchFloat(0xA8, value)
+end
+
+
+function WeaponStatsAffectParam:darkScaling4(value)
+	self:patchFloat(0xAC, value)
+end
+
+
+function WeaponStatsAffectParam:poisonScaling4(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function WeaponStatsAffectParam:bleedScaling4(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function WeaponStatsAffectParam:unk4(value)
+	self:patchFloat(0xB8, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingStr5(value)
+	self:patchFloat(0xBC, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingDex5(value)
+	self:patchFloat(0xC0, value)
+end
+
+
+function WeaponStatsAffectParam:magicScaling5(value)
+	self:patchFloat(0xC4, value)
+end
+
+
+function WeaponStatsAffectParam:lightningScaling5(value)
+	self:patchFloat(0xC8, value)
+end
+
+
+function WeaponStatsAffectParam:fireScaling5(value)
+	self:patchFloat(0xCC, value)
+end
+
+
+function WeaponStatsAffectParam:darkScaling5(value)
+	self:patchFloat(0xD0, value)
+end
+
+
+function WeaponStatsAffectParam:poisonScaling5(value)
+	self:patchFloat(0xD4, value)
+end
+
+
+function WeaponStatsAffectParam:bleedScaling5(value)
+	self:patchFloat(0xD8, value)
+end
+
+
+function WeaponStatsAffectParam:unk5(value)
+	self:patchFloat(0xDC, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingStr6(value)
+	self:patchFloat(0xE0, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingDex6(value)
+	self:patchFloat(0xE4, value)
+end
+
+
+function WeaponStatsAffectParam:magicScaling6(value)
+	self:patchFloat(0xE8, value)
+end
+
+
+function WeaponStatsAffectParam:lightningScaling6(value)
+	self:patchFloat(0xEC, value)
+end
+
+
+function WeaponStatsAffectParam:fireScaling6(value)
+	self:patchFloat(0xF0, value)
+end
+
+
+function WeaponStatsAffectParam:darkScaling6(value)
+	self:patchFloat(0xF4, value)
+end
+
+
+function WeaponStatsAffectParam:poisonScaling6(value)
+	self:patchFloat(0xF8, value)
+end
+
+
+function WeaponStatsAffectParam:bleedScaling6(value)
+	self:patchFloat(0xFC, value)
+end
+
+
+function WeaponStatsAffectParam:unk6(value)
+	self:patchFloat(0x100, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingStr7(value)
+	self:patchFloat(0x104, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingDex7(value)
+	self:patchFloat(0x108, value)
+end
+
+
+function WeaponStatsAffectParam:magicScaling7(value)
+	self:patchFloat(0x10C, value)
+end
+
+
+function WeaponStatsAffectParam:lightningScaling7(value)
+	self:patchFloat(0x110, value)
+end
+
+
+function WeaponStatsAffectParam:fireScaling7(value)
+	self:patchFloat(0x114, value)
+end
+
+
+function WeaponStatsAffectParam:darkScaling7(value)
+	self:patchFloat(0x118, value)
+end
+
+
+function WeaponStatsAffectParam:poisonScaling7(value)
+	self:patchFloat(0x11C, value)
+end
+
+
+function WeaponStatsAffectParam:bleedScaling7(value)
+	self:patchFloat(0x120, value)
+end
+
+
+function WeaponStatsAffectParam:unk7(value)
+	self:patchFloat(0x124, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingStr8(value)
+	self:patchFloat(0x128, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingDex8(value)
+	self:patchFloat(0x12C, value)
+end
+
+
+function WeaponStatsAffectParam:magicScaling8(value)
+	self:patchFloat(0x130, value)
+end
+
+
+function WeaponStatsAffectParam:lightningScaling8(value)
+	self:patchFloat(0x134, value)
+end
+
+
+function WeaponStatsAffectParam:fireScaling8(value)
+	self:patchFloat(0x138, value)
+end
+
+
+function WeaponStatsAffectParam:darkScaling8(value)
+	self:patchFloat(0x13C, value)
+end
+
+
+function WeaponStatsAffectParam:poisonScaling8(value)
+	self:patchFloat(0x140, value)
+end
+
+
+function WeaponStatsAffectParam:bleedScaling8(value)
+	self:patchFloat(0x144, value)
+end
+
+
+function WeaponStatsAffectParam:unk8(value)
+	self:patchFloat(0x148, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingStr9(value)
+	self:patchFloat(0x14C, value)
+end
+
+
+function WeaponStatsAffectParam:physicalScalingDex9(value)
+	self:patchFloat(0x150, value)
+end
+
+
+function WeaponStatsAffectParam:magicScaling9(value)
+	self:patchFloat(0x154, value)
+end
+
+
+function WeaponStatsAffectParam:lightningScaling9(value)
+	self:patchFloat(0x158, value)
+end
+
+
+function WeaponStatsAffectParam:fireScaling9(value)
+	self:patchFloat(0x15C, value)
+end
+
+
+function WeaponStatsAffectParam:darkScaling9(value)
+	self:patchFloat(0x160, value)
+end
+
+
+function WeaponStatsAffectParam:poisonScaling9(value)
+	self:patchFloat(0x164, value)
+end
+
+
+function WeaponStatsAffectParam:bleedScaling9(value)
+	self:patchFloat(0x168, value)
+end
+
+
+function WeaponStatsAffectParam:unk9(value)
+	self:patchFloat(0x16C, value)
+end
+
+
+function WeaponStatsAffectParam:PhysicalScalingStr10(value)
+	self:patchFloat(0x170, value)
+end
+
+
+function WeaponStatsAffectParam:PhysicalScalingDex10(value)
+	self:patchFloat(0x174, value)
+end
+
+
+function WeaponStatsAffectParam:MagicScaling10(value)
+	self:patchFloat(0x178, value)
+end
+
+
+function WeaponStatsAffectParam:LightningScaling10(value)
+	self:patchFloat(0x17C, value)
+end
+
+
+function WeaponStatsAffectParam:FireScaling10(value)
+	self:patchFloat(0x180, value)
+end
+
+
+function WeaponStatsAffectParam:DarkScaling10(value)
+	self:patchFloat(0x184, value)
+end
+
+
+function WeaponStatsAffectParam:PoisonScaling10(value)
+	self:patchFloat(0x188, value)
+end
+
+
+function WeaponStatsAffectParam:BleedScaling10(value)
+	self:patchFloat(0x18C, value)
+end
+
+
+function WeaponStatsAffectParam:Unk10(value)
+	self:patchFloat(0x190, value)
+end
+
+
+--[[End WeaponStatsAffectParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

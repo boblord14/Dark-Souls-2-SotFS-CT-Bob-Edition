@@ -1,0 +1,20 @@
+<CheatEntry>
+  <ID>1337089206</ID>
+  <Description>"Equip Category"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Weapons
+1:Shields
+2:Armor (Head)
+3:Armor (Body)
+4:Armor (Arms)
+5:Armor (Legs)
+6:Arrows/Bolts
+7:Rings
+8:Quickbar (+Upgrade materials &amp; Keys)
+9:Spells
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>pItem</Address>
+  <Offsets>
+    <Offset>1E</Offset>
+  </Offsets>
+</CheatEntry>

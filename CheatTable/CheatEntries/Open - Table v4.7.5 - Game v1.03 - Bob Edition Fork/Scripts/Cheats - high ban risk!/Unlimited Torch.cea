@@ -1,0 +1,10 @@
+[ENABLE]
+aobscanmodule(torch,DarkSoulsII.exe,F3 0F 5C 44 24 50 C7)
+torch:
+  db 90 90 90 90 90 90
+registersymbol(torch)
+
+[DISABLE]
+torch:
+  db F3 0F 5C 44 24 50
+unregistersymbol(torch)

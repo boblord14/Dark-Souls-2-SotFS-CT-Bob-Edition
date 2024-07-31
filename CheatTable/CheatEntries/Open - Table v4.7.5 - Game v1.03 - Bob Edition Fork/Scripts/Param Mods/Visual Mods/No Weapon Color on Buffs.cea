@@ -1,0 +1,64 @@
+[ENABLE]
+define(ChrPhantomParam, [[[[GameManagerImp]+18]+310]+D8]+1C8)
+define(ParamStart, ChrPhantomParam+60C)
+define(MagicBuff, ParamStart+254)
+define(LightningBuff, ParamStart+274)
+define(FireBuff, ParamStart+294)
+define(DarkBuff, ParamStart+2B4)
+define(PoisonBuff, ParamStart+2D4)
+define(BleedBuff, ParamStart+2F4)
+define(GreatMagicWeaponBuff, ParamStart+3B4)
+
+MagicBuff:
+dd (float)0
+
+LightningBuff:
+dd (float)0
+
+FireBuff:
+dd (float)0
+
+DarkBuff:
+dd (float)0
+
+PoisonBuff:
+dd (float)0
+
+BleedBuff:
+dd (float)0
+
+GreatMagicWeaponBuff:
+dd (float)0
+
+[DISABLE]
+define(ChrPhantomParam, [[[[GameManagerImp]+18]+310]+D8]+1C8)
+define(ParamStart, ChrPhantomParam+60C)
+define(MagicBuff, ParamStart+254)
+define(LightningBuff, ParamStart+274)
+define(FireBuff, ParamStart+294)
+define(DarkBuff, ParamStart+2B4)
+define(PoisonBuff, ParamStart+2D4)
+define(BleedBuff, ParamStart+2F4)
+define(GreatMagicWeaponBuff, ParamStart+3B4)
+
+MagicBuff:
+dd (float)0.5
+
+LightningBuff:
+dd (float)0.5
+
+FireBuff:
+dd (float)0.5
+
+DarkBuff:
+dd (float)0.5
+
+PoisonBuff:
+dd (float)0.5
+
+BleedBuff:
+dd (float)0.5
+
+GreatMagicWeaponBuff:
+dd (float)0.5
+

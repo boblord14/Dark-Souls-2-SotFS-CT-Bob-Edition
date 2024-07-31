@@ -1,0 +1,31 @@
+[ENABLE]
+aobscanmodule(light,DarkSoulsII.exe,8B 43 0C 41 89 40 10 8B 43 10 41 89 40 14 8B 43 14 41 89 40 18 E9)
+alloc(newmem,$1000,light)
+alloc(lightBase,8)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov [lightBase],rbx
+  mov eax,[rbx+0C]
+  mov [r8+10],eax
+  jmp return
+
+light:
+  jmp code
+  nop
+  nop
+return:
+registersymbol(light)
+registersymbol(lightBase)
+
+[DISABLE]
+light:
+  db 8B 43 0C 41 89 40 10
+unregistersymbol(light)
+unregistersymbol(lightBase)
+dealloc(newmem)
+dealloc(lightBase)

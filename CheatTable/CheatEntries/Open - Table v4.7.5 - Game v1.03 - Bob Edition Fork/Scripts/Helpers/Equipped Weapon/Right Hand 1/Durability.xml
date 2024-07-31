@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337082916</ID>
+  <Description>"Durability"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>16C</Offset>
+    <Offset>28</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

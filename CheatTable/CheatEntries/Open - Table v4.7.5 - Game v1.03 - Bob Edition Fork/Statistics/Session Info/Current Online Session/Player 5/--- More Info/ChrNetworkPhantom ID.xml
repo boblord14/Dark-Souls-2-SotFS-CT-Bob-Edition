@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337275578</ID>
+  <Description>"ChrNetworkPhantom ID"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>3C</Offset>
+    <Offset>B0</Offset>
+    <Offset>528</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetEquipInterfereParamAddr, $100, DarkSoulsII.exe)
+alloc(EquipInterfereId, 4)
+label(return)
+registersymbol(GetEquipInterfereParamAddr)
+registersymbol(EquipInterfereId)
+
+EquipInterfereId:
+dd #11001100
+
+GetEquipInterfereParamAddr:
+sub rsp, 20
+mov edx, [EquipInterfereId]
+vortmov(rcx, [[[GameManagerImp]+18]+4D0])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [EquipInterfereParamAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetEquipInterfereParamAddr)
+dealloc(EquipInterfereId)
+unregistersymbol(GetEquipInterfereParamAddr)
+unregistersymbol(EquipInterfereId)

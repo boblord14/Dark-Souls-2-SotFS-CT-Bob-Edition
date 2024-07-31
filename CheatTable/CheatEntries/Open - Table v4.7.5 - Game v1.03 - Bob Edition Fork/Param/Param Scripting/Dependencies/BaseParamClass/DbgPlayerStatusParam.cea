@@ -1,0 +1,352 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START DbgPlayerStatusParam class]]--
+DbgPlayerStatusParam = BaseParamClass:new()
+
+function DbgPlayerStatusParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("DbgPlayerStatusParam", uuid, id, address)
+	return o
+end
+
+function DbgPlayerStatusParam:unk00(value)
+	self:patch2Byte(0x0, value)
+end
+
+
+function DbgPlayerStatusParam:unk002(value)
+	self:patch2Byte(0x2, value)
+end
+
+
+function DbgPlayerStatusParam:nameId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function DbgPlayerStatusParam:soulLevel(value)
+	self:patchByte(0x8, value)
+end
+
+
+function DbgPlayerStatusParam:vigor(value)
+	self:patchByte(0x9, value)
+end
+
+
+function DbgPlayerStatusParam:unk(value)
+	self:patchByte(0xA, value)
+end
+
+
+function DbgPlayerStatusParam:endurance(value)
+	self:patchByte(0xB, value)
+end
+
+
+function DbgPlayerStatusParam:attunement(value)
+	self:patchByte(0xC, value)
+end
+
+
+function DbgPlayerStatusParam:vitality(value)
+	self:patchByte(0xD, value)
+end
+
+
+function DbgPlayerStatusParam:strength(value)
+	self:patchByte(0xE, value)
+end
+
+
+function DbgPlayerStatusParam:dexterity(value)
+	self:patchByte(0xF, value)
+end
+
+
+function DbgPlayerStatusParam:intelligence(value)
+	self:patchByte(0x10, value)
+end
+
+
+function DbgPlayerStatusParam:faith(value)
+	self:patchByte(0x11, value)
+end
+
+
+function DbgPlayerStatusParam:adaptability(value)
+	self:patchByte(0x12, value)
+end
+
+
+function DbgPlayerStatusParam:unk10(value)
+	self:patchByte(0x13, value)
+end
+
+
+function DbgPlayerStatusParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function DbgPlayerStatusParam:iframesRate(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function DbgPlayerStatusParam:unk1C(value)
+	self:patchByte(0x1C, value)
+end
+
+
+function DbgPlayerStatusParam:unk1C2(value)
+	self:patchByte(0x1D, value)
+end
+
+
+function DbgPlayerStatusParam:unk1C3(value)
+	self:patchByte(0x1E, value)
+end
+
+
+function DbgPlayerStatusParam:unk1C4(value)
+	self:patchByte(0x1F, value)
+end
+
+
+function DbgPlayerStatusParam:item1Id(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function DbgPlayerStatusParam:item2Id(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function DbgPlayerStatusParam:item3Id(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function DbgPlayerStatusParam:item4Id(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function DbgPlayerStatusParam:item5Id(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function DbgPlayerStatusParam:item6Id(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function DbgPlayerStatusParam:item7Id(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function DbgPlayerStatusParam:item8Id(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function DbgPlayerStatusParam:item9Id(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function DbgPlayerStatusParam:spell1Id(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function DbgPlayerStatusParam:spell2Id(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function DbgPlayerStatusParam:spell3Id(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function DbgPlayerStatusParam:spell4Id(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function DbgPlayerStatusParam:spell5Id(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+function DbgPlayerStatusParam:spell6Id(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function DbgPlayerStatusParam:spell7Id(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function DbgPlayerStatusParam:spell8Id(value)
+	self:patch4Byte(0x60, value)
+end
+
+
+function DbgPlayerStatusParam:spell9Id(value)
+	self:patch4Byte(0x64, value)
+end
+
+
+function DbgPlayerStatusParam:spell10Id(value)
+	self:patch4Byte(0x68, value)
+end
+
+
+function DbgPlayerStatusParam:rightWeaponId(value)
+	self:patch4Byte(0x6C, value)
+end
+
+
+function DbgPlayerStatusParam:rightWeaponId2(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+function DbgPlayerStatusParam:rightWeaponId3(value)
+	self:patch4Byte(0x74, value)
+end
+
+
+function DbgPlayerStatusParam:leftWeaponId(value)
+	self:patch4Byte(0x78, value)
+end
+
+
+function DbgPlayerStatusParam:leftWeaponId2(value)
+	self:patch4Byte(0x7C, value)
+end
+
+
+function DbgPlayerStatusParam:leftWeaponId3(value)
+	self:patch4Byte(0x80, value)
+end
+
+
+function DbgPlayerStatusParam:headArmorId(value)
+	self:patch4Byte(0x84, value)
+end
+
+
+function DbgPlayerStatusParam:chestArmorId(value)
+	self:patch4Byte(0x88, value)
+end
+
+
+function DbgPlayerStatusParam:handsArmorId(value)
+	self:patch4Byte(0x8C, value)
+end
+
+
+function DbgPlayerStatusParam:legsArmorId(value)
+	self:patch4Byte(0x90, value)
+end
+
+
+function DbgPlayerStatusParam:unk94(value)
+	self:patch4Byte(0x94, value)
+end
+
+
+function DbgPlayerStatusParam:unk98(value)
+	self:patch4Byte(0x98, value)
+end
+
+
+function DbgPlayerStatusParam:unk9C(value)
+	self:patch4Byte(0x9C, value)
+end
+
+
+function DbgPlayerStatusParam:unka0(value)
+	self:patch4Byte(0xA0, value)
+end
+
+
+function DbgPlayerStatusParam:arrowId1(value)
+	self:patch4Byte(0xA4, value)
+end
+
+
+function DbgPlayerStatusParam:arrowId2(value)
+	self:patch4Byte(0xA8, value)
+end
+
+
+function DbgPlayerStatusParam:boltId1(value)
+	self:patch4Byte(0xAC, value)
+end
+
+
+function DbgPlayerStatusParam:boltId2(value)
+	self:patch4Byte(0xB0, value)
+end
+
+
+function DbgPlayerStatusParam:gesture1Id(value)
+	self:patch4Byte(0xB4, value)
+end
+
+
+function DbgPlayerStatusParam:gesture2Id(value)
+	self:patch4Byte(0xB8, value)
+end
+
+
+function DbgPlayerStatusParam:gesture3Id(value)
+	self:patch4Byte(0xBC, value)
+end
+
+
+function DbgPlayerStatusParam:gesture4Id(value)
+	self:patch4Byte(0xC0, value)
+end
+
+
+function DbgPlayerStatusParam:gesture5Id(value)
+	self:patch4Byte(0xC4, value)
+end
+
+
+function DbgPlayerStatusParam:gesture6Id(value)
+	self:patch4Byte(0xC8, value)
+end
+
+
+function DbgPlayerStatusParam:gesture7Id(value)
+	self:patch4Byte(0xCC, value)
+end
+
+
+function DbgPlayerStatusParam:gesture8Id(value)
+	self:patch4Byte(0xD0, value)
+end
+
+
+--[[End DbgPlayerStatusParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

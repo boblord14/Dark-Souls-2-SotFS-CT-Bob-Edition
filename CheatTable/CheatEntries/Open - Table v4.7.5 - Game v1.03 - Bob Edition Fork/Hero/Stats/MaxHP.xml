@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>22810</ID>
+  <Description>"MaxHP"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>170</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

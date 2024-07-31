@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>1337275601</ID>
+  <Description>"Leggings"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>KatanaMainApp</Address>
+  <Offsets>
+    <Offset>5E04</Offset>
+    <Offset>d8</Offset>
+    <Offset>60</Offset>
+    <Offset>1158</Offset>
+    <Offset>80</Offset>
+  </Offsets>
+</CheatEntry>

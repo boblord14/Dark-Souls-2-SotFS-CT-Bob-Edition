@@ -1,0 +1,20 @@
+<CheatEntry>
+  <ID>23006</ID>
+  <Description>"Character Name"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>String</VariableType>
+  <Length>32</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>24</Offset>
+    <Offset>C0</Offset>
+    <Offset>A8</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="23004"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,7 @@
+[ENABLE]
+label(DamageCtrlStruct)
+registersymbol(DamageCtrlStruct)
+[DamageCtrlAddressToUse]:
+DamageCtrlStruct:
+[DISABLE]
+unregistersymbol(DamageCtrlStruct)

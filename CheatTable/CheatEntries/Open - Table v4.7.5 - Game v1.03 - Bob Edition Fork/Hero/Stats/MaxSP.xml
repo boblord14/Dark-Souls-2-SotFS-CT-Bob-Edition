@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>22814</ID>
+  <Description>"MaxSP"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1B4</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

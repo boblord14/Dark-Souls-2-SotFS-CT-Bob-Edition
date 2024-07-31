@@ -1,0 +1,17 @@
+<CheatEntry>
+  <ID>86864</ID>
+  <Description>"Covenant Progress"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="86865"/>
+    <id id="86866"/>
+    <id id="86867"/>
+    <id id="86868"/>
+    <id id="86869"/>
+    <id id="86870"/>
+    <id id="86871"/>
+    <id id="86872"/>
+    <id id="86873"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

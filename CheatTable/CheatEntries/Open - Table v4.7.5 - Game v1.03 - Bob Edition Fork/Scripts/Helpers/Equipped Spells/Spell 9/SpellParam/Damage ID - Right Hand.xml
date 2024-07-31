@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337086877</ID>
+  <Description>"Damage ID - Right Hand"</Description>
+  <DropDownListLink>PlayerDamageParam</DropDownListLink>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+10</Address>
+</CheatEntry>

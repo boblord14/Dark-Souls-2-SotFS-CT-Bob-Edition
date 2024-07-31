@@ -1,0 +1,15 @@
+define(Comb,[[[[GameManagerImp]+60]+20]+D8]+2FE18)
+[ENABLE]
+Comb:
+dd 0
+Comb+D4:
+dd 1149107C
+Comb+D8:
+dd 1149107C
+[DISABLE]
+Comb:
+dd 5099
+Comb+D4:
+dd 01F8E9DA
+Comb+D8:
+dd 01F8E9DA

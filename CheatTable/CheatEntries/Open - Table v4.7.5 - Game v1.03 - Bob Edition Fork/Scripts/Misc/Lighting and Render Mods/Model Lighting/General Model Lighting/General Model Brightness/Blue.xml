@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26417</ID>
+  <Description>"Blue"</Description>
+  <VariableType>Float</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>388</Offset>
+  </Offsets>
+</CheatEntry>

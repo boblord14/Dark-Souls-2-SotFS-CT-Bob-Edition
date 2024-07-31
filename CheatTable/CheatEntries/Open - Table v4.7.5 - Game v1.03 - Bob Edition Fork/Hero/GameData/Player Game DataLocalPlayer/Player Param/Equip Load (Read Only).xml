@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337077485</ID>
+  <Description>"Equip Load (Read Only)"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3C</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

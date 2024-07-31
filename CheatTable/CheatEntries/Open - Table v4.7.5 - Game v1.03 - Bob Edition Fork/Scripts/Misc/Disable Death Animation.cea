@@ -1,0 +1,41 @@
+[ENABLE]
+aobscanmodule(Nodeathanimation,DarkSoulsII.exe,83 B9 D0 05 00 00 00)
+alloc(newmem,$1000,Nodeathanimation)
+label(code)
+label(return)
+
+newmem:
+  push rax
+  mov rax,[GameManagerImp]
+  mov rax,[rax+D0]
+  mov rax,[rax+B8]
+  cmp rax,rdi
+  pop rax
+  jne code
+  mov byte ptr [rcx+000005D0],01
+
+code:
+  cmp dword ptr [rcx+000005D0],00
+  jmp return
+
+Nodeathanimation:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(Nodeathanimation)
+
+[DISABLE]
+
+Nodeathanimation:
+  db 83 B9 D0 05 00 00 00
+
+unregistersymbol(Nodeathanimation)
+dealloc(newmem)
+
+{$lua}
+local godmode = readPointer("GameManagerImp")
+godmode = readPointer(godmode + 0xD0)
+godmode = readPointer(godmode + 0xB8)
+writeInteger(godmode + 0x5D0, 0)
+

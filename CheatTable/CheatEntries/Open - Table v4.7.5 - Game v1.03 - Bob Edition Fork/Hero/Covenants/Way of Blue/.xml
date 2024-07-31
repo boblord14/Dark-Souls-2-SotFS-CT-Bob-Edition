@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>16798</ID>
+  <Description>"Way of Blue"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="16808"/>
+    <id id="24082"/>
+    <id id="12152"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,62 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START HitBackMatrixParam class]]--
+HitBackMatrixParam = BaseParamClass:new()
+
+function HitBackMatrixParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("HitBackMatrixParam", uuid, id, address)
+	return o
+end
+
+function HitBackMatrixParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function HitBackMatrixParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function HitBackMatrixParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function HitBackMatrixParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function HitBackMatrixParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function HitBackMatrixParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function HitBackMatrixParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function HitBackMatrixParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+--[[End HitBackMatrixParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

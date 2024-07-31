@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337096762</ID>
+  <Description>"Poison Buildup"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+5C</Address>
+  <x-ce2fs-child-order>
+    <id id="1337096763"/>
+    <id id="1337096764"/>
+    <id id="1337096765"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

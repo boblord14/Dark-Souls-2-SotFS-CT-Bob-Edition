@@ -1,0 +1,10 @@
+[ENABLE]
+{$asm}
+createthread(InventoryChecker)
+
+{$lua}
+if syntaxcheck then return end
+disableMemrec(memrec)
+
+{$asm}
+[DISABLE]

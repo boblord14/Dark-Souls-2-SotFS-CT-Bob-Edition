@@ -1,0 +1,42 @@
+[ENABLE]
+aobscanmodule(NoBulletSpam,DarkSoulsII.exe,83 B8 C4 05 00 00 00)
+alloc(newmem,$1000,NoBulletSpam)
+
+label(code)
+label(return)
+
+newmem:
+  push rdi
+  mov rdi,[GameManagerImp]
+  mov rdi,[rdi+D0]
+  mov rdi,[rdi+B8]
+  cmp rax,rdi
+  pop rdi
+  je code
+  mov dword ptr [rax+000005C4],01
+
+code:
+  cmp dword ptr [rax+000005C4],00
+  jmp return
+
+NoBulletSpam:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(NoBulletSpam)
+
+[DISABLE]
+NoBulletSpam:
+  db 83 B8 C4 05 00 00 00
+
+unregistersymbol(NoBulletSpam)
+dealloc(newmem)
+
+{$lua}
+
+local godmode = readPointer("GameManagerImp")
+godmode = readPointer(godmode + 0xD0)
+godmode = readPointer(godmode + 0xB8)
+writeInteger(godmode + 0x5C4, 0)
+

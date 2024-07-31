@@ -1,0 +1,63 @@
+{
+	Author: Boblord
+    Re-balancing some covenant rank reward threshold to fit the current activity of ds2 online
+}
+[ENABLE]
+{$lua}
+if not syntaxcheck then return end
+
+local heirs = VowParam:new("newcovs", 1)
+      --pretty fine overall but this should make sunlight medals slightly less tedious
+      heirs:rank1Requirement(5)
+      heirs:rank2Requirement(10)
+      heirs:rank3Requirement(20)
+
+local sentinels = VowParam:new("newcovs", 2)
+      --hell of a lot better than 50-150-500
+      sentinels:rank1Requirement(5)
+      sentinels:rank2Requirement(15)
+      sentinels:rank3Requirement(30)
+
+local blood = VowParam:new("newcovs", 3)
+      --same as sentinels with a diff coat of paint
+      blood:rank1Requirement(5)
+      blood:rank2Requirement(15)
+      blood:rank3Requirement(30)
+
+local way = VowParam:new("newcovs", 4)
+      --this one is really friendly as well. commented what would be a different take on it.
+      --way:rank1Requirement(1)
+      --way:rank2Requirement(3)
+      --way:rank3Requirement(5)
+
+local rats = VowParam:new("newcovs", 5)
+      --dont know how active this one is but halving it feels reasonable
+      rats:rank1Requirement(5)
+      rats:rank2Requirement(10)
+      rats:rank3Requirement(15)
+
+local bell = VowParam:new("newcovs", 6)
+      --farming mad warrior sucks so this should be a lot better
+      bell:rank1Requirement(5)
+      bell:rank2Requirement(10)
+      bell:rank3Requirement(30)
+
+local dragons = VowParam:new("newcovs", 7)
+      --dont know activity here either but heres a slight reduction
+      dragons:rank1Requirement(5)
+      dragons:rank2Requirement(10)
+      dragons:rank3Requirement(20)
+
+local champs = VowParam:new("newcovs", 8)
+      --im tempted to leave this one be as its intended for pve anyways
+      --but 50 for rank 3 is still quite a bit
+      champs:rank1Requirement(10)
+      champs:rank2Requirement(20)
+      champs:rank3Requirement(35)
+
+--no pilgrims beceause thats scripted as all hell anyways and is basically a questline
+-- cov id is 9 if you want to do stuff with it anyways
+
+[DISABLE]
+{$lua}
+paramUtils:restore("newcovs")

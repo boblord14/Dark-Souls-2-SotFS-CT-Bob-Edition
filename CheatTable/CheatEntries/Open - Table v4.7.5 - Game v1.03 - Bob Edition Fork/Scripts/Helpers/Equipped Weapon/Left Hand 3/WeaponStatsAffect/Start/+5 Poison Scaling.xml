@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337085264</ID>
+  <Description>"+5 Poison Scaling"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+D4</Address>
+</CheatEntry>

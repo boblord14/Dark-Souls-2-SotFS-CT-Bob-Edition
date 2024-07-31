@@ -1,0 +1,19 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+
+
+
+local discoSpear = BulletParam:new("DiscoCSS", 31100000) -- crystal soul spear bullet
+      discoSpear:upwardSpawnDistance(2.5) -- bullet spawns 2.5 units above caster
+      discoSpear:forwardSpawnDistance(0) -- bullet spawns directly on caster in the xy plane
+      discoSpear:verticalAngleRandomizer(1) -- varies the angle the bullet comes out at
+      discoSpear:horizontalAngleRandomizer(1) -- same as above but with the horizontal angle
+      discoSpear:numberToShootSequentially(-1) -- never stops shooting
+      discoSpear:horizontalSpread(1) -- spreads out all over the place
+
+[DISABLE]
+paramUtils:restore("DiscoCSS")
+
+
+

@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337084917</ID>
+  <Description>"Upgrade Level"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>100</Offset>
+    <Offset>28</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

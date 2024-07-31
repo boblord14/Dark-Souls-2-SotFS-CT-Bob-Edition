@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337091592</ID>
+  <Description>"Riposte Hitbox Radius"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>+11C</Address>
+</CheatEntry>

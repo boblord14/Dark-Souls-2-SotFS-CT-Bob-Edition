@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337090202</ID>
+  <Description>"WeaponReinforceParam Struct"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337090203"/>
+    <id id="1337090208"/>
+    <id id="1337090209"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

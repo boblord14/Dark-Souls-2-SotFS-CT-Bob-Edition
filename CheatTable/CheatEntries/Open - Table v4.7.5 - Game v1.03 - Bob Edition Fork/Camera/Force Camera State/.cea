@@ -1,0 +1,9 @@
+[ENABLE]
+aobscanmodule(ForceCameraState,DarkSoulsII.exe,75 57 44 8B xx xx xx xx xx 41 83 F8)
+registersymbol(ForceCameraState)
+ForceCameraState:
+ db EB 57
+[DISABLE]
+ForceCameraState:
+ db 75 57
+unregistersymbol(ForceCameraState)

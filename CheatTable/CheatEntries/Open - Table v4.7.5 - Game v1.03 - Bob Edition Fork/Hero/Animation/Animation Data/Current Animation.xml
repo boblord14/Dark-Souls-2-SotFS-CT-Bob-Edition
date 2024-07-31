@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337256276</ID>
+  <Description>"Current Animation"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+0</Address>
+  <Offsets>
+    <Offset>10</Offset>
+  </Offsets>
+</CheatEntry>

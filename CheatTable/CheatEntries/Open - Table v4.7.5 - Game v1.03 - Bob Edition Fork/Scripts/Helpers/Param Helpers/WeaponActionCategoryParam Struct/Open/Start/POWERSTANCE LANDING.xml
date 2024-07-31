@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337090176</ID>
+  <Description>"POWERSTANCE LANDING"</Description>
+  <DropDownListLink>WeaponAttackMotion</DropDownListLink>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+98</Address>
+</CheatEntry>

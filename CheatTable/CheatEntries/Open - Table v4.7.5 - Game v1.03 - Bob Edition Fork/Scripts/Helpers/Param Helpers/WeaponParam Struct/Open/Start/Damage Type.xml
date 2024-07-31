@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337090121</ID>
+  <Description>"Damage Type"</Description>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>2 Bytes</VariableType>
+  <Address>+a8</Address>
+</CheatEntry>

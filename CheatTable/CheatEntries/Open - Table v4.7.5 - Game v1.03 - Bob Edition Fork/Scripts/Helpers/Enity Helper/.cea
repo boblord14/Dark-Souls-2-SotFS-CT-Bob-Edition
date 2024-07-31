@@ -1,0 +1,7 @@
+[ENABLE]
+alloc(target, 8)
+registersymbol(target)
+
+[DISABLE]
+dealloc(target)
+unregistersymbol(target)

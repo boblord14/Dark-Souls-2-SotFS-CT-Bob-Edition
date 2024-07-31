@@ -1,0 +1,557 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START EnemyBulletParam class]]--
+EnemyBulletParam = BaseParamClass:new()
+
+function EnemyBulletParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("EnemyBulletParam", uuid, id, address)
+	return o
+end
+
+function EnemyBulletParam:sfxId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function EnemyBulletParam:spawnLocation(value)
+	self:patchByte(0x4, value)
+end
+
+
+function EnemyBulletParam:spawnFlag(value)
+	self:patchByte(0x5, value)
+end
+
+
+function EnemyBulletParam:isVisibleOnline(value)
+	self:patchByte(0x6, value)
+end
+
+
+function EnemyBulletParam:spawnFlag2(value)
+	self:patchByte(0x7, value)
+end
+
+
+function EnemyBulletParam:upwardSpawnDistance(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function EnemyBulletParam:unkSpawnDistance(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function EnemyBulletParam:forwardSpawnDistance(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function EnemyBulletParam:shooterHorizontalAngle(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function EnemyBulletParam:shooterUnkAngle(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function EnemyBulletParam:shooterVerticalAngle(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function EnemyBulletParam:shooterUnkAngle2(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function EnemyBulletParam:verticalAngleRandomizer(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function EnemyBulletParam:horizontalAngleRandomizer(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function EnemyBulletParam:unk2C(value)
+	self:patchByte(0x2C, value)
+end
+
+
+function EnemyBulletParam:unk2D(value)
+	self:patchByte(0x2D, value)
+end
+
+
+function EnemyBulletParam:numberToShootAtOnce(value)
+	self:patchByte(0x2E, value)
+end
+
+
+function EnemyBulletParam:numberToShootSequentially(value)
+	self:patchByte(0x2F, value)
+end
+
+
+function EnemyBulletParam:unk30(value)
+	self:patchByte(0x30, value)
+end
+
+
+function EnemyBulletParam:unk31(value)
+	self:patchByte(0x31, value)
+end
+
+
+function EnemyBulletParam:unk32(value)
+	self:patchByte(0x32, value)
+end
+
+
+function EnemyBulletParam:unk33(value)
+	self:patchByte(0x33, value)
+end
+
+
+function EnemyBulletParam:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function EnemyBulletParam:shootInterval(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function EnemyBulletParam:verticalSpread(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function EnemyBulletParam:horizontalSpread(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function EnemyBulletParam:unk44(value)
+	self:patchByte(0x44, value)
+end
+
+
+function EnemyBulletParam:unk45(value)
+	self:patchByte(0x45, value)
+end
+
+
+function EnemyBulletParam:unk46(value)
+	self:patchByte(0x46, value)
+end
+
+
+function EnemyBulletParam:unk47(value)
+	self:patchByte(0x47, value)
+end
+
+
+function EnemyBulletParam:maxLife(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function EnemyBulletParam:initialHorizontalVelocity(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function EnemyBulletParam:horizontalAccelerationStartDelay(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function EnemyBulletParam:horizontalTargetVelocity(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function EnemyBulletParam:horizontalMaxVelocity(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function EnemyBulletParam:initialVerticalVelocity(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function EnemyBulletParam:verticalAccelerationStartDelay(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function EnemyBulletParam:verticalTargetVelocity(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function EnemyBulletParam:verticalMaxVelocity(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function EnemyBulletParam:initialTangentialVerticalVelocity(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function EnemyBulletParam:tangentialVerticalAccelerationStartDelay(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function EnemyBulletParam:tangentialVerticalTargetVelocity(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function EnemyBulletParam:tangentialVerticalMaxVelocity(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function EnemyBulletParam:initialTangentialHorizontalVelocity(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function EnemyBulletParam:tangentialHorizontalAccelerationStartDelay(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function EnemyBulletParam:tangentialHorizontalTargetVelocity(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function EnemyBulletParam:tangentialHorizontalMaxVelocity(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function EnemyBulletParam:unk8C(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function EnemyBulletParam:maxAngleChange(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function EnemyBulletParam:trackingMaxAngleChange(value)
+	self:patchFloat(0x94, value)
+end
+
+
+function EnemyBulletParam:trackingTime(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function EnemyBulletParam:unk9C(value)
+	self:patch4Byte(0x9C, value)
+end
+
+
+function EnemyBulletParam:unka0(value)
+	self:patch4Byte(0xA0, value)
+end
+
+
+function EnemyBulletParam:unka4(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function EnemyBulletParam:unka8(value)
+	self:patch4Byte(0xA8, value)
+end
+
+
+function EnemyBulletParam:unkac(value)
+	self:patch4Byte(0xAC, value)
+end
+
+
+function EnemyBulletParam:collisionCharacter(value)
+	self:patchByte(0xB0, value)
+end
+
+
+function EnemyBulletParam:collisionWall(value)
+	self:patchByte(0xB1, value)
+end
+
+
+function EnemyBulletParam:collisionFloorCeiling(value)
+	self:patchByte(0xB2, value)
+end
+
+
+function EnemyBulletParam:collisionWater(value)
+	self:patchByte(0xB3, value)
+end
+
+
+function EnemyBulletParam:effectOnFire(value)
+	self:patch4Byte(0xB4, value)
+end
+
+
+function EnemyBulletParam:unkb8(value)
+	self:patchByte(0xB8, value)
+end
+
+
+function EnemyBulletParam:unkb9(value)
+	self:patchByte(0xB9, value)
+end
+
+
+function EnemyBulletParam:unkba(value)
+	self:patchByte(0xBA, value)
+end
+
+
+function EnemyBulletParam:unkbb(value)
+	self:patchByte(0xBB, value)
+end
+
+
+function EnemyBulletParam:collisionSfx(value)
+	self:patch4Byte(0xBC, value)
+end
+
+
+function EnemyBulletParam:timeoutSfx(value)
+	self:patch4Byte(0xC0, value)
+end
+
+
+function EnemyBulletParam:effectOnDeathDuration(value)
+	self:patchFloat(0xC4, value)
+end
+
+
+function EnemyBulletParam:unkc8(value)
+	self:patch4Byte(0xC8, value)
+end
+
+
+function EnemyBulletParam:bulletattachparamId(value)
+	self:patch4Byte(0xCC, value)
+end
+
+
+function EnemyBulletParam:unkd0(value)
+	self:patch4Byte(0xD0, value)
+end
+
+
+function EnemyBulletParam:childBullet1BulletparamId(value)
+	self:patch4Byte(0xD4, value)
+end
+
+
+function EnemyBulletParam:childBullet1DamageparamId(value)
+	self:patch4Byte(0xD8, value)
+end
+
+
+function EnemyBulletParam:childBullet2BulletparamId(value)
+	self:patch4Byte(0xDC, value)
+end
+
+
+function EnemyBulletParam:childBullet2DamageparamId(value)
+	self:patch4Byte(0xE0, value)
+end
+
+
+function EnemyBulletParam:childBullet3BulletparamId(value)
+	self:patch4Byte(0xE4, value)
+end
+
+
+function EnemyBulletParam:childBullet3DamageparamId(value)
+	self:patch4Byte(0xE8, value)
+end
+
+
+function EnemyBulletParam:spawnChildBulletsOnCollision(value)
+	self:patchByte(0xEC, value)
+end
+
+
+function EnemyBulletParam:spawnChildBulletsOnTimeout(value)
+	self:patchByte(0xED, value)
+end
+
+
+function EnemyBulletParam:spawnChildBulletsOn(value)
+	self:patchByte(0xEE, value)
+end
+
+
+function EnemyBulletParam:spawnChildBulletsOnAlive(value)
+	self:patchByte(0xEF, value)
+end
+
+
+function EnemyBulletParam:unkf0(value)
+	self:patch4Byte(0xF0, value)
+end
+
+
+function EnemyBulletParam:unkf4(value)
+	self:patch4Byte(0xF4, value)
+end
+
+
+function EnemyBulletParam:unkf8(value)
+	self:patch4Byte(0xF8, value)
+end
+
+
+function EnemyBulletParam:unkfc(value)
+	self:patch4Byte(0xFC, value)
+end
+
+
+function EnemyBulletParam:unk100(value)
+	self:patchByte(0x100, value)
+end
+
+
+function EnemyBulletParam:unk101(value)
+	self:patchByte(0x101, value)
+end
+
+
+function EnemyBulletParam:unk102(value)
+	self:patchByte(0x102, value)
+end
+
+
+function EnemyBulletParam:unk103(value)
+	self:patchByte(0x103, value)
+end
+
+
+function EnemyBulletParam:unk104(value)
+	self:patchByte(0x104, value)
+end
+
+
+function EnemyBulletParam:unk105(value)
+	self:patchByte(0x105, value)
+end
+
+
+function EnemyBulletParam:unk106(value)
+	self:patchByte(0x106, value)
+end
+
+
+function EnemyBulletParam:unk107(value)
+	self:patchByte(0x107, value)
+end
+
+
+function EnemyBulletParam:unk108(value)
+	self:patchFloat(0x108, value)
+end
+
+
+function EnemyBulletParam:unk10C(value)
+	self:patchFloat(0x10C, value)
+end
+
+
+function EnemyBulletParam:unk110(value)
+	self:patchFloat(0x110, value)
+end
+
+
+function EnemyBulletParam:unk114(value)
+	self:patch4Byte(0x114, value)
+end
+
+
+function EnemyBulletParam:unk118(value)
+	self:patch4Byte(0x118, value)
+end
+
+
+function EnemyBulletParam:unk11C(value)
+	self:patchFloat(0x11C, value)
+end
+
+
+function EnemyBulletParam:unk120(value)
+	self:patchFloat(0x120, value)
+end
+
+
+function EnemyBulletParam:unk124(value)
+	self:patchFloat(0x124, value)
+end
+
+
+function EnemyBulletParam:childBulletSpawnDelay(value)
+	self:patchFloat(0x128, value)
+end
+
+
+function EnemyBulletParam:unk12C(value)
+	self:patch4Byte(0x12C, value)
+end
+
+
+function EnemyBulletParam:unk130(value)
+	self:patch4Byte(0x130, value)
+end
+
+
+function EnemyBulletParam:unk134(value)
+	self:patch4Byte(0x134, value)
+end
+
+
+function EnemyBulletParam:unk138(value)
+	self:patch4Byte(0x138, value)
+end
+
+
+function EnemyBulletParam:unk13C(value)
+	self:patch4Byte(0x13C, value)
+end
+
+
+--[[End EnemyBulletParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

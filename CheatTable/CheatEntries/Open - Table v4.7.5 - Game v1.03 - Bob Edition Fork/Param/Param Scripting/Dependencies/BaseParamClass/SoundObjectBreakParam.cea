@@ -1,0 +1,27 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START SoundObjectBreakParam class]]--
+SoundObjectBreakParam = BaseParamClass:new()
+
+function SoundObjectBreakParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("SoundObjectBreakParam", uuid, id, address)
+	return o
+end
+
+function SoundObjectBreakParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+--[[End SoundObjectBreakParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

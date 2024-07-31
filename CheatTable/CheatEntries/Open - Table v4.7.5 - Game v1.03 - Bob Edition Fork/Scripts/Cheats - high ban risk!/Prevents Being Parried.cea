@@ -1,0 +1,14 @@
+[ENABLE]
+aobscanmodule(DisableParryAOB,DarkSoulsII.exe,FF 81 50 05 00 00 EB)
+registersymbol(DisableParryAOB)
+
+DisableParryAOB:
+ db 90 90 90 90 90 90
+
+[DISABLE]
+
+DisableParryAOB:
+  db FF 81 50 05 00 00
+
+unregistersymbol(DisableParryAOB)
+

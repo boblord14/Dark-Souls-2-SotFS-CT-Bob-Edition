@@ -1,0 +1,32 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START LockTargetParam class]]--
+LockTargetParam = BaseParamClass:new()
+
+function LockTargetParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("LockTargetParam", uuid, id, address)
+	return o
+end
+
+function LockTargetParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function LockTargetParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+--[[End LockTargetParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

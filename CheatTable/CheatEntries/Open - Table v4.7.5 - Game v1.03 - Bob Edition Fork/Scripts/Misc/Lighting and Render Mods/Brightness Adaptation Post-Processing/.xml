@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26408</ID>
+  <Description>"Brightness Adaptation Post-Processing"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26518"/>
+    <id id="26519"/>
+    <id id="26520"/>
+    <id id="26521"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

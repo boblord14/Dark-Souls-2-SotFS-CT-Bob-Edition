@@ -1,0 +1,7 @@
+[ENABLE]
+label(WepAtkStruct)
+registersymbol(WepAtkStruct)
+[WepAtkMotionAddr]:
+WepAtkStruct:
+[DISABLE]
+unregistersymbol(WepAtkStruct)

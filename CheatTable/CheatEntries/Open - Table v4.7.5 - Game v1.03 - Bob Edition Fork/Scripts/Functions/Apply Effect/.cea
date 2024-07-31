@@ -1,0 +1,38 @@
+[ENABLE]
+//Made by LordRadai
+alloc(ApplyEffect, $100, DarkSoulsII.exe)
+alloc(EffectStruct, 16)
+alloc(Unk, 4)
+registersymbol(ApplyEffect)
+registersymbol(EffectStruct)
+
+EffectStruct:
+dd #100000010
+dd #1
+dd (float)-1
+db #25
+db #2
+db 00
+db 00
+
+Unk:
+dd (float)-1
+
+ApplyEffect:
+sub rsp, 38
+mov rdx, EffectStruct
+vortmov(rcx, [[GameManagerImp]+D0]+3E0, no_player)
+movss xmm0, [Unk]
+movss [rsp+28], xmm0
+call DarkSoulsII.exe+14BEC0
+
+no_player:
+add rsp, 38
+ret
+
+[DISABLE]
+dealloc(ApplyEffect)
+dealloc(EffectStruct)
+dealloc(Unk)
+unregistersymbol(ApplyEffect)
+unregistersymbol(EffectStruct)

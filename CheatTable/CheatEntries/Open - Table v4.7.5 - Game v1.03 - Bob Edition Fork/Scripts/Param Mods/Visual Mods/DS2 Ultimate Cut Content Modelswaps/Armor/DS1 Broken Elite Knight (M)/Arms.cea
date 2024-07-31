@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(elitea,4)
+                        elitea:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+2F8]+08,4)
+                        registersymbol(elitea)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2F8]+08:
+                        dw #9918
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(elitea)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2F8]+08:
+                        readmem(elitea, 4)
+                        unregistersymbol(elitea)
+                    
+					

@@ -1,0 +1,7 @@
+[ENABLE]
+label(ArmorReinforceParamStruct)
+registersymbol(ArmorReinforceParamStruct)
+[ArmorReinforceParamAddressToUse]:
+ArmorReinforceParamStruct:
+[DISABLE]
+unregistersymbol(ArmorReinforceParamStruct)

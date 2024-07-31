@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26521</ID>
+  <Description>"Thresold?"</Description>
+  <VariableType>Float</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>FFFFF8EC</Offset>
+  </Offsets>
+</CheatEntry>

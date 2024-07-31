@@ -1,0 +1,18 @@
+[ENABLE]
+
+[[[[[GameManagerImp]+D0]+100]+320]+20]+1A0:
+db CC C2 7B C4 6D 93 2D 41 E0 0E 97 43 00 00 00 00 CC C2 7B C4 6D 93 2D 41 E0 0E 97 43 D8 0B 12 42 CC C2 7B C4 6D 93 2D 41 E0 0E 97 43 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF FF 7F 3F
+
+{$lua}
+if syntaxcheck then return end
+
+local t=createTimer()
+t.Interval=50
+t.OnTimer=function()
+  memrec.Active=false
+  t.destroy()
+end
+
+[DISABLE]
+
+

@@ -1,0 +1,7 @@
+[ENABLE]
+label(DamageParamStruct)
+registersymbol(DamageParamStruct)
+[DamageParamAddressToUse]:
+DamageParamStruct:
+[DISABLE]
+unregistersymbol(DamageParamStruct)

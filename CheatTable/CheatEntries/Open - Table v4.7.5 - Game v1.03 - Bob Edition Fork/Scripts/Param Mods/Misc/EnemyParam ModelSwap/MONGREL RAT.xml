@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087745</ID>
+  <Description>"MONGREL RAT"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>21A8</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

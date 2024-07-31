@@ -1,0 +1,23 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+disableMemrec(memrec)
+
+
+local foundId
+
+local locationId = readInteger("WarpData+18")
+
+if keyValueEvents[locationId] ~= nil -- if event warp set up event teleport else set up bonfire teleport
+then
+writeInteger("MapId", keyValueEvents[locationId])
+autoAssemble([[
+createThreadAndWait(GetMapIndex)
+createThread(Warp)
+]])
+
+else
+autoAssemble([[createThread(BonfireWarp)]])
+end
+
+[DISABLE]

@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337088820</ID>
+  <Description>"Righthand weapon 2"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+7B0+088</Address>
+</CheatEntry>

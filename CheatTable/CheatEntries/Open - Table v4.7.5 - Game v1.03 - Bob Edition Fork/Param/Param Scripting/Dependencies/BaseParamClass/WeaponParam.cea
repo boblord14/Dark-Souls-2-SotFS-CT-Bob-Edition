@@ -1,0 +1,277 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START WeaponParam class]]--
+WeaponParam = BaseParamClass:new()
+
+function WeaponParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("WeaponParam", uuid, id, address)
+	return o
+end
+
+function WeaponParam:weaponMotionId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function WeaponParam:weaponModelId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function WeaponParam:weaponReinforceId(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function WeaponParam:actionCategoryId(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function WeaponParam:weaponTypeId(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function WeaponParam:unk02(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function WeaponParam:strRequirement(value)
+	self:patch2Byte(0x18, value)
+end
+
+
+function WeaponParam:dexRequirement(value)
+	self:patch2Byte(0x1A, value)
+end
+
+
+function WeaponParam:intRequirement(value)
+	self:patch2Byte(0x1C, value)
+end
+
+
+function WeaponParam:fthRequirement(value)
+	self:patch2Byte(0x1E, value)
+end
+
+
+function WeaponParam:weight(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function WeaponParam:recoveryAnimationWeight(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function WeaponParam:maxDurability(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function WeaponParam:baseRepairCost(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function WeaponParam:unk30(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function WeaponParam:staminaConsumption10(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function WeaponParam:staminaDamage10(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function WeaponParam:weaponStaminaCostId(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function WeaponParam:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function WeaponParam:unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function WeaponParam:unk48(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function WeaponParam:unk4C(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function WeaponParam:playerDamageIdBackstabSmall(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function WeaponParam:playerDamageIdBackstabMedium(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+function WeaponParam:playerDamageIdBackstabLarge(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function WeaponParam:playerDamageIdGuardBreakStabSmall(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function WeaponParam:playerDamageIdGuardBreakStabMedium(value)
+	self:patch4Byte(0x60, value)
+end
+
+
+function WeaponParam:playerDamageIdGuardBreakStabLarge(value)
+	self:patch4Byte(0x64, value)
+end
+
+
+function WeaponParam:playerDamageIdRiposteSmall(value)
+	self:patch4Byte(0x68, value)
+end
+
+
+function WeaponParam:playerDamageIdRiposteMedium(value)
+	self:patch4Byte(0x6C, value)
+end
+
+
+function WeaponParam:playerDamageIdRiposteLarge(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+function WeaponParam:taeRelated(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function WeaponParam:unk78(value)
+	self:patch4Byte(0x78, value)
+end
+
+
+function WeaponParam:unk7C(value)
+	self:patch4Byte(0x7C, value)
+end
+
+
+function WeaponParam:damageMultiplier(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function WeaponParam:equipmentDamageMultiplier(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function WeaponParam:guardBreakRelated(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function WeaponParam:guardBreakRelated2(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function WeaponParam:statusEffectAmount(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function WeaponParam:postureDamageMultiplier(value)
+	self:patchFloat(0x94, value)
+end
+
+
+function WeaponParam:hitboxRadius(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function WeaponParam:hitboxLenght(value)
+	self:patchFloat(0x9C, value)
+end
+
+
+function WeaponParam:hitbackRadius(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function WeaponParam:hitbackLenght(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function WeaponParam:damageType(value)
+	self:patch2Byte(0xA8, value)
+end
+
+
+function WeaponParam:poiseDamage(value)
+	self:patch2Byte(0xAA, value)
+end
+
+
+function WeaponParam:counterDamage(value)
+	self:patch2Byte(0xAC, value)
+end
+
+
+function WeaponParam:castingSpeed(value)
+	self:patch2Byte(0xAE, value)
+end
+
+
+function WeaponParam:unkb0(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function WeaponParam:poiseDamageFloat10(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function WeaponParam:unkb8(value)
+	self:patchFloat(0xB8, value)
+end
+
+
+--[[End WeaponParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

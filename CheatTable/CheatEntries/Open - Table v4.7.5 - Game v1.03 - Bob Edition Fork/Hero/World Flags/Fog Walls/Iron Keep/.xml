@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>26577</ID>
+  <Description>"Iron Keep"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26578"/>
+    <id id="26579"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

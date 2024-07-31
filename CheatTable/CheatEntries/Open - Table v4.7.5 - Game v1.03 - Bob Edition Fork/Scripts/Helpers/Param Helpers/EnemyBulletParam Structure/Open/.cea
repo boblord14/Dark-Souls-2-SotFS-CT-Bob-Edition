@@ -1,0 +1,7 @@
+[ENABLE]
+label(EnemyBulletParam)
+registersymbol(EnemyBulletParam)
+[EnemyBulletAddressToUse]:
+EnemyBulletParam:
+[DISABLE]
+unregistersymbol(EnemyBulletParam)

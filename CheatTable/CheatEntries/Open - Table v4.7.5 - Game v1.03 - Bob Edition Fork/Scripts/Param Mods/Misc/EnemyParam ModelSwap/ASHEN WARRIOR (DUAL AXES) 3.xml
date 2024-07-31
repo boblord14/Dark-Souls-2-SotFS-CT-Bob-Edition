@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087938</ID>
+  <Description>"ASHEN WARRIOR (DUAL AXES)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>33C0</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>
