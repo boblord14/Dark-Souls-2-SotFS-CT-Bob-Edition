@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337106343</ID>
+  <Description>"Petrification Buildup"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+A4</Address>
+  <x-ce2fs-child-order>
+    <id id="1337106344"/>
+    <id id="1337106345"/>
+    <id id="1337106346"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

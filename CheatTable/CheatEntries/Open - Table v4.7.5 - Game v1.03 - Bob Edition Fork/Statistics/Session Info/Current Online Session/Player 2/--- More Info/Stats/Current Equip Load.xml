@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>86786</ID>
+  <Description>"Current Equip Load"</Description>
+  <VariableType>Float</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>DA4</Offset>
+    <Offset>2B8</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

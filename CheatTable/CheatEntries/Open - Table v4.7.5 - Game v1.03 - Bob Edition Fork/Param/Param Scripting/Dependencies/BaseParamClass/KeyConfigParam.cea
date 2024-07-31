@@ -1,0 +1,402 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START KeyConfigParam class]]--
+KeyConfigParam = BaseParamClass:new()
+
+function KeyConfigParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("KeyConfigParam", uuid, id, address)
+	return o
+end
+
+function KeyConfigParam:unk00(value)
+	self:patchByte(0x0, value)
+end
+
+
+function KeyConfigParam:unk002(value)
+	self:patchByte(0x1, value)
+end
+
+
+function KeyConfigParam:unk003(value)
+	self:patchByte(0x2, value)
+end
+
+
+function KeyConfigParam:unk004(value)
+	self:patchByte(0x3, value)
+end
+
+
+function KeyConfigParam:unk04(value)
+	self:patchByte(0x4, value)
+end
+
+
+function KeyConfigParam:unk042(value)
+	self:patchByte(0x5, value)
+end
+
+
+function KeyConfigParam:unk043(value)
+	self:patchByte(0x6, value)
+end
+
+
+function KeyConfigParam:unk044(value)
+	self:patchByte(0x7, value)
+end
+
+
+function KeyConfigParam:unk08(value)
+	self:patchByte(0x8, value)
+end
+
+
+function KeyConfigParam:unk082(value)
+	self:patchByte(0x9, value)
+end
+
+
+function KeyConfigParam:unk083(value)
+	self:patchByte(0xA, value)
+end
+
+
+function KeyConfigParam:unk084(value)
+	self:patchByte(0xB, value)
+end
+
+
+function KeyConfigParam:unk0C(value)
+	self:patchByte(0xC, value)
+end
+
+
+function KeyConfigParam:unk0C2(value)
+	self:patchByte(0xD, value)
+end
+
+
+function KeyConfigParam:unk0C3(value)
+	self:patchByte(0xE, value)
+end
+
+
+function KeyConfigParam:unk0C4(value)
+	self:patchByte(0xF, value)
+end
+
+
+function KeyConfigParam:unk10(value)
+	self:patchByte(0x10, value)
+end
+
+
+function KeyConfigParam:unk102(value)
+	self:patchByte(0x11, value)
+end
+
+
+function KeyConfigParam:unk103(value)
+	self:patchByte(0x12, value)
+end
+
+
+function KeyConfigParam:unk104(value)
+	self:patchByte(0x13, value)
+end
+
+
+function KeyConfigParam:unk14(value)
+	self:patchByte(0x14, value)
+end
+
+
+function KeyConfigParam:unk142(value)
+	self:patchByte(0x15, value)
+end
+
+
+function KeyConfigParam:unk143(value)
+	self:patchByte(0x16, value)
+end
+
+
+function KeyConfigParam:unk144(value)
+	self:patchByte(0x17, value)
+end
+
+
+function KeyConfigParam:unk18(value)
+	self:patchByte(0x18, value)
+end
+
+
+function KeyConfigParam:unk182(value)
+	self:patchByte(0x19, value)
+end
+
+
+function KeyConfigParam:unk183(value)
+	self:patchByte(0x1A, value)
+end
+
+
+function KeyConfigParam:unk184(value)
+	self:patchByte(0x1B, value)
+end
+
+
+function KeyConfigParam:unk1C(value)
+	self:patchByte(0x1C, value)
+end
+
+
+function KeyConfigParam:unk1C2(value)
+	self:patchByte(0x1D, value)
+end
+
+
+function KeyConfigParam:unk1C3(value)
+	self:patchByte(0x1E, value)
+end
+
+
+function KeyConfigParam:unk1C4(value)
+	self:patchByte(0x1F, value)
+end
+
+
+function KeyConfigParam:unk20(value)
+	self:patchByte(0x20, value)
+end
+
+
+function KeyConfigParam:unk202(value)
+	self:patchByte(0x21, value)
+end
+
+
+function KeyConfigParam:unk203(value)
+	self:patchByte(0x22, value)
+end
+
+
+function KeyConfigParam:unk204(value)
+	self:patchByte(0x23, value)
+end
+
+
+function KeyConfigParam:unk24(value)
+	self:patchByte(0x24, value)
+end
+
+
+function KeyConfigParam:unk242(value)
+	self:patchByte(0x25, value)
+end
+
+
+function KeyConfigParam:unk243(value)
+	self:patchByte(0x26, value)
+end
+
+
+function KeyConfigParam:unk244(value)
+	self:patchByte(0x27, value)
+end
+
+
+function KeyConfigParam:unk28(value)
+	self:patchByte(0x28, value)
+end
+
+
+function KeyConfigParam:unk282(value)
+	self:patchByte(0x29, value)
+end
+
+
+function KeyConfigParam:unk283(value)
+	self:patchByte(0x2A, value)
+end
+
+
+function KeyConfigParam:unk284(value)
+	self:patchByte(0x2B, value)
+end
+
+
+function KeyConfigParam:unk2C(value)
+	self:patchByte(0x2C, value)
+end
+
+
+function KeyConfigParam:unk2C2(value)
+	self:patchByte(0x2D, value)
+end
+
+
+function KeyConfigParam:unk2C3(value)
+	self:patchByte(0x2E, value)
+end
+
+
+function KeyConfigParam:unk2C4(value)
+	self:patchByte(0x2F, value)
+end
+
+
+function KeyConfigParam:unk30(value)
+	self:patchByte(0x30, value)
+end
+
+
+function KeyConfigParam:unk302(value)
+	self:patchByte(0x31, value)
+end
+
+
+function KeyConfigParam:unk303(value)
+	self:patchByte(0x32, value)
+end
+
+
+function KeyConfigParam:unk304(value)
+	self:patchByte(0x33, value)
+end
+
+
+function KeyConfigParam:unk34(value)
+	self:patchByte(0x34, value)
+end
+
+
+function KeyConfigParam:unk342(value)
+	self:patchByte(0x35, value)
+end
+
+
+function KeyConfigParam:unk343(value)
+	self:patchByte(0x36, value)
+end
+
+
+function KeyConfigParam:unk344(value)
+	self:patchByte(0x37, value)
+end
+
+
+function KeyConfigParam:unk38(value)
+	self:patchByte(0x38, value)
+end
+
+
+function KeyConfigParam:unk382(value)
+	self:patchByte(0x39, value)
+end
+
+
+function KeyConfigParam:unk383(value)
+	self:patchByte(0x3A, value)
+end
+
+
+function KeyConfigParam:unk384(value)
+	self:patchByte(0x3B, value)
+end
+
+
+function KeyConfigParam:unk3C(value)
+	self:patchByte(0x3C, value)
+end
+
+
+function KeyConfigParam:unk3C2(value)
+	self:patchByte(0x3D, value)
+end
+
+
+function KeyConfigParam:unk3C3(value)
+	self:patchByte(0x3E, value)
+end
+
+
+function KeyConfigParam:unk3C4(value)
+	self:patchByte(0x3F, value)
+end
+
+
+function KeyConfigParam:unk40(value)
+	self:patchByte(0x40, value)
+end
+
+
+function KeyConfigParam:unk402(value)
+	self:patchByte(0x41, value)
+end
+
+
+function KeyConfigParam:unk403(value)
+	self:patchByte(0x42, value)
+end
+
+
+function KeyConfigParam:unk404(value)
+	self:patchByte(0x43, value)
+end
+
+
+function KeyConfigParam:unk44(value)
+	self:patchByte(0x44, value)
+end
+
+
+function KeyConfigParam:unk442(value)
+	self:patchByte(0x45, value)
+end
+
+
+function KeyConfigParam:unk443(value)
+	self:patchByte(0x46, value)
+end
+
+
+function KeyConfigParam:unk444(value)
+	self:patchByte(0x47, value)
+end
+
+
+function KeyConfigParam:unk48(value)
+	self:patchByte(0x48, value)
+end
+
+
+function KeyConfigParam:unk482(value)
+	self:patchByte(0x49, value)
+end
+
+
+function KeyConfigParam:unk483(value)
+	self:patchByte(0x4A, value)
+end
+
+
+function KeyConfigParam:unk484(value)
+	self:patchByte(0x4B, value)
+end
+
+
+--[[End KeyConfigParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

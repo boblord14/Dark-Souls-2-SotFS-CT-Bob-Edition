@@ -1,0 +1,42 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START VowParam class]]--
+VowParam = BaseParamClass:new()
+
+function VowParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("VowParam", uuid, id, address)
+	return o
+end
+
+function VowParam:rank1Requirement(value)
+	self:patch2Byte(0x0, value)
+end
+
+
+function VowParam:rank2Requirement(value)
+	self:patch2Byte(0x2, value)
+end
+
+
+function VowParam:rank3Requirement(value)
+	self:patch2Byte(0x4, value)
+end
+
+
+function VowParam:unk06(value)
+	self:patch2Byte(0x6, value)
+end
+
+
+--[[End VowParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

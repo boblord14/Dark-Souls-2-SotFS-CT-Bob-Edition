@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(twspear,2)
+                        twspear:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(twspear)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6400
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(twspear)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(twspear, 2)
+                        unregistersymbol(twspear)
+                    

@@ -1,0 +1,9 @@
+[ENABLE]
+aobscanmodule(DisableStaggeAOB,DarkSoulsII.exe,39 9D xx xx xx xx xx xx C1 88 8C 24)
+registersymbol(DisableStaggeAOB)
+DisableStaggeAOB:
+ db 90 90 90 90 90 90
+[DISABLE]
+DisableStaggeAOB:
+ db 39 9D EC 05 00 00
+unregistersymbol(DisableStaggeAOB)

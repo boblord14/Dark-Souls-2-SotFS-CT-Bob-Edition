@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tparma,2)
+                        tparma:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+58]+4,2)
+                        registersymbol(tparma)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        dw #2000
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tparma)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        readmem(tparma, 2)
+                        unregistersymbol(tparma)
+                    

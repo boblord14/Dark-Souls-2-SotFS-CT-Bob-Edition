@@ -1,0 +1,19 @@
+<CheatEntry>
+  <ID>1337107556</ID>
+  <Description>"Network"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+20</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337107557"/>
+    <id id="1337107558"/>
+    <id id="1337107559"/>
+    <id id="1337107560"/>
+    <id id="1337107561"/>
+    <id id="1337107562"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

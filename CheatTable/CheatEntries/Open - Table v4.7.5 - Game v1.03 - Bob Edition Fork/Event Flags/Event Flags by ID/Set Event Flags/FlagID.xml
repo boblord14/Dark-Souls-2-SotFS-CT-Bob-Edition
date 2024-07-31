@@ -1,0 +1,104 @@
+<CheatEntry>
+  <ID>1337256625</ID>
+  <Description>"FlagID"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Things Betwixt Spawn
+2650:Fire Keepers' Dwelling
+4650:The Far Fire
+10670:The Crestfallen's Retreat
+10655:Cardinal Tower
+10660:Soldiers' Rest
+10675:The Place Unbeknownst
+31655:Heide's Ruin
+31650:Tower of Flame
+31660:The Blue Cathedral
+18650:Unseen Path to Heide
+16655:Exile Holding Cells
+16670:McDuff's Workshop
+16675:Servants' Quarters
+16650:Straid's Cell
+16660:The Tower Apart
+16685:The Saltfort
+16665:Upper Ramparts
+23650:Undead Refuge
+23655:Bridge Approach
+23660:Undead Lockaway
+23665:Undead Purgatory
+17665:Poison Pool
+17650:The Mines
+17655:Lower Earthen Peak
+17670:Central Earthen Peak
+17675:Upper Earthen Peak
+19655:Threshold Bridge
+19650:Ironhearth Hall
+19660:Eygil's Idol
+19665:Belfry Sol Approach
+29650:Old Akelarre
+32655:Ruined Fork Road
+32660:Shaded Ruins
+33655:Gyrm's Respite
+33660:Ordeal's End
+14655:Royal Army Campsite
+14660:Chapel Threshold
+14650:Lower Brightstone Cove
+34655:Harval's Resting Place
+34650:Grave Entrance
+25665:Upper Gutter
+25655:Central Gutter
+25650:Black Gulch Mouth
+25660:Hidden Chamber
+21650:King's Gate
+21665:Under Castle Drangleic
+21655:Central Castle Drangleic
+21660:Forgotten Chamber
+11650:Tower of Prayer
+11655:Crumbled Ruins
+11660:Rhoy's Resting Place
+11665:Unknown Bonfire
+11670:Rise of the Dead
+24655:Undead Crypt Entrance
+24650:Undead Ditch
+15650:Foregarden
+15655:Ritual Site
+27650:Dragon Aerie
+27655:Shrine Entrance
+3701000:Memory of Vammar
+3702000:Memory of Orro
+3700000:Memory of Jeigh
+900000:Dragon Memories
+400010:Dark Chasm of Old(Shaded Woods)
+400020:Dark Chasm of Old(Drangleic Castle)
+400030:Dark Chasm of Old(Black Gulch)
+400005:Dark Chasm of Old(Darklurker)
+35650:Sanctum Walk
+35685:Tower of Prayer
+35655:Priestess' Chamber
+35670:Hidden Sanctum Chamber
+35675:Lair of the Imperfect
+35680:Sanctum Interior
+35665:Sanctum Nadir
+36650:Throne Floor
+36660:Upper Floor
+36655:Foyer
+36670:Lowermost Floor
+36675:The Smelter Throne
+36665:Iron Hallway Entrance
+5300000:Memory of the Old Iron King
+37650:Outer Wall
+37660:Abandoned Dwelling
+37675:Expulsion Chamber
+37685:Inner Wall
+37665:Lower Garrison
+37670:Grand Cathedral
+400000:Frigid Outskirts
+5000000:Memory of the King
+110:Arena- Blue Sentinels Right
+120:Arena- Blue Sentinels Middle
+130:Arena- Blue Sentinels Left
+111:Arena- Brotherhood of Blood Right
+121:Arena- Brotherhood of Blood Middle
+131:Arena- Brotherhood of Blood Left
+</DropDownList>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>FlagID</Address>
+</CheatEntry>

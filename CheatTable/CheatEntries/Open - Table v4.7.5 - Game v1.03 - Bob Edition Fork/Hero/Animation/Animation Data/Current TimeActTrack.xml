@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256277</ID>
+  <Description>"Current TimeActTrack"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+0</Address>
+  <Offsets>
+    <Offset>30</Offset>
+    <Offset>28</Offset>
+  </Offsets>
+</CheatEntry>

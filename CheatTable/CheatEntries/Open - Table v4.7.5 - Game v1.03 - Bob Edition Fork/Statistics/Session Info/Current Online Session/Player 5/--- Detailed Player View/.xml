@@ -1,0 +1,36 @@
+<CheatEntry>
+  <ID>1337108396</ID>
+  <Description>"--- Detailed Player View"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>BaseB</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>528</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337108397"/>
+    <id id="1337108398"/>
+    <id id="1337108399"/>
+    <id id="1337108400"/>
+    <id id="1337108401"/>
+    <id id="1337108402"/>
+    <id id="1337108506"/>
+    <id id="1337108552"/>
+    <id id="1337108572"/>
+    <id id="1337108579"/>
+    <id id="1337108583"/>
+    <id id="1337108744"/>
+    <id id="1337108769"/>
+    <id id="1337108811"/>
+    <id id="1337108812"/>
+    <id id="1337108821"/>
+    <id id="1337108867"/>
+    <id id="1337108868"/>
+    <id id="1337108923"/>
+    <id id="1337109560"/>
+    <id id="1337109648"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

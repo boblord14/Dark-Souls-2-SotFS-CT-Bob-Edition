@@ -1,0 +1,17 @@
+<CheatEntry>
+  <ID>1337162701</ID>
+  <Description>"Byte 3"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+2</Address>
+  <x-ce2fs-child-order>
+    <id id="1337162702"/>
+    <id id="1337162703"/>
+    <id id="1337162704"/>
+    <id id="1337162705"/>
+    <id id="1337162706"/>
+    <id id="1337162707"/>
+    <id id="1337162708"/>
+    <id id="1337162709"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

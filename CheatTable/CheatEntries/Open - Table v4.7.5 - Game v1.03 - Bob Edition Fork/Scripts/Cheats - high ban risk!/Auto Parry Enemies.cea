@@ -1,0 +1,38 @@
+[ENABLE]
+aobscanmodule(AutoParry,DarkSoulsII.exe,39 81 50 05 00 00)
+alloc(newmem,$1000,AutoParry)
+label(code)
+label(return)
+
+newmem:
+  push rax
+  mov rax,[GameManagerImp]
+  mov rax,[rax+D0]
+  mov rax,[rax+b8]
+  cmp rax,rcx
+  pop rax
+  jne code
+  mov eax,1
+
+code:
+  cmp [rcx+00000550],eax
+  jmp return
+
+AutoParry:
+  jmp newmem
+  nop
+return:
+registersymbol(AutoParry)
+
+[DISABLE]
+AutoParry:
+  db 39 81 50 05 00 00
+unregistersymbol(AutoParry)
+dealloc(newmem)
+
+{$lua}
+
+local godmode = readPointer("GameManagerImp")
+godmode = readPointer(godmode + 0xD0)
+godmode = readPointer(godmode + 0xB8)
+writeInteger(godmode + 0x550, 0)

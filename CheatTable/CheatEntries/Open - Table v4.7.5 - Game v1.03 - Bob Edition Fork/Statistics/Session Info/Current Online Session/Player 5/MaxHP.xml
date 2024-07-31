@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>86624</ID>
+  <Description>"MaxHP"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>170</Offset>
+    <Offset>528</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

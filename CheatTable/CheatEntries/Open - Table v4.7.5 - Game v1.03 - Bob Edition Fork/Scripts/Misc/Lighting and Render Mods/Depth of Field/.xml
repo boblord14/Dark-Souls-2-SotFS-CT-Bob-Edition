@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>26400</ID>
+  <Description>"Depth of Field"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26397"/>
+    <id id="26398"/>
+    <id id="26399"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

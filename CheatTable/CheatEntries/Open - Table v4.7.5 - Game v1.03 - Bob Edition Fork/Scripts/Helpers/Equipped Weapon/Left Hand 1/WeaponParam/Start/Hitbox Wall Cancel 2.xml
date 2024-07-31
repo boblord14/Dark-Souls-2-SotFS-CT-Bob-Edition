@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337091141</ID>
+  <Description>"Hitbox Wall Cancel"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+a4</Address>
+</CheatEntry>

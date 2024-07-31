@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087839</ID>
+  <Description>"ALONNE KNIGHT (GREATBOW)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>2A78</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

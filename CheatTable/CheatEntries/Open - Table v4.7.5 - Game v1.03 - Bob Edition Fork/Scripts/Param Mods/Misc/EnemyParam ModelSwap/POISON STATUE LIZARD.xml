@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337088012</ID>
+  <Description>"POISON STATUE LIZARD"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3AB0</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

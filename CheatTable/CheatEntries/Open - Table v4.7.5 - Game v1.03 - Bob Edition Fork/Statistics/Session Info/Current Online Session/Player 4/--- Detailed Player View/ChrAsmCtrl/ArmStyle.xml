@@ -1,0 +1,21 @@
+<CheatEntry>
+  <ID>1337107662</ID>
+  <Description>"ArmStyle"</Description>
+  <DropDownList DisplayValueAsItem="1">0:Holstered
+1:OneHanded
+2:LeftTwoHanded
+3:RightTwoHanded
+4:DualWield
+5:PowerStanceLeft
+6:PowerStanceRight
+</DropDownList>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>BaseA</Address>
+  <Offsets>
+    <Offset>5A0</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

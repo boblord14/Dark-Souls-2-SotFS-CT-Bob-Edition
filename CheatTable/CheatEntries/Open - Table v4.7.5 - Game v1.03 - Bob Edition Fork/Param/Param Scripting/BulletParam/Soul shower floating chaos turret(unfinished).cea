@@ -1,0 +1,43 @@
+{
+	Originial Author: Nerium
+    Ported to ppv2 by Boblord
+
+    turns heavy soul arrow into a spell similar to ds3's floating chaos
+}
+[ENABLE]
+{$lua}
+if not syntaxcheck then return end
+
+
+
+local turret = BulletParam:new("soulturret", 31130001) -- soul shower bullet
+      turret:spawnLocation(0)
+      turret:spawnFlag(1)
+      turret:upwardSpawnDistance(0.8)
+      turret:forwardSpawnDistance(0.5)
+      turret:maxLife(11)
+      turret:initialHorizontalVelocity(0.01)
+      turret:trackingMaxAngleChange(5)
+      turret:trackingTime(11)
+      turret:childBullet1BulletparamId(31030000)
+      turret:childBullet1DamageparamId(31030000)
+      turret:spawnChildBulletsOnAlive(1)
+      turret:childBulletSpawnDelay(2)
+
+local turretbolt = BulletParam:new("soulturret", 31030000) -- heavy soul arrow bullet
+      turretbolt:spawnLocation(2)
+      turretbolt:spawnFlag(4)
+      turretbolt:maxLife(2)
+      turretbolt:initialHorizontalVelocity(10)
+      turretbolt:trackingTime(1.5)
+
+local hsamod = SpellParam:new("soulturret", 31030000) -- heavy soul arrow shoots the proper bullet
+      hsamod:bulletIdRightHand(31130001)
+      hsamod:bulletIdLeftHand(31130001)
+
+
+[DISABLE]
+paramUtils:restore("soulturret")
+
+
+

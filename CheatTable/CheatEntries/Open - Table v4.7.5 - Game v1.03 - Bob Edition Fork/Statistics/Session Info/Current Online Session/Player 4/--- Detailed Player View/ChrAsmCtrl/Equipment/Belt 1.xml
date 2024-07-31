@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>1337107638</ID>
+  <Description>"Belt 1"</Description>
+  <DropDownListLink>ItemParam</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>BaseA</Address>
+  <Offsets>
+    <Offset>4F8</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

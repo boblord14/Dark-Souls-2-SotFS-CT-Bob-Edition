@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337107124</ID>
+  <Description>"Company of Champions"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337107125"/>
+    <id id="1337107126"/>
+    <id id="1337107127"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

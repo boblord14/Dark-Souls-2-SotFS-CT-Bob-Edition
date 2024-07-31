@@ -1,0 +1,152 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ChrPhantomParam class]]--
+ChrPhantomParam = BaseParamClass:new()
+
+function ChrPhantomParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ChrPhantomParam", uuid, id, address)
+	return o
+end
+
+function ChrPhantomParam:r1(value)
+	self:patchByte(0x0, value)
+end
+
+
+function ChrPhantomParam:g1(value)
+	self:patchByte(0x1, value)
+end
+
+
+function ChrPhantomParam:b1(value)
+	self:patchByte(0x2, value)
+end
+
+
+function ChrPhantomParam:a1(value)
+	self:patchByte(0x3, value)
+end
+
+
+function ChrPhantomParam:r2(value)
+	self:patchByte(0x4, value)
+end
+
+
+function ChrPhantomParam:g2(value)
+	self:patchByte(0x5, value)
+end
+
+
+function ChrPhantomParam:b2(value)
+	self:patchByte(0x6, value)
+end
+
+
+function ChrPhantomParam:a2(value)
+	self:patchByte(0x7, value)
+end
+
+
+function ChrPhantomParam:r3(value)
+	self:patchByte(0x8, value)
+end
+
+
+function ChrPhantomParam:g3(value)
+	self:patchByte(0x9, value)
+end
+
+
+function ChrPhantomParam:b3(value)
+	self:patchByte(0xA, value)
+end
+
+
+function ChrPhantomParam:a3(value)
+	self:patchByte(0xB, value)
+end
+
+
+function ChrPhantomParam:r4(value)
+	self:patchByte(0xC, value)
+end
+
+
+function ChrPhantomParam:g4(value)
+	self:patchByte(0xD, value)
+end
+
+
+function ChrPhantomParam:b4(value)
+	self:patchByte(0xE, value)
+end
+
+
+function ChrPhantomParam:a4(value)
+	self:patchByte(0xF, value)
+end
+
+
+function ChrPhantomParam:r5(value)
+	self:patchByte(0x10, value)
+end
+
+
+function ChrPhantomParam:g5(value)
+	self:patchByte(0x11, value)
+end
+
+
+function ChrPhantomParam:b5(value)
+	self:patchByte(0x12, value)
+end
+
+
+function ChrPhantomParam:a5(value)
+	self:patchByte(0x13, value)
+end
+
+
+function ChrPhantomParam:ghostA1(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function ChrPhantomParam:ghostA2(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function ChrPhantomParam:unk1C(value)
+	self:patchByte(0x1C, value)
+end
+
+
+function ChrPhantomParam:unk1D(value)
+	self:patchByte(0x1D, value)
+end
+
+
+function ChrPhantomParam:unk1E(value)
+	self:patchByte(0x1E, value)
+end
+
+
+function ChrPhantomParam:unk1F(value)
+	self:patchByte(0x1F, value)
+end
+
+
+--[[End ChrPhantomParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

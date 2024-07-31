@@ -1,0 +1,197 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START GrabParam class]]--
+GrabParam = BaseParamClass:new()
+
+function GrabParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("GrabParam", uuid, id, address)
+	return o
+end
+
+function GrabParam:attackerPositionX(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function GrabParam:attackerOrientation(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function GrabParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function GrabParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function GrabParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function GrabParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function GrabParam:attackerPositionY(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function GrabParam:defenderOrientation(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function GrabParam:unk20(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function GrabParam:unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function GrabParam:unk28(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function GrabParam:unk2C(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function GrabParam:attackerRelativePositionDirection(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function GrabParam:unk34(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function GrabParam:unk38(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function GrabParam:unk3C(value)
+	self:patchByte(0x3C, value)
+end
+
+
+function GrabParam:unk3D(value)
+	self:patchByte(0x3D, value)
+end
+
+
+function GrabParam:unk3E(value)
+	self:patchByte(0x3E, value)
+end
+
+
+function GrabParam:unk3F(value)
+	self:patchByte(0x3F, value)
+end
+
+
+function GrabParam:unk40(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function GrabParam:attackerRelativePosition(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function GrabParam:unk48(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function GrabParam:unk4C(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function GrabParam:unk50(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function GrabParam:unk54(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function GrabParam:unk58(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function GrabParam:unk5C(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function GrabParam:unk60(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function GrabParam:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function GrabParam:unk68(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function GrabParam:maxAngleDiff(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function GrabParam:unk70(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function GrabParam:unk74(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function GrabParam:unk78(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function GrabParam:unk7C(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+--[[End GrabParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

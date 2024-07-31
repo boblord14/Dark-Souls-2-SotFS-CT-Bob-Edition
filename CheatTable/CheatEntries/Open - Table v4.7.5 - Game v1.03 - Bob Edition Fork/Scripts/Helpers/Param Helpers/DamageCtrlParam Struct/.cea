@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem12,32)
+label(DamageCtrlAddressToUse)
+registersymbol(DamageCtrlAddressToUse)
+newmem12:
+DamageCtrlAddressToUse:
+[DISABLE]
+dealloc(newmem12)
+unregistersymbol(DamageCtrlAddressToUse)

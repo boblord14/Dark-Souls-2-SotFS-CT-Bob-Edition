@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337088033</ID>
+  <Description>"LUD, THE KING'S PET"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3CA8</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

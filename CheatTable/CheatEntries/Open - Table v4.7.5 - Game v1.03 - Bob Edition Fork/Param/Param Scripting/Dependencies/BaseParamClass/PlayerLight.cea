@@ -1,0 +1,137 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START PlayerLight class]]--
+PlayerLight = BaseParamClass:new()
+
+function PlayerLight:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("PlayerLight", uuid, id, address)
+	return o
+end
+
+function PlayerLight:offsetX(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function PlayerLight:offsetY(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function PlayerLight:offsetZ(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function PlayerLight:diffuseR(value)
+	self:patchByte(0xC, value)
+end
+
+
+function PlayerLight:diffuseG(value)
+	self:patchByte(0xD, value)
+end
+
+
+function PlayerLight:diffuseB(value)
+	self:patchByte(0xE, value)
+end
+
+
+function PlayerLight:diffuseA(value)
+	self:patchByte(0xF, value)
+end
+
+
+function PlayerLight:specularR(value)
+	self:patchByte(0x10, value)
+end
+
+
+function PlayerLight:specularG(value)
+	self:patchByte(0x11, value)
+end
+
+
+function PlayerLight:specularB(value)
+	self:patchByte(0x12, value)
+end
+
+
+function PlayerLight:specularA(value)
+	self:patchByte(0x13, value)
+end
+
+
+function PlayerLight:diffuseIntensity(value)
+	self:patch2Byte(0x14, value)
+end
+
+
+function PlayerLight:specularIntensity(value)
+	self:patch2Byte(0x16, value)
+end
+
+
+function PlayerLight:radius(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function PlayerLight:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function PlayerLight:shadowStrength(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function PlayerLight:unk24(value)
+	self:patch2Byte(0x24, value)
+end
+
+
+function PlayerLight:unk26(value)
+	self:patch2Byte(0x26, value)
+end
+
+
+function PlayerLight:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function PlayerLight:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function PlayerLight:unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function PlayerLight:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function PlayerLight:castShadows(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+--[[End PlayerLight class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

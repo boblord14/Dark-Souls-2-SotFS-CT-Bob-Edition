@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>22846</ID>
+  <Description>"Soul  Memory 2"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>FC</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

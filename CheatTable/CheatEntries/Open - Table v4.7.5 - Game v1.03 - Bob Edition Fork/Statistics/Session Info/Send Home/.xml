@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>90718</ID>
+  <Description>"Send Home"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="90719"/>
+    <id id="90723"/>
+    <id id="90727"/>
+    <id id="90731"/>
+    <id id="90735"/>
+    <id id="90739"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

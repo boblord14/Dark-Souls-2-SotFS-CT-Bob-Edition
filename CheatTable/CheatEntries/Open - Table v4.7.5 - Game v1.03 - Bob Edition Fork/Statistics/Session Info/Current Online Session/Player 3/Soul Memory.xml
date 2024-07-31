@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337275544</ID>
+  <Description>"Soul Memory"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>F4</Offset>
+    <Offset>490</Offset>
+    <Offset>388</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

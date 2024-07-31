@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(txbow,2)
+                        txbow:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(txbow)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6520
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(txbow)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(txbow, 2)
+                        unregistersymbol(txbow)
+                    

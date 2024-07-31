@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337108827</ID>
+  <Description>"Stamina"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+44</Address>
+  <x-ce2fs-child-order>
+    <id id="1337108828"/>
+    <id id="1337108829"/>
+    <id id="1337108830"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337256302</ID>
+  <Description>"Titchy Gren"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26539"/>
+    <id id="26561"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

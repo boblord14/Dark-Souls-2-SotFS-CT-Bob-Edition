@@ -1,0 +1,20 @@
+<CheatEntry>
+  <ID>1337102650</ID>
+  <Description>"Targeted Entity Info"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>C0</Offset>
+    <Offset>18</Offset>
+    <Offset>B0</Offset>
+    <Offset>28</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337091837"/>
+    <id id="1337090761"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

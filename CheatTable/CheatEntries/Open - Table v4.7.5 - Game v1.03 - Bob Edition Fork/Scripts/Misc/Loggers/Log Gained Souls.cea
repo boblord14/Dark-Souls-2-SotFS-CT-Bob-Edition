@@ -1,0 +1,34 @@
+{
+    Author: Lord Radai
+    Description: Logs gained souls
+}
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+print("--Souls logger on--")
+SoulsLogger = true
+
+local TOTAL_GET_SOUL_PTR = "[[[GameManagerImp]+D0]+490]+EC"
+
+local function startSoulsLogger(thread)
+  local tmpSouls = readInteger(TOTAL_GET_SOUL_PTR)
+  while(SoulsLogger) do
+    local currentSouls = readInteger(TOTAL_GET_SOUL_PTR)
+    if(currentSouls ~= nil) then
+      if(tmpSouls < currentSouls) then
+        local time = os.date("*t")
+        print(("[%02d:%02d:%02d]: You gained %d souls"):format(time.hour, time.min, time.sec, currentSouls - tmpSouls))
+      end
+      tmpSouls = currentSouls
+    end
+    sleep(100)
+  end
+end
+
+createNativeThread(startSoulsLogger)
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+SoulsLogger = false
+print("--Souls logger off--")

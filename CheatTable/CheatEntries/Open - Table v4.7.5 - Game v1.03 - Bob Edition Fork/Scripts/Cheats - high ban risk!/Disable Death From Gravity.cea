@@ -1,0 +1,11 @@
+[ENABLE]
+aobscanmodule(NoDeathFromGravity,DarkSoulsII.exe,E8 1D 04 00 00 EB ?? 44)
+registersymbol(NoDeathFromGravity)
+NoDeathFromGravity:
+ db 90 90 90 90 90
+[DISABLE]
+NoDeathFromGravity:
+ db E8 1D 04 00 00
+unregistersymbol(NoDeathFromGravity)
+
+

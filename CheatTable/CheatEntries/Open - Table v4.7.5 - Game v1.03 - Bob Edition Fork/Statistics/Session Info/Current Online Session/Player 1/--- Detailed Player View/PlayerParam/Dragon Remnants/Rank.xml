@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337104606</ID>
+  <Description>"Rank"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>BaseA</Address>
+  <Offsets>
+    <Offset>1BF</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

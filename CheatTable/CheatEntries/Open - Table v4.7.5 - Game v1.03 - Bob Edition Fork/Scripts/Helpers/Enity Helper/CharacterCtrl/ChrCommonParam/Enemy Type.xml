@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337162421</ID>
+  <Description>"Enemy Type"</Description>
+  <DropDownList DisplayValueAsItem="1">1:Small
+2:Medium
+3:Large
+</DropDownList>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+0</Address>
+</CheatEntry>

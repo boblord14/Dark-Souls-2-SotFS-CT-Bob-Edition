@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337162510</ID>
+  <Description>"SuperArmor  (110210)"</Description>
+  <DropDownListLink>bool</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+594</Address>
+</CheatEntry>

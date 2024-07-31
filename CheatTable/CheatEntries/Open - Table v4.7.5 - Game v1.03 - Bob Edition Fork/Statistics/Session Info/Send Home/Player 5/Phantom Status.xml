@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>90737</ID>
+  <Description>"Phantom Status"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>30</Offset>
+    <Offset>20</Offset>
+    <Offset>48</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

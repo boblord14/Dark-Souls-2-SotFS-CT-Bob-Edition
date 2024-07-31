@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>12588</ID>
+  <Description>"Offset Y"</Description>
+  <VariableType>Float</VariableType>
+  <Address>offset+4</Address>
+</CheatEntry>

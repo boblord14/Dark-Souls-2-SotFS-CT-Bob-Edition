@@ -1,0 +1,85 @@
+{$lua}
+if syntaxcheck then return end
+
+[ENABLE]
+disableMemrec(memrec)
+showText([[
+           Dark Souls II Cheat Engine Table
+             By Boblord / Radai / Aatvark
+
+           DS2 CE Discord- The Grand Cathedral
+               https://discord.gg/mBf9mT2
+
+           This table is meant for offline use only
+             some parts of it can get you banned
+
+
+Table Updates:
+https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition
+
+Notable Features:
+
+Scroll to: Search table entries by ID or description
+Press Ctrl+F or find it in Edit>Scroll to
+
+Scripts->Build Creation:
+AddSoul: Increase your souls in a safe way
+ItemGib: Spawn items directly into your inventory
+BonfireWarp: Warp directly to any bonfire
+
+Npc Menus:
+This header contains menus of npcs you'd find at Firelink Shrine
+Access All Shop Inventory, Access All Bonfires and
+Free Transpose can also be found here
+
+Teleport->Boss Teleport:
+Teleports you to any boss fog in the game(provided you are in the general area)
+
+Scripts->Misc->Ivory King Gauntlet Skip:
+Does what it says on the box. Skips the loyce knight gauntlet and spawns Ivory immeately.
+Also removes the loyce knights although you need to warp to a different area and back
+for that to take effect.
+
+Q: What do the colours mean?
+A: Blue = highlighting/info
+     Green = Param script outside of param headers, these are safe
+     Dark Red = likely unsafe
+     Red = Warning
+     grey = WIP/dummy, ignore unless advanced user
+
+Q: What parts of the table get me banned?
+A: DS2's anticheat is different and much more unexplored than the other games.
+As a result it's hard to pinpoint specific causes of bans. See the github page for
+more info.
+
+Q: Why do most features in the table either not work or crash me?
+A: Only legitimate 1.03 versions of DS2 SotFS are supported.
+
+
+Table contributors
+----------------------
+-Boblord for this current fork of the table you're using
+-Radai for creating and maintaining the table this one was forked from
+-Aatvark for writing the original table
+-EvanDeadlySins for contributing to Radai's table
+-Relinquished001 for contributing to Radai's table
+-The Grand Archives- lots of functions from their table were used here, credit and
+huge thanks to all their contributors
+-Zanzer for general help with everything
+-All-Bones Jones for bullet helper, custom classes and
+other stuff.
+-Zullie the Witch for effect / ring helpers, magic girl,
+"freze  effect" address, effect and bullet lists and other
+stuff.
+-FflsudJmjlo for Atk motion helper and weapon stuff.
+-mgr.inz.Player for Item list.
+-Atvaark for params, dumps and other stuff.
+-Pox911 - for help with params and camera.
+
+Also thanks to Santa, VividGrim, eur0pa, Lightanon,
+Haizan, Manly Tears and other anonymous wizards for
+releasing shit and everyone who ever released stuff for
+the original (32-bit) game.
+]])
+
+[DISABLE]

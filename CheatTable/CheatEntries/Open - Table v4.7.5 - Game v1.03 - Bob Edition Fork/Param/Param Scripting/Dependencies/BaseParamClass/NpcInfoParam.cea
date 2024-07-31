@@ -1,0 +1,82 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START NpcInfoParam class]]--
+NpcInfoParam = BaseParamClass:new()
+
+function NpcInfoParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("NpcInfoParam", uuid, id, address)
+	return o
+end
+
+function NpcInfoParam:tombstoneSpawnDelaySeconds(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function NpcInfoParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function NpcInfoParam:npcDeathEventFlagId(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function NpcInfoParam:revivalCost(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function NpcInfoParam:npcnameswapparamId(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function NpcInfoParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function NpcInfoParam:soulsForGiftGoodsVendor(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function NpcInfoParam:soulsForGiftBlacksmith(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function NpcInfoParam:intRequirementForGift(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function NpcInfoParam:fthRequirementForGift(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function NpcInfoParam:soulsForShoplineupUpdate1(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function NpcInfoParam:soulsForShoplineupUpdate2(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+--[[End NpcInfoParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

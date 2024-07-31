@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>1337256274</ID>
+  <Description>"TimeAct File"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>8 Bytes</VariableType>
+  <Address>[GameManagerImp]+D0</Address>
+  <Offsets>
+    <Offset>B0</Offset>
+    <Offset>18</Offset>
+    <Offset>18</Offset>
+    <Offset>28</Offset>
+    <Offset>F8</Offset>
+  </Offsets>
+</CheatEntry>

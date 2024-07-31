@@ -1,0 +1,10 @@
+[ENABLE]
+aobscanmodule(LockCameraStateAOB,DarkSoulsII.exe,75 1F 83 BB ?? ?? ?? ?? ?? 74 ?? F3)
+registersymbol(LockCameraStateAOB)
+LockCameraStateAOB:
+  db 74 1F
+[DISABLE]
+LockCameraStateAOB:
+  db 75 1F
+unregistersymbol(LockCameraStateAOB)
+

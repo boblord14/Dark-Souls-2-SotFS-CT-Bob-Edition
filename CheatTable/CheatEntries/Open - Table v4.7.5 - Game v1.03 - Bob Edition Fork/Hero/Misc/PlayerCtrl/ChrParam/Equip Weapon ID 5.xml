@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337092756</ID>
+  <Description>"Equip Weapon ID"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+05C</Address>
+</CheatEntry>

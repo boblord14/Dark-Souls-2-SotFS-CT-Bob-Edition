@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>30081</ID>
+  <Description>"Param Patcher v0.0.1"</Description>
+  <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="30082"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>23220</ID>
+  <Description>"Session Info"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="86523"/>
+    <id id="90718"/>
+    <id id="90758"/>
+    <id id="90746"/>
+    <id id="23434"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

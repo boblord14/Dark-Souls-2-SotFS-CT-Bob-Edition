@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>19</ID>
+  <Description>"Rhoy's Resting Place"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>C2</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

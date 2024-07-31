@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337104820</ID>
+  <Description>"iFrames (110100 - 400)"</Description>
+  <DropDownListLink>bool</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+5F4</Address>
+</CheatEntry>

@@ -1,0 +1,42 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START GuardLevelMotionParam class]]--
+GuardLevelMotionParam = BaseParamClass:new()
+
+function GuardLevelMotionParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("GuardLevelMotionParam", uuid, id, address)
+	return o
+end
+
+function GuardLevelMotionParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function GuardLevelMotionParam:unk04(value)
+	self:patchByte(0x4, value)
+end
+
+
+function GuardLevelMotionParam:unk05(value)
+	self:patchByte(0x5, value)
+end
+
+
+function GuardLevelMotionParam:unk06(value)
+	self:patchByte(0x6, value)
+end
+
+
+--[[End GuardLevelMotionParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

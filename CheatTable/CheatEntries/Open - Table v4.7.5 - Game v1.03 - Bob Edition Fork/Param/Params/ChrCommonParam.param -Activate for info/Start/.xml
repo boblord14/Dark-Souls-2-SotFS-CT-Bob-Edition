@@ -1,0 +1,23 @@
+<CheatEntry>
+  <ID>1337037087</ID>
+  <Description>"Start"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+58</Address>
+  <x-ce2fs-child-order>
+    <id id="1337037088"/>
+    <id id="1337037093"/>
+    <id id="1337037094"/>
+    <id id="1337037092"/>
+    <id id="1337037089"/>
+    <id id="1337037090"/>
+    <id id="1337037091"/>
+    <id id="1337095503"/>
+    <id id="1337095504"/>
+    <id id="1337095505"/>
+    <id id="1337037318"/>
+    <id id="1337037319"/>
+    <id id="1337037320"/>
+    <id id="1337037321"/>
+    <id id="1337037322"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

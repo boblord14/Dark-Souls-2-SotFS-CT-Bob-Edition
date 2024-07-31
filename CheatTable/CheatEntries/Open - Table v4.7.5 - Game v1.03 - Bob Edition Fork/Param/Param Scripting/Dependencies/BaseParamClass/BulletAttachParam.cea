@@ -1,0 +1,282 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START BulletAttachParam class]]--
+BulletAttachParam = BaseParamClass:new()
+
+function BulletAttachParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("BulletAttachParam", uuid, id, address)
+	return o
+end
+
+function BulletAttachParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function BulletAttachParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function BulletAttachParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function BulletAttachParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function BulletAttachParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function BulletAttachParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function BulletAttachParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function BulletAttachParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function BulletAttachParam:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function BulletAttachParam:unk24(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function BulletAttachParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function BulletAttachParam:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function BulletAttachParam:unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function BulletAttachParam:unk34(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function BulletAttachParam:unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function BulletAttachParam:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function BulletAttachParam:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function BulletAttachParam:unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function BulletAttachParam:unk48(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function BulletAttachParam:unk4C(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function BulletAttachParam:unk50(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function BulletAttachParam:unk54(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function BulletAttachParam:unk58(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function BulletAttachParam:unk5C(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function BulletAttachParam:unk60(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function BulletAttachParam:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function BulletAttachParam:unk68(value)
+	self:patch4Byte(0x68, value)
+end
+
+
+function BulletAttachParam:unk6C(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function BulletAttachParam:unk70(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function BulletAttachParam:unk74(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function BulletAttachParam:unk78(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function BulletAttachParam:unk7C(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function BulletAttachParam:unk80(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function BulletAttachParam:unk84(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function BulletAttachParam:unk88(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function BulletAttachParam:unk8C(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function BulletAttachParam:unk90(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function BulletAttachParam:unk94(value)
+	self:patchFloat(0x94, value)
+end
+
+
+function BulletAttachParam:unk98(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function BulletAttachParam:unk9C(value)
+	self:patch4Byte(0x9C, value)
+end
+
+
+function BulletAttachParam:unka0(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function BulletAttachParam:unka4(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function BulletAttachParam:unka8(value)
+	self:patchFloat(0xA8, value)
+end
+
+
+function BulletAttachParam:unkac(value)
+	self:patchFloat(0xAC, value)
+end
+
+
+function BulletAttachParam:unkb0(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function BulletAttachParam:unkb4(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function BulletAttachParam:unkb8(value)
+	self:patchFloat(0xB8, value)
+end
+
+
+function BulletAttachParam:unkbc(value)
+	self:patchFloat(0xBC, value)
+end
+
+
+function BulletAttachParam:unkc0(value)
+	self:patchFloat(0xC0, value)
+end
+
+
+function BulletAttachParam:unkc4(value)
+	self:patchFloat(0xC4, value)
+end
+
+
+function BulletAttachParam:unkc8(value)
+	self:patchFloat(0xC8, value)
+end
+
+
+function BulletAttachParam:unkcc(value)
+	self:patchFloat(0xCC, value)
+end
+
+
+--[[End BulletAttachParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

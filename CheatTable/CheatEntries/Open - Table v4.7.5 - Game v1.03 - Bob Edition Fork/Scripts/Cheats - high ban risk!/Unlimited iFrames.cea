@@ -1,0 +1,38 @@
+[ENABLE]
+aobscanmodule(godmode,DarkSoulsII.exe,83 BF FC 05 00 00 00 0F 85 * * * * 48)
+alloc(newmem,$1000,godmode)
+label(code)
+label(return)
+
+newmem:
+  push rax
+  mov rax,[GameManagerImp]
+  mov rax,[rax+D0]
+  mov rax,[rax+B8]
+  cmp rax,rdi
+  pop rax
+  jne code
+  mov byte ptr [rdi+000005FC],1
+
+code:
+  cmp dword ptr [rdi+000005FC],00
+  jmp return
+
+godmode:
+  jmp newmem
+  nop
+  nop
+return:
+registersymbol(godmode)
+
+[DISABLE]
+godmode:
+  db 83 BF FC 05 00 00 00
+unregistersymbol(godmode)
+dealloc(newmem)
+{$lua}
+local godmode = readPointer("GameManagerImp")
+godmode = readPointer(godmode + 0xD0)
+godmode = readPointer(godmode + 0xB8)
+writeInteger(godmode + 0x5FC, 0)
+

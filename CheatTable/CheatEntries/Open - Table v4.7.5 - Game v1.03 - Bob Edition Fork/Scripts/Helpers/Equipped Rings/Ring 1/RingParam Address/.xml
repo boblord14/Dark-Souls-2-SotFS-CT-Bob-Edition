@@ -1,0 +1,21 @@
+<CheatEntry>
+  <ID>1337086149</ID>
+  <Description>"RingParam Address"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>960</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337086150"/>
+    <id id="1337086151"/>
+    <id id="1337086152"/>
+    <id id="1337086153"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

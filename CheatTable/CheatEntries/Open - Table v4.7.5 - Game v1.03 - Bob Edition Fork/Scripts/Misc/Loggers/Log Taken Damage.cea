@@ -1,0 +1,37 @@
+{
+    Author: Lord Radai
+    Description: Logs damage taken
+}
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+print("--Self damage logger on--")
+DamageLogger = true
+
+local HP_PTR = "[[GameManagerImp]+D0]+168"
+
+local function startDamageLogger(thread)
+  local tmpHp = 0
+  while(DamageLogger) do
+    local currentHp = readInteger(HP_PTR)
+    local time = os.date("*t")
+    if(currentHp ~= nil) then
+      if(tmpHp > currentHp) then
+        print(("[%02d:%02d:%02d]: You took %d damage"):format(time.hour, time.min, time.sec, tmpHp - currentHp))
+        if (currentHp < 1) then
+           print(("[%02d:%02d:%02d]: You died"):format(time.hour, time.min, time.sec))
+        end
+      end
+      tmpHp = currentHp
+    end
+    sleep(0)
+  end
+end
+
+createNativeThread(startDamageLogger)
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+DamageLogger = false
+print("--Self damage logger off--")

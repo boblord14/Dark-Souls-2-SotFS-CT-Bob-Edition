@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>67</ID>
+  <Description>"Dragon Aerie"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>452</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

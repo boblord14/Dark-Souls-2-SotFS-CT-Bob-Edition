@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087911</ID>
+  <Description>"ANT QUEEN"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3138</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

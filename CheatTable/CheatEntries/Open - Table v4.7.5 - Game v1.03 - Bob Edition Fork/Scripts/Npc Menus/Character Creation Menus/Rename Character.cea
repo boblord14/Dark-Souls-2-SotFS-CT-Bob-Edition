@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(CharaMaking, $100, DarkSoulsII.exe)
+registersymbol(CharaMaking)
+createthread(CharaMaking)
+label(return)
+
+CharaMaking:
+sub rsp, 28
+vortmov(rcx, [[[GameManagerImp]+70]+50], return)
+call DarkSoulsII.exe+198F70
+
+return:
+add rsp, 28
+ret
+
+{$lua}
+if syntaxcheck then return end
+
+local t=createTimer()
+t.Interval=50
+t.OnTimer=function()
+  memrec.Active=false
+  t.destroy()
+end
+{$asm}
+
+[DISABLE]
+dealloc(CharaMaking)
+unregistersymbol(CharaMaking)

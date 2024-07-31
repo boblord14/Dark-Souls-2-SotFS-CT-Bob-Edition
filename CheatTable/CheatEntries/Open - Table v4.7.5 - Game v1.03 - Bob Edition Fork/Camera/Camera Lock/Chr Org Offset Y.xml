@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>30735</ID>
+  <Description>"Chr Org Offset Y"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>D10</Offset>
+    <Offset>28</Offset>
+    <Offset>18</Offset>
+    <Offset>E8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

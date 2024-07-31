@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337086155</ID>
+  <Description>"RingParam ID"</Description>
+  <DropDownListLink>RingParam</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>970</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

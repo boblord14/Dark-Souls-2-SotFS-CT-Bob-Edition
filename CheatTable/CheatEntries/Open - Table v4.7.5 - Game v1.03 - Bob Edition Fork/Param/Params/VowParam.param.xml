@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>89526</ID>
+  <Description>"VowParam.param"</Description>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>D8</Offset>
+    <Offset>7A0</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

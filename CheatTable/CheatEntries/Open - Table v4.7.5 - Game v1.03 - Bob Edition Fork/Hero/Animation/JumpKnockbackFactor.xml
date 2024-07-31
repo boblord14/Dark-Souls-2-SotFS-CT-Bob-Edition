@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>20462</ID>
+  <Description>"Jump/KnockbackFactor"</Description>
+  <VariableType>Float</VariableType>
+  <Address>speedfactor3</Address>
+</CheatEntry>

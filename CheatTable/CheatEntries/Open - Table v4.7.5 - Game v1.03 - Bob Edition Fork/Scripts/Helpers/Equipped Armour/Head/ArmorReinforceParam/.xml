@@ -1,0 +1,43 @@
+<CheatEntry>
+  <ID>1337085491</ID>
+  <Description>"ArmorReinforceParam"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+20</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337085492"/>
+    <id id="1337085493"/>
+    <id id="1337085494"/>
+    <id id="1337085495"/>
+    <id id="1337085496"/>
+    <id id="1337085497"/>
+    <id id="1337085498"/>
+    <id id="1337085499"/>
+    <id id="1337085500"/>
+    <id id="1337085501"/>
+    <id id="1337085502"/>
+    <id id="1337085503"/>
+    <id id="1337085504"/>
+    <id id="1337085505"/>
+    <id id="1337085506"/>
+    <id id="1337085507"/>
+    <id id="1337085508"/>
+    <id id="1337085509"/>
+    <id id="1337085510"/>
+    <id id="1337085511"/>
+    <id id="1337085512"/>
+    <id id="1337085513"/>
+    <id id="1337085514"/>
+    <id id="1337085515"/>
+    <id id="1337085516"/>
+    <id id="1337085517"/>
+    <id id="1337085518"/>
+    <id id="1337085519"/>
+    <id id="1337085520"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

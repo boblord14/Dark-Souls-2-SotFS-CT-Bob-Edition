@@ -1,0 +1,517 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START DamageAdjustParam class]]--
+DamageAdjustParam = BaseParamClass:new()
+
+function DamageAdjustParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("DamageAdjustParam", uuid, id, address)
+	return o
+end
+
+function DamageAdjustParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function DamageAdjustParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function DamageAdjustParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function DamageAdjustParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function DamageAdjustParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function DamageAdjustParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function DamageAdjustParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function DamageAdjustParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function DamageAdjustParam:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function DamageAdjustParam:unk24(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function DamageAdjustParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function DamageAdjustParam:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function DamageAdjustParam:unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function DamageAdjustParam:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function DamageAdjustParam:unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function DamageAdjustParam:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function DamageAdjustParam:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function DamageAdjustParam:unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function DamageAdjustParam:unk48(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function DamageAdjustParam:unk4C(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function DamageAdjustParam:unk50(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function DamageAdjustParam:unk54(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function DamageAdjustParam:unk58(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function DamageAdjustParam:unk5C(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function DamageAdjustParam:unk60(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function DamageAdjustParam:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function DamageAdjustParam:unk68(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function DamageAdjustParam:unk6C(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function DamageAdjustParam:unk70(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function DamageAdjustParam:unk74(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function DamageAdjustParam:unk78(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function DamageAdjustParam:unk7C(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function DamageAdjustParam:unk80(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function DamageAdjustParam:unk84(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function DamageAdjustParam:unk88(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function DamageAdjustParam:unk8C(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function DamageAdjustParam:unk90(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function DamageAdjustParam:unk94(value)
+	self:patchFloat(0x94, value)
+end
+
+
+function DamageAdjustParam:unk98(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function DamageAdjustParam:unk9C(value)
+	self:patchFloat(0x9C, value)
+end
+
+
+function DamageAdjustParam:unka0(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function DamageAdjustParam:unka4(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function DamageAdjustParam:unka8(value)
+	self:patchFloat(0xA8, value)
+end
+
+
+function DamageAdjustParam:unkac(value)
+	self:patchFloat(0xAC, value)
+end
+
+
+function DamageAdjustParam:unkb0(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function DamageAdjustParam:unkb4(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function DamageAdjustParam:unkb8(value)
+	self:patchFloat(0xB8, value)
+end
+
+
+function DamageAdjustParam:unkbc(value)
+	self:patchFloat(0xBC, value)
+end
+
+
+function DamageAdjustParam:unkc0(value)
+	self:patchFloat(0xC0, value)
+end
+
+
+function DamageAdjustParam:unkc4(value)
+	self:patchFloat(0xC4, value)
+end
+
+
+function DamageAdjustParam:unkc8(value)
+	self:patchFloat(0xC8, value)
+end
+
+
+function DamageAdjustParam:unkcc(value)
+	self:patchFloat(0xCC, value)
+end
+
+
+function DamageAdjustParam:unkd0(value)
+	self:patchFloat(0xD0, value)
+end
+
+
+function DamageAdjustParam:unkd4(value)
+	self:patchFloat(0xD4, value)
+end
+
+
+function DamageAdjustParam:unkd8(value)
+	self:patchFloat(0xD8, value)
+end
+
+
+function DamageAdjustParam:unkdc(value)
+	self:patchFloat(0xDC, value)
+end
+
+
+function DamageAdjustParam:unke0(value)
+	self:patchFloat(0xE0, value)
+end
+
+
+function DamageAdjustParam:unke4(value)
+	self:patchFloat(0xE4, value)
+end
+
+
+function DamageAdjustParam:unke8(value)
+	self:patchFloat(0xE8, value)
+end
+
+
+function DamageAdjustParam:unkec(value)
+	self:patchFloat(0xEC, value)
+end
+
+
+function DamageAdjustParam:unkf0(value)
+	self:patchFloat(0xF0, value)
+end
+
+
+function DamageAdjustParam:unkf4(value)
+	self:patchFloat(0xF4, value)
+end
+
+
+function DamageAdjustParam:unkf8(value)
+	self:patchFloat(0xF8, value)
+end
+
+
+function DamageAdjustParam:unkfc(value)
+	self:patchFloat(0xFC, value)
+end
+
+
+function DamageAdjustParam:unk100(value)
+	self:patchFloat(0x100, value)
+end
+
+
+function DamageAdjustParam:unk104(value)
+	self:patchFloat(0x104, value)
+end
+
+
+function DamageAdjustParam:unk108(value)
+	self:patchFloat(0x108, value)
+end
+
+
+function DamageAdjustParam:unk10C(value)
+	self:patchFloat(0x10C, value)
+end
+
+
+function DamageAdjustParam:unk110(value)
+	self:patchFloat(0x110, value)
+end
+
+
+function DamageAdjustParam:pvePhysicalArMultiplier(value)
+	self:patchFloat(0x114, value)
+end
+
+
+function DamageAdjustParam:unk118(value)
+	self:patchFloat(0x118, value)
+end
+
+
+function DamageAdjustParam:unk11C(value)
+	self:patchFloat(0x11C, value)
+end
+
+
+function DamageAdjustParam:unk120(value)
+	self:patchFloat(0x120, value)
+end
+
+
+function DamageAdjustParam:unk124(value)
+	self:patchFloat(0x124, value)
+end
+
+
+function DamageAdjustParam:unk128(value)
+	self:patchFloat(0x128, value)
+end
+
+
+function DamageAdjustParam:unk12C(value)
+	self:patchFloat(0x12C, value)
+end
+
+
+function DamageAdjustParam:unk130(value)
+	self:patchFloat(0x130, value)
+end
+
+
+function DamageAdjustParam:unk134(value)
+	self:patchFloat(0x134, value)
+end
+
+
+function DamageAdjustParam:unk138(value)
+	self:patchFloat(0x138, value)
+end
+
+
+function DamageAdjustParam:unk13C(value)
+	self:patchFloat(0x13C, value)
+end
+
+
+function DamageAdjustParam:unk140(value)
+	self:patchFloat(0x140, value)
+end
+
+
+function DamageAdjustParam:cocOutgoingDamageRate(value)
+	self:patchFloat(0x144, value)
+end
+
+
+function DamageAdjustParam:cocIncomingDamageRate(value)
+	self:patchFloat(0x148, value)
+end
+
+
+function DamageAdjustParam:pvePhysicalDamageCutRate(value)
+	self:patchFloat(0x14C, value)
+end
+
+
+function DamageAdjustParam:unk150(value)
+	self:patchFloat(0x150, value)
+end
+
+
+function DamageAdjustParam:unk154(value)
+	self:patchFloat(0x154, value)
+end
+
+
+function DamageAdjustParam:pvpPhysicalArMultiplier(value)
+	self:patchFloat(0x158, value)
+end
+
+
+function DamageAdjustParam:pvpPhysicalDamageCutRate(value)
+	self:patchFloat(0x15C, value)
+end
+
+
+function DamageAdjustParam:pvpMagicDamageCutRate(value)
+	self:patchFloat(0x160, value)
+end
+
+
+function DamageAdjustParam:pvpLightningDamageCutRate(value)
+	self:patchFloat(0x164, value)
+end
+
+
+function DamageAdjustParam:pvpFireDamageCutRate(value)
+	self:patchFloat(0x168, value)
+end
+
+
+function DamageAdjustParam:pvpDarkDamageCutRate(value)
+	self:patchFloat(0x16C, value)
+end
+
+
+function DamageAdjustParam:unk170(value)
+	self:patchFloat(0x170, value)
+end
+
+
+function DamageAdjustParam:unk174(value)
+	self:patchFloat(0x174, value)
+end
+
+
+function DamageAdjustParam:unk178(value)
+	self:patchFloat(0x178, value)
+end
+
+
+function DamageAdjustParam:unk17C(value)
+	self:patchFloat(0x17C, value)
+end
+
+
+function DamageAdjustParam:unk180(value)
+	self:patchFloat(0x180, value)
+end
+
+
+function DamageAdjustParam:unk184(value)
+	self:patchFloat(0x184, value)
+end
+
+
+function DamageAdjustParam:unk188(value)
+	self:patchFloat(0x188, value)
+end
+
+
+--[[End DamageAdjustParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

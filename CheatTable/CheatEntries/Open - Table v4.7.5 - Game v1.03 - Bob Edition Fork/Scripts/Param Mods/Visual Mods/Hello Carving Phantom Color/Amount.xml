@@ -1,0 +1,29 @@
+<CheatEntry>
+  <ID>1337087385</ID>
+  <Description>"Amount"</Description>
+  <DropDownList DisplayValueAsItem="1">0:None
+1:White
+2:MediumBlue
+3:Gold
+4:Red
+5:Glow Red
+6:Gray
+7:Black
+8:Silver
+9:Sky Blue
+10:Yellow
+11:Orchid
+12:Orange
+13:Steel Blue
+14:MidnightBlue
+15:MediumPurple
+16:Human
+17:Human
+18:Human
+19:Human
+20:Transparent Blue
+21:Dark Blue
+</DropDownList>
+  <VariableType>4 Bytes</VariableType>
+  <Address>HelloCarvingBullet+2F</Address>
+</CheatEntry>

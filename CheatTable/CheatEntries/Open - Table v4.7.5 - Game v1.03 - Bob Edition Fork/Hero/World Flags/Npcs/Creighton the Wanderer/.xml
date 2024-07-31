@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337256301</ID>
+  <Description>"Creighton the Wanderer"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26538"/>
+    <id id="26560"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

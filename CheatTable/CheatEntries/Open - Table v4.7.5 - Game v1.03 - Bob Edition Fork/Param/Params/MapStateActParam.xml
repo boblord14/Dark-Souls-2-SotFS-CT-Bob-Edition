@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>89560</ID>
+  <Description>"MapStateActParam"</Description>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>D8</Offset>
+    <Offset>140</Offset>
+    <Offset>38</Offset>
+  </Offsets>
+</CheatEntry>

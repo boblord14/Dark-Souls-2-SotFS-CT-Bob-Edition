@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087819</ID>
+  <Description>"FALCONER (BOW)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>2898</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

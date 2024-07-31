@@ -1,0 +1,40 @@
+<CheatEntry>
+  <ID>1337089238</ID>
+  <Description>"Start"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>0</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>ArmorParamStruct</Address>
+  <x-ce2fs-child-order>
+    <id id="1337089239"/>
+    <id id="1337089240"/>
+    <id id="1337089241"/>
+    <id id="1337089242"/>
+    <id id="1337089243"/>
+    <id id="1337089244"/>
+    <id id="1337089245"/>
+    <id id="1337089246"/>
+    <id id="1337089247"/>
+    <id id="1337089248"/>
+    <id id="1337089249"/>
+    <id id="1337089250"/>
+    <id id="1337089251"/>
+    <id id="1337089252"/>
+    <id id="1337089253"/>
+    <id id="1337089254"/>
+    <id id="1337089255"/>
+    <id id="1337089256"/>
+    <id id="1337089257"/>
+    <id id="1337089258"/>
+    <id id="1337089259"/>
+    <id id="1337089260"/>
+    <id id="1337089261"/>
+    <id id="1337089262"/>
+    <id id="1337089263"/>
+    <id id="1337089264"/>
+    <id id="1337089265"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

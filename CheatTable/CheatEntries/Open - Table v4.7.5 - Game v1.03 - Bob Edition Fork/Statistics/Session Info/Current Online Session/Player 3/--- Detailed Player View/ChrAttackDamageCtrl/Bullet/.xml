@@ -1,0 +1,19 @@
+<CheatEntry>
+  <ID>1337106492</ID>
+  <Description>"Bullet"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+760</Address>
+  <x-ce2fs-child-order>
+    <id id="1337106493"/>
+    <id id="1337106543"/>
+    <id id="1337106593"/>
+    <id id="1337106643"/>
+    <id id="1337106693"/>
+    <id id="1337106743"/>
+    <id id="1337106793"/>
+    <id id="1337106843"/>
+    <id id="1337106893"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

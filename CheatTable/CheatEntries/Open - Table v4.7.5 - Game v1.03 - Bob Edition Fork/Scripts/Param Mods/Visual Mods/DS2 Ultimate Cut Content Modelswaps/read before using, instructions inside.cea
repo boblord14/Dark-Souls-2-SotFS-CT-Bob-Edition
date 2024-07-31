@@ -1,0 +1,84 @@
+{$lua}
+                        if syntaxcheck then return end
+
+                        [ENABLE]
+                        function showText(caption, text)
+                        if not text then
+                        text = caption
+                        caption = ""
+                        end
+                        local f = createForm(false)
+                        f.Name = 'ShowTextForm'
+                        f.DoNotSaveInTable = true
+                        f.AutoSize = true
+                        f.BorderStyle = bsSizeable
+                        local m = createMemo(f)
+                        m.Name = 'TextMemo'
+                        m.BorderStyle = bsNone
+                        m.ReadOnly = true
+                        m.ScrollBars = ssAutoBoth
+                        m.Constraints.MinWidth = 400
+                        m.Constraints.MinHeight = 400
+                        m.Align = alClient
+                        m.AnchorSideRight.Side = asrBottom
+                        m.AnchorSideBottom.Side = asrBottom
+
+                        f.Caption = caption
+                        f.TextMemo.Lines.setText(text)
+                        f.centerScreen()
+                        f.show()
+                        f.bringToFront()
+                        return f
+                        end
+                        showText([[
+Dark Souls 2 Ultimate Cut Content Modelswap
+                        
+Written by Boblord
+Additional thanks to Inunorii with finding armor pointers and Radai with other DS2/CE magics
+
+So these scripts are slightly janky to get working. 3 methods below for each category.
+						
+Note: these will work on any weapon/armor/shield. Although its recommended to stick to the proper weapon class for each one to avoid any hitbox/moveset messes that result from a moveset and hitbox/model not designed for it.
+
+Weapon: 
+
+To Enable:
+First make sure the weapon you want to change is in your RIGHT HAND SLOT 1, then activate the script. The modelswap is now tied to this weapon specifically.
+
+Switch the right hand slot 1 weapon to a different weapon, then switch back to the one you wanted changed to change the model. The weapon should be functionally identical to the normal form in all stats, but the hitbox moves to the new model.
+
+To Disable:
+Method to switch back is nearly identical. Make sure the weapon with the swapped model is in right hand slot 1, disable the script, switch that weapon slot off to a different weapon, then switch back.
+
+NOTE: if you switch back with a different weapon in slot 1 when you disable the script, it tends to get messy with the models.
+Restarting the game fixes any issues.
+
+						
+Shield:
+Same exact deal as above but it utilizes left slot 1 instead of right slot 1.
+						
+Armor:
+Same deal as weapons but tied to equipped armor in your armor slots.
+
+FAQ:
+
+Q: Are these permanent?
+A: No. All changes here are reset to their default on game restart. 
+
+Q: Is this clientside or serverside?
+A: The model itself is clientside. BUT, hitboxes appear to be tied to models. 
+So with regards to the actual hitbox I cannot be sure how that impacts online, although theres really no need to use this online anyways.  
+
+Q: My models are messed up now! What do I do?
+A: Restart game and cheat engine, all changes reset then.
+
+Q: Some of these models look really messed up, can I fix this?
+A: These are as is right from the game files. A number of weapons and shields that were ripped from ds1 have a weird blob attached to the bottom of them.
+This is most likely because of poor porting, also they were most likely never cleaned for the public to see.
+In addition, the low res imported set acts super weird when activated, no way to fix these issues without a more in depth texture replacement/modification mod. 
+						
+						
+                        ]])
+                        if not syntaxcheck then disableMemrec(memrec) end
+                        [DISABLE]
+                    

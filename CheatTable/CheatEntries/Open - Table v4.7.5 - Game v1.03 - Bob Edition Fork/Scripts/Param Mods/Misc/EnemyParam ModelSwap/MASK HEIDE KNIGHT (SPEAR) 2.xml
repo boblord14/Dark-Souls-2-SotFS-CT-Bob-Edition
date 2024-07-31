@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087766</ID>
+  <Description>"MASK HEIDE KNIGHT (SPEAR)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>23A0</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

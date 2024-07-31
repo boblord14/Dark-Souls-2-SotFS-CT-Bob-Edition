@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>23086</ID>
+  <Description>"Last Attack ID"</Description>
+  <Color>008000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>FA8</Offset>
+    <Offset>18</Offset>
+    <Offset>4C8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

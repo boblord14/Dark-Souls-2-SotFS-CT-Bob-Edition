@@ -1,0 +1,12 @@
+[ENABLE]
+aobscanmodule(bulletspam,DarkSoulsII.exe, 0F BE 4F 2F 39 8B 20 01 00 00)
+registersymbol(bulletspam)
+
+bulletspam:
+  db 0F BE 4F 20
+
+[DISABLE]
+bulletspam:
+  db 0F BE 4F 2F
+
+unregistersymbol(bulletspam)

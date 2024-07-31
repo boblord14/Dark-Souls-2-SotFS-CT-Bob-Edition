@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetGrabParamId, $100, DarkSoulsII.exe)
+alloc(GrabParamId, 4)
+registersymbol(GetGrabParamId)
+registersymbol(GrabParamId)
+label(return)
+
+GrabParamId:
+dd #10300
+
+GetGrabParamId:
+sub rsp, 50
+mov edx, [GrabParamId]
+vortmov(rcx, [[[GameManagerImp]+18]+6A0])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [GrabParamAddressToUse], rax
+
+return:
+add rsp, 50
+ret
+
+[DISABLE]
+dealloc(GetGrabParamId)
+dealloc(GrabParamId)
+unregistersymbol(GetGrabParamId)
+unregistersymbol(GrabParamId)

@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337083256</ID>
+  <Description>"+4 Bleed Scaling"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+B4</Address>
+</CheatEntry>

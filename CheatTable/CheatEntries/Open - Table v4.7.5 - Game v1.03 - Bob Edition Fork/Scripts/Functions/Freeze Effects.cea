@@ -1,0 +1,10 @@
+[ENABLE]
+aobscanmodule(FreezeEffectsAOB,DarkSoulsII.exe,0F 82 xx xx xx xx 4C 8B 64 24 38 48 8B 7C 24 78)
+registersymbol(FreezeEffectsAOB)
+FreezeEffectsAOB:
+  db 90 90 90 90 90 90
+[DISABLE]
+FreezeEffectsAOB:
+  db 0F 82 4B FF FF FF
+unregistersymbol(FreezeEffectsAOB)
+

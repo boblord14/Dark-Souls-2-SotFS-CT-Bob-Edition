@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337097919</ID>
+  <Description>"BehaviorOnCollision -- Everything Below = Serverside"</Description>
+  <Color>0600FF</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+0CC</Address>
+</CheatEntry>

@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337083077</ID>
+  <Description>"Allowed Backstab Angle Bonus"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+4C</Address>
+</CheatEntry>

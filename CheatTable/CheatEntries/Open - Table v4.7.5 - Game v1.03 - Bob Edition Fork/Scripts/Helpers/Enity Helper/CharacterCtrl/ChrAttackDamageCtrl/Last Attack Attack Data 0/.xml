@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337162886</ID>
+  <Description>"Last Attack Attack Data 0"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+F08</Address>
+  <x-ce2fs-child-order>
+    <id id="1337162887"/>
+    <id id="1337162888"/>
+    <id id="1337162889"/>
+    <id id="1337162890"/>
+    <id id="1337162891"/>
+    <id id="1337162892"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26371</ID>
+  <Description>"Normalmap Brightness"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26367"/>
+    <id id="26368"/>
+    <id id="26369"/>
+    <id id="26370"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

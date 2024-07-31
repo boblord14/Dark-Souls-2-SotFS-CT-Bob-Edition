@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337089611</ID>
+  <Description>"Entry Name"</Description>
+  <DropDownListLink>EquipInterfereParam_names</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>EquipInterfereId</Address>
+</CheatEntry>

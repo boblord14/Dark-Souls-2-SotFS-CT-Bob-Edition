@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337088512</ID>
+  <Description>"Quantity of Belt Item 3"</Description>
+  <VariableType>2 Bytes</VariableType>
+  <Address>+a00+04C</Address>
+</CheatEntry>

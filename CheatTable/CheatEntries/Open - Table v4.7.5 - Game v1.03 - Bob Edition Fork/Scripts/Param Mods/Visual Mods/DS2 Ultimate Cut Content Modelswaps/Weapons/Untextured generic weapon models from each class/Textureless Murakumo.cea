@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tkumo,2)
+                        tkumo:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(tkumo)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6530
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tkumo)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(tkumo, 2)
+                        unregistersymbol(tkumo)
+                    

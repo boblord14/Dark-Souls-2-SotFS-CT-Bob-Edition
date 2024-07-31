@@ -1,0 +1,17 @@
+<CheatEntry>
+  <ID>1337089940</ID>
+  <Description>"Start"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>0</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>RingParamStruct</Address>
+  <x-ce2fs-child-order>
+    <id id="1337089941"/>
+    <id id="1337089942"/>
+    <id id="1337089943"/>
+    <id id="1337089944"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,62 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ChrWetAspectParam class]]--
+ChrWetAspectParam = BaseParamClass:new()
+
+function ChrWetAspectParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ChrWetAspectParam", uuid, id, address)
+	return o
+end
+
+function ChrWetAspectParam:unk00(value)
+	self:patchByte(0x0, value)
+end
+
+
+function ChrWetAspectParam:unk01(value)
+	self:patchByte(0x1, value)
+end
+
+
+function ChrWetAspectParam:unk02(value)
+	self:patchByte(0x2, value)
+end
+
+
+function ChrWetAspectParam:unk03(value)
+	self:patchByte(0x3, value)
+end
+
+
+function ChrWetAspectParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function ChrWetAspectParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function ChrWetAspectParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function ChrWetAspectParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+--[[End ChrWetAspectParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

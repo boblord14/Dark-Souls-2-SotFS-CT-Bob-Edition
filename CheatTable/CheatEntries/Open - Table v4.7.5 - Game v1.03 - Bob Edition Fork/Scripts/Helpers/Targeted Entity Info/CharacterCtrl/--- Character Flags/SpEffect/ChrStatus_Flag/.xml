@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337096607</ID>
+  <Description>"ChrStatus_Flag"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337096608"/>
+    <id id="1337096617"/>
+    <id id="1337096626"/>
+    <id id="1337096635"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

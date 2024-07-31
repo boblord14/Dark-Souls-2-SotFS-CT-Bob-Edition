@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetWeaponActionCategoryParamAddr, $100, DarkSoulsII.exe)
+alloc(WeaponActionCategoryParamId, 4)
+label(return)
+registersymbol(GetWeaponActionCategoryParamAddr)
+registersymbol(WeaponActionCategoryParamId)
+
+WeaponActionCategoryParamId:
+dd #3400
+
+GetWeaponActionCategoryParamAddr:
+sub rsp, 20
+mov edx, [WeaponActionCategoryParamId]
+vortmov(rcx, [[[GameManagerImp]+18]+430])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [WepActionCategoryParamAddr], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetWeaponActionCategoryParamAddr)
+dealloc(WeaponActionCategoryParamId)
+unregistersymbol(GetWeaponActionCategoryParamAddr)
+unregistersymbol(WeaponActionCategoryParamId)

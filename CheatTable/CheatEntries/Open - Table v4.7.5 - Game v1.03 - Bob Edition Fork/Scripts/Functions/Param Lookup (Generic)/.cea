@@ -1,0 +1,34 @@
+[ENABLE]
+alloc(ParamLookup, $100, DarkSoulsII.exe)
+alloc(ParamAddr, 8)
+alloc(RowId, 4)
+alloc(RowAddr, 8)
+label(return)
+registersymbol(ParamLookup)
+registersymbol(ParamAddr)
+registersymbol(RowId)
+registersymbol(RowAddr)
+
+ParamLookup:
+sub rsp, 20
+mov edx, [RowId]
+mov rcx, [ParamAddr]
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [RowAddr], rax
+
+return:
+add rsp, 20
+ret
+ 
+[DISABLE]
+dealloc(ParamLookup)
+dealloc(ParamAddr)
+dealloc(RowId)
+dealloc(RowAddr)
+unregistersymbol(ParamLookup)
+unregistersymbol(ParamAddr)
+unregistersymbol(RowId)
+unregistersymbol(RowAddr)

@@ -1,0 +1,18 @@
+<CheatEntry>
+  <ID>1337088480</ID>
+  <Description>"Swordsman"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>0</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address/>
+  <x-ce2fs-child-order>
+    <id id="1337088481"/>
+    <id id="1337088494"/>
+    <id id="1337088520"/>
+    <id id="1337088532"/>
+    <id id="1337088565"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

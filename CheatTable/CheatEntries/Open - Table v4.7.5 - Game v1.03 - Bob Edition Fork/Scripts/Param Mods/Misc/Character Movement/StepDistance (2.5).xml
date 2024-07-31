@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337089052</ID>
+  <Description>"StepDistance (2.5)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>15C</Offset>
+    <Offset>D8</Offset>
+    <Offset>330</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,18 @@
+<CheatEntry>
+  <ID>1337043384</ID>
+  <Description>"Infusion"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:None
+1:Fire
+2:Magic
+3:Lightning
+4:Dark
+5:Poison
+6:Bleed
+7:Raw
+8:Enchanted
+9:Mundane
+</DropDownList>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+F</Address>
+</CheatEntry>

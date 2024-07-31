@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256288</ID>
+  <Description>"Stone Trader Choanne"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26527"/>
+    <id id="51"/>
+    <id id="26631"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

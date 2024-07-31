@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337159982</ID>
+  <Description>"Ivory King Gauntlet Skip(no knights and instant start)"</Description>
+  <Options moAlwaysHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337159979"/>
+    <id id="1337159980"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

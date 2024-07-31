@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337107321</ID>
+  <Description>"Player Data"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+B0</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337107322"/>
+    <id id="1337107323"/>
+    <id id="1337107324"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

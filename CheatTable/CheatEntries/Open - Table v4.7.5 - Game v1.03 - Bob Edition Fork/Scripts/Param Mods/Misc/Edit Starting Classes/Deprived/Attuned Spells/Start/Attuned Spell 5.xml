@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337089001</ID>
+  <Description>"Attuned Spell 5"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+b28+06C</Address>
+</CheatEntry>

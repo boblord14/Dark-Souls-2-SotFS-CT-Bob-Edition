@@ -1,0 +1,4 @@
+[ENABLE]
+{$asm}
+createThreadAndWait(SetEventFlag)
+[DISABLE]

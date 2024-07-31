@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetItemTypeParamAddr, $100, DarkSoulsII.exe)
+alloc(ItemTypeParamId, 4)
+label(return)
+registersymbol(GetItemTypeParamAddr)
+registersymbol(ItemTypeParamId)
+
+ItemTypeParamId:
+dd #0
+
+GetItemTypeParamAddr:
+sub rsp, 20
+mov edx, [ItemTypeParamId]
+vortmov(rcx, [[[GameManagerImp]+A8]+30])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [ItemTypeAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetItemTypeParamAddr)
+dealloc(ItemTypeParamId)
+unregistersymbol(GetItemTypeParamAddr)
+unregistersymbol(ItemTypeParamId)

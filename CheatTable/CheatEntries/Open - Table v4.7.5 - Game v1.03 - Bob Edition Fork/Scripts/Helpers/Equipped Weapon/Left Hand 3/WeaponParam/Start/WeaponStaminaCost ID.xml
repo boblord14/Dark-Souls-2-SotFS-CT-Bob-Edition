@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337091218</ID>
+  <Description>"WeaponStaminaCost ID"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+3C</Address>
+</CheatEntry>

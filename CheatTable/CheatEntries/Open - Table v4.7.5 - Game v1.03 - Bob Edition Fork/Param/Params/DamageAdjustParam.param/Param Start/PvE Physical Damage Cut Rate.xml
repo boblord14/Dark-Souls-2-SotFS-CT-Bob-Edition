@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337036871</ID>
+  <Description>"PvE Physical Damage Cut Rate"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+14C</Address>
+</CheatEntry>

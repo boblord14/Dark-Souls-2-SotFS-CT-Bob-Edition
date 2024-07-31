@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337108358</ID>
+  <Description>"Blue Sentinels"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337108359"/>
+    <id id="1337108360"/>
+    <id id="1337108361"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

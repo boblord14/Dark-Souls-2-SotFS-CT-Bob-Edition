@@ -1,0 +1,32 @@
+<CheatEntry>
+  <ID>1337096515</ID>
+  <Description>"---ChrMoveParam"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+48</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337096516"/>
+    <id id="1337096517"/>
+    <id id="1337096518"/>
+    <id id="1337096519"/>
+    <id id="1337096520"/>
+    <id id="1337096521"/>
+    <id id="1337096522"/>
+    <id id="1337096523"/>
+    <id id="1337096524"/>
+    <id id="1337096525"/>
+    <id id="1337096526"/>
+    <id id="1337096527"/>
+    <id id="1337096528"/>
+    <id id="1337096529"/>
+    <id id="1337096530"/>
+    <id id="1337096531"/>
+    <id id="1337096532"/>
+    <id id="1337096533"/>
+    <id id="1337096534"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

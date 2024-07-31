@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337084513</ID>
+  <Description>"Equiped Weapon"</Description>
+  <DropDownListLink>ItemParam</DropDownListLink>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>894</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

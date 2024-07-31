@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337042834</ID>
+  <Description>"Durability"</Description>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>ItemStruct+8</Address>
+</CheatEntry>

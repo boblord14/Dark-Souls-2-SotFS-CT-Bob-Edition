@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337089439</ID>
+  <Description>"Get ChrNetworkPhantomParam Address"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337089440"/>
+    <id id="1337089441"/>
+    <id id="1337089443"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

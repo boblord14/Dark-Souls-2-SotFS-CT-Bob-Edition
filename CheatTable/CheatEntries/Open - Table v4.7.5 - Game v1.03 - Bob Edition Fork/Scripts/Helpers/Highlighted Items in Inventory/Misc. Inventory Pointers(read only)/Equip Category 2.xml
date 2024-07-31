@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>1337089207</ID>
+  <Description>"Equip Category"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>pItem</Address>
+  <Offsets>
+    <Offset>10</Offset>
+  </Offsets>
+</CheatEntry>

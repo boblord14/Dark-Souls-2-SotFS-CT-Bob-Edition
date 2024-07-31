@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337107099</ID>
+  <Description>"Progress [9,19,29]"</Description>
+  <VariableType>2 Bytes</VariableType>
+  <Address>BaseA</Address>
+  <Offsets>
+    <Offset>1C4</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

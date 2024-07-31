@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337106015</ID>
+  <Description>"Guard Break Stab Hitbox Height"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>+128</Address>
+</CheatEntry>

@@ -1,0 +1,47 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ChrEquipLoadParam class]]--
+ChrEquipLoadParam = BaseParamClass:new()
+
+function ChrEquipLoadParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ChrEquipLoadParam", uuid, id, address)
+	return o
+end
+
+function ChrEquipLoadParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function ChrEquipLoadParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function ChrEquipLoadParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function ChrEquipLoadParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function ChrEquipLoadParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+--[[End ChrEquipLoadParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

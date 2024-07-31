@@ -1,0 +1,182 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START EnemyCullingParam class]]--
+EnemyCullingParam = BaseParamClass:new()
+
+function EnemyCullingParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("EnemyCullingParam", uuid, id, address)
+	return o
+end
+
+function EnemyCullingParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function EnemyCullingParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function EnemyCullingParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function EnemyCullingParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function EnemyCullingParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function EnemyCullingParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function EnemyCullingParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function EnemyCullingParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function EnemyCullingParam:unk20(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function EnemyCullingParam:unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function EnemyCullingParam:unk28(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function EnemyCullingParam:unk2C(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function EnemyCullingParam:unk30(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function EnemyCullingParam:unk34(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function EnemyCullingParam:unk38(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function EnemyCullingParam:unk3C(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function EnemyCullingParam:unk40(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function EnemyCullingParam:unk44(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function EnemyCullingParam:unk48(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function EnemyCullingParam:unk4C(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function EnemyCullingParam:unk50(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function EnemyCullingParam:unk54(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+function EnemyCullingParam:unk58(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function EnemyCullingParam:unk5C(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function EnemyCullingParam:unk60(value)
+	self:patch4Byte(0x60, value)
+end
+
+
+function EnemyCullingParam:unk64(value)
+	self:patch4Byte(0x64, value)
+end
+
+
+function EnemyCullingParam:unk68(value)
+	self:patch4Byte(0x68, value)
+end
+
+
+function EnemyCullingParam:unk6C(value)
+	self:patch4Byte(0x6C, value)
+end
+
+
+function EnemyCullingParam:unk70(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+function EnemyCullingParam:unk74(value)
+	self:patch4Byte(0x74, value)
+end
+
+
+function EnemyCullingParam:unk78(value)
+	self:patch4Byte(0x78, value)
+end
+
+
+function EnemyCullingParam:unk7C(value)
+	self:patch4Byte(0x7C, value)
+end
+
+
+--[[End EnemyCullingParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

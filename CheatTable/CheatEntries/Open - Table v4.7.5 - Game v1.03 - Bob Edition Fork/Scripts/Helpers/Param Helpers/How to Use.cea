@@ -1,0 +1,21 @@
+{$lua}
+if syntaxcheck then return end
+
+[ENABLE]
+disableMemrec(memrec)
+showText([[
+1.) Open the param you want to view from the list
+
+2.) Click the "Get Address" section for that param
+
+3.) Either use the dropdown to select what you want to view or input the id
+
+4.) Click run to populate the address field in
+
+5.) Click "Open" and view the specific param
+
+Note: Table paramdefs may be incomplete. If you suspect or confirm what a value is
+feel free to let us know in the grand cathedral discord.
+]])
+
+[DISABLE]

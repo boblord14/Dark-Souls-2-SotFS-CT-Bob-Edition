@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337089451</ID>
+  <Description>"Full Body SFX 4"</Description>
+  <DropDownListLink>FullBodySfxParam</DropDownListLink>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+10</Address>
+</CheatEntry>

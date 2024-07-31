@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26382</ID>
+  <Description>"Horizontal 2? (Behaves strangely?)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>318</Offset>
+  </Offsets>
+</CheatEntry>

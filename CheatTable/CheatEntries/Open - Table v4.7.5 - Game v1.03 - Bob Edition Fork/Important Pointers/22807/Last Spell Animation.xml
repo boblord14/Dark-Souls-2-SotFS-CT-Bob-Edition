@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26312</ID>
+  <Description>"Last Spell Animation"</Description>
+  <Color>008000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>328</Offset>
+    <Offset>670</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337089076</ID>
+  <Description>"0x48  - Effect on Roll"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">000DBBA0: None
+026ABE70: White Ring
+</DropDownList>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>138B8</Offset>
+    <Offset>D8</Offset>
+    <Offset>B50</Offset>
+    <Offset>10</Offset>
+  </Offsets>
+</CheatEntry>

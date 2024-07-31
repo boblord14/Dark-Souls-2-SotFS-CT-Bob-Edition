@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tdagger,2)
+                        tdagger:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(tdagger)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6300
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tdagger)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(tdagger, 2)
+                        unregistersymbol(tdagger)
+                    

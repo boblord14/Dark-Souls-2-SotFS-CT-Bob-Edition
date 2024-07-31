@@ -1,0 +1,29 @@
+[ENABLE]
+aobscanmodule(InvalidWeaponLevel,DarkSoulsII.exe,0FB64B25488B45108888A6000000488B45100FB64B268888A7000000488B4720488B48388B5114)
+alloc(newmem,$1000,InvalidWeaponLevel)
+label(code)
+label(return)
+
+newmem:
+  movzx ecx,byte ptr [rbx+25]
+  cmp ecx,A
+  jbe code
+  xor ecx,ecx
+
+code:
+  mov rax,[rbp+10]
+  jmp return
+
+InvalidWeaponLevel:
+  jmp newmem
+  nop
+  nop
+  nop
+return:
+registersymbol(InvalidWeaponLevel)
+
+[DISABLE]
+InvalidWeaponLevel:
+  db 0F B6 4B 25 48 8B 45 10
+unregistersymbol(InvalidWeaponLevel)
+dealloc(newmem)

@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256167</ID>
+  <Description>"Sinner Lvl"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1D6</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

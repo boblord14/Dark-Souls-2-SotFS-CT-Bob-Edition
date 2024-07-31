@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem20,32)
+label(WepActionCategoryParamAddr)
+registersymbol(WepActionCategoryParamAddr)
+newmem20:
+WepActionCategoryParamAddr:
+[DISABLE]
+dealloc(newmem20)
+unregistersymbol(WepActionCategoryParamAddr)

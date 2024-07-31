@@ -1,0 +1,62 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START MapObjectParam class]]--
+MapObjectParam = BaseParamClass:new()
+
+function MapObjectParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("MapObjectParam", uuid, id, address)
+	return o
+end
+
+function MapObjectParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function MapObjectParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function MapObjectParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function MapObjectParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function MapObjectParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function MapObjectParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function MapObjectParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function MapObjectParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+--[[End MapObjectParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

@@ -1,0 +1,117 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ChrEquipWeaponParam class]]--
+ChrEquipWeaponParam = BaseParamClass:new()
+
+function ChrEquipWeaponParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ChrEquipWeaponParam", uuid, id, address)
+	return o
+end
+
+function ChrEquipWeaponParam:chrId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function ChrEquipWeaponParam:modelId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function ChrEquipWeaponParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function ChrEquipWeaponParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function ChrEquipWeaponParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function ChrEquipWeaponParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function ChrEquipWeaponParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function ChrEquipWeaponParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function ChrEquipWeaponParam:unk20(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function ChrEquipWeaponParam:unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function ChrEquipWeaponParam:unk28(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function ChrEquipWeaponParam:unk2C(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function ChrEquipWeaponParam:unk30(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function ChrEquipWeaponParam:unk34(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function ChrEquipWeaponParam:unk38(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function ChrEquipWeaponParam:unk3C(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function ChrEquipWeaponParam:unk40(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function ChrEquipWeaponParam:unk44(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function ChrEquipWeaponParam:unk48(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+--[[End ChrEquipWeaponParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

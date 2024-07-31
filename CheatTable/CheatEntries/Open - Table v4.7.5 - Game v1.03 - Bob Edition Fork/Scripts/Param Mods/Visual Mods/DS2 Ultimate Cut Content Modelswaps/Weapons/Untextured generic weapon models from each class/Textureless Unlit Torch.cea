@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(ttorch,2)
+                        ttorch:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(ttorch)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6450
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(ttorch)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(ttorch, 2)
+                        unregistersymbol(ttorch)
+                    

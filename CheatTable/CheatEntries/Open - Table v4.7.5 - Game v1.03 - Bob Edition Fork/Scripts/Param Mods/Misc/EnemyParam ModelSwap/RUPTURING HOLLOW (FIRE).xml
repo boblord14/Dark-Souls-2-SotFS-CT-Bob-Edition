@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087538</ID>
+  <Description>"RUPTURING HOLLOW (FIRE)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>E40</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

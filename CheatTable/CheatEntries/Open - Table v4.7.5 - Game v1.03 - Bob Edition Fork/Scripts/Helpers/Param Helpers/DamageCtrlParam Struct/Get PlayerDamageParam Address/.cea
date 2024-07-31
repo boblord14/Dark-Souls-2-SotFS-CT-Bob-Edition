@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetDamageCtrlParamAddr, $100, DarkSoulsII.exe)
+alloc(DamageCtrlParamId, 4)
+label(return)
+registersymbol(GetDamageCtrlParamAddr)
+registersymbol(DamageCtrlParamId)
+
+DamageCtrlParamId:
+dd #1013100
+
+GetDamageCtrlParamAddr:
+sub rsp, 20
+mov edx, [DamageCtrlParamId]
+vortmov(rcx, [[[GameManagerImp]+10]+B80])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [DamageCtrlAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetDamageCtrlParamAddr)
+dealloc(DamageCtrlParamId)
+unregistersymbol(GetDamageCtrlParamAddr)
+unregistersymbol(DamageCtrlParamId)

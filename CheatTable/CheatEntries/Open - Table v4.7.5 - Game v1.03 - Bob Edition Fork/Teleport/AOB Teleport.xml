@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>22867</ID>
+  <Description>"AOB Teleport"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>Array of byte</VariableType>
+  <ByteLength>64</ByteLength>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1A0</Offset>
+    <Offset>20</Offset>
+    <Offset>320</Offset>
+    <Offset>100</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

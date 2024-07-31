@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337083052</ID>
+  <Description>"Stance Swap Type"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">10:From Back
+20:From Right Hip
+30:Frop Left Hip
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>+24</Address>
+</CheatEntry>

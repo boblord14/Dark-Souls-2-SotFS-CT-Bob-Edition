@@ -1,0 +1,82 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START CriminalAndDeceasedParam class]]--
+CriminalAndDeceasedParam = BaseParamClass:new()
+
+function CriminalAndDeceasedParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("CriminalAndDeceasedParam", uuid, id, address)
+	return o
+end
+
+function CriminalAndDeceasedParam:unk00(value)
+	self:patchByte(0x0, value)
+end
+
+
+function CriminalAndDeceasedParam:unk01(value)
+	self:patchByte(0x1, value)
+end
+
+
+function CriminalAndDeceasedParam:unk02(value)
+	self:patchByte(0x2, value)
+end
+
+
+function CriminalAndDeceasedParam:sinPointsSinner(value)
+	self:patchByte(0x3, value)
+end
+
+
+function CriminalAndDeceasedParam:sinPointsWretch(value)
+	self:patchByte(0x4, value)
+end
+
+
+function CriminalAndDeceasedParam:hollowingIncreaseOnDeath(value)
+	self:patchByte(0x5, value)
+end
+
+
+function CriminalAndDeceasedParam:hollowingLevelForUnknown(value)
+	self:patchByte(0x6, value)
+end
+
+
+function CriminalAndDeceasedParam:hollowingLevelForAppearanceDegradation(value)
+	self:patchByte(0x7, value)
+end
+
+
+function CriminalAndDeceasedParam:hpMinimumPercentage(value)
+	self:patchByte(0x8, value)
+end
+
+
+function CriminalAndDeceasedParam:hpMinimumPercentageWretch(value)
+	self:patchByte(0x9, value)
+end
+
+
+function CriminalAndDeceasedParam:unknownPercentage(value)
+	self:patchByte(0xA, value)
+end
+
+
+function CriminalAndDeceasedParam:unknownPercentageWretch(value)
+	self:patchByte(0xB, value)
+end
+
+
+--[[End CriminalAndDeceasedParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

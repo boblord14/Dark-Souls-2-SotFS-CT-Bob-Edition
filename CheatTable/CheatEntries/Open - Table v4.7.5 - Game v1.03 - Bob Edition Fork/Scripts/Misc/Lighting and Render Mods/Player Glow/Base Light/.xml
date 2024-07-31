@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26474</ID>
+  <Description>"Base Light"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26470"/>
+    <id id="26471"/>
+    <id id="26472"/>
+    <id id="26473"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

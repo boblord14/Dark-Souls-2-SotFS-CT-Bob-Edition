@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337102602</ID>
+  <Description>"Target WhoIs"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+90</Address>
+  <Offsets>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

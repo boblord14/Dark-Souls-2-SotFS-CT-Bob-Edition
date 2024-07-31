@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337095827</ID>
+  <Description>"SuperDash Speed (5.9)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>94</Offset>
+    <Offset>D8</Offset>
+    <Offset>330</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

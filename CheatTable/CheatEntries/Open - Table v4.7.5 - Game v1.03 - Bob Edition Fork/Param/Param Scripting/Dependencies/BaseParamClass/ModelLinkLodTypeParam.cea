@@ -1,0 +1,57 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ModelLinkLodTypeParam class]]--
+ModelLinkLodTypeParam = BaseParamClass:new()
+
+function ModelLinkLodTypeParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ModelLinkLodTypeParam", uuid, id, address)
+	return o
+end
+
+function ModelLinkLodTypeParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function ModelLinkLodTypeParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function ModelLinkLodTypeParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function ModelLinkLodTypeParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function ModelLinkLodTypeParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function ModelLinkLodTypeParam:unk14(value)
+	self:patchByte(0x14, value)
+end
+
+
+function ModelLinkLodTypeParam:unk15(value)
+	self:patchByte(0x15, value)
+end
+
+
+--[[End ModelLinkLodTypeParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

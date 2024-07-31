@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem4,32)
+label(DamageParamAddressToUse)
+registersymbol(DamageParamAddressToUse)
+newmem4:
+DamageParamAddressToUse:
+[DISABLE]
+dealloc(newmem4)
+unregistersymbol(DamageParamAddressToUse)

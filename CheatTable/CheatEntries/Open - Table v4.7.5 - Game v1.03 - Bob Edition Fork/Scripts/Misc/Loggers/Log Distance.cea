@@ -1,0 +1,42 @@
+{
+    Author: Lord Radai
+    Description: Logs damage taken
+}
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+print("--Distance logger on--")
+PrintDistance = true
+
+local player = readPointer("GameManagerImp")
+player = readPointer(player + 0xD0)
+local target = readPointer("pTarget")
+target = readPointer(target + 0xC0)
+
+local function startDistanceLogger(thread)
+  while(PrintDistance) do
+    --if(target ~nil) then
+      --if(player ~nil) then
+         local playerY = readFloat(player + 0x90)
+         local playerZ = readFloat(player + 0x94)
+         local playerX = readFloat(player + 0x98)
+         local targetY = readFloat(target + 0x90)
+         local targetZ = readFloat(target + 0x94)
+         local targetX = readFloat(target + 0x98)
+         --print(("Player(%f, %f, %f)"):format(playerY, playerZ, playerX))
+         --print(("Target(%f, %f, %f)"):format(targetY, targetZ, targetX))
+         local distance = math.sqrt((playerY - targetY)^2 + (playerX - targetX)^2)
+         print(("Distance from target: %f"):format(distance))
+      --end
+    --end
+    sleep(50)
+  end
+end
+
+createNativeThread(startDistanceLogger)
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+PrintDistance = false
+print("--Distance logger off--")

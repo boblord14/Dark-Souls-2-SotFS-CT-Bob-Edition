@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>26574</ID>
+  <Description>"Saltfort Entrance"</Description>
+  <VariableType>Binary</VariableType>
+  <BitStart>4</BitStart>
+  <BitLength>1</BitLength>
+  <ShowAsBinary>0</ShowAsBinary>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>A45</Offset>
+    <Offset>18</Offset>
+    <Offset>20</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,7 @@
+[ENABLE]
+label(ChrNetworkPhantomParamStruct)
+registersymbol(ChrNetworkPhantomParamStruct)
+[ChrNetworkPhantomAddressToUse]:
+ChrNetworkPhantomParamStruct:
+[DISABLE]
+unregistersymbol(ChrNetworkPhantomParamStruct)

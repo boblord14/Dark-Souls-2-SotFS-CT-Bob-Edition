@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337043328</ID>
+  <Description>"DisableInput_R2"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>FF0000</Color>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>56C</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

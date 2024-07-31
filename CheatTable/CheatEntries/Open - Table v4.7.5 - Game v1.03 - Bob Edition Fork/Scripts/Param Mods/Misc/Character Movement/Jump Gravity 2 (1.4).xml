@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337089067</ID>
+  <Description>"Jump Gravity 2 (1.4)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>198</Offset>
+    <Offset>D8</Offset>
+    <Offset>330</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

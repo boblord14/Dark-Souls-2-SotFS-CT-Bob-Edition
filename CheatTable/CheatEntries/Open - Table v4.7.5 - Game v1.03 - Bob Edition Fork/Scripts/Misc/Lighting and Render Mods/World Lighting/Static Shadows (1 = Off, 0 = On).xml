@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26391</ID>
+  <Description>"Static Shadows (1 = Off, 0 = On)"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>332</Offset>
+  </Offsets>
+</CheatEntry>

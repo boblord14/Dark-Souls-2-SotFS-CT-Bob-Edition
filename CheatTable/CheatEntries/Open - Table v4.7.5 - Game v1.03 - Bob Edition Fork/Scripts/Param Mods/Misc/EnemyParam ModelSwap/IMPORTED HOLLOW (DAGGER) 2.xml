@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087509</ID>
+  <Description>"IMPORTED HOLLOW (DAGGER)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>B88</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(thalberd,2)
+                        thalberd:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(thalberd)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6420
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(thalberd)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(thalberd, 2)
+                        unregistersymbol(thalberd)
+                    

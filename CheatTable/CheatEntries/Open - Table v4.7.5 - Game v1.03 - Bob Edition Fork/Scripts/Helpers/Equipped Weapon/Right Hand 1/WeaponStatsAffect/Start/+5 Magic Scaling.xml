@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337083260</ID>
+  <Description>"+5 Magic Scaling"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+C4</Address>
+</CheatEntry>

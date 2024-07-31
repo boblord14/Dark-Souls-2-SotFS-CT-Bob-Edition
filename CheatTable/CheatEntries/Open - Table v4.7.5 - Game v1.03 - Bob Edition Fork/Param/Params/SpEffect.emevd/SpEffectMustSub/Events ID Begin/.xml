@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337096328</ID>
+  <Description>"Events ID Begin"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <Address>+90</Address>
+  <x-ce2fs-child-order>
+    <id id="1337096329"/>
+    <id id="1337096330"/>
+    <id id="1337096331"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

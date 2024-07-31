@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337106083</ID>
+  <Description>"110100"</Description>
+  <DropDownListLink>bool</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+608</Address>
+</CheatEntry>

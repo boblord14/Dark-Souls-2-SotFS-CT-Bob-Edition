@@ -1,0 +1,7 @@
+[ENABLE]
+label(SpellParamStruct)
+registersymbol(SpellParamStruct)
+[SpellParamAddressToUse]:
+SpellParamStruct:
+[DISABLE]
+unregistersymbol(SpellParamStruct)

@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>24091</ID>
+  <Description>"Soul Level"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>D0</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tchime,2)
+                        tchime:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(tchime)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6490
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tchime)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(tchime, 2)
+                        unregistersymbol(tchime)
+                    

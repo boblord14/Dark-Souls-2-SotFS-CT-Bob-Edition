@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337084435</ID>
+  <Description>"Cast Type"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:None
+1:Arrows
+2:Great Arrows
+3:Bolts
+6:Spells
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>+35</Address>
+</CheatEntry>

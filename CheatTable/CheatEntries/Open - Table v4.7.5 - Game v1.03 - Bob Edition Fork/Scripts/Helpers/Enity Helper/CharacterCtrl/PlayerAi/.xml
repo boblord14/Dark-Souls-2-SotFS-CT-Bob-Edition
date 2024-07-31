@@ -1,0 +1,26 @@
+<CheatEntry>
+  <ID>1337162720</ID>
+  <Description>"PlayerAi"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+E8</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>28</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337162721"/>
+    <id id="1337162722"/>
+    <id id="1337162723"/>
+    <id id="1337162724"/>
+    <id id="1337162725"/>
+    <id id="1337162726"/>
+    <id id="1337162727"/>
+    <id id="1337162728"/>
+    <id id="1337162729"/>
+    <id id="1337162730"/>
+    <id id="1337162767"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

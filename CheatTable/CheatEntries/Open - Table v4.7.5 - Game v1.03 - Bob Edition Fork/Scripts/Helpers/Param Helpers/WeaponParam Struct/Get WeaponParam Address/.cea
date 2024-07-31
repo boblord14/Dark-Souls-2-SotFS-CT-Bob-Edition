@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetWeaponParamAddr, $100, DarkSoulsII.exe)
+alloc(WeaponParamId, 4)
+label(return)
+registersymbol(GetWeaponParamAddr)
+registersymbol(WeaponParamId)
+
+WeaponParamId:
+dd #3400000
+
+GetWeaponParamAddr:
+sub rsp, 20
+mov edx, [WeaponParamId]
+vortmov(rcx, [[[GameManagerImp]+18]+420])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [WepParamAddr], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetWeaponParamAddr)
+dealloc(WeaponParamId)
+unregistersymbol(GetWeaponParamAddr)
+unregistersymbol(WeaponParamId)

@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337077437</ID>
+  <Description>"AppResourceManager"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>008000</Color>
+  <VariableType>8 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>30</Offset>
+  </Offsets>
+</CheatEntry>

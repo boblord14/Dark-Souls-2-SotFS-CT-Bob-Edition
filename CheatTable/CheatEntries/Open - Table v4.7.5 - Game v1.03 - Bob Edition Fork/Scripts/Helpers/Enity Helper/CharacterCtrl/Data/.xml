@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337162494</ID>
+  <Description>"Data"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+B0</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337162495"/>
+    <id id="1337162496"/>
+    <id id="1337162497"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

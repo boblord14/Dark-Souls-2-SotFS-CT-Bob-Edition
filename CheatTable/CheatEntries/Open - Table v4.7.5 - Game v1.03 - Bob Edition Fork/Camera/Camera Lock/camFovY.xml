@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>30733</ID>
+  <Description>"camFovY"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>D04</Offset>
+    <Offset>28</Offset>
+    <Offset>18</Offset>
+    <Offset>E8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

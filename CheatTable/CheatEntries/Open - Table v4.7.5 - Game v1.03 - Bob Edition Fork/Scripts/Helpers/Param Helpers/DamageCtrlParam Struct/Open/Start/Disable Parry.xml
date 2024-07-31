@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337089486</ID>
+  <Description>"Disable Parry"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>+3</Address>
+</CheatEntry>

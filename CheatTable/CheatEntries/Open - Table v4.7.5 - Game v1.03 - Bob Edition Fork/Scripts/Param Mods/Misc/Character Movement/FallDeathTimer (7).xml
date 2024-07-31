@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337089055</ID>
+  <Description>"FallDeathTimer (7)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1A8</Offset>
+    <Offset>D8</Offset>
+    <Offset>330</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

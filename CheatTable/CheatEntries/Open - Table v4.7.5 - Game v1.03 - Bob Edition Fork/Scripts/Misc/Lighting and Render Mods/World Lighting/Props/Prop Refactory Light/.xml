@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26390</ID>
+  <Description>"Prop Refactory Light?"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26386"/>
+    <id id="26387"/>
+    <id id="26388"/>
+    <id id="26389"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

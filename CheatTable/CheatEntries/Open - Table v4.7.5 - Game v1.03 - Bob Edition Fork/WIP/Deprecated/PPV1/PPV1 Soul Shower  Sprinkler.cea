@@ -1,0 +1,18 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+   local ShowerBullet = {
+         {31130010,0x8,"00 00 00 40"},  --SpawnAboveShooter > 2
+         {31130010,0x2F,"FF"},          --numShootSequential > -1
+         {31130010,0x38,"00 00 00 00"}, --ShootInterval > 0.001
+         {31130010,0x3C,"0A D7 23 3C"}, --SpreadVert. > 0.01
+         {31130010,0x40,"CD CC CC 3F"}, --SpreadHoriz. > 1.6
+         {31130010,0x34,"00 00 00 00"}, --AtOnceSpread > 0
+   }
+
+ParamIterator("BulletParam.param",ShowerBullet,"ShowerOff")
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+ ParamDepatcher("ShowerOff")

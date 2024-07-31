@@ -1,0 +1,20 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+   local SoulSpear1 = {
+         {31100000,0x08,"00 00 20 40"}, --spawnDistanceAboveShooter > 2.5
+         {31100000,0x10,"00 00 00 00"}, --spawnDistanceInFront > 0
+         {31100000,0x24,"00 00 80 3F"}, --AngleRandom1 > 1
+         {31100000,0x28,"00 00 80 3F"}, --AngleRandom2 > 1
+         {31100000,0x2F,"FF"},          --numShootSequential > -1
+         {31100000,0x38,"CD CC 4C 3D"}, --ShootInterval > 0.05
+         {31100000,0x40,"00 00 80 3F"}, --spreadHoriz. > 1
+
+   }
+
+ParamIterator("BulletParam.param",SoulSpear1,"EditOff2")
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+ ParamDepatcher("EditOff2")

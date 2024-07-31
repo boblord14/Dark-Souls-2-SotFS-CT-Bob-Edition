@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>1337275580</ID>
+  <Description>"AOB"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>Array of byte</VariableType>
+  <ByteLength>12</ByteLength>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>20</Offset>
+    <Offset>F0</Offset>
+    <Offset>F8</Offset>
+    <Offset>1E8</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

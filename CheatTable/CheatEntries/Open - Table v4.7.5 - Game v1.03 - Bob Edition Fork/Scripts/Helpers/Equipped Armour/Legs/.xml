@@ -1,0 +1,21 @@
+<CheatEntry>
+  <ID>1337085937</ID>
+  <Description>"Legs"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>8B0</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337085938"/>
+    <id id="1337085939"/>
+    <id id="1337085940"/>
+    <id id="1337085941"/>
+    <id id="1337085969"/>
+    <id id="1337086115"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

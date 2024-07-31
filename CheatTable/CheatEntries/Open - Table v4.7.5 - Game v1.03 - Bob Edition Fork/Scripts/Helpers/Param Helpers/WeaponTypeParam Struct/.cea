@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem19,32)
+label(WepTypeParamAddr)
+registersymbol(WepTypeParamAddr)
+newmem19:
+WepTypeParamAddr:
+[DISABLE]
+dealloc(newmem19)
+unregistersymbol(WepTypeParamAddr)

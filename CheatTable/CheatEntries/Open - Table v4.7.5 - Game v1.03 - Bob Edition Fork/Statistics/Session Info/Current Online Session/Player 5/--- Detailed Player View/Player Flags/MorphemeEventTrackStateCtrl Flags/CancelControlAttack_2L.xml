@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337108613</ID>
+  <Description>"CancelControlAttack_2L"</Description>
+  <DropDownListLink>bool</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+28*4</Address>
+</CheatEntry>

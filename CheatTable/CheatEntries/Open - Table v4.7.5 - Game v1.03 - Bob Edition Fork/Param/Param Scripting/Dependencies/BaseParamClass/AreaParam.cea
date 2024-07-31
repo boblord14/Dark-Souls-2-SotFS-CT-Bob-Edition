@@ -1,0 +1,177 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START AreaParam class]]--
+AreaParam = BaseParamClass:new()
+
+function AreaParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("AreaParam", uuid, id, address)
+	return o
+end
+
+function AreaParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function AreaParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function AreaParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function AreaParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function AreaParam:unk10(value)
+	self:patch2Byte(0x10, value)
+end
+
+
+function AreaParam:unk102(value)
+	self:patch2Byte(0x12, value)
+end
+
+
+function AreaParam:areaFlagId(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function AreaParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function AreaParam:unk1C(value)
+	self:patch2Byte(0x1C, value)
+end
+
+
+function AreaParam:unk1C2(value)
+	self:patch2Byte(0x1E, value)
+end
+
+
+function AreaParam:unk20(value)
+	self:patch2Byte(0x20, value)
+end
+
+
+function AreaParam:unk202(value)
+	self:patch2Byte(0x22, value)
+end
+
+
+function AreaParam:unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function AreaParam:unk28(value)
+	self:patch2Byte(0x28, value)
+end
+
+
+function AreaParam:unk282(value)
+	self:patch2Byte(0x2A, value)
+end
+
+
+function AreaParam:unk2C(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function AreaParam:unk30(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function AreaParam:unk34(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function AreaParam:unk38(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function AreaParam:unk3C(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function AreaParam:unk40(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function AreaParam:unk44(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function AreaParam:unk48(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function AreaParam:unk4C(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function AreaParam:unk50(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function AreaParam:unk54(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+function AreaParam:unk58(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function AreaParam:unk5C(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function AreaParam:unk60(value)
+	self:patch4Byte(0x60, value)
+end
+
+
+function AreaParam:unk64(value)
+	self:patch4Byte(0x64, value)
+end
+
+
+function AreaParam:unk68(value)
+	self:patch4Byte(0x68, value)
+end
+
+
+--[[End AreaParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

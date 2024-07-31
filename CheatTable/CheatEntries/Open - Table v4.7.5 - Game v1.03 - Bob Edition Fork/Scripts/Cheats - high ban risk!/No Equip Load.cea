@@ -1,0 +1,37 @@
+[ENABLE]
+
+aobscanmodule(equipload1,DarkSoulsII.exe,F3 0F 11 43 44 48 8B CB)
+aobscanmodule(equipload2,DarkSoulsII.exe,4C 89 79 44 4C 89 B9 50 03 00 00)
+alloc(newmem,$1000,equipload2)
+registersymbol(equipload2)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+  mov dword ptr [rbx+44],0
+  jmp return
+
+equipload1:
+  jmp code
+return:
+registersymbol(equipload1)
+
+equipload2:
+
+ db 90 90 90 90
+
+[DISABLE]
+
+equipload1:
+ db F3 0F 11 43 44
+
+equipload2:
+
+ db 4C 89 79 44
+
+unregistersymbol(equipload1)
+dealloc(newmem)
+unregistersymbol(equipload2)

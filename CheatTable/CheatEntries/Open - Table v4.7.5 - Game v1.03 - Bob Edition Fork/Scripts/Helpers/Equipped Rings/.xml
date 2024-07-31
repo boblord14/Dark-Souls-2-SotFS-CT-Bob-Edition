@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337086145</ID>
+  <Description>"Equipped Rings"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337086146"/>
+    <id id="1337086154"/>
+    <id id="1337086162"/>
+    <id id="1337086170"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

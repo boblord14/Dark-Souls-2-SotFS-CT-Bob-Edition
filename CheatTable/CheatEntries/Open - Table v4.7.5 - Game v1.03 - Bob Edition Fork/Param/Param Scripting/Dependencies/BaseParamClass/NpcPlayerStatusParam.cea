@@ -1,0 +1,352 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START NpcPlayerStatusParam class]]--
+NpcPlayerStatusParam = BaseParamClass:new()
+
+function NpcPlayerStatusParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("NpcPlayerStatusParam", uuid, id, address)
+	return o
+end
+
+function NpcPlayerStatusParam:unk00(value)
+	self:patch2Byte(0x0, value)
+end
+
+
+function NpcPlayerStatusParam:unk002(value)
+	self:patch2Byte(0x2, value)
+end
+
+
+function NpcPlayerStatusParam:nameId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function NpcPlayerStatusParam:soulLevel(value)
+	self:patchByte(0x8, value)
+end
+
+
+function NpcPlayerStatusParam:vigor(value)
+	self:patchByte(0x9, value)
+end
+
+
+function NpcPlayerStatusParam:unk(value)
+	self:patchByte(0xA, value)
+end
+
+
+function NpcPlayerStatusParam:endurance(value)
+	self:patchByte(0xB, value)
+end
+
+
+function NpcPlayerStatusParam:attunement(value)
+	self:patchByte(0xC, value)
+end
+
+
+function NpcPlayerStatusParam:vitality(value)
+	self:patchByte(0xD, value)
+end
+
+
+function NpcPlayerStatusParam:strength(value)
+	self:patchByte(0xE, value)
+end
+
+
+function NpcPlayerStatusParam:dexterity(value)
+	self:patchByte(0xF, value)
+end
+
+
+function NpcPlayerStatusParam:intelligence(value)
+	self:patchByte(0x10, value)
+end
+
+
+function NpcPlayerStatusParam:faith(value)
+	self:patchByte(0x11, value)
+end
+
+
+function NpcPlayerStatusParam:adaptability(value)
+	self:patchByte(0x12, value)
+end
+
+
+function NpcPlayerStatusParam:unk10(value)
+	self:patchByte(0x13, value)
+end
+
+
+function NpcPlayerStatusParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function NpcPlayerStatusParam:iframesRate(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function NpcPlayerStatusParam:unk1C(value)
+	self:patchByte(0x1C, value)
+end
+
+
+function NpcPlayerStatusParam:unk1C2(value)
+	self:patchByte(0x1D, value)
+end
+
+
+function NpcPlayerStatusParam:unk1C3(value)
+	self:patchByte(0x1E, value)
+end
+
+
+function NpcPlayerStatusParam:unk1C4(value)
+	self:patchByte(0x1F, value)
+end
+
+
+function NpcPlayerStatusParam:item1Id(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function NpcPlayerStatusParam:item2Id(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function NpcPlayerStatusParam:item3Id(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function NpcPlayerStatusParam:item4Id(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function NpcPlayerStatusParam:item5Id(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function NpcPlayerStatusParam:item6Id(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function NpcPlayerStatusParam:item7Id(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function NpcPlayerStatusParam:item8Id(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function NpcPlayerStatusParam:item9Id(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function NpcPlayerStatusParam:spell1Id(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function NpcPlayerStatusParam:spell2Id(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function NpcPlayerStatusParam:spell3Id(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function NpcPlayerStatusParam:spell4Id(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function NpcPlayerStatusParam:spell5Id(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+function NpcPlayerStatusParam:spell6Id(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function NpcPlayerStatusParam:spell7Id(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function NpcPlayerStatusParam:spell8Id(value)
+	self:patch4Byte(0x60, value)
+end
+
+
+function NpcPlayerStatusParam:spell9Id(value)
+	self:patch4Byte(0x64, value)
+end
+
+
+function NpcPlayerStatusParam:spell10Id(value)
+	self:patch4Byte(0x68, value)
+end
+
+
+function NpcPlayerStatusParam:rightWeaponId(value)
+	self:patch4Byte(0x6C, value)
+end
+
+
+function NpcPlayerStatusParam:rightWeaponId2(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+function NpcPlayerStatusParam:rightWeaponId3(value)
+	self:patch4Byte(0x74, value)
+end
+
+
+function NpcPlayerStatusParam:leftWeaponId(value)
+	self:patch4Byte(0x78, value)
+end
+
+
+function NpcPlayerStatusParam:leftWeaponId2(value)
+	self:patch4Byte(0x7C, value)
+end
+
+
+function NpcPlayerStatusParam:leftWeaponId3(value)
+	self:patch4Byte(0x80, value)
+end
+
+
+function NpcPlayerStatusParam:headArmorId(value)
+	self:patch4Byte(0x84, value)
+end
+
+
+function NpcPlayerStatusParam:chestArmorId(value)
+	self:patch4Byte(0x88, value)
+end
+
+
+function NpcPlayerStatusParam:handsArmorId(value)
+	self:patch4Byte(0x8C, value)
+end
+
+
+function NpcPlayerStatusParam:legsArmorId(value)
+	self:patch4Byte(0x90, value)
+end
+
+
+function NpcPlayerStatusParam:unk94(value)
+	self:patch4Byte(0x94, value)
+end
+
+
+function NpcPlayerStatusParam:unk98(value)
+	self:patch4Byte(0x98, value)
+end
+
+
+function NpcPlayerStatusParam:unk9C(value)
+	self:patch4Byte(0x9C, value)
+end
+
+
+function NpcPlayerStatusParam:unka0(value)
+	self:patch4Byte(0xA0, value)
+end
+
+
+function NpcPlayerStatusParam:arrowId1(value)
+	self:patch4Byte(0xA4, value)
+end
+
+
+function NpcPlayerStatusParam:arrowId2(value)
+	self:patch4Byte(0xA8, value)
+end
+
+
+function NpcPlayerStatusParam:boltId1(value)
+	self:patch4Byte(0xAC, value)
+end
+
+
+function NpcPlayerStatusParam:boltId2(value)
+	self:patch4Byte(0xB0, value)
+end
+
+
+function NpcPlayerStatusParam:gesture1Id(value)
+	self:patch4Byte(0xB4, value)
+end
+
+
+function NpcPlayerStatusParam:gesture2Id(value)
+	self:patch4Byte(0xB8, value)
+end
+
+
+function NpcPlayerStatusParam:gesture3Id(value)
+	self:patch4Byte(0xBC, value)
+end
+
+
+function NpcPlayerStatusParam:gesture4Id(value)
+	self:patch4Byte(0xC0, value)
+end
+
+
+function NpcPlayerStatusParam:gesture5Id(value)
+	self:patch4Byte(0xC4, value)
+end
+
+
+function NpcPlayerStatusParam:gesture6Id(value)
+	self:patch4Byte(0xC8, value)
+end
+
+
+function NpcPlayerStatusParam:gesture7Id(value)
+	self:patch4Byte(0xCC, value)
+end
+
+
+function NpcPlayerStatusParam:gesture8Id(value)
+	self:patch4Byte(0xD0, value)
+end
+
+
+--[[End NpcPlayerStatusParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

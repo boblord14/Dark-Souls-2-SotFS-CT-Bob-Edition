@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337089045</ID>
+  <Description>"Gesture 4"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+b28+010C</Address>
+</CheatEntry>

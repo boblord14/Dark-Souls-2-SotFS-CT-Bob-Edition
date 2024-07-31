@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337105827</ID>
+  <Description>"Consumable Speed Rate"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>+C0</Address>
+</CheatEntry>

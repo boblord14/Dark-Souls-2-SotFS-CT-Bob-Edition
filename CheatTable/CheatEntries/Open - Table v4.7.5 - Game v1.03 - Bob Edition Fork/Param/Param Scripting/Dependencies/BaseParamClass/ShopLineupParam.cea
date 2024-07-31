@@ -1,0 +1,67 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ShopLineupParam class]]--
+ShopLineupParam = BaseParamClass:new()
+
+function ShopLineupParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ShopLineupParam", uuid, id, address)
+	return o
+end
+
+function ShopLineupParam:equipId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function ShopLineupParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function ShopLineupParam:enableFlag(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function ShopLineupParam:disableFlag(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function ShopLineupParam:materialId(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function ShopLineupParam:duplicateItemId(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function ShopLineupParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function ShopLineupParam:priceRate(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function ShopLineupParam:quantity(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+--[[End ShopLineupParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

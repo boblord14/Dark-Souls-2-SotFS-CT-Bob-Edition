@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087886</ID>
+  <Description>"COVETOUS DEMON (SNOW)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>2EE0</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

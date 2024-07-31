@@ -1,0 +1,140 @@
+[ENABLE]
+define(BoBSummon,[[[[GameManagerImp]+18]+7B0]+D8]+670)
+define(BoBInv,[[[[GameManagerImp]+18]+7B0]+D8]+6D0)
+define(BoBArena,[[[[GameManagerImp]+18]+7B0]+D8]+970)
+
+//Summon
+BoBSummon:
+dd #3
+
+BoBSummon+04:
+dd #105000
+
+BoBSummon+08:
+dd #105010
+
+BoBSummon+0C:
+dd #105020
+
+BoBSummon+10:
+dd #105030
+
+BoBSummon+50:
+dd #4
+
+BoBSummon+54:
+dd #5
+
+//Invader
+BoBInv:
+dd #3
+
+BoBInv+04:
+dd #105000
+
+BoBInv+08:
+dd #105010
+
+BoBInv+0C:
+dd #105020
+
+BoBInv+10:
+dd #105030
+
+BoBInv+50:
+dd #4
+
+BoBInv+54:
+dd #5
+
+//Arena Spirit
+BoBArena:
+dd #3
+
+BoBArena+04:
+dd #105000
+
+BoBArena+08:
+dd #105010
+
+BoBArena+0C:
+dd #105020
+
+BoBArena+10:
+dd #105030
+
+BoBArena+50:
+dd #4
+
+BoBArena+54:
+dd #5
+[DISABLE]
+define(BoBSummon,[[[[GameManagerImp]+18]+7B0]+D8]+670)
+define(BoBInv,[[[[GameManagerImp]+18]+7B0]+D8]+6D0)
+define(BoBArena,[[[[GameManagerImp]+18]+7B0]+D8]+970)
+
+//Summon
+BoBSummon:
+dd #8
+
+BoBSummon+04:
+dd #104000
+
+BoBSummon+08:
+dd #104010
+
+BoBSummon+0C:
+dd #104020
+
+BoBSummon+10:
+dd #104030
+
+BoBSummon+50:
+dd #9
+
+BoBSummon+54:
+dd #10
+
+//Invader
+BoBInv:
+dd #8
+
+BoBInv+04:
+dd #104000
+
+BoBInv+08:
+dd #104010
+
+BoBInv+0C:
+dd #104020
+
+BoBInv+10:
+dd #104030
+
+BoBInv+50:
+dd #9
+
+BoBInv+54:
+dd #10
+
+//Arena Spirit
+BoBArena:
+dd #8
+
+BoBArena+04:
+dd #104000
+
+BoBArena+08:
+dd #104010
+
+BoBArena+0C:
+dd #104020
+
+BoBArena+10:
+dd #104030
+
+BoBArena+50:
+dd #9
+
+BoBArena+54:
+dd #10

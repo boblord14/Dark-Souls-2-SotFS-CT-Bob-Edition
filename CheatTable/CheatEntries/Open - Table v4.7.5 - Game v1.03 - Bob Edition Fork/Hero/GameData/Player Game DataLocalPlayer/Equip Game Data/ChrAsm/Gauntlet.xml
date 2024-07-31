@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337256192</ID>
+  <Description>"Gauntlet"</Description>
+  <DropDownListLink>ArmorParam</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>13C</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

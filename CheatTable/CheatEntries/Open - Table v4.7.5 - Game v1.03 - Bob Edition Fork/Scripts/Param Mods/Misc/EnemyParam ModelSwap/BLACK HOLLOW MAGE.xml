@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087513</ID>
+  <Description>"BLACK HOLLOW MAGE"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>BE8</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

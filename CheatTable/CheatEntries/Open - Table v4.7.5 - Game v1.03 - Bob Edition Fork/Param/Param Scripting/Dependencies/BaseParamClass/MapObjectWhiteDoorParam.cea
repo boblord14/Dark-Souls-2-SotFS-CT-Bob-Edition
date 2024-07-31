@@ -1,0 +1,62 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START MapObjectWhiteDoorParam class]]--
+MapObjectWhiteDoorParam = BaseParamClass:new()
+
+function MapObjectWhiteDoorParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("MapObjectWhiteDoorParam", uuid, id, address)
+	return o
+end
+
+function MapObjectWhiteDoorParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function MapObjectWhiteDoorParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function MapObjectWhiteDoorParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function MapObjectWhiteDoorParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function MapObjectWhiteDoorParam:objectInstanceId(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function MapObjectWhiteDoorParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function MapObjectWhiteDoorParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function MapObjectWhiteDoorParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+--[[End MapObjectWhiteDoorParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

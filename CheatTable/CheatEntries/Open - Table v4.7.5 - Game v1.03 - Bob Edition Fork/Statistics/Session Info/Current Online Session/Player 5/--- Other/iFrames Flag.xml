@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>23833</ID>
+  <Description>"iFrames Flag"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>5F0</Offset>
+    <Offset>B8</Offset>
+    <Offset>528</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337095778</ID>
+  <Description>"Last Attack Animation"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>C0</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

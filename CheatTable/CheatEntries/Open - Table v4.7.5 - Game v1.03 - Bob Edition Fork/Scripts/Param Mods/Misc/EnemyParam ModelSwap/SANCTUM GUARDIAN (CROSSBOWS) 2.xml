@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337087992</ID>
+  <Description>"SANCTUM GUARDIAN (CROSSBOWS)"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>38D0</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

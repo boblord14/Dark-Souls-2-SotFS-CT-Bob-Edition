@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem10,32)
+label(ChrNetworkPhantomAddressToUse)
+registersymbol(ChrNetworkPhantomAddressToUse)
+newmem10:
+ChrNetworkPhantomAddressToUse:
+[DISABLE]
+dealloc(newmem10)
+unregistersymbol(ChrNetworkPhantomAddressToUse)

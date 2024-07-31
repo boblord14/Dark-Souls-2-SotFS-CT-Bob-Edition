@@ -1,0 +1,46 @@
+[ENABLE]
+
+aobscanmodule(NoclipAOB,DarkSoulsII.exe,41 83 B8 2C 06 00 00 00)
+alloc(newmem,$1000,NoclipAOB)
+
+label(code)
+label(return)
+
+newmem:
+  push rax
+  mov rax,[GameManagerImp]
+  test rax,rax
+  je code
+  mov rax,[rax+D0]
+  test rax,rax
+  je code
+  mov rax,[rax+B8]
+  cmp rax,r8
+  jne code
+  mov dword ptr [r8+0000062C],1
+
+code:
+  pop rax
+  cmp dword ptr [r8+0000062C],00
+  jmp return
+
+NoclipAOB:
+  jmp newmem
+  nop
+  nop
+  nop
+return:
+registersymbol(NoclipAOB)
+
+[DISABLE]
+
+NoclipAOB:
+  db 41 83 B8 2C 06 00 00 00
+
+unregistersymbol(NoclipAOB)
+dealloc(newmem)
+{$lua}
+local noclip1 = readPointer("GameManagerImp")
+noclip1 = readPointer(noclip1 + 0xD0)
+noclip1 = readPointer(noclip1 + 0xB8)
+writeInteger(noclip1 + 0x62C, 0)

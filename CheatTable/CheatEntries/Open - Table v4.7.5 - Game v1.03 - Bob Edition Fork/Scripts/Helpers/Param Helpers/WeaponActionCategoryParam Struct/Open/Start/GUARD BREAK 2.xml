@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337090194</ID>
+  <Description>"GUARD BREAK 2"</Description>
+  <DropDownListLink>WeaponAttackMotion</DropDownListLink>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+e0</Address>
+</CheatEntry>

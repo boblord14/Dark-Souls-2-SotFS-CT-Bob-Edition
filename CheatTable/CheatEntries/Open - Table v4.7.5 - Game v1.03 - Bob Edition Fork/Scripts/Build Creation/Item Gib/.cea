@@ -1,0 +1,101 @@
+[ENABLE]
+//Made by Lord Radai
+//Special thanks to LukeYui for the Item pop up window
+alloc(ItemGib, $100, DarkSoulsII.exe)
+alloc(ItemStruct, 132)
+alloc(ItemAmount, 4)
+registersymbol(ItemGib)
+registersymbol(ItemStruct)
+registersymbol(ItemAmount)
+label(return)
+
+ItemAmount:
+dd #1 //Item Amount
+
+ItemStruct:
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+dd #0
+dd #60151000
+dd #-1
+dw #1
+db 00
+db 00
+
+ItemGib:
+sub rsp, C8
+mov r8d, [ItemAmount]
+cmp r8d, 00
+jbe return
+cmp r8d, 08
+ja return
+lea rdx, [ItemStruct]
+vortmov(rcx, [[[GameManagerImp]+A8]+10], return)
+call DarkSoulsII.exe+1AC3D0
+mov r8d, [ItemAmount]
+lea rdx, [ItemStruct]
+lea rcx, [rsp+20]
+mov r9d, 00000001
+call DarkSoulsII.exe+5D950
+lea rdx, [rsp+20]
+vortmov(rcx, [GameManagerImp]+22E0, return)
+call DarkSoulsII.exe+501080
+
+return:
+add rsp, C8
+ret
+
+[DISABLE]
+dealloc(ItemGib)
+dealloc(ItemStruct)
+dealloc(ItemAmount)
+unregistersymbol(ItemGib)
+unregistersymbol(ItemStruct)
+unregistersymbol(ItemAmount)

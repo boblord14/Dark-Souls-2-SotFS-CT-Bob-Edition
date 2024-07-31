@@ -1,0 +1,32 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START EnemyShotSfxParam class]]--
+EnemyShotSfxParam = BaseParamClass:new()
+
+function EnemyShotSfxParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("EnemyShotSfxParam", uuid, id, address)
+	return o
+end
+
+function EnemyShotSfxParam:sfxId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function EnemyShotSfxParam:dummypolyId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+--[[End EnemyShotSfxParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

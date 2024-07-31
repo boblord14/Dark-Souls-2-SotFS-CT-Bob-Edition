@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>32</ID>
+  <Description>"McDuff's Workshop"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1CA</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

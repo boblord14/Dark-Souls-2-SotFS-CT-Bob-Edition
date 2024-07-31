@@ -1,0 +1,15 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+
+
+
+local reqAdjustment = SpellParam:new("NoRequirementsForAllSpells") --patchall header
+      reqAdjustment:patchAll2Byte(0x8,0)
+      reqAdjustment:patchAll2Byte(0xA,0)
+
+[DISABLE]
+paramUtils:restore("NoRequirementsForAllSpells")
+
+
+

@@ -1,0 +1,162 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+function populateMasterTable()
+    MasterParamTable = {}
+    local MPT   = getAddress("MASTER_PARAM_TABLE")
+    local Start = getAddress("PARAM_INDEX_START")
+    local End   = getAddress("PARAM_INDEX_END")
+    local Width = getAddress("PARAM_INDEX_WIDTH")
+
+    local NumParams = (End - Start) // Width
+    --print(count)
+    local index = Start
+    local ParamAddress
+    local ParamName
+    local ParamSize
+
+    for i=1,NumParams do
+        ParamAddress = MPT + readInteger(index+0x10)
+        ParamName    = readString(MPT + readInteger(index+0x14))
+        ParamSize  = byteTableToWord(readBytes(ParamAddress + 0xA,2, true)) --readSmallInteger is 6.7 only lmao
+
+        print(ParamName,ParamAddress,ParamSize)
+        MasterParamTable[i] = {ParamName, ParamAddress, ParamSize}
+
+        index = Start + i * Width
+    end
+end
+
+function getParamAddressByName(name)
+    for i=1,arrayLen(MasterParamTable) do
+        if name == MasterParamTable[i][1] then
+           return MasterParamTable[i][2]
+        end
+    end
+
+    return nil
+end
+
+function getParamSizeByName(name)
+    for i=1,arrayLen(MasterParamTable) do
+        if name == MasterParamTable[i][1] then
+           return MasterParamTable[i][3]
+        end
+    end
+
+    return nil
+end
+
+function arrayLen(a)
+   i=1
+   while a[i] ~= nil do
+       i = i+1
+   end
+   return i-1
+end
+
+function ReadParamIdTable(ParamName)
+    local ParamAddr = getParamAddressByName(ParamName)
+    local IDTable = {}
+    local TableCount = getParamSizeByName(ParamName)
+    for i=0,TableCount-1 do
+        local PID = readInteger(ParamAddr+0x40+0x18*i) -- The actual ID
+        local IDO = readInteger(ParamAddr+0x48+0x18*i) -- Offset from param start
+        local POffset = ParamAddr+IDO
+            IDTable[PID] = POffset
+    end
+    return IDTable
+end
+
+function GetIdOffset(IdTable, Id)
+    local result = IdTable[Id]
+    if result == nil then
+       showMessage("ID:"..Id.." couldn't be found")
+    end
+    return result
+end
+
+-- The Functions defined below are from Igro's original param patcher, with some modifications
+
+function ParamIterator(ParamName,ChangeTable,UUID) --Param Offset is in decimal
+    local IDTable = ReadParamIdTable(ParamName)
+    if UUID ~= nil then --Make a table for backups
+      if UnPatcher == nil then
+         UnPatcher = {}
+      end
+      UnPatcher[UUID] = {}
+      for k,v in pairs(ChangeTable) do
+        local Backup = {}
+        local _,DataLength = string.gsub(v[3], "%x+","") --Dirty but it works
+        local IdOffset = GetIdOffset(IDTable,v[1])
+        if IdOffset ~= nil then
+           Backup[1] = IdOffset + v[2]
+           Backup[2] = readBytes(Backup[1],DataLength,true)
+           table.insert(UnPatcher[UUID],Backup)
+           ParamPatcher(IdOffset,v[2],v[3],v[4])
+        end
+      end
+    else
+      for k,v in pairs(ChangeTable) do
+        local IdOffset = GetIdOffset(IDTable,v[1])
+        if IdOffset ~= nil then
+          ParamPatcher(IdOffset,v[2],v[3],v[4])
+        end
+      end
+    end
+  end
+
+function ParamDepatcher(UUID) --yes the name is baddly done
+    for k,v in pairs(UnPatcher[UUID]) do
+        writeBytes(v[1],v[2])
+    end
+    UnPatcher[UUID] = nil
+end
+
+function ParamPatcher(IDOffset,DataOffset,Data,Symbol) --seperated for now in case i need to update something
+    local WriteAddr = IDOffset+DataOffset
+    local HexTable = {}
+    if Symbol == nil then -- basicly if symbol is set, ignore data completely and not write any info
+       for word in string.gmatch(Data, "%x+") do
+           table.insert(HexTable,tonumber(word,16))
+       end
+       writeBytes(WriteAddr,HexTable)
+    else
+        registerSymbol(Symbol,WriteAddr,true)
+    end
+end
+
+if syntaxcheck then return end
+   populateMasterTable() -- Done initializing
+
+function PatchAll(ParamName,UUID,Offset,Data)
+  local IDTable = ReadParamIdTable(ParamName)
+  if(IDTable ~= nil) then
+    if UUID ~= nil then
+      if UnPatcher == nil then
+        UnPatcher = {}
+      end
+      UnPatcher[UUID] = {}
+      for k,v in pairs(IDTable) do
+        local Backup = {}
+        local _,DataLength = string.gsub(Data, "%x+","")
+        local IdOffset = v
+        Backup[1] = IdOffset + Offset
+        Backup[2] = readBytes(Backup[1],DataLength,true)
+        table.insert(UnPatcher[UUID],Backup)
+        ParamPatcher(IdOffset,Offset,Data)
+      end
+    end
+  end
+end
+
+-- Debug shit here
+
+--[[a= getParamAddressByName("AreaParam.param")
+print(a)
+a= getParamSizeByName("AreaParam.param")
+print(a)]]
+
+
+[DISABLE]

@@ -1,0 +1,7 @@
+[ENABLE]
+label(WepReinforceParamStruct)
+registersymbol(WepReinforceParamStruct)
+[WepReinforceParamAddr]:
+WepReinforceParamStruct:
+[DISABLE]
+unregistersymbol(WepReinforceParamStruct)

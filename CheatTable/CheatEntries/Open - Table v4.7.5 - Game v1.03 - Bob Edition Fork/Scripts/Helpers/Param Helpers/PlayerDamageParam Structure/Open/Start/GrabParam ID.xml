@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337089929</ID>
+  <Description>"GrabParam ID"</Description>
+  <DropDownListLink>GrabParam</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+070</Address>
+</CheatEntry>

@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26347</ID>
+  <Description>"Intensity"</Description>
+  <VariableType>Float</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>26C</Offset>
+  </Offsets>
+</CheatEntry>

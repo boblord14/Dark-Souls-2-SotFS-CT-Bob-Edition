@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetArmorParamAddr, $100, DarkSoulsII.exe)
+alloc(ArmorParamId, 4)
+label(return)
+registersymbol(GetArmorParamAddr)
+registersymbol(ArmorParamId)
+
+ArmorParamId:
+dd #11001100
+
+GetArmorParamAddr:
+sub rsp, 20
+mov edx, [ArmorParamId]
+vortmov(rcx, [[[GameManagerImp]+18]+4A0])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [ArmorParamAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetArmorParamAddr)
+dealloc(ArmorParamId)
+unregistersymbol(GetArmorParamAddr)
+unregistersymbol(ArmorParamId)

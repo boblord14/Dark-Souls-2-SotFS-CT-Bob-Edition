@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tzwei,2)
+                        tzwei:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(tzwei)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6540
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tzwei)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(tzwei, 2)
+                        unregistersymbol(tzwei)
+                    

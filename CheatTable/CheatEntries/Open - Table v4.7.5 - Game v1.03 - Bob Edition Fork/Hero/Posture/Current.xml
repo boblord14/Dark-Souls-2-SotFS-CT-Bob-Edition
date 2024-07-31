@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337090869</ID>
+  <Description>"Current"</Description>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

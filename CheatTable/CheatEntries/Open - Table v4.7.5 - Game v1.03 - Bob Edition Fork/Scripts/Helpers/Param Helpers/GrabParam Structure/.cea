@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem5,32)
+label(GrabParamAddressToUse)
+registersymbol(GrabParamAddressToUse)
+newmem5:
+GrabParamAddressToUse:
+[DISABLE]
+dealloc(newmem5)
+unregistersymbol(GrabParamAddressToUse)

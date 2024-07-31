@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(texturebody,4)
+                        texturebody:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+2C8]+08,4)
+                        registersymbol(texturebody)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        dw #9000
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(texturebody)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        readmem(texturebody, 4)
+                        unregistersymbol(texturebody)
+                    
+					

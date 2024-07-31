@@ -1,0 +1,122 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START NpcEventParam class]]--
+NpcEventParam = BaseParamClass:new()
+
+function NpcEventParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("NpcEventParam", uuid, id, address)
+	return o
+end
+
+function NpcEventParam:unk00(value)
+	self:patchByte(0x0, value)
+end
+
+
+function NpcEventParam:unk01(value)
+	self:patchByte(0x1, value)
+end
+
+
+function NpcEventParam:unk02(value)
+	self:patchByte(0x2, value)
+end
+
+
+function NpcEventParam:unk03(value)
+	self:patchByte(0x3, value)
+end
+
+
+function NpcEventParam:conversationId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function NpcEventParam:conversationExitId(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function NpcEventParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function NpcEventParam:itemId(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function NpcEventParam:itemlotId(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function NpcEventParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function NpcEventParam:npcInfoId(value)
+	self:patch2Byte(0x1C, value)
+end
+
+
+function NpcEventParam:unk182(value)
+	self:patchByte(0x1E, value)
+end
+
+
+function NpcEventParam:unk19(value)
+	self:patchByte(0x1F, value)
+end
+
+
+function NpcEventParam:unk20(value)
+	self:patchByte(0x20, value)
+end
+
+
+function NpcEventParam:unk21(value)
+	self:patchByte(0x21, value)
+end
+
+
+function NpcEventParam:unk22(value)
+	self:patchByte(0x22, value)
+end
+
+
+function NpcEventParam:unk23(value)
+	self:patchByte(0x23, value)
+end
+
+
+function NpcEventParam:unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function NpcEventParam:unk28(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function NpcEventParam:unk2C(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+--[[End NpcEventParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

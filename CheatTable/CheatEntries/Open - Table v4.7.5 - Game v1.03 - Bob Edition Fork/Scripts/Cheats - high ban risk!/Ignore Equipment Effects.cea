@@ -1,0 +1,9 @@
+[ENABLE]
+aobscanmodule(DisableCheckForAntiBackGearAOB,DarkSoulsII.exe,4D 09 84 D1 B8 04 00 00 48)
+registersymbol(DisableCheckForAntiBackGearAOB)
+DisableCheckForAntiBackGearAOB:
+ db 90 90 90 90 90 90 90 90
+[DISABLE]
+DisableCheckForAntiBackGearAOB:
+ db 4D 09 84 D1 B8 04 00 00
+unregistersymbol(DisableCheckForAntiBackGearAOB)

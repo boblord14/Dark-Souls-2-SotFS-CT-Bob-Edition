@@ -1,0 +1,57 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ChrFullbodySfxParam class]]--
+ChrFullbodySfxParam = BaseParamClass:new()
+
+function ChrFullbodySfxParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ChrFullbodySfxParam", uuid, id, address)
+	return o
+end
+
+function ChrFullbodySfxParam:sfxId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function ChrFullbodySfxParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function ChrFullbodySfxParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function ChrFullbodySfxParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function ChrFullbodySfxParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function ChrFullbodySfxParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function ChrFullbodySfxParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+--[[End ChrFullbodySfxParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

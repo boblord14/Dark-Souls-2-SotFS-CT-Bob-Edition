@@ -1,0 +1,1912 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START EnemyComboBehaviorParam class]]--
+EnemyComboBehaviorParam = BaseParamClass:new()
+
+function EnemyComboBehaviorParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("EnemyComboBehaviorParam", uuid, id, address)
+	return o
+end
+
+function EnemyComboBehaviorParam:group1AnimationIndex(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function EnemyComboBehaviorParam:group1EnemyDamageId1(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function EnemyComboBehaviorParam:group1EnemyDamageId2(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function EnemyComboBehaviorParam:group1EnemyDamageId3(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function EnemyComboBehaviorParam:group1EnemyDamageId4(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function EnemyComboBehaviorParam:group1EnemyDamageId5(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk20(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk28(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk2C(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk30(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk34(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk38(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk3C(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk40(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk44(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk48(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk4C(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk50(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk54(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk58(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk5C(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Attack1Speed(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Attack2Speed(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Attack3Speed(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Attack4Speed(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Attack1RecoverySpeed(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Attack2RecoverySpeed(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Attack3RecoverySpeed(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Attack4RecoverySpeed(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk80(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk84(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk88(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk8C(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk90(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk94(value)
+	self:patchFloat(0x94, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk98(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unk9C(value)
+	self:patchFloat(0x9C, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unka0(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unka4(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unka8(value)
+	self:patchFloat(0xA8, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unkac(value)
+	self:patchFloat(0xAC, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unkb0(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unkb4(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unkb8(value)
+	self:patchFloat(0xB8, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unkbc(value)
+	self:patchFloat(0xBC, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unkc0(value)
+	self:patchFloat(0xC0, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unkc4(value)
+	self:patch4Byte(0xC4, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unkc8(value)
+	self:patch4Byte(0xC8, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unkcc(value)
+	self:patch4Byte(0xCC, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unkd0(value)
+	self:patch4Byte(0xD0, value)
+end
+
+
+function EnemyComboBehaviorParam:group1Unkd4(value)
+	self:patch4Byte(0xD4, value)
+end
+
+
+function EnemyComboBehaviorParam:group2AnimationIndex(value)
+	self:patch4Byte(0xD8, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk04(value)
+	self:patch4Byte(0xDC, value)
+end
+
+
+function EnemyComboBehaviorParam:group2EnemyDamageId1(value)
+	self:patch4Byte(0xE0, value)
+end
+
+
+function EnemyComboBehaviorParam:group2EnemyDamageId2(value)
+	self:patch4Byte(0xE4, value)
+end
+
+
+function EnemyComboBehaviorParam:group2EnemyDamageId3(value)
+	self:patch4Byte(0xE8, value)
+end
+
+
+function EnemyComboBehaviorParam:group2EnemyDamageId4(value)
+	self:patch4Byte(0xEC, value)
+end
+
+
+function EnemyComboBehaviorParam:group2EnemyDamageId5(value)
+	self:patch4Byte(0xF0, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk1C(value)
+	self:patch4Byte(0xF4, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk20(value)
+	self:patch4Byte(0xF8, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk24(value)
+	self:patch4Byte(0xFC, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk28(value)
+	self:patch4Byte(0x100, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk2C(value)
+	self:patch4Byte(0x104, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk30(value)
+	self:patch4Byte(0x108, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk34(value)
+	self:patch4Byte(0x10C, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk38(value)
+	self:patch4Byte(0x110, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk3C(value)
+	self:patch4Byte(0x114, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk40(value)
+	self:patch4Byte(0x118, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk44(value)
+	self:patch4Byte(0x11C, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk48(value)
+	self:patch4Byte(0x120, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk4C(value)
+	self:patch4Byte(0x124, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk50(value)
+	self:patchFloat(0x128, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk54(value)
+	self:patchFloat(0x12C, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk58(value)
+	self:patchFloat(0x130, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk5C(value)
+	self:patchFloat(0x134, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk60(value)
+	self:patchFloat(0x138, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk64(value)
+	self:patchFloat(0x13C, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk68(value)
+	self:patchFloat(0x140, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk6C(value)
+	self:patchFloat(0x144, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk70(value)
+	self:patchFloat(0x148, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk74(value)
+	self:patchFloat(0x14C, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk78(value)
+	self:patchFloat(0x150, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk7C(value)
+	self:patchFloat(0x154, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk80(value)
+	self:patchFloat(0x158, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk84(value)
+	self:patchFloat(0x15C, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk88(value)
+	self:patchFloat(0x160, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk8C(value)
+	self:patchFloat(0x164, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk90(value)
+	self:patchFloat(0x168, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk94(value)
+	self:patchFloat(0x16C, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk98(value)
+	self:patchFloat(0x170, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unk9C(value)
+	self:patchFloat(0x174, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unka0(value)
+	self:patchFloat(0x178, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unka4(value)
+	self:patchFloat(0x17C, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unka8(value)
+	self:patchFloat(0x180, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unkac(value)
+	self:patchFloat(0x184, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unkb0(value)
+	self:patchFloat(0x188, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unkb4(value)
+	self:patchFloat(0x18C, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unkb8(value)
+	self:patchFloat(0x190, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unkbc(value)
+	self:patchFloat(0x194, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unkc0(value)
+	self:patchFloat(0x198, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unkc4(value)
+	self:patch4Byte(0x19C, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unkc8(value)
+	self:patch4Byte(0x1A0, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unkcc(value)
+	self:patch4Byte(0x1A4, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unkd0(value)
+	self:patch4Byte(0x1A8, value)
+end
+
+
+function EnemyComboBehaviorParam:group2Unkd4(value)
+	self:patch4Byte(0x1AC, value)
+end
+
+
+function EnemyComboBehaviorParam:group3AnimationIndex(value)
+	self:patch4Byte(0x1B0, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk04(value)
+	self:patch4Byte(0x1B4, value)
+end
+
+
+function EnemyComboBehaviorParam:group3EnemyDamageId1(value)
+	self:patch4Byte(0x1B8, value)
+end
+
+
+function EnemyComboBehaviorParam:group3EnemyDamageId2(value)
+	self:patch4Byte(0x1BC, value)
+end
+
+
+function EnemyComboBehaviorParam:group3EnemyDamageId3(value)
+	self:patch4Byte(0x1C0, value)
+end
+
+
+function EnemyComboBehaviorParam:group3EnemyDamageId4(value)
+	self:patch4Byte(0x1C4, value)
+end
+
+
+function EnemyComboBehaviorParam:group3EnemyDamageId5(value)
+	self:patch4Byte(0x1C8, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk1C(value)
+	self:patch4Byte(0x1CC, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk20(value)
+	self:patch4Byte(0x1D0, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk24(value)
+	self:patch4Byte(0x1D4, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk28(value)
+	self:patch4Byte(0x1D8, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk2C(value)
+	self:patch4Byte(0x1DC, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk30(value)
+	self:patch4Byte(0x1E0, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk34(value)
+	self:patch4Byte(0x1E4, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk38(value)
+	self:patch4Byte(0x1E8, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk3C(value)
+	self:patch4Byte(0x1EC, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk40(value)
+	self:patch4Byte(0x1F0, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk44(value)
+	self:patch4Byte(0x1F4, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk48(value)
+	self:patch4Byte(0x1F8, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk4C(value)
+	self:patch4Byte(0x1FC, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk50(value)
+	self:patchFloat(0x200, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk54(value)
+	self:patchFloat(0x204, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk58(value)
+	self:patchFloat(0x208, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk5C(value)
+	self:patchFloat(0x20C, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk60(value)
+	self:patchFloat(0x210, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk64(value)
+	self:patchFloat(0x214, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk68(value)
+	self:patchFloat(0x218, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk6C(value)
+	self:patchFloat(0x21C, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk70(value)
+	self:patchFloat(0x220, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk74(value)
+	self:patchFloat(0x224, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk78(value)
+	self:patchFloat(0x228, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk7C(value)
+	self:patchFloat(0x22C, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk80(value)
+	self:patchFloat(0x230, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk84(value)
+	self:patchFloat(0x234, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk88(value)
+	self:patchFloat(0x238, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk8C(value)
+	self:patchFloat(0x23C, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk90(value)
+	self:patchFloat(0x240, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk94(value)
+	self:patchFloat(0x244, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk98(value)
+	self:patchFloat(0x248, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unk9C(value)
+	self:patchFloat(0x24C, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unka0(value)
+	self:patchFloat(0x250, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unka4(value)
+	self:patchFloat(0x254, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unka8(value)
+	self:patchFloat(0x258, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unkac(value)
+	self:patchFloat(0x25C, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unkb0(value)
+	self:patchFloat(0x260, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unkb4(value)
+	self:patchFloat(0x264, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unkb8(value)
+	self:patchFloat(0x268, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unkbc(value)
+	self:patchFloat(0x26C, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unkc0(value)
+	self:patchFloat(0x270, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unkc4(value)
+	self:patch4Byte(0x274, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unkc8(value)
+	self:patch4Byte(0x278, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unkcc(value)
+	self:patch4Byte(0x27C, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unkd0(value)
+	self:patch4Byte(0x280, value)
+end
+
+
+function EnemyComboBehaviorParam:group3Unkd4(value)
+	self:patch4Byte(0x284, value)
+end
+
+
+function EnemyComboBehaviorParam:group4AnimationIndex(value)
+	self:patch4Byte(0x288, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk04(value)
+	self:patch4Byte(0x28C, value)
+end
+
+
+function EnemyComboBehaviorParam:group4EnemyDamageId1(value)
+	self:patch4Byte(0x290, value)
+end
+
+
+function EnemyComboBehaviorParam:group4EnemyDamageId2(value)
+	self:patch4Byte(0x294, value)
+end
+
+
+function EnemyComboBehaviorParam:group4EnemyDamageId3(value)
+	self:patch4Byte(0x298, value)
+end
+
+
+function EnemyComboBehaviorParam:group4EnemyDamageId4(value)
+	self:patch4Byte(0x29C, value)
+end
+
+
+function EnemyComboBehaviorParam:group4EnemyDamageId5(value)
+	self:patch4Byte(0x2A0, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk1C(value)
+	self:patch4Byte(0x2A4, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk20(value)
+	self:patch4Byte(0x2A8, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk24(value)
+	self:patch4Byte(0x2AC, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk28(value)
+	self:patch4Byte(0x2B0, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk2C(value)
+	self:patch4Byte(0x2B4, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk30(value)
+	self:patch4Byte(0x2B8, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk34(value)
+	self:patch4Byte(0x2BC, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk38(value)
+	self:patch4Byte(0x2C0, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk3C(value)
+	self:patch4Byte(0x2C4, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk40(value)
+	self:patch4Byte(0x2C8, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk44(value)
+	self:patch4Byte(0x2CC, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk48(value)
+	self:patch4Byte(0x2D0, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk4C(value)
+	self:patch4Byte(0x2D4, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk50(value)
+	self:patchFloat(0x2D8, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk54(value)
+	self:patchFloat(0x2DC, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk58(value)
+	self:patchFloat(0x2E0, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk5C(value)
+	self:patchFloat(0x2E4, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk60(value)
+	self:patchFloat(0x2E8, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk64(value)
+	self:patchFloat(0x2EC, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk68(value)
+	self:patchFloat(0x2F0, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk6C(value)
+	self:patchFloat(0x2F4, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk70(value)
+	self:patchFloat(0x2F8, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk74(value)
+	self:patchFloat(0x2FC, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk78(value)
+	self:patchFloat(0x300, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk7C(value)
+	self:patchFloat(0x304, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk80(value)
+	self:patchFloat(0x308, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk84(value)
+	self:patchFloat(0x30C, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk88(value)
+	self:patchFloat(0x310, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk8C(value)
+	self:patchFloat(0x314, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk90(value)
+	self:patchFloat(0x318, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk94(value)
+	self:patchFloat(0x31C, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk98(value)
+	self:patchFloat(0x320, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unk9C(value)
+	self:patchFloat(0x324, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unka0(value)
+	self:patchFloat(0x328, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unka4(value)
+	self:patchFloat(0x32C, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unka8(value)
+	self:patchFloat(0x330, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unkac(value)
+	self:patchFloat(0x334, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unkb0(value)
+	self:patchFloat(0x338, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unkb4(value)
+	self:patchFloat(0x33C, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unkb8(value)
+	self:patchFloat(0x340, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unkbc(value)
+	self:patchFloat(0x344, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unkc0(value)
+	self:patchFloat(0x348, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unkc4(value)
+	self:patch4Byte(0x34C, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unkc8(value)
+	self:patch4Byte(0x350, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unkcc(value)
+	self:patch4Byte(0x354, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unkd0(value)
+	self:patch4Byte(0x358, value)
+end
+
+
+function EnemyComboBehaviorParam:group4Unkd4(value)
+	self:patch4Byte(0x35C, value)
+end
+
+
+function EnemyComboBehaviorParam:group5AnimationIndex(value)
+	self:patch4Byte(0x360, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk04(value)
+	self:patch4Byte(0x364, value)
+end
+
+
+function EnemyComboBehaviorParam:group5EnemyDamageId1(value)
+	self:patch4Byte(0x368, value)
+end
+
+
+function EnemyComboBehaviorParam:group5EnemyDamageId2(value)
+	self:patch4Byte(0x36C, value)
+end
+
+
+function EnemyComboBehaviorParam:group5EnemyDamageId3(value)
+	self:patch4Byte(0x370, value)
+end
+
+
+function EnemyComboBehaviorParam:group5EnemyDamageId4(value)
+	self:patch4Byte(0x374, value)
+end
+
+
+function EnemyComboBehaviorParam:group5EnemyDamageId5(value)
+	self:patch4Byte(0x378, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk1C(value)
+	self:patch4Byte(0x37C, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk20(value)
+	self:patch4Byte(0x380, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk24(value)
+	self:patch4Byte(0x384, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk28(value)
+	self:patch4Byte(0x388, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk2C(value)
+	self:patch4Byte(0x38C, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk30(value)
+	self:patch4Byte(0x390, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk34(value)
+	self:patch4Byte(0x394, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk38(value)
+	self:patch4Byte(0x398, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk3C(value)
+	self:patch4Byte(0x39C, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk40(value)
+	self:patch4Byte(0x3A0, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk44(value)
+	self:patch4Byte(0x3A4, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk48(value)
+	self:patch4Byte(0x3A8, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk4C(value)
+	self:patch4Byte(0x3AC, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk50(value)
+	self:patchFloat(0x3B0, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk54(value)
+	self:patchFloat(0x3B4, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk58(value)
+	self:patchFloat(0x3B8, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk5C(value)
+	self:patchFloat(0x3BC, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk60(value)
+	self:patchFloat(0x3C0, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk64(value)
+	self:patchFloat(0x3C4, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk68(value)
+	self:patchFloat(0x3C8, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk6C(value)
+	self:patchFloat(0x3CC, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk70(value)
+	self:patchFloat(0x3D0, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk74(value)
+	self:patchFloat(0x3D4, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk78(value)
+	self:patchFloat(0x3D8, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk7C(value)
+	self:patchFloat(0x3DC, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk80(value)
+	self:patchFloat(0x3E0, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk84(value)
+	self:patchFloat(0x3E4, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk88(value)
+	self:patchFloat(0x3E8, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk8C(value)
+	self:patchFloat(0x3EC, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk90(value)
+	self:patchFloat(0x3F0, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk94(value)
+	self:patchFloat(0x3F4, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk98(value)
+	self:patchFloat(0x3F8, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unk9C(value)
+	self:patchFloat(0x3FC, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unka0(value)
+	self:patchFloat(0x400, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unka4(value)
+	self:patchFloat(0x404, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unka8(value)
+	self:patchFloat(0x408, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unkac(value)
+	self:patchFloat(0x40C, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unkb0(value)
+	self:patchFloat(0x410, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unkb4(value)
+	self:patchFloat(0x414, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unkb8(value)
+	self:patchFloat(0x418, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unkbc(value)
+	self:patchFloat(0x41C, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unkc0(value)
+	self:patchFloat(0x420, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unkc4(value)
+	self:patch4Byte(0x424, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unkc8(value)
+	self:patch4Byte(0x428, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unkcc(value)
+	self:patch4Byte(0x42C, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unkd0(value)
+	self:patch4Byte(0x430, value)
+end
+
+
+function EnemyComboBehaviorParam:group5Unkd4(value)
+	self:patch4Byte(0x434, value)
+end
+
+
+function EnemyComboBehaviorParam:group6AnimationIndex(value)
+	self:patch4Byte(0x438, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk04(value)
+	self:patch4Byte(0x43C, value)
+end
+
+
+function EnemyComboBehaviorParam:group6EnemyDamageId1(value)
+	self:patch4Byte(0x440, value)
+end
+
+
+function EnemyComboBehaviorParam:group6EnemyDamageId2(value)
+	self:patch4Byte(0x444, value)
+end
+
+
+function EnemyComboBehaviorParam:group6EnemyDamageId3(value)
+	self:patch4Byte(0x448, value)
+end
+
+
+function EnemyComboBehaviorParam:group6EnemyDamageId4(value)
+	self:patch4Byte(0x44C, value)
+end
+
+
+function EnemyComboBehaviorParam:group6EnemyDamageId5(value)
+	self:patch4Byte(0x450, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk1C(value)
+	self:patch4Byte(0x454, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk20(value)
+	self:patch4Byte(0x458, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk24(value)
+	self:patch4Byte(0x45C, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk28(value)
+	self:patch4Byte(0x460, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk2C(value)
+	self:patch4Byte(0x464, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk30(value)
+	self:patch4Byte(0x468, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk34(value)
+	self:patch4Byte(0x46C, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk38(value)
+	self:patch4Byte(0x470, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk3C(value)
+	self:patch4Byte(0x474, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk40(value)
+	self:patch4Byte(0x478, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk44(value)
+	self:patch4Byte(0x47C, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk48(value)
+	self:patch4Byte(0x480, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk4C(value)
+	self:patch4Byte(0x484, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk50(value)
+	self:patchFloat(0x488, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk54(value)
+	self:patchFloat(0x48C, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk58(value)
+	self:patchFloat(0x490, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk5C(value)
+	self:patchFloat(0x494, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk60(value)
+	self:patchFloat(0x498, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk64(value)
+	self:patchFloat(0x49C, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk68(value)
+	self:patchFloat(0x4A0, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk6C(value)
+	self:patchFloat(0x4A4, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk70(value)
+	self:patchFloat(0x4A8, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk74(value)
+	self:patchFloat(0x4AC, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk78(value)
+	self:patchFloat(0x4B0, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk7C(value)
+	self:patchFloat(0x4B4, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk80(value)
+	self:patchFloat(0x4B8, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk84(value)
+	self:patchFloat(0x4BC, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk88(value)
+	self:patchFloat(0x4C0, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk8C(value)
+	self:patchFloat(0x4C4, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk90(value)
+	self:patchFloat(0x4C8, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk94(value)
+	self:patchFloat(0x4CC, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk98(value)
+	self:patchFloat(0x4D0, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unk9C(value)
+	self:patchFloat(0x4D4, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unka0(value)
+	self:patchFloat(0x4D8, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unka4(value)
+	self:patchFloat(0x4DC, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unka8(value)
+	self:patchFloat(0x4E0, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unkac(value)
+	self:patchFloat(0x4E4, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unkb0(value)
+	self:patchFloat(0x4E8, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unkb4(value)
+	self:patchFloat(0x4EC, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unkb8(value)
+	self:patchFloat(0x4F0, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unkbc(value)
+	self:patchFloat(0x4F4, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unkc0(value)
+	self:patchFloat(0x4F8, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unkc4(value)
+	self:patch4Byte(0x4FC, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unkc8(value)
+	self:patch4Byte(0x500, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unkcc(value)
+	self:patch4Byte(0x504, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unkd0(value)
+	self:patch4Byte(0x508, value)
+end
+
+
+function EnemyComboBehaviorParam:group6Unkd4(value)
+	self:patch4Byte(0x50C, value)
+end
+
+
+function EnemyComboBehaviorParam:group7AnimationIndex(value)
+	self:patch4Byte(0x510, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk04(value)
+	self:patch4Byte(0x514, value)
+end
+
+
+function EnemyComboBehaviorParam:group7EnemyDamageId1(value)
+	self:patch4Byte(0x518, value)
+end
+
+
+function EnemyComboBehaviorParam:group7EnemyDamageId2(value)
+	self:patch4Byte(0x51C, value)
+end
+
+
+function EnemyComboBehaviorParam:group7EnemyDamageId3(value)
+	self:patch4Byte(0x520, value)
+end
+
+
+function EnemyComboBehaviorParam:group7EnemyDamageId4(value)
+	self:patch4Byte(0x524, value)
+end
+
+
+function EnemyComboBehaviorParam:group7EnemyDamageId5(value)
+	self:patch4Byte(0x528, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk1C(value)
+	self:patch4Byte(0x52C, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk20(value)
+	self:patch4Byte(0x530, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk24(value)
+	self:patch4Byte(0x534, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk28(value)
+	self:patch4Byte(0x538, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk2C(value)
+	self:patch4Byte(0x53C, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk30(value)
+	self:patch4Byte(0x540, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk34(value)
+	self:patch4Byte(0x544, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk38(value)
+	self:patch4Byte(0x548, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk3C(value)
+	self:patch4Byte(0x54C, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk40(value)
+	self:patch4Byte(0x550, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk44(value)
+	self:patch4Byte(0x554, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk48(value)
+	self:patch4Byte(0x558, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk4C(value)
+	self:patch4Byte(0x55C, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk50(value)
+	self:patchFloat(0x560, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk54(value)
+	self:patchFloat(0x564, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk58(value)
+	self:patchFloat(0x568, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk5C(value)
+	self:patchFloat(0x56C, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk60(value)
+	self:patchFloat(0x570, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk64(value)
+	self:patchFloat(0x574, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk68(value)
+	self:patchFloat(0x578, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk6C(value)
+	self:patchFloat(0x57C, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk70(value)
+	self:patchFloat(0x580, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk74(value)
+	self:patchFloat(0x584, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk78(value)
+	self:patchFloat(0x588, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk7C(value)
+	self:patchFloat(0x58C, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk80(value)
+	self:patchFloat(0x590, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk84(value)
+	self:patchFloat(0x594, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk88(value)
+	self:patchFloat(0x598, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk8C(value)
+	self:patchFloat(0x59C, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk90(value)
+	self:patchFloat(0x5A0, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk94(value)
+	self:patchFloat(0x5A4, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk98(value)
+	self:patchFloat(0x5A8, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unk9C(value)
+	self:patchFloat(0x5AC, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unka0(value)
+	self:patchFloat(0x5B0, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unka4(value)
+	self:patchFloat(0x5B4, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unka8(value)
+	self:patchFloat(0x5B8, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unkac(value)
+	self:patchFloat(0x5BC, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unkb0(value)
+	self:patchFloat(0x5C0, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unkb4(value)
+	self:patchFloat(0x5C4, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unkb8(value)
+	self:patchFloat(0x5C8, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unkbc(value)
+	self:patchFloat(0x5CC, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unkc0(value)
+	self:patchFloat(0x5D0, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unkc4(value)
+	self:patch4Byte(0x5D4, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unkc8(value)
+	self:patch4Byte(0x5D8, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unkcc(value)
+	self:patch4Byte(0x5DC, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unkd0(value)
+	self:patch4Byte(0x5E0, value)
+end
+
+
+function EnemyComboBehaviorParam:group7Unkd4(value)
+	self:patch4Byte(0x5E4, value)
+end
+
+
+--[[End EnemyComboBehaviorParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

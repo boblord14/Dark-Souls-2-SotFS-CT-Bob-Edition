@@ -1,0 +1,60 @@
+[ENABLE]
+define(ChamaleonDamage, [[[[GameManagerImp]+10]+B50]+D8]+5BB30)
+define(HelloCarvingBullet, [[[[GameManagerImp]+60]+20]+D8]+44958)
+registersymbol(ChamaleonDamage)
+registersymbol(HelloCarvingBullet)
+
+ChamaleonDamage+48:
+dd #40550000
+
+ChamaleonDamage+4D:
+db FC
+
+ChamaleonDamage+4E:
+db 04
+
+ChamaleonDamage+C4:
+db 00
+
+HelloCarvingBullet+48:
+dd (float)0
+
+HelloCarvingBullet+0D4:
+dd 01DD4B80
+
+HelloCarvingBullet+0D8:
+dd 01DD4B80
+
+HelloCarvingBullet+ED:
+db 01
+
+[DISABLE]
+define(ChamaleonDamage, [[[[GameManagerImp]+10]+B50]+D8]+5BB30)
+define(HelloCarvingBullet, [[[[GameManagerImp]+60]+20]+D8]+44958)
+unregistersymbol(ChamaleonDamage)
+unregistersymbol(HelloCarvingBullet)
+
+ChamaleonDamage+48:
+dd 01DD4B80
+
+ChamaleonDamage+4D:
+db 1F
+
+ChamaleonDamage+4E:
+db 02
+
+ChamaleonDamage+C4:
+db 8A 4B DD 01
+
+HelloCarvingBullet+48:
+dd (float)5
+
+HelloCarvingBullet+0D4:
+db 0
+
+HelloCarvingBullet+0D8:
+db 0
+
+HelloCarvingBullet+0ED:
+db 0
+

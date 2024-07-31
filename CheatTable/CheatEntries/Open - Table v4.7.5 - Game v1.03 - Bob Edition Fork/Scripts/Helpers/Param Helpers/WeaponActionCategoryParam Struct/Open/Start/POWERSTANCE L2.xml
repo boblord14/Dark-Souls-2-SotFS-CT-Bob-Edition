@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337090192</ID>
+  <Description>"POWERSTANCE L2 "</Description>
+  <DropDownListLink>WeaponAttackMotion</DropDownListLink>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+d8</Address>
+</CheatEntry>

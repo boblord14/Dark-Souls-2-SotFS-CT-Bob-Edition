@@ -1,0 +1,62 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START FallingParam class]]--
+FallingParam = BaseParamClass:new()
+
+function FallingParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("FallingParam", uuid, id, address)
+	return o
+end
+
+function FallingParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function FallingParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function FallingParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function FallingParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function FallingParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function FallingParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function FallingParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function FallingParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+--[[End FallingParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

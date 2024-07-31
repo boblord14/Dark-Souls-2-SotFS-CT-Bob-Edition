@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(hollowa,4)
+                        hollowa:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+2F8]+08,4)
+                        registersymbol(hollowa)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2F8]+08:
+                        dw #9916
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(hollowa)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2F8]+08:
+                        readmem(hollowa, 4)
+                        unregistersymbol(hollowa)
+                    
+					

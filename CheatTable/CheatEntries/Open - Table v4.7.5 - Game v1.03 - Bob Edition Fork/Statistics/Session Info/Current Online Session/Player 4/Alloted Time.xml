@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>29545</ID>
+  <Description>"Alloted Time"</Description>
+  <VariableType>Float</VariableType>
+  <Address>"DarkSoulsII.exe"+0160DCD8</Address>
+  <Offsets>
+    <Offset>488</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

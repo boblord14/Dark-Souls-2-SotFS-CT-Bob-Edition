@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>1337105105</ID>
+  <Description>"Boot Slot"</Description>
+  <DropDownListLink>ArmorParam</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>BaseA</Address>
+  <Offsets>
+    <Offset>150</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

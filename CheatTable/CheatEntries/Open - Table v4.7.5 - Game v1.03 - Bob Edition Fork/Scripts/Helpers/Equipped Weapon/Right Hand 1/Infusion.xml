@@ -1,0 +1,23 @@
+<CheatEntry>
+  <ID>1337082918</ID>
+  <Description>"Infusion"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:None
+1:Fire
+2:Magic
+3:Lightning
+4:Dark
+5:Poison
+6:Bleed
+7:Raw
+8:Enchanted
+9:Mundane
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>149</Offset>
+    <Offset>28</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

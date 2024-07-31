@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337089201</ID>
+  <Description>"Item ID 1/2"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>pItem</Address>
+  <Offsets>
+    <Offset>14</Offset>
+  </Offsets>
+</CheatEntry>

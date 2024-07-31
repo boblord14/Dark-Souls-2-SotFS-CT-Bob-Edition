@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetPlayerDamageParamAddr, $100, DarkSoulsII.exe)
+alloc(PlayerDamageParamId, 4)
+label(return)
+registersymbol(GetPlayerDamageParamAddr)
+registersymbol(PlayerDamageParamId)
+
+PlayerDamageParamId:
+dd #400
+
+GetPlayerDamageParamAddr:
+sub rsp, 20
+mov edx, [PlayerDamageParamId]
+vortmov(rcx, [[[GameManagerImp]+18]+3D0], return)
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [DamageParamAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetPlayerDamageParamAddr)
+dealloc(PlayerDamageParamId)
+unregistersymbol(GetPlayerDamageParamAddr)
+unregistersymbol(PlayerDamageParamId)

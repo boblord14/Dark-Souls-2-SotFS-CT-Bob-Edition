@@ -1,0 +1,43 @@
+{
+    Author: Lord Radai
+    Description: Logs souls and prints character data
+}
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+print("--Souls logger on--")
+SoulsLogger = true
+
+local TOTAL_GET_SOUL_PTR = "[[[GameManagerImp]+D0]+490]+EC"
+local HP_PTR = "[[GameManagerImp]+D0]+168"
+local EFFECT_PTR = "[[[[GameManagerImp]+1D0]+708]+7B0]+58"
+local BULLET_PTR = "[[[GameManagerImp]+68]+8]+10"
+
+local function startSoulsLogger(thread)
+  local tmpSouls = readInteger(TOTAL_GET_SOUL_PTR)
+  while(SoulsLogger) do
+    local currentSouls = readInteger(TOTAL_GET_SOUL_PTR)
+    local Hp = readInteger(HP_PTR)
+    local Effect = readInteger(EFFECT_PTR)
+    local Bullet = readInteger(BULLET_PTR)
+    if (Bullet == nil) then
+       Bullet = 0
+    end
+    if(currentSouls ~= nil and Hp ~= nil and Effect ~= nil) then
+      if(tmpSouls ~= currentSouls) then
+        local time = os.date("*t")
+        print(("[%02d:%02d:%02d]: Previous Souls: [%d], Current Souls: [%d], Delta: [%d], Current HP: [%d], Last Effect: [%d], Last Bullet: [%d]"):format(time.hour, time.min, time.sec, tmpSouls, currentSouls, currentSouls - tmpSouls, Hp, Effect, Bullet))
+      end
+      tmpSouls = currentSouls
+    end
+    sleep(100)
+  end
+end
+
+createNativeThread(startSoulsLogger)
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+SoulsLogger = false
+print("--Souls logger off--")

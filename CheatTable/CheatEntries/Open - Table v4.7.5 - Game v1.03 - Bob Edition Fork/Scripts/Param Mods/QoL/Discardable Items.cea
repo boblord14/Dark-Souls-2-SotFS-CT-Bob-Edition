@@ -1,0 +1,17 @@
+{
+Author: Relinquished001 from the Grand Cathedral discord
+
+Makes every item discardable
+
+Can finally fix that stupid eye of the priestess softlock lol
+}
+
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+
+local ad = ItemParam:new("allDrop")
+ad:patchAll4Byte(0x44, 1000)
+
+[DISABLE]
+ParamUtils:restore("allDrop")

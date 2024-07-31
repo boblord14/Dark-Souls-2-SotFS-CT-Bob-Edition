@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>24080</ID>
+  <Description>"Additional Magic Slots"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="24081"/>
+    <id id="6"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

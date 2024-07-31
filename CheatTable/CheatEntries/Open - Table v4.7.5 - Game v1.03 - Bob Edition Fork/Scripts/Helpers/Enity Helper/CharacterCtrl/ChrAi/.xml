@@ -1,0 +1,26 @@
+<CheatEntry>
+  <ID>1337162672</ID>
+  <Description>"ChrAi"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+E8</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>20</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337162673"/>
+    <id id="1337162674"/>
+    <id id="1337162675"/>
+    <id id="1337162676"/>
+    <id id="1337162677"/>
+    <id id="1337162678"/>
+    <id id="1337162679"/>
+    <id id="1337162680"/>
+    <id id="1337162681"/>
+    <id id="1337162682"/>
+    <id id="1337162719"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

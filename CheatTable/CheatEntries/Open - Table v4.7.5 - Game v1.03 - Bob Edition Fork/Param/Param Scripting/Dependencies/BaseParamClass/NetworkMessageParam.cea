@@ -1,0 +1,132 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START NetworkMessageParam class]]--
+NetworkMessageParam = BaseParamClass:new()
+
+function NetworkMessageParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("NetworkMessageParam", uuid, id, address)
+	return o
+end
+
+function NetworkMessageParam:messageType(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function NetworkMessageParam:messageId0(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function NetworkMessageParam:messageId1(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function NetworkMessageParam:messageId2(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function NetworkMessageParam:messageId3(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function NetworkMessageParam:messageId4(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function NetworkMessageParam:messageId5(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function NetworkMessageParam:messageId6(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function NetworkMessageParam:messageId7(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function NetworkMessageParam:messageId8(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function NetworkMessageParam:messageId9(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function NetworkMessageParam:messageId10(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function NetworkMessageParam:messageId11(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function NetworkMessageParam:messageId12(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function NetworkMessageParam:messageId13(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function NetworkMessageParam:messageId14(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function NetworkMessageParam:messageId15(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function NetworkMessageParam:messageId16(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function NetworkMessageParam:messageId17(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function NetworkMessageParam:messageId18(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function NetworkMessageParam:messageId19(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function NetworkMessageParam:messageId20(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+--[[End NetworkMessageParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

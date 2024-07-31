@@ -1,0 +1,32 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START DamageMovementPowerParam class]]--
+DamageMovementPowerParam = BaseParamClass:new()
+
+function DamageMovementPowerParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("DamageMovementPowerParam", uuid, id, address)
+	return o
+end
+
+function DamageMovementPowerParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function DamageMovementPowerParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+--[[End DamageMovementPowerParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

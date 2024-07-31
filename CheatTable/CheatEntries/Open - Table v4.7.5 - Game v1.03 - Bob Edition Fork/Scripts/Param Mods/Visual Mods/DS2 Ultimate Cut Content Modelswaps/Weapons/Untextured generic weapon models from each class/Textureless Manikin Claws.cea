@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tmclaws,2)
+                        tmclaws:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(tmclaws)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6440
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tmclaws)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(tmclaws, 2)
+                        unregistersymbol(tmclaws)
+                    

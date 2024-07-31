@@ -1,0 +1,33 @@
+[ENABLE]
+aobscanmodule(WeaponDurabilityAOB,DarkSoulsII.exe,F3 xx xx B4 C3 xx xx xx xx 48)
+aobscanmodule(GearDurability,DarkSoulsII.exe,F3 xx xx 84 D1xx xx xx xx C3)
+aobscanmodule(RingDurabilityAOB,DarkSoulsII.exe,F3 xx xx xx xx C3 D8 03)
+aobscanmodule(InfiniteDurabilityAOB,DarkSoulsII.exe,F3 0F 11 52 20 48 8B FA 48 8B D9)
+registersymbol(WeaponDurabilityAOB)
+registersymbol(GearDurability)
+registersymbol(RingDurabilityAOB)
+registersymbol(InfiniteDurabilityAOB)
+InfiniteDurabilityAOB:
+ db 90 90 90 90 90
+WeaponDurabilityAOB:
+ db 90 90 90 90 90 90 90 90 90
+GearDurability:
+ db 90 90 90 90 90 90 90 90 90
+RingDurabilityAOB:
+ db F3 0F 10 D0 F3 0F 10 F0 90 90
+[DISABLE]
+unregistersymbol(WeaponDurabilityAOB)
+unregistersymbol(GearDurability)
+InfiniteDurabilityAOB:
+ db F3 0F 11 52 20
+WeaponDurabilityAOB:
+ db F3 0F 11 B4 C3 94 00 00 00
+GearDurability:
+ db F3 0F 10 84 D1 BC 02 00 00
+RingDurabilityAOB:
+ db F3 42 0F 10 94 C3 D8 03 00 00
+
+unregistersymbol(WeaponDurabilityAOB)
+unregistersymbol(GearDurability)
+unregistersymbol(RingDurabilityAOB)
+unregistersymbol(InfiniteDurabilityAOB)

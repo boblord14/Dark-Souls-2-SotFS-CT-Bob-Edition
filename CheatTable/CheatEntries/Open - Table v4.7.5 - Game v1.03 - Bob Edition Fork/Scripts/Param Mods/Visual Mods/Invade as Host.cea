@@ -1,0 +1,36 @@
+[ENABLE]
+
+[[[[GameManagerImp]+18]+7B0]+D8]+100:
+
+db 00
+
+[[[[GameManagerImp]+18]+7B0]+D8]+118:
+
+db 00
+
+[[[[GameManagerImp]+18]+7B0]+D8]+130:
+
+db 00
+
+[[[[GameManagerImp]+18]+7B0]+D8]+148:
+
+db 00
+
+[DISABLE]
+
+[[[[GameManagerImp]+18]+7B0]+D8]+100:
+
+db 08
+
+[[[[GameManagerImp]+18]+7B0]+D8]+118:
+
+db 09
+
+[[[[GameManagerImp]+18]+7B0]+D8]+130:
+
+db 0A
+
+[[[[GameManagerImp]+18]+7B0]+D8]+148:
+
+db 0B
+

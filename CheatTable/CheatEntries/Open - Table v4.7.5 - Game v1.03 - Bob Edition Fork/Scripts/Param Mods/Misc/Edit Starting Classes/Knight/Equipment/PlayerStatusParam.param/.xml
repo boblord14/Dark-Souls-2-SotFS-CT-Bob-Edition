@@ -1,0 +1,50 @@
+<CheatEntry>
+  <ID>1337088438</ID>
+  <Description>"PlayerStatusParam.param"</Description>
+  <Color>000000</Color>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>C</Offset>
+    <Offset>D8</Offset>
+    <Offset>730</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337088439"/>
+    <id id="1337088440"/>
+    <id id="1337088441"/>
+    <id id="1337088442"/>
+    <id id="1337088443"/>
+    <id id="1337088444"/>
+    <id id="1337088445"/>
+    <id id="1337088446"/>
+    <id id="1337088447"/>
+    <id id="1337088448"/>
+    <id id="1337088449"/>
+    <id id="1337088450"/>
+    <id id="1337088451"/>
+    <id id="1337088452"/>
+    <id id="1337088453"/>
+    <id id="1337088454"/>
+    <id id="1337088455"/>
+    <id id="1337088456"/>
+    <id id="1337088457"/>
+    <id id="1337088458"/>
+    <id id="1337088459"/>
+    <id id="1337088460"/>
+    <id id="1337088461"/>
+    <id id="1337088462"/>
+    <id id="1337088463"/>
+    <id id="1337088464"/>
+    <id id="1337088465"/>
+    <id id="1337088466"/>
+    <id id="1337088467"/>
+    <id id="1337088468"/>
+    <id id="1337088469"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256165</ID>
+  <Description>"Death Num"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1A4</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

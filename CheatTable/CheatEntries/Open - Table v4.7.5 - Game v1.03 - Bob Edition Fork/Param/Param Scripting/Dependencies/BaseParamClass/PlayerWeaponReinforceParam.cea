@@ -1,0 +1,27 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START PlayerWeaponReinforceParam class]]--
+PlayerWeaponReinforceParam = BaseParamClass:new()
+
+function PlayerWeaponReinforceParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("PlayerWeaponReinforceParam", uuid, id, address)
+	return o
+end
+
+function PlayerWeaponReinforceParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+--[[End PlayerWeaponReinforceParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

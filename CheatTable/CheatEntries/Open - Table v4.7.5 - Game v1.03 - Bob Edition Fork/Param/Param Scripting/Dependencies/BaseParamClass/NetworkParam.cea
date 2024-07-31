@@ -1,0 +1,792 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START NetworkParam class]]--
+NetworkParam = BaseParamClass:new()
+
+function NetworkParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("NetworkParam", uuid, id, address)
+	return o
+end
+
+function NetworkParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function NetworkParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function NetworkParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function NetworkParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function NetworkParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function NetworkParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function NetworkParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function NetworkParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function NetworkParam:unk20(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function NetworkParam:unk24(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function NetworkParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function NetworkParam:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function NetworkParam:unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function NetworkParam:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function NetworkParam:unk38(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function NetworkParam:unk3C(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function NetworkParam:unk40(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function NetworkParam:unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function NetworkParam:unk48(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function NetworkParam:unk4C(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function NetworkParam:unk50(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function NetworkParam:unk54(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function NetworkParam:unk58(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function NetworkParam:unk5C(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function NetworkParam:unk60(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function NetworkParam:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function NetworkParam:unk68(value)
+	self:patch4Byte(0x68, value)
+end
+
+
+function NetworkParam:unk6C(value)
+	self:patch4Byte(0x6C, value)
+end
+
+
+function NetworkParam:unk70(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+function NetworkParam:unk74(value)
+	self:patch4Byte(0x74, value)
+end
+
+
+function NetworkParam:unk78(value)
+	self:patch4Byte(0x78, value)
+end
+
+
+function NetworkParam:unk7C(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function NetworkParam:unk80(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function NetworkParam:unk84(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function NetworkParam:unk88(value)
+	self:patch4Byte(0x88, value)
+end
+
+
+function NetworkParam:unk8C(value)
+	self:patch4Byte(0x8C, value)
+end
+
+
+function NetworkParam:unk90(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function NetworkParam:unk94(value)
+	self:patch4Byte(0x94, value)
+end
+
+
+function NetworkParam:unk98(value)
+	self:patch4Byte(0x98, value)
+end
+
+
+function NetworkParam:unk9C(value)
+	self:patch4Byte(0x9C, value)
+end
+
+
+function NetworkParam:unka0(value)
+	self:patch4Byte(0xA0, value)
+end
+
+
+function NetworkParam:unka4(value)
+	self:patch4Byte(0xA4, value)
+end
+
+
+function NetworkParam:unka8(value)
+	self:patch4Byte(0xA8, value)
+end
+
+
+function NetworkParam:unkac(value)
+	self:patchFloat(0xAC, value)
+end
+
+
+function NetworkParam:unkb0(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function NetworkParam:unkb4(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function NetworkParam:unkb8(value)
+	self:patchFloat(0xB8, value)
+end
+
+
+function NetworkParam:unkbc(value)
+	self:patch4Byte(0xBC, value)
+end
+
+
+function NetworkParam:unkc0(value)
+	self:patch4Byte(0xC0, value)
+end
+
+
+function NetworkParam:unkc4(value)
+	self:patch4Byte(0xC4, value)
+end
+
+
+function NetworkParam:unkc8(value)
+	self:patch4Byte(0xC8, value)
+end
+
+
+function NetworkParam:unkcc(value)
+	self:patchFloat(0xCC, value)
+end
+
+
+function NetworkParam:unkd0(value)
+	self:patchFloat(0xD0, value)
+end
+
+
+function NetworkParam:unkd4(value)
+	self:patchFloat(0xD4, value)
+end
+
+
+function NetworkParam:unkd8(value)
+	self:patchFloat(0xD8, value)
+end
+
+
+function NetworkParam:unkdc(value)
+	self:patch4Byte(0xDC, value)
+end
+
+
+function NetworkParam:unke0(value)
+	self:patch4Byte(0xE0, value)
+end
+
+
+function NetworkParam:unke4(value)
+	self:patch4Byte(0xE4, value)
+end
+
+
+function NetworkParam:unke8(value)
+	self:patch4Byte(0xE8, value)
+end
+
+
+function NetworkParam:unkec(value)
+	self:patchFloat(0xEC, value)
+end
+
+
+function NetworkParam:unkf0(value)
+	self:patchFloat(0xF0, value)
+end
+
+
+function NetworkParam:unkf4(value)
+	self:patch4Byte(0xF4, value)
+end
+
+
+function NetworkParam:unkf8(value)
+	self:patch4Byte(0xF8, value)
+end
+
+
+function NetworkParam:unkfc(value)
+	self:patch4Byte(0xFC, value)
+end
+
+
+function NetworkParam:unk100(value)
+	self:patch4Byte(0x100, value)
+end
+
+
+function NetworkParam:unk104(value)
+	self:patchFloat(0x104, value)
+end
+
+
+function NetworkParam:unk108(value)
+	self:patch4Byte(0x108, value)
+end
+
+
+function NetworkParam:unk10C(value)
+	self:patch4Byte(0x10C, value)
+end
+
+
+function NetworkParam:unk110(value)
+	self:patch4Byte(0x110, value)
+end
+
+
+function NetworkParam:unk114(value)
+	self:patchFloat(0x114, value)
+end
+
+
+function NetworkParam:unk118(value)
+	self:patchFloat(0x118, value)
+end
+
+
+function NetworkParam:unk11C(value)
+	self:patchFloat(0x11C, value)
+end
+
+
+function NetworkParam:unk120(value)
+	self:patchFloat(0x120, value)
+end
+
+
+function NetworkParam:unk124(value)
+	self:patchFloat(0x124, value)
+end
+
+
+function NetworkParam:unk128(value)
+	self:patchFloat(0x128, value)
+end
+
+
+function NetworkParam:unk12C(value)
+	self:patchFloat(0x12C, value)
+end
+
+
+function NetworkParam:unk130(value)
+	self:patchFloat(0x130, value)
+end
+
+
+function NetworkParam:unk134(value)
+	self:patchFloat(0x134, value)
+end
+
+
+function NetworkParam:unk138(value)
+	self:patchFloat(0x138, value)
+end
+
+
+function NetworkParam:unk13C(value)
+	self:patchFloat(0x13C, value)
+end
+
+
+function NetworkParam:unk140(value)
+	self:patchFloat(0x140, value)
+end
+
+
+function NetworkParam:unk144(value)
+	self:patchFloat(0x144, value)
+end
+
+
+function NetworkParam:unk148(value)
+	self:patchFloat(0x148, value)
+end
+
+
+function NetworkParam:unk14C(value)
+	self:patchFloat(0x14C, value)
+end
+
+
+function NetworkParam:unk150(value)
+	self:patch4Byte(0x150, value)
+end
+
+
+function NetworkParam:unk154(value)
+	self:patch4Byte(0x154, value)
+end
+
+
+function NetworkParam:unk158(value)
+	self:patch4Byte(0x158, value)
+end
+
+
+function NetworkParam:unk15C(value)
+	self:patchFloat(0x15C, value)
+end
+
+
+function NetworkParam:unk160(value)
+	self:patchFloat(0x160, value)
+end
+
+
+function NetworkParam:unk164(value)
+	self:patchFloat(0x164, value)
+end
+
+
+function NetworkParam:unk168(value)
+	self:patchFloat(0x168, value)
+end
+
+
+function NetworkParam:unk16C(value)
+	self:patch4Byte(0x16C, value)
+end
+
+
+function NetworkParam:unk170(value)
+	self:patch4Byte(0x170, value)
+end
+
+
+function NetworkParam:unk174(value)
+	self:patch4Byte(0x174, value)
+end
+
+
+function NetworkParam:unk178(value)
+	self:patchFloat(0x178, value)
+end
+
+
+function NetworkParam:unk17C(value)
+	self:patchFloat(0x17C, value)
+end
+
+
+function NetworkParam:unk180(value)
+	self:patchFloat(0x180, value)
+end
+
+
+function NetworkParam:unk184(value)
+	self:patchFloat(0x184, value)
+end
+
+
+function NetworkParam:unk188(value)
+	self:patchFloat(0x188, value)
+end
+
+
+function NetworkParam:unk18C(value)
+	self:patchFloat(0x18C, value)
+end
+
+
+function NetworkParam:unk190(value)
+	self:patchFloat(0x190, value)
+end
+
+
+function NetworkParam:unk194(value)
+	self:patchFloat(0x194, value)
+end
+
+
+function NetworkParam:unk198(value)
+	self:patchFloat(0x198, value)
+end
+
+
+function NetworkParam:unk19C(value)
+	self:patchFloat(0x19C, value)
+end
+
+
+function NetworkParam:unk1A0(value)
+	self:patchFloat(0x1A0, value)
+end
+
+
+function NetworkParam:unk1A4(value)
+	self:patchFloat(0x1A4, value)
+end
+
+
+function NetworkParam:unk1A8(value)
+	self:patchFloat(0x1A8, value)
+end
+
+
+function NetworkParam:unk1Ac(value)
+	self:patchFloat(0x1AC, value)
+end
+
+
+function NetworkParam:unk1B0(value)
+	self:patch4Byte(0x1B0, value)
+end
+
+
+function NetworkParam:unk1B4(value)
+	self:patch4Byte(0x1B4, value)
+end
+
+
+function NetworkParam:unk1B8(value)
+	self:patch4Byte(0x1B8, value)
+end
+
+
+function NetworkParam:unk1Bc(value)
+	self:patchFloat(0x1BC, value)
+end
+
+
+function NetworkParam:unk1C0(value)
+	self:patch4Byte(0x1C0, value)
+end
+
+
+function NetworkParam:unk1C4(value)
+	self:patchFloat(0x1C4, value)
+end
+
+
+function NetworkParam:unk1C8(value)
+	self:patchFloat(0x1C8, value)
+end
+
+
+function NetworkParam:unk1Cc(value)
+	self:patch4Byte(0x1CC, value)
+end
+
+
+function NetworkParam:unk1D0(value)
+	self:patch4Byte(0x1D0, value)
+end
+
+
+function NetworkParam:unk1D4(value)
+	self:patchFloat(0x1D4, value)
+end
+
+
+function NetworkParam:unk1D8(value)
+	self:patchFloat(0x1D8, value)
+end
+
+
+function NetworkParam:unk1Dc(value)
+	self:patch4Byte(0x1DC, value)
+end
+
+
+function NetworkParam:unk1E0(value)
+	self:patchFloat(0x1E0, value)
+end
+
+
+function NetworkParam:unk1E4(value)
+	self:patchFloat(0x1E4, value)
+end
+
+
+function NetworkParam:unk1E8(value)
+	self:patchFloat(0x1E8, value)
+end
+
+
+function NetworkParam:unk1Ec(value)
+	self:patchFloat(0x1EC, value)
+end
+
+
+function NetworkParam:unk1F0(value)
+	self:patchFloat(0x1F0, value)
+end
+
+
+function NetworkParam:unk1F4(value)
+	self:patchFloat(0x1F4, value)
+end
+
+
+function NetworkParam:unk1F8(value)
+	self:patchFloat(0x1F8, value)
+end
+
+
+function NetworkParam:unk1Fc(value)
+	self:patchFloat(0x1FC, value)
+end
+
+
+function NetworkParam:unk200(value)
+	self:patchFloat(0x200, value)
+end
+
+
+function NetworkParam:unk204(value)
+	self:patchFloat(0x204, value)
+end
+
+
+function NetworkParam:unk208(value)
+	self:patchFloat(0x208, value)
+end
+
+
+function NetworkParam:unk20C(value)
+	self:patchFloat(0x20C, value)
+end
+
+
+function NetworkParam:unk210(value)
+	self:patchFloat(0x210, value)
+end
+
+
+function NetworkParam:unk214(value)
+	self:patchFloat(0x214, value)
+end
+
+
+function NetworkParam:unk218(value)
+	self:patchFloat(0x218, value)
+end
+
+
+function NetworkParam:unk21C(value)
+	self:patchFloat(0x21C, value)
+end
+
+
+function NetworkParam:unk220(value)
+	self:patchFloat(0x220, value)
+end
+
+
+function NetworkParam:unk224(value)
+	self:patchFloat(0x224, value)
+end
+
+
+function NetworkParam:unk228(value)
+	self:patchFloat(0x228, value)
+end
+
+
+function NetworkParam:unk22C(value)
+	self:patchFloat(0x22C, value)
+end
+
+
+function NetworkParam:unk230(value)
+	self:patchFloat(0x230, value)
+end
+
+
+function NetworkParam:unk234(value)
+	self:patchFloat(0x234, value)
+end
+
+
+function NetworkParam:unk238(value)
+	self:patchFloat(0x238, value)
+end
+
+
+function NetworkParam:unk23C(value)
+	self:patchFloat(0x23C, value)
+end
+
+
+function NetworkParam:unk240(value)
+	self:patchFloat(0x240, value)
+end
+
+
+function NetworkParam:unk244(value)
+	self:patchFloat(0x244, value)
+end
+
+
+function NetworkParam:unk248(value)
+	self:patchFloat(0x248, value)
+end
+
+
+function NetworkParam:unk24C(value)
+	self:patchFloat(0x24C, value)
+end
+
+
+function NetworkParam:unk250(value)
+	self:patchFloat(0x250, value)
+end
+
+
+function NetworkParam:unk254(value)
+	self:patchFloat(0x254, value)
+end
+
+
+function NetworkParam:unk258(value)
+	self:patchFloat(0x258, value)
+end
+
+
+function NetworkParam:unk25C(value)
+	self:patchFloat(0x25C, value)
+end
+
+
+function NetworkParam:unk260(value)
+	self:patchFloat(0x260, value)
+end
+
+
+function NetworkParam:unk264(value)
+	self:patchFloat(0x264, value)
+end
+
+
+--[[End NetworkParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

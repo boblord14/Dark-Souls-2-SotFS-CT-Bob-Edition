@@ -1,0 +1,167 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START MenuStatsParam class]]--
+MenuStatsParam = BaseParamClass:new()
+
+function MenuStatsParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("MenuStatsParam", uuid, id, address)
+	return o
+end
+
+function MenuStatsParam:hp(value)
+	self:patch2Byte(0x0, value)
+end
+
+
+function MenuStatsParam:stamina(value)
+	self:patch2Byte(0x2, value)
+end
+
+
+function MenuStatsParam:humanHp(value)
+	self:patch2Byte(0x4, value)
+end
+
+
+function MenuStatsParam:attunementSlots(value)
+	self:patch2Byte(0x6, value)
+end
+
+
+function MenuStatsParam:castSpeed(value)
+	self:patch2Byte(0x8, value)
+end
+
+
+function MenuStatsParam:strengthBonus(value)
+	self:patch2Byte(0xA, value)
+end
+
+
+function MenuStatsParam:dexterityBonus(value)
+	self:patch2Byte(0xC, value)
+end
+
+
+function MenuStatsParam:magicBonus(value)
+	self:patch2Byte(0xE, value)
+end
+
+
+function MenuStatsParam:fireBonus(value)
+	self:patch2Byte(0x10, value)
+end
+
+
+function MenuStatsParam:lightningBonus(value)
+	self:patch2Byte(0x12, value)
+end
+
+
+function MenuStatsParam:darkBonus(value)
+	self:patch2Byte(0x14, value)
+end
+
+
+function MenuStatsParam:poisonBonus(value)
+	self:patch2Byte(0x16, value)
+end
+
+
+function MenuStatsParam:bleedBonus(value)
+	self:patch2Byte(0x18, value)
+end
+
+
+function MenuStatsParam:unk1C(value)
+	self:patch2Byte(0x1A, value)
+end
+
+
+function MenuStatsParam:physicalDefense(value)
+	self:patch2Byte(0x1C, value)
+end
+
+
+function MenuStatsParam:magicDefense(value)
+	self:patch2Byte(0x1E, value)
+end
+
+
+function MenuStatsParam:fireDefense(value)
+	self:patch2Byte(0x20, value)
+end
+
+
+function MenuStatsParam:lightningDefense(value)
+	self:patch2Byte(0x22, value)
+end
+
+
+function MenuStatsParam:darkDefense(value)
+	self:patch2Byte(0x24, value)
+end
+
+
+function MenuStatsParam:poisonResist(value)
+	self:patch2Byte(0x26, value)
+end
+
+
+function MenuStatsParam:bleedResist(value)
+	self:patch2Byte(0x28, value)
+end
+
+
+function MenuStatsParam:petrifyResist(value)
+	self:patch2Byte(0x2A, value)
+end
+
+
+function MenuStatsParam:curseResist(value)
+	self:patch2Byte(0x2C, value)
+end
+
+
+function MenuStatsParam:unk24(value)
+	self:patch2Byte(0x2E, value)
+end
+
+
+function MenuStatsParam:unk28(value)
+	self:patch2Byte(0x30, value)
+end
+
+
+function MenuStatsParam:agility(value)
+	self:patch2Byte(0x32, value)
+end
+
+
+function MenuStatsParam:mundaneBonus(value)
+	self:patch2Byte(0x34, value)
+end
+
+
+function MenuStatsParam:unk30(value)
+	self:patch2Byte(0x36, value)
+end
+
+
+function MenuStatsParam:maxEquipLoad(value)
+	self:patchFloat(0x38, value)
+end
+
+
+--[[End MenuStatsParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

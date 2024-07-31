@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>1337089189</ID>
+  <Description>"Upgrade Level"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>pItem</Address>
+  <Offsets>
+    <Offset>25</Offset>
+  </Offsets>
+</CheatEntry>

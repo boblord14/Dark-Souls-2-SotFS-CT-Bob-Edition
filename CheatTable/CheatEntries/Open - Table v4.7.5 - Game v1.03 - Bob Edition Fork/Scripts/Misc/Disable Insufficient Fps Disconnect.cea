@@ -1,0 +1,17 @@
+[ENABLE]
+aobscanmodule(FpsKickAOB,DarkSoulsII.exe,72 xx C7 43 xx xx xx xx xx 48 83 C4 20)
+registersymbol(FpsKickAOB)
+
+FpsKickAOB:
+db EB 14
+
+[DISABLE]
+
+FpsKickAOB:
+db 72 14
+
+unregistersymbol(FpsKickAOB)
+
+ 
+ 
+

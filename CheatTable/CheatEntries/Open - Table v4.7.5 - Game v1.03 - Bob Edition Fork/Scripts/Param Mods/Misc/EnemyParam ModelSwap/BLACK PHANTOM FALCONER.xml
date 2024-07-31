@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337088271</ID>
+  <Description>"BLACK PHANTOM FALCONER"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>52F8</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

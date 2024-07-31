@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337090301</ID>
+  <Description>"2C"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">1:Normal
+2:Translated
+3:Rotated
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>+2C</Address>
+</CheatEntry>

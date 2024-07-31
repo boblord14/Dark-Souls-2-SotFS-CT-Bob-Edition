@@ -1,0 +1,62 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ChrRoundDropSoulParam class]]--
+ChrRoundDropSoulParam = BaseParamClass:new()
+
+function ChrRoundDropSoulParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ChrRoundDropSoulParam", uuid, id, address)
+	return o
+end
+
+function ChrRoundDropSoulParam:ng0Souls(value)
+	self:patch2Byte(0x0, value)
+end
+
+
+function ChrRoundDropSoulParam:ng1Souls(value)
+	self:patch2Byte(0x2, value)
+end
+
+
+function ChrRoundDropSoulParam:ng2Souls(value)
+	self:patch2Byte(0x4, value)
+end
+
+
+function ChrRoundDropSoulParam:ng3Souls(value)
+	self:patch2Byte(0x6, value)
+end
+
+
+function ChrRoundDropSoulParam:ng4Souls(value)
+	self:patch2Byte(0x8, value)
+end
+
+
+function ChrRoundDropSoulParam:ng5Souls(value)
+	self:patch2Byte(0xA, value)
+end
+
+
+function ChrRoundDropSoulParam:ng6Souls(value)
+	self:patch2Byte(0xC, value)
+end
+
+
+function ChrRoundDropSoulParam:ng7Souls(value)
+	self:patch2Byte(0xE, value)
+end
+
+
+--[[End ChrRoundDropSoulParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

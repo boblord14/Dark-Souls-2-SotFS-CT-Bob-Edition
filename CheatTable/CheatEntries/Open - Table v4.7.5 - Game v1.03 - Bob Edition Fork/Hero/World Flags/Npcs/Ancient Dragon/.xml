@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337256312</ID>
+  <Description>"Ancient Dragon"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="105"/>
+    <id id="106"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

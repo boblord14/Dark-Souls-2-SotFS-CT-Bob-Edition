@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337275587</ID>
+  <Description>"Param Lookup"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337275588"/>
+    <id id="1337275592"/>
+    <id id="1337275593"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

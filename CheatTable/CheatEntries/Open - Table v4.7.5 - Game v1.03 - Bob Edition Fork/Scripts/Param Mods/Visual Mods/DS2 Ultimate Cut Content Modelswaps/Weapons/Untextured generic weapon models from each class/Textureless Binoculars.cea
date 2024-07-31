@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tbinos,2)
+                        tbinos:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(tbinos)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #6460
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tbinos)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(tbinos, 2)
+                        unregistersymbol(tbinos)
+                    

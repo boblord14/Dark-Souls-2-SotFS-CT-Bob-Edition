@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337042705</ID>
+  <Description>"Item Amount"</Description>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>ItemStruct+80</Address>
+</CheatEntry>

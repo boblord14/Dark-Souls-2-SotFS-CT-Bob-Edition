@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337090198</ID>
+  <Description>"SHIELD POKE 2 #2"</Description>
+  <DropDownListLink>WeaponAttackMotion</DropDownListLink>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+f0</Address>
+</CheatEntry>

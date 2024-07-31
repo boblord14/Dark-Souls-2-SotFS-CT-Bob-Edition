@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337089267</ID>
+  <Description>"Get ArmorReinforceParam Address"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337089268"/>
+    <id id="1337089269"/>
+    <id id="1337089271"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

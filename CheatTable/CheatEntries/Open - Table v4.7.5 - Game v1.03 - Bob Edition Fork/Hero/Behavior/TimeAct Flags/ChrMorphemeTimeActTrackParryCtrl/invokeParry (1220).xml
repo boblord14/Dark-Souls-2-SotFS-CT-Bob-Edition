@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337079486</ID>
+  <Description>"invokeParry (1220)"</Description>
+  <DropDownListLink>bool</DropDownListLink>
+  <Color>000000</Color>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>550</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

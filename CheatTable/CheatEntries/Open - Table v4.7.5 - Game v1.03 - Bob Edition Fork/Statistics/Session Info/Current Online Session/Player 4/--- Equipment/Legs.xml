@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>86924</ID>
+  <Description>"Legs"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:EquipArmor1
+01D92CD0:Soul Arrow
+01D953E0:Great Soul Arrow
+01D97AF0:Heavy Soul Arrow
+</DropDownList>
+  <VariableType>4 Bytes</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>920</Offset>
+    <Offset>458</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

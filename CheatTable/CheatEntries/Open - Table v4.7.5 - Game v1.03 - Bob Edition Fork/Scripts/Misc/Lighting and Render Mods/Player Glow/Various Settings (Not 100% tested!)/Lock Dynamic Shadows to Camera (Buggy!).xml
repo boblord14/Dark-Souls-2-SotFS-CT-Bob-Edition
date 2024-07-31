@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26495</ID>
+  <Description>"Lock Dynamic Shadows to Camera (Buggy!)"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>"DarkSoulsII.exe"+160B8D0</Address>
+  <Offsets>
+    <Offset>2D0</Offset>
+    <Offset>2B8</Offset>
+    <Offset>670</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

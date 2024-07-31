@@ -1,0 +1,312 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START EnemyDamageParam class]]--
+EnemyDamageParam = BaseParamClass:new()
+
+function EnemyDamageParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("EnemyDamageParam", uuid, id, address)
+	return o
+end
+
+function EnemyDamageParam:damageControlId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function EnemyDamageParam:damageIdFollowUp(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function EnemyDamageParam:damageIdOrigin(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function EnemyDamageParam:damage0(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function EnemyDamageParam:damage1(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function EnemyDamageParam:damage2(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function EnemyDamageParam:unk18(value)
+	self:patchByte(0x18, value)
+end
+
+
+function EnemyDamageParam:damageType0(value)
+	self:patchByte(0x19, value)
+end
+
+
+function EnemyDamageParam:damageType1(value)
+	self:patchByte(0x1A, value)
+end
+
+
+function EnemyDamageParam:damageType2(value)
+	self:patchByte(0x1B, value)
+end
+
+
+function EnemyDamageParam:damageMultiplier(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function EnemyDamageParam:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function EnemyDamageParam:unk24(value)
+	self:patchByte(0x24, value)
+end
+
+
+function EnemyDamageParam:unk25(value)
+	self:patchByte(0x25, value)
+end
+
+
+function EnemyDamageParam:unk26(value)
+	self:patchByte(0x26, value)
+end
+
+
+function EnemyDamageParam:unk27(value)
+	self:patchByte(0x27, value)
+end
+
+
+function EnemyDamageParam:knockbackAmount(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function EnemyDamageParam:knockbackSpeed(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function EnemyDamageParam:isspawnonweapon(value)
+	self:patchByte(0x30, value)
+end
+
+
+function EnemyDamageParam:hitboxOriginDmypolyId(value)
+	self:patchByte(0x31, value)
+end
+
+
+function EnemyDamageParam:guardBreakRelated(value)
+	self:patchByte(0x32, value)
+end
+
+
+function EnemyDamageParam:hitboxShape(value)
+	self:patchByte(0x33, value)
+end
+
+
+function EnemyDamageParam:hitboxRadiusMultiplier(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function EnemyDamageParam:hitboxLenghtMultiplier(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function EnemyDamageParam:cyclePeriod(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function EnemyDamageParam:target(value)
+	self:patchByte(0x40, value)
+end
+
+
+function EnemyDamageParam:unk41(value)
+	self:patchByte(0x41, value)
+end
+
+
+function EnemyDamageParam:unk42(value)
+	self:patchByte(0x42, value)
+end
+
+
+function EnemyDamageParam:unk43(value)
+	self:patchByte(0x43, value)
+end
+
+
+function EnemyDamageParam:unk44(value)
+	self:patchByte(0x44, value)
+end
+
+
+function EnemyDamageParam:unk45(value)
+	self:patchByte(0x45, value)
+end
+
+
+function EnemyDamageParam:unk46(value)
+	self:patchByte(0x46, value)
+end
+
+
+function EnemyDamageParam:unk47(value)
+	self:patchByte(0x47, value)
+end
+
+
+function EnemyDamageParam:speffectId(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function EnemyDamageParam:isapplyspeffect(value)
+	self:patchByte(0x4C, value)
+end
+
+
+function EnemyDamageParam:speffectType(value)
+	self:patchByte(0x4D, value)
+end
+
+
+function EnemyDamageParam:applyMode(value)
+	self:patchByte(0x4E, value)
+end
+
+
+function EnemyDamageParam:unk4F(value)
+	self:patchByte(0x4F, value)
+end
+
+
+function EnemyDamageParam:unk50(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function EnemyDamageParam:unk54(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+function EnemyDamageParam:unk58(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function EnemyDamageParam:unk5C(value)
+	self:patchByte(0x5C, value)
+end
+
+
+function EnemyDamageParam:unk5D(value)
+	self:patchByte(0x5D, value)
+end
+
+
+function EnemyDamageParam:unk5E(value)
+	self:patchByte(0x5E, value)
+end
+
+
+function EnemyDamageParam:unk5F(value)
+	self:patchByte(0x5F, value)
+end
+
+
+function EnemyDamageParam:unk60(value)
+	self:patchByte(0x60, value)
+end
+
+
+function EnemyDamageParam:unk61(value)
+	self:patchByte(0x61, value)
+end
+
+
+function EnemyDamageParam:unk62(value)
+	self:patchByte(0x62, value)
+end
+
+
+function EnemyDamageParam:hitbackHitboxOriginDummypolyId(value)
+	self:patchByte(0x63, value)
+end
+
+
+function EnemyDamageParam:hitbackHitboxShape(value)
+	self:patchByte(0x64, value)
+end
+
+
+function EnemyDamageParam:unk65(value)
+	self:patchByte(0x65, value)
+end
+
+
+function EnemyDamageParam:unk66(value)
+	self:patchByte(0x66, value)
+end
+
+
+function EnemyDamageParam:unk67(value)
+	self:patchByte(0x67, value)
+end
+
+
+function EnemyDamageParam:hitbackHitboxRadiusMultiplier(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function EnemyDamageParam:hitbackHitboxLenghtMultiplier(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function EnemyDamageParam:grabParamId(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+function EnemyDamageParam:hitboxMaxSize(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function EnemyDamageParam:hitboxExpansionSpeed(value)
+	self:patchFloat(0x78, value)
+end
+
+
+--[[End EnemyDamageParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

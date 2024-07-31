@@ -1,0 +1,137 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START BossBattleParam class]]--
+BossBattleParam = BaseParamClass:new()
+
+function BossBattleParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("BossBattleParam", uuid, id, address)
+	return o
+end
+
+function BossBattleParam:souls(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function BossBattleParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function BossBattleParam:itemlotId(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function BossBattleParam:enemyCommonId(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function BossBattleParam:bossDestructionFlagId(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function BossBattleParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function BossBattleParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function BossBattleParam:cameraFollowId(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function BossBattleParam:lockOnId(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function BossBattleParam:unknown1(value)
+	self:patchByte(0x24, value)
+end
+
+
+function BossBattleParam:unknown2(value)
+	self:patchByte(0x25, value)
+end
+
+
+function BossBattleParam:unknown3(value)
+	self:patchByte(0x26, value)
+end
+
+
+function BossBattleParam:primalBonfireBoss(value)
+	self:patchByte(0x27, value)
+end
+
+
+function BossBattleParam:unknown12(value)
+	self:patchByte(0x28, value)
+end
+
+
+function BossBattleParam:unknown22(value)
+	self:patchByte(0x29, value)
+end
+
+
+function BossBattleParam:unknown32(value)
+	self:patchByte(0x2A, value)
+end
+
+
+function BossBattleParam:unk2B(value)
+	self:patchByte(0x2B, value)
+end
+
+
+function BossBattleParam:nameTextId1(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function BossBattleParam:nameTextId2(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function BossBattleParam:nameTextId3(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function BossBattleParam:unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function BossBattleParam:mapObjectBonfireId(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function BossBattleParam:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+--[[End BossBattleParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

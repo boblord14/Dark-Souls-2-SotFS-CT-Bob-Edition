@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(pierces,2)
+                        pierces:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+58]+04,2)
+                        registersymbol(pierces)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        dw #9901
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(pierces)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        readmem(pierces, 2)
+                        unregistersymbol(pierces)
+                    

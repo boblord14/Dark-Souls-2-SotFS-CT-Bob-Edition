@@ -1,0 +1,21 @@
+<CheatEntry>
+  <ID>1337107563</ID>
+  <Description>"Stats"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+168</Address>
+  <x-ce2fs-child-order>
+    <id id="1337107564"/>
+    <id id="1337107569"/>
+    <id id="1337107573"/>
+    <id id="1337107577"/>
+    <id id="1337107581"/>
+    <id id="1337107585"/>
+    <id id="1337107589"/>
+    <id id="1337107593"/>
+    <id id="1337107597"/>
+    <id id="1337107601"/>
+    <id id="1337107605"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

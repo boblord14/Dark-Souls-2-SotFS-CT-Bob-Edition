@@ -1,0 +1,27 @@
+<CheatEntry>
+  <ID>1337103891</ID>
+  <Description>"ChrAttackDamageCtrl"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+230</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337103892"/>
+    <id id="1337103899"/>
+    <id id="1337103906"/>
+    <id id="1337103913"/>
+    <id id="1337103920"/>
+    <id id="1337103927"/>
+    <id id="1337103934"/>
+    <id id="1337103941"/>
+    <id id="1337103948"/>
+    <id id="1337103955"/>
+    <id id="1337103962"/>
+    <id id="1337103969"/>
+    <id id="1337103976"/>
+    <id id="1337104427"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

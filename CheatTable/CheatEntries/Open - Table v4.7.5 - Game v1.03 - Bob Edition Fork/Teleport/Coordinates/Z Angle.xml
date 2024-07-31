@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337077562</ID>
+  <Description>"Z Angle"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>38</Offset>
+    <Offset>F0</Offset>
+    <Offset>F8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

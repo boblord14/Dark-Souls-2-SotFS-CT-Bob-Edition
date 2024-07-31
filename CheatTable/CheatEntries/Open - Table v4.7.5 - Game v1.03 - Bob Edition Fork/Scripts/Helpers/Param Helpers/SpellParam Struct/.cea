@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem3,32)
+label(SpellParamAddressToUse)
+registersymbol(SpellParamAddressToUse)
+newmem3:
+SpellParamAddressToUse:
+[DISABLE]
+dealloc(newmem3)
+unregistersymbol(SpellParamAddressToUse)

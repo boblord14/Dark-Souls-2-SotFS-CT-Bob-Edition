@@ -1,0 +1,37 @@
+{
+    Author: Lord Radai
+    Description: Logs damage inflicted to locked-on target
+}
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+print("--Target damage logger on--")
+TargetDamageLogger = true
+
+local TARGET_HP_PTR = "[[pTarget]+C0]+168"
+local TARGET_PERMISSION_PTR = "[[[pTarget]+C0]+B0]+3C"
+
+local function startTargetDamageLogger(thread)
+  local tmpHp = 0
+  local tmpHpCap = 0
+  while(TargetDamageLogger) do
+    local currentHp = readInteger(TARGET_HP_PTR)
+    local permission = readByte(TARGET_PERMISSION_PTR)
+    local time = os.date("*t")
+    if(currentHp ~= nil and permission ~= nil) then
+      if(tmpHp > currentHp) then
+        print(("[%02d:%02d:%02d]: Previous HP: [%d], Current HP: [%d], Delta: [%d]"):format(time.hour, time.min, time.sec, tmpHp, currentHp, tmpHp - currentHp))
+      end
+      tmpHp = currentHp
+    end
+    sleep(0)
+  end
+end
+
+createNativeThread(startTargetDamageLogger)
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+TargetDamageLogger = false
+print("--Target damage logger off--")

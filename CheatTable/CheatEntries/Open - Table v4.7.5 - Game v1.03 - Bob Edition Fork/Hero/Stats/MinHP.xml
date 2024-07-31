@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>95989</ID>
+  <Description>"MinHP"</Description>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>16C</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

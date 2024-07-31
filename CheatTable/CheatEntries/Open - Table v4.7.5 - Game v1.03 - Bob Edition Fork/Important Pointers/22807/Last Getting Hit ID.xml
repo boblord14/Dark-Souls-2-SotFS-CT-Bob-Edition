@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>22977</ID>
+  <Description>"Last Getting Hit ID"</Description>
+  <ShowAsSigned>1</ShowAsSigned>
+  <Color>008000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>538</Offset>
+    <Offset>6F0</Offset>
+    <Offset>698</Offset>
+    <Offset>1D0</Offset>
+  </Offsets>
+</CheatEntry>

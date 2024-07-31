@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26361</ID>
+  <Description>"Direct Lightning"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26357"/>
+    <id id="26358"/>
+    <id id="26359"/>
+    <id id="26360"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

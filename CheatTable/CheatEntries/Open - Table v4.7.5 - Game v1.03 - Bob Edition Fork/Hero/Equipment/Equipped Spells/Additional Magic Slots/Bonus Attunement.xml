@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>6</ID>
+  <Description>"Bonus Attunement"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>pAttune1</Address>
+  <Offsets>
+    <Offset>259ED</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,48 @@
+{
+ Author: bobLord
+ Desc: Set event flags to a specified value
+
+ Thanks to Radai for helping me get the function addresses
+}
+[ENABLE]
+{$asm}
+
+
+alloc(FlagID, 4)
+alloc(FlagVal, 1)
+alloc(SetEventFlag, $100, DarkSoulsII.exe)
+
+registersymbol(FlagID)
+registersymbol(FlagVal)
+registersymbol(SetEventFlag)
+
+
+FlagID:
+dd #221020088 //flagid goes here
+
+FlagVal:
+db 0 //flag value goes here
+
+
+SetEventFlag:
+sub rsp, 28
+mov rcx, [GameManagerImp]
+vortmov(rcx, [[GameManagerImp]+70]+20, return)
+mov edx, [FlagID]
+mov r8d, [FlagVal]
+call DarkSoulsII.exe+4750b0
+add rsp, 28
+ret
+
+return:
+add rsp, 28
+ret
+
+[DISABLE]
+dealloc(FlagID)
+dealloc(FlagVal)
+dealloc(SetEventFlag)
+unregistersymbol(FlagID)
+unregistersymbol(FlagVal)
+unregistersymbol(SetEventFlag)
+

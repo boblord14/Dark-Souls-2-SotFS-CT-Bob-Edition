@@ -1,0 +1,37 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START TorchCtrlParam class]]--
+TorchCtrlParam = BaseParamClass:new()
+
+function TorchCtrlParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("TorchCtrlParam", uuid, id, address)
+	return o
+end
+
+function TorchCtrlParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function TorchCtrlParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function TorchCtrlParam:duration(value)
+	self:patchFloat(0x8, value)
+end
+
+
+--[[End TorchCtrlParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

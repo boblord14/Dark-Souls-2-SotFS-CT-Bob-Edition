@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337090146</ID>
+  <Description>"1H LANDING"</Description>
+  <DropDownListLink>WeaponAttackMotion</DropDownListLink>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+20</Address>
+</CheatEntry>

@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>1337106089</ID>
+  <Description>"invokeParry (1220)"</Description>
+  <DropDownListLink>bool</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>000000</Color>
+  <VariableType>Byte</VariableType>
+  <Address>+550</Address>
+</CheatEntry>

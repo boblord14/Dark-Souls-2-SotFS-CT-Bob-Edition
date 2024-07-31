@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>59</ID>
+  <Description>"Upper Gutter"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>43A</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

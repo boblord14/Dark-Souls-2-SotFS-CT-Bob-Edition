@@ -1,0 +1,197 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START DamageEffectSfxParam class]]--
+DamageEffectSfxParam = BaseParamClass:new()
+
+function DamageEffectSfxParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("DamageEffectSfxParam", uuid, id, address)
+	return o
+end
+
+function DamageEffectSfxParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function DamageEffectSfxParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function DamageEffectSfxParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function DamageEffectSfxParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function DamageEffectSfxParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function DamageEffectSfxParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function DamageEffectSfxParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function DamageEffectSfxParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function DamageEffectSfxParam:unk20(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function DamageEffectSfxParam:unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function DamageEffectSfxParam:unk28(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function DamageEffectSfxParam:unk2C(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function DamageEffectSfxParam:unk30(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function DamageEffectSfxParam:unk34(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function DamageEffectSfxParam:unk38(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function DamageEffectSfxParam:unk3C(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function DamageEffectSfxParam:unk40(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function DamageEffectSfxParam:unk44(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function DamageEffectSfxParam:unk48(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function DamageEffectSfxParam:unk4C(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function DamageEffectSfxParam:unk50(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function DamageEffectSfxParam:unk54(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+function DamageEffectSfxParam:unk58(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function DamageEffectSfxParam:unk5C(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function DamageEffectSfxParam:unk60(value)
+	self:patch4Byte(0x60, value)
+end
+
+
+function DamageEffectSfxParam:unk64(value)
+	self:patch4Byte(0x64, value)
+end
+
+
+function DamageEffectSfxParam:unk68(value)
+	self:patchByte(0x68, value)
+end
+
+
+function DamageEffectSfxParam:unk69(value)
+	self:patchByte(0x69, value)
+end
+
+
+function DamageEffectSfxParam:unk6A(value)
+	self:patchByte(0x6A, value)
+end
+
+
+function DamageEffectSfxParam:unk6B(value)
+	self:patchByte(0x6B, value)
+end
+
+
+function DamageEffectSfxParam:unk6C(value)
+	self:patchByte(0x6C, value)
+end
+
+
+function DamageEffectSfxParam:unk6D(value)
+	self:patchByte(0x6D, value)
+end
+
+
+function DamageEffectSfxParam:unk6E(value)
+	self:patchByte(0x6E, value)
+end
+
+
+function DamageEffectSfxParam:unk6F(value)
+	self:patchByte(0x6F, value)
+end
+
+
+function DamageEffectSfxParam:unk70(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+--[[End DamageEffectSfxParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

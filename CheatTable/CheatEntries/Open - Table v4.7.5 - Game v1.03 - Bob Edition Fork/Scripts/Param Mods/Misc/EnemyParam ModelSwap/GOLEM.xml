@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337088027</ID>
+  <Description>"GOLEM"</Description>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3C18</Offset>
+    <Offset>D8</Offset>
+    <Offset>350</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

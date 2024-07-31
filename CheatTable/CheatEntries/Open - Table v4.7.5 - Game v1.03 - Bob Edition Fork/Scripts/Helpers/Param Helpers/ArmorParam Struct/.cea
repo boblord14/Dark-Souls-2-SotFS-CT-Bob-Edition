@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem21,32)
+label(ArmorParamAddressToUse)
+registersymbol(ArmorParamAddressToUse)
+newmem21:
+ArmorParamAddressToUse:
+[DISABLE]
+dealloc(newmem21)
+unregistersymbol(ArmorParamAddressToUse)

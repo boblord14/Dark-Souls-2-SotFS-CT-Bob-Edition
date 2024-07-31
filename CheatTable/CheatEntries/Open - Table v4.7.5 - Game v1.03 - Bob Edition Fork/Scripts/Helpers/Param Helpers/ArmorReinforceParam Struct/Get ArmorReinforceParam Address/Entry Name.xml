@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337089268</ID>
+  <Description>"Entry Name"</Description>
+  <DropDownListLink>ArmorReinforceParam</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>ArmorReinforceParamId</Address>
+</CheatEntry>

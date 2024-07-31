@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>16796</ID>
+  <Description>"Heirs of the Sun"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="16792"/>
+    <id id="16814"/>
+    <id id="16805"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

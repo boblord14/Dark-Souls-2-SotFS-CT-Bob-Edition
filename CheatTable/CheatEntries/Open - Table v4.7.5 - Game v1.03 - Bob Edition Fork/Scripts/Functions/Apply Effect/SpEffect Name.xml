@@ -1,0 +1,906 @@
+<CheatEntry>
+  <ID>1337043085</ID>
+  <Description>"SpEffect Name"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">600:
+601:
+748:
+749:
+750:
+751:
+752:
+753:
+754:
+755:
+756:
+757:
+758:
+759:
+760:
+761:
+762:
+763:
+764:
+765:
+766:
+767:
+768:
+769:
+770:
+771:
+772:
+773:
+774:
+775:
+776:
+777:
+778:
+779:
+780:
+781:
+782:
+783:
+784:
+785:
+786:
+787:
+788:
+789:
+850:
+851:
+852:
+870:
+871:
+872:
+930:
+931:
+900000:
+900100:Poison
+900200:Bleeding Damage
+900210:Bleeding Effect
+900301:Defense Break
+900400:Curse
+900500:Fire and Knockdown
+900600:Toxic
+900700:Metal Body
+900800:Water Drench
+900900:Poison Drench
+901000:Heal 3000 HP
+901100:Petrification Death Aura
+901110:Curse Death Aura
+902000:Ash Coating
+902100:Bronze Coating
+902200:Snow Coating
+902300:Water Coating
+902400:Snow Coating
+1140000:Blue Dagger
+1260010:Possessed Armor Sword
+1630010:Eleum Loyce 1H
+1630011:Eleum Loyce 2H
+1630020:Eleum Loyce 1H
+1630021:Eleum Loyce 2H
+1670010:Spider Fang
+1720010:Chaos Blade
+1790015:Bewitched Alonne Sword Startup
+1790020:Bewitched Alonne Sword Buff
+1830000:Majestic Greatsword
+1900000:Ruler's Sword
+1960000:Defender Greatsword
+1970000:Watcher Greatsword
+1990010:Drakeblood Greatsword
+1997000:Hollow Scaling
+2090000:Butcher's Knife
+2500000:Handmaid's Ladle
+2680000:Dragon Tooth
+2760000:Sanctum Mace
+2760010:Sanctum Mace Poison Buildup
+2855000:Yorgh's Spear
+3080000:Scythe of the Forlorn
+3400010:
+3440000:Work Hook
+3530000:Bone Fist
+3530010:Bone Fist Bullet
+3810000:Staff of Amana
+3930000:Azal's Staff
+4110000:Disc Chime
+4120000:Chime of Screams
+4200000:Short Bow
+4210000:Long Bow
+4220000:Composite Bow
+4230000:Sea Bow
+4240000:Dragonrider Bow
+4270000:Bell Keeper Bow
+4280000:Bow of Want
+4290000:Hunter's Blackbow
+4400000:Alonne Greatbow
+4420000:Dragonslayer Greatbow
+4600000:Light Crossbow
+4610000:Heavy Crossbow
+4630000:Shield Crossbow
+4660000:Avelyn
+5050000:Curved Nil Greatsword
+5255000:Ivory King Ultra Greatsword
+5295000:Lost Sinner's Sword (Damage)
+5295010:Lost Sinner's Sword (Sin Scaling)
+5400000:Pyromancy Flame
+5410000:Dark Pyromancy Flame
+6000000:Damage Player &amp; Enemies
+11290000:Loyce Shield
+11295000:Charred Loyce Shield
+11320000:Vessel Shield
+11330000:Shield of the Insolent
+11390000:Slumbering Dragon Shield
+11640000:Drakekeeper's Greatshield
+11720000:Watchdragon Parma
+11730000:Blossom Kite Shield
+11750000:Wicked Eye Greatshield
+21140100:Traveling Merchant Hat
+21210100:Jester's Cap
+21210101:Jester's Robes
+21210102:Jester's Gloves
+21210103:Jester's Tights
+21230100:Moon Hat
+21360100:Helm of Aurous
+21360101:Armor of Aurous
+21360102:Gauntlets of Aurous
+21360103:Leggings of Aurous
+21430100:Durgo's Hat
+21440102:Engraved Gauntlets
+21460103:Flying Feline Boots
+21470100:Moon Butterfly Hat
+21470101:Moon Butterfly Wings
+21470102:Moon Butterfly Cuffs
+21470103:Moon Butterfly Skirt
+21470110:Poison Nearby Enemies
+21470120:Poison Aura
+21501100:Black Witch Hat
+21502100:Black Witch Domino Mask
+21610100:Northwarder Hood
+21610101:Northwarder Robe
+21610102:Northwarder Manchettes
+21610103:Northwarder Trousers
+21630100:Crown of the Old Iron King
+21630105:+1 Attunement Slot
+21630110:Restore Spell Usage
+21640100:Crown of the Ivory King
+21640110:Crown of the Ivory King (Regen)
+21650100:Crown of the Sunken King
+21650110:Crown of the Sunken King (Stats Boost)
+21660100:Old Bell Helm
+21670100:Hollow Skin
+21680100:Pharros Mask
+21690103:Flower Skirt
+21710100:Symbol of Avarice
+22060100:White Priest Headpiece
+22062100:Priestess Headpiece
+22180100:Black Hollow Mage Hood
+22182100:White Hollow Mage Hood
+22190101:Lion Mage Robe
+22190102:Lion Mage Cuffs
+22190103:Lion Mage Skirt
+22230102:Shadow Gauntlets
+22270100:Prisoner's Hood
+22270101:Prisoner's Tatters
+22271100:Prisoner's Hood
+22271101:Prisoner's Tatters
+22310100:Archdrake Helm
+22360100:Dark Mask
+22370100:Warlock Mask
+22460100:Tseldora Cap
+22460101:Tseldora Robe
+22460102:Tseldora Manchettes
+22460103:Tseldora Trousers
+22480100:Peasant Hat
+22480101:Peasant Attire
+22480102:Peasant Long Gloves
+22480103:Peasant Trousers
+22510100:Ironclad Helm
+22510101:Ironclad Armor
+22512100:Old Ironclad Helm
+22512101:Old Ironclad Armor
+23070100:Vengarl's Helm
+23080101:Lion Warrior Cape
+23080102:Lion Warrior Cuffs
+23080103:Lion Warrior Skirt
+23081100:Lion Warrior Helm
+23081101:Red Lion Warrior Cape
+23160100:Desert Sorceress Hood
+23171100:Dragon Sage Hood
+23330100:Velstadt's Helm
+25040100:Looking Glass Mask
+25060102:Agdayne's Cuffs
+25090100:Leydia Black Hood
+25100100:Insolent Helm
+25130100:King's Crown
+25130110:King's Crown (Stats Boost)
+26260100:Penal Mask
+26260102:Penal Handcuffs
+26650103:Sanctum Knight Leggings
+26660102:Sanctum Soldier Gauntlet
+26700100:Sanctum Priestess Tiara
+26700110:Sanctum Priestess Tiara (Silence Immunity)
+26880100:Loyce Helm
+26880101:Loyce Armor
+26880102:Loyce Gauntlets
+26880103:Loyce Leggings
+26880210:Loyce Helm (Healing)
+26880211:Loyce Armor (Healing)
+26880212:Loyce Gauntlets (Healing)
+26880213:Loyce Leggings (Healing)
+26890100:Charred Loyce Helm
+26890101:Charred Loyce Armor
+26890102:Charred Loyce Gauntlets
+26890103:Charred Loyce Leggings
+26890210:Charred Loyce Helm (Healing)
+26890211:Charred Loyce Armor (Healing)
+26890212:Charred Loyce Gauntlets (Healing)
+26890213:Charred Loyce Leggings (Healing)
+26900100:Ivory King Helm
+26900101:Ivory King Armor
+26900102:Ivory King Gauntlets
+26900103:Ivory King Leggings
+26900210:Ivory King Helm (Healing)
+26900211:Ivory King Armor (Healing)
+26900212:Ivory King Gauntlets (Healing)
+26900213:Ivory King Leggings (Healing)
+27510100:Cale's Helm
+27550100:Mad Warrior Mask
+27680100:Black Hood
+27690100:Saint's Hood
+27700100:Hexer's Hood
+27710100:Chaos Hood
+27830100:Nahr Alma Hood
+27830101:Nahr Alma Robes
+31070000:Homing Soulmass
+31070090:Homing Soulmass (Top Bullet)
+31070091:Homing Soulmass (Right Bullet)
+31070092:CRASH
+31070093:
+31070094:
+31070095:
+31070096:
+31070097:
+31070098:
+31070099:
+31070100:
+31070101:
+31070102:
+31070103:
+31070104:
+31080000:Homing Crystal Soulmass
+31080090:
+31080091:
+31080092:
+31080093:
+31080094:
+31080095:
+31080096:
+31080097:
+31080098:
+31080099:
+31080100:
+31080101:
+31080102:
+31080103:
+31080104:
+31180000:Magic Weapon
+31181000:Magic Weapon (Left Hand)
+31190000:Great Magic Weapon
+31191000:Great Magic Weapon (Left Hand)
+31200000:Crystal Magic Weapon
+31201000:Crystal Magic Weapon (Left Hand)
+31210000:Strong Magic Shield
+31211000:Strong Magic Shield (Left Hand)
+31230000:Hush
+31240000:Fall Control
+31250001:
+31250002:
+31251001:
+31251002:
+31260000:Repair
+31270000:Cast Light
+31280000:Chameleon (Spell SFX)
+31280001:Chamaleon (Disguise 1)
+31280002:Chamaleon (Disguise 2)
+31280003:Chamaleon (Disguise 3)
+31280004:Chamaleon (Disguise 4)
+31280005:Chamaleon (Disguise 5)
+31280010:Chamaleon
+31290000:Unleash Magic
+31290001:Unleash Magic (Stats Boost)
+32010000:Heal
+32010010:Heal (300 Hp, 1 Second)
+32010011:Heal (450 Hp, 1 Second)
+32010012:Heal (500 Hp, 1 Second)
+32010013:Heal (550 Hp, 1 Second)
+32010014:Heal (600 Hp, 1 Seconds)
+32020000:Med Heal
+32020010:Med Heal (400 Hp, 1.25 Seconds)
+32020011:Med Heal (600 Hp, 1.25 Seconds)
+32020012:Med Heal (800 Hp, 1.25 Seconds)
+32020013:Med Heal (825 Hp, 1.25 Seconds)
+32020014:Med Heal (850 Hp, 1.25 Seconds)
+32030000:Great Heal Excerpt
+32040000:Great Heal
+32040010:Great Heal (600 Hp, 1.75 Seconds)
+32040011:Great Heal (1000 Hp, 1.75 Seconds)
+32040012:Great Heal (1100 Hp, 1.75 Seconds)
+32040013:Great Heal (1200 Hp, 1.75 Seconds)
+32040014:Great Heal (1300 Hp, 1.75 Seconds)
+32050000:Soothing Sunlight
+32050010:Soothing Sunlight (500 Hp, 1.75 Seconds)
+32050011:Soothing Sunlight (600 Hp, 1.75 Seconds)
+32050012:Soothing Sunlight (700 Hp, 1.75 Seconds)
+32050013:Soothing Sunlight (1000 Hp, 1.75 Seconds)
+32050014:Soothing Sunlight (1100 Hp, 1.75 Seconds)
+32060000:Replenishment
+32060010:Replenishment (840 Hp, 120 Seconds)
+32070000:Resplendent Life
+32070010:Resplendent Life (840 Hp, 60 Seconds)
+32080000:Bountiful Sunlight
+32080010:Bountiful Sunlight (400 Hp, 100 Seconds)
+32080011:Bountiful Sunlight (500 Hp, 100 Seconds)
+32080012:Bountiful Sunlight (750 Hp, 125 Seconds)
+32080013:Bountiful Sunlight (880 Hp, 125.7143 Seconds)
+32080014:Bountiful Sunlight (1250 Hp, 125.7143 Seconds)
+32080050:
+32090000:Caressing Prayer
+32170011:Unknown SFX
+32190000:Magic Barrier
+32190010:Magic Barrier (10 FTH)
+32190011:Magic Barrier (14 FTH)
+32190012:Magic Barrier (24 FTH)
+32190013:Magic Barrier (34 FTH)
+32190014:Magic Barrier (34 FTH)
+32200000:Great Magic Barrier
+32200010:Great Magic Barrier (Defense Boost)
+32210000:Homeward
+32220000:Guidance
+32230000:Sacred Oath
+32230010:Sacred Oath (40 Seconds)
+32230011:Sacred Oath (45 Seconds)
+32230012:Sacred Oath (50 Seconds)
+32230013:Sacred Oath (60 Seconds)
+32230014:Sacred Oath (65 Seconds)
+32230050:
+32240000:Unveil
+32250000:Perseverance
+32250010:Perseverance (Defense Boost)
+32260000:Sunlight Blade
+32261000:Sunlight Blade (Left Hand)
+32300000:Denial
+32300005:
+32300010:
+33050003:
+33060003:
+33070003:
+33170000:Flame Weapon
+33171000:Flame Weapon (Left Hand)
+33180000:Flash Sweat
+33180010:Flash Sweat (Body Effect)
+33190000:Iron Flesh
+33190010:Iron Flesh (Body Effect)
+33200000:Warmth
+33210000:Immolation
+33210005:Immolation (Fire)
+33210010:Immolation (Damage)
+33320003:Outcry (AoE)
+34040000:Affinity
+34040090:
+34040091:
+34040092:
+34040093:
+34040094:
+34040095:
+34040096:
+34040097:
+34040098:
+34040099:
+34040100:
+34040101:
+34040102:
+34040103:
+34040104:
+34050000:Dead Again
+34060000:Dark Weapon
+34061000:Dark Weapon (Left Hand)
+34070000:Whisper of Despair
+34070010:Whisper of Despair (-20 Def)
+34070011:Whisper of Despair (-30 Def)
+34070012:Whisper of Despair (-40 Def)
+34070013:Whisper of Despair (-50 Def)
+34070014:Whisper of Despair (-60 Def)
+34080000:Repel
+34090000:Twisted Barricade
+34100000:Numbness
+34100010:Numbness (Damage Reduction)
+34300022:Dark Greatsword (Blade)
+35060000:Resonant Flesh
+35060001:
+35060002:
+35060003:
+35060004:
+35060010:Resonant Flesh (x1.2 Max Hp, 60 Seconds)
+35060011:Resonant Flesh (x1.1 Max Hp, 60 Seconds)
+35060012:Resonant Flesh (x1.05 Max Hp, 50 Seconds)
+35060013:Resonant Flesh (x1.025 Max Hp, 40 Seconds)
+35060014:Resonant Flesh (x1.025 Max Hp, 30 Seconds)
+35070000:Resonant Weapon (Max Souls)
+35070001:Resonant Weapon (High Souls)
+35070002:Resonant Weapon (Mid Souls)
+35070003:Resonant Weapon (Low Souls)
+35070004:Resonant Weapon (No Souls)
+35071000:Resonant Weapon (Left Handed, Max Souls)
+35071001:Resonant Weapon (Left Handed, High Souls)
+35071002:Resonant Weapon (Left Handed, Mid Souls)
+35071003:Resonant Weapon (Left Handed, Low Souls)
+35071004:Resonant Weapon (Left Handed, No Souls)
+35090000:Profound Still
+35090010:
+35090011:
+35090012:
+35090013:
+35090014:
+35300000:Promised Walk of Peace
+35300010:
+35300011:
+35300012:
+35300013:
+35300014:
+40010000:Life Ring
+40010001:Life Ring+1
+40010002:Life Ring+2
+40010003:Life Ring+3
+40020000:Chloranthy Ring
+40020001:Chloranthy Ring+1
+40020002:Chloranthy Ring+2
+40030000:Royal Soldier's Ring
+40030001:Royal Soldier's Ring+1
+40030002:Royal Soldier's Ring+2
+40040000:First Dragon Ring
+40040001:Second Dragon Ring
+40040002:Third Dragon Ring
+40050000:Ring of Steel Protection
+40050001:Ring of Steel Protection+1
+40050002:Ring of Steel Protection+2
+40060000:Spell Quartz Ring
+40060001:Spell Quartz Ring+1
+40060002:Spell Quartz Ring+2
+40060003:Spell Quartz Ring+3
+40070000:Flame Quartz Ring
+40070001:Flame Quartz Ring+1
+40070002:Flame Quartz Ring+2
+40070003:Flame Quartz Ring+3
+40080000:Thunder Quartz Ring
+40080001:Thunder Quartz Ring+1
+40080002:Thunder Quartz Ring+2
+40080003:Thunder Quartz Ring+3
+40090000:Dark Quartz Ring
+40090001:Dark Quartz Ring+1
+40090002:Dark Quartz Ring+2
+40090003:Dark Quartz Ring+3
+40100000:Poisonbite Ring
+40100001:Poisonbite Ring+1
+40110000:Bloodbite Ring
+40110001:Bloodbite Ring+1
+40120000:Bracing Knuckle Ring
+40120001:Bracing Knuckle Ring+1
+40120002:Bracing Knuckle Ring+2
+40130000:Cursebite Ring
+40135000:Ash Knuckle Ring
+40140000:Dispelling Ring
+40140001:Dispelling Ring+1
+40150000:Ring of Resistance
+40150001:Ring of Resistance+1
+40160000:Ring of Blades
+40160001:Ring of Blades+1
+40160002:Ring of Blades+2
+40210000:Ring of Knowledge
+40220000:Ring of Prayer
+40230000:Stone Ring
+40260000:Red Tearstone Ring
+40280000:Blue Tearstone Ring
+40290000:Ring of Giants
+40290001:Ring of Giants+1
+40290002:Ring of Giants+2
+40295000:Old Leo Ring
+40300000:Ring of Soul Protection
+40310000:Ring of Life Protection
+40320000:Lingering Dragoncrest Ring
+40320001:Lingering Dragoncrest Ring+1
+40320002:Lingering Dragoncrest Ring+2
+40330000:Clear Bluestone Ring
+40330001:Clear Bluestone Ring+1
+40330002:Clear Bluestone Ring+2
+40340000:Northern Ritual Band
+40340001:Northern Ritual Band+1
+40340002:Northern Ritual Band+2
+40350000:Southern Ritual Band
+40350001:Southern Ritual Band+1
+40350002:Southern Ritual Band+2
+40360000:Covetous Gold Serpent Ring
+40360001:Covetous Gold Serpent Ring+1
+40360002:Covetous Gold Serpent Ring+2
+40370000:Covetous Silver Serpent Ring
+40370001:Covetous Silver Serpent Ring+1
+40370002:Covetous Silver Serpent Ring+2
+40390000:Ring of the Evil Eye
+40390001:Ring of the Evil Eye+1
+40390002:Ring of the Evil Eye+2
+40400000:Ring of Restoration
+40410000:Ring of Binding
+40420000:Silvercat Ring
+40430000:Redeye Ring
+40440000:Gower's Ring of Protection
+40460000:Slumbering Dragoncrest Ring
+40470000:Hawk Ring
+40480000:Old Sun Ring
+40500000:Illusory Ring of a Conqueror
+40510000:King's Ring
+40520000:Ring of the Dead
+40530000:Ring of Thorns
+40530001:Ring of Thorns+1
+40530002:Ring of Thorns+2
+40540000:Delicate String
+40550000:White Ring
+40610000:Ring of Whispers
+40620000:Illusory Ring of the Exalted
+40700000:Crest of the Rat
+40710000:Bell Keeper's Seal
+40720000:Guardian's Seal
+40730000:Crest of Blood
+40740000:Blue Seal
+40750000:Abyss Seal
+40760000:Vanquisher's Seal
+40770000:Sun Seal
+40780000:Ancient Dragon Seal
+41000000:Simpleton's Ring
+41010000:Strength Ring
+41020000:Dexterity Ring
+41030000:Ivory Warrior Ring
+41040000:Sorcery Clutch Ring
+41050000:Lightning Clutch Ring
+41060000:Fire Clutch Ring
+41070000:Dark Clutch Ring
+41090000:Baneful Bird Ring
+41100000:Flynn's Ring
+41110000:Ring of the Embedded
+41120000:Ring of the Living
+41130000:Yorgh's Ring
+42000000:Agape Ring
+50880000:Smooth &amp; Silky Stone
+50885000:Small Smooth &amp; Silky Stone
+50920000:Soul of a Giant
+50940000:Champion's Tablet
+51000000:Crushed Eye Orb
+60010000:Lifegem
+60020000:Radiant Lifegem
+60030000:Old Radiant Lifegem
+60035000:Elizabeth Mushroom
+60036000:Dried Root
+60040000:Amber Herb
+60050000:Twilight Herb
+60060000:Wilted Dusk Herb
+60070000:Poison Moss
+60090000:Monastery Charm
+60100000:Dragon Charm
+60105000:Divine Blessing
+60110000:Rouge Water
+60120000:Crimson Water
+60151000:Human Effigy
+60155000:Estus Flask (550 Hp, 1.8 Seconds)
+60155001:Estus Flask (600 Hp, 2 Seconds)
+60155002:Estus Flask (650 Hp, 2.1 Seconds)
+60155003:Estus Flask (700 Hp, 2.3 Seconds)
+60155004:Estus Flask (750 Hp, 2.5 Seconds)
+60155005:Estus Flask (800 Hp, 2.6 Seconds)
+60155006:Estus Flask (800 Hp, 2.6 Seconds)
+60155010:Estus Flask (600 Hp, 2 Seconds)
+60155020:Estus Flask
+60155030:Estus Flask
+60155100:Estus Flask (600 Hp, 2 Seconds)
+60155101:Estus Flask (650 Hp, 2.1 Seconds)
+60155102:Estus Flask (700 Hp, 2.2 Seconds)
+60155103:Estus Flask (750 Hp, 2.3 Seconds)
+60155104:Estus Flask (800 Hp, 2.5 Seconds)
+60155105:Estus Flask (850 Hp, 2.6 Seconds)
+60155106:Estus Flask (850 Hp, 2.8 Seconds)
+60160000:Small Blue Burr
+60170000:Small Yellow Burr
+60180000:Small Orange Burr
+60190000:Dark Troches
+60200000:Common Fruit
+60210000:Red Leech Troches
+60220000:Unusued Status Ailment Resist Boost
+60230000:Triclops Snake Troches
+60235000:Old Growth Balm
+60236000:Vine Balm
+60237000:Blackweed Balm
+60238000:Goldenfruit Balm
+60239000:Brightbug
+60240000:Aromatic Ooze
+60250000:Gold Pine Resin
+60260000:Charcoal Pine Resin
+60270000:Dark Pine Resin
+60280000:Rotten Pine Resin
+60290000:Bleeding Serum
+60310000:Green Blossom
+60320000:Rusted Coin
+60350000:Homeward Bone
+60355000:Aged Feather
+60360000:Darksign
+60370000:Silver Talisman
+60370001:Silver Talisman (Disguise 1)
+60370002:Silver Talisman (Disguise 2)
+60370003:Silver Talisman (Disguise 3)
+60370004:Silver Talisman (Disguise 4)
+60370005:Silver Talisman (Disguise 5)
+60375000:Disguise (Red Barrel)
+60375001:Disguise (Red Barrel)
+60405000:Dragon Head Stone
+60405001:Dragon Head Stone (Force Armor)
+60405010:Dragon Head Stone (Fire Breath)
+60405020:Dragon Head Stone (Fire Breath, Small)
+60405030:Dragon Head Stone (Death Effect)
+60406000:Dragon Torso Stone
+60406001:Dragon Torso Stone (Force Armor)
+60406010:Dragon Torso Stone (AoE)
+60406020:Dragon Torso Stone (Damage Boost)
+60406030:Dragon Torso Stone (Death Effect)
+60410000:Repair Powder
+60430000:Flame Butterfly
+60450000:Prism Stone
+60470000:Hello Carving
+60480000:Thank You Carving
+60490000:I'm Sorry Carving
+60500000:Very Good! Carving
+60510000:Rubbish
+60530000:Alluring Skull
+60531000:Lloyd's Talisman
+60531010:Lloyd's Talisman (Block Estus)
+60540000:Throwing Knife
+60550000:Witching Urn
+60560000:Lightning Urn
+60570000:Firebomb
+60575000:Black Firebomb
+60580000:Hexing Urn
+60590000:Poison Throwing Knife
+60595000:Dung Pie
+60600000:Lacerating Knife
+60610000:Corrosive Urn
+60610010:Corrosive Urn (Equipment Degradation)
+60620000:Holy Water Urn
+60625000:Fading Soul
+60630000:Soul of a Lost Undead
+60640000:Large Soul of a Lost Undead
+60650000:Soul of a Nameless Soldier
+60660000:Large Soul of a Nameless Soldier
+60670000:Soul of a Proud Knight
+60680000:Large Soul of a Proud Knight
+60690000:Soul of a Brave Warrior
+60700000:Large Soul of a Brave Warrior
+60710000:Soul of a Hero
+60720000:Soul of a Great Hero
+62000000:Dried Fingers
+62020000:Bone of Order
+62030000:White Sign Soapstone
+62040000:Small White Sign Soapstone
+62045000:Red Sign Soapstone
+62050000:Cracked Blue Eye Orb
+62060000:Cracked Red Eye Orb
+62070000:Dragon Eye
+62100000:Token of Fidelity
+62100010:Token of Fidelity (Heal)
+62110000:Token of Spite
+62160000:Black Separation Crystal
+62170000:Seed of a Tree of Giants
+62170010:Seed of a Tree of Giants (Enemy Aggro)
+64000000:Soul of the Pursuer
+64010000:Soul of the Last Giant
+64020000:Dragonrider Soul
+64030000:Old Dragonslayer Soul
+64040000:Flexile Sentry Soul
+64050000:Ruin Sentinel Soul
+64060000:Soul of the Lost Sinner
+64070000:Executioner's Chariot Soul
+64080000:Skeleton Lord's Soul
+64090000:Covetous Demon Soul
+64100000:Mytha
+64110000:Smelter Demon Soul
+64120000:Old Iron King Soul
+64130000:Royal Rat Vanguard Soul
+64140000:Soul of the Rotten
+64150000:Scorpioness Najka Soul
+64160000:Royal Rat Authority Soul
+64170000:Soul of the Duke's Dear Freja
+64180000:Looking Glass Knight Soul
+64190000:Demon of Song Soul
+64200000:Soul of Velstadt
+64210000:Soul of the King
+64220000:Guardian Dragon Soul
+64230000:Ancient Dragon Soul
+64240000:Giant Lord Soul
+64250000:Soul of Nashandra
+64260000:Throne Defender Soul
+64270000:Throne Watcher Soul
+64280000:Darklurker Soul
+64290000:Belfry Gargoyle Soul
+64300000:Old Witch Soul
+64310000:Old King Soul
+64320000:Old Dead One Soul
+64330000:Old Paledrake Soul
+64500000:Soul of Sinh the Slumbering Dragon
+64510000:Soul of the Fume Knight
+64520000:Soul of Aava the King's Pet
+64530000:Soul of Elana Squalid Queen
+64540000:Soul of Nadalia Bride of Ash
+64550000:Soul of Alsanna Silent Oracle
+64560000:Soul of Sir Alonne
+64580000:Soul of the Ivory King
+64590000:Soul of Zallen the King's Pet
+64600000:Loyce Soul
+64610000:Soul of Lud the King's Pet
+65240000:Magic Buff (Unk, 90 Seconds, 100)
+65250000:Lightning Buff (Unk, 90 Seconds, 100)
+65260000:Fire Buff (Unk, 90 Seconds, 100)
+65270000:Dark Buff (Unk, 90 Seconds, 100)
+65280000:Poison Buff (Unk, 90 Seconds, 100)
+65290000:Bleed Buff (Unk, 90 Seconds, 100)
+90000010:
+91060010:
+91060020:
+91060030:
+91130010:
+91180010:
+91190010:
+91270000:
+91270010:
+91290010:
+91290020:
+91290030:
+91310010:
+91310020:
+91320010:
+91320020:
+91320030:
+92120010:
+92120020:
+93050010:
+93050011:
+93180010:
+93180020:
+93320010:
+93320020:
+93320030:
+93330010:
+93340010:
+93340020:
+93340030:
+95000010:
+95010010:
+95061010:
+95146010:
+95146020:
+95146030:
+95146040:
+95146050:
+95146060:
+96030010:
+96080010:
+96191020:
+96270000:Curse Aura
+96500010:
+96500011:
+96500012:
+96500013:
+96500014:
+96500020:
+96500021:
+96500022:
+96500023:
+96500024:
+96530000:
+96540000:
+96560000:
+96560010:
+96560020:
+96560100:
+96560110:
+96560200:
+96560210:
+96560220:
+96560300:
+96560310:
+96560320:
+96560400:
+96560410:
+96560420:
+96570000:
+96590000:
+96620000:
+96650000:
+96650010:
+96660000:
+96660010:
+96700000:
+96710010:
+96710011:
+96710012:
+96710013:
+96710020:
+96711010:
+96711011:
+96711012:
+96711013:
+96720000:
+96720010:
+96720020:
+96740000:
+96750000:
+96750010:
+96750100:
+96750110:
+96780000:
+96780100:
+96790000:
+96790010:
+96790020:
+96790030:
+96790100:
+96800000:
+96810000:
+96850000:
+96880000:
+96880100:
+96880200:
+96900000:
+96920000:
+96920010:
+96920020:
+96920030:
+96920040:
+96920050:
+96940000:
+96960000:
+97420010:
+97440010:
+97690010:
+98350010:
+98382000:
+98660010:
+98720010:
+98720011:
+98830000:
+98830010:
+100000000:Small Healing
+100000010:Humanity Restored (Visual)
+100000020:Bonfire Rest &amp; Restore Humanity
+100001000:Healing (500 Hp, 10 Seconds)
+100001010:Healing (1000 Hp, 10 Seconds)
+100001020:Healing (1500 Hp, 10 Seconds)
+110000010:Bonfire Rest
+120000010:Curse Aura
+120000020:Curse Aura
+120000030:Curse Aura
+120000110:Curse Aura
+120000210:Increase Weight (Permanent, until reload)
+120000310:Corrosion Aura
+130000010:Petrification Immunity
+140001000:Corrosion (-7 Durability)
+140001010:Corrosion Aura
+150000000:SetSpEffectLenght(3)
+150101000:Curse Aura
+150200000:Cure Status Ailments
+150300000:Curse Status Ailments
+160000000:Spell Parry
+160000010:Spell Parry
+160000100:Spell Parry
+160000110:Spell Parry
+160001010:Spell Parry
+160001110:Spell Parry
+170000000:SetStateInfo (61)
+170001000:SetStateInfo (55)
+170100000:SetSpEffectLenght(4.8)
+</DropDownList>
+  <VariableType>4 Bytes</VariableType>
+  <Address>EffectStruct</Address>
+</CheatEntry>

@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>25449</ID>
+  <Description>"Last Critical"</Description>
+  <Color>008000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1C0</Offset>
+    <Offset>5C0</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

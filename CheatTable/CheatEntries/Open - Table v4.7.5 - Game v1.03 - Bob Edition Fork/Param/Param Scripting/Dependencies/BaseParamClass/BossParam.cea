@@ -1,0 +1,107 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START BossParam class]]--
+BossParam = BaseParamClass:new()
+
+function BossParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("BossParam", uuid, id, address)
+	return o
+end
+
+function BossParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function BossParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function BossParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function BossParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function BossParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function BossParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function BossParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function BossParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function BossParam:unk20(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function BossParam:unk24(value)
+	self:patch4Byte(0x24, value)
+end
+
+
+function BossParam:unk28(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function BossParam:unk2C(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function BossParam:unk30(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function BossParam:unk34(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function BossParam:unk38(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function BossParam:unk3C(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function BossParam:unk40(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+--[[End BossParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

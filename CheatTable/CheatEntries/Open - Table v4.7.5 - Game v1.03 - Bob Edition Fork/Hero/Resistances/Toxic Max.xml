@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256157</ID>
+  <Description>"Toxic Max"</Description>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>208</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

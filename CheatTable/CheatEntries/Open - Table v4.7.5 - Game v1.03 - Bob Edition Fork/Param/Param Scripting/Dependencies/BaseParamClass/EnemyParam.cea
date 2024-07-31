@@ -1,0 +1,567 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START EnemyParam class]]--
+EnemyParam = BaseParamClass:new()
+
+function EnemyParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("EnemyParam", uuid, id, address)
+	return o
+end
+
+function EnemyParam:chrId(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function EnemyParam:behaviorParamId(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function EnemyParam:commonParamId(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function EnemyParam:moveParamId(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function EnemyParam:npcplayerstatusparamId(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function EnemyParam:unk14(value)
+	self:patch2Byte(0x14, value)
+end
+
+
+function EnemyParam:unk16(value)
+	self:patch2Byte(0x16, value)
+end
+
+
+function EnemyParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function EnemyParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function EnemyParam:chrphantomparamId(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+function EnemyParam:unk24(value)
+	self:patchByte(0x24, value)
+end
+
+
+function EnemyParam:unk25(value)
+	self:patchByte(0x25, value)
+end
+
+
+function EnemyParam:unk26(value)
+	self:patchByte(0x26, value)
+end
+
+
+function EnemyParam:unk27(value)
+	self:patchByte(0x27, value)
+end
+
+
+function EnemyParam:baseHpNg(value)
+	self:patch4Byte(0x28, value)
+end
+
+
+function EnemyParam:unk2C(value)
+	self:patchByte(0x2C, value)
+end
+
+
+function EnemyParam:unk2C2(value)
+	self:patchByte(0x2D, value)
+end
+
+
+function EnemyParam:unk2C3(value)
+	self:patchByte(0x2E, value)
+end
+
+
+function EnemyParam:unk2C4(value)
+	self:patchByte(0x2F, value)
+end
+
+
+function EnemyParam:baseStaminaRegeneration10(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function EnemyParam:unk34(value)
+	self:patchByte(0x34, value)
+end
+
+
+function EnemyParam:unk35(value)
+	self:patchByte(0x35, value)
+end
+
+
+function EnemyParam:unk36(value)
+	self:patchByte(0x36, value)
+end
+
+
+function EnemyParam:unk37(value)
+	self:patchByte(0x37, value)
+end
+
+
+function EnemyParam:unk38(value)
+	self:patchByte(0x38, value)
+end
+
+
+function EnemyParam:unk39(value)
+	self:patchByte(0x39, value)
+end
+
+
+function EnemyParam:unk3A(value)
+	self:patchByte(0x3A, value)
+end
+
+
+function EnemyParam:unk3B(value)
+	self:patchByte(0x3B, value)
+end
+
+
+function EnemyParam:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function EnemyParam:logicComId(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function EnemyParam:deadTypeId(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function EnemyParam:equippedWeaponIndex(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function EnemyParam:equipWeaponId(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function EnemyParam:equipWeaponId2(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function EnemyParam:equipWeaponId3(value)
+	self:patch4Byte(0x54, value)
+end
+
+
+function EnemyParam:equipWeaponId4(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function EnemyParam:equipWeaponId5(value)
+	self:patch4Byte(0x5C, value)
+end
+
+
+function EnemyParam:equipWeaponId6(value)
+	self:patch4Byte(0x60, value)
+end
+
+
+function EnemyParam:unk64(value)
+	self:patch4Byte(0x64, value)
+end
+
+
+function EnemyParam:unk68(value)
+	self:patchByte(0x68, value)
+end
+
+
+function EnemyParam:chrrounddamageparamId(value)
+	self:patchByte(0x69, value)
+end
+
+
+function EnemyParam:unk6A(value)
+	self:patchByte(0x6A, value)
+end
+
+
+function EnemyParam:unk6B(value)
+	self:patchByte(0x6B, value)
+end
+
+
+function EnemyParam:unk6C(value)
+	self:patch4Byte(0x6C, value)
+end
+
+
+function EnemyParam:unk70(value)
+	self:patch4Byte(0x70, value)
+end
+
+
+function EnemyParam:unk74(value)
+	self:patch4Byte(0x74, value)
+end
+
+
+function EnemyParam:unk78(value)
+	self:patch4Byte(0x78, value)
+end
+
+
+function EnemyParam:unk7C(value)
+	self:patch4Byte(0x7C, value)
+end
+
+
+function EnemyParam:unk80(value)
+	self:patch4Byte(0x80, value)
+end
+
+
+function EnemyParam:unk84(value)
+	self:patch4Byte(0x84, value)
+end
+
+
+function EnemyParam:unk88(value)
+	self:patch4Byte(0x88, value)
+end
+
+
+function EnemyParam:unk8C(value)
+	self:patch4Byte(0x8C, value)
+end
+
+
+function EnemyParam:unk90(value)
+	self:patch4Byte(0x90, value)
+end
+
+
+function EnemyParam:unk94(value)
+	self:patch4Byte(0x94, value)
+end
+
+
+function EnemyParam:unk98(value)
+	self:patch4Byte(0x98, value)
+end
+
+
+function EnemyParam:physicalDefence(value)
+	self:patch4Byte(0x9C, value)
+end
+
+
+function EnemyParam:magicAbsorption(value)
+	self:patch4Byte(0xA0, value)
+end
+
+
+function EnemyParam:lightningAbsorption(value)
+	self:patch4Byte(0xA4, value)
+end
+
+
+function EnemyParam:fireAbsorption(value)
+	self:patch4Byte(0xA8, value)
+end
+
+
+function EnemyParam:darkAbsorption(value)
+	self:patch4Byte(0xAC, value)
+end
+
+
+function EnemyParam:poisonResist(value)
+	self:patch4Byte(0xB0, value)
+end
+
+
+function EnemyParam:bleedResist(value)
+	self:patch4Byte(0xB4, value)
+end
+
+
+function EnemyParam:curseResist(value)
+	self:patch4Byte(0xB8, value)
+end
+
+
+function EnemyParam:petrifyResist(value)
+	self:patch4Byte(0xBC, value)
+end
+
+
+function EnemyParam:unkc0(value)
+	self:patch4Byte(0xC0, value)
+end
+
+
+function EnemyParam:unkc4(value)
+	self:patch4Byte(0xC4, value)
+end
+
+
+function EnemyParam:unkc8(value)
+	self:patch4Byte(0xC8, value)
+end
+
+
+function EnemyParam:unkcc(value)
+	self:patch4Byte(0xCC, value)
+end
+
+
+function EnemyParam:souls(value)
+	self:patch4Byte(0xD0, value)
+end
+
+
+function EnemyParam:unkd4(value)
+	self:patch4Byte(0xD4, value)
+end
+
+
+function EnemyParam:damageAuxMultiplier(value)
+	self:patchFloat(0xD8, value)
+end
+
+
+function EnemyParam:unkdc(value)
+	self:patchFloat(0xDC, value)
+end
+
+
+function EnemyParam:unke0(value)
+	self:patchFloat(0xE0, value)
+end
+
+
+function EnemyParam:unke4(value)
+	self:patchFloat(0xE4, value)
+end
+
+
+function EnemyParam:unke8(value)
+	self:patchFloat(0xE8, value)
+end
+
+
+function EnemyParam:unkec(value)
+	self:patch4Byte(0xEC, value)
+end
+
+
+function EnemyParam:unkf0(value)
+	self:patch4Byte(0xF0, value)
+end
+
+
+function EnemyParam:unkf4(value)
+	self:patch4Byte(0xF4, value)
+end
+
+
+function EnemyParam:unkf8(value)
+	self:patch4Byte(0xF8, value)
+end
+
+
+function EnemyParam:posture(value)
+	self:patchFloat(0xFC, value)
+end
+
+
+function EnemyParam:postureRecoveryS(value)
+	self:patchFloat(0x100, value)
+end
+
+
+function EnemyParam:unk104(value)
+	self:patchFloat(0x104, value)
+end
+
+
+function EnemyParam:unk108(value)
+	self:patchFloat(0x108, value)
+end
+
+
+function EnemyParam:unk10C(value)
+	self:patchFloat(0x10C, value)
+end
+
+
+function EnemyParam:chrfullbodysfxparamId(value)
+	self:patch4Byte(0x110, value)
+end
+
+
+function EnemyParam:unk114(value)
+	self:patchFloat(0x114, value)
+end
+
+
+function EnemyParam:poise(value)
+	self:patchFloat(0x118, value)
+end
+
+
+function EnemyParam:poiseRegenPerSecond(value)
+	self:patchFloat(0x11C, value)
+end
+
+
+function EnemyParam:unk120(value)
+	self:patch4Byte(0x120, value)
+end
+
+
+function EnemyParam:unk124(value)
+	self:patch4Byte(0x124, value)
+end
+
+
+function EnemyParam:unk128(value)
+	self:patchFloat(0x128, value)
+end
+
+
+function EnemyParam:timerReductionOnKill(value)
+	self:patchFloat(0x12C, value)
+end
+
+
+function EnemyParam:unk130(value)
+	self:patchByte(0x130, value)
+end
+
+
+function EnemyParam:unk131(value)
+	self:patchByte(0x131, value)
+end
+
+
+function EnemyParam:unk132(value)
+	self:patchByte(0x132, value)
+end
+
+
+function EnemyParam:chrrounddropsoulparamId(value)
+	self:patchByte(0x133, value)
+end
+
+
+function EnemyParam:itemlotId(value)
+	self:patch4Byte(0x134, value)
+end
+
+
+function EnemyParam:itemlotIdOverkilled(value)
+	self:patch4Byte(0x138, value)
+end
+
+
+function EnemyParam:unk13C(value)
+	self:patchFloat(0x13C, value)
+end
+
+
+function EnemyParam:ng1Hp(value)
+	self:patch4Byte(0x140, value)
+end
+
+
+function EnemyParam:ng2Hp(value)
+	self:patch4Byte(0x144, value)
+end
+
+
+function EnemyParam:ng3Hp(value)
+	self:patch4Byte(0x148, value)
+end
+
+
+function EnemyParam:ng4Hp(value)
+	self:patch4Byte(0x14C, value)
+end
+
+
+function EnemyParam:ng5Hp(value)
+	self:patch4Byte(0x150, value)
+end
+
+
+function EnemyParam:ng6Hp(value)
+	self:patch4Byte(0x154, value)
+end
+
+
+function EnemyParam:ng7Hp(value)
+	self:patch4Byte(0x158, value)
+end
+
+
+function EnemyParam:nameTextId(value)
+	self:patch4Byte(0x15C, value)
+end
+
+
+function EnemyParam:dropawestone(value)
+	self:patch4Byte(0x160, value)
+end
+
+
+function EnemyParam:unk164(value)
+	self:patch4Byte(0x164, value)
+end
+
+
+--[[End EnemyParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

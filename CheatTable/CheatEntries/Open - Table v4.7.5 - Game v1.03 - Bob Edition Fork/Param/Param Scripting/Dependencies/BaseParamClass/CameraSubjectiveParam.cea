@@ -1,0 +1,152 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START CameraSubjectiveParam class]]--
+CameraSubjectiveParam = BaseParamClass:new()
+
+function CameraSubjectiveParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("CameraSubjectiveParam", uuid, id, address)
+	return o
+end
+
+function CameraSubjectiveParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function CameraSubjectiveParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function CameraSubjectiveParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function CameraSubjectiveParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function CameraSubjectiveParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function CameraSubjectiveParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function CameraSubjectiveParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function CameraSubjectiveParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function CameraSubjectiveParam:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function CameraSubjectiveParam:unk24(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function CameraSubjectiveParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function CameraSubjectiveParam:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function CameraSubjectiveParam:unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function CameraSubjectiveParam:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function CameraSubjectiveParam:unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function CameraSubjectiveParam:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function CameraSubjectiveParam:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function CameraSubjectiveParam:unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function CameraSubjectiveParam:unk48(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function CameraSubjectiveParam:unk4C(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function CameraSubjectiveParam:unk50(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function CameraSubjectiveParam:unk54(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function CameraSubjectiveParam:unk58(value)
+	self:patch4Byte(0x58, value)
+end
+
+
+function CameraSubjectiveParam:unk5C(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function CameraSubjectiveParam:unk60(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function CameraSubjectiveParam:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+--[[End CameraSubjectiveParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

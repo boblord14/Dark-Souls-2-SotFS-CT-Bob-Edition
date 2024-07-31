@@ -1,0 +1,24 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+
+
+
+local fireworks = BulletParam:new("funnysoulshower", 31130010) -- soul shower bullet
+      fireworks:numberToShootSequentially(127) -- big number
+      fireworks:verticalAngleRandomizer(1) -- varies the angle the bullet comes out at
+      fireworks:horizontalAngleRandomizer(1) -- same as above but with the horizontal angle
+      fireworks:shootInterval(0.05) -- shoots fast
+      fireworks:verticalSpread(9999) -- "some big fuckoff number"
+      fireworks:horizontalSpread(1.5707)
+      fireworks:childBullet1BulletparamId(20088705)
+      fireworks:childBullet1DamageparamId(20088705)
+      fireworks:spawnChildBulletsOnCollision(1)
+
+
+
+[DISABLE]
+paramUtils:restore("funnysoulshower")
+
+
+

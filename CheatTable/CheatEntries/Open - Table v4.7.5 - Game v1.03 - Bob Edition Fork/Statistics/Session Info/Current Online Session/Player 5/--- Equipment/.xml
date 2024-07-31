@@ -1,0 +1,24 @@
+<CheatEntry>
+  <ID>86641</ID>
+  <Description>"--- Equipment"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="86648"/>
+    <id id="86649"/>
+    <id id="86650"/>
+    <id id="86651"/>
+    <id id="86653"/>
+    <id id="86654"/>
+    <id id="86655"/>
+    <id id="86656"/>
+    <id id="86657"/>
+    <id id="86658"/>
+    <id id="86643"/>
+    <id id="86644"/>
+    <id id="86645"/>
+    <id id="86646"/>
+    <id id="86659"/>
+    <id id="86670"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

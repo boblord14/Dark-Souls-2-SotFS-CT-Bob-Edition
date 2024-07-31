@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337089541</ID>
+  <Description>"EnemyDamageParam Structure"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337089542"/>
+    <id id="1337089547"/>
+    <id id="1337089548"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337094633</ID>
+  <Description>"CancelControl_Move"</Description>
+  <DropDownListLink>bool</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+24*4</Address>
+</CheatEntry>

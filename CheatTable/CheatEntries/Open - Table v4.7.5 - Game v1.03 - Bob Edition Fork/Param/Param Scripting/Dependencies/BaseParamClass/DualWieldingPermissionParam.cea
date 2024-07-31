@@ -1,0 +1,157 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START DualWieldingPermissionParam class]]--
+DualWieldingPermissionParam = BaseParamClass:new()
+
+function DualWieldingPermissionParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("DualWieldingPermissionParam", uuid, id, address)
+	return o
+end
+
+function DualWieldingPermissionParam:unk00(value)
+	self:patchByte(0x0, value)
+end
+
+
+function DualWieldingPermissionParam:unk01(value)
+	self:patchByte(0x1, value)
+end
+
+
+function DualWieldingPermissionParam:unk02(value)
+	self:patchByte(0x2, value)
+end
+
+
+function DualWieldingPermissionParam:unk03(value)
+	self:patchByte(0x3, value)
+end
+
+
+function DualWieldingPermissionParam:unk04(value)
+	self:patchByte(0x4, value)
+end
+
+
+function DualWieldingPermissionParam:unk05(value)
+	self:patchByte(0x5, value)
+end
+
+
+function DualWieldingPermissionParam:unk06(value)
+	self:patchByte(0x6, value)
+end
+
+
+function DualWieldingPermissionParam:unk07(value)
+	self:patchByte(0x7, value)
+end
+
+
+function DualWieldingPermissionParam:unk08(value)
+	self:patchByte(0x8, value)
+end
+
+
+function DualWieldingPermissionParam:unk09(value)
+	self:patchByte(0x9, value)
+end
+
+
+function DualWieldingPermissionParam:unk0A(value)
+	self:patchByte(0xA, value)
+end
+
+
+function DualWieldingPermissionParam:unk0B(value)
+	self:patchByte(0xB, value)
+end
+
+
+function DualWieldingPermissionParam:unk0C(value)
+	self:patchByte(0xC, value)
+end
+
+
+function DualWieldingPermissionParam:unk0D(value)
+	self:patchByte(0xD, value)
+end
+
+
+function DualWieldingPermissionParam:unk0E(value)
+	self:patchByte(0xE, value)
+end
+
+
+function DualWieldingPermissionParam:unk0F(value)
+	self:patchByte(0xF, value)
+end
+
+
+function DualWieldingPermissionParam:unk10(value)
+	self:patchByte(0x10, value)
+end
+
+
+function DualWieldingPermissionParam:unk11(value)
+	self:patchByte(0x11, value)
+end
+
+
+function DualWieldingPermissionParam:unk12(value)
+	self:patchByte(0x12, value)
+end
+
+
+function DualWieldingPermissionParam:unk13(value)
+	self:patchByte(0x13, value)
+end
+
+
+function DualWieldingPermissionParam:unk14(value)
+	self:patchByte(0x14, value)
+end
+
+
+function DualWieldingPermissionParam:unk15(value)
+	self:patchByte(0x15, value)
+end
+
+
+function DualWieldingPermissionParam:unk16(value)
+	self:patchByte(0x16, value)
+end
+
+
+function DualWieldingPermissionParam:unk17(value)
+	self:patchByte(0x17, value)
+end
+
+
+function DualWieldingPermissionParam:unk18(value)
+	self:patchByte(0x18, value)
+end
+
+
+function DualWieldingPermissionParam:unk19(value)
+	self:patchByte(0x19, value)
+end
+
+
+function DualWieldingPermissionParam:unk1A(value)
+	self:patchByte(0x1A, value)
+end
+
+
+--[[End DualWieldingPermissionParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

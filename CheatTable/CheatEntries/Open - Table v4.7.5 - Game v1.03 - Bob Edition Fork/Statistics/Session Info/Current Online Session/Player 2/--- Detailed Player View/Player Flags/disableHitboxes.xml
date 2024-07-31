@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337104960</ID>
+  <Description>"disableHitboxes"</Description>
+  <DropDownListLink>bool</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+5C8</Address>
+</CheatEntry>

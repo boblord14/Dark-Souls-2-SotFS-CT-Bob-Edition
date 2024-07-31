@@ -1,0 +1,84 @@
+<CheatEntry>
+  <ID>1337083772</ID>
+  <Description>"Start"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>1C8</Offset>
+    <Offset>7F8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337091317"/>
+    <id id="1337091318"/>
+    <id id="1337091319"/>
+    <id id="1337091320"/>
+    <id id="1337091321"/>
+    <id id="1337091322"/>
+    <id id="1337091323"/>
+    <id id="1337091324"/>
+    <id id="1337091325"/>
+    <id id="1337091326"/>
+    <id id="1337091327"/>
+    <id id="1337091328"/>
+    <id id="1337091329"/>
+    <id id="1337091330"/>
+    <id id="1337091331"/>
+    <id id="1337091332"/>
+    <id id="1337091333"/>
+    <id id="1337091334"/>
+    <id id="1337091335"/>
+    <id id="1337091336"/>
+    <id id="1337091337"/>
+    <id id="1337091338"/>
+    <id id="1337091339"/>
+    <id id="1337091340"/>
+    <id id="1337091341"/>
+    <id id="1337091342"/>
+    <id id="1337091343"/>
+    <id id="1337091344"/>
+    <id id="1337091345"/>
+    <id id="1337091346"/>
+    <id id="1337091347"/>
+    <id id="1337091348"/>
+    <id id="1337091349"/>
+    <id id="1337091350"/>
+    <id id="1337091351"/>
+    <id id="1337091352"/>
+    <id id="1337091353"/>
+    <id id="1337091354"/>
+    <id id="1337091355"/>
+    <id id="1337091356"/>
+    <id id="1337091357"/>
+    <id id="1337091358"/>
+    <id id="1337091359"/>
+    <id id="1337091360"/>
+    <id id="1337091361"/>
+    <id id="1337091362"/>
+    <id id="1337091363"/>
+    <id id="1337091364"/>
+    <id id="1337091365"/>
+    <id id="1337091366"/>
+    <id id="1337091367"/>
+    <id id="1337091368"/>
+    <id id="1337091369"/>
+    <id id="1337091370"/>
+    <id id="1337091371"/>
+    <id id="1337091372"/>
+    <id id="1337091373"/>
+    <id id="1337091374"/>
+    <id id="1337091375"/>
+    <id id="1337091376"/>
+    <id id="1337091377"/>
+    <id id="1337091378"/>
+    <id id="1337091379"/>
+    <id id="1337091380"/>
+    <id id="1337091381"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,27 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START DamageSfxTraceDummyPolyColorParam class]]--
+DamageSfxTraceDummyPolyColorParam = BaseParamClass:new()
+
+function DamageSfxTraceDummyPolyColorParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("DamageSfxTraceDummyPolyColorParam", uuid, id, address)
+	return o
+end
+
+function DamageSfxTraceDummyPolyColorParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+--[[End DamageSfxTraceDummyPolyColorParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

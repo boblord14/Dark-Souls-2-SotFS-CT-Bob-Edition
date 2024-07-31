@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337094004</ID>
+  <Description>"Get PlayerDamageParam Address"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337094005"/>
+    <id id="1337094006"/>
+    <id id="1337094007"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

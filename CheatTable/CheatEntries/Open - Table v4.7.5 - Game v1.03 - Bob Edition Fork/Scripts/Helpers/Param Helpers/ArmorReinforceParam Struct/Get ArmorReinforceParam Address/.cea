@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetArmorReinforceParamAddr, $100, DarkSoulsII.exe)
+alloc(ArmorReinforceParamId, 4)
+label(return)
+registersymbol(GetArmorReinforceParamAddr)
+registersymbol(ArmorReinforceParamId)
+
+ArmorReinforceParamId:
+dd #11001100
+
+GetArmorReinforceParamAddr:
+sub rsp, 20
+mov edx, [ArmorReinforceParamId]
+vortmov(rcx, [[[GameManagerImp]+18]+4B0])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+351AF0
+mov [ArmorReinforceParamAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetArmorReinforceParamAddr)
+dealloc(ArmorReinforceParamId)
+unregistersymbol(GetArmorReinforceParamAddr)
+unregistersymbol(ArmorReinforceParamId)

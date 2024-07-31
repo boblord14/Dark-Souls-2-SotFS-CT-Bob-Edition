@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337089807</ID>
+  <Description>"ItemParam Struct"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337089808"/>
+    <id id="1337089813"/>
+    <id id="1337089814"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

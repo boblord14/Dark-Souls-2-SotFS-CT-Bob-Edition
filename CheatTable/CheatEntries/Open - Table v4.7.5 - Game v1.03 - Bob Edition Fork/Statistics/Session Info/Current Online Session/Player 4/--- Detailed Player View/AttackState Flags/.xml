@@ -1,0 +1,29 @@
+<CheatEntry>
+  <ID>1337107486</ID>
+  <Description>"AttackState Flags"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+C0</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337107487"/>
+    <id id="1337107488"/>
+    <id id="1337107489"/>
+    <id id="1337107490"/>
+    <id id="1337107491"/>
+    <id id="1337107492"/>
+    <id id="1337107493"/>
+    <id id="1337107494"/>
+    <id id="1337107495"/>
+    <id id="1337107496"/>
+    <id id="1337107497"/>
+    <id id="1337107498"/>
+    <id id="1337107499"/>
+    <id id="1337107500"/>
+    <id id="1337107501"/>
+    <id id="1337107502"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

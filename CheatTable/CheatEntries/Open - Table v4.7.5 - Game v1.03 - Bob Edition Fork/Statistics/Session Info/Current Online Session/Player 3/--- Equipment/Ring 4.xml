@@ -1,0 +1,135 @@
+<CheatEntry>
+  <ID>86828</ID>
+  <Description>"Ring 4"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:EquipRing1
+02628110:Life Ring
+02628111:Life Ring+1
+02628112:Life Ring+2
+02628113:Life Ring+3
+0262A820:Chloranthy Ring
+0262A821:Chloranthy Ring+1
+0262A822:Chloranthy Ring+2
+0262CF30:Royal Soldier's Ring
+0262CF31:Royal Soldier's Ring+1
+0262CF32:Royal Soldier's Ring+2
+0262F640:First Dragon Ring
+0262F641:Second Dragon Ring
+0262F642:Third Dragon Ring
+02631D50:Ring of Steel Protection
+02631D51:Ring of Steel Protection+1
+02631D52:Ring of Steel Protection+2
+02631D53:no text
+02634460:Spell Quartz Ring
+02634461:Spell Quartz Ring+1
+02634462:Spell Quartz Ring+2
+02634463:Spell Quartz Ring+3
+02636B70:Flame Quartz Ring
+02636B71:Flame Quartz Ring+1
+02636B72:Flame Quartz Ring+2
+02636B73:Flame Quartz Ring+3
+02639280:Thunder Quartz Ring
+02639281:Thunder Quartz Ring+1
+02639282:Thunder Quartz Ring+2
+02639283:Thunder Quartz Ring+3
+0263B990:Dark Quartz Ring
+0263B991:Dark Quartz Ring+1
+0263B992:Dark Quartz Ring+2
+0263B993:Dark Quartz Ring+3
+0263E0A0:Poisonbite Ring
+0263E0A1:Poisonbite Ring+1
+026407B0:Bloodbite Ring
+026407B1:Bloodbite Ring+1
+02642EC0:Bracing Knuckle Ring
+02642EC1:Bracing Knuckle Ring+1
+02642EC2:Bracing Knuckle Ring+2
+026455D0:Cursebite Ring
+02646958:Ash Knuckle Ring
+02647CE0:Dispelling Ring
+02647CE1:Dispelling Ring+1
+0264A3F0:Ring of Resistance
+0264A3F1:Ring of Resistance+1
+0264CB00:Ring of Blades
+0264CB01:Ring of Blades+1
+0264CB02:Ring of Blades+2
+02658E50:Ring of Knowledge
+0265B560:Ring of Prayer
+0265DC70:Stone Ring
+026651A0:Red Tearstone Ring
+02669FC0:Blue Tearstone Ring
+0266C6D0:Ring of Giants
+0266C6D1:Ring of Giants+1
+0266C6D2:Ring of Giants+2
+0266DA58:Old Leo Ring
+0266EDE0:Ring of Soul Protection
+026714F0:Ring of Life Protection
+02673C00:Lingering Dragoncrest Ring
+02673C01:Lingering Dragoncrest Ring+1
+02673C02:Lingering Dragoncrest Ring+2
+02676310:Clear Bluestone Ring
+02676311:Clear Bluestone Ring+1
+02676312:Clear Bluestone Ring+2
+02678A20:Northern Ritual Band
+02678A21:Northern Ritual Band+1
+02678A22:Northern Ritual Band+2
+0267B130:Southern Ritual Band
+0267B131:Southern Ritual Band+1
+0267B132:Southern Ritual Band+2
+0267D840:Covetous Gold Serpent Ring
+0267D841:Covetous Gold Serpent Ring+1
+0267D842:Covetous Gold Serpent Ring+2
+0267FF50:Covetous Silver Serpent Ring
+0267FF51:Covetous Silver Serpent Ring+1
+0267FF52:Covetous Silver Serpent Ring+2
+02684D70:Ring of the Evil Eye
+02684D71:Ring of the Evil Eye+1
+02684D72:Ring of the Evil Eye+2
+02687480:Ring of Restoration
+02689B90:Ring of Binding
+0268C2A0:Silvercat Ring
+0268E9B0:Redeye Ring
+026910C0:Gower's Ring of Protection
+026937D0:Name-engraved Ring
+02695EE0:Slumbering Dragoncrest Ring
+026985F0:Hawk Ring
+0269AD00:Old Sun Ring
+0269FB20:Illusory Ring of a Conqueror
+026A2230:King's Ring
+026A4940:Ring of the Dead
+026A7050:Ring of Thorns
+026A7051:Ring of Thorns+1
+026A7052:Ring of Thorns+2
+026A9760:Delicate String
+026ABE70:White Ring
+026AE580:Illusory Ring of the Vengeful
+026B0C90:Illusory Ring of the Guilty
+026BA8D0:Ring of Whispers
+026BCFE0:Illusory Ring of the Exalted
+026D0860:Crest of the Rat
+026D2F70:Bell Keeper's Seal
+026D5680:Guardian's Seal
+026D7D90:Crest of Blood
+026DA4A0:Blue Seal
+026DCBB0:Abyss Seal
+026DF2C0:Vanquisher's Seal
+026E19D0:Sun Seal
+026E40E0:Ancient Dragon Seal
+02719C40:Simpleton's Ring
+0271C350:Strength Ring
+0271EA60:Dexterity Ring
+02721170:Ivory Warrior Ring
+02723880:Sorcery Clutch Ring
+02725F90:Lightning Clutch Ring
+027286A0:Fire Clutch Ring
+0272ADB0:Dark Clutch Ring
+0272FBD0:Baneful Bird Ring
+027322E0:Flynn's Ring
+</DropDownList>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>4 Bytes</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>9E8</Offset>
+    <Offset>388</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

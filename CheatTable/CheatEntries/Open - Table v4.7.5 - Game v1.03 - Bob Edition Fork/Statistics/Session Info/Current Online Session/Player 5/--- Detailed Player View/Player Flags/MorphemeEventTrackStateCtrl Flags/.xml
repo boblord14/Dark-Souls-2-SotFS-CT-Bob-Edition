@@ -1,0 +1,19 @@
+<CheatEntry>
+  <ID>1337108606</ID>
+  <Description>"MorphemeEventTrackStateCtrl Flags"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+4D0</Address>
+  <x-ce2fs-child-order>
+    <id id="1337108607"/>
+    <id id="1337108608"/>
+    <id id="1337108609"/>
+    <id id="1337108610"/>
+    <id id="1337108611"/>
+    <id id="1337108612"/>
+    <id id="1337108613"/>
+    <id id="1337108614"/>
+    <id id="1337108615"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

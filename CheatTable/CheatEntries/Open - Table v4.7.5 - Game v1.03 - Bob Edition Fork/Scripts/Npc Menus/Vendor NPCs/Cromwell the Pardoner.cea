@@ -1,0 +1,9 @@
+[ENABLE]
+createthread(OpenNpcMenuWindow)
+
+NpcId:
+dd #78400000
+{$lua}
+if not syntaxcheck then disableMemrec(memrec) end
+{$asm}
+[DISABLE]

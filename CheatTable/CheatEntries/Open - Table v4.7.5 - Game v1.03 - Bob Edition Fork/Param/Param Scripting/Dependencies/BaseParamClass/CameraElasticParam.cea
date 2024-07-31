@@ -1,0 +1,367 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START CameraElasticParam class]]--
+CameraElasticParam = BaseParamClass:new()
+
+function CameraElasticParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("CameraElasticParam", uuid, id, address)
+	return o
+end
+
+function CameraElasticParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function CameraElasticParam:unk04(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function CameraElasticParam:unk08(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function CameraElasticParam:unk0C(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function CameraElasticParam:unk10(value)
+	self:patchFloat(0x10, value)
+end
+
+
+function CameraElasticParam:unk14(value)
+	self:patchFloat(0x14, value)
+end
+
+
+function CameraElasticParam:unk18(value)
+	self:patchFloat(0x18, value)
+end
+
+
+function CameraElasticParam:unk1C(value)
+	self:patchFloat(0x1C, value)
+end
+
+
+function CameraElasticParam:unk20(value)
+	self:patchFloat(0x20, value)
+end
+
+
+function CameraElasticParam:unk24(value)
+	self:patchFloat(0x24, value)
+end
+
+
+function CameraElasticParam:unk28(value)
+	self:patchFloat(0x28, value)
+end
+
+
+function CameraElasticParam:unk2C(value)
+	self:patchFloat(0x2C, value)
+end
+
+
+function CameraElasticParam:unk30(value)
+	self:patchFloat(0x30, value)
+end
+
+
+function CameraElasticParam:unk34(value)
+	self:patchFloat(0x34, value)
+end
+
+
+function CameraElasticParam:unk38(value)
+	self:patchFloat(0x38, value)
+end
+
+
+function CameraElasticParam:unk3C(value)
+	self:patchFloat(0x3C, value)
+end
+
+
+function CameraElasticParam:unk40(value)
+	self:patchFloat(0x40, value)
+end
+
+
+function CameraElasticParam:unk44(value)
+	self:patchFloat(0x44, value)
+end
+
+
+function CameraElasticParam:unk48(value)
+	self:patchFloat(0x48, value)
+end
+
+
+function CameraElasticParam:unk4C(value)
+	self:patchFloat(0x4C, value)
+end
+
+
+function CameraElasticParam:unk50(value)
+	self:patchFloat(0x50, value)
+end
+
+
+function CameraElasticParam:unk54(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function CameraElasticParam:unk58(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function CameraElasticParam:unk5C(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function CameraElasticParam:unk60(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function CameraElasticParam:unk64(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function CameraElasticParam:unk68(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function CameraElasticParam:unk6C(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function CameraElasticParam:unk70(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function CameraElasticParam:unk74(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function CameraElasticParam:unk78(value)
+	self:patchFloat(0x78, value)
+end
+
+
+function CameraElasticParam:unk7C(value)
+	self:patchFloat(0x7C, value)
+end
+
+
+function CameraElasticParam:unk80(value)
+	self:patchFloat(0x80, value)
+end
+
+
+function CameraElasticParam:unk84(value)
+	self:patchFloat(0x84, value)
+end
+
+
+function CameraElasticParam:unk88(value)
+	self:patchFloat(0x88, value)
+end
+
+
+function CameraElasticParam:unk8C(value)
+	self:patchFloat(0x8C, value)
+end
+
+
+function CameraElasticParam:unk90(value)
+	self:patchFloat(0x90, value)
+end
+
+
+function CameraElasticParam:unk94(value)
+	self:patchFloat(0x94, value)
+end
+
+
+function CameraElasticParam:unk98(value)
+	self:patchFloat(0x98, value)
+end
+
+
+function CameraElasticParam:unk9C(value)
+	self:patchFloat(0x9C, value)
+end
+
+
+function CameraElasticParam:unka0(value)
+	self:patchFloat(0xA0, value)
+end
+
+
+function CameraElasticParam:unka4(value)
+	self:patchFloat(0xA4, value)
+end
+
+
+function CameraElasticParam:unka8(value)
+	self:patchFloat(0xA8, value)
+end
+
+
+function CameraElasticParam:unkac(value)
+	self:patchFloat(0xAC, value)
+end
+
+
+function CameraElasticParam:unkb0(value)
+	self:patchFloat(0xB0, value)
+end
+
+
+function CameraElasticParam:unkb4(value)
+	self:patchFloat(0xB4, value)
+end
+
+
+function CameraElasticParam:unkb8(value)
+	self:patchFloat(0xB8, value)
+end
+
+
+function CameraElasticParam:unkbc(value)
+	self:patchFloat(0xBC, value)
+end
+
+
+function CameraElasticParam:unkc0(value)
+	self:patchFloat(0xC0, value)
+end
+
+
+function CameraElasticParam:unkc4(value)
+	self:patchFloat(0xC4, value)
+end
+
+
+function CameraElasticParam:unkc8(value)
+	self:patchFloat(0xC8, value)
+end
+
+
+function CameraElasticParam:unkcc(value)
+	self:patchFloat(0xCC, value)
+end
+
+
+function CameraElasticParam:unkd0(value)
+	self:patchFloat(0xD0, value)
+end
+
+
+function CameraElasticParam:unkd4(value)
+	self:patchFloat(0xD4, value)
+end
+
+
+function CameraElasticParam:unkd8(value)
+	self:patchFloat(0xD8, value)
+end
+
+
+function CameraElasticParam:unkdc(value)
+	self:patchFloat(0xDC, value)
+end
+
+
+function CameraElasticParam:unke0(value)
+	self:patchFloat(0xE0, value)
+end
+
+
+function CameraElasticParam:unke4(value)
+	self:patchFloat(0xE4, value)
+end
+
+
+function CameraElasticParam:unke8(value)
+	self:patchFloat(0xE8, value)
+end
+
+
+function CameraElasticParam:unkec(value)
+	self:patchFloat(0xEC, value)
+end
+
+
+function CameraElasticParam:unkf0(value)
+	self:patchFloat(0xF0, value)
+end
+
+
+function CameraElasticParam:unkf4(value)
+	self:patchFloat(0xF4, value)
+end
+
+
+function CameraElasticParam:unkf8(value)
+	self:patchFloat(0xF8, value)
+end
+
+
+function CameraElasticParam:unkfc(value)
+	self:patchFloat(0xFC, value)
+end
+
+
+function CameraElasticParam:unk100(value)
+	self:patchFloat(0x100, value)
+end
+
+
+function CameraElasticParam:unk104(value)
+	self:patchFloat(0x104, value)
+end
+
+
+function CameraElasticParam:unk108(value)
+	self:patchFloat(0x108, value)
+end
+
+
+function CameraElasticParam:unk10C(value)
+	self:patchFloat(0x10C, value)
+end
+
+
+function CameraElasticParam:unk110(value)
+	self:patchFloat(0x110, value)
+end
+
+
+--[[End CameraElasticParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(sorch,4)
+                        sorch:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+298]+08,4)
+                        registersymbol(sorch)
+                        [[[[[GameManagerImp]+D0]+378]+28]+298]+08:
+                        dw #9906
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(sorch)
+                        [[[[[GameManagerImp]+D0]+378]+28]+298]+08:
+                        readmem(sorch, 4)
+                        unregistersymbol(sorch)
+                    
+					

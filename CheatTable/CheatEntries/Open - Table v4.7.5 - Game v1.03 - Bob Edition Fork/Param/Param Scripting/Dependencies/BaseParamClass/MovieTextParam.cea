@@ -1,0 +1,67 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START MovieTextParam class]]--
+MovieTextParam = BaseParamClass:new()
+
+function MovieTextParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("MovieTextParam", uuid, id, address)
+	return o
+end
+
+function MovieTextParam:unk00(value)
+	self:patchByte(0x0, value)
+end
+
+
+function MovieTextParam:unk002(value)
+	self:patchByte(0x1, value)
+end
+
+
+function MovieTextParam:unk003(value)
+	self:patchByte(0x2, value)
+end
+
+
+function MovieTextParam:unk004(value)
+	self:patchByte(0x3, value)
+end
+
+
+function MovieTextParam:unk005(value)
+	self:patchByte(0x4, value)
+end
+
+
+function MovieTextParam:unk006(value)
+	self:patchByte(0x5, value)
+end
+
+
+function MovieTextParam:unk007(value)
+	self:patchByte(0x6, value)
+end
+
+
+function MovieTextParam:unk008(value)
+	self:patchByte(0x7, value)
+end
+
+
+function MovieTextParam:textId(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+--[[End MovieTextParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

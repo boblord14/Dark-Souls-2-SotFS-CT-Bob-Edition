@@ -1,0 +1,47 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START FeWeaponThreshold class]]--
+FeWeaponThreshold = BaseParamClass:new()
+
+function FeWeaponThreshold:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("FeWeaponThreshold", uuid, id, address)
+	return o
+end
+
+function FeWeaponThreshold:scalingDisplayS(value)
+	self:patchFloat(0x0, value)
+end
+
+
+function FeWeaponThreshold:scalingDisplayA(value)
+	self:patchFloat(0x4, value)
+end
+
+
+function FeWeaponThreshold:scalingDisplayB(value)
+	self:patchFloat(0x8, value)
+end
+
+
+function FeWeaponThreshold:scalingDisplayC(value)
+	self:patchFloat(0xC, value)
+end
+
+
+function FeWeaponThreshold:scalingDisplayD(value)
+	self:patchFloat(0x10, value)
+end
+
+
+--[[End FeWeaponThreshold class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

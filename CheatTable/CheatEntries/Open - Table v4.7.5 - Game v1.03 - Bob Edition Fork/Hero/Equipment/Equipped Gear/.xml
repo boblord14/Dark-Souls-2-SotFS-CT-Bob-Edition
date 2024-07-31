@@ -1,0 +1,28 @@
+<CheatEntry>
+  <ID>1337256160</ID>
+  <Description>"Equipped Gear"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337082869"/>
+    <id id="1337082866"/>
+    <id id="1337082870"/>
+    <id id="1337082867"/>
+    <id id="1337082871"/>
+    <id id="1337082868"/>
+    <id id="1337082872"/>
+    <id id="1337082873"/>
+    <id id="1337082874"/>
+    <id id="1337082875"/>
+    <id id="1337082876"/>
+    <id id="1337082877"/>
+    <id id="1337082878"/>
+    <id id="1337082879"/>
+    <id id="1337082880"/>
+    <id id="1337082881"/>
+    <id id="1337082882"/>
+    <id id="1337082883"/>
+    <id id="1337082909"/>
+    <id id="1337082910"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

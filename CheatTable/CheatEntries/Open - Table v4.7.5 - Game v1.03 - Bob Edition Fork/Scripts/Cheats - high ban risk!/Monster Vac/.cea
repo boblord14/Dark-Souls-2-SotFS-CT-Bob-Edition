@@ -1,0 +1,181 @@
+[ENABLE]
+aobscanmodule(vacuum_inj, DarkSoulsII.exe, xx xx 80 A0 01 00 00 xx 54)
+aobscanmodule(vacuum_nodeath, DarkSoulsII.exe, E8 1D 04 00 00 EB 20)
+aobscanmodule(vacuum_heading, DarkSoulsII.exe, 66 0F 7F 43 50 0F 28 48 10 66 0F 7F 4B 60)
+alloc(vacuum_mem, 2000)
+
+label(code)
+label(exit)
+label(skipplayer)
+label(return)
+label(code2)
+label(exit2)
+label(return2)
+label(tmp_data)
+label(max_distance)
+label(heading)
+label(offset)
+
+registersymbol(vacuum_inj)
+registersymbol(vacuum_nodeath)
+registersymbol(vacuum_heading)
+registersymbol(max_distance)
+registersymbol(heading)
+registersymbol(offset)
+
+
+vacuum_mem:
+tmp_data:
+  dd 0 0 0 0
+offset:  // offset from player where mobs should hover
+  dd (float)0 (float)0 (float)3 0
+max_distance: // all mobs within this radius get vacuumed
+  dd (float)500
+heading:
+  dd 0 0
+code:
+  // based on code following on injection site the registers that are safe to use are:
+  // rcx, rdx, r8:r11, xmm0:xmm5
+
+  // load player entity address
+  push rcx
+
+  mov rcx, GameManagerImp
+  mov rcx,[rcx]
+  mov rcx,[rcx+0D0]
+  mov rcx,[rcx+100]
+  mov rcx,[rcx+320]
+  mov rcx,[rcx+020]
+
+  // is current entity player?
+  cmp rcx, rax
+  je skipplayer
+
+  push rax
+  push rdi
+  sub rsp,40
+  movups [rsp],xmm0
+  movups [rsp+10],xmm1
+  movups [rsp+20],xmm2
+  movups [rsp+30],xmm3
+
+  // if not see if it should be vacuumed
+  // caculate distance
+  movaps xmm0,[rcx+1A0] // p = <player position>
+  movaps xmm1,[rax+1A0] // m = <mob position>
+  subps xmm1, xmm0      // d = m-p
+  mulps xmm1, xmm1
+  movaps [tmp_data],xmm1
+  xor edi, edi
+  mov [tmp_data+C],edi
+  movss xmm2,[tmp_data]
+  movss xmm3,[tmp_data+4]
+  movss xmm1,[tmp_data+8]
+  addss xmm2,xmm3
+  addss xmm2,xmm1       // nA? = <d,d>
+  sqrtss xmm2,xmm2      // xmm2 <- distance
+  movss  xmm1,[max_distance]
+  comiss xmm2,xmm1      // should we vacuum it?
+  ja exit
+  //addps  xmm0,[offset]  // set new position
+  movaps xmm1,[offset]
+  movaps [tmp_data],xmm1
+
+  movss xmm1,[offset]
+  movss xmm2,[heading+4]
+  mulss xmm1,xmm2
+  movss xmm2,[heading]
+  movss xmm3,[offset+8]
+  mulss xmm2,xmm3
+  subss xmm1,xmm2
+  movss [tmp_data],xmm1
+
+  movss xmm1,[offset]
+  movss xmm2,[heading]
+  mulss xmm1,xmm2
+  movss xmm2,[heading+4]
+  mulss xmm2,xmm3
+  addss xmm1,xmm2
+  movss [tmp_data+8],xmm1
+
+  movaps xmm1,[tmp_data]
+  addps  xmm0,xmm1
+
+  movaps [rax+1A0],xmm0
+  movaps [rax+1B0],xmm0
+  movaps [rax+1C0],xmm0
+
+exit:
+  movups xmm0,[rsp]
+  movups xmm1,[rsp+10]
+  movups xmm2,[rsp+20]
+  movups xmm3,[rsp+30]
+  add rsp,40
+  pop rdi
+  pop rax
+skipplayer:
+  // original code at injection site
+  movaps xmm0,[rax+1A0]
+  // CE won't assemble the original instruction directly
+  // because the offset doesn't fit into 4 bytes counting from our memory
+  // workaround using a register
+  mov rcx,DarkSoulsII.exe+112F110
+  andps xmm0,[rcx]
+  // workaround end
+  pop rcx
+  jmp return
+
+
+
+code2:
+  push rax
+  mov eax,[rbx+50]
+  mov [heading], eax
+  mov eax,[rbx+70]
+  mov [heading+4],eax
+  pop rax
+exit2:
+  movdqa [rbx+50],xmm0
+  movaps xmm1,[rax+10]
+  movdqa [rbx+60],xmm1
+  jmp return2
+
+
+vacuum_inj:
+  jmp code
+return:
+
+vacuum_nodeath:
+  nop
+  nop
+  nop
+  nop
+  nop
+
+vacuum_heading:
+  jmp code2
+return2:
+
+[DISABLE]
+
+
+vacuum_inj:
+  db 0F 28 80 A0 01 00 00 0F 54 05 58 3C 56 00
+
+vacuum_nodeath:
+  call vacuum_nodeath+422
+
+vacuum_heading:
+  db 66 0F 7F 43 50 0F 28 48 10 66 0F 7F 4B 60
+
+
+unregistersymbol(vacuum_inj)
+unregistersymbol(vacuum_nodeath)
+unregistersymbol(vacuum_heading)
+unregistersymbol(max_distance)
+unregistersymbol(heading)
+unregistersymbol(offset)
+
+dealloc(vacuum_mem)
+
+

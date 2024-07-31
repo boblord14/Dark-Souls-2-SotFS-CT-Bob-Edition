@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337103704</ID>
+  <Description>"Ignore Object Collision"</Description>
+  <DropDownListLink>bool</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>+62C</Address>
+</CheatEntry>

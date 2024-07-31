@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>89600</ID>
+  <Description>"DamageEffectMaterialParam.param"</Description>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>D8</Offset>
+    <Offset>BE0</Offset>
+    <Offset>10</Offset>
+  </Offsets>
+</CheatEntry>

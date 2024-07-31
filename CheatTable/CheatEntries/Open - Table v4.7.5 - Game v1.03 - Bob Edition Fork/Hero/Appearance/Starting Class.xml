@@ -1,0 +1,20 @@
+<CheatEntry>
+  <ID>23859</ID>
+  <Description>"Starting Class"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">1:Warrior
+2:Knight
+4:Bandit
+6:Cleric
+7:Sorcerer
+8:Explorer
+9:Swordsman
+10:Deprived
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>64</Offset>
+    <Offset>C0</Offset>
+    <Offset>A8</Offset>
+  </Offsets>
+</CheatEntry>

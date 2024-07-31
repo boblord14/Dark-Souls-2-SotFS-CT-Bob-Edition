@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(knightt,4)
+                        knightt:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+2C8]+08,4)
+                        registersymbol(knightt)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        dw #9030
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(knightt)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        readmem(knightt, 4)
+                        unregistersymbol(knightt)
+                    
+					

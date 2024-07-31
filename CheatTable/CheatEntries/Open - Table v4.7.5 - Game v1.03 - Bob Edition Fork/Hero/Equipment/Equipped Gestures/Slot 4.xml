@@ -1,0 +1,34 @@
+<CheatEntry>
+  <ID>22884</ID>
+  <Description>"Slot 4"</Description>
+  <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">10:Point
+20:I won't Bite
+30:Bow
+40:Welcome
+50:Duel bow
+60:Wave
+70:Joy
+80:Righty-ho
+90:No way
+100:This one's me
+120:Hurrah
+130:Have mercy
+150:Decapitate
+220:Mock
+240:Pumped up
+250:Prostration
+270:Warmup
+280:Warcry
+290:Secret Club
+300:Praise the Sun
+310:Fist pump
+</DropDownList>
+  <VariableType>4 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3E8</Offset>
+    <Offset>18</Offset>
+    <Offset>378</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

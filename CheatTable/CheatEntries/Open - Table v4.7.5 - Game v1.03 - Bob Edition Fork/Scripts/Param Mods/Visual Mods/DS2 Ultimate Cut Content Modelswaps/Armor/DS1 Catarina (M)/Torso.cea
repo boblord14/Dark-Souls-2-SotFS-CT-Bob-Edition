@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(oniont,4)
+                        oniont:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+2C8]+08,4)
+                        registersymbol(oniont)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        dw #9904
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(oniont)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        readmem(oniont, 4)
+                        unregistersymbol(oniont)
+                    
+					

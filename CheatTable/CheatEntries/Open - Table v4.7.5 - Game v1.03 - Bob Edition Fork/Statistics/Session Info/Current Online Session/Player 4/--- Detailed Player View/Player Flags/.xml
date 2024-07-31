@@ -1,0 +1,30 @@
+<CheatEntry>
+  <ID>1337107325</ID>
+  <Description>"Player Flags"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+B8</Address>
+  <Offsets>
+    <Offset>0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337107326"/>
+    <id id="1337107327"/>
+    <id id="1337107348"/>
+    <id id="1337107358"/>
+    <id id="1337107386"/>
+    <id id="1337107474"/>
+    <id id="1337107475"/>
+    <id id="1337107476"/>
+    <id id="1337107477"/>
+    <id id="1337107478"/>
+    <id id="1337107479"/>
+    <id id="1337107480"/>
+    <id id="1337107481"/>
+    <id id="1337107482"/>
+    <id id="1337107483"/>
+    <id id="1337107484"/>
+    <id id="1337107485"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

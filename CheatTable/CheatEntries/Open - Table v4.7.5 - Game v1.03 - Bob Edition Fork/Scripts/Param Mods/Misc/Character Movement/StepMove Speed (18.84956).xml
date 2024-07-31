@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337089051</ID>
+  <Description>"StepMove Speed (18.84956)"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>150</Offset>
+    <Offset>D8</Offset>
+    <Offset>330</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

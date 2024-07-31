@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem13,32)
+label(ArmorReinforceParamAddressToUse)
+registersymbol(ArmorReinforceParamAddressToUse)
+newmem13:
+ArmorReinforceParamAddressToUse:
+[DISABLE]
+dealloc(newmem13)
+unregistersymbol(ArmorReinforceParamAddressToUse)

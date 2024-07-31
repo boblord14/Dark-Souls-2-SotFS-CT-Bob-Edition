@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>28920</ID>
+  <Description>"Indoor / Outdoor toggle?"</Description>
+  <VariableType>2 Bytes</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>40</Offset>
+  </Offsets>
+</CheatEntry>

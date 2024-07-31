@@ -1,0 +1,24 @@
+<CheatEntry>
+  <ID>1337094628</ID>
+  <Description>"MorphemeEventTrackStateCtrl Flags"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>4D0</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337094629"/>
+    <id id="1337094637"/>
+    <id id="1337094635"/>
+    <id id="1337094633"/>
+    <id id="1337094632"/>
+    <id id="1337094630"/>
+    <id id="1337094631"/>
+    <id id="1337094634"/>
+    <id id="1337094636"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>22843</ID>
+  <Description>"Max Equip Load"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>3C</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

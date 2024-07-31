@@ -1,0 +1,17 @@
+<CheatEntry>
+  <ID>89451</ID>
+  <Description>"EnemyComboBehaviorParam.param"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>String</VariableType>
+  <Length>0</Length>
+  <Unicode>1</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>D8</Offset>
+    <Offset>3D0</Offset>
+    <Offset>18</Offset>
+  </Offsets>
+</CheatEntry>

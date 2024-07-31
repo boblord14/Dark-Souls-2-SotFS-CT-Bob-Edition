@@ -1,0 +1,20 @@
+[ENABLE]
+{$lua}
+local coop = readPointer("GameManagerImp")
+coop = readPointer(coop + 0xd0)
+coop = readPointer(coop + 0xf0)
+coop = readPointer(coop + 0x250)
+coop = readBytes(coop + 0x1d0, 12, true)
+
+local player = readPointer("GameManagerImp")
+player = readPointer(player + 0xD0)
+player = readPointer(player + 0x100)
+player = readPointer(player + 0x320)
+player = readPointer(player + 0x20)
+
+writeBytes(player + 0x1a0, coop)
+writeBytes(player + 0x1b0, coop)
+writeBytes(player + 0x1c0, coop)
+
+[DISABLE]
+

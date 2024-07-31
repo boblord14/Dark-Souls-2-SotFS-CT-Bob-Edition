@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337077474</ID>
+  <Description>"VIT"</Description>
+  <VariableType>2 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>C</Offset>
+    <Offset>490</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

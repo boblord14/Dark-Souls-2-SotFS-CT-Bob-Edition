@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>12582</ID>
+  <Description>"Monster Vac"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="12584"/>
+    <id id="12585"/>
+    <id id="12588"/>
+    <id id="12587"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

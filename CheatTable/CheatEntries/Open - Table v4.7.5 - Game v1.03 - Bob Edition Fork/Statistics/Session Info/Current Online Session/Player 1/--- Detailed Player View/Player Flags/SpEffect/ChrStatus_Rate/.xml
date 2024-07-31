@@ -1,0 +1,23 @@
+<CheatEntry>
+  <ID>1337103686</ID>
+  <Description>"ChrStatus_Rate"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+3BC</Address>
+  <x-ce2fs-child-order>
+    <id id="1337103687"/>
+    <id id="1337103688"/>
+    <id id="1337103689"/>
+    <id id="1337103690"/>
+    <id id="1337103691"/>
+    <id id="1337103692"/>
+    <id id="1337103693"/>
+    <id id="1337103694"/>
+    <id id="1337103695"/>
+    <id id="1337103696"/>
+    <id id="1337103697"/>
+    <id id="1337103698"/>
+    <id id="1337103699"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

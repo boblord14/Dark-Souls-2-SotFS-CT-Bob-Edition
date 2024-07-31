@@ -1,0 +1,30 @@
+[ENABLE]
+aobscanmodule(NoItemsRestriction,DarkSoulsII.exe,F3 0F 11 87 34 01 01 00)
+alloc(newmem,$1000,NoItemsRestriction)
+label(code)
+label(return)
+
+newmem:
+  mov dword ptr [rdi+00010134],01
+  jmp return
+
+code:
+  movss [rdi+00010134],xmm0
+  jmp return
+
+NoItemsRestriction:
+  jmp newmem
+  nop
+  nop
+  nop
+return:
+registersymbol(NoItemsRestriction)
+
+[DISABLE]
+
+NoItemsRestriction:
+  db F3 0F 11 87 34 01 01 00
+
+unregistersymbol(NoItemsRestriction)
+dealloc(newmem)
+

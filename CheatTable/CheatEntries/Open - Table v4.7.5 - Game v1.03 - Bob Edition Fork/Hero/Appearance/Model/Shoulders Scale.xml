@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256181</ID>
+  <Description>"Shoulders Scale"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>840</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

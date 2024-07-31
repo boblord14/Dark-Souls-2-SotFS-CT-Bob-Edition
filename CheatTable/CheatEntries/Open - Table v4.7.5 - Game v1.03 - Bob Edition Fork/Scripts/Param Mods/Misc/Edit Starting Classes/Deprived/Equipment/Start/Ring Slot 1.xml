@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337089023</ID>
+  <Description>"Ring Slot 1"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+b28+0AC</Address>
+</CheatEntry>

@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337079297</ID>
+  <Description>"Inventory Standing Anim"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>4CB</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

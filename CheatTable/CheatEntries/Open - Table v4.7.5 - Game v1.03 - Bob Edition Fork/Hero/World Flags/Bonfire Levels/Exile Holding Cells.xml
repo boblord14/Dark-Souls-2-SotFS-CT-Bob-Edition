@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>29</ID>
+  <Description>"Exile Holding Cells"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>182</Offset>
+    <Offset>20</Offset>
+    <Offset>58</Offset>
+    <Offset>70</Offset>
+  </Offsets>
+</CheatEntry>

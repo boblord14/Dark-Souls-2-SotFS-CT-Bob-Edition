@@ -1,0 +1,7 @@
+<CheatEntry>
+  <ID>1337097908</ID>
+  <Description>"CollisionFloorCeiling"</Description>
+  <Color>000000</Color>
+  <VariableType>Byte</VariableType>
+  <Address>+0B2</Address>
+</CheatEntry>

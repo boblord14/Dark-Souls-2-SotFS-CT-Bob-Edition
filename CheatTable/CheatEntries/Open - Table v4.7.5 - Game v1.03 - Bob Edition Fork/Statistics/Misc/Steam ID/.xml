@@ -1,0 +1,20 @@
+<CheatEntry>
+  <ID>1337097839</ID>
+  <Description>"Steam ID"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>String</VariableType>
+  <Length>19</Length>
+  <Unicode>0</Unicode>
+  <CodePage>0</CodePage>
+  <ZeroTerminate>1</ZeroTerminate>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>14</Offset>
+    <Offset>C8</Offset>
+    <Offset>A8</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337097840"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

@@ -1,0 +1,21 @@
+[ENABLE]
+{$asm}
+aobscanmodule(StatusEffectsHollowStage,DarkSoulsII.exe,88 87 AC 01 00 00 E9) // should be unique
+aobscanmodule(HollowStageNormalDeathAOB,DarkSoulsII.exe,88 81 AC 01 00 00 C3 66)
+registersymbol(StatusEffectsHollowStage)
+registersymbol(HollowStageNormalDeathAOB)
+StatusEffectsHollowStage:
+ db 90 90 90 90 90 90
+
+HollowStageNormalDeathAOB:
+  db 90 90 90 90 90 90
+
+[DISABLE]
+StatusEffectsHollowStage:
+  db 88 87 AC 01 00 00
+
+HollowStageNormalDeathAOB:
+  db 88 81 AC 01 00 00
+
+unregistersymbol(StatusEffectsHollowStage)
+unregistersymbol(HollowStageNormalDeathAOB)

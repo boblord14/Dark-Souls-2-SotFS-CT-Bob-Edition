@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337036533</ID>
+  <Description>"IsPowerStance"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>4DC</Offset>
+    <Offset>B8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

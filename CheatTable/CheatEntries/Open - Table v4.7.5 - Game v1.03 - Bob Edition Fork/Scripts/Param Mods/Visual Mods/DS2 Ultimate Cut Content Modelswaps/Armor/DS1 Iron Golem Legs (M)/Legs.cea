@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(goleml,4)
+                        goleml:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+328]+08,4)
+                        registersymbol(goleml)
+                        [[[[[GameManagerImp]+D0]+378]+28]+328]+08:
+                        dw #9909
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(goleml)
+                        [[[[[GameManagerImp]+D0]+378]+28]+328]+08:
+                        readmem(goleml, 4)
+                        unregistersymbol(goleml)
+                    
+					

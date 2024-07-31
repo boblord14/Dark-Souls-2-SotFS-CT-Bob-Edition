@@ -1,0 +1,19 @@
+<CheatEntry>
+  <ID>1337085071</ID>
+  <Description>"Swing Sound"</Description>
+  <DropDownList DescriptionOnly="1" DisplayValueAsItem="1">0:Twinblade/Scimitars/Katanas/Greatswords
+1:Ultra Greatswords/Curved Greatswords
+2:Dagger
+3:Fists/Shields
+4:Reapers/Axes
+5:Hammers/Halberds/Great Hammers/Binoculars
+6:Spears
+7:Whip
+8:Bows/Great Bows
+9:Crossbows
+10:Staves
+11:Chimes
+</DropDownList>
+  <VariableType>Byte</VariableType>
+  <Address>+37</Address>
+</CheatEntry>

@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337105073</ID>
+  <Description>"Curse Buildup"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+80</Address>
+  <x-ce2fs-child-order>
+    <id id="1337105074"/>
+    <id id="1337105075"/>
+    <id id="1337105076"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

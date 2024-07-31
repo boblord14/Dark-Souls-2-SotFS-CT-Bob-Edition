@@ -1,0 +1,29 @@
+[ENABLE]
+alloc(GetBulletParamAddr, $100, DarkSoulsII.exe)
+alloc(BulletParamId, 4)
+label(return)
+registersymbol(GetBulletParamAddr)
+registersymbol(BulletParamId)
+
+BulletParamId:
+dd #10
+
+GetBulletParamAddr:
+sub rsp, 20
+mov edx, [BulletParamId]
+vortmov(rcx, [[[GameManagerImp]+60]+20])
+add rcx, C8
+test rcx, rcx
+jz return
+call DarkSoulsII.exe+3E8F0
+mov [BulletAddressToUse], rax
+
+return:
+add rsp, 20
+ret
+
+[DISABLE]
+dealloc(GetBulletParamAddr)
+dealloc(BulletParamId)
+unregistersymbol(GetBulletParamAddr)
+unregistersymbol(BulletParamId)

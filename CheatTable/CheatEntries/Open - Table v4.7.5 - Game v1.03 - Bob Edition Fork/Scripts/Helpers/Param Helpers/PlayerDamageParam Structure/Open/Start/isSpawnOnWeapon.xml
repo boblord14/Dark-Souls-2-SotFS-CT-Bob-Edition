@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337089891</ID>
+  <Description>"isSpawnOnWeapon"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>+030</Address>
+</CheatEntry>

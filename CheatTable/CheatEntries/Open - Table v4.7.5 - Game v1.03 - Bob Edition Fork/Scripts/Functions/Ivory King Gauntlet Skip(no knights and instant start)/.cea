@@ -1,0 +1,12 @@
+[ENABLE]
+                        {$asm}
+
+                        [[[[GameManagerImp]+70]+20]+18]+E34:
+                        dw #40064
+                        [[[[GameManagerImp]+70]+20]+18]+D52:
+                        dw #15374
+                        [DISABLE]
+                        [[[[GameManagerImp]+70]+20]+18]+E34:
+                        dw #0000
+                        [[[[GameManagerImp]+70]+20]+18]+D52:
+                        dw #0000

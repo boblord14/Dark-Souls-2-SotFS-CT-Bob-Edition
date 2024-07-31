@@ -1,0 +1,83 @@
+{
+    Author: Lord Radai
+    Description: Logs damage taken from all players in the current session
+}
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+print("--Session damage logger on--")
+SessionDamageLogger = true
+
+local HOST_HP_PTR = "[[GameManagerImp]+D0]+168"
+local P1_HP_PTR = "[[[NetSessionManager]+20]+1E8]+168"
+local P2_HP_PTR = "[[[NetSessionManager]+20]+2B8]+168"
+local P3_HP_PTR = "[[[NetSessionManager]+20]+388]+168"
+local P4_HP_PTR = "[[[NetSessionManager]+20]+458]+168"
+local P5_HP_PTR = "[[[NetSessionManager]+20]+528]+168"
+
+local function startSessionDamageLogger(thread)
+  local tmpHostHp = 0
+  local tmpP1Hp = 0
+  local tmpP2Hp = 0
+  local tmpP3Hp = 0
+  local tmpP4Hp = 0
+  local tmpP5Hp = 0
+
+  while(SessionDamageLogger) do
+    local currentHostHp = readInteger(HOST_HP_PTR)
+    local currentP1Hp = readInteger(P1_HP_PTR)
+    local currentP2Hp = readInteger(P2_HP_PTR)
+    local currentP3Hp = readInteger(P3_HP_PTR)
+    local currentP4Hp = readInteger(P4_HP_PTR)
+    local currentP5Hp = readInteger(P5_HP_PTR)
+    local time = os.date("*t")
+    if(currentHostHp ~= nil) then
+      if(tmpHostHp > currentHostHp) then
+        print(("[%02d:%02d:%02d]: You took %d damage"):format(time.hour, time.min, time.sec, tmpHostHp - currentHostHp))
+      end
+      tmpHostHp = currentHostHp
+      if (tmpHostHp - currentHostHp < 0) then
+        print("[%02d:%02d:%02d]: Host died")
+      end
+    end
+    if(currentP1Hp ~= nil) then
+      if(tmpP1Hp > currentP1Hp) then
+        print(("[%02d:%02d:%02d]: P1 took %d damage"):format(time.hour, time.min, time.sec, tmpP1Hp - currentP1Hp))
+      end
+      tmpP1Hp = currentP1Hp
+    end
+    if(currentP2Hp ~= nil) then
+      if(tmpP2Hp > currentP2Hp) then
+        print(("[%02d:%02d:%02d]: P2 took %d damage"):format(time.hour, time.min, time.sec, tmpP2Hp - currentP2Hp))
+      end
+      tmpP2Hp = currentP2Hp
+    end
+    if(currentP3Hp ~= nil) then
+      if(tmpP3Hp > currentP3Hp) then
+        print(("[%02d:%02d:%02d]: P3 took %d damage"):format(time.hour, time.min, time.sec, tmpP3Hp - currentP3Hp))
+      end
+      tmpP3Hp = currentP3Hp
+    end
+    if(currentP4Hp ~= nil) then
+      if(tmpP4Hp > currentP4Hp) then
+        print(("[%02d:%02d:%02d]: P4 took %d damage"):format(time.hour, time.min, time.sec, tmpP4Hp - currentP4Hp))
+      end
+      tmpP4Hp = currentP4Hp
+    end
+    if(currentP5Hp ~= nil) then
+      if(tmpP5Hp > currentP5Hp) then
+        print(("[%02d:%02d:%02d]: P5 took %d damage"):format(time.hour, time.min, time.sec, tmpP5Hp - currentP5Hp))
+      end
+      tmpP5Hp = currentP5Hp
+    end
+    sleep(0)
+  end
+end
+
+createNativeThread(startSessionDamageLogger)
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+SessionDamageLogger = false
+print("--Session damage logger off--")

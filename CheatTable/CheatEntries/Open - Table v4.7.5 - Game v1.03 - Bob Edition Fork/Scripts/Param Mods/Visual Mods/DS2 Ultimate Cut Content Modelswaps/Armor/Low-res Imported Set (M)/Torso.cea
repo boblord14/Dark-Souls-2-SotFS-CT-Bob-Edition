@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(importt,4)
+                        importt:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+2C8]+08,4)
+                        registersymbol(importt)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        dw #9950
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(importt)
+                        [[[[[GameManagerImp]+D0]+378]+28]+2C8]+08:
+                        readmem(importt, 4)
+                        unregistersymbol(importt)
+                    
+					

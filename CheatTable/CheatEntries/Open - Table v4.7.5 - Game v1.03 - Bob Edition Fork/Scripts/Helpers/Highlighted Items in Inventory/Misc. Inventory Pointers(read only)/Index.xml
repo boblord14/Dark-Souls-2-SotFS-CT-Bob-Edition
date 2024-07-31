@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>1337089203</ID>
+  <Description>"Index"</Description>
+  <VariableType>2 Bytes</VariableType>
+  <Address>pItem</Address>
+  <Offsets>
+    <Offset>1C</Offset>
+  </Offsets>
+</CheatEntry>

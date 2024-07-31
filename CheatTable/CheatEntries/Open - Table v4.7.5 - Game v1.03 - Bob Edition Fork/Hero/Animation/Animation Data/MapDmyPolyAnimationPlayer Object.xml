@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>1337256275</ID>
+  <Description>"MapDmyPolyAnimationPlayer Object"</Description>
+  <ShowAsHex>1</ShowAsHex>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>8 Bytes</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>20</Offset>
+    <Offset>78</Offset>
+    <Offset>38</Offset>
+    <Offset>F8</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

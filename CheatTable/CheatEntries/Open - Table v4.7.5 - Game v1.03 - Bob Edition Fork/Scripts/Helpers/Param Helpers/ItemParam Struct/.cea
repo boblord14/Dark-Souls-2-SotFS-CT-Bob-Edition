@@ -1,0 +1,9 @@
+[ENABLE]
+globalalloc(newmem9,32)
+label(GoodsAddressToUse)
+registersymbol(GoodsAddressToUse)
+newmem9:
+GoodsAddressToUse:
+[DISABLE]
+dealloc(newmem9)
+unregistersymbol(GoodsAddressToUse)

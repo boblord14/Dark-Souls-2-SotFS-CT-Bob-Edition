@@ -1,0 +1,17 @@
+<CheatEntry>
+  <ID>1337077584</ID>
+  <Description>"P1SteamPlayerData"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <Color>008000</Color>
+  <GroupHeader>1</GroupHeader>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>0</Offset>
+    <Offset>8</Offset>
+    <Offset>10</Offset>
+  </Offsets>
+  <x-ce2fs-child-order>
+    <id id="1337077585"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

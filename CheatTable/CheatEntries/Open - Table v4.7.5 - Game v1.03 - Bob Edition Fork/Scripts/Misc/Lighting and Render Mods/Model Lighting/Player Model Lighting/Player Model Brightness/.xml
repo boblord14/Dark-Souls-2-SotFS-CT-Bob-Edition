@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>26430</ID>
+  <Description>"Player Model Brightness"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26426"/>
+    <id id="26427"/>
+    <id id="26428"/>
+    <id id="26429"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

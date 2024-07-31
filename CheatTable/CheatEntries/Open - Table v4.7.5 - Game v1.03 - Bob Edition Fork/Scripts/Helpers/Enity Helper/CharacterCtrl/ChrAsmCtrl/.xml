@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>1337162811</ID>
+  <Description>"ChrAsmCtrl"</Description>
+  <Options moHideChildren="1"/>
+  <ShowAsSigned>0</ShowAsSigned>
+  <GroupHeader>1</GroupHeader>
+  <Address>+378</Address>
+  <x-ce2fs-child-order>
+    <id id="1337162812"/>
+    <id id="1337162855"/>
+    <id id="1337162856"/>
+    <id id="1337162857"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

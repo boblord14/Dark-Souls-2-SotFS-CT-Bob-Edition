@@ -1,0 +1,16 @@
+<CheatEntry>
+  <ID>1337106111</ID>
+  <Description>"Event State Bitfield"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337106112"/>
+    <id id="1337106113"/>
+    <id id="1337106114"/>
+    <id id="1337106115"/>
+    <id id="1337106116"/>
+    <id id="1337106117"/>
+    <id id="1337106118"/>
+    <id id="1337106119"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

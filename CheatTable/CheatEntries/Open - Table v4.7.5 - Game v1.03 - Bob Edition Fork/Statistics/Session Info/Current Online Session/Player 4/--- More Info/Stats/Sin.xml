@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>86975</ID>
+  <Description>"Sin"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>2C7</Offset>
+    <Offset>390</Offset>
+    <Offset>458</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

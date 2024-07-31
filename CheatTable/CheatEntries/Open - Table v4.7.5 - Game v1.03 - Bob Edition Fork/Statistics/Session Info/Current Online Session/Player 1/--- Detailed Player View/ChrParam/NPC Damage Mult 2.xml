@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337103435</ID>
+  <Description>"NPC Damage Mult 2"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+0E4</Address>
+</CheatEntry>

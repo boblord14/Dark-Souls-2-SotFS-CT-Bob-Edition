@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26518</ID>
+  <Description>"On/Off (Makes screen go dark) 0-1"</Description>
+  <VariableType>2 Bytes</VariableType>
+  <Address>lightBase</Address>
+  <Offsets>
+    <Offset>FFFFF8D4</Offset>
+  </Offsets>
+</CheatEntry>

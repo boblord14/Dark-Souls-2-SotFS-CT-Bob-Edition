@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>29540</ID>
+  <Description>"Alloted Time"</Description>
+  <VariableType>Float</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>218</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

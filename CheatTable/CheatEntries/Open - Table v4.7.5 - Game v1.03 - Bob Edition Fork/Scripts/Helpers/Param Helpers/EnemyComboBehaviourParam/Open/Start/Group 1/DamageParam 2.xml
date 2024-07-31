@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337094018</ID>
+  <Description>"DamageParam 2"</Description>
+  <DropDownListLink>DamageCtrlParam</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+C</Address>
+</CheatEntry>

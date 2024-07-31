@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337089921</ID>
+  <Description>"Hitback isSpawnOnWeapon"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>+062</Address>
+</CheatEntry>

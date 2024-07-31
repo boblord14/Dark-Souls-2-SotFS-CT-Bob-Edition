@@ -1,0 +1,13 @@
+<CheatEntry>
+  <ID>1337096342</ID>
+  <Description>"SpEffect Lookup"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337096344"/>
+    <id id="1337096352"/>
+    <id id="1337096345"/>
+    <id id="1337096353"/>
+    <id id="1337096346"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

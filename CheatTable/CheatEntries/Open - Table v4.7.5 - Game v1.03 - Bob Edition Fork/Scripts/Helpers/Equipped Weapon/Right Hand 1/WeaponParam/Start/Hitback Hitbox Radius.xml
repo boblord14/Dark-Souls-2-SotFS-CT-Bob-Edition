@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337082962</ID>
+  <Description>"Hitback Hitbox Radius"</Description>
+  <VariableType>Float</VariableType>
+  <Address>+a0</Address>
+</CheatEntry>

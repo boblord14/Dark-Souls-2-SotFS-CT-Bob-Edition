@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(chainh,4)
+                        chainh:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+298]+08,4)
+                        registersymbol(chainh)
+                        [[[[[GameManagerImp]+D0]+378]+28]+298]+08:
+                        dw #9908
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(chainh)
+                        [[[[[GameManagerImp]+D0]+378]+28]+298]+08:
+                        readmem(chainh, 4)
+                        unregistersymbol(chainh)
+                    
+					

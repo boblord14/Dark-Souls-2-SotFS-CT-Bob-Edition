@@ -1,0 +1,15 @@
+<CheatEntry>
+  <ID>1337100044</ID>
+  <Description>"Npc Menus"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="1337256635"/>
+    <id id="1337100093"/>
+    <id id="1337100073"/>
+    <id id="1337256655"/>
+    <id id="1337100039"/>
+    <id id="1337256657"/>
+    <id id="1337100094"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

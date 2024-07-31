@@ -1,0 +1,10 @@
+<CheatEntry>
+  <ID>1337256299</ID>
+  <Description>"Belfry Guard"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="26537"/>
+    <id id="26558"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

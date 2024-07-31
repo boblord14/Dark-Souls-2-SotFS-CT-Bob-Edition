@@ -1,0 +1,7 @@
+[ENABLE]
+label(ItemTypeParam)
+registersymbol(ItemTypeParam)
+[ItemTypeAddressToUse]:
+ItemTypeParam:
+[DISABLE]
+unregistersymbol(ItemTypeParam)

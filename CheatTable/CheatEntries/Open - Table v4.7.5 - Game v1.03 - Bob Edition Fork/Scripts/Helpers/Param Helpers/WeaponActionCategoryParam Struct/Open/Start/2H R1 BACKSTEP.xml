@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337090154</ID>
+  <Description>"2H R1 BACKSTEP"</Description>
+  <DropDownListLink>WeaponAttackMotion</DropDownListLink>
+  <Color>000000</Color>
+  <VariableType>4 Bytes</VariableType>
+  <Address>+40</Address>
+</CheatEntry>

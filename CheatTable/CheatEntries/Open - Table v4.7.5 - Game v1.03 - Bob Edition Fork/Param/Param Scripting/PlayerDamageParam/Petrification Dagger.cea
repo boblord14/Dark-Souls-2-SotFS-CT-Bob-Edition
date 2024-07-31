@@ -1,0 +1,23 @@
+{
+	Author: Boblord
+	Description: the classic
+}
+[ENABLE]
+{$lua}
+
+local curseknifebullet = PlayerDamageParam:new("cursedagger", 60540000)
+      curseknifebullet:damage0(10)
+      curseknifebullet:damageType0(0)
+      curseknifebullet:damage1(999)
+      curseknifebullet:damageType1(12)
+
+--local curseknifegood = ItemParam:new("cursedagger", 60540000)
+     -- curseknifegood:iconId(63017000)
+   --   curseknifegood:itemType(2)
+--itemparam doesnt like to do things unfortunately
+
+[DISABLE]
+{$lua}
+if not syntaxcheck then
+  paramUtils:restore("cursedagger")
+end

@@ -1,0 +1,342 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ItemLotParam2_Chr class]]--
+ItemLotParam2_Chr = BaseParamClass:new()
+
+function ItemLotParam2_Chr:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ItemLotParam2_Chr", uuid, id, address)
+	return o
+end
+
+function ItemLotParam2_Chr:unk(value)
+	self:patchByte(0x0, value)
+end
+
+
+function ItemLotParam2_Chr:unk2(value)
+	self:patchByte(0x1, value)
+end
+
+
+function ItemLotParam2_Chr:unk3(value)
+	self:patchByte(0x2, value)
+end
+
+
+function ItemLotParam2_Chr:unk4(value)
+	self:patchByte(0x3, value)
+end
+
+
+function ItemLotParam2_Chr:amountLot1(value)
+	self:patchByte(0x4, value)
+end
+
+
+function ItemLotParam2_Chr:amountLot2(value)
+	self:patchByte(0x5, value)
+end
+
+
+function ItemLotParam2_Chr:amountLot3(value)
+	self:patchByte(0x6, value)
+end
+
+
+function ItemLotParam2_Chr:amountLot4(value)
+	self:patchByte(0x7, value)
+end
+
+
+function ItemLotParam2_Chr:amountLot5(value)
+	self:patchByte(0x8, value)
+end
+
+
+function ItemLotParam2_Chr:amountLot6(value)
+	self:patchByte(0x9, value)
+end
+
+
+function ItemLotParam2_Chr:amountLot7(value)
+	self:patchByte(0xA, value)
+end
+
+
+function ItemLotParam2_Chr:amountLot8(value)
+	self:patchByte(0xB, value)
+end
+
+
+function ItemLotParam2_Chr:amountLot9(value)
+	self:patchByte(0xC, value)
+end
+
+
+function ItemLotParam2_Chr:amountLot10(value)
+	self:patchByte(0xD, value)
+end
+
+
+function ItemLotParam2_Chr:reinforcementLot1(value)
+	self:patchByte(0xE, value)
+end
+
+
+function ItemLotParam2_Chr:reinforcementLot2(value)
+	self:patchByte(0xF, value)
+end
+
+
+function ItemLotParam2_Chr:reinforcementLot3(value)
+	self:patchByte(0x10, value)
+end
+
+
+function ItemLotParam2_Chr:reinforcementLot4(value)
+	self:patchByte(0x11, value)
+end
+
+
+function ItemLotParam2_Chr:reinforcementLot5(value)
+	self:patchByte(0x12, value)
+end
+
+
+function ItemLotParam2_Chr:reinforcementLot6(value)
+	self:patchByte(0x13, value)
+end
+
+
+function ItemLotParam2_Chr:reinforcementLot7(value)
+	self:patchByte(0x14, value)
+end
+
+
+function ItemLotParam2_Chr:reinforcementLot8(value)
+	self:patchByte(0x15, value)
+end
+
+
+function ItemLotParam2_Chr:reinforcementLot9(value)
+	self:patchByte(0x16, value)
+end
+
+
+function ItemLotParam2_Chr:reinforcementLot10(value)
+	self:patchByte(0x17, value)
+end
+
+
+function ItemLotParam2_Chr:infusionLot1(value)
+	self:patchByte(0x18, value)
+end
+
+
+function ItemLotParam2_Chr:infusionLot2(value)
+	self:patchByte(0x19, value)
+end
+
+
+function ItemLotParam2_Chr:infusionLot3(value)
+	self:patchByte(0x1A, value)
+end
+
+
+function ItemLotParam2_Chr:infusionLot4(value)
+	self:patchByte(0x1B, value)
+end
+
+
+function ItemLotParam2_Chr:infusionLot5(value)
+	self:patchByte(0x1C, value)
+end
+
+
+function ItemLotParam2_Chr:infusionLot6(value)
+	self:patchByte(0x1D, value)
+end
+
+
+function ItemLotParam2_Chr:infusionLot7(value)
+	self:patchByte(0x1E, value)
+end
+
+
+function ItemLotParam2_Chr:infusionLot8(value)
+	self:patchByte(0x1F, value)
+end
+
+
+function ItemLotParam2_Chr:infusionLot9(value)
+	self:patchByte(0x20, value)
+end
+
+
+function ItemLotParam2_Chr:infusionLot10(value)
+	self:patchByte(0x21, value)
+end
+
+
+function ItemLotParam2_Chr:unk3Lot1(value)
+	self:patchByte(0x22, value)
+end
+
+
+function ItemLotParam2_Chr:unk3Lot2(value)
+	self:patchByte(0x23, value)
+end
+
+
+function ItemLotParam2_Chr:unk3Lot3(value)
+	self:patchByte(0x24, value)
+end
+
+
+function ItemLotParam2_Chr:unk3Lot4(value)
+	self:patchByte(0x25, value)
+end
+
+
+function ItemLotParam2_Chr:unk3Lot5(value)
+	self:patchByte(0x26, value)
+end
+
+
+function ItemLotParam2_Chr:unk3Lot6(value)
+	self:patchByte(0x27, value)
+end
+
+
+function ItemLotParam2_Chr:unk3Lot7(value)
+	self:patchByte(0x28, value)
+end
+
+
+function ItemLotParam2_Chr:unk3Lot8(value)
+	self:patchByte(0x29, value)
+end
+
+
+function ItemLotParam2_Chr:unk3Lot9(value)
+	self:patchByte(0x2A, value)
+end
+
+
+function ItemLotParam2_Chr:unk3Lot10(value)
+	self:patchByte(0x2B, value)
+end
+
+
+function ItemLotParam2_Chr:lot1(value)
+	self:patch4Byte(0x2C, value)
+end
+
+
+function ItemLotParam2_Chr:lot2(value)
+	self:patch4Byte(0x30, value)
+end
+
+
+function ItemLotParam2_Chr:lot3(value)
+	self:patch4Byte(0x34, value)
+end
+
+
+function ItemLotParam2_Chr:lot4(value)
+	self:patch4Byte(0x38, value)
+end
+
+
+function ItemLotParam2_Chr:lot5(value)
+	self:patch4Byte(0x3C, value)
+end
+
+
+function ItemLotParam2_Chr:lot6(value)
+	self:patch4Byte(0x40, value)
+end
+
+
+function ItemLotParam2_Chr:lot7(value)
+	self:patch4Byte(0x44, value)
+end
+
+
+function ItemLotParam2_Chr:lot8(value)
+	self:patch4Byte(0x48, value)
+end
+
+
+function ItemLotParam2_Chr:lot9(value)
+	self:patch4Byte(0x4C, value)
+end
+
+
+function ItemLotParam2_Chr:lot10(value)
+	self:patch4Byte(0x50, value)
+end
+
+
+function ItemLotParam2_Chr:chanceLot1(value)
+	self:patchFloat(0x54, value)
+end
+
+
+function ItemLotParam2_Chr:chanceLot2(value)
+	self:patchFloat(0x58, value)
+end
+
+
+function ItemLotParam2_Chr:chanceLot3(value)
+	self:patchFloat(0x5C, value)
+end
+
+
+function ItemLotParam2_Chr:chanceLot4(value)
+	self:patchFloat(0x60, value)
+end
+
+
+function ItemLotParam2_Chr:chanceLot5(value)
+	self:patchFloat(0x64, value)
+end
+
+
+function ItemLotParam2_Chr:chanceLot6(value)
+	self:patchFloat(0x68, value)
+end
+
+
+function ItemLotParam2_Chr:chanceLot7(value)
+	self:patchFloat(0x6C, value)
+end
+
+
+function ItemLotParam2_Chr:chanceLot8(value)
+	self:patchFloat(0x70, value)
+end
+
+
+function ItemLotParam2_Chr:chanceLot9(value)
+	self:patchFloat(0x74, value)
+end
+
+
+function ItemLotParam2_Chr:chanceLot10(value)
+	self:patchFloat(0x78, value)
+end
+
+
+--[[End ItemLotParam2_Chr class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

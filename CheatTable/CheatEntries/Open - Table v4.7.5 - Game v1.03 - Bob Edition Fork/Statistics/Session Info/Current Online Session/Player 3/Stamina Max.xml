@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>86809</ID>
+  <Description>"Stamina Max"</Description>
+  <VariableType>Float</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>1B4</Offset>
+    <Offset>388</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,14 @@
+<CheatEntry>
+  <ID>1337036616</ID>
+  <Description>"Lighting and Render Mods"</Description>
+  <Options moHideChildren="1"/>
+  <VariableType>Auto Assembler Script</VariableType>
+  <x-ce2fs-child-order>
+    <id id="28916"/>
+    <id id="26385"/>
+    <id id="26499"/>
+    <id id="26476"/>
+    <id id="26400"/>
+    <id id="26408"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

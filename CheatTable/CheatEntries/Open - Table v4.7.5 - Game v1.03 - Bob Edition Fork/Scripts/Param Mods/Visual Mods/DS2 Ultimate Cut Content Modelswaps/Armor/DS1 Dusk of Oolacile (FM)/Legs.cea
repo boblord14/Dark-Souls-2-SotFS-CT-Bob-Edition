@@ -1,0 +1,19 @@
+[ENABLE]
+						{
+						
+                        {$asm}
+                        alloc(duskl,4)
+                        duskl:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+328]+08,4)
+                        registersymbol(duskl)
+                        [[[[[GameManagerImp]+D0]+378]+28]+328]+08:
+                        dw #9907
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(duskl)
+                        [[[[[GameManagerImp]+D0]+378]+28]+328]+08:
+                        readmem(duskl, 4)
+                        unregistersymbol(duskl)
+                    
+					

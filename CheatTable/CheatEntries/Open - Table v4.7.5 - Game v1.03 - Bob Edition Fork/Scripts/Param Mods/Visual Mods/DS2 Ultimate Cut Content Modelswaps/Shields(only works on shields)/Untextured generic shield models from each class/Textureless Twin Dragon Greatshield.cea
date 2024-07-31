@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(tdragon,2)
+                        tdragon:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+58]+4,2)
+                        registersymbol(tdragon)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        dw #2020
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(tdragon)
+                        [[[[[GameManagerImp]+D0]+378]+28]+58]+4:
+                        readmem(tdragon, 2)
+                        unregistersymbol(tdragon)
+                    

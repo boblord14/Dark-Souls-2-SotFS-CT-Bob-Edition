@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>86816</ID>
+  <Description>"Vitality"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>NetSessionManager</Address>
+  <Offsets>
+    <Offset>C</Offset>
+    <Offset>490</Offset>
+    <Offset>388</Offset>
+    <Offset>20</Offset>
+  </Offsets>
+</CheatEntry>

@@ -1,0 +1,7 @@
+[ENABLE]
+label(ItemParam)
+registersymbol(ItemParam)
+[GoodsAddressToUse]:
+ItemParam:
+[DISABLE]
+unregistersymbol(ItemParam)

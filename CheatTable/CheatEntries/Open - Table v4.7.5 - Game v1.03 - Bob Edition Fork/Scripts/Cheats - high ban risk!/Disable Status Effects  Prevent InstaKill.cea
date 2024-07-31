@@ -1,0 +1,43 @@
+[ENABLE]
+aobscanmodule(damagefilter,DarkSoulsII.exe,89 83 68 01 00 00 49 8B 0E E8)
+alloc(newmem,$1000,damagefilter)
+aobscanmodule(StatusEffectImmunity, DarkSoulsII.exe, 76 0D 0F 28 D6 E8)
+registersymbol(StatusEffectImmunity)
+label(code)
+label(return)
+
+newmem:
+mov rcx,[GameManagerImp]
+mov rcx,[rcx+D0]
+cmp rcx,rbx
+jne code
+mov ecx,[rbx+168]
+sub ecx,eax
+cmp ecx,#2000
+jg return
+
+code:
+  mov [rbx+00000168],eax
+  jmp return
+
+damagefilter:
+  jmp newmem
+  nop
+return:
+registersymbol(damagefilter)
+
+StatusEffectImmunity:
+ db 90 90
+
+[DISABLE]
+
+damagefilter:
+  db 89 83 68 01 00 00
+
+unregistersymbol(damagefilter)
+dealloc(newmem)
+
+StatusEffectImmunity:
+  db 76 0D
+unregistersymbol(StatusEffectImmunity)
+

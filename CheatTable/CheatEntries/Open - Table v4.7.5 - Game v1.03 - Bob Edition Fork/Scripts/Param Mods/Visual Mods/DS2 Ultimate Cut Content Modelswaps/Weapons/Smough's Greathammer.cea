@@ -1,0 +1,16 @@
+[ENABLE]
+                        {$asm}
+                        alloc(smoughgh,2)
+                        smoughgh:
+                        readmem([[[[[GameManagerImp]+D0]+378]+28]+130]+4,2)
+                        registersymbol(smoughgh)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        dw #9901
+
+                        [DISABLE]
+                        {$asm}
+                        dealloc(smoughgh)
+                        [[[[[GameManagerImp]+D0]+378]+28]+130]+4:
+                        readmem(smoughgh, 2)
+                        unregistersymbol(smoughgh)
+                    

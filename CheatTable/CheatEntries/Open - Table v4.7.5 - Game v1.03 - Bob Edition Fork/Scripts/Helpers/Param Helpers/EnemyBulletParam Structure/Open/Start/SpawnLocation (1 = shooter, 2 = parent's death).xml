@@ -1,0 +1,6 @@
+<CheatEntry>
+  <ID>1337089341</ID>
+  <Description>"SpawnLocation (1 = shooter, 2 = parent's death)"</Description>
+  <VariableType>Byte</VariableType>
+  <Address>+04</Address>
+</CheatEntry>

@@ -1,0 +1,67 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START ChrMultiplayParam class]]--
+ChrMultiplayParam = BaseParamClass:new()
+
+function ChrMultiplayParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("ChrMultiplayParam", uuid, id, address)
+	return o
+end
+
+function ChrMultiplayParam:unk00(value)
+	self:patch4Byte(0x0, value)
+end
+
+
+function ChrMultiplayParam:unk04(value)
+	self:patch4Byte(0x4, value)
+end
+
+
+function ChrMultiplayParam:unk08(value)
+	self:patch4Byte(0x8, value)
+end
+
+
+function ChrMultiplayParam:unk0C(value)
+	self:patch4Byte(0xC, value)
+end
+
+
+function ChrMultiplayParam:unk10(value)
+	self:patch4Byte(0x10, value)
+end
+
+
+function ChrMultiplayParam:unk14(value)
+	self:patch4Byte(0x14, value)
+end
+
+
+function ChrMultiplayParam:unk18(value)
+	self:patch4Byte(0x18, value)
+end
+
+
+function ChrMultiplayParam:unk1C(value)
+	self:patch4Byte(0x1C, value)
+end
+
+
+function ChrMultiplayParam:unk20(value)
+	self:patch4Byte(0x20, value)
+end
+
+
+--[[End ChrMultiplayParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

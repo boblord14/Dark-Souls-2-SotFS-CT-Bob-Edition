@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337256278</ID>
+  <Description>"TimeActTrack Max Time"</Description>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>Float</VariableType>
+  <Address>+0</Address>
+  <Offsets>
+    <Offset>34</Offset>
+    <Offset>28</Offset>
+  </Offsets>
+</CheatEntry>

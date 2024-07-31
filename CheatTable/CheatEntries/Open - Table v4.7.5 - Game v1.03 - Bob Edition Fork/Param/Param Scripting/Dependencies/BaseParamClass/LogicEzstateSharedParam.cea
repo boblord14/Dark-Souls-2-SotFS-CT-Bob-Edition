@@ -1,0 +1,27 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+--[[START LogicEzstateSharedParam class]]--
+LogicEzstateSharedParam = BaseParamClass:new()
+
+function LogicEzstateSharedParam:new(uuid, id, address)
+	local o = {}
+	self.__index = self
+	setmetatable(o, self)
+
+	o:init("LogicEzstateSharedParam", uuid, id, address)
+	return o
+end
+
+function LogicEzstateSharedParam:unk00(value)
+	self:patchFloat(0x0, value)
+end
+
+
+--[[End LogicEzstateSharedParam class]]--
+
+[DISABLE]
+{$lua}
+if syntaxcheck then return end
+

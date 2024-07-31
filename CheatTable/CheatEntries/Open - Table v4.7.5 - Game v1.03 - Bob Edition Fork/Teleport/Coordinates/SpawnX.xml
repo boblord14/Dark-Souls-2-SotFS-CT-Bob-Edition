@@ -1,0 +1,12 @@
+<CheatEntry>
+  <ID>1337043260</ID>
+  <Description>"SpawnX"</Description>
+  <VariableType>Float</VariableType>
+  <Address>GameManagerImp</Address>
+  <Offsets>
+    <Offset>1D8</Offset>
+    <Offset>250</Offset>
+    <Offset>F0</Offset>
+    <Offset>D0</Offset>
+  </Offsets>
+</CheatEntry>

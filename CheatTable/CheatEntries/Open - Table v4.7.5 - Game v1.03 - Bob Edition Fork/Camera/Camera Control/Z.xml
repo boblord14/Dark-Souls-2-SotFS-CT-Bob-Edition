@@ -1,0 +1,9 @@
+<CheatEntry>
+  <ID>26304</ID>
+  <Description>"Z"</Description>
+  <VariableType>Float</VariableType>
+  <Address>Fcdata</Address>
+  <Offsets>
+    <Offset>34</Offset>
+  </Offsets>
+</CheatEntry>
