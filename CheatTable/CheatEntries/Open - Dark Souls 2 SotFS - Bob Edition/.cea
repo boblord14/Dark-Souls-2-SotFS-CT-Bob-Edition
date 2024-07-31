@@ -1,14 +1,14 @@
-//Made by Aatvark & Radai
-//Refactoring done by Boblord using attributes from the grand archives ds3/er table
+//Made by Boblord, Aatvark, & Radai
+//Refactoring done using attributes from the grand archives ds3/er table
 //(Credit to the people who made that table too)
 [ENABLE]
 {$lua}
 --Attach to game
 OpenProcess("DarkSoulsII.exe")
 
-local table_ver = 4.075
-local game_ver = "1.00.3"
-local ce_ver = 7.4
+local table_ver = ${CE2FS:TABLE_VERSION}
+local game_ver = "${CE2FS:GAME_VERSION}"
+local ce_ver = ${CE2FS:MIN_CE_VERSION}
 
 local version_url = "https://raw.githubusercontent.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/main/VERSION"
 
