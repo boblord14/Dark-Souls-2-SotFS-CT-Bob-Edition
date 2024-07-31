@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os, subprocess, sys
-from pack_table_files import pack_table_files
+# from pack_table_files import pack_table_files
 
 def p(path: str): # I LOVE WINDOWS
     return path.replace("/", os.sep)
