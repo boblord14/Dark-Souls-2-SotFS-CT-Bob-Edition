@@ -5,9 +5,11 @@
 ### Added
   - Major refactoring to github workflows via CE2FS
     - Thanks to [tremwil](https://github.com/tremwil) and [The Grand Archives](https://github.com/The-Grand-Archives) for creating CE2FS/the workflow used here
+  - Asks for permission to perform update checks on first startup
 
 ### Changed
   - Small description update for the invalid item auto discarder
+  - Addition and upgrades of some open script functions from TGA to better support table versioning
 
 ### Fixed
  - Non-critical bugfix to the invalid item auto discarder

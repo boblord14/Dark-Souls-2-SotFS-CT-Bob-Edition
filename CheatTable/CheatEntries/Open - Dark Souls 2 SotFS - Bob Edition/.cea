@@ -5,12 +5,83 @@
 {$lua}
 --Attach to game
 OpenProcess("DarkSoulsII.exe")
+---@class Semver
+---@field major integer
+---@field minor integer
+---@field release integer
+---@field build integer
+Semver = {}
 
-local table_ver = ${CE2FS:TABLE_VERSION}
-local game_ver = "${CE2FS:GAME_VERSION}"
-local ce_ver = ${CE2FS:MIN_CE_VERSION}
+---@param o table | string
+---@return Semver
+function Semver:new(o)
+    if type(o) == "string" then
+        return Semver:fromString(o)
+    end
+    o = {
+        major = o.major or 0,
+        minor = o.minor or 0,
+        release = o.release or 0,
+        build = o.build or 0
+    }
+    setmetatable(o, self)
+    self.__index = self
+    return o
+end
 
-local version_url = "https://raw.githubusercontent.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/main/VERSION"
+---@param str string
+function Semver:fromString(str)
+    local verParts = {}
+    local remaining = str:gsub("(%d+)%.?", function(m)
+        table.insert(verParts, tonumber(m, 10))
+        return ""
+    end)
+
+    if #verParts == 0 or remaining ~= "" then
+        error(("%s is not a valid semver string"):format(str))
+    end
+    return Semver:new{ 
+        major = verParts[1] or 0,
+        minor = verParts[2] or 0,
+        release = verParts[3] or 0,
+        build = verParts[4] or 0
+    }
+end
+
+---@return integer
+function Semver:asU64()
+    return (self.major << 48 ) | (self.minor << 32) | (self.release << 16) | (self.build)
+end
+
+function Semver:__tostring()
+    local noBuild = ("%d.%d.%d"):format(self.major, self.minor, self.release)
+    return self.build == 0 and noBuild or noBuild .. '.' .. tostring(self.build)
+end
+
+function Semver:__eq(other)
+    if getmetatable(other) ~= Semver then
+        return false
+    end
+    return self:asU64() == other:asU64()
+end
+
+---@param other Semver
+function Semver:__lt(other)
+    return self:asU64() < other:asU64()
+end
+
+---@param other Semver
+function Semver:__le(other)
+    return self:asU64() <= other:asU64()
+end
+
+game_title = "Dark Souls II Scholar of the First Sin"
+table_ver = Semver:fromString("${CE2FS:TABLE_VERSION}")
+game_ver = Semver:fromString("${CE2FS:GAME_VERSION}")
+ce_ver = tonumber("${CE2FS:MIN_CE_VERSION}")
+local latest_build_env_url = "https://raw.githubusercontent.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/main/BUILD_ENV"
+
+--[[START TGA file management]]--
 
 lfs = require "lfs"
 
@@ -53,18 +124,22 @@ function sanitizeUsername(username)
   return string.format("user-%x", h)
 end
 
+---@return Semver
 function getGameVersion()
-  local function getVerChunk(verString, cStart, cEnd)
-    return tonumber(string.sub(verString, cStart, cEnd), 16)
+  local success, _, semver = pcall(function() 
+      return getFileVersion(enumModules()[1].PathToFile)
+  end)
+  if not success then
+      local e = "Failed to read game process"
+      ShowMessage(e)
+      error(e,2)
   end
-  local ver = getAddressSafe(process) and enumModules() and getFileVersion(enumModules()[1].PathToFile)
-  if not ver then return end
-  ver = string.format("%X", ver)
-  local l = #ver
-  local v2 = getVerChunk(ver, l - 11, l - 8)
-  local v3 = getVerChunk(ver, l - 7, l - 4)
-  ver = string.format("%s.%s", getVerChunk(ver, 1, l - 12), v2 < 10 and "0"..v2 or v2)
-  return v3 ~= 0 and string.format("%s.%s", ver, v3) or ver
+  return Semver:new{
+      major = 1,
+      minor = 10*(semver.major - 1) + semver.minor,
+      release = semver.release,
+      build = semver.build
+  }
 end
 
 tga = {}
@@ -193,15 +268,64 @@ function tga:clearSymbolCache()
   return true
 end
 
-function tga:clearRunOnce()
+-- Runs given function
+-- if the function returns truthy value, remembers it
+-- and doesn't run the function on subsequent invocations
+-- Returns the function's result
+-- For persistence function stores the identifier .
+-- Examples:
+-- tga:runOnce("agree_to_eula", showEULA)
+-- tga:runOnce("open_readme", function() getMemoryRecordByDescription("Readme").active = true; return true; end)
+-- @param id, arbitrary unique identifier
+-- @param func, function, a function to call
+function tga:runOnce(id, func)
+  id = tostring(id):gsub("[%s-\n]+", "")
+  assert(id and id ~= "" and type(func) == "function", "tga:runOnce: bad argument type")
   local path = self.path.."/run-once.txt"
-  local f = io.open(path, "w+")
-  if not f then
-  	print("tga:runOnce: warning: unable to clear run-once.txt")
-    return false
-  end
+  local f = io.open(path, "a+")
+  if not f then print("tga:runOnce: warning: unable to open or create run-once.txt, aborting function execution") return end
+  local t = f:read("*all")
+  if t:find(id) then return true end
+  local r = func()
+  if not r then return r end
+  f:write(#t == 0 and id or "\n"..id)
   f:close()
-  return true
+  return r
+end
+
+-- Runs the given function, and remembers the result,
+-- not running the function on subsequent invocations WITH THE SAME TABLE VERSION,
+-- if it evaluated to true. Returns the function's result.
+function tga:runOnceForVersion(id, func)
+  if not table_ver then return false end
+
+  id = tostring(id):gsub("[%s-\n]+", "")
+  assert(id and id ~= "" and type(func) == "function", "tga:runOnce: bad argument type")
+  local path = string.format("%s/run-once-%s.txt", self.path, table_ver)
+  local f = io.open(path, "a+")
+  if not f then printf("tga:runOnce: warning: unable to open or create %s, aborting function execution", path) return end
+  local t = f:read("*all")
+  if t:find(id) then return true end
+  local r = func()
+  if not r then return r end
+  f:write(#t == 0 and id or "\n"..id)
+  f:close()
+  return r
+end
+
+function tga:clearRunOnce()
+  local s = true
+  for file in lfs.dir(self.path) do
+      if file ~= "." and file ~= ".." then
+          if string.find(file, "^run%-once") then
+              if not os.remove(self.path .. "/" .. file) then
+                  printf("tga:clearRunOnce: warning: unable to delete %s", file)
+                  s = false
+              end
+          end
+      end
+  end
+  return s
 end
 
 --local username = sanitizeUsername(os.getenv("USERNAME"))
@@ -215,38 +339,62 @@ tga:loadSymbolCache()
 
 --[[START TGA checks]]--
 
+local function firstTimeSetup()
+	local fts = messageDialog("First Time Setup", [[Do you want this table to check for updates on enabling?
+You can change it later using Configure Table in Table Tools.]], mtConfirmation, mbYes, mbNo, mbCancel)
+	if fts == mrYes then
+		tga.config.checkTableVersion = true
+	elseif fts == mrNo then
+		tga.config.checkTableVersion = false
+	else
+		error("First Time Setup cancelled", 2)
+	end
+	tga:saveConfig()
+  return true
+end
+tga:runOnce("first_time_setup", firstTimeSetup)
+
 if tga.config.checkGameLaunched and not GetAddressSafe(process) then
   local e = "Failed to read game process.\nMake sure you've launched the game."
   ShowMessage(e)
-  error(e)
+  error(e,2)
 end
 
-if tga.config.checkGameVersion and current_game_ver and current_game_ver ~= game_ver and current_game_ver ~= game_ver:match("(%d*%.%d*)%.0+$") then
-	showMessage(string.format("Your version of Dark Souls II SotFS (%s) might not be supported.\nSupported version: %s\nMake sure you are using DS2 Scholar of the First Sin and not DS2 Vanilla as well.", current_game_ver, game_ver))
+if tga.config.checkGameVersion and current_game_ver ~= game_ver then
+	showMessage(string.format(
+    "Your version of Dark Souls II SotFS (%s) might not be supported.\nSupported version: %s\nMake sure you are using DS2 Scholar of the First Sin and not DS2 Vanilla as well.",
+    current_game_ver, 
+    game_ver
+  ))
 end
 
 if tga.config.checkCEVersion and getCEVersion() < ce_ver then
-	showMessage(string.format([[Your version of Cheat Engine is outdated.
-Some features may not work.
-
-You should update to at least %s or newer.]],ce_ver))
+  local ver_str = string.format("Cheat Engine %s or newer is required.\nDownload version %s from GitHub?",ce_ver,ce_ver)
+  local dl_url = string.format("https://github.com/cheat-engine/cheat-engine/releases/download/%s/CheatEngine%s.exe",ce_ver,string.gsub(tostring(ce_ver),"%W",""))
+  if messageDialog("CE Version Check", ver_str, mtError, mbYes, mbNo)==mrYes then
+      shellExecute(dl_url)
+  end
+  error("Cheat Engine outdated",2)
 end
 
 if tga.config.checkTableVersion and table_ver ~= nil then
   local internet = getInternet()
-  local response = internet.getURL(version_url)
-  if response ~= nil then
-    if table_ver < tonumber(response) then
-      showMessage([[Your Cheat Table is outdated.
-Check the Github for the latest version.]])
-    end
-  else
-    showMessage("Version check failed.")
-  end
+  local success, latest = pcall(function() 
+      local build_env = internet.getURL(latest_build_env_url)
+      return Semver:fromString(build_env:match("TABLE_VERSION=([^%s\n]+)"))
+  end)
   internet.destroy()
+
+  if not success then
+      showMessage("Version check failed.")
+  elseif latest > table_ver then
+      showMessage([[Your Cheat Table is outdated.
+      Check the Github for the latest version.]])
+  elseif latest < table_ver then
+      showMessage("This is a pre-release version of the Cheat Table.\nFind regular versions in the Releases section on the Github page.")
+  end
 elseif tga.config.checkTableVersion then
-  showMessage([[This is a pre-release version of the Cheat Table.
-Find regular versions in the Releases section on the Github page.]])
+  showMessage("This is a pre-release version of the Cheat Table.\nFind regular versions in the Releases section on the Github page.")
 end
 
 --[[END TGA checks]]--
