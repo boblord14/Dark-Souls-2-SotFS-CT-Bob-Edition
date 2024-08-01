@@ -14,7 +14,7 @@
 ### Fixed
  - Non-critical bugfix to the invalid item auto discarder
 
- ## [v4.07.5] - 2024-06-03
+## [v4.07.5] - 2024-06-03
 
 ### Added
   - Invalid item auto discarder
