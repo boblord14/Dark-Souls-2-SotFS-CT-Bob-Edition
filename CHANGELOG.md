@@ -1,6 +1,10 @@
 # Changelog
 
 
+## [v4.08.1] - 2024-09-16
+### Fixed
+  - Updated Mimic Facedata to use AoBs for offsets instead of hardcoded addresses
+
 ## [v4.08.0] - 2024-07-31
 ### Added
   - Major refactoring to github workflows via CE2FS
