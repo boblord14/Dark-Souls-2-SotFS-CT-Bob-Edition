@@ -4,6 +4,7 @@
 ## [v4.08.1] - 2024-09-16
 ### Fixed
   - Updated Mimic Facedata to use AoBs for offsets instead of hardcoded addresses
+  - Updated SaveSlot to use the correct offset
 
 ## [v4.08.0] - 2024-07-31
 ### Added

@@ -5,7 +5,7 @@
   <VariableType>4 Bytes</VariableType>
   <Address>GameManagerImp</Address>
   <Offsets>
-    <Offset>64</Offset>
+    <Offset>18A8</Offset>
     <Offset>C0</Offset>
     <Offset>A8</Offset>
   </Offsets>
