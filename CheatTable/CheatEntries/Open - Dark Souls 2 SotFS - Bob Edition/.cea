@@ -362,7 +362,7 @@ end
 
 if tga.config.checkGameVersion and current_game_ver ~= game_ver then
 	showMessage(string.format(
-    "Your version of Dark Souls II SotFS (%s) might not be supported.\nSupported version: %s\nMake sure you are using DS2 Scholar of the First Sin and not DS2 Vanilla as well.",
+    "Your version of Dark Souls II SotFS (%s) might not be supported.\nSupported version: %s\nMake sure you are using DS2 Scholar of the First Sin and not DS2 Vanilla as well.\n\nIf you did not buy the game on Steam, this table may not work right and no support will be offered.",
     current_game_ver, 
     game_ver
   ))
