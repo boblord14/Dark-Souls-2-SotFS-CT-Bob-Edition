@@ -1,7 +1,0 @@
-<CheatEntry>
-  <ID>1337042836</ID>
-  <Description>"Upgrade Level"</Description>
-  <ShowAsSigned>1</ShowAsSigned>
-  <VariableType>Byte</VariableType>
-  <Address>ItemStruct+E</Address>
-</CheatEntry>

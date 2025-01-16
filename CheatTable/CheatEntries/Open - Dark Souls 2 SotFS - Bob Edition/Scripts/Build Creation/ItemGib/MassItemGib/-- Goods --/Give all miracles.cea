@@ -1,0 +1,37 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{32010000, 1, 0, 0, 0 }, -- Heal
+{32020000, 1, 0, 0, 0 }, -- Med Heal
+{32030000, 1, 0, 0, 0 }, -- Great Heal Excerpt
+{32040000, 1, 0, 0, 0 }, -- Great Heal
+{32050000, 1, 0, 0, 0 }, -- Soothing Sunlight
+{32060000, 1, 0, 0, 0 }, -- Replenishment
+{32070000, 1, 0, 0, 0 }, -- Resplendent Life
+{32080000, 1, 0, 0, 0 }, -- Bountiful Sunlight
+{32090000, 1, 0, 0, 0 }, -- Caressing Prayer
+{32100000, 1, 0, 0, 0 }, -- Force
+{32110000, 1, 0, 0, 0 }, -- Wrath of the Gods
+{32120000, 1, 0, 0, 0 }, -- Emit Force
+{32130000, 1, 0, 0, 0 }, -- Heavenly Thunder
+{32140000, 1, 0, 0, 0 }, -- Lightning Spear
+{32150000, 1, 0, 0, 0 }, -- Great Lightning Spear
+{32160000, 1, 0, 0, 0 }, -- Sunlight Spear
+{32170000, 1, 0, 0, 0 }, -- Soul Appease
+{32180000, 1, 0, 0, 0 }, -- Blinding Bolt
+{32190000, 1, 0, 0, 0 }, -- Magic Barrier
+{32200000, 1, 0, 0, 0 }, -- Great Magic Barrier
+{32210000, 1, 0, 0, 0 }, -- Homeward
+{32220000, 1, 0, 0, 0 }, -- Guidance
+{32230000, 1, 0, 0, 0 }, -- Sacred Oath
+{32240000, 1, 0, 0, 0 }, -- Unveil
+{32250000, 1, 0, 0, 0 }, -- Perseverance
+{32260000, 1, 0, 0, 0 }, -- Sunlight Blade
+{32300000, 1, 0, 0, 0 }, -- Denial
+{32310000, 1, 0, 0, 0 }, -- Splintering Lightning Spear
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

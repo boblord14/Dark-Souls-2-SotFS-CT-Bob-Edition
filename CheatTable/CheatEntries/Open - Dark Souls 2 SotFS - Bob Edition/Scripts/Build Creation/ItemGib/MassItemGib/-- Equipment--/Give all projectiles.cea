@@ -1,0 +1,27 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{60760000, -1, 0, 0, -1 }, -- Wood Arrow
+{60770000, -1, 0, 0, -1 }, -- Iron Arrow
+{60780000, -1, 0, 0, -1 }, -- Magic Arrow
+{60790000, -1, 0, 0, -1 }, -- Lightning Arrow
+{60800000, -1, 0, 0, -1 }, -- Fire Arrow
+{60810000, -1, 0, 0, -1 }, -- Dark Arrow
+{60820000, -1, 0, 0, -1 }, -- Poison Arrow
+{60830000, -1, 0, 0, -1 }, -- Lacerating Arrow
+{60850000, -1, 0, 0, -1 }, -- Iron Greatarrow
+{60870000, -1, 0, 0, -1 }, -- Lightning Greatarrow
+{60880000, -1, 0, 0, -1 }, -- Fire Greatarrow
+{60900000, -1, 0, 0, -1 }, -- Destructive Greatarrow
+{60910000, -1, 0, 0, -1 }, -- Wood Bolt
+{60920000, -1, 0, 0, -1 }, -- Heavy Bolt
+{60930000, -1, 0, 0, -1 }, -- Magic Bolt
+{60940000, -1, 0, 0, -1 }, -- Lightning Bolt
+{60950000, -1, 0, 0, -1 }, -- Fire Bolt
+{60960000, -1, 0, 0, -1 }, -- Dark Bolt
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

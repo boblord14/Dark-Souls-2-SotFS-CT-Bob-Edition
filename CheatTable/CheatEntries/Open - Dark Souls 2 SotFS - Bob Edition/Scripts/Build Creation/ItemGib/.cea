@@ -1,0 +1,23 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+if ItemGive == nil then
+    getAddressList().getMemoryRecordByDescription("ItemGive_code").active = true
+    throwError("'ItemGive' symbol was not found.\nTry enabling this script again.")
+end
+
+item_menu = ItemGive_data
+writeInteger(item_menu + 0x4, 60151000)
+writeFloat(item_menu + 0x8, -1)
+writeSmallInteger(item_menu + 0xC, 1)
+writeByte(item_menu + 0xE, 0)
+writeByte(item_menu + 0xF, 0)
+
+
+
+-- Actual code is located in Misc/WIP -> Dependencies -> Global Functions
+
+-- ItemGive(table_or_id, quantity, upgrade, gem, durability)
+
+[DISABLE]
+item_menu = nil

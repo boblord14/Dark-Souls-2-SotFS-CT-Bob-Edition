@@ -1,0 +1,33 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{33010000, 1, 0, 0, 0 }, -- Fireball
+{33020000, 1, 0, 0, 0 }, -- Fire Orb
+{33030000, 1, 0, 0, 0 }, -- Great Fireball
+{33040000, 1, 0, 0, 0 }, -- Great Chaos Fireball
+{33050000, 1, 0, 0, 0 }, -- Firestorm
+{33060000, 1, 0, 0, 0 }, -- Fire Tempest
+{33070000, 1, 0, 0, 0 }, -- Chaos Storm
+{33080000, 1, 0, 0, 0 }, -- Combustion
+{33090000, 1, 0, 0, 0 }, -- Great Combustion
+{33100000, 1, 0, 0, 0 }, -- Fire Whip
+{33110000, 1, 0, 0, 0 }, -- Poison Mist
+{33120000, 1, 0, 0, 0 }, -- Toxic Mist
+{33130000, 1, 0, 0, 0 }, -- Acid Surge
+{33140000, 1, 0, 0, 0 }, -- Lingering Flame
+{33150000, 1, 0, 0, 0 }, -- Flame Swathe
+{33160000, 1, 0, 0, 0 }, -- Forbidden Sun
+{33170000, 1, 0, 0, 0 }, -- Flame Weapon
+{33180000, 1, 0, 0, 0 }, -- Flash Sweat
+{33190000, 1, 0, 0, 0 }, -- Iron Flesh
+{33200000, 1, 0, 0, 0 }, -- Warmth
+{33210000, 1, 0, 0, 0 }, -- Immolation
+{33300000, 1, 0, 0, 0 }, -- Fire Snake
+{33310000, 1, 0, 0, 0 }, -- Dance of Fire
+{33320000, 1, 0, 0, 0 }, -- Outcry
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

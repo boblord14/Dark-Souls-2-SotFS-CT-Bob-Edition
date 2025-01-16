@@ -1,0 +1,11 @@
+<CheatEntry>
+  <ID>1337275614</ID>
+  <Description>"Dropdowns"</Description>
+  <Options moHideChildren="1"/>
+  <GroupHeader>1</GroupHeader>
+  <x-ce2fs-child-order>
+    <id id="1337275628"/>
+    <id id="108201"/>
+    <id id="108202"/>
+  </x-ce2fs-child-order>
+</CheatEntry>

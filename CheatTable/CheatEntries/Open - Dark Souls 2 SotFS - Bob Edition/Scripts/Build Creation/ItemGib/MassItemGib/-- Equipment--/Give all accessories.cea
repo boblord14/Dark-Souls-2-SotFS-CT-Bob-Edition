@@ -1,0 +1,131 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{40010000, 1, 0, 0, -1 }, -- Life Ring
+{40010001, 1, 0, 0, -1 }, -- Life Ring+1
+{40010002, 1, 0, 0, -1 }, -- Life Ring+2
+{40010003, 1, 0, 0, -1 }, -- Life Ring+3
+{40020000, 1, 0, 0, -1 }, -- Chloranthy Ring
+{40020001, 1, 0, 0, -1 }, -- Chloranthy Ring+1
+{40020002, 1, 0, 0, -1 }, -- Chloranthy Ring+2
+{40030000, 1, 0, 0, -1 }, -- Royal Soldier's Ring
+{40030001, 1, 0, 0, -1 }, -- Royal Soldier's Ring+1
+{40030002, 1, 0, 0, -1 }, -- Royal Soldier's Ring+2
+{40040000, 1, 0, 0, -1 }, -- First Dragon Ring
+{40040001, 1, 0, 0, -1 }, -- Second Dragon Ring
+{40040002, 1, 0, 0, -1 }, -- Third Dragon Ring
+{40050000, 1, 0, 0, -1 }, -- Ring of Steel Protection
+{40050001, 1, 0, 0, -1 }, -- Ring of Steel Protection+1
+{40050002, 1, 0, 0, -1 }, -- Ring of Steel Protection+2
+{40060000, 1, 0, 0, -1 }, -- Spell Quartz Ring
+{40060001, 1, 0, 0, -1 }, -- Spell Quartz Ring+1
+{40060002, 1, 0, 0, -1 }, -- Spell Quartz Ring+2
+{40060003, 1, 0, 0, -1 }, -- Spell Quartz Ring+3
+{40070000, 1, 0, 0, -1 }, -- Flame Quartz Ring
+{40070001, 1, 0, 0, -1 }, -- Flame Quartz Ring+1
+{40070002, 1, 0, 0, -1 }, -- Flame Quartz Ring+2
+{40070003, 1, 0, 0, -1 }, -- Flame Quartz Ring+3
+{40080000, 1, 0, 0, -1 }, -- Thunder Quartz Ring
+{40080001, 1, 0, 0, -1 }, -- Thunder Quartz Ring+1
+{40080002, 1, 0, 0, -1 }, -- Thunder Quartz Ring+2
+{40080003, 1, 0, 0, -1 }, -- Thunder Quartz Ring+3
+{40090000, 1, 0, 0, -1 }, -- Dark Quartz Ring
+{40090001, 1, 0, 0, -1 }, -- Dark Quartz Ring+1
+{40090002, 1, 0, 0, -1 }, -- Dark Quartz Ring+2
+{40090003, 1, 0, 0, -1 }, -- Dark Quartz Ring+3
+{40100000, 1, 0, 0, -1 }, -- Poisonbite Ring
+{40100001, 1, 0, 0, -1 }, -- Poisonbite Ring+1
+{40110000, 1, 0, 0, -1 }, -- Bloodbite Ring
+{40110001, 1, 0, 0, -1 }, -- Bloodbite Ring+1
+{40120000, 1, 0, 0, -1 }, -- Bracing Knuckle Ring
+{40120001, 1, 0, 0, -1 }, -- Bracing Knuckle Ring+1
+{40120002, 1, 0, 0, -1 }, -- Bracing Knuckle Ring+2
+{40130000, 1, 0, 0, -1 }, -- Cursebite Ring
+{40135000, 1, 0, 0, -1 }, -- Ash Knuckle Ring
+{40140000, 1, 0, 0, -1 }, -- Dispelling Ring
+{40140001, 1, 0, 0, -1 }, -- Dispelling Ring+1
+{40150000, 1, 0, 0, -1 }, -- Ring of Resistance
+{40150001, 1, 0, 0, -1 }, -- Ring of Resistance+1
+{40160000, 1, 0, 0, -1 }, -- Ring of Blades
+{40160001, 1, 0, 0, -1 }, -- Ring of Blades+1
+{40160002, 1, 0, 0, -1 }, -- Ring of Blades+2
+{40210000, 1, 0, 0, -1 }, -- Ring of Knowledge
+{40220000, 1, 0, 0, -1 }, -- Ring of Prayer
+{40230000, 1, 0, 0, -1 }, -- Stone Ring
+{40260000, 1, 0, 0, -1 }, -- Red Tearstone Ring
+{40280000, 1, 0, 0, -1 }, -- Blue Tearstone Ring
+{40290000, 1, 0, 0, -1 }, -- Ring of Giants
+{40290001, 1, 0, 0, -1 }, -- Ring of Giants+1
+{40290002, 1, 0, 0, -1 }, -- Ring of Giants+2
+{40295000, 1, 0, 0, -1 }, -- Old Leo Ring
+{40300000, 1, 0, 0, -1 }, -- Ring of Soul Protection
+{40310000, 1, 0, 0, -1 }, -- Ring of Life Protection
+{40320000, 1, 0, 0, -1 }, -- Lingering Dragoncrest Ring
+{40320001, 1, 0, 0, -1 }, -- Lingering Dragoncrest Ring+1
+{40320002, 1, 0, 0, -1 }, -- Lingering Dragoncrest Ring+2
+{40330000, 1, 0, 0, -1 }, -- Clear Bluestone Ring
+{40330001, 1, 0, 0, -1 }, -- Clear Bluestone Ring+1
+{40330002, 1, 0, 0, -1 }, -- Clear Bluestone Ring+2
+{40340000, 1, 0, 0, -1 }, -- Northern Ritual Band
+{40340001, 1, 0, 0, -1 }, -- Northern Ritual Band+1
+{40340002, 1, 0, 0, -1 }, -- Northern Ritual Band+2
+{40350000, 1, 0, 0, -1 }, -- Southern Ritual Band
+{40350001, 1, 0, 0, -1 }, -- Southern Ritual Band+1
+{40350002, 1, 0, 0, -1 }, -- Southern Ritual Band+2
+{40360000, 1, 0, 0, -1 }, -- Covetous Gold Serpent Ring
+{40360001, 1, 0, 0, -1 }, -- Covetous Gold Serpent Ring+1
+{40360002, 1, 0, 0, -1 }, -- Covetous Gold Serpent Ring+2
+{40370000, 1, 0, 0, -1 }, -- Covetous Silver Serpent Ring
+{40370001, 1, 0, 0, -1 }, -- Covetous Silver Serpent Ring+1
+{40370002, 1, 0, 0, -1 }, -- Covetous Silver Serpent Ring+2
+{40390000, 1, 0, 0, -1 }, -- Ring of the Evil Eye
+{40390001, 1, 0, 0, -1 }, -- Ring of the Evil Eye+1
+{40390002, 1, 0, 0, -1 }, -- Ring of the Evil Eye+2
+{40400000, 1, 0, 0, -1 }, -- Ring of Restoration
+{40410000, 1, 0, 0, -1 }, -- Ring of Binding
+{40420000, 1, 0, 0, -1 }, -- Silvercat Ring
+{40430000, 1, 0, 0, -1 }, -- Redeye Ring
+{40440000, 1, 0, 0, -1 }, -- Gower's Ring of Protection
+{40450000, 1, 0, 0, -1 }, -- Name-engraved Ring
+{40460000, 1, 0, 0, -1 }, -- Slumbering Dragoncrest Ring
+{40470000, 1, 0, 0, -1 }, -- Hawk Ring
+{40480000, 1, 0, 0, -1 }, -- Old Sun Ring
+{40500000, 1, 0, 0, -1 }, -- Illusory Ring of a Conqueror
+{40510000, 1, 0, 0, -1 }, -- King's Ring
+{40520000, 1, 0, 0, -1 }, -- Ring of the Dead
+{40530000, 1, 0, 0, -1 }, -- Ring of Thorns
+{40530001, 1, 0, 0, -1 }, -- Ring of Thorns+1
+{40530002, 1, 0, 0, -1 }, -- Ring of Thorns+2
+{40540000, 1, 0, 0, -1 }, -- Delicate String
+{40550000, 1, 0, 0, -1 }, -- White Ring
+{40610000, 1, 0, 0, -1 }, -- Ring of Whispers
+{40620000, 1, 0, 0, -1 }, -- Illusory Ring of the Exalted
+{40700000, 1, 0, 0, -1 }, -- Crest of the Rat
+{40710000, 1, 0, 0, -1 }, -- Bell Keeper's Seal
+{40720000, 1, 0, 0, -1 }, -- Guardian's Seal
+{40730000, 1, 0, 0, -1 }, -- Crest of Blood
+{40740000, 1, 0, 0, -1 }, -- Blue Seal
+{40750000, 1, 0, 0, -1 }, -- Abyss Seal
+{40760000, 1, 0, 0, -1 }, -- Vanquisher's Seal
+{40770000, 1, 0, 0, -1 }, -- Sun Seal
+{40780000, 1, 0, 0, -1 }, -- Ancient Dragon Seal
+{41000000, 1, 0, 0, -1 }, -- Simpleton's Ring
+{41010000, 1, 0, 0, -1 }, -- Strength Ring
+{41020000, 1, 0, 0, -1 }, -- Dexterity Ring
+{41030000, 1, 0, 0, -1 }, -- Ivory Warrior Ring
+{41040000, 1, 0, 0, -1 }, -- Sorcery Clutch Ring
+{41050000, 1, 0, 0, -1 }, -- Lightning Clutch Ring
+{41060000, 1, 0, 0, -1 }, -- Fire Clutch Ring
+{41070000, 1, 0, 0, -1 }, -- Dark Clutch Ring
+{41090000, 1, 0, 0, -1 }, -- Baneful Bird Ring
+{41100000, 1, 0, 0, -1 }, -- Flynn's Ring
+{41110000, 1, 0, 0, -1 }, -- Ring of the Embedded
+{41120000, 1, 0, 0, -1 }, -- Ring of the Living
+{41130000, 1, 0, 0, -1 }, -- Yorgh's Ring
+{42000000, 1, 0, 0, -1 }, -- Agape Ring
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

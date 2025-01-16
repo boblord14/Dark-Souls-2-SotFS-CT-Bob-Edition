@@ -1,0 +1,448 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+local reinforceLv = -1	-- non-special armor values
+local durability = -1
+
+local items = {
+ {27950103, 1, reinforceLv, 0, durability }, -- Targray's Leggings
+{21010100, 1, reinforceLv, 0, durability }, -- Pate's Helm
+{21010101, 1, reinforceLv, 0, durability }, -- Pate's Armor
+{21010102, 1, reinforceLv, 0, durability }, -- Pate's Gloves
+{21010103, 1, reinforceLv, 0, durability }, -- Pate's Trousers
+{21020100, 1, reinforceLv, 0, durability }, -- Thief Mask
+{21020101, 1, reinforceLv, 0, durability }, -- Black Leather Armor
+{21020102, 1, reinforceLv, 0, durability }, -- Black Leather Gloves
+{21020103, 1, reinforceLv, 0, durability }, -- Black Leather Boots
+{21030100, 1, reinforceLv, 0, durability }, -- Wanderer Hood
+{21030101, 1, reinforceLv, 0, durability }, -- Wanderer Coat
+{21030102, 1, reinforceLv, 0, durability }, -- Wanderer Manchettes
+{21030103, 1, reinforceLv, 0, durability }, -- Wanderer Boots
+{21040100, 1, reinforceLv, 0, durability }, -- Hunter's Hat
+{21040101, 1, reinforceLv, 0, durability }, -- Leather Armor
+{21040102, 1, reinforceLv, 0, durability }, -- Leather Gloves
+{21040103, 1, reinforceLv, 0, durability }, -- Leather Boots
+{21050100, 1, reinforceLv, 0, durability }, -- Knight Helm
+{21050101, 1, reinforceLv, 0, durability }, -- Knight Armor
+{21050102, 1, reinforceLv, 0, durability }, -- Knight Gauntlets
+{21050103, 1, reinforceLv, 0, durability }, -- Knight Leggings
+{21060100, 1, reinforceLv, 0, durability }, -- Elite Knight Helm
+{21060101, 1, reinforceLv, 0, durability }, -- Elite Knight Armor
+{21060102, 1, reinforceLv, 0, durability }, -- Elite Knight Gloves
+{21060103, 1, reinforceLv, 0, durability }, -- Elite Knight Leggings
+{21070100, 1, reinforceLv, 0, durability }, -- Tattered Cloth Hood
+{21070101, 1, reinforceLv, 0, durability }, -- Tattered Cloth Robe
+{21070102, 1, reinforceLv, 0, durability }, -- Tattered Cloth Manchettes
+{21070103, 1, reinforceLv, 0, durability }, -- Heavy Boots
+{21080100, 1, reinforceLv, 0, durability }, -- Brigand Hood
+{21080101, 1, reinforceLv, 0, durability }, -- Brigand Armor
+{21080102, 1, reinforceLv, 0, durability }, -- Brigand Gauntlets
+{21080103, 1, reinforceLv, 0, durability }, -- Brigand Trousers
+{21100100, 1, reinforceLv, 0, durability }, -- Imported Hood
+{21100101, 1, reinforceLv, 0, durability }, -- Imported Tunic
+{21100102, 1, reinforceLv, 0, durability }, -- Imported Manchettes
+{21100103, 1, reinforceLv, 0, durability }, -- Imported Trousers
+{21140100, 1, reinforceLv, 0, durability }, -- Traveling Merchant Hat
+{21140101, 1, reinforceLv, 0, durability }, -- Traveling Merchant Coat
+{21140102, 1, reinforceLv, 0, durability }, -- Traveling Merchant Gloves
+{21140103, 1, reinforceLv, 0, durability }, -- Traveling Merchant Boots
+{21160100, 1, reinforceLv, 0, durability }, -- Havel's Helm
+{21160101, 1, reinforceLv, 0, durability }, -- Havel's Armor
+{21160102, 1, reinforceLv, 0, durability }, -- Havel's Gauntlets
+{21160103, 1, reinforceLv, 0, durability }, -- Havel's Leggings
+{21210100, 1, reinforceLv, 0, durability }, -- Jester's Cap
+{21210101, 1, reinforceLv, 0, durability }, -- Jester's Robes
+{21210102, 1, reinforceLv, 0, durability }, -- Jester's Gloves
+{21210103, 1, reinforceLv, 0, durability }, -- Jester's Tights
+{21230100, 1, reinforceLv, 0, durability }, -- Moon Hat
+{21230101, 1, reinforceLv, 0, durability }, -- Astrologist's Robe
+{21230102, 1, reinforceLv, 0, durability }, -- Astrologist's Gauntlets
+{21230103, 1, reinforceLv, 0, durability }, -- Astrologist's Bottoms
+{21320100, 1, reinforceLv, 0, durability }, -- Faraam Helm
+{21320101, 1, reinforceLv, 0, durability }, -- Faraam Armor
+{21320102, 1, reinforceLv, 0, durability }, -- Faraam Gauntlets
+{21320103, 1, reinforceLv, 0, durability }, -- Faraam Boots
+{21330100, 1, reinforceLv, 0, durability }, -- Black Dragon Helm
+{21330101, 1, reinforceLv, 0, durability }, -- Black Dragon Armor
+{21330102, 1, reinforceLv, 0, durability }, -- Black Dragon Gauntlets
+{21330103, 1, reinforceLv, 0, durability }, -- Black Dragon Leggings
+{21340100, 1, reinforceLv, 0, durability }, -- Xanthous Crown
+{21340101, 1, reinforceLv, 0, durability }, -- Xanthous Overcoat
+{21340102, 1, reinforceLv, 0, durability }, -- Xanthous Gloves
+{21340103, 1, reinforceLv, 0, durability }, -- Xanthous Waistcloth
+{21350100, 1, reinforceLv, 0, durability }, -- Mask of Judgment
+{21350101, 1, reinforceLv, 0, durability }, -- Robe of Judgment
+{21350102, 1, reinforceLv, 0, durability }, -- Manchettes of Judgment
+{21350103, 1, reinforceLv, 0, durability }, -- Tights of Judgment
+{21360100, 1, reinforceLv, 0, durability }, -- Helm of Aurous
+{21360101, 1, reinforceLv, 0, durability }, -- Armor of Aurous
+{21360102, 1, reinforceLv, 0, durability }, -- Gauntlets of Aurous
+{21360103, 1, reinforceLv, 0, durability }, -- Leggings of Aurous
+{21361100, 1, reinforceLv, 0, durability }, -- Helm of Aurous
+{21361101, 1, reinforceLv, 0, durability }, -- Armor of Aurous
+{21361102, 1, reinforceLv, 0, durability }, -- Gauntlets of Aurous
+{21361103, 1, reinforceLv, 0, durability }, -- Leggings of Aurous
+{21370100, 1, reinforceLv, 0, durability }, -- Monastery Headcloth
+{21370101, 1, reinforceLv, 0, durability }, -- Monastery Longshirt
+{21370102, 1, reinforceLv, 0, durability }, -- Monastery Long Gloves
+{21370103, 1, reinforceLv, 0, durability }, -- Monastery Skirt
+{21390100, 1, reinforceLv, 0, durability }, -- Dingy Hood
+{21390101, 1, reinforceLv, 0, durability }, -- Dingy Robe
+{21390102, 1, reinforceLv, 0, durability }, -- Dingy Cuffs
+{21390103, 1, reinforceLv, 0, durability }, -- Blood-Stained Skirt
+{21430100, 1, reinforceLv, 0, durability }, -- Durgo's Hat
+{21440102, 1, reinforceLv, 0, durability }, -- Engraved Gauntlets
+{21460103, 1, reinforceLv, 0, durability }, -- Flying Feline Boots
+{21470100, 1, reinforceLv, 0, durability }, -- Moon Butterfly Hat
+{21470101, 1, reinforceLv, 0, durability }, -- Moon Butterfly Wings
+{21470102, 1, reinforceLv, 0, durability }, -- Moon Butterfly Cuffs
+{21470103, 1, reinforceLv, 0, durability }, -- Moon Butterfly Skirt
+{21480100, 1, reinforceLv, 0, durability }, -- Catarina Helm
+{21480101, 1, reinforceLv, 0, durability }, -- Catarina Armor
+{21480102, 1, reinforceLv, 0, durability }, -- Catarina Gauntlets
+{21480103, 1, reinforceLv, 0, durability }, -- Catarina Leggings
+{21490100, 1, reinforceLv, 0, durability }, -- Alva Helm
+{21490101, 1, reinforceLv, 0, durability }, -- Alva Armor
+{21490102, 1, reinforceLv, 0, durability }, -- Alva Gauntlets
+{21490103, 1, reinforceLv, 0, durability }, -- Alva Leggings
+{21500100, 1, reinforceLv, 0, durability }, -- Black Witch Veil
+{21500101, 1, reinforceLv, 0, durability }, -- Black Witch Robe
+{21500102, 1, reinforceLv, 0, durability }, -- Black Witch Gloves
+{21500103, 1, reinforceLv, 0, durability }, -- Black Witch Trousers
+{21501100, 1, reinforceLv, 0, durability }, -- Black Witch Hat
+{21502100, 1, reinforceLv, 0, durability }, -- Black Witch Domino Mask
+{21600100, 1, reinforceLv, 0, durability }, -- Drakeblood Helm
+{21600101, 1, reinforceLv, 0, durability }, -- Drakeblood Armor
+{21600102, 1, reinforceLv, 0, durability }, -- Drakeblood Gauntlets
+{21600103, 1, reinforceLv, 0, durability }, -- Drakeblood Leggings
+{21610100, 1, reinforceLv, 0, durability }, -- Northwarder Hood
+{21610101, 1, reinforceLv, 0, durability }, -- Northwarder Robe
+{21610102, 1, reinforceLv, 0, durability }, -- Northwarder Manchettes
+{21610103, 1, reinforceLv, 0, durability }, -- Northwarder Trousers
+{21630100, 1, reinforceLv, 0, durability }, -- Crown of the Old Iron King
+{21640100, 1, reinforceLv, 0, durability }, -- Crown of the Ivory King
+{21650100, 1, reinforceLv, 0, durability }, -- Crown of the Sunken King
+{21660100, 1, reinforceLv, 0, durability }, -- Old Bell Helm
+{21670100, 1, reinforceLv, 0, durability }, -- Hollow Skin
+{21680100, 1, reinforceLv, 0, durability }, -- Pharros Mask
+{21690103, 1, reinforceLv, 0, durability }, -- Flower Skirt
+{21700100, 1, reinforceLv, 0, durability }, -- Minotaur Helm
+{21710100, 1, reinforceLv, 0, durability }, -- Symbol of Avarice
+{22020100, 1, reinforceLv, 0, durability }, -- Hollow Soldier Helm
+{22020101, 1, reinforceLv, 0, durability }, -- Hollow Soldier Armor
+{22020102, 1, reinforceLv, 0, durability }, -- Hollow Soldier Gauntlets
+{22020103, 1, reinforceLv, 0, durability }, -- Hollow Soldier Leggings
+{22021100, 1, reinforceLv, 0, durability }, -- Royal Soldier Helm
+{22021101, 1, reinforceLv, 0, durability }, -- Royal Soldier Armor
+{22021102, 1, reinforceLv, 0, durability }, -- Royal Soldier Gauntlets
+{22021103, 1, reinforceLv, 0, durability }, -- Royal Soldier Leggings
+{22030100, 1, reinforceLv, 0, durability }, -- Hollow Infantry Helm
+{22030101, 1, reinforceLv, 0, durability }, -- Hollow Infantry Armor
+{22030102, 1, reinforceLv, 0, durability }, -- Hollow Infantry Gloves
+{22030103, 1, reinforceLv, 0, durability }, -- Hollow Infantry Boots
+{22031100, 1, reinforceLv, 0, durability }, -- Infantry Helm
+{22031101, 1, reinforceLv, 0, durability }, -- Infantry Armor
+{22031102, 1, reinforceLv, 0, durability }, -- Infantry Gloves
+{22031103, 1, reinforceLv, 0, durability }, -- Infantry Boots
+{22060100, 1, reinforceLv, 0, durability }, -- White Priest Headpiece
+{22060101, 1, reinforceLv, 0, durability }, -- White Priest Robe
+{22060102, 1, reinforceLv, 0, durability }, -- White Priest Gloves
+{22060103, 1, reinforceLv, 0, durability }, -- White Priest Skirt
+{22062100, 1, reinforceLv, 0, durability }, -- Priestess Headpiece
+{22062101, 1, reinforceLv, 0, durability }, -- Priestess Robe
+{22062102, 1, reinforceLv, 0, durability }, -- Priestess Gloves
+{22062103, 1, reinforceLv, 0, durability }, -- Priestess Skirt
+{22080100, 1, reinforceLv, 0, durability }, -- Rogue Hood
+{22080101, 1, reinforceLv, 0, durability }, -- Rogue Armor
+{22080102, 1, reinforceLv, 0, durability }, -- Rogue Gauntlets
+{22080103, 1, reinforceLv, 0, durability }, -- Rogue Leggings
+{22110100, 1, reinforceLv, 0, durability }, -- Spiked Bandit Helm
+{22110101, 1, reinforceLv, 0, durability }, -- Bandit Armor
+{22110102, 1, reinforceLv, 0, durability }, -- Bandit Gauntlets
+{22110103, 1, reinforceLv, 0, durability }, -- Bandit Boots
+{22130100, 1, reinforceLv, 0, durability }, -- Varangian Helm
+{22130101, 1, reinforceLv, 0, durability }, -- Varangian Armor
+{22130102, 1, reinforceLv, 0, durability }, -- Varangian Cuffs
+{22130103, 1, reinforceLv, 0, durability }, -- Varangian Leggings
+{22180100, 1, reinforceLv, 0, durability }, -- Black Hollow Mage Hood
+{22180101, 1, reinforceLv, 0, durability }, -- Black Hollow Mage Robe
+{22182100, 1, reinforceLv, 0, durability }, -- White Hollow Mage Hood
+{22182101, 1, reinforceLv, 0, durability }, -- White Hollow Mage Robe
+{22190101, 1, reinforceLv, 0, durability }, -- Lion Mage Robe
+{22190102, 1, reinforceLv, 0, durability }, -- Lion Mage Cuffs
+{22190103, 1, reinforceLv, 0, durability }, -- Lion Mage Skirt
+{22220100, 1, reinforceLv, 0, durability }, -- Steel Helm
+{22220101, 1, reinforceLv, 0, durability }, -- Steel Armor
+{22220102, 1, reinforceLv, 0, durability }, -- Steel Gauntlets
+{22220103, 1, reinforceLv, 0, durability }, -- Steel Leggings
+{22230100, 1, reinforceLv, 0, durability }, -- Shadow Mask
+{22230101, 1, reinforceLv, 0, durability }, -- Shadow Top
+{22230102, 1, reinforceLv, 0, durability }, -- Shadow Gauntlets
+{22230103, 1, reinforceLv, 0, durability }, -- Shadow Leggings
+{22240100, 1, reinforceLv, 0, durability }, -- Manikin Mask
+{22240101, 1, reinforceLv, 0, durability }, -- Manikin Top
+{22240102, 1, reinforceLv, 0, durability }, -- Manikin Gloves
+{22240103, 1, reinforceLv, 0, durability }, -- Manikin Boots
+{22270100, 1, reinforceLv, 0, durability }, -- Prisoner's Hood
+{22270101, 1, reinforceLv, 0, durability }, -- Prisoner's Tatters
+{22270102, 1, reinforceLv, 0, durability }, -- Prisoner's Gloves
+{22270103, 1, reinforceLv, 0, durability }, -- Prisoner's Waistcloth
+{22271100, 1, reinforceLv, 0, durability }, -- Prisoner's Hood
+{22271101, 1, reinforceLv, 0, durability }, -- Prisoner's Tatters
+{22310100, 1, reinforceLv, 0, durability }, -- Archdrake Helm
+{22310101, 1, reinforceLv, 0, durability }, -- Archdrake Robes
+{22310102, 1, reinforceLv, 0, durability }, -- Archdrake Gloves
+{22310103, 1, reinforceLv, 0, durability }, -- Archdrake Boots
+{22340100, 1, reinforceLv, 0, durability }, -- Gyrm Helm
+{22340101, 1, reinforceLv, 0, durability }, -- Gyrm Armor
+{22340102, 1, reinforceLv, 0, durability }, -- Gyrm Gloves
+{22340103, 1, reinforceLv, 0, durability }, -- Gyrm Boots
+{22350100, 1, reinforceLv, 0, durability }, -- Gyrm Warrior Helm
+{22350101, 1, reinforceLv, 0, durability }, -- Gyrm Warrior Armor
+{22350102, 1, reinforceLv, 0, durability }, -- Gyrm Warrior Gloves
+{22350103, 1, reinforceLv, 0, durability }, -- Gyrm Warrior Boots
+{22351100, 1, reinforceLv, 0, durability }, -- Gyrm Warrior Greathelm
+{22360100, 1, reinforceLv, 0, durability }, -- Dark Mask
+{22360101, 1, reinforceLv, 0, durability }, -- Dark Armor
+{22360102, 1, reinforceLv, 0, durability }, -- Dark Gauntlets
+{22360103, 1, reinforceLv, 0, durability }, -- Dark Leggings
+{22370100, 1, reinforceLv, 0, durability }, -- Warlock Mask
+{22460100, 1, reinforceLv, 0, durability }, -- Tseldora Cap
+{22460101, 1, reinforceLv, 0, durability }, -- Tseldora Robe
+{22460102, 1, reinforceLv, 0, durability }, -- Tseldora Manchettes
+{22460103, 1, reinforceLv, 0, durability }, -- Tseldora Trousers
+{22480100, 1, reinforceLv, 0, durability }, -- Peasant Hat
+{22480101, 1, reinforceLv, 0, durability }, -- Peasant Attire
+{22480102, 1, reinforceLv, 0, durability }, -- Peasant Long Gloves
+{22480103, 1, reinforceLv, 0, durability }, -- Peasant Trousers
+{22510100, 1, reinforceLv, 0, durability }, -- Ironclad Helm
+{22510101, 1, reinforceLv, 0, durability }, -- Ironclad Armor
+{22510102, 1, reinforceLv, 0, durability }, -- Ironclad Gauntlets
+{22510103, 1, reinforceLv, 0, durability }, -- Ironclad Leggings
+{22512100, 1, reinforceLv, 0, durability }, -- Old Ironclad Helm
+{22512101, 1, reinforceLv, 0, durability }, -- Old Ironclad Armor
+{22512102, 1, reinforceLv, 0, durability }, -- Old Ironclad Gauntlets
+{22512103, 1, reinforceLv, 0, durability }, -- Old Ironclad Leggings
+{22520100, 1, reinforceLv, 0, durability }, -- Royal Swordsman Helm
+{22520101, 1, reinforceLv, 0, durability }, -- Royal Swordsman Armor
+{22520102, 1, reinforceLv, 0, durability }, -- Royal Swordsman Gloves
+{22520103, 1, reinforceLv, 0, durability }, -- Royal Swordsman Leggings
+{22530100, 1, reinforceLv, 0, durability }, -- Syan's Helm
+{22530101, 1, reinforceLv, 0, durability }, -- Syan's Armor
+{22530102, 1, reinforceLv, 0, durability }, -- Syan's Gauntlets
+{22530103, 1, reinforceLv, 0, durability }, -- Syan's Leggings
+{22540100, 1, reinforceLv, 0, durability }, -- Bone Crown
+{22540101, 1, reinforceLv, 0, durability }, -- Bone King Robe
+{22540102, 1, reinforceLv, 0, durability }, -- Bone King Cuffs
+{22540103, 1, reinforceLv, 0, durability }, -- Bone King Skirt
+{23010100, 1, reinforceLv, 0, durability }, -- Heide Knight Greathelm
+{23010101, 1, reinforceLv, 0, durability }, -- Heide Knight Chainmail
+{23010102, 1, reinforceLv, 0, durability }, -- Heide Knight Gauntlets
+{23010103, 1, reinforceLv, 0, durability }, -- Heide Knight Leggings
+{23011100, 1, reinforceLv, 0, durability }, -- Heide Knight Iron Mask
+{23040101, 1, reinforceLv, 0, durability }, -- Singer's Dress
+{23050100, 1, reinforceLv, 0, durability }, -- Smelter Demon Helm
+{23050101, 1, reinforceLv, 0, durability }, -- Smelter Demon Armor
+{23050102, 1, reinforceLv, 0, durability }, -- Smelter Demon Gauntlets
+{23050103, 1, reinforceLv, 0, durability }, -- Smelter Demon Leggings
+{23060100, 1, reinforceLv, 0, durability }, -- Alonne Captain Helm
+{23060101, 1, reinforceLv, 0, durability }, -- Alonne Captain Armor
+{23061100, 1, reinforceLv, 0, durability }, -- Alonne Knight Helm
+{23061101, 1, reinforceLv, 0, durability }, -- Alonne Knight Armor
+{23061102, 1, reinforceLv, 0, durability }, -- Alonne Knight Gauntlets
+{23061103, 1, reinforceLv, 0, durability }, -- Alonne Knight Leggings
+{23070100, 1, reinforceLv, 0, durability }, -- Vengarl's Helm
+{23070101, 1, reinforceLv, 0, durability }, -- Vengarl's Armor
+{23070102, 1, reinforceLv, 0, durability }, -- Vengarl's Gloves
+{23070103, 1, reinforceLv, 0, durability }, -- Vengarl's Boots
+{23080101, 1, reinforceLv, 0, durability }, -- Lion Warrior Cape
+{23080102, 1, reinforceLv, 0, durability }, -- Lion Warrior Cuffs
+{23080103, 1, reinforceLv, 0, durability }, -- Lion Warrior Skirt
+{23081100, 1, reinforceLv, 0, durability }, -- Lion Warrior Helm
+{23081101, 1, reinforceLv, 0, durability }, -- Red Lion Warrior Cape
+{23120100, 1, reinforceLv, 0, durability }, -- Grave Warden Mask
+{23120101, 1, reinforceLv, 0, durability }, -- Grave Warden Top
+{23120102, 1, reinforceLv, 0, durability }, -- Grave Warden Cuffs
+{23120103, 1, reinforceLv, 0, durability }, -- Grave Warden Bottoms
+{23130100, 1, reinforceLv, 0, durability }, -- Falconer Helm
+{23130101, 1, reinforceLv, 0, durability }, -- Falconer Armor
+{23130102, 1, reinforceLv, 0, durability }, -- Falconer Gloves
+{23130103, 1, reinforceLv, 0, durability }, -- Falconer Boots
+{23140100, 1, reinforceLv, 0, durability }, -- Rusted Mastodon Helm
+{23140101, 1, reinforceLv, 0, durability }, -- Rusted Mastodon Armor
+{23140102, 1, reinforceLv, 0, durability }, -- Rusted Mastodon Gauntlets
+{23140103, 1, reinforceLv, 0, durability }, -- Rusted Mastodon Leggings
+{23150100, 1, reinforceLv, 0, durability }, -- Mastodon Helm
+{23150101, 1, reinforceLv, 0, durability }, -- Mastodon Armor
+{23150102, 1, reinforceLv, 0, durability }, -- Mastodon Gauntlets
+{23150103, 1, reinforceLv, 0, durability }, -- Mastodon Leggings
+{23160100, 1, reinforceLv, 0, durability }, -- Desert Sorceress Hood
+{23160101, 1, reinforceLv, 0, durability }, -- Desert Sorceress Top
+{23160102, 1, reinforceLv, 0, durability }, -- Desert Sorceress Gloves
+{23160103, 1, reinforceLv, 0, durability }, -- Desert Sorceress Skirt
+{23170100, 1, reinforceLv, 0, durability }, -- Dragon Acolyte Mask
+{23170101, 1, reinforceLv, 0, durability }, -- Dragon Acolyte Robe
+{23170102, 1, reinforceLv, 0, durability }, -- Dragon Acolyte Gloves
+{23170103, 1, reinforceLv, 0, durability }, -- Dragon Acolyte Boots
+{23171100, 1, reinforceLv, 0, durability }, -- Dragon Sage Hood
+{23250100, 1, reinforceLv, 0, durability }, -- Ruin Helm
+{23250101, 1, reinforceLv, 0, durability }, -- Ruin Armor
+{23250102, 1, reinforceLv, 0, durability }, -- Ruin Gauntlets
+{23250103, 1, reinforceLv, 0, durability }, -- Ruin Leggings
+{23300100, 1, reinforceLv, 0, durability }, -- Old Knight Helm
+{23300101, 1, reinforceLv, 0, durability }, -- Old Knight Armor
+{23300102, 1, reinforceLv, 0, durability }, -- Old Knight Gauntlets
+{23300103, 1, reinforceLv, 0, durability }, -- Old Knight Leggings
+{23310100, 1, reinforceLv, 0, durability }, -- Drakekeeper Helm
+{23310101, 1, reinforceLv, 0, durability }, -- Drakekeeper Armor
+{23310102, 1, reinforceLv, 0, durability }, -- Drakekeeper Gauntlets
+{23310103, 1, reinforceLv, 0, durability }, -- Drakekeeper Boots
+{23320100, 1, reinforceLv, 0, durability }, -- Throne Defender Helm
+{23320101, 1, reinforceLv, 0, durability }, -- Throne Defender Armor
+{23320102, 1, reinforceLv, 0, durability }, -- Throne Defender Gauntlets
+{23320103, 1, reinforceLv, 0, durability }, -- Throne Defender Leggings
+{23330100, 1, reinforceLv, 0, durability }, -- Velstadt's Helm
+{23330101, 1, reinforceLv, 0, durability }, -- Velstadt's Armor
+{23330102, 1, reinforceLv, 0, durability }, -- Velstadt's Gauntlets
+{23330103, 1, reinforceLv, 0, durability }, -- Velstadt's Leggings
+{23340100, 1, reinforceLv, 0, durability }, -- Throne Watcher Helm
+{23340101, 1, reinforceLv, 0, durability }, -- Throne Watcher Armor
+{23340102, 1, reinforceLv, 0, durability }, -- Throne Watcher Gauntlets
+{23340103, 1, reinforceLv, 0, durability }, -- Throne Watcher Leggings
+{25040100, 1, reinforceLv, 0, durability }, -- Looking Glass Mask
+{25040101, 1, reinforceLv, 0, durability }, -- Looking Glass Armor
+{25040102, 1, reinforceLv, 0, durability }, -- Looking Glass Gauntlets
+{25040103, 1, reinforceLv, 0, durability }, -- Looking Glass Leggings
+{25060101, 1, reinforceLv, 0, durability }, -- Agdayne's Black Robe
+{25060102, 1, reinforceLv, 0, durability }, -- Agdayne's Cuffs
+{25060103, 1, reinforceLv, 0, durability }, -- Agdayne's Kilt
+{25090100, 1, reinforceLv, 0, durability }, -- Leydia Black Hood
+{25090101, 1, reinforceLv, 0, durability }, -- Leydia Black Robe
+{25100100, 1, reinforceLv, 0, durability }, -- Insolent Helm
+{25100101, 1, reinforceLv, 0, durability }, -- Insolent Armor
+{25100102, 1, reinforceLv, 0, durability }, -- Insolent Gloves
+{25100103, 1, reinforceLv, 0, durability }, -- Insolent Boots
+{25110100, 1, reinforceLv, 0, durability }, -- Imperious Helm
+{25110101, 1, reinforceLv, 0, durability }, -- Imperious Armor
+{25110102, 1, reinforceLv, 0, durability }, -- Imperious Gloves
+{25110103, 1, reinforceLv, 0, durability }, -- Imperious Leggings
+{25120100, 1, reinforceLv, 0, durability }, -- Leydia White Hood
+{25120101, 1, reinforceLv, 0, durability }, -- Leydia White Robe
+{25120102, 1, reinforceLv, 0, durability }, -- Leydia Gauntlets
+{25130100, 1, reinforceLv, 0, durability }, -- King's Crown
+{25130101, 1, reinforceLv, 0, durability }, -- King's Armor
+{25130102, 1, reinforceLv, 0, durability }, -- King's Gauntlets
+{25130103, 1, reinforceLv, 0, durability }, -- King's Leggings
+{26100100, 1, reinforceLv, 0, durability }, -- Dragonrider Helm
+{26100101, 1, reinforceLv, 0, durability }, -- Dragonrider Armor
+{26100102, 1, reinforceLv, 0, durability }, -- Dragonrider Gauntlets
+{26100103, 1, reinforceLv, 0, durability }, -- Dragonrider Leggings
+{26180100, 1, reinforceLv, 0, durability }, -- Executioner Helm
+{26180101, 1, reinforceLv, 0, durability }, -- Executioner Armor
+{26180102, 1, reinforceLv, 0, durability }, -- Executioner Gauntlets
+{26180103, 1, reinforceLv, 0, durability }, -- Executioner Leggings
+{26260100, 1, reinforceLv, 0, durability }, -- Penal Mask
+{26260101, 1, reinforceLv, 0, durability }, -- Penal Straightjacket
+{26260102, 1, reinforceLv, 0, durability }, -- Penal Handcuffs
+{26260103, 1, reinforceLv, 0, durability }, -- Penal Skirt
+{26510100, 1, reinforceLv, 0, durability }, -- Fume Sorcerer Mask
+{26510101, 1, reinforceLv, 0, durability }, -- Fume Sorcerer Robes
+{26510102, 1, reinforceLv, 0, durability }, -- Fume Sorcerer Gloves
+{26510103, 1, reinforceLv, 0, durability }, -- Fume Sorcerer Boots
+{26590100, 1, reinforceLv, 0, durability }, -- Rampart Golem Helm
+{26590101, 1, reinforceLv, 0, durability }, -- Rampart Golem Armor
+{26590102, 1, reinforceLv, 0, durability }, -- Rampart Golem Gauntlets
+{26590103, 1, reinforceLv, 0, durability }, -- Rampart Golem Leggings
+{26650100, 1, reinforceLv, 0, durability }, -- Sanctum Knight Helm
+{26650101, 1, reinforceLv, 0, durability }, -- Sanctum Knight Armor
+{26650102, 1, reinforceLv, 0, durability }, -- Sanctum Knight Gauntlets
+{26650103, 1, reinforceLv, 0, durability }, -- Sanctum Knight Leggings
+{26660102, 1, reinforceLv, 0, durability }, -- Sanctum Soldier Gauntlet
+{26700100, 1, reinforceLv, 0, durability }, -- Sanctum Priestess Tiara
+{26750100, 1, reinforceLv, 0, durability }, -- Raime's Helm
+{26750101, 1, reinforceLv, 0, durability }, -- Raime's Armor
+{26750102, 1, reinforceLv, 0, durability }, -- Raime's Gauntlets
+{26750103, 1, reinforceLv, 0, durability }, -- Raime's Leggings
+{26770101, 1, reinforceLv, 0, durability }, -- Retainer Robe
+{26800100, 1, reinforceLv, 0, durability }, -- Alonne's Helm
+{26800101, 1, reinforceLv, 0, durability }, -- Alonne's Armor
+{26800102, 1, reinforceLv, 0, durability }, -- Alonne's Gauntlets
+{26800103, 1, reinforceLv, 0, durability }, -- Alonne's Leggings
+{26880100, 1, reinforceLv, 0, durability }, -- Loyce Helm
+{26880101, 1, reinforceLv, 0, durability }, -- Loyce Armor
+{26880102, 1, reinforceLv, 0, durability }, -- Loyce Gauntlets
+{26880103, 1, reinforceLv, 0, durability }, -- Loyce Leggings
+{26890100, 1, reinforceLv, 0, durability }, -- Charred Loyce Helm
+{26890101, 1, reinforceLv, 0, durability }, -- Charred Loyce Armor
+{26890102, 1, reinforceLv, 0, durability }, -- Charred Loyce Gauntlets
+{26890103, 1, reinforceLv, 0, durability }, -- Charred Loyce Leggings
+{26900100, 1, reinforceLv, 0, durability }, -- Ivory King Helm
+{26900101, 1, reinforceLv, 0, durability }, -- Ivory King Armor
+{26900102, 1, reinforceLv, 0, durability }, -- Ivory King Gauntlets
+{26900103, 1, reinforceLv, 0, durability }, -- Ivory King Leggings
+{26940100, 1, reinforceLv, 0, durability }, -- Hood of the Forlorn
+{26940101, 1, reinforceLv, 0, durability }, -- Armor of the Forlorn
+{26940102, 1, reinforceLv, 0, durability }, -- Gauntlets of the Forlorn
+{26940103, 1, reinforceLv, 0, durability }, -- Leggings of the Forlorn
+{27210101, 1, reinforceLv, 0, durability }, -- Llewellyn Armor
+{27210102, 1, reinforceLv, 0, durability }, -- Llewellyn Gloves
+{27210103, 1, reinforceLv, 0, durability }, -- Llewellyn Shoes
+{27240100, 1, reinforceLv, 0, durability }, -- Drangleic Helm
+{27240101, 1, reinforceLv, 0, durability }, -- Drangleic Mail
+{27240102, 1, reinforceLv, 0, durability }, -- Drangleic Gauntlets
+{27240103, 1, reinforceLv, 0, durability }, -- Drangleic Leggings
+{27420100, 1, reinforceLv, 0, durability }, -- Creighton's Steel Mask
+{27420101, 1, reinforceLv, 0, durability }, -- Creighton's Chainmail
+{27420102, 1, reinforceLv, 0, durability }, -- Creighton's Chain Gloves
+{27420103, 1, reinforceLv, 0, durability }, -- Creighton's Chain Leggings
+{27430100, 1, reinforceLv, 0, durability }, -- Benhart's Knight Helm
+{27430101, 1, reinforceLv, 0, durability }, -- Benhart's Armor
+{27430102, 1, reinforceLv, 0, durability }, -- Benhart's Gauntlets
+{27430103, 1, reinforceLv, 0, durability }, -- Benhart's Boots
+{27440100, 1, reinforceLv, 0, durability }, -- Standard Helm
+{27440101, 1, reinforceLv, 0, durability }, -- Hard Leather Armor
+{27440102, 1, reinforceLv, 0, durability }, -- Hard Leather Gauntlets
+{27440103, 1, reinforceLv, 0, durability }, -- Hard Leather Boots
+{27510100, 1, reinforceLv, 0, durability }, -- Cale's Helm
+{27510101, 1, reinforceLv, 0, durability }, -- Cale's Leather Armor
+{27510103, 1, reinforceLv, 0, durability }, -- Cale's Shoes
+{27520100, 1, reinforceLv, 0, durability }, -- Lucatiel's Mask
+{27520101, 1, reinforceLv, 0, durability }, -- Lucatiel's Vest
+{27520102, 1, reinforceLv, 0, durability }, -- Lucatiel's Gloves
+{27520103, 1, reinforceLv, 0, durability }, -- Lucatiel's Trousers
+{27521100, 1, reinforceLv, 0, durability }, -- Mirrah Hat
+{27530100, 1, reinforceLv, 0, durability }, -- Bell Keeper Helmet
+{27530101, 1, reinforceLv, 0, durability }, -- Bell Keeper Bellyband
+{27530102, 1, reinforceLv, 0, durability }, -- Bell Keeper Cuffs
+{27530103, 1, reinforceLv, 0, durability }, -- Bell Keeper Trousers
+{27550100, 1, reinforceLv, 0, durability }, -- Mad Warrior Mask
+{27550101, 1, reinforceLv, 0, durability }, -- Mad Warrior Armor
+{27550102, 1, reinforceLv, 0, durability }, -- Mad Warrior Gauntlets
+{27550103, 1, reinforceLv, 0, durability }, -- Mad Warrior Leggings
+{27680100, 1, reinforceLv, 0, durability }, -- Black Hood
+{27680101, 1, reinforceLv, 0, durability }, -- Black Robes
+{27680102, 1, reinforceLv, 0, durability }, -- Black Gloves
+{27680103, 1, reinforceLv, 0, durability }, -- Black Boots
+{27690100, 1, reinforceLv, 0, durability }, -- Saint's Hood
+{27690101, 1, reinforceLv, 0, durability }, -- Saint's Dress
+{27690102, 1, reinforceLv, 0, durability }, -- Saint's Long Gloves
+{27690103, 1, reinforceLv, 0, durability }, -- Saint's Trousers
+{27700100, 1, reinforceLv, 0, durability }, -- Hexer's Hood
+{27700101, 1, reinforceLv, 0, durability }, -- Hexer's Robes
+{27700102, 1, reinforceLv, 0, durability }, -- Hexer's Gloves
+{27700103, 1, reinforceLv, 0, durability }, -- Hexer's Boots
+{27710100, 1, reinforceLv, 0, durability }, -- Chaos Hood
+{27710101, 1, reinforceLv, 0, durability }, -- Chaos Robe
+{27710102, 1, reinforceLv, 0, durability }, -- Chaos Gloves
+{27710103, 1, reinforceLv, 0, durability }, -- Chaos Boots
+{27830100, 1, reinforceLv, 0, durability }, -- Nahr Alma Hood
+{27830101, 1, reinforceLv, 0, durability }, -- Nahr Alma Robes
+{27950100, 1, reinforceLv, 0, durability }, -- Targray's Helm
+{27950101, 1, reinforceLv, 0, durability }, -- Targray's Armor
+{27950102, 1, reinforceLv, 0, durability }, -- Targray's Manifers
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

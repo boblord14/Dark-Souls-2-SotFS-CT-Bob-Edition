@@ -1,0 +1,261 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+-- Original Elden Ring ItemGib written by InuNorii
+-- Ported and modified for DS2 by Boblord
+
+ItemGive_data = allocateMemory(132, getAddress(process))
+ItemGive_count = allocateMemory(4, getAddress(process))
+local item_table_mem = ItemGive_data + 0 -- leftover from er port
+local item_table_count = ItemGive_count + 0 -- for consistency
+
+local ItemGive_func = getAddressSafe('DarkSoulsII.exe+1AC3D0')
+local ItemStructConvert_func = getAddressSafe('DarkSoulsII.exe+5D950')
+local ItemPopupDisplay_func = getAddressSafe('DarkSoulsII.exe+501080')
+
+
+
+function ItemGive(table_or_id, quantity, upgrade, gem, durability)
+
+	local ItemInventory2BagList = getAddressSafe("[[[GameManagerImp]+A8]+10]")
+	local item_table = {}
+
+	local function spawn_item(item_spawn_list, item_list_length)
+		executeCodeEx(0, 100, ItemGive_func, ItemInventory2BagList, item_spawn_list, readInteger(item_list_length))
+	end
+
+    --should iterate over inventory, find item quanity for a given id
+    local function getQuantity(id)
+		local inventoryItems = getAddressSafe("[[[GameManagerImp]+A8]+10]+D0") + 0x20
+        for position = 0, 3839 do
+            local item = inventoryItems + (position * 0x10)
+            local itemId = readInteger(item)
+            if itemId == id then
+               return readInteger(item + 0x8)
+            end
+        end
+		return 0
+	end
+
+    local function isInventoryFull()
+		local inventoryItems = getAddressSafe("[[[GameManagerImp]+A8]+10]+D0") + 0x20
+        for position = 0, 3839 do
+            local item = inventoryItems + (position * 0x10)
+            local itemId = readInteger(item)
+            if itemId == 0 then
+               return false
+            end
+        end
+		return true
+    end
+
+    -- pretty easy with the right param
+	local function getMaxQuantity(param_addr)
+	      return readSmallInteger(param_addr + 0x4A)
+	end
+
+    -- removed item type array(first parameter)
+	local function adjustQuantity(param_id, quantity)
+        local param_addr = paramUtils:getIdAddressInParam("ItemParam", param_id)
+		local quantityMax = getMaxQuantity(param_addr)
+		local quantityHeld = getQuantity(param_id)
+		if (quantity + quantityHeld > quantityMax) or quantity == -1 then
+			quantity = quantityMax - quantityHeld
+		end
+		return quantity
+	end
+
+    --reworked into something useful
+	local function set_reinforceLv(param_addr, item_type,  inputReinforceLv)
+          local reinforceParamId = 0
+          local reinforce_addr = 0
+          local reinforce_max = 0
+          local result = 0
+
+          if item_type == 0 or item_type == 1 then
+		      reinforceParamId = readInteger(param_addr + 0x8)
+		      reinforce_addr = paramUtils:getIdAddressInParam("WeaponReinforceParam", reinforceParamId)
+              reinforce_max = readInteger(reinforce_addr + 0x48)
+          else
+		      reinforceParamId = readInteger(param_addr + 0x18)
+		      reinforce_addr = paramUtils:getIdAddressInParam("ArmorReinforceParam", reinforceParamId)
+              reinforce_max = readInteger(reinforce_addr + 0x60)
+          end
+
+		if reinforce_max ~= 0xFFFFFFFF then
+			if inputReinforceLv > 10 or inputReinforceLv < 0 then
+				return reinforce_max
+			end
+			if reinforce_max == 5 then
+				result = math.floor(inputReinforceLv / 2)
+			else
+				result = inputReinforceLv
+			end
+		end
+		return result
+	end
+
+       --new function
+	local function set_durability(param_addr, item_type, inputDurability)
+          local maxDurability = 0
+
+          --weapons/shields
+          if item_type == 0 or item_type == 1 then
+		      maxDurability = readFloat(param_addr + 0x28)
+          --rings
+          elseif item_type == 7 then
+		      maxDurability = readFloat(param_addr + 0x4)
+          --all armor pieces
+          else
+              maxDurability = readFloat(param_addr + 0x38)
+          end
+
+          if maxDurability ~= 0xFFFFFFFF then
+		      if inputDurability > maxDurability or inputDurability < 0 then
+		         return maxDurability
+              else
+                  return inputDurability
+		      end
+          else
+              return 0
+          end
+	end
+
+    -- grabs item type enum
+    local function getItemType(param_addr)
+          return readByte(param_addr + 0x4F)
+    end
+
+    --potentially done
+	local function add_items(item_table)
+		local item_amount = 0
+
+        --not changed yet
+		if isInventoryFull() then
+			local e = "Inventory is full.\nNo more items can be acquired."
+			ShowMessage(e)
+			error(e, 2)
+		end
+
+		for i,v in ipairs(item_table) do
+			local item = v[1]
+			local quantity = 0
+            local upgrade = 0
+            local durability = 0
+			local gem = 0
+
+            local item_param = paramUtils:getIdAddressInParam("ItemParam", item)
+            local item_type = getItemType(item_param)
+
+            -- weapons and shields
+			if item_type == 0 or item_type == 1 then
+                local weapon_param_id = readInteger(item_param + 0x14)
+				local param_addr = paramUtils:getIdAddressInParam("WeaponParam", weapon_param_id)
+
+				quantity = 1
+
+				if v[4] ~= -1 then
+					gem = v[4]
+				end
+
+				upgrade = set_reinforceLv(param_addr, item_type, v[3])
+
+                durability = set_durability(param_addr, item_type, v[5])
+
+            -- all armor sets
+			elseif item_type > 1 and item_type < 6 then
+                local armor_param_id = readInteger(item_param + 0x18)
+                local param_addr = paramUtils:getIdAddressInParam("ArmorParam", armor_param_id)
+
+                quantity = 1
+
+                upgrade = set_reinforceLv(param_addr, item_type, v[3])
+
+                durability = set_durability(param_addr, item_type, v[5])
+
+            -- ammo
+			elseif item_type == 6 then
+				   quantity = adjustQuantity(item, v[2])
+
+            -- rings
+			elseif item_type == 7 then
+                local ring_param_id = readInteger(item_param + 0x20)
+                local param_addr = paramUtils:getIdAddressInParam("RingParam", ring_param_id)
+
+				quantity = 1
+
+                durability = set_durability(param_addr, item_type, v[5])
+
+            -- goods
+			elseif item_type == 8 then
+				quantity = adjustQuantity(item, v[2])
+
+            -- spells
+            elseif item_type == 9 then
+                   quantity = 1
+
+            -- edge case catchall
+			else
+				quantity = 0
+			end
+
+            --table reworked
+			local i2 = item_table_mem + item_amount * 16
+			writeInteger(i2 +  0x4, item)
+            writeFloat(i2 + 0x8, durability)
+			writeSmallInteger(i2 +  0xC, quantity)
+			writeByte(i2 + 0xE, upgrade)
+			writeByte(i2 + 0xF, gem)
+			item_amount = item_amount + 1
+
+			if item_amount == 8 then
+				writeInteger(item_table_count, item_amount)
+				spawn_item(item_table_mem, item_table_count)
+				item_amount = 0
+			end
+		end
+		if item_amount >= 1 then
+			writeInteger(item_table_count, item_amount)
+			spawn_item(item_table_mem, item_table_count)
+		end
+	end
+
+	if type(table_or_id) == "table" then
+		item_table = table_or_id
+	elseif type(table_or_id) == "number" then
+		local id = table_or_id
+
+		if quantity == nil then
+			quantity = 1
+		end
+
+		if upgrade == nil or upgrade > 10 then
+			upgrade = -1
+		end
+
+		if gem == nil or gem > 9 then
+			gem = -1
+		end
+
+        if durability == nil then
+			durability = -1
+		end
+
+		item_table = {
+			{id, quantity, upgrade, gem, durability}
+		}
+	else
+		local e = "No table or ID given."
+		print(e)
+		error(e)
+	end
+
+	add_items(item_table)
+
+	writeInteger(item_table_mem, 0)
+end
+
+[DISABLE]
+deAlloc(ItemGive_data)
+ItemGive_data = nil
+ItemGive = nil

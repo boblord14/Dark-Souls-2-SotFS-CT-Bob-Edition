@@ -86,7 +86,7 @@ You can install the required dependencies using the `./scripts/install_deps.[sh/
 
 Make a pull request to the `dev` branch of this repository. Run `./scripts/check.sh` or `python build.py --fixup` first to make sure all the required XML files have been generated.
 
-For merging changes made to the built table in Cheat Engine is to run `unpack.sh -o dist`, manually nagivate to the folder where you made your changes, and copy them to the `CheatTable` folder.
+For merging changes made to the built table in Cheat Engine is to run `./scripts/unpack.sh -o dist`, manually nagivate to the folder where you made your changes, and copy them to the `CheatTable` folder.
 
 ## Credits
 

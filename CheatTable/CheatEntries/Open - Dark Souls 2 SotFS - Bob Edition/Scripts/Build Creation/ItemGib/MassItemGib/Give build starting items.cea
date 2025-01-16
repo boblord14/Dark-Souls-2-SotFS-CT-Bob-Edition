@@ -1,0 +1,20 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+local items = {
+ {60525000,  12, 0, 0, -1 }, -- Estus Flask Shards
+ {60526000,  5, 0, 0, -1 }, -- Sublime Bone Dust
+ {60355000,  1, 0, 0, -1 }, -- Aged Feather
+ {50960000,  20, 0, 0, -1 }, -- Soul Vessel
+ {60420000,  20, 0, 0, -1 }, -- Torches(probably safe now)
+ {60527000,  1, 0, 0, -1 }, -- Bonfire Ascetic
+ {60430000,  10, 0, 0, -1 }, -- Flame Butterfly
+ {60151000,  25, 0, 0, -1 }, -- Human Effigy
+ {50990000,  1, 0, 0, -1 }, -- Dull Ember
+ {60536000, -1, 0, 0, -1 }, -- Pharros' Lockstone
+ {60537000, -1, 0, 0, -1 }, -- Fragrant Branch of Yore
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

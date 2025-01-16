@@ -1,0 +1,32 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{34010000, 1, 0, 0, 0 }, -- Dark Orb
+{34020000, 1, 0, 0, 0 }, -- Dark Hail
+{34030000, 1, 0, 0, 0 }, -- Dark Fog
+{34040000, 1, 0, 0, 0 }, -- Affinity
+{34050000, 1, 0, 0, 0 }, -- Dead Again
+{34060000, 1, 0, 0, 0 }, -- Dark Weapon
+{34070000, 1, 0, 0, 0 }, -- Whisper of Despair
+{34080000, 1, 0, 0, 0 }, -- Repel
+{34090000, 1, 0, 0, 0 }, -- Twisted Barricade
+{34100000, 1, 0, 0, 0 }, -- Numbness
+{34300000, 1, 0, 0, 0 }, -- Dark Greatsword
+{34310000, 1, 0, 0, 0 }, -- Recollection
+{35010000, 1, 0, 0, 0 }, -- Scraps of Life
+{35020000, 1, 0, 0, 0 }, -- Darkstorm
+{35030000, 1, 0, 0, 0 }, -- Resonant Soul
+{35040000, 1, 0, 0, 0 }, -- Great Resonant Soul
+{35050000, 1, 0, 0, 0 }, -- Climax
+{35060000, 1, 0, 0, 0 }, -- Resonant Flesh
+{35070000, 1, 0, 0, 0 }, -- Resonant Weapon
+{35080000, 1, 0, 0, 0 }, -- Lifedrain Patch
+{35090000, 1, 0, 0, 0 }, -- Profound Still
+{35300000, 1, 0, 0, 0 }, -- Promised Walk of Peace
+{35310000, 1, 0, 0, 0 }, -- Dark Dance
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

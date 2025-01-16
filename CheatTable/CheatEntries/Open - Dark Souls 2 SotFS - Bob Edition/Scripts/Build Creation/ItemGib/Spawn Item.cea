@@ -1,0 +1,13 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+local id = readInteger(item_menu + 0x4)
+local quantity = readSmallInteger(item_menu + 0xC)
+local upgrade = readByte(item_menu + 0xE)
+local gem = readByte(item_menu + 0xF)
+local durability = readFloat(item_menu + 0x8)
+
+ItemGive(id, quantity, upgrade, gem, durability)
+disableMemrec(memrec)
+[DISABLE]
