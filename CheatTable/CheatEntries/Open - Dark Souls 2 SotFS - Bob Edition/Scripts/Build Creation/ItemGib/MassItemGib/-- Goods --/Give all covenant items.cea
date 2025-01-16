@@ -1,0 +1,15 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{62100000, -1, 0, 0, -1 }, -- Token of Fidelity
+{62110000, -1, 0, 0, -1 }, -- Token of Spite
+{62120000, -1, 0, 0, -1 }, -- Sunlight Medal
+{62130000, -1, 0, 0, -1 }, -- Dragon Scale
+{62140000, -1, 0, 0, -1 }, -- Rat Tail
+{62150000, -1, 0, 0, -1 }, -- Awestone
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

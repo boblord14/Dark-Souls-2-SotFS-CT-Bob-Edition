@@ -1,0 +1,44 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{50600000, 1, 0, 0, -1 }, -- Soldier Key
+{50610000, 1, 0, 0, -1 }, -- Key to King's Passage
+{50800000, 1, 0, 0, -1 }, -- Bastille Key
+{50810000, 1, 0, 0, -1 }, -- Iron Key
+{50820000, 1, 0, 0, -1 }, -- Forgotten Key
+{50830000, 1, 0, 0, -1 }, -- Brightstone Key
+{50840000, 1, 0, 0, -1 }, -- Antiquated Key
+{50850000, 1, 0, 0, -1 }, -- Fang Key
+{50860000, 1, 0, 0, -1 }, -- House Key
+{50870000, 1, 0, 0, -1 }, -- Lenigrast's Key
+{50890000, 1, 0, 0, -1 }, -- Rotunda Lockstone
+{50900000, 1, 0, 0, -1 }, -- Giant's Kinship
+{50910000, 1, 0, 0, -1 }, -- Ashen Mist Heart
+{50920000, 5, 0, 0, -1 }, -- Soul of a Giant
+{50930000, 1, 0, 0, -1 }, -- Tseldora Den Key
+{50940000, 1, 0, 0, -1 }, -- Champion's Tablet
+{50950000, 1, 0, 0, -1 }, -- Ladder Miniature
+{50970000, 1, 0, 0, -1 }, -- Undead Lockaway Key
+{50990000, 1, 0, 0, -1 }, -- Dull Ember
+--{51000000, 1, 0, 0, -1 }, -- Crushed Eye Orb(unsafe)
+{51030000, 1, 0, 0, -1 }, -- Aldia Key
+{52000000, 1, 0, 0, -1 }, -- Dragon Talon
+{52100000, 1, 0, 0, -1 }, -- Heavy Iron Key
+{52200000, 1, 0, 0, -1 }, -- Frozen Flower
+{52300000, 1, 0, 0, -1 }, -- Eternal Sanctum Key
+{52400000, 1, 0, 0, -1 }, -- Tower Key
+{52500000, 1, 0, 0, -1 }, -- Garrison Ward Key
+{52650000, 1, 0, 0, -1 }, -- Dragon Stone
+{53100000, 1, 0, 0, -1 }, -- Scorching Iron Scepter
+{53200000, 11, 0, 0, -1 }, -- Smelter Wedge
+--{53300000, 1, 0, 0, -1 }, -- Soul of Nadalia Bride of Ash(useless)
+{53600000, 1, 0, 0, -1 }, -- Eye of the Priestess
+{62190000, 1, 0, 0, -1 }, -- Petrified Egg
+{60536000, -1, 0, 0, -1 }, -- Pharros' Lockstone
+{60537000, -1, 0, 0, -1 }, -- Fragrant Branch of Yore
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

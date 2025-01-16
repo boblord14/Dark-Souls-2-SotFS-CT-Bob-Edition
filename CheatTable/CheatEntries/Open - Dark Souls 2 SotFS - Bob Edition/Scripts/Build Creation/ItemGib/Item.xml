@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337275618</ID>
+  <Description>"Item"</Description>
+  <DropDownListLink>ItemDropdown</DropDownListLink>
+  <ShowAsSigned>0</ShowAsSigned>
+  <VariableType>4 Bytes</VariableType>
+  <Address>item_menu+04</Address>
+</CheatEntry>

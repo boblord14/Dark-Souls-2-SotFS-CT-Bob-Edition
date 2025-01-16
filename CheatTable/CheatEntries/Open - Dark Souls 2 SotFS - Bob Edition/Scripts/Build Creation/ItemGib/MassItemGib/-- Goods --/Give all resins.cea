@@ -1,0 +1,15 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{60240000, -1,0, 0, -1 }, -- Aromatic Ooze
+{60250000, -1,0, 0, -1 }, -- Gold Pine Resin
+{60260000, -1,0, 0, -1 }, -- Charcoal Pine Resin
+{60270000, -1,0, 0, -1 }, -- Dark Pine Resin
+{60280000, -1,0, 0, -1 }, -- Rotten Pine Resin
+{60290000, -1,0, 0, -1 }, -- Bleeding Serum
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

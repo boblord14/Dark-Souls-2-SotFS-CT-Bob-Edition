@@ -1,0 +1,14 @@
+//Author: The-Raid-Boss
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+  { 60470000, 1, -1, -1, -1 }, -- Hello Carving
+  { 60480000, 1, -1, -1, -1 }, -- Thank You Carving
+  { 60490000, 1, -1, -1, -1 }, -- I'm Sorry Carving
+  { 60500000, 1, -1, -1, -1 }, -- Very Good! Carving
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

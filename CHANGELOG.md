@@ -1,5 +1,17 @@
 # Changelog
 
+## [v4.09.0] - 2025-01-15
+### Added
+  - MassItemgib
+    - Spawn large amounts of items at once
+  - MassItemgib presets
+    - Items sorted by categories for ease of use
+  - Error message support for scripting
+
+### Changed
+  - Itemgib now written in lua instead of raw assembly
+  - Itemgib now a global function
+  - Itemgib dropdowns changed to global dropdowns for items/infusions/upgrades
 
 ## [v4.08.1] - 2024-09-16
 ### Fixed

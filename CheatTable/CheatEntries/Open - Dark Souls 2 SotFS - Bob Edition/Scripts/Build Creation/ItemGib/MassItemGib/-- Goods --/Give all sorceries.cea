@@ -1,0 +1,40 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{31010000, 1, 0, 0, 0 }, -- Soul Arrow
+{31020000, 1, 0, 0, 0 }, -- Great Soul Arrow
+{31030000, 1, 0, 0, 0 }, -- Heavy Soul Arrow
+{31040000, 1, 0, 0, 0 }, -- Great Heavy Soul Arrow
+{31050000, 1, 0, 0, 0 }, -- Homing Soul Arrow
+{31060000, 1, 0, 0, 0 }, -- Heavy Homing Soul Arrow
+{31070000, 1, 0, 0, 0 }, -- Homing Soulmass
+{31080000, 1, 0, 0, 0 }, -- Homing Crystal Soulmass
+{31090000, 1, 0, 0, 0 }, -- Soul Spear
+{31100000, 1, 0, 0, 0 }, -- Crystal Soul Spear
+{31110000, 1, 0, 0, 0 }, -- Shockwave
+{31120000, 1, 0, 0, 0 }, -- Soul Spear Barrage
+{31130000, 1, 0, 0, 0 }, -- Soul Shower
+{31140000, 1, 0, 0, 0 }, -- Soul Greatsword
+{31150000, 1, 0, 0, 0 }, -- Soul Vortex
+{31160000, 1, 0, 0, 0 }, -- Soul Bolt
+{31170000, 1, 0, 0, 0 }, -- Soul Geyser
+{31180000, 1, 0, 0, 0 }, -- Magic Weapon
+{31190000, 1, 0, 0, 0 }, -- Great Magic Weapon
+{31200000, 1, 0, 0, 0 }, -- Crystal Magic Weapon
+{31210000, 1, 0, 0, 0 }, -- Strong Magic Shield
+{31220000, 1, 0, 0, 0 }, -- Yearn
+{31230000, 1, 0, 0, 0 }, -- Hush
+{31240000, 1, 0, 0, 0 }, -- Fall Control
+{31250000, 1, 0, 0, 0 }, -- Hidden Weapon
+{31260000, 1, 0, 0, 0 }, -- Repair
+{31270000, 1, 0, 0, 0 }, -- Cast Light
+{31280000, 1, 0, 0, 0 }, -- Chameleon
+{31290000, 1, 0, 0, 0 }, -- Unleash Magic
+{31300000, 1, 0, 0, 0 }, -- Soul Flash
+{31310000, 1, 0, 0, 0 }, -- Focus Souls
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

@@ -1,0 +1,345 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+local reinforceLv = -1	-- non-special weapon values
+local infusion = 0
+local durability = -1
+
+local items = {
+{1000000, 1, reinforceLv, infusion, durability }, -- Dagger
+{1010000, 1, reinforceLv, infusion, durability }, -- Bandit's Knife
+{1040000, 1, reinforceLv, infusion, durability }, -- Mytha's Bent Blade
+{1050000, 1, reinforceLv, infusion, durability }, -- Shadow Dagger
+{1060000, 1, reinforceLv, infusion, durability }, -- Thief Dagger
+{1070000, 1, reinforceLv, infusion, durability }, -- Broken Thief Sword
+{1100000, 1, reinforceLv, infusion, durability }, -- Parrying Dagger
+{1110000, 1, reinforceLv, infusion, durability }, -- Manikin Knife
+{1130000, 1, reinforceLv, infusion, durability }, -- Royal Dirk
+{1140000, 1, reinforceLv, infusion, durability }, -- Blue Dagger
+{1150000, 1, reinforceLv, infusion, durability }, -- Umbral Dagger
+{1160000, 1, reinforceLv, infusion, durability }, -- Retainer's Short Sword
+{1200000, 1, reinforceLv, infusion, durability }, -- Broken Straight Sword
+{1210000, 1, reinforceLv, infusion, durability }, -- Shortsword
+{1220000, 1, reinforceLv, infusion, durability }, -- Longsword
+{1230000, 1, reinforceLv, infusion, durability }, -- Broadsword
+{1240000, 1, reinforceLv, infusion, durability }, -- Foot Soldier Sword
+{1250000, 1, reinforceLv, infusion, durability }, -- Puzzling Stone Sword
+{1260000, 1, reinforceLv, infusion, durability }, -- Possessed Armor Sword
+{1270000, 1, reinforceLv, infusion, durability }, -- Varangian Sword
+{1280000, 1, reinforceLv, infusion, durability }, -- Blue Flame
+{1290000, 1, reinforceLv, infusion, durability }, -- Fume Sword
+{1320000, 1, reinforceLv, infusion, durability }, -- Heide Knight Sword
+{1330000, 1, reinforceLv, infusion, durability }, -- Red Rust Sword
+{1350000, 1, reinforceLv, infusion, durability }, -- Black Dragon Sword
+{1360000, 1, reinforceLv, infusion, durability }, -- Sun Sword
+{1370000, 1, reinforceLv, infusion, durability }, -- Drakekeeper's Sword
+{1380000, 1, reinforceLv, infusion, durability }, -- Ashen Warrior Sword
+{1390000, 1, reinforceLv, infusion, durability }, -- Ivory Straight Sword
+{1400000, 1, reinforceLv, infusion, durability }, -- Estoc
+{1410000, 1, reinforceLv, infusion, durability }, -- Mail Breaker
+{1420000, 1, reinforceLv, infusion, durability }, -- Chaos Rapier
+{1430000, 1, reinforceLv, infusion, durability }, -- Spider's Silk
+{1440000, 1, reinforceLv, infusion, durability }, -- Espada Ropera
+{1500000, 1, reinforceLv, infusion, durability }, -- Rapier
+{1520000, 1, reinforceLv, infusion, durability }, -- Black Scorpion Stinger
+{1530000, 1, reinforceLv, infusion, durability }, -- Ricard's Rapier
+{1580000, 1, reinforceLv, infusion, durability }, -- Ice Rapier
+{1600000, 1, reinforceLv, infusion, durability }, -- Falchion
+{1610000, 1, reinforceLv, infusion, durability }, -- Shotel
+{1620000, 1, reinforceLv, infusion, durability }, -- Warped Sword
+{1630000, 1, reinforceLv, infusion, durability }, -- Eleum Loyce
+{1640000, 1, reinforceLv, infusion, durability }, -- Manikin Sabre
+{1650000, 1, reinforceLv, infusion, durability }, -- Scimitar
+{1660000, 1, reinforceLv, infusion, durability }, -- Red Rust Scimitar
+{1670000, 1, reinforceLv, infusion, durability }, -- Spider Fang
+{1680000, 1, reinforceLv, infusion, durability }, -- Melu Scimitar
+{1690000, 1, reinforceLv, infusion, durability }, -- Monastery Scimitar
+{1700000, 1, reinforceLv, infusion, durability }, -- Uchigatana
+{1710000, 1, reinforceLv, infusion, durability }, -- Washing Pole
+{1720000, 1, reinforceLv, infusion, durability }, -- Chaos Blade
+{1730000, 1, reinforceLv, infusion, durability }, -- Blacksteel Katana
+{1740000, 1, reinforceLv, infusion, durability }, -- Manslayer
+{1760000, 1, reinforceLv, infusion, durability }, -- Darkdrift
+{1770000, 1, reinforceLv, infusion, durability }, -- Berserker Blade
+{1790000, 1, reinforceLv, infusion, durability }, -- Bewitched Alonne Sword
+{1800000, 1, reinforceLv, infusion, durability }, -- Bastard Sword
+{1810000, 1, reinforceLv, infusion, durability }, -- Flamberge
+{1820000, 1, reinforceLv, infusion, durability }, -- Claymore
+{1830000, 1, reinforceLv, infusion, durability }, -- Majestic Greatsword
+{1850000, 1, reinforceLv, infusion, durability }, -- Drangleic Sword
+{1860000, 1, reinforceLv, infusion, durability }, -- Thorned Greatsword
+{1870000, 1, reinforceLv, infusion, durability }, -- Bluemoon Greatsword
+{1871000, 1, reinforceLv, infusion, durability }, -- Moonlight Greatsword
+{1880000, 1, reinforceLv, infusion, durability }, -- Mastodon Greatsword
+{1900000, 1, reinforceLv, infusion, durability }, -- Ruler's Sword
+{1910000, 1, reinforceLv, infusion, durability }, -- Mirrah Greatsword
+{1911000, 1, reinforceLv, infusion, durability }, -- Old Mirrah Greatsword
+{1920000, 1, reinforceLv, infusion, durability }, -- Black Dragon Greatsword
+{1930000, 1, reinforceLv, infusion, durability }, -- Black Knight Greatsword
+{1940000, 1, reinforceLv, infusion, durability }, -- Royal Greatsword
+{1950000, 1, reinforceLv, infusion, durability }, -- Old Knight Greatsword
+{1960000, 1, reinforceLv, infusion, durability }, -- Defender Greatsword
+{1970000, 1, reinforceLv, infusion, durability }, -- Watcher Greatsword
+{1980000, 1, reinforceLv, infusion, durability }, -- Key to the Embedded
+{1990000, 1, reinforceLv, infusion, durability }, -- Drakeblood Greatsword
+{1995000, 1, reinforceLv, infusion, durability }, -- Loyce Greatsword
+{1996000, 1, reinforceLv, infusion, durability }, -- Charred Loyce Greatsword
+{1997000, 1, reinforceLv, infusion, durability }, -- Greatsword of the Forlorn
+{2000000, 1, reinforceLv, infusion, durability }, -- Hand Axe
+{2010000, 1, reinforceLv, infusion, durability }, -- Battle Axe
+{2020000, 1, reinforceLv, infusion, durability }, -- Bandit Axe
+{2030000, 1, reinforceLv, infusion, durability }, -- Infantry Axe
+{2070000, 1, reinforceLv, infusion, durability }, -- Gyrm Axe
+{2080000, 1, reinforceLv, infusion, durability }, -- Dragonslayer's Crescent Axe
+{2090000, 1, reinforceLv, infusion, durability }, -- Butcher's Knife
+{2100000, 1, reinforceLv, infusion, durability }, -- Silverblack Sickle
+{2200000, 1, reinforceLv, infusion, durability }, -- Crescent Axe
+{2210000, 1, reinforceLv, infusion, durability }, -- Greataxe
+{2220000, 1, reinforceLv, infusion, durability }, -- Bandit Greataxe
+{2240000, 1, reinforceLv, infusion, durability }, -- Lion Greataxe
+{2250000, 1, reinforceLv, infusion, durability }, -- Giant Stone Axe
+{2260000, 1, reinforceLv, infusion, durability }, -- Gyrm Greataxe
+{2290000, 1, reinforceLv, infusion, durability }, -- Black Dragon Greataxe
+{2300000, 1, reinforceLv, infusion, durability }, -- Black Knight Greataxe
+{2310000, 1, reinforceLv, infusion, durability }, -- Drakekeeper's Greataxe
+{2400000, 1, reinforceLv, infusion, durability }, -- Club
+{2410000, 1, reinforceLv, infusion, durability }, -- Mace
+{2420000, 1, reinforceLv, infusion, durability }, -- Morning Star
+{2430000, 1, reinforceLv, infusion, durability }, -- Reinforced Club
+{2440000, 1, reinforceLv, infusion, durability }, -- Craftsman's Hammer
+{2470000, 1, reinforceLv, infusion, durability }, -- Mace of the Insolent
+{2500000, 1, reinforceLv, infusion, durability }, -- Handmaid's Ladle
+{2520000, 1, reinforceLv, infusion, durability }, -- Blacksmith's Hammer
+{2530000, 1, reinforceLv, infusion, durability }, -- Black Dragon Warpick
+{2540000, 1, reinforceLv, infusion, durability }, -- Aldia Hammer
+{2560000, 1, reinforceLv, infusion, durability }, -- Barbed Club
+{2600000, 1, reinforceLv, infusion, durability }, -- Large Club
+{2610000, 1, reinforceLv, infusion, durability }, -- Pickaxe
+{2620000, 1, reinforceLv, infusion, durability }, -- Great Club
+{2630000, 1, reinforceLv, infusion, durability }, -- Gyrm Great Hammer
+{2660000, 1, reinforceLv, infusion, durability }, -- Iron King Hammer
+{2670000, 1, reinforceLv, infusion, durability }, -- Malformed Skull
+{2680000, 1, reinforceLv, infusion, durability }, -- Dragon Tooth
+{2690000, 1, reinforceLv, infusion, durability }, -- Giant Warrior Club
+{2700000, 1, reinforceLv, infusion, durability }, -- Malformed Shell
+{2710000, 1, reinforceLv, infusion, durability }, -- Demon's Great Hammer
+{2720000, 1, reinforceLv, infusion, durability }, -- Archdrake Mace
+{2730000, 1, reinforceLv, infusion, durability }, -- Old Knight Hammer
+{2740000, 1, reinforceLv, infusion, durability }, -- Drakekeeper's Great Hammer
+{2750000, 1, reinforceLv, infusion, durability }, -- Sacred Chime Hammer
+{2760000, 1, reinforceLv, infusion, durability }, -- Sanctum Mace
+{2800000, 1, reinforceLv, infusion, durability }, -- Spear
+{2810000, 1, reinforceLv, infusion, durability }, -- Winged Spear
+{2820000, 1, reinforceLv, infusion, durability }, -- Pike
+{2830000, 1, reinforceLv, infusion, durability }, -- Partizan
+{2840000, 1, reinforceLv, infusion, durability }, -- Stone Soldier Spear
+{2850000, 1, reinforceLv, infusion, durability }, -- Spitfire Spear
+{2855000, 1, reinforceLv, infusion, durability }, -- Yorgh's Spear
+{2860000, 1, reinforceLv, infusion, durability }, -- Silverblack Spear
+{2870000, 1, reinforceLv, infusion, durability }, -- Heide Spear
+{2880000, 1, reinforceLv, infusion, durability }, -- Pate's Spear
+{2890000, 1, reinforceLv, infusion, durability }, -- Channeler's Trident
+{2895000, 1, reinforceLv, infusion, durability }, -- Gargoyle Bident
+{2896000, 1, reinforceLv, infusion, durability }, -- Dragonslayer Spear
+{2900000, 1, reinforceLv, infusion, durability }, -- Heide Lance
+{2920000, 1, reinforceLv, infusion, durability }, -- Heide Greatlance
+{2930000, 1, reinforceLv, infusion, durability }, -- Grand Lance
+{2940000, 1, reinforceLv, infusion, durability }, -- Chariot Lance
+{2950000, 1, reinforceLv, infusion, durability }, -- Rampart Golem Lance
+{2960000, 1, reinforceLv, infusion, durability }, -- Smelter Hammer
+{3000000, 1, reinforceLv, infusion, durability }, -- Great Scythe
+{3010000, 1, reinforceLv, infusion, durability }, -- Great Machete
+{3020000, 1, reinforceLv, infusion, durability }, -- Full Moon Sickle
+{3040000, 1, reinforceLv, infusion, durability }, -- Crescent Sickle
+{3050000, 1, reinforceLv, infusion, durability }, -- Scythe of Nahr Alma
+{3060000, 1, reinforceLv, infusion, durability }, -- Bone Scythe
+{3070000, 1, reinforceLv, infusion, durability }, -- Scythe of Want
+{3080000, 1, reinforceLv, infusion, durability }, -- Scythe of the Forlorn
+{3200000, 1, reinforceLv, infusion, durability }, -- Lucerne
+{3210000, 1, reinforceLv, infusion, durability }, -- Scythe
+{3220000, 1, reinforceLv, infusion, durability }, -- Halberd
+{3240000, 1, reinforceLv, infusion, durability }, -- Helix Halberd
+{3250000, 1, reinforceLv, infusion, durability }, -- Santier's Spear
+{3270000, 1, reinforceLv, infusion, durability }, -- Mastodon Halberd
+{3280000, 1, reinforceLv, infusion, durability }, -- Blue Knight's Halberd
+{3290000, 1, reinforceLv, infusion, durability }, -- Dragonrider's Halberd
+{3300000, 1, reinforceLv, infusion, durability }, -- Black Knight Halberd
+{3310000, 1, reinforceLv, infusion, durability }, -- Syan's Halberd
+{3320000, 1, reinforceLv, infusion, durability }, -- Roaring Halberd
+{3330000, 1, reinforceLv, infusion, durability }, -- Old Knight Halberd
+{3340000, 1, reinforceLv, infusion, durability }, -- Old Knight Pike
+{3350000, 1, reinforceLv, infusion, durability }, -- Drakekeeper's Warpick
+{3370000, 1, reinforceLv, infusion, durability }, -- Wrathful Axe
+{3410000, 1, reinforceLv, infusion, durability }, -- Claws
+{3420000, 1, reinforceLv, infusion, durability }, -- Malformed Claws
+{3430000, 1, reinforceLv, infusion, durability }, -- Manikin Claws
+{3440000, 1, reinforceLv, infusion, durability }, -- Work Hook
+{3500000, 1, reinforceLv, infusion, durability }, -- Caestus
+{3530000, 1, reinforceLv, infusion, durability }, -- Bone Fist
+{3600000, 1, reinforceLv, infusion, durability }, -- Whip
+{3610000, 1, reinforceLv, infusion, durability }, -- Notched Whip
+{3620000, 1, reinforceLv, infusion, durability }, -- Bloodied Whip
+{3630000, 1, reinforceLv, infusion, durability }, -- Spotted Whip
+{3660000, 1, reinforceLv, infusion, durability }, -- Old Whip
+{3800000, 1, reinforceLv, infusion, durability }, -- Sorcerer's Staff
+{3810000, 1, reinforceLv, infusion, durability }, -- Staff of Amana
+{3820000, 1, reinforceLv, infusion, durability }, -- Witchtree Branch
+{3830000, 1, reinforceLv, infusion, durability }, -- Lizard Staff
+{3850000, 1, reinforceLv, infusion, durability }, -- Olenford's Staff
+{3860000, 1, reinforceLv, infusion, durability }, -- Archdrake Staff
+{3870000, 1, reinforceLv, infusion, durability }, -- Bat Staff
+{3880000, 1, reinforceLv, infusion, durability }, -- Bone Staff
+{3890000, 1, reinforceLv, infusion, durability }, -- Staff of Wisdom
+{3900000, 1, reinforceLv, infusion, durability }, -- Sunset Staff
+{3910000, 1, reinforceLv, infusion, durability }, -- Pilgrim's Spontoon
+{3930000, 1, reinforceLv, infusion, durability }, -- Azal's Staff
+{3940000, 1, reinforceLv, infusion, durability }, -- Retainer Staff
+{4010000, 1, reinforceLv, infusion, durability }, -- Cleric's Sacred Chime
+{4020000, 1, reinforceLv, infusion, durability }, -- Witchtree Bellvine
+{4030000, 1, reinforceLv, infusion, durability }, -- Priest's Chime
+{4040000, 1, reinforceLv, infusion, durability }, -- Dragon Chime
+{4050000, 1, reinforceLv, infusion, durability }, -- Chime of Want
+{4060000, 1, reinforceLv, infusion, durability }, -- Archdrake Chime
+{4080000, 1, reinforceLv, infusion, durability }, -- Idol's Chime
+{4090000, 1, reinforceLv, infusion, durability }, -- Caitha's Chime
+{4100000, 1, reinforceLv, infusion, durability }, -- Protective Chime
+{4110000, 1, reinforceLv, infusion, durability }, -- Disc Chime
+{4120000, 1, reinforceLv, infusion, durability }, -- Chime of Screams
+{4150000, 1, reinforceLv, infusion, durability }, -- Black Witch's Staff
+{4200000, 1, reinforceLv, infusion, durability }, -- Short Bow
+{4210000, 1, reinforceLv, infusion, durability }, -- Long Bow
+{4220000, 1, reinforceLv, infusion, durability }, -- Composite Bow
+{4230000, 1, reinforceLv, infusion, durability }, -- Sea Bow
+{4240000, 1, reinforceLv, infusion, durability }, -- Dragonrider Bow
+{4270000, 1, reinforceLv, infusion, durability }, -- Bell Keeper Bow
+{4280000, 1, reinforceLv, infusion, durability }, -- Bow of Want
+{4290000, 1, reinforceLv, infusion, durability }, -- Hunter's Blackbow
+{4400000, 1, reinforceLv, infusion, durability }, -- Alonne Greatbow
+{4420000, 1, reinforceLv, infusion, durability }, -- Dragonslayer Greatbow
+{4430000, 1, reinforceLv, infusion, durability }, -- Possessed Armor Greatbow
+{4440000, 1, reinforceLv, infusion, durability }, -- Twin-headed Greatbow
+{4600000, 1, reinforceLv, infusion, durability }, -- Light Crossbow
+{4610000, 1, reinforceLv, infusion, durability }, -- Heavy Crossbow
+{4630000, 1, reinforceLv, infusion, durability }, -- Shield Crossbow
+{4660000, 1, reinforceLv, infusion, durability }, -- Avelyn
+{4670000, 1, reinforceLv, infusion, durability }, -- Sanctum Crossbow
+{4680000, 1, reinforceLv, infusion, durability }, -- Sanctum Repeating Crossbow
+{5000000, 1, reinforceLv, infusion, durability }, -- Murakumo
+{5010000, 1, reinforceLv, infusion, durability }, -- Arced Sword
+{5040000, 1, reinforceLv, infusion, durability }, -- Curved Dragon Greatsword
+{5050000, 1, reinforceLv, infusion, durability }, -- Curved Nil Greatsword
+{5200000, 1, reinforceLv, infusion, durability }, -- Zweihander
+{5210000, 1, reinforceLv, infusion, durability }, -- Greatsword
+{5220000, 1, reinforceLv, infusion, durability }, -- Smelter Sword
+{5225000, 1, reinforceLv, infusion, durability }, -- Aged Smelter Sword
+{5230000, 1, reinforceLv, infusion, durability }, -- Drakewing Ultra Greatsword
+{5240000, 1, reinforceLv, infusion, durability }, -- King's Ultra Greatsword
+{5250000, 1, reinforceLv, infusion, durability }, -- Fume Ultra Greatsword
+{5255000, 1, reinforceLv, infusion, durability }, -- Ivory King Ultra Greatsword
+{5270000, 1, reinforceLv, infusion, durability }, -- Pursuer's Ultra Greatsword
+{5275000, 1, reinforceLv, infusion, durability }, -- Drakekeeper's Ultra Greatsword
+{5280000, 1, reinforceLv, infusion, durability }, -- Crypt Blacksword
+{5285000, 1, reinforceLv, infusion, durability }, -- Old Knight Ultra Greatsword
+{5290000, 1, reinforceLv, infusion, durability }, -- Black Knight Ultra Greatsword
+{5295000, 1, reinforceLv, infusion, durability }, -- Lost Sinner's Sword
+{5310000, 1, reinforceLv, infusion, durability }, -- Stone Twinblade
+{5330000, 1, reinforceLv, infusion, durability }, -- Dragonrider Twinblade
+{5340000, 1, reinforceLv, infusion, durability }, -- Twinblade
+{5350000, 1, reinforceLv, infusion, durability }, -- Red Iron Twinblade
+{5360000, 1, reinforceLv, infusion, durability }, -- Curved Twinblade
+{5370000, 1, reinforceLv, infusion, durability }, -- Sorcerer's Twinblade
+{5400000, 1, reinforceLv, infusion, durability }, -- Pyromancy Flame
+{5410000, 1, reinforceLv, infusion, durability }, -- Dark Pyromancy Flame
+{5500000, 1, reinforceLv, infusion, durability }, -- Black Flamestone Dagger
+{5510000, 1, reinforceLv, infusion, durability }, -- Yellow Quartz Longsword
+{5520000, 1, reinforceLv, infusion, durability }, -- Bound Hand Axe
+{5530000, 1, reinforceLv, infusion, durability }, -- Homunculus Mace
+{5540000, 1, reinforceLv, infusion, durability }, -- Transgressor's Staff
+{5600000, 1, reinforceLv, infusion, durability }, -- Longsword
+{5610000, 1, reinforceLv, infusion, durability }, -- Murakumo
+{5620000, 1, reinforceLv, infusion, durability }, -- Blacksteel Katana
+{5630000, 1, reinforceLv, infusion, durability }, -- Rapier
+{5640000, 1, reinforceLv, infusion, durability }, -- Greataxe
+{5650000, 1, reinforceLv, infusion, durability }, -- Great Club
+{5660000, 1, reinforceLv, infusion, durability }, -- Caestus
+{6100000, 1, reinforceLv, infusion, durability }, -- Binoculars
+{11000000, 1, reinforceLv, infusion, durability }, -- Buckler
+{11005000, 1, reinforceLv, infusion, durability }, -- Benhart's Parma
+{11010000, 1, reinforceLv, infusion, durability }, -- Small Leather Shield
+{11020000, 1, reinforceLv, infusion, durability }, -- Iron Parma
+{11030000, 1, reinforceLv, infusion, durability }, -- Foot Soldier Shield
+{11040000, 1, reinforceLv, infusion, durability }, -- Target Shield
+{11050000, 1, reinforceLv, infusion, durability }, -- Golden Falcon Shield
+{11070000, 1, reinforceLv, infusion, durability }, -- Manikin Shield
+{11080000, 1, reinforceLv, infusion, durability }, -- Llewellyn Shield
+{11091000, 1, reinforceLv, infusion, durability }, -- Crimson Parma
+{11110000, 1, reinforceLv, infusion, durability }, -- Cleric's Parma
+{11120000, 1, reinforceLv, infusion, durability }, -- Cleric's Small Shield
+{11130000, 1, reinforceLv, infusion, durability }, -- Magic Shield
+{11140000, 1, reinforceLv, infusion, durability }, -- Cursed Bone Shield
+{11150000, 1, reinforceLv, infusion, durability }, -- Sanctum Shield
+{11160000, 1, reinforceLv, infusion, durability }, -- Varangian Shield
+{11185000, 1, reinforceLv, infusion, durability }, -- Watcher's Shield
+{11200000, 1, reinforceLv, infusion, durability }, -- Large Leather Shield
+{11210000, 1, reinforceLv, infusion, durability }, -- Blue Wooden Shield
+{11220000, 1, reinforceLv, infusion, durability }, -- Silver Eagle Kite Shield
+{11230000, 1, reinforceLv, infusion, durability }, -- Drangleic Shield
+{11240000, 1, reinforceLv, infusion, durability }, -- Lion Clan Shield
+{11250000, 1, reinforceLv, infusion, durability }, -- Archdrake Shield
+{11260000, 1, reinforceLv, infusion, durability }, -- King's Shield
+{11270000, 1, reinforceLv, infusion, durability }, -- Mirrah Shield
+{11280000, 1, reinforceLv, infusion, durability }, -- Old Knight's Shield
+{11290000, 1, reinforceLv, infusion, durability }, -- Loyce Shield
+{11295000, 1, reinforceLv, infusion, durability }, -- Charred Loyce Shield
+{11300000, 1, reinforceLv, infusion, durability }, -- Spirit Tree Shield
+{11310000, 1, reinforceLv, infusion, durability }, -- Golden Wing Shield
+{11320000, 1, reinforceLv, infusion, durability }, -- Vessel Shield
+{11330000, 1, reinforceLv, infusion, durability }, -- Shield of the Insolent
+{11350000, 1, reinforceLv, infusion, durability }, -- Silverblack Shield
+{11360000, 1, reinforceLv, infusion, durability }, -- Stone Parma
+{11370000, 1, reinforceLv, infusion, durability }, -- Grand Spirit Tree Shield
+{11380000, 1, reinforceLv, infusion, durability }, -- Moon Butterfly Shield
+{11390000, 1, reinforceLv, infusion, durability }, -- Slumbering Dragon Shield
+{11395000, 1, reinforceLv, infusion, durability }, -- Chaos Shield
+{11400000, 1, reinforceLv, infusion, durability }, -- Wooden Shield
+{11420000, 1, reinforceLv, infusion, durability }, -- Hollow Soldier Shield
+{11430000, 1, reinforceLv, infusion, durability }, -- Royal Kite Shield
+{11450000, 1, reinforceLv, infusion, durability }, -- Red Rust Shield
+{11455000, 1, reinforceLv, infusion, durability }, -- Rampart Golem Shield
+{11470000, 1, reinforceLv, infusion, durability }, -- Bell Keeper Shield
+{11475000, 1, reinforceLv, infusion, durability }, -- Defender's Shield
+{11480000, 1, reinforceLv, infusion, durability }, -- Black Dragon Shield
+{11485000, 1, reinforceLv, infusion, durability }, -- Drakekeeper's Shield
+{11490000, 1, reinforceLv, infusion, durability }, -- Porcine Shield
+{11495000, 1, reinforceLv, infusion, durability }, -- Bone Shield
+{11500000, 1, reinforceLv, infusion, durability }, -- Twin Dragon Greatshield
+{11510000, 1, reinforceLv, infusion, durability }, -- Tower Shield
+{11530000, 1, reinforceLv, infusion, durability }, -- Orma's Greatshield
+{11540000, 1, reinforceLv, infusion, durability }, -- Reeve's Greatshield
+{11550000, 1, reinforceLv, infusion, durability }, -- King's Mirror
+{11560000, 1, reinforceLv, infusion, durability }, -- Dragonrider Greatshield
+{11570000, 1, reinforceLv, infusion, durability }, -- Mastodon Greatshield
+{11590000, 1, reinforceLv, infusion, durability }, -- Havel's Greatshield
+{11600000, 1, reinforceLv, infusion, durability }, -- Gyrm Greatshield
+{11610000, 1, reinforceLv, infusion, durability }, -- Pursuer's Greatshield
+{11620000, 1, reinforceLv, infusion, durability }, -- Pate's Shield
+{11630000, 1, reinforceLv, infusion, durability }, -- Old Knight Greatshield
+{11640000, 1, reinforceLv, infusion, durability }, -- Drakekeeper's Greatshield
+{11650000, 1, reinforceLv, infusion, durability }, -- Greatshield of Glory
+{11700000, 1, reinforceLv, infusion, durability }, -- Phoenix Parma
+{11710000, 1, reinforceLv, infusion, durability }, -- Sunlight Parma
+{11720000, 1, reinforceLv, infusion, durability }, -- Watchdragon Parma
+{11730000, 1, reinforceLv, infusion, durability }, -- Blossom Kite Shield
+{11740000, 1, reinforceLv, infusion, durability }, -- Rebel's Greatshield
+{11750000, 1, reinforceLv, infusion, durability }, -- Wicked Eye Greatshield
+{11800000, 1, reinforceLv, infusion, durability }, -- Black Flamestone Parma
+{11810000, 1, reinforceLv, infusion, durability }, -- Yellow Quartz Shield
+{11820000, 1, reinforceLv, infusion, durability }, -- Bound Wooden Shield
+{11830000, 1, reinforceLv, infusion, durability }, -- Homunculus Wooden Shield
+{11840000, 1, reinforceLv, infusion, durability }, -- Transgressor's Leather Shield
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

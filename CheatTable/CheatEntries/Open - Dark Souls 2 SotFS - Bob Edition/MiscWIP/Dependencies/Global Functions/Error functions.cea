@@ -1,0 +1,15 @@
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+function throwError(string, variation)
+	if variation == nil or variation == 0 then
+		ShowMessage(string)
+	elseif variation == 1 then
+		printf(string)
+	end
+	error(string, 2)
+end
+
+[DISABLE]
+throwError = nil
+missingDlc = nil

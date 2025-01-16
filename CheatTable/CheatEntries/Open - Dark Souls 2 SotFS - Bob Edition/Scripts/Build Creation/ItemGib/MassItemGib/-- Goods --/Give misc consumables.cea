@@ -1,0 +1,68 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{60010000, -1, 0, 0, -1 }, -- Lifegem
+{60020000, -1, 0, 0, -1 }, -- Radiant Lifegem
+{60030000, -1, 0, 0, -1 }, -- Old Radiant Lifegem
+{60035000, -1, 0, 0, -1 }, -- Elizabeth Mushroom
+{60036000, -1, 0, 0, -1 }, -- Dried Root
+{60040000, -1, 0, 0, -1 }, -- Amber Herb
+{60050000, -1, 0, 0, -1 }, -- Twilight Herb
+{60060000, -1, 0, 0, -1 }, -- Wilted Dusk Herb
+{60070000, -1, 0, 0, -1 }, -- Poison Moss
+{60090000, -1, 0, 0, -1 }, -- Monastery Charm
+{60100000, -1, 0, 0, -1 }, -- Dragon Charm
+{60105000, -1, 0, 0, -1 }, -- Divine Blessing
+{60110000, -1, 0, 0, -1 }, -- Rouge Water
+{60120000, -1, 0, 0, -1 }, -- Crimson Water
+{60151000, -1, 0, 0, -1 }, -- Human Effigy
+{60160000, -1, 0, 0, -1 }, -- Small Blue Burr
+{60170000, -1, 0, 0, -1 }, -- Small Yellow Burr
+{60180000, -1, 0, 0, -1 }, -- Small Orange Burr
+{60190000, -1, 0, 0, -1 }, -- Dark Troches
+{60200000, -1, 0, 0, -1 }, -- Common Fruit
+{60210000, -1, 0, 0, -1 }, -- Red Leech Troches
+{60230000, -1, 0, 0, -1 }, -- Triclops Snake Troches
+{60235000, -1, 0, 0, -1 }, -- Old Growth Balm
+{60236000, -1, 0, 0, -1 }, -- Vine Balm
+{60237000, -1, 0, 0, -1 }, -- Blackweed Balm
+{60238000, -1, 0, 0, -1 }, -- Goldenfruit Balm
+{60239000, -1, 0, 0, -1 }, -- Brightbug
+{60310000, -1, 0, 0, -1 }, -- Green Blossom
+{60320000, -1, 0, 0, -1 }, -- Rusted Coin
+{60350000, -1, 0, 0, -1 }, -- Homeward Bone
+{60370000, -1, 0, 0, -1 }, -- Silver Talisman
+{60410000, -1, 0, 0, -1 }, -- Repair Powder
+{60420000, -1, 0, 0, -1 }, -- Torch
+{60430000, -1, 0, 0, -1 }, -- Flame Butterfly
+{60450000, -1, 0, 0, -1 }, -- Prism Stone
+{60470000, -1, 0, 0, -1 }, -- Hello Carving
+{60480000, -1, 0, 0, -1 }, -- Thank You Carving
+{60490000, -1, 0, 0, -1 }, -- I'm Sorry Carving
+{60500000, -1, 0, 0, -1 }, -- Very Good! Carving
+{60510000, -1, 0, 0, -1 }, -- Rubbish
+{50880000, -1, 0, 0, -1 }, -- Smooth & Silky Stone
+{50885000, -1, 0, 0, -1 }, -- Small Smooth & Silky Stone
+{60511000, -1, 0, 0, -1 }, -- Petrified Something
+{60527000, -1, 0, 0, -1 }, -- Bonfire Ascetic
+{60530000, -1, 0, 0, -1 }, -- Alluring Skull
+{60531000, -1, 0, 0, -1 }, -- Lloyd's Talisman
+{60538000, -1, 0, 0, -1 }, -- Fire Seed
+{60540000, -1, 0, 0, -1 }, -- Throwing Knife
+{60550000, -1, 0, 0, -1 }, -- Witching Urn
+{60560000, -1, 0, 0, -1 }, -- Lightning Urn
+{60570000, -1, 0, 0, -1 }, -- Firebomb
+{60575000, -1, 0, 0, -1 }, -- Black Firebomb
+{60580000, -1, 0, 0, -1 }, -- Hexing Urn
+{60590000, -1, 0, 0, -1 }, -- Poison Throwing Knife
+{60595000, -1, 0, 0, -1 }, -- Dung Pie
+{60600000, -1, 0, 0, -1 }, -- Lacerating Knife
+{60610000, -1, 0, 0, -1 }, -- Corrosive Urn
+{60620000, -1, 0, 0, -1 }, -- Holy Water Urn
+{60720000, -1, 0, 0, -1 }, -- Soul of a Great Hero
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

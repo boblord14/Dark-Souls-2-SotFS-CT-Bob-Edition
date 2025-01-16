@@ -76,8 +76,8 @@ function Semver:__le(other)
 end
 
 game_title = "Dark Souls II Scholar of the First Sin"
-table_ver = Semver:fromString("${CE2FS:TABLE_VERSION}")
 game_ver = Semver:fromString("${CE2FS:GAME_VERSION}")
+table_ver = Semver:fromString("${CE2FS:TABLE_VERSION}")
 ce_ver = tonumber("${CE2FS:MIN_CE_VERSION}")
 local latest_build_env_url = "https://raw.githubusercontent.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/main/BUILD_ENV"
 
@@ -3187,9 +3187,13 @@ helperUpdateTimer.OnTimer = function(timer)
     else
         enableRecord(251) -- ensure an instance of ParamUtils is enabled
     end
+    if ItemGive == nil then
+       enableRecord(300)
+    end
 end
 
 --[[END TGA helpers]]--
+enableRecord(300)
 enableRecord(251)
 
 --TODO: add back in first run help popup
@@ -3202,6 +3206,7 @@ end
 [DISABLE]
 {$lua}
 disableRecord(251)
+disableRecord(300)
 helperUpdateTimer.destroy()
 for i,base in ipairs(tga.baseData) do unregisterSymbol(base.symbolName) end
 

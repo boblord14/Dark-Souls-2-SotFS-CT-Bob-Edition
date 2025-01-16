@@ -1,0 +1,30 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{60970000, -1,0, 0, -1 }, -- Titanite Shard
+{60975000, -1,0, 0, -1 }, -- Large Titanite Shard
+{60980000, -1,0, 0, -1 }, -- Titanite Chunk
+{60990000, -1,0, 0, -1 }, -- Titanite Slab
+{61000000, -1,0, 0, -1 }, -- Twinkling Titanite
+{61030000, -1,0, 0, -1 }, -- Petrified Dragon Bone
+{61060000, -1,0, 0, -1 }, -- Faintstone
+{61070000, -1,0, 0, -1 }, -- Boltstone
+{61080000, -1,0, 0, -1 }, -- Firedrake Stone
+{61090000, -1,0, 0, -1 }, -- Darknight Stone
+{61100000, -1,0, 0, -1 }, -- Poison Stone
+{61110000, -1,0, 0, -1 }, -- Bleed Stone
+{61130000, -1,0, 0, -1 }, -- Raw Stone
+{61140000, -1,0, 0, -1 }, -- Magic Stone
+{61150000, -1,0, 0, -1 }, -- Old Mundane Stone
+{61160000, -1,0, 0, -1 }, -- Palestone
+{51010000, -1,0, 0, -1 }, -- Simpleton's Spice
+{51020000, -1,0, 0, -1 }, -- Skeptic's Spice
+{60525000, -1, 0, 0, -1 }, -- Estus Flask Shard
+{60526000, -1, 0, 0, -1 }, -- Sublime Bone Dust
+{50960000, -1, 0, 0, -1 }, -- Soul Vessel
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

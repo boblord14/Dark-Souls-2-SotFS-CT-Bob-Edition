@@ -1,0 +1,18 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+local items = {
+{62000000, -1, 0, 0, -1 }, -- Dried Fingers
+{62020000, -1, 0, 0, -1 }, -- Bone of Order
+{62030000, -1, 0, 0, -1 }, -- White Sign Soapstone
+{62040000, -1, 0, 0, -1 }, -- Small White Sign Soapstone
+{62045000, -1, 0, 0, -1 }, -- Red Sign Soapstone
+{62050000, -1, 0, 0, -1 }, -- Cracked Blue Eye Orb
+{62060000, -1, 0, 0, -1 }, -- Cracked Red Eye Orb
+{62070000, -1, 0, 0, -1 }, -- Dragon Eye
+{62170000, -1, 0, 0, -1 }, -- Seed of a Tree of Giants
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

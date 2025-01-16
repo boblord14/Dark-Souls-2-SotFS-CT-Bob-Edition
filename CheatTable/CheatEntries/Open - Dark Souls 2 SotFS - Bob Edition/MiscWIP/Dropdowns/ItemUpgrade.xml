@@ -1,6 +1,6 @@
 <CheatEntry>
-  <ID>1337042837</ID>
-  <Description>"Infusion"</Description>
+  <ID>108201</ID>
+  <Description>"ItemUpgrade"</Description>
   <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Normal
 1:Fire
 2:Magic
@@ -12,7 +12,5 @@
 8:Enchanted
 9:Mundane
 </DropDownList>
-  <ShowAsSigned>1</ShowAsSigned>
-  <VariableType>Byte</VariableType>
-  <Address>ItemStruct+F</Address>
+  <GroupHeader>1</GroupHeader>
 </CheatEntry>

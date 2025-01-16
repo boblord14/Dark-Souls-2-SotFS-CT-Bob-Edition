@@ -1,6 +1,6 @@
 <CheatEntry>
   <ID>29780</ID>
-  <Description>"Open - Dark Souls 2 SotFS - Bob Edition"</Description>
+  <Description>"Open - Bob Edition v${CE2FS:TABLE_VERSION} - Dark Souls 2 SotFS ${CE2FS:GAME_VERSION}"</Description>
   <Options moHideChildren="1"/>
   <VariableType>Auto Assembler Script</VariableType>
   <x-ce2fs-child-order>
@@ -14,6 +14,6 @@
     <id id="23058"/>
     <id id="1337042979"/>
     <id id="1337256131"/>
-    <id id="1337256558"/>
+    <id id="1337275613"/>
   </x-ce2fs-child-order>
 </CheatEntry>

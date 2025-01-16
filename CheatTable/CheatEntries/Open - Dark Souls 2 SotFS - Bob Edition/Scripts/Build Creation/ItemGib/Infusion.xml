@@ -1,0 +1,8 @@
+<CheatEntry>
+  <ID>1337275619</ID>
+  <Description>"Infusion"</Description>
+  <DropDownListLink>ItemUpgrade</DropDownListLink>
+  <ShowAsSigned>1</ShowAsSigned>
+  <VariableType>Byte</VariableType>
+  <Address>item_menu+0F</Address>
+</CheatEntry>
