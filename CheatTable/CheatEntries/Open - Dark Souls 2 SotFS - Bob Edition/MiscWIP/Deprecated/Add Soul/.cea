@@ -1,0 +1,24 @@
+[ENABLE]
+//Made by LordRadai
+alloc(AddSouls, $100, DarkSoulsII.exe)
+alloc(SoulsToAdd, 4)
+registersymbol(AddSouls)
+registersymbol(SoulsToAdd)
+
+SoulsToAdd:
+dd #500
+
+AddSouls:
+sub rsp, 28
+vortmov(rcx, [[GameManagerImp]+D0]+490)
+mov rdx, [SoulsToAdd]
+call DarkSoulsII.exe+38AB40
+add rsp, 28
+ret
+
+[DISABLE]
+dealloc(AddSouls, $100, DarkSoulsII.exe)
+dealloc(SoulsToAdd, 4)
+unregistersymbol(AddSouls)
+unregistersymbol(SoulsToAdd)
+

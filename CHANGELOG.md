@@ -1,5 +1,14 @@
 # Changelog
 
+## [v4.09.1] - 2025-01-22
+
+### Changed
+  - AddSoul now written in lua instead of raw assembly
+  - AddSoul now a global function
+
+### Fixed
+  - Minor code cleanup in the error message function
+
 ## [v4.09.0] - 2025-01-15
 ### Added
   - MassItemgib

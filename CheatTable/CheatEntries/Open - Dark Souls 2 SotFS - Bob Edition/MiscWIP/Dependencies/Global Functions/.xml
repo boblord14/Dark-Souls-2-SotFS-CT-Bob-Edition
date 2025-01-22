@@ -4,6 +4,7 @@
   <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
   <GroupHeader>1</GroupHeader>
   <x-ce2fs-child-order>
+    <id id="1337275692"/>
     <id id="1337275617"/>
     <id id="1337275624"/>
   </x-ce2fs-child-order>
