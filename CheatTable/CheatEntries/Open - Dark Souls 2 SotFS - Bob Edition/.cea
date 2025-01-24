@@ -3187,7 +3187,6 @@ helperUpdateTimer.OnTimer = function(timer)
     else
         enableRecord(251) -- ensure an instance of ParamUtils is enabled
     end
-    if ItemGive == nil then
     if ItemGive ~= nil then
 
     else
