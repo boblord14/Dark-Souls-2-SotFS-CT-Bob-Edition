@@ -6,13 +6,13 @@ if syntaxcheck then return end
 local addr = getAddressSafe('DarkSoulsII.exe+38AB40')
 function AddSoul(value)
 	if value == nil then
-		value = tonumber(inputQuery("AddSoul", "Choose amount of runes", "0"))
+		value = tonumber(inputQuery("AddSoul", "Choose amount of souls", "0"))
 		if value == nil or value == 0 then
 			return false
 		end
 	end
 
-    local playerData = getAddressSafe("[GameManagerImp]+D0]+490")
+    local playerData = getAddressSafe("[[[GameManagerImp]+D0]+490]")
 	return executeCodeEx(0, 100, addr, playerData, value)
 end
 
