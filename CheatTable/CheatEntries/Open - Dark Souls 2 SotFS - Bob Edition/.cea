@@ -3187,14 +3187,16 @@ helperUpdateTimer.OnTimer = function(timer)
     else
         enableRecord(251) -- ensure an instance of ParamUtils is enabled
     end
-    if ItemGive == nil then
-       enableRecord(300)
+    if ItemGive ~= nil then
+
+    else
+        enableRecord(300) -- global functions
     end
 end
 
 --[[END TGA helpers]]--
-enableRecord(300)
 enableRecord(251)
+enableRecord(300)
 
 --TODO: add back in first run help popup
 if table_ver ~= nil then
@@ -3205,9 +3207,12 @@ end
 
 [DISABLE]
 {$lua}
+
+helperUpdateTimer.destroy()
+
 disableRecord(251)
 disableRecord(300)
-helperUpdateTimer.destroy()
+
 for i,base in ipairs(tga.baseData) do unregisterSymbol(base.symbolName) end
 
 MagicDropdownRemover(MagicIDCheatTable)

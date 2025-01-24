@@ -6,25 +6,31 @@ if syntaxcheck then return end
 
 ItemGive_data = allocateMemory(132, getAddress(process))
 ItemGive_count = allocateMemory(4, getAddress(process))
+ItemDisplay_stack = allocateMemory(168, getAddress(process))
 local item_table_mem = ItemGive_data + 0 -- leftover from er port
 local item_table_count = ItemGive_count + 0 -- for consistency
+local item_display_stack = ItemDisplay_stack + 0 -- for consistency
 
 local ItemGive_func = getAddressSafe('DarkSoulsII.exe+1AC3D0')
 local ItemStructConvert_func = getAddressSafe('DarkSoulsII.exe+5D950')
 local ItemPopupDisplay_func = getAddressSafe('DarkSoulsII.exe+501080')
 
-
-
 function ItemGive(table_or_id, quantity, upgrade, gem, durability)
 
 	local ItemInventory2BagList = getAddressSafe("[[[GameManagerImp]+A8]+10]")
+    local ItemDisplayMan = getAddressSafe("[[GameManagerImp]+22E0]")
 	local item_table = {}
 
 	local function spawn_item(item_spawn_list, item_list_length)
 		executeCodeEx(0, 100, ItemGive_func, ItemInventory2BagList, item_spawn_list, readInteger(item_list_length))
 	end
 
-    --should iterate over inventory, find item quanity for a given id
+    local function display_item(display_convert_stack, item_spawn_list, item_list_length)
+          executeCodeEx(0, 100, ItemStructConvert_func, display_convert_stack, item_spawn_list, readInteger(item_list_length), 1)
+          executeCodeEx(0, 100, ItemPopupDisplay_func, ItemDisplayMan, display_convert_stack)
+    end
+
+    --iterate over inventory item structs in inventory, find id then grab quantity
     local function getQuantity(id)
 		local inventoryItems = getAddressSafe("[[[GameManagerImp]+A8]+10]+D0") + 0x20
         for position = 0, 3839 do
@@ -37,6 +43,7 @@ function ItemGive(table_or_id, quantity, upgrade, gem, durability)
 		return 0
 	end
 
+    --iterate over inventory item structs, verify there is at least one empty slot
     local function isInventoryFull()
 		local inventoryItems = getAddressSafe("[[[GameManagerImp]+A8]+10]+D0") + 0x20
         for position = 0, 3839 do
@@ -49,12 +56,12 @@ function ItemGive(table_or_id, quantity, upgrade, gem, durability)
 		return true
     end
 
-    -- pretty easy with the right param
+    -- read ItemParam's max quanity field
 	local function getMaxQuantity(param_addr)
 	      return readSmallInteger(param_addr + 0x4A)
 	end
 
-    -- removed item type array(first parameter)
+    -- verify that quantity is below max, otherwise adjust quantity to spawn accordingly
 	local function adjustQuantity(param_id, quantity)
         local param_addr = paramUtils:getIdAddressInParam("ItemParam", param_id)
 		local quantityMax = getMaxQuantity(param_addr)
@@ -65,7 +72,8 @@ function ItemGive(table_or_id, quantity, upgrade, gem, durability)
 		return quantity
 	end
 
-    --reworked into something useful
+    -- converts +10 upgrade levels to +5 or the equivalent for special weapons
+    -- also handles the max upgrade level input option
 	local function set_reinforceLv(param_addr, item_type,  inputReinforceLv)
           local reinforceParamId = 0
           local reinforce_addr = 0
@@ -95,7 +103,7 @@ function ItemGive(table_or_id, quantity, upgrade, gem, durability)
 		return result
 	end
 
-       --new function
+       -- sets max durability
 	local function set_durability(param_addr, item_type, inputDurability)
           local maxDurability = 0
 
@@ -121,16 +129,15 @@ function ItemGive(table_or_id, quantity, upgrade, gem, durability)
           end
 	end
 
-    -- grabs item type enum
+    -- grabs item type enum from ItemParam
     local function getItemType(param_addr)
           return readByte(param_addr + 0x4F)
     end
 
-    --potentially done
+    -- handles the logic behind preparing items or tables of items to be spawned
 	local function add_items(item_table)
 		local item_amount = 0
 
-        --not changed yet
 		if isInventoryFull() then
 			local e = "Inventory is full.\nNo more items can be acquired."
 			ShowMessage(e)
@@ -199,7 +206,6 @@ function ItemGive(table_or_id, quantity, upgrade, gem, durability)
 				quantity = 0
 			end
 
-            --table reworked
 			local i2 = item_table_mem + item_amount * 16
 			writeInteger(i2 +  0x4, item)
             writeFloat(i2 + 0x8, durability)
@@ -217,6 +223,7 @@ function ItemGive(table_or_id, quantity, upgrade, gem, durability)
 		if item_amount >= 1 then
 			writeInteger(item_table_count, item_amount)
 			spawn_item(item_table_mem, item_table_count)
+            display_item(item_display_stack, item_table_mem, item_table_count)
 		end
 	end
 
@@ -253,6 +260,7 @@ function ItemGive(table_or_id, quantity, upgrade, gem, durability)
 	add_items(item_table)
 
 	writeInteger(item_table_mem, 0)
+    writeInteger(item_display_stack, 0)
 end
 
 [DISABLE]
