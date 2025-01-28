@@ -1,7 +1,10 @@
 # Changelog
 
-## [v4.09.1] - 2025-01-24
+## [v4.09.2] - 2025-01-28
+### Fixed
+  - Fixed memory overwriting bug in itemgib
 
+## [v4.09.1] - 2025-01-24
 ### Changed
   - AddSoul now written in lua instead of x86 assembly
   - AddSoul now a global function
@@ -9,14 +12,11 @@
   - Itemgib and MassItemgib now display the item popup when spawning items
   - Made comments in itemgib code more useful
 
-
 ### Fixed
   - Minor code cleanup in the error message function
   - Auto-enable for global functions properly enables/disables the right header
   - Auto-enable timer now disables before the headers being checked do
   - Uninteded variable removed from the error functions global function
-
-
 
 ## [v4.09.0] - 2025-01-15
 ### Added

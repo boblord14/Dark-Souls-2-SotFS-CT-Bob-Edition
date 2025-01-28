@@ -4,10 +4,10 @@ if syntaxcheck then return end
 -- Original Elden Ring ItemGib written by InuNorii
 -- Ported and modified for DS2 by Boblord
 
-ItemGive_data = allocateMemory(132, getAddress(process))
+ItemGive_data = allocateMemory(164, getAddress(process))
 ItemGive_count = allocateMemory(4, getAddress(process))
 ItemDisplay_stack = allocateMemory(168, getAddress(process))
-local item_table_mem = ItemGive_data + 0 -- leftover from er port
+local item_table_mem = ItemGive_data + 32
 local item_table_count = ItemGive_count + 0 -- for consistency
 local item_display_stack = ItemDisplay_stack + 0 -- for consistency
 
