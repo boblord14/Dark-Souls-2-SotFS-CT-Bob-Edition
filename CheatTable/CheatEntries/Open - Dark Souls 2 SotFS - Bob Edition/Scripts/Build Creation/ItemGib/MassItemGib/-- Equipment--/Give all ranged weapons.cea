@@ -1,0 +1,34 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+local reinforceLv = -1	-- non-special weapon values
+local infusion = 0
+local durability = -1
+
+local items = {
+
+{4200000, 1, reinforceLv, infusion, durability }, -- Short Bow
+{4210000, 1, reinforceLv, infusion, durability }, -- Long Bow
+{4220000, 1, reinforceLv, infusion, durability }, -- Composite Bow
+{4230000, 1, reinforceLv, infusion, durability }, -- Sea Bow
+{4240000, 1, reinforceLv, infusion, durability }, -- Dragonrider Bow
+{4270000, 1, reinforceLv, infusion, durability }, -- Bell Keeper Bow
+{4280000, 1, reinforceLv, infusion, durability }, -- Bow of Want
+{4290000, 1, reinforceLv, infusion, durability }, -- Hunter's Blackbow
+{4400000, 1, reinforceLv, infusion, durability }, -- Alonne Greatbow
+{4420000, 1, reinforceLv, infusion, durability }, -- Dragonslayer Greatbow
+{4430000, 1, reinforceLv, infusion, durability }, -- Possessed Armor Greatbow
+{4440000, 1, reinforceLv, infusion, durability }, -- Twin-headed Greatbow
+{4600000, 1, reinforceLv, infusion, durability }, -- Light Crossbow
+{4610000, 1, reinforceLv, infusion, durability }, -- Heavy Crossbow
+{4630000, 1, reinforceLv, infusion, durability }, -- Shield Crossbow
+{4660000, 1, reinforceLv, infusion, durability }, -- Avelyn
+{4670000, 1, reinforceLv, infusion, durability }, -- Sanctum Crossbow
+{4680000, 1, reinforceLv, infusion, durability }, -- Sanctum Repeating Crossbow
+
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

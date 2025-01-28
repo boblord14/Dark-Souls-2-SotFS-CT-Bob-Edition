@@ -1,0 +1,43 @@
+[ENABLE]
+{$lua}
+if syntaxcheck then return end
+
+local reinforceLv = -1	-- non-special weapon values
+local infusion = 0
+local durability = -1
+
+local items = {
+
+{3800000, 1, reinforceLv, infusion, durability }, -- Sorcerer's Staff
+{3810000, 1, reinforceLv, infusion, durability }, -- Staff of Amana
+{3820000, 1, reinforceLv, infusion, durability }, -- Witchtree Branch
+{3830000, 1, reinforceLv, infusion, durability }, -- Lizard Staff
+{3850000, 1, reinforceLv, infusion, durability }, -- Olenford's Staff
+{3860000, 1, reinforceLv, infusion, durability }, -- Archdrake Staff
+{3870000, 1, reinforceLv, infusion, durability }, -- Bat Staff
+{3880000, 1, reinforceLv, infusion, durability }, -- Bone Staff
+{3890000, 1, reinforceLv, infusion, durability }, -- Staff of Wisdom
+{3900000, 1, reinforceLv, infusion, durability }, -- Sunset Staff
+{3910000, 1, reinforceLv, infusion, durability }, -- Pilgrim's Spontoon
+{3930000, 1, reinforceLv, infusion, durability }, -- Azal's Staff
+{3940000, 1, reinforceLv, infusion, durability }, -- Retainer Staff
+{4010000, 1, reinforceLv, infusion, durability }, -- Cleric's Sacred Chime
+{4020000, 1, reinforceLv, infusion, durability }, -- Witchtree Bellvine
+{4030000, 1, reinforceLv, infusion, durability }, -- Priest's Chime
+{4040000, 1, reinforceLv, infusion, durability }, -- Dragon Chime
+{4050000, 1, reinforceLv, infusion, durability }, -- Chime of Want
+{4060000, 1, reinforceLv, infusion, durability }, -- Archdrake Chime
+{4080000, 1, reinforceLv, infusion, durability }, -- Idol's Chime
+{4090000, 1, reinforceLv, infusion, durability }, -- Caitha's Chime
+{4100000, 1, reinforceLv, infusion, durability }, -- Protective Chime
+{4110000, 1, reinforceLv, infusion, durability }, -- Disc Chime
+{4120000, 1, reinforceLv, infusion, durability }, -- Chime of Screams
+{4150000, 1, reinforceLv, infusion, durability }, -- Black Witch's Staff
+{5400000, 1, reinforceLv, infusion, durability }, -- Pyromancy Flame
+{5410000, 1, reinforceLv, infusion, durability }, -- Dark Pyromancy Flame
+
+}
+
+ItemGive(items)
+disableMemrec(memrec)
+[DISABLE]

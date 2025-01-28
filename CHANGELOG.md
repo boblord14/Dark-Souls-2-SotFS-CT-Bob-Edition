@@ -1,8 +1,22 @@
 # Changelog
 
 ## [v4.09.2] - 2025-01-28
+### Added
+  - MassItemGib for melee weapons
+  - MassItemGib for ranged weapons
+  - MassItemGib for catalysts
+  - MassItemGib for shields
+  
+### Changed
+  - ItemGib now checks for valid infusions
+  - ItemGib now defaults to uninfused if the given infusion isn't valid
+  - ItemGib has edge case coverage for binoculars
+
 ### Fixed
   - Fixed memory overwriting bug in itemgib
+
+### Removed
+  - Original all weapons MassItemGib script
 
 ## [v4.09.1] - 2025-01-24
 ### Changed
