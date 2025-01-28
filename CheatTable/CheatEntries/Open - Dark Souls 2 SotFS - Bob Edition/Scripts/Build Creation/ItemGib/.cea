@@ -6,7 +6,7 @@ if ItemGive == nil then
     throwError("'ItemGive' symbol was not found.\nTry enabling this script again.")
 end
 
-item_menu = ItemGive_data
+item_menu = ItemGive_data + 16
 writeInteger(item_menu + 0x4, 60151000)
 writeFloat(item_menu + 0x8, -1)
 writeSmallInteger(item_menu + 0xC, 1)

@@ -4,10 +4,10 @@ if syntaxcheck then return end
 -- Original Elden Ring ItemGib written by InuNorii
 -- Ported and modified for DS2 by Boblord
 
-ItemGive_data = allocateMemory(132, getAddress(process))
+ItemGive_data = allocateMemory(164, getAddress(process))
 ItemGive_count = allocateMemory(4, getAddress(process))
 ItemDisplay_stack = allocateMemory(168, getAddress(process))
-local item_table_mem = ItemGive_data + 0 -- leftover from er port
+local item_table_mem = ItemGive_data + 32
 local item_table_count = ItemGive_count + 0 -- for consistency
 local item_display_stack = ItemDisplay_stack + 0 -- for consistency
 
@@ -129,6 +129,27 @@ function ItemGive(table_or_id, quantity, upgrade, gem, durability)
           end
 	end
 
+    local function set_valid_infusion(param_addr, input_gem)
+          if input_gem == 0 then
+              return 0
+          end
+
+          reinforceParamId = readInteger(param_addr + 0x8)
+	      reinforce_addr = paramUtils:getIdAddressInParam("WeaponReinforceParam", reinforceParamId)
+          customAttrSpecParamId = readInteger(reinforce_addr + 0xE8)
+          spec_addr = paramUtils:getIdAddressInParam("CustomAttrSpecParam", customAttrSpecParamId)
+          allowed_infusions = readInteger(spec_addr + 0x00)
+
+          local target_infusion = 1 << input_gem
+          local validity = allowed_infusions & target_infusion
+          if validity ~= 0 then
+              return input_gem
+          else
+              return 0
+          end
+
+    end
+
     -- grabs item type enum from ItemParam
     local function getItemType(param_addr)
           return readByte(param_addr + 0x4F)
@@ -154,7 +175,7 @@ function ItemGive(table_or_id, quantity, upgrade, gem, durability)
             local item_param = paramUtils:getIdAddressInParam("ItemParam", item)
             local item_type = getItemType(item_param)
 
-            -- weapons and shields
+            -- weapons, catalysts, bows, shields
 			if item_type == 0 or item_type == 1 then
                 local weapon_param_id = readInteger(item_param + 0x14)
 				local param_addr = paramUtils:getIdAddressInParam("WeaponParam", weapon_param_id)
@@ -162,10 +183,13 @@ function ItemGive(table_or_id, quantity, upgrade, gem, durability)
 				quantity = 1
 
 				if v[4] ~= -1 then
-					gem = v[4]
+					gem = set_valid_infusion(param_addr, v[4])
 				end
 
-				upgrade = set_reinforceLv(param_addr, item_type, v[3])
+                -- edge case coverage for binoculars
+                if weapon_param_id ~= 6100000 then
+				    upgrade = set_reinforceLv(param_addr, item_type, v[3])
+                end
 
                 durability = set_durability(param_addr, item_type, v[5])
 
