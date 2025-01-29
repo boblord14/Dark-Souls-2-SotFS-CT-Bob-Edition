@@ -1,5 +1,9 @@
 # Changelog
 
+## [v4.09.3] - 2025-01-29
+### Changed
+  - Invalid item discarder now checks for and removes items internally tagged as "gestures" that can't be discarded normally
+
 ## [v4.09.2] - 2025-01-28
 ### Added
   - MassItemGib for melee weapons
