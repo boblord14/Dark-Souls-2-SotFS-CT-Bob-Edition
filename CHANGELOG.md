@@ -1,5 +1,14 @@
 # Changelog
 
+## [v4.09.4] - 2025-02-02
+### Changed
+  - enableRecord/disableRecord how have sync and delay capabilities
+  - Removed weird duplicate of enableRecord/disableRecord function in Param Patcher
+
+### Fixed
+  - ParamUtils auto-enable now works as expected
+  - Shared Functions auto-enable now follows the standard from the TGA ER table
+
 ## [v4.09.3] - 2025-01-29
 ### Changed
   - Invalid item discarder now checks for and removes items internally tagged as "gestures" that can't be discarded normally

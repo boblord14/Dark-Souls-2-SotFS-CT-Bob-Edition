@@ -537,6 +537,44 @@ for i,base in ipairs(tga.baseData) do registerBaseByKeyCached(base.symbolName, b
 
 --[[START TGA helpers]]--
 
+function enableRecord(id, delay, sync)
+    local record = getAddressList().getMemoryRecordByID(id)
+    if(record ~= nil) then
+        if sync then
+            Sleep(delay)
+            record.Active = true
+            return
+        end
+        local t = createTimer(getMainForm())
+        t.Interval = delay or 100
+        t.OnTimer = function()
+            t.destroy()
+            record.Active = true
+        end
+    else
+        print("Record with ID "..id.." doesn't exist.")
+    end
+end
+
+function disableRecord(id, delay, sync)
+    local record = getAddressList().getMemoryRecordByID(id)
+    if(record ~= nil) then
+        if sync then
+            Sleep(delay)
+            record.Active = false
+            return
+        end
+        local t = createTimer(getMainForm())
+        t.Interval = delay or 100
+        t.OnTimer = function()
+            t.destroy()
+            record.Active = false
+        end
+    else
+        print("Record with ID "..id.." doesn't exist.")
+    end
+end
+
 -- Disables memrec after specified amount of milliseconds
 -- or byte at given address becomes 1
 -- or given function returns true.
@@ -3149,25 +3187,7 @@ EquipGoodsDropDownList = [[0:EquipGoods1
 ]]
 EquipGoodsDropdownAdder(EquipGoodsDropDownList,EquipGoodsIDCheatTable)
 
-function enableRecord(id)
-  local record = getAddressList().getMemoryRecordByID(id)
-  if(record ~= nil) then
-    sleep(100)
-    record.Active = true
-  else
-    print("Record with ID "..id.." doesn't exist.")
-  end
-end
-
-function disableRecord(id)
-  local record = getAddressList().getMemoryRecordByID(id)
-  if(record ~= nil) then
-    sleep(100)
-    record.Active = false
-  else
-    print("Record with ID "..id.." doesn't exist.")
-  end
-end
+enableRecord(300) -- enable Shared Functions
 
 helperUpdateTimer = createTimer(getMainForm())
 helperUpdateTimer.Interval = 1000
@@ -3187,16 +3207,9 @@ helperUpdateTimer.OnTimer = function(timer)
     else
         enableRecord(251) -- ensure an instance of ParamUtils is enabled
     end
-    if ItemGive ~= nil then
-
-    else
-        enableRecord(300) -- global functions
-    end
 end
 
 --[[END TGA helpers]]--
-enableRecord(251)
-enableRecord(300)
 
 --TODO: add back in first run help popup
 if table_ver ~= nil then
@@ -3208,10 +3221,10 @@ end
 [DISABLE]
 {$lua}
 
-helperUpdateTimer.destroy()
+disableRecord(251) -- disable ParamUtils
+disableRecord(300) -- disable Shared Functions
 
-disableRecord(251)
-disableRecord(300)
+helperUpdateTimer.destroy()
 
 for i,base in ipairs(tga.baseData) do unregisterSymbol(base.symbolName) end
 
