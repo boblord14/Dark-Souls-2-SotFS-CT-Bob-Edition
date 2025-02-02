@@ -551,30 +551,14 @@ end
 
 -- Creating an instance of ParamUtils
 paramUtils = ParamUtils:new()
+paramUtils:paramIndexer()
 --[[END ParamUtils class]]--
-local function enableRecord(thread, id)
-  local record = getAddressList().getMemoryRecordByID(id)
-  if(record ~= nil) then
-    sleep(500)
-    record.Active = true
-  else
-    print("Record with ID "..id.." doesn't exists")
-  end
-end
-createNativeThread(enableRecord, 252) --Enable PP classes
+enableRecord(252) -- Enable PP classes
 [DISABLE]
 {$lua}
 if syntaxcheck then return end
 paramUtils:restoreAllBackups()
 paramUtils:printAllOldBackups()
 paramUtils:destroy()
-local function disableRecord(thread, id)
-  local record = getAddressList().getMemoryRecordByID(id)
-  if(record ~= nil) then
-    sleep(500)
-    record.Active = false
-  else
-    print("Record with ID "..id.." doesn't exists")
-  end
-end
-createNativeThread(disableRecord, 252) --Disable PP classes
+paramUtils = nil
+disableRecord(252) -- Disable PP classes
