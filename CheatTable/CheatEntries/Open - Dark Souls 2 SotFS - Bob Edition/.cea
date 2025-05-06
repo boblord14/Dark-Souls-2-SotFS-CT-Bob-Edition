@@ -3187,6 +3187,7 @@ EquipGoodsDropDownList = [[0:EquipGoods1
 ]]
 EquipGoodsDropdownAdder(EquipGoodsDropDownList,EquipGoodsIDCheatTable)
 
+enableRecord(1000, 0, true) -- enable Symbol Lookup Fix
 enableRecord(300) -- enable Shared Functions
 
 helperUpdateTimer = createTimer(getMainForm())
@@ -3207,6 +3208,9 @@ helperUpdateTimer.OnTimer = function(timer)
     else
         enableRecord(251) -- ensure an instance of ParamUtils is enabled
     end
+    if ItemGive == nil then
+       enableRecord(300) -- Ensure global functions are running(via checking itemgib)
+    end
 end
 
 --[[END TGA helpers]]--
@@ -3223,6 +3227,7 @@ end
 
 disableRecord(251) -- disable ParamUtils
 disableRecord(300) -- disable Shared Functions
+disableRecord(1000, 0, true) -- disable symbol lookup fix
 
 helperUpdateTimer.destroy()
 
