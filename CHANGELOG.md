@@ -2,7 +2,9 @@
 
 ## [v4.09.5] - 2025-05-05
 ### Added
-  - Added the symbol lookup fix from TGA's Elden Ring table
+  - Added the symbol lookup fix from TGA's Elden Ring table, for future C compatability
+  - Added checks for the lua and tcc DLLs and a warning if they're not present
+  - Added a CE kernel check for potential issues
 
 ### Changed
   - Max cheat engine version set to 7.5 as 7.6 will have future issues with dependencies

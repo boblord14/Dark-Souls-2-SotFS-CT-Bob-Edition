@@ -82,6 +82,31 @@ ce_ver = tonumber("${CE2FS:MIN_CE_VERSION}")
 ce_max_ver = tonumber("${CE2FS:MAX_CE_VERSION}")
 local latest_build_env_url = "https://raw.githubusercontent.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/main/BUILD_ENV"
 
+-- checking for user issues
+local required_files = {
+  "luaclient-x86_64.dll",
+  "tcc64-64.dll"
+}
+for _,file in pairs(required_files) do
+  if not getFileList(getCheatEngineDir(),file)[1] then
+      local e = string.format("'%s' not present in Cheat Engine folder.\nReinstall Cheat Engine.\nDo not compile it yourself if you don't know what you're doing.",file)
+      ShowMessage(e)
+      error(e,2)
+  end
+end
+
+local settings = getSettings(nil)
+if settings["Use dbk32 QueryMemoryRegionEx"] == "1" then
+  local t = "Incompatible CE kernel setting"
+  if messageDialog(t,[[It appears that you have custom CE kernel routines enabled for "Query memory region routines".
+This setting is not compatible. Selecting 'Ok' will turn it off to allow the table to function.]], mtWarning, mbOK, mbCancel)==mrOK then
+      settings["Use dbk32 QueryMemoryRegionEx"] = 0
+      reloadSettingsFromRegistry()    
+  else
+      error(t,2)
+  end
+end
+
 --[[START TGA file management]]--
 
 lfs = require "lfs"
