@@ -1,5 +1,15 @@
 # Changelog
 
+## [v4.09.5] - 2025-05-05
+### Added
+  - Added the symbol lookup fix from TGA's Elden Ring table
+
+### Changed
+  - Max cheat engine version set to 7.5 as 7.6 will have future issues with dependencies
+
+### Fixed
+  - Global functions(error, itemgib, addsoul) should now enable more consistently on table launch
+
 ## [v4.09.4] - 2025-02-02
 ### Changed
   - enableRecord/disableRecord how have sync and delay capabilities
