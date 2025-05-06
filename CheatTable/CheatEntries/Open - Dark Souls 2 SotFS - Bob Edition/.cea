@@ -79,7 +79,33 @@ game_title = "Dark Souls II Scholar of the First Sin"
 game_ver = Semver:fromString("${CE2FS:GAME_VERSION}")
 table_ver = Semver:fromString("${CE2FS:TABLE_VERSION}")
 ce_ver = tonumber("${CE2FS:MIN_CE_VERSION}")
+ce_max_ver = tonumber("${CE2FS:MAX_CE_VERSION}")
 local latest_build_env_url = "https://raw.githubusercontent.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/main/BUILD_ENV"
+
+-- checking for user issues
+local required_files = {
+  "luaclient-x86_64.dll",
+  "tcc64-64.dll"
+}
+for _,file in pairs(required_files) do
+  if not getFileList(getCheatEngineDir(),file)[1] then
+      local e = string.format("'%s' not present in Cheat Engine folder.\nReinstall Cheat Engine.\nDo not compile it yourself if you don't know what you're doing.",file)
+      ShowMessage(e)
+      error(e,2)
+  end
+end
+
+local settings = getSettings(nil)
+if settings["Use dbk32 QueryMemoryRegionEx"] == "1" then
+  local t = "Incompatible CE kernel setting"
+  if messageDialog(t,[[It appears that you have custom CE kernel routines enabled for "Query memory region routines".
+This setting is not compatible. Selecting 'Ok' will turn it off to allow the table to function.]], mtWarning, mbOK, mbCancel)==mrOK then
+      settings["Use dbk32 QueryMemoryRegionEx"] = 0
+      reloadSettingsFromRegistry()    
+  else
+      error(t,2)
+  end
+end
 
 --[[START TGA file management]]--
 
@@ -368,8 +394,8 @@ if tga.config.checkGameVersion and current_game_ver ~= game_ver then
   ))
 end
 
-if tga.config.checkCEVersion and getCEVersion() < ce_ver then
-  local ver_str = string.format("Cheat Engine %s or newer is required.\nDownload version %s from GitHub?",ce_ver,ce_ver)
+if tga.config.checkCEVersion and getCEVersion() < ce_ver or getCEVersion() > ce_max_ver then
+  local ver_str = string.format("Only Cheat Engine versions between %s and %s are supported.\nDownload version %s from GitHub?",ce_ver,ce_max_ver,ce_ver)
   local dl_url = string.format("https://github.com/cheat-engine/cheat-engine/releases/download/%s/CheatEngine%s.exe",ce_ver,string.gsub(tostring(ce_ver),"%W",""))
   if messageDialog("CE Version Check", ver_str, mtError, mbYes, mbNo)==mrYes then
       shellExecute(dl_url)
@@ -3187,6 +3213,7 @@ EquipGoodsDropDownList = [[0:EquipGoods1
 ]]
 EquipGoodsDropdownAdder(EquipGoodsDropDownList,EquipGoodsIDCheatTable)
 
+enableRecord(1000, 0, true) -- enable Symbol Lookup Fix
 enableRecord(300) -- enable Shared Functions
 
 helperUpdateTimer = createTimer(getMainForm())
@@ -3207,6 +3234,9 @@ helperUpdateTimer.OnTimer = function(timer)
     else
         enableRecord(251) -- ensure an instance of ParamUtils is enabled
     end
+    if ItemGive == nil then
+       enableRecord(300) -- Ensure global functions are running(via checking itemgib)
+    end
 end
 
 --[[END TGA helpers]]--
@@ -3223,6 +3253,7 @@ end
 
 disableRecord(251) -- disable ParamUtils
 disableRecord(300) -- disable Shared Functions
+disableRecord(1000, 0, true) -- disable symbol lookup fix
 
 helperUpdateTimer.destroy()
 
