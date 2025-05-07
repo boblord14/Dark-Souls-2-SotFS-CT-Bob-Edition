@@ -3234,9 +3234,6 @@ helperUpdateTimer.OnTimer = function(timer)
     else
         enableRecord(251) -- ensure an instance of ParamUtils is enabled
     end
-    if ItemGive == nil then
-       enableRecord(300) -- Ensure global functions are running(via checking itemgib)
-    end
 end
 
 --[[END TGA helpers]]--
