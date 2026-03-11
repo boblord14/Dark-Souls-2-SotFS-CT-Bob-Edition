@@ -395,12 +395,12 @@ if tga.config.checkGameVersion and current_game_ver ~= game_ver then
 end
 
 if tga.config.checkCEVersion and getCEVersion() < ce_ver or getCEVersion() > ce_max_ver then
-  local ver_str = string.format("Only Cheat Engine versions between %s and %s are supported.\nDownload version %s from GitHub?",ce_ver,ce_max_ver,ce_ver)
-  local dl_url = string.format("https://github.com/cheat-engine/cheat-engine/releases/download/%s/CheatEngine%s.exe",ce_ver,string.gsub(tostring(ce_ver),"%W",""))
-  if messageDialog("CE Version Check", ver_str, mtError, mbYes, mbNo)==mrYes then
-      shellExecute(dl_url)
-  end
-  error("Cheat Engine outdated",2)
+    local ver_str = string.format("Only Cheat Engine versions between %s and %s are officially supported.\nFuture versions are closed-source, and have not been checked for safety.\nThere are instructions provided for installing 7.5 on the GitHub. Go there now?",ce_ver,ce_max_ver,ce_ver)
+    local dl_url = string.format("https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition?tab=readme-ov-file#installing-cheat-engine")
+    if messageDialog("CE Version Check", ver_str, mtError, mbYes, mbNo)==mrYes then
+        shellExecute(dl_url)
+    end
+    error("Unsupported Cheat Engine version",2)
 end
 
 if tga.config.checkTableVersion and table_ver ~= nil then
@@ -3233,9 +3233,6 @@ helperUpdateTimer.OnTimer = function(timer)
         ]]
     else
         enableRecord(251) -- ensure an instance of ParamUtils is enabled
-    end
-    if ItemGive == nil then
-       enableRecord(300) -- Ensure global functions are running(via checking itemgib)
     end
 end
 

@@ -98,13 +98,13 @@ function ParamUtils:new()
 	end
 	local function InitializeAddress()
       autoAssemble([[
-define(MASTER_PARAM_TABLE, [[[[GameManagerImp]+38]+100]+D8]-2C44)
+define(MASTER_PARAM_TABLE, [[[[GameManagerImp]+30]+118]+D8]+0)
 registerSymbol(MASTER_PARAM_TABLE)
 
 define(PARAM_INDEX_START, MASTER_PARAM_TABLE+40)
 registerSymbol(PARAM_INDEX_START)
 
-define(PARAM_INDEX_END, [[[[GameManagerImp]+38]+100]+D8]-16A4)
+define(PARAM_INDEX_END, [[[[[[[GameManagerImp]+8]+40]+110]+A0]+8]+40]+1E0)
 registerSymbol(PARAM_INDEX_END)
 
 define(PARAM_INDEX_WIDTH, 0x18)

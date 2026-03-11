@@ -1,5 +1,14 @@
 # Changelog
+## [Unreleased]
 
+## [v4.09.6] - 2026-03-11
+### Changed
+  - Adjusted the wording on the CE version check to make it clearer and provide a solution
+  - Added an "installing cheat engine" section to the readme detailing how to install 7.5
+
+### Fixed
+  - Updated some non-critical pointer logic for param patcher v2 to not use negative offsets
+  
 ## [v4.09.5] - 2025-05-05
 ### Added
   - Added the symbol lookup fix from TGA's Elden Ring table, for future C compatability
@@ -140,7 +149,16 @@
     - Darklurker Warp
     - Bootleg Bonfirewarp 
 
-[v4.08.0]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.7.5...v4.8.0
+
+[unreleased]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.09.6...dev
+[v4.09.6]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.09.5...v4.09.6
+[v4.09.5]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.09.4...v4.09.5
+[v4.09.4]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.09.3...v4.09.4
+[v4.09.3]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.09.2...v4.09.3
+[v4.09.2]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.09.1...v4.09.2
+[v4.09.1]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.09.0...v4.09.1
+[v4.09.0]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.08.0...v4.09.0
+[v4.08.0]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.7.5...v4.08.0
 [v4.07.5]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.7.4...v4.7.5
 [v4.07.4]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.7.3...v4.7.4
 [v4.07.3]: https://github.com/boblord14/Dark-Souls-2-SotFS-CT-Bob-Edition/compare/v4.7.2...v4.7.3
