@@ -469,7 +469,7 @@ function WeaponTypeParam:unk108(value)
 end
 
 
-function WeaponTypeParam:unk10C(value)
+function WeaponTypeParam:castSpeed(value)
 	self:patchFloat(0x10C, value)
 end
 
